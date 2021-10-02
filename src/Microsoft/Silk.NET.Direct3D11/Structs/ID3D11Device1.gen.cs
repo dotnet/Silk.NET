@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a04bfb29-08ef-43d6-a49c-a9bdbdcbe686")]
     [NativeName("Name", "ID3D11Device1")]
     public unsafe partial struct ID3D11Device1
     {
+        public static readonly Guid Guid = new("a04bfb29-08ef-43d6-a49c-a9bdbdcbe686");
+
         public static implicit operator ID3D11Device(ID3D11Device1 val)
             => Unsafe.As<ID3D11Device1, ID3D11Device>(ref val);
 
@@ -42828,6 +42831,652 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Device1*, uint>)LpVtbl[42])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext1(ID3D11DeviceContext1** ppImmediateContext)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device1*, ID3D11DeviceContext1**, void>)LpVtbl[43])(@this, ppImmediateContext);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext1(ref ID3D11DeviceContext1* ppImmediateContext)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11DeviceContext1** ppImmediateContextPtr = &ppImmediateContext)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device1*, ID3D11DeviceContext1**, void>)LpVtbl[43])(@this, ppImmediateContextPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext1(uint ContextFlags, ID3D11DeviceContext1** ppDeferredContext)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, ID3D11DeviceContext1**, int>)LpVtbl[44])(@this, ContextFlags, ppDeferredContext);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext1(uint ContextFlags, ref ID3D11DeviceContext1* ppDeferredContext)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11DeviceContext1** ppDeferredContextPtr = &ppDeferredContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, ID3D11DeviceContext1**, int>)LpVtbl[44])(@this, ContextFlags, ppDeferredContextPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlendState1(BlendDesc1* pBlendStateDesc, ID3D11BlendState1** ppBlendState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, BlendDesc1*, ID3D11BlendState1**, int>)LpVtbl[45])(@this, pBlendStateDesc, ppBlendState);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlendState1(BlendDesc1* pBlendStateDesc, ref ID3D11BlendState1* ppBlendState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11BlendState1** ppBlendStatePtr = &ppBlendState)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, BlendDesc1*, ID3D11BlendState1**, int>)LpVtbl[45])(@this, pBlendStateDesc, ppBlendStatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlendState1(ref BlendDesc1 pBlendStateDesc, ID3D11BlendState1** ppBlendState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (BlendDesc1* pBlendStateDescPtr = &pBlendStateDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, BlendDesc1*, ID3D11BlendState1**, int>)LpVtbl[45])(@this, pBlendStateDescPtr, ppBlendState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateBlendState1(ref BlendDesc1 pBlendStateDesc, ref ID3D11BlendState1* ppBlendState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (BlendDesc1* pBlendStateDescPtr = &pBlendStateDesc)
+            {
+                fixed (ID3D11BlendState1** ppBlendStatePtr = &ppBlendState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, BlendDesc1*, ID3D11BlendState1**, int>)LpVtbl[45])(@this, pBlendStateDescPtr, ppBlendStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState1(RasterizerDesc1* pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, RasterizerDesc1*, ID3D11RasterizerState1**, int>)LpVtbl[46])(@this, pRasterizerDesc, ppRasterizerState);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState1(RasterizerDesc1* pRasterizerDesc, ref ID3D11RasterizerState1* ppRasterizerState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11RasterizerState1** ppRasterizerStatePtr = &ppRasterizerState)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, RasterizerDesc1*, ID3D11RasterizerState1**, int>)LpVtbl[46])(@this, pRasterizerDesc, ppRasterizerStatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState1(ref RasterizerDesc1 pRasterizerDesc, ID3D11RasterizerState1** ppRasterizerState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RasterizerDesc1* pRasterizerDescPtr = &pRasterizerDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, RasterizerDesc1*, ID3D11RasterizerState1**, int>)LpVtbl[46])(@this, pRasterizerDescPtr, ppRasterizerState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState1(ref RasterizerDesc1 pRasterizerDesc, ref ID3D11RasterizerState1* ppRasterizerState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RasterizerDesc1* pRasterizerDescPtr = &pRasterizerDesc)
+            {
+                fixed (ID3D11RasterizerState1** ppRasterizerStatePtr = &ppRasterizerState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, RasterizerDesc1*, ID3D11RasterizerState1**, int>)LpVtbl[46])(@this, pRasterizerDescPtr, ppRasterizerStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+            {
+                fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+            {
+                fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+            {
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+            {
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                {
+                    fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                {
+                    fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                {
+                    fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                {
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+            {
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                {
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                    {
+                        fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1(void* hResource, Guid* returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, void*, Guid*, void**, int>)LpVtbl[48])(@this, hResource, returnedInterface, ppResource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1(void* hResource, Guid* returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppResourcePtr = &ppResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, void*, Guid*, void**, int>)LpVtbl[48])(@this, hResource, returnedInterface, ppResourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1(void* hResource, ref Guid returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, void*, Guid*, void**, int>)LpVtbl[48])(@this, hResource, returnedInterfacePtr, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1(void* hResource, ref Guid returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, void*, Guid*, void**, int>)LpVtbl[48])(@this, hResource, returnedInterfacePtr, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, Guid* returnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hResourcePtr = &hResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, Guid* returnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hResourcePtr = &hResource)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, hResourcePtr, returnedInterface, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, ref Guid returnedInterface, void** ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hResourcePtr = &hResource)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResource1<T0>(ref T0 hResource, ref Guid returnedInterface, ref void* ppResource) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hResourcePtr = &hResource)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    fixed (void** ppResourcePtr = &ppResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, hResourcePtr, returnedInterfacePtr, ppResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(char* lpName, uint dwDesiredAccess, Guid* returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpName, dwDesiredAccess, returnedInterface, ppResource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(char* lpName, uint dwDesiredAccess, Guid* returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppResourcePtr = &ppResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpName, dwDesiredAccess, returnedInterface, ppResourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(char* lpName, uint dwDesiredAccess, ref Guid returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpName, dwDesiredAccess, returnedInterfacePtr, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(char* lpName, uint dwDesiredAccess, ref Guid returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpName, dwDesiredAccess, returnedInterfacePtr, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(ref char lpName, uint dwDesiredAccess, Guid* returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* lpNamePtr = &lpName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(ref char lpName, uint dwDesiredAccess, Guid* returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* lpNamePtr = &lpName)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(ref char lpName, uint dwDesiredAccess, ref Guid returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* lpNamePtr = &lpName)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(ref char lpName, uint dwDesiredAccess, ref Guid returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* lpNamePtr = &lpName)
+            {
+                fixed (Guid* returnedInterfacePtr = &returnedInterface)
+                {
+                    fixed (void** ppResourcePtr = &ppResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, char*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(string lpName, uint dwDesiredAccess, Guid* returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResource);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(string lpName, uint dwDesiredAccess, Guid* returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            fixed (void** ppResourcePtr = &ppResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResourcePtr);
+            }
+            Marshal.FreeHGlobal((nint)lpNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(string lpName, uint dwDesiredAccess, ref Guid returnedInterface, void** ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResource);
+            }
+            Marshal.FreeHGlobal((nint)lpNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedResourceByName(string lpName, uint dwDesiredAccess, ref Guid returnedInterface, ref void* ppResource)
+        {
+            var @this = (ID3D11Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            fixed (Guid* returnedInterfacePtr = &returnedInterface)
+            {
+                fixed (void** ppResourcePtr = &ppResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device1*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResourcePtr);
+                }
+            }
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 

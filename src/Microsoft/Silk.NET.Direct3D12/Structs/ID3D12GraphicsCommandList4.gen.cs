@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("8754318e-d3a9-4541-98cf-645b50dc4874")]
     [NativeName("Name", "ID3D12GraphicsCommandList4")]
     public unsafe partial struct ID3D12GraphicsCommandList4
     {
+        public static readonly Guid Guid = new("8754318e-d3a9-4541-98cf-645b50dc4874");
+
         public static implicit operator ID3D12GraphicsCommandList3(ID3D12GraphicsCommandList4 val)
             => Unsafe.As<ID3D12GraphicsCommandList4, ID3D12GraphicsCommandList3>(ref val);
 
@@ -2393,6 +2396,254 @@ namespace Silk.NET.Direct3D12
             fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12ProtectedResourceSession*, void>)LpVtbl[67])(@this, pProtectedResourceSessionPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, RenderPassRenderTargetDesc* pRenderTargets, RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, uint, RenderPassRenderTargetDesc*, RenderPassDepthStencilDesc*, RenderPassFlags, void>)LpVtbl[68])(@this, NumRenderTargets, pRenderTargets, pDepthStencil, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, RenderPassRenderTargetDesc* pRenderTargets, ref RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RenderPassDepthStencilDesc* pDepthStencilPtr = &pDepthStencil)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, uint, RenderPassRenderTargetDesc*, RenderPassDepthStencilDesc*, RenderPassFlags, void>)LpVtbl[68])(@this, NumRenderTargets, pRenderTargets, pDepthStencilPtr, Flags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BeginRenderPass(uint NumRenderTargets, ref RenderPassRenderTargetDesc pRenderTargets, RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, uint, RenderPassRenderTargetDesc*, RenderPassDepthStencilDesc*, RenderPassFlags, void>)LpVtbl[68])(@this, NumRenderTargets, pRenderTargetsPtr, pDepthStencil, Flags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginRenderPass(uint NumRenderTargets, ref RenderPassRenderTargetDesc pRenderTargets, ref RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
+            {
+                fixed (RenderPassDepthStencilDesc* pDepthStencilPtr = &pDepthStencil)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, uint, RenderPassRenderTargetDesc*, RenderPassDepthStencilDesc*, RenderPassFlags, void>)LpVtbl[68])(@this, NumRenderTargets, pRenderTargetsPtr, pDepthStencilPtr, Flags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndRenderPass()
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList4*, void>)LpVtbl[69])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeMetaCommand(ID3D12MetaCommand* pMetaCommand, void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[70])(@this, pMetaCommand, pInitializationParametersData, InitializationParametersDataSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, ref T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pInitializationParametersDataPtr = &pInitializationParametersData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[70])(@this, pMetaCommand, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeMetaCommand(ref ID3D12MetaCommand pMetaCommand, void* pInitializationParametersData, nuint InitializationParametersDataSizeInBytes)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersData, InitializationParametersDataSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void InitializeMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, ref T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+            {
+                fixed (T0* pInitializationParametersDataPtr = &pInitializationParametersData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteMetaCommand(ID3D12MetaCommand* pMetaCommand, void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[71])(@this, pMetaCommand, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, ref T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pExecutionParametersDataPtr = &pExecutionParametersData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[71])(@this, pMetaCommand, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteMetaCommand(ref ID3D12MetaCommand pMetaCommand, void* pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersData, ExecutionParametersDataSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteMetaCommand<T0>(ref ID3D12MetaCommand pMetaCommand, ref T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
+            {
+                fixed (T0* pExecutionParametersDataPtr = &pExecutionParametersData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BuildRaytracingAccelerationStructure(BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, BuildRaytracingAccelerationStructureDesc*, uint, RaytracingAccelerationStructurePostbuildInfoDesc*, void>)LpVtbl[72])(@this, pDesc, NumPostbuildInfoDescs, pPostbuildInfoDescs);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BuildRaytracingAccelerationStructure(BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, ref RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescsPtr = &pPostbuildInfoDescs)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, BuildRaytracingAccelerationStructureDesc*, uint, RaytracingAccelerationStructurePostbuildInfoDesc*, void>)LpVtbl[72])(@this, pDesc, NumPostbuildInfoDescs, pPostbuildInfoDescsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BuildRaytracingAccelerationStructure(ref BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, BuildRaytracingAccelerationStructureDesc*, uint, RaytracingAccelerationStructurePostbuildInfoDesc*, void>)LpVtbl[72])(@this, pDescPtr, NumPostbuildInfoDescs, pPostbuildInfoDescs);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BuildRaytracingAccelerationStructure(ref BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, ref RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
+            {
+                fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescsPtr = &pPostbuildInfoDescs)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, BuildRaytracingAccelerationStructureDesc*, uint, RaytracingAccelerationStructurePostbuildInfoDesc*, void>)LpVtbl[72])(@this, pDescPtr, NumPostbuildInfoDescs, pPostbuildInfoDescsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, ulong* pSourceAccelerationStructureData)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, RaytracingAccelerationStructurePostbuildInfoDesc*, uint, ulong*, void>)LpVtbl[73])(@this, pDesc, NumSourceAccelerationStructures, pSourceAccelerationStructureData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, ref ulong pSourceAccelerationStructureData)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ulong* pSourceAccelerationStructureDataPtr = &pSourceAccelerationStructureData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, RaytracingAccelerationStructurePostbuildInfoDesc*, uint, ulong*, void>)LpVtbl[73])(@this, pDesc, NumSourceAccelerationStructures, pSourceAccelerationStructureDataPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(ref RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, ulong* pSourceAccelerationStructureData)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, RaytracingAccelerationStructurePostbuildInfoDesc*, uint, ulong*, void>)LpVtbl[73])(@this, pDescPtr, NumSourceAccelerationStructures, pSourceAccelerationStructureData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EmitRaytracingAccelerationStructurePostbuildInfo(ref RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, ref ulong pSourceAccelerationStructureData)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
+            {
+                fixed (ulong* pSourceAccelerationStructureDataPtr = &pSourceAccelerationStructureData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, RaytracingAccelerationStructurePostbuildInfoDesc*, uint, ulong*, void>)LpVtbl[73])(@this, pDescPtr, NumSourceAccelerationStructures, pSourceAccelerationStructureDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyRaytracingAccelerationStructure(ulong DestAccelerationStructureData, ulong SourceAccelerationStructureData, RaytracingAccelerationStructureCopyMode Mode)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ulong, ulong, RaytracingAccelerationStructureCopyMode, void>)LpVtbl[74])(@this, DestAccelerationStructureData, SourceAccelerationStructureData, Mode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetPipelineState1(ID3D12StateObject* pStateObject)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12StateObject*, void>)LpVtbl[75])(@this, pStateObject);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPipelineState1(ref ID3D12StateObject pStateObject)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12StateObject* pStateObjectPtr = &pStateObject)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, ID3D12StateObject*, void>)LpVtbl[75])(@this, pStateObjectPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DispatchRays(DispatchRaysDesc* pDesc)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, DispatchRaysDesc*, void>)LpVtbl[76])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DispatchRays(ref DispatchRaysDesc pDesc)
+        {
+            var @this = (ID3D12GraphicsCommandList4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (DispatchRaysDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList4*, DispatchRaysDesc*, void>)LpVtbl[76])(@this, pDescPtr);
             }
         }
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("28acf509-7f5c-48f6-8611-f316010a6380")]
     [NativeName("Name", "ID3D11UnorderedAccessView")]
     public unsafe partial struct ID3D11UnorderedAccessView
     {
+        public static readonly Guid Guid = new("28acf509-7f5c-48f6-8611-f316010a6380");
+
         public static implicit operator ID3D11View(ID3D11UnorderedAccessView val)
             => Unsafe.As<ID3D11UnorderedAccessView, ID3D11View>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11UnorderedAccessView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(UnorderedAccessViewDesc* pDesc)
+        {
+            var @this = (ID3D11UnorderedAccessView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11UnorderedAccessView*, UnorderedAccessViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref UnorderedAccessViewDesc pDesc)
+        {
+            var @this = (ID3D11UnorderedAccessView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (UnorderedAccessViewDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11UnorderedAccessView*, UnorderedAccessViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

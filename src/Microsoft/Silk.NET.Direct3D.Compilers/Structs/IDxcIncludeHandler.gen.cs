@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [Guid("7f61fc7d-950d-467f-b3e3-3c02fb49187c")]
     [NativeName("Name", "IDxcIncludeHandler")]
     public unsafe partial struct IDxcIncludeHandler
     {
+        public static readonly Guid Guid = new("7f61fc7d-950d-467f-b3e3-3c02fb49187c");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcIncludeHandler val)
             => Unsafe.As<IDxcIncludeHandler, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,79 @@ namespace Silk.NET.Direct3D.Compilers
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(char* pFilename, IDxcBlob** ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilename, ppIncludeSource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(char* pFilename, ref IDxcBlob* ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilename, ppIncludeSourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(ref char pFilename, IDxcBlob** ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pFilenamePtr = &pFilename)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(ref char pFilename, ref IDxcBlob* ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (char* pFilenamePtr = &pFilename)
+            {
+                fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(string pFilename, IDxcBlob** ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
+            ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
+            Marshal.FreeHGlobal((nint)pFilenamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadSource(string pFilename, ref IDxcBlob* ppIncludeSource)
+        {
+            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
+            fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
+            }
+            Marshal.FreeHGlobal((nint)pFilenamePtr);
             return ret;
         }
 

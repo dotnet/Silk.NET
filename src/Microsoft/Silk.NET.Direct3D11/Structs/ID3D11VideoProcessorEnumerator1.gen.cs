@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("465217f2-5568-43cf-b5b9-f61d54531ca1")]
     [NativeName("Name", "ID3D11VideoProcessorEnumerator1")]
     public unsafe partial struct ID3D11VideoProcessorEnumerator1
     {
+        public static readonly Guid Guid = new("465217f2-5568-43cf-b5b9-f61d54531ca1");
+
         public static implicit operator ID3D11VideoProcessorEnumerator(ID3D11VideoProcessorEnumerator1 val)
             => Unsafe.As<ID3D11VideoProcessorEnumerator1, ID3D11VideoProcessorEnumerator>(ref val);
 
@@ -453,6 +456,27 @@ namespace Silk.NET.Direct3D11
             fixed (VideoProcessorFilterRange* pRangePtr = &pRange)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, int* pSupported)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, ref int pSupported)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (int* pSupportedPtr = &pSupported)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);
             }
             return ret;
         }

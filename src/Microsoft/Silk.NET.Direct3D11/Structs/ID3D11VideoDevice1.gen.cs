@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("29da1d51-1321-4454-804b-f5fc9f861f0f")]
     [NativeName("Name", "ID3D11VideoDevice1")]
     public unsafe partial struct ID3D11VideoDevice1
     {
+        public static readonly Guid Guid = new("29da1d51-1321-4454-804b-f5fc9f861f0f");
+
         public static implicit operator ID3D11VideoDevice(ID3D11VideoDevice1 val)
             => Unsafe.As<ID3D11VideoDevice1, ID3D11VideoDevice>(ref val);
 
@@ -1641,6 +1644,2166 @@ namespace Silk.NET.Direct3D11
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+            {
+                fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+            {
+                fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                    {
+                        fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                    {
+                        fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                    {
+                        fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+                {
+                    fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
+                    {
+                        fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
+                        {
+                            fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                {
+                    fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                {
+                    fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (Guid* pCryptoTypePtr = &pCryptoType)
+                    {
+                        fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (int* pSupportedPtr = &pSupported)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (int* pSupportedPtr = &pSupported)
+            {
+                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (int* pSupportedPtr = &pSupported)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (int* pSupportedPtr = &pSupported)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (int* pSupportedPtr = &pSupported)
+                        {
+                            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                        {
+                            fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                        {
+                            fixed (int* pSupportedPtr = &pSupported)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                        {
+                            fixed (int* pSupportedPtr = &pSupported)
+                            {
+                                fixed (int* pRealTimeHintPtr = &pRealTimeHint)
+                                {
+                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+            {
+                fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                {
+                    fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
+            {
+                fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
+                {
+                    fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
+                    {
+                        fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
+                        }
+                    }
                 }
             }
             return ret;

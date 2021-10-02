@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("55050859-4024-474c-87f5-6472eaee44ea")]
     [NativeName("Name", "ID3D12GraphicsCommandList5")]
     public unsafe partial struct ID3D12GraphicsCommandList5
     {
+        public static readonly Guid Guid = new("55050859-4024-474c-87f5-6472eaee44ea");
+
         public static implicit operator ID3D12GraphicsCommandList4(ID3D12GraphicsCommandList5 val)
             => Unsafe.As<ID3D12GraphicsCommandList5, ID3D12GraphicsCommandList4>(ref val);
 
@@ -2644,6 +2647,40 @@ namespace Silk.NET.Direct3D12
             fixed (DispatchRaysDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, DispatchRaysDesc*, void>)LpVtbl[76])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void RSSetShadingRate(ShadingRate baseShadingRate, ShadingRateCombiner* combiners)
+        {
+            var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ShadingRate, ShadingRateCombiner*, void>)LpVtbl[77])(@this, baseShadingRate, combiners);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void RSSetShadingRate(ShadingRate baseShadingRate, ref ShadingRateCombiner combiners)
+        {
+            var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ShadingRateCombiner* combinersPtr = &combiners)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ShadingRate, ShadingRateCombiner*, void>)LpVtbl[77])(@this, baseShadingRate, combinersPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void RSSetShadingRateImage(ID3D12Resource* shadingRateImage)
+        {
+            var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12Resource*, void>)LpVtbl[78])(@this, shadingRateImage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void RSSetShadingRateImage(ref ID3D12Resource shadingRateImage)
+        {
+            var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* shadingRateImagePtr = &shadingRateImage)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12Resource*, void>)LpVtbl[78])(@this, shadingRateImagePtr);
             }
         }
 

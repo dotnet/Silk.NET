@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("a4966eed-76db-44da-84c1-ee9a7afb20a8")]
     [NativeName("Name", "IDXGIFactory7")]
     public unsafe partial struct IDXGIFactory7
     {
+        public static readonly Guid Guid = new("a4966eed-76db-44da-84c1-ee9a7afb20a8");
+
         public static implicit operator IDXGIFactory6(IDXGIFactory7 val)
             => Unsafe.As<IDXGIFactory7, IDXGIFactory6>(ref val);
 
@@ -2266,6 +2269,63 @@ namespace Silk.NET.DXGI
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapterPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterAdaptersChangedEvent(void* hEvent, uint* pdwCookie)
+        {
+            var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, uint*, int>)LpVtbl[30])(@this, hEvent, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterAdaptersChangedEvent(void* hEvent, ref uint pdwCookie)
+        {
+            var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, uint*, int>)LpVtbl[30])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterAdaptersChangedEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, uint*, int>)LpVtbl[30])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterAdaptersChangedEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, uint*, int>)LpVtbl[30])(@this, hEventPtr, pdwCookiePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UnregisterAdaptersChangedEvent(uint dwCookie)
+        {
+            var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, uint, int>)LpVtbl[31])(@this, dwCookie);
             return ret;
         }
 

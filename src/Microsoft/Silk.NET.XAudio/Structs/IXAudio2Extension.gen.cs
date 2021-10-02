@@ -107,5 +107,62 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetProcessingQuantum(uint* quantumNumerator, uint* quantumDenominator)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominator);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetProcessingQuantum(uint* quantumNumerator, ref uint quantumDenominator)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* quantumDenominatorPtr = &quantumDenominator)
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumerator, quantumDenominatorPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetProcessingQuantum(ref uint quantumNumerator, uint* quantumDenominator)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* quantumNumeratorPtr = &quantumNumerator)
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominator);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetProcessingQuantum(ref uint quantumNumerator, ref uint quantumDenominator)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* quantumNumeratorPtr = &quantumNumerator)
+            {
+                fixed (uint* quantumDenominatorPtr = &quantumDenominator)
+                {
+                    ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, uint*, void>)LpVtbl[3])(@this, quantumNumeratorPtr, quantumDenominatorPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetProcessor(uint* processor)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetProcessor(ref uint processor)
+        {
+            var @this = (IXAudio2Extension*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* processorPtr = &processor)
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2Extension*, uint*, void>)LpVtbl[4])(@this, processorPtr);
+            }
+        }
+
     }
 }

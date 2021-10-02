@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("9d8e1289-d7b3-465f-8126-250e349af85d")]
     [NativeName("Name", "IDXGIKeyedMutex")]
     public unsafe partial struct IDXGIKeyedMutex
     {
+        public static readonly Guid Guid = new("9d8e1289-d7b3-465f-8126-250e349af85d");
+
         public static implicit operator IDXGIDeviceSubObject(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, IDXGIDeviceSubObject>(ref val);
 
@@ -407,6 +410,24 @@ namespace Silk.NET.DXGI
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIKeyedMutex*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AcquireSync(ulong Key, uint dwMilliseconds)
+        {
+            var @this = (IDXGIKeyedMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIKeyedMutex*, ulong, uint, int>)LpVtbl[8])(@this, Key, dwMilliseconds);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReleaseSync(ulong Key)
+        {
+            var @this = (IDXGIKeyedMutex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIKeyedMutex*, ulong, int>)LpVtbl[9])(@this, Key);
             return ret;
         }
 

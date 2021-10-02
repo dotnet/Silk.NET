@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("905db94b-a00c-4140-9df5-2b64ca9ea357")]
     [NativeName("Name", "ID3D12DeviceChild")]
     public unsafe partial struct ID3D12DeviceChild
     {
+        public static readonly Guid Guid = new("905db94b-a00c-4140-9df5-2b64ca9ea357");
+
         public static implicit operator ID3D12Object(ID3D12DeviceChild val)
             => Unsafe.As<ID3D12DeviceChild, ID3D12Object>(ref val);
 
@@ -340,6 +343,54 @@ namespace Silk.NET.Direct3D12
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceChild*, byte*, int>)LpVtbl[6])(@this, NamePtr);
             Marshal.FreeHGlobal((nint)NamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(Guid* riid, void** ppvDevice)
+        {
+            var @this = (ID3D12DeviceChild*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceChild*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(Guid* riid, ref void* ppvDevice)
+        {
+            var @this = (ID3D12DeviceChild*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvDevicePtr = &ppvDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceChild*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref Guid riid, void** ppvDevice)
+        {
+            var @this = (ID3D12DeviceChild*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceChild*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref Guid riid, ref void* ppvDevice)
+        {
+            var @this = (ID3D12DeviceChild*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvDevicePtr = &ppvDevice)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceChild*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
+                }
+            }
             return ret;
         }
 

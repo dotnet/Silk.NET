@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("25483823-cd46-4c7d-86ca-47aa95b837bd")]
     [NativeName("Name", "IDXGIFactory3")]
     public unsafe partial struct IDXGIFactory3
     {
+        public static readonly Guid Guid = new("25483823-cd46-4c7d-86ca-47aa95b837bd");
+
         public static implicit operator IDXGIFactory2(IDXGIFactory3 val)
             => Unsafe.As<IDXGIFactory3, IDXGIFactory2>(ref val);
 
@@ -2080,6 +2083,15 @@ namespace Silk.NET.DXGI
                     }
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetCreationFlags()
+        {
+            var @this = (IDXGIFactory3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory3*, uint>)LpVtbl[25])(@this);
             return ret;
         }
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("60eccbc1-378d-4df1-894c-f8ac5ce4d7dd")]
     [NativeName("Name", "ID3D12DebugDevice2")]
     public unsafe partial struct ID3D12DebugDevice2
     {
+        public static readonly Guid Guid = new("60eccbc1-378d-4df1-894c-f8ac5ce4d7dd");
+
         public static implicit operator ID3D12DebugDevice(ID3D12DebugDevice2 val)
             => Unsafe.As<ID3D12DebugDevice2, ID3D12DebugDevice>(ref val);
 
@@ -131,6 +134,48 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, RldoFlags, int>)LpVtbl[5])(@this, Flags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetDebugParameter(DebugDeviceParameterType Type, void* pData, uint DataSize)
+        {
+            var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[6])(@this, Type, pData, DataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetDebugParameter<T0>(DebugDeviceParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[6])(@this, Type, pDataPtr, DataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDebugParameter(DebugDeviceParameterType Type, void* pData, uint DataSize)
+        {
+            var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[7])(@this, Type, pData, DataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDebugParameter<T0>(DebugDeviceParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[7])(@this, Type, pDataPtr, DataSize);
+            }
             return ret;
         }
 

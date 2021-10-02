@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("9727a022-cf1d-4dda-9eba-effa653fc506")]
     [NativeName("Name", "ID3D12DeviceRemovedExtendedData1")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedData1
     {
+        public static readonly Guid Guid = new("9727a022-cf1d-4dda-9eba-effa653fc506");
+
         public static implicit operator ID3D12DeviceRemovedExtendedData(ID3D12DeviceRemovedExtendedData1 val)
             => Unsafe.As<ID3D12DeviceRemovedExtendedData1, ID3D12DeviceRemovedExtendedData>(ref val);
 
@@ -145,6 +148,48 @@ namespace Silk.NET.Direct3D12
             fixed (DredPageFaultOutput* pOutputPtr = &pOutput)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput*, int>)LpVtbl[4])(@this, pOutputPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetAutoBreadcrumbsOutput1(DredAutoBreadcrumbsOutput1* pOutput)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutput);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetAutoBreadcrumbsOutput1(ref DredAutoBreadcrumbsOutput1 pOutput)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (DredAutoBreadcrumbsOutput1* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutputPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetPageFaultAllocationOutput1(DredPageFaultOutput1* pOutput)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutput);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetPageFaultAllocationOutput1(ref DredPageFaultOutput1 pOutput)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (DredPageFaultOutput1* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutputPtr);
             }
             return ret;
         }

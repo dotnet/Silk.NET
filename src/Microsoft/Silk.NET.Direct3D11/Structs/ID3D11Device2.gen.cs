@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9d06dffa-d1e5-4d07-83a8-1bb123f2f841")]
     [NativeName("Name", "ID3D11Device2")]
     public unsafe partial struct ID3D11Device2
     {
+        public static readonly Guid Guid = new("9d06dffa-d1e5-4d07-83a8-1bb123f2f841");
+
         public static implicit operator ID3D11Device1(ID3D11Device2 val)
             => Unsafe.As<ID3D11Device2, ID3D11Device1>(ref val);
 
@@ -43477,6 +43480,1089 @@ namespace Silk.NET.Direct3D11
                 }
             }
             Marshal.FreeHGlobal((nint)lpNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext2(ID3D11DeviceContext2** ppImmediateContext)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11DeviceContext2**, void>)LpVtbl[50])(@this, ppImmediateContext);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext2(ref ID3D11DeviceContext2* ppImmediateContext)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11DeviceContext2** ppImmediateContextPtr = &ppImmediateContext)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11DeviceContext2**, void>)LpVtbl[50])(@this, ppImmediateContextPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext2(uint ContextFlags, ID3D11DeviceContext2** ppDeferredContext)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device2*, uint, ID3D11DeviceContext2**, int>)LpVtbl[51])(@this, ContextFlags, ppDeferredContext);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext2(uint ContextFlags, ref ID3D11DeviceContext2* ppDeferredContext)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11DeviceContext2** ppDeferredContextPtr = &ppDeferredContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device2*, uint, ID3D11DeviceContext2**, int>)LpVtbl[51])(@this, ContextFlags, ppDeferredContextPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+            {
+                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+            {
+                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ID3D11Resource* pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResource, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, uint* pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResource, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, PackedMipDesc* pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDesc, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, TileShape* pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                        {
+                            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMips, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, uint* pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                        {
+                            fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilings, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, SubresourceTiling* pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                        {
+                            fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                            {
+                                ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMips);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetResourceTiling(ref ID3D11Resource pTiledResource, ref uint pNumTilesForEntireResource, ref PackedMipDesc pPackedMipDesc, ref TileShape pStandardTileShapeForNonPackedMips, ref uint pNumSubresourceTilings, uint FirstSubresourceTilingToGet, ref SubresourceTiling pSubresourceTilingsForNonPackedMips)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
+            {
+                fixed (uint* pNumTilesForEntireResourcePtr = &pNumTilesForEntireResource)
+                {
+                    fixed (PackedMipDesc* pPackedMipDescPtr = &pPackedMipDesc)
+                    {
+                        fixed (TileShape* pStandardTileShapeForNonPackedMipsPtr = &pStandardTileShapeForNonPackedMips)
+                        {
+                            fixed (uint* pNumSubresourceTilingsPtr = &pNumSubresourceTilings)
+                            {
+                                fixed (SubresourceTiling* pSubresourceTilingsForNonPackedMipsPtr = &pSubresourceTilingsForNonPackedMips)
+                                {
+                                    ((delegate* unmanaged[Cdecl]<ID3D11Device2*, ID3D11Resource*, uint*, PackedMipDesc*, TileShape*, uint*, uint, SubresourceTiling*, void>)LpVtbl[52])(@this, pTiledResourcePtr, pNumTilesForEntireResourcePtr, pPackedMipDescPtr, pStandardTileShapeForNonPackedMipsPtr, pNumSubresourceTilingsPtr, FirstSubresourceTilingToGet, pSubresourceTilingsForNonPackedMipsPtr);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckMultisampleQualityLevels1(Silk.NET.DXGI.Format Format, uint SampleCount, uint Flags, uint* pNumQualityLevels)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device2*, Silk.NET.DXGI.Format, uint, uint, uint*, int>)LpVtbl[53])(@this, Format, SampleCount, Flags, pNumQualityLevels);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckMultisampleQualityLevels1(Silk.NET.DXGI.Format Format, uint SampleCount, uint Flags, ref uint pNumQualityLevels)
+        {
+            var @this = (ID3D11Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pNumQualityLevelsPtr = &pNumQualityLevels)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device2*, Silk.NET.DXGI.Format, uint, uint, uint*, int>)LpVtbl[53])(@this, Format, SampleCount, Flags, pNumQualityLevelsPtr);
+            }
             return ret;
         }
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("30baa41e-b15b-475c-a0bb-1af5c5b64328")]
     [NativeName("Name", "ID3D12Device2")]
     public unsafe partial struct ID3D12Device2
     {
+        public static readonly Guid Guid = new("30baa41e-b15b-475c-a0bb-1af5c5b64328");
+
         public static implicit operator ID3D12Device1(ID3D12Device2 val)
             => Unsafe.As<ID3D12Device2, ID3D12Device1>(ref val);
 
@@ -5876,6 +5879,114 @@ namespace Silk.NET.Direct3D12
                 fixed (ResidencyPriority* pPrioritiesPtr = &pPriorities)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjectsPtr, pPrioritiesPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riid, ppPipelineState);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppPipelineStatePtr = &ppPipelineState)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riid, ppPipelineStatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riidPtr, ppPipelineState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppPipelineStatePtr = &ppPipelineState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riidPtr, ppPipelineStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riid, ppPipelineState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppPipelineStatePtr = &ppPipelineState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riid, ppPipelineStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riidPtr, ppPipelineState);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        {
+            var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppPipelineStatePtr = &ppPipelineState)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riidPtr, ppPipelineStatePtr);
+                    }
                 }
             }
             return ret;

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("31627037-53ab-4200-9061-05faa9ab45f9")]
     [NativeName("Name", "ID3D11VideoProcessorEnumerator")]
     public unsafe partial struct ID3D11VideoProcessorEnumerator
     {
+        public static readonly Guid Guid = new("31627037-53ab-4200-9061-05faa9ab45f9");
+
         public static implicit operator ID3D11DeviceChild(ID3D11VideoProcessorEnumerator val)
             => Unsafe.As<ID3D11VideoProcessorEnumerator, ID3D11DeviceChild>(ref val);
 
@@ -324,6 +327,132 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoProcessorContentDesc(VideoProcessorContentDesc* pContentDesc)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessorContentDesc(ref VideoProcessorContentDesc pContentDesc)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorContentDesc* pContentDescPtr = &pContentDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, uint* pFlags)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, ref uint pFlags)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pFlagsPtr = &pFlags)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoProcessorCaps(VideoProcessorCaps* pCaps)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessorCaps(ref VideoProcessorCaps pCaps)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorCaps* pCapsPtr = &pCaps)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoProcessorRateConversionCaps(uint TypeIndex, VideoProcessorRateConversionCaps* pCaps)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessorRateConversionCaps(uint TypeIndex, ref VideoProcessorRateConversionCaps pCaps)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorRateConversionCaps* pCapsPtr = &pCaps)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, VideoProcessorCustomRate* pRate)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, ref VideoProcessorCustomRate pRate)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorCustomRate* pRatePtr = &pRate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, VideoProcessorFilterRange* pRange)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, ref VideoProcessorFilterRange pRange)
+        {
+            var @this = (ID3D11VideoProcessorEnumerator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorFilterRange* pRangePtr = &pRange)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
             }
             return ret;
         }

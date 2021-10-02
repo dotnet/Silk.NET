@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("917600da-f58c-4c33-98d8-3e15b390fa24")]
     [NativeName("Name", "ID3D11DeviceContext4")]
     public unsafe partial struct ID3D11DeviceContext4
     {
+        public static readonly Guid Guid = new("917600da-f58c-4c33-98d8-3e15b390fa24");
+
         public static implicit operator ID3D11DeviceContext3(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceContext3>(ref val);
 
@@ -8891,6 +8894,48 @@ namespace Silk.NET.Direct3D11
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext4*, int*, void>)LpVtbl[146])(@this, pHwProtectionEnablePtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Signal(ID3D11Fence* pFence, ulong Value)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext4*, ID3D11Fence*, ulong, int>)LpVtbl[147])(@this, pFence, Value);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Signal(ref ID3D11Fence pFence, ulong Value)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Fence* pFencePtr = &pFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext4*, ID3D11Fence*, ulong, int>)LpVtbl[147])(@this, pFencePtr, Value);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Wait(ID3D11Fence* pFence, ulong Value)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext4*, ID3D11Fence*, ulong, int>)LpVtbl[148])(@this, pFence, Value);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Wait(ref ID3D11Fence pFence, ulong Value)
+        {
+            var @this = (ID3D11DeviceContext4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Fence* pFencePtr = &pFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext4*, ID3D11Fence*, ulong, int>)LpVtbl[148])(@this, pFencePtr, Value);
+            }
+            return ret;
         }
 
     }

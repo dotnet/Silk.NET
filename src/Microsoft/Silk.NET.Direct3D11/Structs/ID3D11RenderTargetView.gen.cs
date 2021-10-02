@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("dfdba067-0b8d-4865-875b-d7b4516cc164")]
     [NativeName("Name", "ID3D11RenderTargetView")]
     public unsafe partial struct ID3D11RenderTargetView
     {
+        public static readonly Guid Guid = new("dfdba067-0b8d-4865-875b-d7b4516cc164");
+
         public static implicit operator ID3D11View(ID3D11RenderTargetView val)
             => Unsafe.As<ID3D11RenderTargetView, ID3D11View>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(RenderTargetViewDesc* pDesc)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref RenderTargetViewDesc pDesc)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RenderTargetViewDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

@@ -30,15 +30,92 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DVertexBuffer9
         (
+            char* name = null,
+            uint? length = null,
+            uint? usage = null,
+            uint? fVF = null,
+            Pool? pool = null,
+            uint? priority = null,
+            uint? lockCount = null,
             void** lpVtbl = null
         ) : this()
         {
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (fVF is not null)
+            {
+                FVF = fVF.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
+
+            if (lockCount is not null)
+            {
+                LockCount = lockCount.Value;
+            }
+
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "Name")]
+        public char* Name;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Length")]
+        public uint Length;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Usage")]
+        public uint Usage;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "FVF")]
+        public uint FVF;
+
+        [NativeName("Type", "D3DPOOL")]
+        [NativeName("Type.Name", "D3DPOOL")]
+        [NativeName("Name", "Pool")]
+        public Pool Pool;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Priority")]
+        public uint Priority;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "LockCount")]
+        public uint LockCount;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -339,6 +416,57 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Resourcetype ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, Resourcetype>)LpVtbl[10])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, void** ppbData, uint Flags)
+        {
+            var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, uint, uint, void**, uint, int>)LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbData, Flags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Lock(uint OffsetToLock, uint SizeToLock, ref void* ppbData, uint Flags)
+        {
+            var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppbDataPtr = &ppbData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, uint, uint, void**, uint, int>)LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbDataPtr, Flags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Unlock()
+        {
+            var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, int>)LpVtbl[12])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(VertexbufferDesc* pDesc)
+        {
+            var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, VertexbufferDesc*, int>)LpVtbl[13])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref VertexbufferDesc pDesc)
+        {
+            var @this = (IDirect3DVertexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VertexbufferDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexBuffer9*, VertexbufferDesc*, int>)LpVtbl[13])(@this, pDescPtr);
+            }
             return ret;
         }
 

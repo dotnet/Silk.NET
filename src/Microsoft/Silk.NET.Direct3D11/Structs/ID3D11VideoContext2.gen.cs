@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("c4e7374c-6243-4d1b-ae87-52b4f740e261")]
     [NativeName("Name", "ID3D11VideoContext2")]
     public unsafe partial struct ID3D11VideoContext2
     {
+        public static readonly Guid Guid = new("c4e7374c-6243-4d1b-ae87-52b4f740e261");
+
         public static implicit operator ID3D11VideoContext1(ID3D11VideoContext2 val)
             => Unsafe.As<ID3D11VideoContext2, ID3D11VideoContext1>(ref val);
 
@@ -8193,6 +8196,270 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[79])(@this, pVideoProcessor, Type, Size, pHDRMetaData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[79])(@this, pVideoProcessor, Type, Size, pHDRMetaDataPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[79])(@this, pVideoProcessorPtr, Type, Size, pHDRMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[79])(@this, pVideoProcessorPtr, Type, Size, pHDRMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessor, pType, Size, pMetaData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pMetaDataPtr = &pMetaData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessor, pType, Size, pMetaDataPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessor, pTypePtr, Size, pMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+            {
+                fixed (T0* pMetaDataPtr = &pMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessor, pTypePtr, Size, pMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pType, Size, pMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (T0* pMetaDataPtr = &pMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pType, Size, pMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pTypePtr, Size, pMetaData);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+                {
+                    fixed (T0* pMetaDataPtr = &pMetaData)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pTypePtr, Size, pMetaDataPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[81])(@this, pVideoProcessor, StreamIndex, Type, Size, pHDRMetaData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[81])(@this, pVideoProcessor, StreamIndex, Type, Size, pHDRMetaDataPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[81])(@this, pVideoProcessorPtr, StreamIndex, Type, Size, pHDRMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[81])(@this, pVideoProcessorPtr, StreamIndex, Type, Size, pHDRMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pType, Size, pMetaData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pMetaDataPtr = &pMetaData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pType, Size, pMetaDataPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pTypePtr, Size, pMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+            {
+                fixed (T0* pMetaDataPtr = &pMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pTypePtr, Size, pMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pType, Size, pMetaData);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (T0* pMetaDataPtr = &pMetaData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pType, Size, pMetaDataPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, void* pMetaData)
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pTypePtr, Size, pMetaData);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.HdrMetadataType pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
+                {
+                    fixed (T0* pMetaDataPtr = &pMetaData)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pTypePtr, Size, pMetaDataPtr);
+                    }
+                }
+            }
         }
 
     }

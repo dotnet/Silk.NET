@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("4ae63092-6327-4c1b-80ae-bfe12ea32b86")]
     [NativeName("Name", "IDXGISurface1")]
     public unsafe partial struct IDXGISurface1
     {
+        public static readonly Guid Guid = new("4ae63092-6327-4c1b-80ae-bfe12ea32b86");
+
         public static implicit operator IDXGISurface(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, IDXGISurface>(ref val);
 
@@ -461,6 +464,48 @@ namespace Silk.NET.DXGI
             var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGISurface1*, int>)LpVtbl[10])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDC(int Discard, nint* phdc)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDC(int Discard, ref nint phdc)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (nint* phdcPtr = &phdc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRect);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReleaseDC(ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
+            }
             return ret;
         }
 

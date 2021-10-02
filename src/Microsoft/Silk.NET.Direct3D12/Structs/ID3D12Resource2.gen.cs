@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("be36ec3b-ea85-4aeb-a45a-e9d76404a495")]
     [NativeName("Name", "ID3D12Resource2")]
     public unsafe partial struct ID3D12Resource2
     {
+        public static readonly Guid Guid = new("be36ec3b-ea85-4aeb-a45a-e9d76404a495");
+
         public static implicit operator ID3D12Resource1(ID3D12Resource2 val)
             => Unsafe.As<ID3D12Resource2, ID3D12Resource1>(ref val);
 
@@ -678,6 +681,17 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ResourceDesc1 GetDesc1()
+        {
+            ResourceDesc1 silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceDesc1* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource2*, ResourceDesc1*, ResourceDesc1*>)LpVtbl[16])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
     }

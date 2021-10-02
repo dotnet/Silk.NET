@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("035f3ab4-482e-4e50-b41f-8a7f8bd8960b")]
     [NativeName("Name", "IDXGIResource")]
     public unsafe partial struct IDXGIResource
     {
+        public static readonly Guid Guid = new("035f3ab4-482e-4e50-b41f-8a7f8bd8960b");
+
         public static implicit operator IDXGIDeviceSubObject(IDXGIResource val)
             => Unsafe.As<IDXGIResource, IDXGIDeviceSubObject>(ref val);
 
@@ -406,6 +409,78 @@ namespace Silk.NET.DXGI
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSharedHandle(void** pSharedHandle)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, void**, int>)LpVtbl[8])(@this, pSharedHandle);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSharedHandle(ref void* pSharedHandle)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** pSharedHandlePtr = &pSharedHandle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, void**, int>)LpVtbl[8])(@this, pSharedHandlePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetUsage(uint* pUsage)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, uint*, int>)LpVtbl[9])(@this, pUsage);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetUsage(ref uint pUsage)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pUsagePtr = &pUsage)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, uint*, int>)LpVtbl[9])(@this, pUsagePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetEvictionPriority(uint EvictionPriority)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, uint, int>)LpVtbl[10])(@this, EvictionPriority);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetEvictionPriority(uint* pEvictionPriority)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, uint*, int>)LpVtbl[11])(@this, pEvictionPriority);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetEvictionPriority(ref uint pEvictionPriority)
+        {
+            var @this = (IDXGIResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pEvictionPriorityPtr = &pEvictionPriority)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIResource*, uint*, int>)LpVtbl[11])(@this, pEvictionPriorityPtr);
             }
             return ret;
         }

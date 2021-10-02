@@ -107,5 +107,78 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(byte* pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespace, ppModuleInstance);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(byte* pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespace, ppModuleInstancePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(ref byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pNamespacePtr = &pNamespace)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstance);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(ref byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pNamespacePtr = &pNamespace)
+            {
+                fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pNamespace);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstance);
+            Marshal.FreeHGlobal((nint)pNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance(string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pNamespace);
+            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
+            }
+            Marshal.FreeHGlobal((nint)pNamespacePtr);
+            return ret;
+        }
+
     }
 }

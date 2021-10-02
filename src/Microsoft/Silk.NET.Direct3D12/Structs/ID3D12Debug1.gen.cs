@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("affaa4ca-63fe-4d8e-b8ad-159000af4304")]
     [NativeName("Name", "ID3D12Debug1")]
     public unsafe partial struct ID3D12Debug1
     {
+        public static readonly Guid Guid = new("affaa4ca-63fe-4d8e-b8ad-159000af4304");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug1 val)
             => Unsafe.As<ID3D12Debug1, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,27 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug1*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EnableDebugLayer()
+        {
+            var @this = (ID3D12Debug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug1*, void>)LpVtbl[3])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetEnableGPUBasedValidation(int Enable)
+        {
+            var @this = (ID3D12Debug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug1*, int, void>)LpVtbl[4])(@this, Enable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetEnableSynchronizedCommandQueueValidation(int Enable)
+        {
+            var @this = (ID3D12Debug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug1*, int, void>)LpVtbl[5])(@this, Enable);
         }
 
     }

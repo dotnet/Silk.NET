@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("a1533d18-0ac1-4084-85b9-89a96116806b")]
     [NativeName("Name", "ID3D12ProtectedSession")]
     public unsafe partial struct ID3D12ProtectedSession
     {
+        public static readonly Guid Guid = new("a1533d18-0ac1-4084-85b9-89a96116806b");
+
         public static implicit operator ID3D12DeviceChild(ID3D12ProtectedSession val)
             => Unsafe.As<ID3D12ProtectedSession, ID3D12DeviceChild>(ref val);
 
@@ -391,6 +394,63 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedSession*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStatusFence(Guid* riid, void** ppFence)
+        {
+            var @this = (ID3D12ProtectedSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedSession*, Guid*, void**, int>)LpVtbl[8])(@this, riid, ppFence);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStatusFence(Guid* riid, ref void* ppFence)
+        {
+            var @this = (ID3D12ProtectedSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppFencePtr = &ppFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedSession*, Guid*, void**, int>)LpVtbl[8])(@this, riid, ppFencePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStatusFence(ref Guid riid, void** ppFence)
+        {
+            var @this = (ID3D12ProtectedSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedSession*, Guid*, void**, int>)LpVtbl[8])(@this, riidPtr, ppFence);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStatusFence(ref Guid riid, ref void* ppFence)
+        {
+            var @this = (ID3D12ProtectedSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppFencePtr = &ppFence)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedSession*, Guid*, void**, int>)LpVtbl[8])(@this, riidPtr, ppFencePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ProtectedSessionStatus GetSessionStatus()
+        {
+            var @this = (ID3D12ProtectedSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ProtectedSessionStatus ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedSession*, ProtectedSessionStatus>)LpVtbl[9])(@this);
             return ret;
         }
 

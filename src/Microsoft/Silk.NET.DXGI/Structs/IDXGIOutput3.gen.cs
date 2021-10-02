@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("8a6bb301-7e7e-41f4-a8e0-5b32f7f99b18")]
     [NativeName("Name", "IDXGIOutput3")]
     public unsafe partial struct IDXGIOutput3
     {
+        public static readonly Guid Guid = new("8a6bb301-7e7e-41f4-a8e0-5b32f7f99b18");
+
         public static implicit operator IDXGIOutput2(IDXGIOutput3 val)
             => Unsafe.As<IDXGIOutput3, IDXGIOutput2>(ref val);
 
@@ -939,6 +942,54 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, int>)LpVtbl[23])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Native.IUnknown* pConcernedDevice, uint* pFlags)
+        {
+            var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput3*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Native.IUnknown* pConcernedDevice, ref uint pFlags)
+        {
+            var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pFlagsPtr = &pFlags)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput3*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlagsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, uint* pFlags)
+        {
+            var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput3*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, ref uint pFlags)
+        {
+            var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+            {
+                fixed (uint* pFlagsPtr = &pFlags)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput3*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlagsPtr);
+                }
+            }
             return ret;
         }
 

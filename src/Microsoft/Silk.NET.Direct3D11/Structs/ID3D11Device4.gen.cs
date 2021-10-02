@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("8992ab71-02e6-4b8d-ba48-b056dcda42c4")]
     [NativeName("Name", "ID3D11Device4")]
     public unsafe partial struct ID3D11Device4
     {
+        public static readonly Guid Guid = new("8992ab71-02e6-4b8d-ba48-b056dcda42c4");
+
         public static implicit operator ID3D11Device3(ID3D11Device4 val)
             => Unsafe.As<ID3D11Device4, ID3D11Device3>(ref val);
 
@@ -45425,6 +45428,61 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterDeviceRemovedEvent(void* hEvent, uint* pdwCookie)
+        {
+            var @this = (ID3D11Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device4*, void*, uint*, int>)LpVtbl[65])(@this, hEvent, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterDeviceRemovedEvent(void* hEvent, ref uint pdwCookie)
+        {
+            var @this = (ID3D11Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device4*, void*, uint*, int>)LpVtbl[65])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterDeviceRemovedEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device4*, T0*, uint*, int>)LpVtbl[65])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterDeviceRemovedEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device4*, T0*, uint*, int>)LpVtbl[65])(@this, hEventPtr, pdwCookiePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UnregisterDeviceRemoved(uint dwCookie)
+        {
+            var @this = (ID3D11Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device4*, uint, void>)LpVtbl[66])(@this, dwCookie);
         }
 
     }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("00cddea8-939b-4b83-a340-a685226666cc")]
     [NativeName("Name", "IDXGIOutput1")]
     public unsafe partial struct IDXGIOutput1
     {
+        public static readonly Guid Guid = new("00cddea8-939b-4b83-a340-a685226666cc");
+
         public static implicit operator IDXGIOutput(IDXGIOutput1 val)
             => Unsafe.As<IDXGIOutput1, IDXGIOutput>(ref val);
 
@@ -698,6 +701,231 @@ namespace Silk.NET.DXGI
             fixed (FrameStatistics* pStatsPtr = &pStats)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, FrameStatistics*, int>)LpVtbl[18])(@this, pStatsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDisplayModeList1(Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ModeDesc1* pDesc)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDisplayModeList1(Silk.NET.DXGI.Format EnumFormat, uint Flags, uint* pNumModes, ref ModeDesc1 pDesc)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModes, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDisplayModeList1(Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ModeDesc1* pDesc)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pNumModesPtr = &pNumModes)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDisplayModeList1(Silk.NET.DXGI.Format EnumFormat, uint Flags, ref uint pNumModes, ref ModeDesc1 pDesc)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pNumModesPtr = &pNumModes)
+            {
+                fixed (ModeDesc1* pDescPtr = &pDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.DXGI.Format, uint, uint*, ModeDesc1*, int>)LpVtbl[19])(@this, EnumFormat, Flags, pNumModesPtr, pDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
+            {
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
+            {
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
+            {
+                fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
+            {
+                fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
+                {
+                    fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDisplaySurfaceData1(IDXGIResource* pDestination)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestination);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDisplaySurfaceData1(ref IDXGIResource pDestination)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIResource* pDestinationPtr = &pDestination)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, IDXGIResource*, int>)LpVtbl[21])(@this, pDestinationPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput(Silk.NET.Core.Native.IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput(Silk.NET.Core.Native.IUnknown* pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput(ref Silk.NET.Core.Native.IUnknown pDevice, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput(ref Silk.NET.Core.Native.IUnknown pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput1*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+                }
             }
             return ret;
         }

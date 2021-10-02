@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("0c711683-2853-4846-9bb0-f3e60639e46a")]
     [NativeName("Name", "ID3D11Texture3D1")]
     public unsafe partial struct ID3D11Texture3D1
     {
+        public static readonly Guid Guid = new("0c711683-2853-4846-9bb0-f3e60639e46a");
+
         public static implicit operator ID3D11Texture3D(ID3D11Texture3D1 val)
             => Unsafe.As<ID3D11Texture3D1, ID3D11Texture3D>(ref val);
 
@@ -381,6 +384,23 @@ namespace Silk.NET.Direct3D11
             fixed (Texture3DDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11Texture3D1*, Texture3DDesc*, void>)LpVtbl[10])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc1(Texture3DDesc1* pDesc)
+        {
+            var @this = (ID3D11Texture3D1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Texture3D1*, Texture3DDesc1*, void>)LpVtbl[11])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc1(ref Texture3DDesc1 pDesc)
+        {
+            var @this = (ID3D11Texture3D1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Texture3DDesc1* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Texture3D1*, Texture3DDesc1*, void>)LpVtbl[11])(@this, pDescPtr);
             }
         }
 

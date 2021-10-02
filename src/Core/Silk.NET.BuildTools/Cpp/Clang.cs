@@ -1159,6 +1159,11 @@ namespace Silk.NET.BuildTools.Cpp
                                 Console.WriteLine("Preferring new definition as the existing one is opaque.");
                                 structs.Remove(existing);
                             }
+                            else if (existing.Fields.FirstOrDefault()?.Name == "LpVtbl" && !existing.Functions.Any())
+                            {
+                                Console.WriteLine("Preferring new definition as the existing one has no functions.");
+                                structs.Remove(existing);
+                            }
                             else
                             {
                                 Console.WriteLine("Preferring existing definition.");

@@ -459,5 +459,150 @@ namespace Silk.NET.XAudio
             ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, void>)LpVtbl[18])(@this);
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly int Start(uint Flags, uint OperationSet)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, uint, uint, int>)LpVtbl[19])(@this, Flags, OperationSet);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Stop(uint Flags, uint OperationSet)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, uint, uint, int>)LpVtbl[20])(@this, Flags, OperationSet);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitSourceBuffer(Buffer* pBuffer, BufferWma* pBufferWMA)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, Buffer*, BufferWma*, int>)LpVtbl[21])(@this, pBuffer, pBufferWMA);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitSourceBuffer(Buffer* pBuffer, ref BufferWma pBufferWMA)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (BufferWma* pBufferWMAPtr = &pBufferWMA)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, Buffer*, BufferWma*, int>)LpVtbl[21])(@this, pBuffer, pBufferWMAPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitSourceBuffer(ref Buffer pBuffer, BufferWma* pBufferWMA)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Buffer* pBufferPtr = &pBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, Buffer*, BufferWma*, int>)LpVtbl[21])(@this, pBufferPtr, pBufferWMA);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SubmitSourceBuffer(ref Buffer pBuffer, ref BufferWma pBufferWMA)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Buffer* pBufferPtr = &pBuffer)
+            {
+                fixed (BufferWma* pBufferWMAPtr = &pBufferWMA)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, Buffer*, BufferWma*, int>)LpVtbl[21])(@this, pBufferPtr, pBufferWMAPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int FlushSourceBuffers()
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, int>)LpVtbl[22])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Discontinuity()
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, int>)LpVtbl[23])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ExitLoop(uint OperationSet)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, uint, int>)LpVtbl[24])(@this, OperationSet);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetState(VoiceState* pVoiceState, uint Flags)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, VoiceState*, uint, void>)LpVtbl[25])(@this, pVoiceState, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetState(ref VoiceState pVoiceState, uint Flags)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VoiceState* pVoiceStatePtr = &pVoiceState)
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, VoiceState*, uint, void>)LpVtbl[25])(@this, pVoiceStatePtr, Flags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetFrequencyRatio(float Ratio, uint OperationSet)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, float, uint, int>)LpVtbl[26])(@this, Ratio, OperationSet);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetFrequencyRatio(float* pRatio)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, float*, void>)LpVtbl[27])(@this, pRatio);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetFrequencyRatio(ref float pRatio)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (float* pRatioPtr = &pRatio)
+            {
+                ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, float*, void>)LpVtbl[27])(@this, pRatioPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetSourceSampleRate(uint NewSourceSampleRate)
+        {
+            var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, uint, int>)LpVtbl[28])(@this, NewSourceSampleRate);
+            return ret;
+        }
+
     }
 }

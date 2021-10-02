@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("bb2c6faa-b5fb-4082-8e6b-388b8cfa90e1")]
     [NativeName("Name", "ID3D11DeviceContext1")]
     public unsafe partial struct ID3D11DeviceContext1
     {
+        public static readonly Guid Guid = new("bb2c6faa-b5fb-4082-8e6b-388b8cfa90e1");
+
         public static implicit operator ID3D11DeviceContext(ID3D11DeviceContext1 val)
             => Unsafe.As<ID3D11DeviceContext1, ID3D11DeviceContext>(ref val);
 
@@ -3778,6 +3781,1500 @@ namespace Silk.NET.Direct3D11
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, int, ID3D11CommandList**, int>)LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pSrcBoxPtr = &pSrcBox)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBoxPtr, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResourcePtr, SrcSubresource, pSrcBox, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBoxPtr, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, DstZ, pSrcResourcePtr, SrcSubresource, pSrcBox, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    fixed (Box* pSrcBoxPtr = &pSrcBox)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, DstZ, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr, CopyFlags);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, T0*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (T0* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, T0*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (T0* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, T0*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    fixed (T0* pSrcDataPtr = &pSrcData)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, T0*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch, CopyFlags);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource(ID3D11Resource* pResource)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, void>)LpVtbl[117])(@this, pResource);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource(ref ID3D11Resource pResource)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, void>)LpVtbl[117])(@this, pResourcePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardView(ID3D11View* pResourceView)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, void>)LpVtbl[118])(@this, pResourceView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardView(ref ID3D11View pResourceView)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pResourceViewPtr = &pResourceView)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, void>)LpVtbl[118])(@this, pResourceViewPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pNumConstantsPtr = &pNumConstants)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstantsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (uint* pFirstConstantPtr = &pFirstConstant)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstantPtr, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstants);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pNumConstantsPtr = &pNumConstants)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstant, pNumConstantsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstants);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
+            {
+                fixed (uint* pFirstConstantPtr = &pFirstConstant)
+                {
+                    fixed (uint* pNumConstantsPtr = &pNumConstants)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffersPtr, pFirstConstantPtr, pNumConstantsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SwapDeviceContextState(ID3DDeviceContextState* pState, ID3DDeviceContextState** ppPreviousState)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)LpVtbl[131])(@this, pState, ppPreviousState);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SwapDeviceContextState(ID3DDeviceContextState* pState, ref ID3DDeviceContextState* ppPreviousState)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3DDeviceContextState** ppPreviousStatePtr = &ppPreviousState)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)LpVtbl[131])(@this, pState, ppPreviousStatePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SwapDeviceContextState(ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3DDeviceContextState* pStatePtr = &pState)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)LpVtbl[131])(@this, pStatePtr, ppPreviousState);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SwapDeviceContextState(ref ID3DDeviceContextState pState, ref ID3DDeviceContextState* ppPreviousState)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3DDeviceContextState* pStatePtr = &pState)
+            {
+                fixed (ID3DDeviceContextState** ppPreviousStatePtr = &ppPreviousState)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)LpVtbl[131])(@this, pStatePtr, ppPreviousStatePtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (float* ColorPtr = &Color)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (float* ColorPtr = &Color)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pViewPtr = &pView)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pViewPtr = &pView)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pViewPtr = &pView)
+            {
+                fixed (float* ColorPtr = &Color)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pViewPtr = &pView)
+            {
+                fixed (float* ColorPtr = &Color)
+                {
+                    fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pResourceViewPtr = &pResourceView)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
+        {
+            var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11View* pResourceViewPtr = &pResourceView)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
+                }
+            }
         }
 
     }

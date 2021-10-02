@@ -30,15 +30,136 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DSurface9
         (
+            char* name = null,
+            uint? width = null,
+            uint? height = null,
+            uint? usage = null,
+            Format? format = null,
+            Pool? pool = null,
+            MultisampleType? multiSampleType = null,
+            uint? multiSampleQuality = null,
+            uint? priority = null,
+            uint? lockCount = null,
+            uint? dCCount = null,
             void** lpVtbl = null
         ) : this()
         {
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (multiSampleType is not null)
+            {
+                MultiSampleType = multiSampleType.Value;
+            }
+
+            if (multiSampleQuality is not null)
+            {
+                MultiSampleQuality = multiSampleQuality.Value;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
+
+            if (lockCount is not null)
+            {
+                LockCount = lockCount.Value;
+            }
+
+            if (dCCount is not null)
+            {
+                DCCount = dCCount.Value;
+            }
+
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "Name")]
+        public char* Name;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Width")]
+        public uint Width;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Height")]
+        public uint Height;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Usage")]
+        public uint Usage;
+
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "Format")]
+        public Format Format;
+
+        [NativeName("Type", "D3DPOOL")]
+        [NativeName("Type.Name", "D3DPOOL")]
+        [NativeName("Name", "Pool")]
+        public Pool Pool;
+
+        [NativeName("Type", "D3DMULTISAMPLE_TYPE")]
+        [NativeName("Type.Name", "D3DMULTISAMPLE_TYPE")]
+        [NativeName("Name", "MultiSampleType")]
+        public MultisampleType MultiSampleType;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "MultiSampleQuality")]
+        public uint MultiSampleQuality;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Priority")]
+        public uint Priority;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "LockCount")]
+        public uint LockCount;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DCCount")]
+        public uint DCCount;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -339,6 +460,162 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Resourcetype ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, Resourcetype>)LpVtbl[10])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetContainer(Guid* riid, void** ppContainer)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, Guid*, void**, int>)LpVtbl[11])(@this, riid, ppContainer);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetContainer(Guid* riid, ref void* ppContainer)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppContainerPtr = &ppContainer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, Guid*, void**, int>)LpVtbl[11])(@this, riid, ppContainerPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetContainer(ref Guid riid, void** ppContainer)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, Guid*, void**, int>)LpVtbl[11])(@this, riidPtr, ppContainer);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetContainer(ref Guid riid, ref void* ppContainer)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppContainerPtr = &ppContainer)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, Guid*, void**, int>)LpVtbl[11])(@this, riidPtr, ppContainerPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(SurfaceDesc* pDesc)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, SurfaceDesc*, int>)LpVtbl[12])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref SurfaceDesc pDesc)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SurfaceDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, SurfaceDesc*, int>)LpVtbl[12])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LockRect(LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[13])(@this, pLockedRect, pRect, Flags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LockRect(LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[13])(@this, pLockedRect, pRectPtr, Flags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LockRect(ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (LockedRect* pLockedRectPtr = &pLockedRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[13])(@this, pLockedRectPtr, pRect, Flags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LockRect(ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (LockedRect* pLockedRectPtr = &pLockedRect)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[13])(@this, pLockedRectPtr, pRectPtr, Flags);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UnlockRect()
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, int>)LpVtbl[14])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDC(nint* phdc)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint*, int>)LpVtbl[15])(@this, phdc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDC(ref nint phdc)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (nint* phdcPtr = &phdc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint*, int>)LpVtbl[15])(@this, phdcPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReleaseDC(nint hdc)
+        {
+            var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint, int>)LpVtbl[16])(@this, hdc);
             return ret;
         }
 

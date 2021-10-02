@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("91308b87-9040-411d-8c67-c39253ce3802")]
     [NativeName("Name", "ID3D11ShaderResourceView1")]
     public unsafe partial struct ID3D11ShaderResourceView1
     {
+        public static readonly Guid Guid = new("91308b87-9040-411d-8c67-c39253ce3802");
+
         public static implicit operator ID3D11ShaderResourceView(ID3D11ShaderResourceView1 val)
             => Unsafe.As<ID3D11ShaderResourceView1, ID3D11ShaderResourceView>(ref val);
 
@@ -365,6 +368,23 @@ namespace Silk.NET.Direct3D11
             fixed (ShaderResourceViewDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11ShaderResourceView1*, ShaderResourceViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc1(ShaderResourceViewDesc1* pDesc1)
+        {
+            var @this = (ID3D11ShaderResourceView1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11ShaderResourceView1*, ShaderResourceViewDesc1*, void>)LpVtbl[9])(@this, pDesc1);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc1(ref ShaderResourceViewDesc1 pDesc1)
+        {
+            var @this = (ID3D11ShaderResourceView1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ShaderResourceViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11ShaderResourceView1*, ShaderResourceViewDesc1*, void>)LpVtbl[9])(@this, pDesc1Ptr);
             }
         }
 

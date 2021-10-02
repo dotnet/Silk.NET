@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("433685fe-e22b-4ca0-a8db-b5b4f4dd0e4a")]
     [NativeName("Name", "ID3D12Fence1")]
     public unsafe partial struct ID3D12Fence1
     {
+        public static readonly Guid Guid = new("433685fe-e22b-4ca0-a8db-b5b4f4dd0e4a");
+
         public static implicit operator ID3D12Fence(ID3D12Fence1 val)
             => Unsafe.As<ID3D12Fence1, ID3D12Fence>(ref val);
 
@@ -436,6 +439,15 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12Fence1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Fence1*, ulong, int>)LpVtbl[10])(@this, Value);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly FenceFlags GetCreationFlags()
+        {
+            var @this = (ID3D12Fence1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            FenceFlags ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Fence1*, FenceFlags>)LpVtbl[11])(@this);
             return ret;
         }
 

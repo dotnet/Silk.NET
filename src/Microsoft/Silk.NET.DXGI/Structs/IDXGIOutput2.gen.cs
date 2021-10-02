@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("595e39d1-2724-4663-99b1-da969de28364")]
     [NativeName("Name", "IDXGIOutput2")]
     public unsafe partial struct IDXGIOutput2
     {
+        public static readonly Guid Guid = new("595e39d1-2724-4663-99b1-da969de28364");
+
         public static implicit operator IDXGIOutput1(IDXGIOutput2 val)
             => Unsafe.As<IDXGIOutput2, IDXGIOutput1>(ref val);
 
@@ -927,6 +930,15 @@ namespace Silk.NET.DXGI
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput2*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SupportsOverlays()
+        {
+            var @this = (IDXGIOutput2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput2*, int>)LpVtbl[23])(@this);
             return ret;
         }
 

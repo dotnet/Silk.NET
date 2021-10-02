@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("94971eca-2bdb-4769-88cf-3675ea757ebc")]
     [NativeName("Name", "ID3D12VideoEncodeCommandList1")]
     public unsafe partial struct ID3D12VideoEncodeCommandList1
     {
+        public static readonly Guid Guid = new("94971eca-2bdb-4769-88cf-3675ea757ebc");
+
         public static implicit operator ID3D12VideoEncodeCommandList(ID3D12VideoEncodeCommandList1 val)
             => Unsafe.As<ID3D12VideoEncodeCommandList1, ID3D12VideoEncodeCommandList>(ref val);
 
@@ -821,6 +824,86 @@ namespace Silk.NET.Direct3D12
             fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12ProtectedResourceSession*, void>)LpVtbl[24])(@this, pProtectedResourceSessionPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pInitializationParameters, nuint InitializationParametersSizeInBytes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommand, pInitializationParameters, InitializationParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeExtensionCommand<T0>(ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pInitializationParameters, nuint InitializationParametersSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pInitializationParametersPtr = &pInitializationParameters)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, T0*, nuint, void>)LpVtbl[25])(@this, pExtensionCommand, pInitializationParametersPtr, InitializationParametersSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void InitializeExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pInitializationParameters, nuint InitializationParametersSizeInBytes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParameters, InitializationParametersSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void InitializeExtensionCommand<T0>(ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pInitializationParameters, nuint InitializationParametersSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                fixed (T0* pInitializationParametersPtr = &pInitializationParameters)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, T0*, nuint, void>)LpVtbl[25])(@this, pExtensionCommandPtr, pInitializationParametersPtr, InitializationParametersSizeInBytes);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteExtensionCommand<T0>(ID3D12VideoExtensionCommand* pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, T0*, nuint, void>)LpVtbl[26])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ExecuteExtensionCommand(ref ID3D12VideoExtensionCommand pExtensionCommand, void* pExecutionParameters, nuint ExecutionParametersSizeInBytes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void>)LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteExtensionCommand<T0>(ref ID3D12VideoExtensionCommand pExtensionCommand, ref T0 pExecutionParameters, nuint ExecutionParametersSizeInBytes) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
+            {
+                fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, T0*, nuint, void>)LpVtbl[26])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes);
+                }
             }
         }
 

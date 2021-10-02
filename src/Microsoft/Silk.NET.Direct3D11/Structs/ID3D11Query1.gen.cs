@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("631b4766-36dc-461d-8db6-c47e13e60916")]
     [NativeName("Name", "ID3D11Query1")]
     public unsafe partial struct ID3D11Query1
     {
+        public static readonly Guid Guid = new("631b4766-36dc-461d-8db6-c47e13e60916");
+
         public static implicit operator ID3D11Query(ID3D11Query1 val)
             => Unsafe.As<ID3D11Query1, ID3D11Query>(ref val);
 
@@ -357,6 +360,23 @@ namespace Silk.NET.Direct3D11
             fixed (QueryDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11Query1*, QueryDesc*, void>)LpVtbl[8])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc1(QueryDesc1* pDesc1)
+        {
+            var @this = (ID3D11Query1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Query1*, QueryDesc1*, void>)LpVtbl[9])(@this, pDesc1);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc1(ref QueryDesc1 pDesc1)
+        {
+            var @this = (ID3D11Query1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (QueryDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Query1*, QueryDesc1*, void>)LpVtbl[9])(@this, pDesc1Ptr);
             }
         }
 

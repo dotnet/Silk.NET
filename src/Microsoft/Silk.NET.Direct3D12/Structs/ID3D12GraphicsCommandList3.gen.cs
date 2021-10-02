@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("6fda83a7-b84c-4e38-9ac8-c7bd22016b3d")]
     [NativeName("Name", "ID3D12GraphicsCommandList3")]
     public unsafe partial struct ID3D12GraphicsCommandList3
     {
+        public static readonly Guid Guid = new("6fda83a7-b84c-4e38-9ac8-c7bd22016b3d");
+
         public static implicit operator ID3D12GraphicsCommandList2(ID3D12GraphicsCommandList3 val)
             => Unsafe.As<ID3D12GraphicsCommandList3, ID3D12GraphicsCommandList2>(ref val);
 
@@ -2373,6 +2376,23 @@ namespace Silk.NET.Direct3D12
                 {
                     ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList3*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[66])(@this, Count, pParamsPtr, pModesPtr);
                 }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
+        {
+            var @this = (ID3D12GraphicsCommandList3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList3*, ID3D12ProtectedResourceSession*, void>)LpVtbl[67])(@this, pProtectedResourceSession);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetProtectedResourceSession(ref ID3D12ProtectedResourceSession pProtectedResourceSession)
+        {
+            var @this = (ID3D12GraphicsCommandList3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList3*, ID3D12ProtectedResourceSession*, void>)LpVtbl[67])(@this, pProtectedResourceSessionPtr);
             }
         }
 

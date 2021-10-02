@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("3fd03d36-4eb1-424a-a582-494ecb8ba813")]
     [NativeName("Name", "ID3D12LifetimeTracker")]
     public unsafe partial struct ID3D12LifetimeTracker
     {
+        public static readonly Guid Guid = new("3fd03d36-4eb1-424a-a582-494ecb8ba813");
+
         public static implicit operator ID3D12DeviceChild(ID3D12LifetimeTracker val)
             => Unsafe.As<ID3D12LifetimeTracker, ID3D12DeviceChild>(ref val);
 
@@ -390,6 +393,27 @@ namespace Silk.NET.Direct3D12
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeTracker*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DestroyOwnedObject(ID3D12DeviceChild* pObject)
+        {
+            var @this = (ID3D12LifetimeTracker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeTracker*, ID3D12DeviceChild*, int>)LpVtbl[8])(@this, pObject);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DestroyOwnedObject(ref ID3D12DeviceChild pObject)
+        {
+            var @this = (ID3D12LifetimeTracker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeTracker*, ID3D12DeviceChild*, int>)LpVtbl[8])(@this, pObjectPtr);
             }
             return ret;
         }

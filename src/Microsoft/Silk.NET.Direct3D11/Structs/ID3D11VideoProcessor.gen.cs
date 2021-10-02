@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("1d7b0652-185f-41c6-85ce-0c5be3d4ae6c")]
     [NativeName("Name", "ID3D11VideoProcessor")]
     public unsafe partial struct ID3D11VideoProcessor
     {
+        public static readonly Guid Guid = new("1d7b0652-185f-41c6-85ce-0c5be3d4ae6c");
+
         public static implicit operator ID3D11DeviceChild(ID3D11VideoProcessor val)
             => Unsafe.As<ID3D11VideoProcessor, ID3D11DeviceChild>(ref val);
 
@@ -326,6 +329,40 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetContentDesc(VideoProcessorContentDesc* pDesc)
+        {
+            var @this = (ID3D11VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessor*, VideoProcessorContentDesc*, void>)LpVtbl[7])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetContentDesc(ref VideoProcessorContentDesc pDesc)
+        {
+            var @this = (ID3D11VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessorContentDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessor*, VideoProcessorContentDesc*, void>)LpVtbl[7])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetRateConversionCaps(VideoProcessorRateConversionCaps* pCaps)
+        {
+            var @this = (ID3D11VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessor*, VideoProcessorRateConversionCaps*, void>)LpVtbl[8])(@this, pCaps);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetRateConversionCaps(ref VideoProcessorRateConversionCaps pCaps)
+        {
+            var @this = (ID3D11VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessorRateConversionCaps* pCapsPtr = &pCaps)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessor*, VideoProcessorRateConversionCaps*, void>)LpVtbl[8])(@this, pCapsPtr);
+            }
         }
 
     }

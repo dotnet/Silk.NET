@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("59c0cb01-35f0-4a70-8f67-87905c906a53")]
     [NativeName("Name", "ID3D11VideoDevice2")]
     public unsafe partial struct ID3D11VideoDevice2
     {
+        public static readonly Guid Guid = new("59c0cb01-35f0-4a70-8f67-87905c906a53");
+
         public static implicit operator ID3D11VideoDevice1(ID3D11VideoDevice2 val)
             => Unsafe.As<ID3D11VideoDevice2, ID3D11VideoDevice1>(ref val);
 
@@ -3804,6 +3807,75 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
                         }
                     }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckFeatureSupport(FeatureVideo Feature, void* pFeatureSupportData, uint FeatureSupportDataSize)
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, FeatureVideo, void*, uint, int>)LpVtbl[24])(@this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(FeatureVideo Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, FeatureVideo, T0*, uint, int>)LpVtbl[24])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int NegotiateCryptoSessionKeyExchangeMT(ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData)
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int NegotiateCryptoSessionKeyExchangeMT<T0>(ID3D11CryptoSession* pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, T0*, int>)LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int NegotiateCryptoSessionKeyExchangeMT(ref ID3D11CryptoSession pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, void* pData)
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int NegotiateCryptoSessionKeyExchangeMT<T0>(ref ID3D11CryptoSession pCryptoSession, CryptoSessionKeyExchangeFlags flags, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                fixed (T0* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, T0*, int>)LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pDataPtr);
                 }
             }
             return ret;

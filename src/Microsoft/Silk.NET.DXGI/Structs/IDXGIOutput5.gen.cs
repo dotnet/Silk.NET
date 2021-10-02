@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("80a07424-ab52-42eb-833c-0c42fd282d98")]
     [NativeName("Name", "IDXGIOutput5")]
     public unsafe partial struct IDXGIOutput5
     {
+        public static readonly Guid Guid = new("80a07424-ab52-42eb-833c-0c42fd282d98");
+
         public static implicit operator IDXGIOutput4(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput4>(ref val);
 
@@ -1039,6 +1042,114 @@ namespace Silk.NET.DXGI
                 fixed (uint* pFlagsPtr = &pFlags)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlagsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
+            {
+                fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        {
+            var @this = (IDXGIOutput5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
+                {
+                    fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput5*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
+                    }
                 }
             }
             return ret;

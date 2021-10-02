@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("77acce80-638e-4e65-8895-c1f23386863e")]
     [NativeName("Name", "ID3D12Device1")]
     public unsafe partial struct ID3D12Device1
     {
+        public static readonly Guid Guid = new("77acce80-638e-4e65-8895-c1f23386863e");
+
         public static implicit operator ID3D12Device(ID3D12Device1 val)
             => Unsafe.As<ID3D12Device1, ID3D12Device>(ref val);
 
@@ -5612,6 +5615,270 @@ namespace Silk.NET.Direct3D12
             Luid* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, Luid*, Luid*>)LpVtbl[43])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibraryPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibrary);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibraryPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            {
+                fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion(ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEvent);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion(ID3D12Fence** ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ulong* pFenceValuesPtr = &pFenceValues)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEvent);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ID3D12Fence** ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ulong* pFenceValuesPtr = &pFenceValues)
+            {
+                fixed (T0* hEventPtr = &hEvent)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion(ref ID3D12Fence* ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEvent);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ref ID3D12Fence* ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+            {
+                fixed (T0* hEventPtr = &hEvent)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion(ref ID3D12Fence* ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+            {
+                fixed (ulong* pFenceValuesPtr = &pFenceValues)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEvent);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ref ID3D12Fence* ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+            {
+                fixed (ulong* pFenceValuesPtr = &pFenceValues)
+                {
+                    fixed (T0* hEventPtr = &hEvent)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetResidencyPriority(uint NumObjects, ID3D12Pageable** ppObjects, ResidencyPriority* pPriorities)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjects, pPriorities);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetResidencyPriority(uint NumObjects, ID3D12Pageable** ppObjects, ref ResidencyPriority pPriorities)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResidencyPriority* pPrioritiesPtr = &pPriorities)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjects, pPrioritiesPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetResidencyPriority(uint NumObjects, ref ID3D12Pageable* ppObjects, ResidencyPriority* pPriorities)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjectsPtr, pPriorities);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetResidencyPriority(uint NumObjects, ref ID3D12Pageable* ppObjects, ref ResidencyPriority pPriorities)
+        {
+            var @this = (ID3D12Device1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
+            {
+                fixed (ResidencyPriority* pPrioritiesPtr = &pPriorities)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device1*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjectsPtr, pPrioritiesPtr);
+                }
+            }
+            return ret;
         }
 
     }

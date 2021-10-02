@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9b32f9ad-bdcc-40a6-a39d-d5c865845720")]
     [NativeName("Name", "ID3D11CryptoSession")]
     public unsafe partial struct ID3D11CryptoSession
     {
+        public static readonly Guid Guid = new("9b32f9ad-bdcc-40a6-a39d-d5c865845720");
+
         public static implicit operator ID3D11DeviceChild(ID3D11CryptoSession val)
             => Unsafe.As<ID3D11CryptoSession, ID3D11DeviceChild>(ref val);
 
@@ -326,6 +329,110 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetCryptoType(Guid* pCryptoType)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoType);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetCryptoType(ref Guid pCryptoType)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* pCryptoTypePtr = &pCryptoType)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[7])(@this, pCryptoTypePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDecoderProfile(Guid* pDecoderProfile)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfile);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDecoderProfile(ref Guid pDecoderProfile)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, Guid*, void>)LpVtbl[8])(@this, pDecoderProfilePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCertificateSize(uint* pCertificateSize)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificateSize(ref uint pCertificateSize)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pCertificateSizePtr = &pCertificateSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint*, int>)LpVtbl[9])(@this, pCertificateSizePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCertificate(uint CertificateSize, byte* pCertificate)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificate);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificate(uint CertificateSize, ref byte pCertificate)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pCertificatePtr = &pCertificate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificate(uint CertificateSize, string pCertificate)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pCertificatePtr = (byte*) Marshal.StringToHGlobalAnsi(pCertificate);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
+            Marshal.FreeHGlobal((nint)pCertificatePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetCryptoSessionHandle(void** pCryptoSessionHandle)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetCryptoSessionHandle(ref void* pCryptoSessionHandle)
+        {
+            var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void** pCryptoSessionHandlePtr = &pCryptoSessionHandle)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, void**, void>)LpVtbl[11])(@this, pCryptoSessionHandlePtr);
+            }
         }
 
     }

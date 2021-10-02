@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("0a753dcf-c4d8-4b91-adf6-be5a60d95a76")]
     [NativeName("Name", "ID3D12Fence")]
     public unsafe partial struct ID3D12Fence
     {
+        public static readonly Guid Guid = new("0a753dcf-c4d8-4b91-adf6-be5a60d95a76");
+
         public static implicit operator ID3D12Pageable(ID3D12Fence val)
             => Unsafe.As<ID3D12Fence, ID3D12Pageable>(ref val);
 
@@ -394,6 +397,45 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12Fence*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetCompletedValue()
+        {
+            var @this = (ID3D12Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Fence*, ulong>)LpVtbl[8])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetEventOnCompletion(ulong Value, void* hEvent)
+        {
+            var @this = (ID3D12Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Fence*, ulong, void*, int>)LpVtbl[9])(@this, Value, hEvent);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetEventOnCompletion<T0>(ulong Value, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D12Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Fence*, ulong, T0*, int>)LpVtbl[9])(@this, Value, hEventPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Signal(ulong Value)
+        {
+            var @this = (ID3D12Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Fence*, ulong, int>)LpVtbl[10])(@this, Value);
             return ret;
         }
 

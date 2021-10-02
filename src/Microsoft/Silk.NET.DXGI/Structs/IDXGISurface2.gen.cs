@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("aba496dd-b617-4cb8-a866-bc44d7eb1fa2")]
     [NativeName("Name", "IDXGISurface2")]
     public unsafe partial struct IDXGISurface2
     {
+        public static readonly Guid Guid = new("aba496dd-b617-4cb8-a866-bc44d7eb1fa2");
+
         public static implicit operator IDXGISurface1(IDXGISurface2 val)
             => Unsafe.As<IDXGISurface2, IDXGISurface1>(ref val);
 
@@ -505,6 +508,114 @@ namespace Silk.NET.DXGI
             fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(Guid* riid, void** ppParentResource, uint* pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndex);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(Guid* riid, void** ppParentResource, ref uint pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndexPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(Guid* riid, ref void* ppParentResource, uint* pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppParentResourcePtr = &ppParentResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndex);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(Guid* riid, ref void* ppParentResource, ref uint pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppParentResourcePtr = &ppParentResource)
+            {
+                fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndexPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(ref Guid riid, void** ppParentResource, uint* pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndex);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(ref Guid riid, void** ppParentResource, ref uint pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndexPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(ref Guid riid, ref void* ppParentResource, uint* pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppParentResourcePtr = &ppParentResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndex);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource(ref Guid riid, ref void* ppParentResource, ref uint pSubresourceIndex)
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppParentResourcePtr = &ppParentResource)
+                {
+                    fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndexPtr);
+                    }
+                }
             }
             return ret;
         }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("765a30f3-f624-4c6f-a828-ace948622445")]
     [NativeName("Name", "ID3D12PipelineState")]
     public unsafe partial struct ID3D12PipelineState
     {
+        public static readonly Guid Guid = new("765a30f3-f624-4c6f-a828-ace948622445");
+
         public static implicit operator ID3D12Pageable(ID3D12PipelineState val)
             => Unsafe.As<ID3D12PipelineState, ID3D12Pageable>(ref val);
 
@@ -393,6 +396,27 @@ namespace Silk.NET.Direct3D12
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCachedBlob(Silk.NET.Core.Native.ID3D10Blob** ppBlob)
+        {
+            var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineState*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[8])(@this, ppBlob);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCachedBlob(ref Silk.NET.Core.Native.ID3D10Blob* ppBlob)
+        {
+            var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.ID3D10Blob** ppBlobPtr = &ppBlob)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineState*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[8])(@this, ppBlobPtr);
             }
             return ret;
         }

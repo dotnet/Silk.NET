@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("553103fb-1fe7-4557-bb38-946d7d0e7ca7")]
     [NativeName("Name", "ID3D12GraphicsCommandList1")]
     public unsafe partial struct ID3D12GraphicsCommandList1
     {
+        public static readonly Guid Guid = new("553103fb-1fe7-4557-bb38-946d7d0e7ca7");
+
         public static implicit operator ID3D12GraphicsCommandList(ID3D12GraphicsCommandList1 val)
             => Unsafe.As<ID3D12GraphicsCommandList1, ID3D12GraphicsCommandList>(ref val);
 
@@ -1789,6 +1792,545 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                    {
+                        fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[60])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRanges);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ID3D12Resource** ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResources, pDependentSubresourceRangesPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, SubresourceRangeUint64* pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRanges);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void AtomicCopyBufferUINT64(ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, ref ID3D12Resource* ppDependentResources, ref SubresourceRangeUint64 pDependentSubresourceRanges)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
+            {
+                fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
+                {
+                    fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
+                    {
+                        fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, SubresourceRangeUint64*, void>)LpVtbl[61])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, Dependencies, ppDependentResourcesPtr, pDependentSubresourceRangesPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void OMSetDepthBounds(float Min, float Max)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, float, float, void>)LpVtbl[62])(@this, Min, Max);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetSamplePositions(uint NumSamplesPerPixel, uint NumPixels, SamplePosition* pSamplePositions)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositions);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetSamplePositions(uint NumSamplesPerPixel, uint NumPixels, ref SamplePosition pSamplePositions)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (SamplePosition* pSamplePositionsPtr = &pSamplePositions)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, uint, uint, SamplePosition*, void>)LpVtbl[63])(@this, NumSamplesPerPixel, NumPixels, pSamplePositionsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, Silk.NET.Maths.Rectangle<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Rectangle<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.Maths.Rectangle<int>* pSrcRectPtr = &pSrcRect)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, Silk.NET.Maths.Rectangle<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ID3D12Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Rectangle<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pSrcRectPtr = &pSrcRect)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResource, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, Silk.NET.Maths.Rectangle<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRect, Format, ResolveMode);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ID3D12Resource* pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Rectangle<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Silk.NET.Maths.Rectangle<int>* pSrcRectPtr = &pSrcRect)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResource, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveSubresourceRegion(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, Silk.NET.Maths.Rectangle<int>* pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRect, Format, ResolveMode);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresourceRegion(ref ID3D12Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, ref ID3D12Resource pSrcResource, uint SrcSubresource, ref Silk.NET.Maths.Rectangle<int> pSrcRect, Silk.NET.DXGI.Format Format, ResolveMode ResolveMode)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    fixed (Silk.NET.Maths.Rectangle<int>* pSrcRectPtr = &pSrcRect)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, Silk.NET.Maths.Rectangle<int>*, Silk.NET.DXGI.Format, ResolveMode, void>)LpVtbl[64])(@this, pDstResourcePtr, DstSubresource, DstX, DstY, pSrcResourcePtr, SrcSubresource, pSrcRectPtr, Format, ResolveMode);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetViewInstanceMask(uint Mask)
+        {
+            var @this = (ID3D12GraphicsCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList1*, uint, void>)LpVtbl[65])(@this, Mask);
         }
 
     }

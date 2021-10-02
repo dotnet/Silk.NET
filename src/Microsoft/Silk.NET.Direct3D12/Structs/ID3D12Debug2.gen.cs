@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("93a665c4-a3b2-4e5d-b692-a26ae14e3374")]
     [NativeName("Name", "ID3D12Debug2")]
     public unsafe partial struct ID3D12Debug2
     {
+        public static readonly Guid Guid = new("93a665c4-a3b2-4e5d-b692-a26ae14e3374");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug2 val)
             => Unsafe.As<ID3D12Debug2, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,13 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug2*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetGPUBasedValidationFlags(GpuBasedValidationFlags Flags)
+        {
+            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, GpuBasedValidationFlags, void>)LpVtbl[3])(@this, Flags);
         }
 
     }

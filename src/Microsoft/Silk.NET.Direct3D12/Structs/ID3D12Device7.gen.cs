@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("5c014b53-68a1-4b9b-8bd1-dd6046b9358b")]
     [NativeName("Name", "ID3D12Device7")]
     public unsafe partial struct ID3D12Device7
     {
+        public static readonly Guid Guid = new("5c014b53-68a1-4b9b-8bd1-dd6046b9358b");
+
         public static implicit operator ID3D12Device6(ID3D12Device7 val)
             => Unsafe.As<ID3D12Device7, ID3D12Device6>(ref val);
 
@@ -9255,6 +9258,354 @@ namespace Silk.NET.Direct3D12
                 fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, BackgroundProcessingMode, MeasurementsAction, T0*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFrom, riid, ppNewStateObject);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFrom, riid, ppNewStateObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFrom, riidPtr, ppNewStateObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFrom, riidPtr, ppNewStateObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFromPtr, riid, ppNewStateObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+            {
+                fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFromPtr, riid, ppNewStateObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFromPtr, riidPtr, ppNewStateObject);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(StateObjectDesc* pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAddition, pStateObjectToGrowFromPtr, riidPtr, ppNewStateObjectPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFrom, riid, ppNewStateObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFrom, riid, ppNewStateObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFrom, riidPtr, ppNewStateObject);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ID3D12StateObject* pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFrom, riidPtr, ppNewStateObjectPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFromPtr, riid, ppNewStateObject);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, Guid* riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+                {
+                    fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFromPtr, riid, ppNewStateObjectPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, void** ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFromPtr, riidPtr, ppNewStateObject);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AddToStateObject(ref StateObjectDesc pAddition, ref ID3D12StateObject pStateObjectToGrowFrom, ref Guid riid, ref void* ppNewStateObject)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pAdditionPtr = &pAddition)
+            {
+                fixed (ID3D12StateObject* pStateObjectToGrowFromPtr = &pStateObjectToGrowFrom)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppNewStateObjectPtr = &ppNewStateObject)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, StateObjectDesc*, ID3D12StateObject*, Guid*, void**, int>)LpVtbl[66])(@this, pAdditionPtr, pStateObjectToGrowFromPtr, riidPtr, ppNewStateObjectPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ProtectedResourceSessionDesc1* pDesc, Guid* riid, void** ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDesc, riid, ppSession);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ProtectedResourceSessionDesc1* pDesc, Guid* riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppSessionPtr = &ppSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDesc, riid, ppSessionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ProtectedResourceSessionDesc1* pDesc, ref Guid riid, void** ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDesc, riidPtr, ppSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ProtectedResourceSessionDesc1* pDesc, ref Guid riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppSessionPtr = &ppSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDesc, riidPtr, ppSessionPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ref ProtectedResourceSessionDesc1 pDesc, Guid* riid, void** ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDescPtr, riid, ppSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ref ProtectedResourceSessionDesc1 pDesc, Guid* riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc1* pDescPtr = &pDesc)
+            {
+                fixed (void** ppSessionPtr = &ppSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDescPtr, riid, ppSessionPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ref ProtectedResourceSessionDesc1 pDesc, ref Guid riid, void** ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc1* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDescPtr, riidPtr, ppSession);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession1(ref ProtectedResourceSessionDesc1 pDesc, ref Guid riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc1* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppSessionPtr = &ppSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device7*, ProtectedResourceSessionDesc1*, Guid*, void**, int>)LpVtbl[67])(@this, pDescPtr, riidPtr, ppSessionPtr);
+                    }
                 }
             }
             return ret;

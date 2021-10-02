@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("b4e3c01d-e79e-4637-91b2-510e9f4c9b8f")]
     [NativeName("Name", "ID3D11DeviceContext3")]
     public unsafe partial struct ID3D11DeviceContext3
     {
+        public static readonly Guid Guid = new("b4e3c01d-e79e-4637-91b2-510e9f4c9b8f");
+
         public static implicit operator ID3D11DeviceContext2(ID3D11DeviceContext3 val)
             => Unsafe.As<ID3D11DeviceContext3, ID3D11DeviceContext2>(ref val);
 
@@ -8847,6 +8850,47 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, void>)LpVtbl[143])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void Flush1(ContextType ContextType, void* hEvent)
+        {
+            var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ContextType, void*, void>)LpVtbl[144])(@this, ContextType, hEvent);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Flush1<T0>(ContextType ContextType, ref T0 hEvent) where T0 : unmanaged
+        {
+            var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ContextType, T0*, void>)LpVtbl[144])(@this, ContextType, hEventPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetHardwareProtectionState(int HwProtectionEnable)
+        {
+            var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int, void>)LpVtbl[145])(@this, HwProtectionEnable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetHardwareProtectionState(int* pHwProtectionEnable)
+        {
+            var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int*, void>)LpVtbl[146])(@this, pHwProtectionEnable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetHardwareProtectionState(ref int pHwProtectionEnable)
+        {
+            var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pHwProtectionEnablePtr = &pHwProtectionEnable)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int*, void>)LpVtbl[146])(@this, pHwProtectionEnablePtr);
+            }
         }
 
     }

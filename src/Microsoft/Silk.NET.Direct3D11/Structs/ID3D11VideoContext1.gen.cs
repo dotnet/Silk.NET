@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a7f026da-a5f8-4487-a564-15e34357651e")]
     [NativeName("Name", "ID3D11VideoContext1")]
     public unsafe partial struct ID3D11VideoContext1
     {
+        public static readonly Guid Guid = new("a7f026da-a5f8-4487-a564-15e34357651e");
+
         public static implicit operator ID3D11VideoContext(ID3D11VideoContext1 val)
             => Unsafe.As<ID3D11VideoContext1, ID3D11VideoContext>(ref val);
 
@@ -7386,6 +7389,810 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderBufferDesc1* pBufferDescPtr = &pBufferDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (VideoDecoderBufferDesc1* pBufferDescPtr = &pBufferDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc1*, int>)LpVtbl[65])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+            {
+                fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputData, pPrivateOutputDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+                {
+                    fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckCryptoSessionStatus(ID3D11CryptoSession* pCryptoSession, CryptoSessionStatus* pStatus)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatus);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckCryptoSessionStatus(ID3D11CryptoSession* pCryptoSession, ref CryptoSessionStatus pStatus)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (CryptoSessionStatus* pStatusPtr = &pStatus)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSession, pStatusPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckCryptoSessionStatus(ref ID3D11CryptoSession pCryptoSession, CryptoSessionStatus* pStatus)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatus);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckCryptoSessionStatus(ref ID3D11CryptoSession pCryptoSession, ref CryptoSessionStatus pStatus)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
+            {
+                fixed (CryptoSessionStatus* pStatusPtr = &pStatus)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11CryptoSession*, CryptoSessionStatus*, int>)LpVtbl[67])(@this, pCryptoSessionPtr, pStatusPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoder, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDesc, ReferenceFrameCount);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, Silk.NET.DXGI.ColorSpaceType, VideoSampleDesc*, uint, int>)LpVtbl[68])(@this, pDecoderPtr, InputColorSpace, pOutputDescPtr, ReferenceFrameCount);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, VideoSampleDesc* pOutputDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, ref VideoSampleDesc pOutputDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoder, pOutputDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, VideoSampleDesc* pOutputDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, ref VideoSampleDesc pOutputDesc)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoDecoder*, VideoSampleDesc*, int>)LpVtbl[69])(@this, pDecoderPtr, pOutputDescPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputColorSpace1(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.ColorSpaceType ColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessor, ColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.ColorSpaceType ColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[70])(@this, pVideoProcessorPtr, ColorSpace);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, int ShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, int ShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, void>)LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputColorSpace1(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputColorSpace1(ID3D11VideoProcessor* pVideoProcessor, ref Silk.NET.DXGI.ColorSpaceType pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessor, pColorSpacePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpace);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, ref Silk.NET.DXGI.ColorSpaceType pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[72])(@this, pVideoProcessorPtr, pColorSpacePtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, int* pShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsage);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputShaderUsage(ID3D11VideoProcessor* pVideoProcessor, ref int pShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pShaderUsagePtr = &pShaderUsage)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessor, pShaderUsagePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, int* pShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsage);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetOutputShaderUsage(ref ID3D11VideoProcessor pVideoProcessor, ref int pShaderUsage)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pShaderUsagePtr = &pShaderUsage)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, void>)LpVtbl[73])(@this, pVideoProcessorPtr, pShaderUsagePtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamColorSpace1(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType ColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessor, StreamIndex, ColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType ColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType, void>)LpVtbl[74])(@this, pVideoProcessorPtr, StreamIndex, ColorSpace);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorSetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, int FlipHorizontal, int FlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorSetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, int FlipHorizontal, int FlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, int, int, void>)LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamColorSpace1(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpace);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamColorSpace1(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.ColorSpaceType pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessor, StreamIndex, pColorSpacePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.ColorSpaceType* pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpace);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamColorSpace1(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Silk.NET.DXGI.ColorSpaceType pColorSpace)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (Silk.NET.DXGI.ColorSpaceType* pColorSpacePtr = &pColorSpace)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.ColorSpaceType*, void>)LpVtbl[76])(@this, pVideoProcessorPtr, StreamIndex, pColorSpacePtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, int* pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, int* pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pFlipVerticalPtr = &pFlipVertical)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, ref int pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnable, ref int pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+            {
+                fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnable, int* pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pEnablePtr = &pEnable)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnable, int* pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pEnablePtr = &pEnable)
+            {
+                fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnable, ref int pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pEnablePtr = &pEnable)
+            {
+                fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnable, ref int pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (int* pEnablePtr = &pEnable)
+            {
+                fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                {
+                    fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessor, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnable, int* pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVertical);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnable, int* pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontal, pFlipVerticalPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnable, ref int pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVertical);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnable, ref int pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                {
+                    fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnable, pFlipHorizontalPtr, pFlipVerticalPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnable, int* pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pEnablePtr = &pEnable)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVertical);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnable, int* pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pEnablePtr = &pEnable)
+                {
+                    fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontal, pFlipVerticalPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnable, ref int pFlipHorizontal, int* pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pEnablePtr = &pEnable)
+                {
+                    fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVertical);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void VideoProcessorGetStreamMirror(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnable, ref int pFlipHorizontal, ref int pFlipVertical)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (int* pEnablePtr = &pEnable)
+                {
+                    fixed (int* pFlipHorizontalPtr = &pFlipHorizontal)
+                    {
+                        fixed (int* pFlipVerticalPtr = &pFlipVertical)
+                        {
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, int*, int*, void>)LpVtbl[77])(@this, pVideoProcessorPtr, StreamIndex, pEnablePtr, pFlipHorizontalPtr, pFlipVerticalPtr);
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
+            {
+                fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHints);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreams, pBehaviorHintsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHints);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+        {
+            var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (VideoProcessorStreamBehaviorHint* pStreamsPtr = &pStreams)
+                {
+                    fixed (uint* pBehaviorHintsPtr = &pBehaviorHints)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, Silk.NET.DXGI.Format, uint, VideoProcessorStreamBehaviorHint*, uint*, int>)LpVtbl[78])(@this, pVideoProcessorPtr, OutputWidth, OutputHeight, OutputFormat, StreamCount, pStreamsPtr, pBehaviorHintsPtr);
+                    }
+                }
+            }
+            return ret;
         }
 
     }

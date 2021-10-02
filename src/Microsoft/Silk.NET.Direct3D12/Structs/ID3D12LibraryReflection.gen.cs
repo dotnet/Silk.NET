@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("8e349d19-54db-4a56-9dc9-119d87bdb804")]
     [NativeName("Name", "ID3D12LibraryReflection")]
     public unsafe partial struct ID3D12LibraryReflection
     {
+        public static readonly Guid Guid = new("8e349d19-54db-4a56-9dc9-119d87bdb804");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12LibraryReflection val)
             => Unsafe.As<ID3D12LibraryReflection, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,36 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12LibraryReflection*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(LibraryDesc* pDesc)
+        {
+            var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref LibraryDesc pDesc)
+        {
+            var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (LibraryDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex)
+        {
+            var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ID3D12FunctionReflection* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*>)LpVtbl[4])(@this, FunctionIndex);
             return ret;
         }
 

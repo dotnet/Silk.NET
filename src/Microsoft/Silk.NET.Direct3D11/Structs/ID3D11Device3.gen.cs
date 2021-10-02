@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a05c8c37-d2c6-4732-b3a0-9ce0b0dc9ae6")]
     [NativeName("Name", "ID3D11Device3")]
     public unsafe partial struct ID3D11Device3
     {
+        public static readonly Guid Guid = new("a05c8c37-d2c6-4732-b3a0-9ce0b0dc9ae6");
+
         public static implicit operator ID3D11Device2(ID3D11Device3 val)
             => Unsafe.As<ID3D11Device3, ID3D11Device2>(ref val);
 
@@ -44564,6 +44567,864 @@ namespace Silk.NET.Direct3D11
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Silk.NET.DXGI.Format, uint, uint, uint*, int>)LpVtbl[53])(@this, Format, SampleCount, Flags, pNumQualityLevelsPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(Texture2DDesc1* pDesc1, SubresourceData* pInitialData, ID3D11Texture2D1** ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1, pInitialData, ppTexture2D);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(Texture2DDesc1* pDesc1, SubresourceData* pInitialData, ref ID3D11Texture2D1* ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Texture2D1** ppTexture2DPtr = &ppTexture2D)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1, pInitialData, ppTexture2DPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(Texture2DDesc1* pDesc1, ref SubresourceData pInitialData, ID3D11Texture2D1** ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1, pInitialDataPtr, ppTexture2D);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(Texture2DDesc1* pDesc1, ref SubresourceData pInitialData, ref ID3D11Texture2D1* ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+            {
+                fixed (ID3D11Texture2D1** ppTexture2DPtr = &ppTexture2D)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1, pInitialDataPtr, ppTexture2DPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(ref Texture2DDesc1 pDesc1, SubresourceData* pInitialData, ID3D11Texture2D1** ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture2DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1Ptr, pInitialData, ppTexture2D);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(ref Texture2DDesc1 pDesc1, SubresourceData* pInitialData, ref ID3D11Texture2D1* ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture2DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (ID3D11Texture2D1** ppTexture2DPtr = &ppTexture2D)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1Ptr, pInitialData, ppTexture2DPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(ref Texture2DDesc1 pDesc1, ref SubresourceData pInitialData, ID3D11Texture2D1** ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture2DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1Ptr, pInitialDataPtr, ppTexture2D);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture2D1(ref Texture2DDesc1 pDesc1, ref SubresourceData pInitialData, ref ID3D11Texture2D1* ppTexture2D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture2DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+                {
+                    fixed (ID3D11Texture2D1** ppTexture2DPtr = &ppTexture2D)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture2DDesc1*, SubresourceData*, ID3D11Texture2D1**, int>)LpVtbl[54])(@this, pDesc1Ptr, pInitialDataPtr, ppTexture2DPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(Texture3DDesc1* pDesc1, SubresourceData* pInitialData, ID3D11Texture3D1** ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1, pInitialData, ppTexture3D);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(Texture3DDesc1* pDesc1, SubresourceData* pInitialData, ref ID3D11Texture3D1* ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Texture3D1** ppTexture3DPtr = &ppTexture3D)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1, pInitialData, ppTexture3DPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(Texture3DDesc1* pDesc1, ref SubresourceData pInitialData, ID3D11Texture3D1** ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1, pInitialDataPtr, ppTexture3D);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(Texture3DDesc1* pDesc1, ref SubresourceData pInitialData, ref ID3D11Texture3D1* ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+            {
+                fixed (ID3D11Texture3D1** ppTexture3DPtr = &ppTexture3D)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1, pInitialDataPtr, ppTexture3DPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(ref Texture3DDesc1 pDesc1, SubresourceData* pInitialData, ID3D11Texture3D1** ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture3DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1Ptr, pInitialData, ppTexture3D);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(ref Texture3DDesc1 pDesc1, SubresourceData* pInitialData, ref ID3D11Texture3D1* ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture3DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (ID3D11Texture3D1** ppTexture3DPtr = &ppTexture3D)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1Ptr, pInitialData, ppTexture3DPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(ref Texture3DDesc1 pDesc1, ref SubresourceData pInitialData, ID3D11Texture3D1** ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture3DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1Ptr, pInitialDataPtr, ppTexture3D);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateTexture3D1(ref Texture3DDesc1 pDesc1, ref SubresourceData pInitialData, ref ID3D11Texture3D1* ppTexture3D)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Texture3DDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (SubresourceData* pInitialDataPtr = &pInitialData)
+                {
+                    fixed (ID3D11Texture3D1** ppTexture3DPtr = &ppTexture3D)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Texture3DDesc1*, SubresourceData*, ID3D11Texture3D1**, int>)LpVtbl[55])(@this, pDesc1Ptr, pInitialDataPtr, ppTexture3DPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState2(RasterizerDesc2* pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, RasterizerDesc2*, ID3D11RasterizerState2**, int>)LpVtbl[56])(@this, pRasterizerDesc, ppRasterizerState);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState2(RasterizerDesc2* pRasterizerDesc, ref ID3D11RasterizerState2* ppRasterizerState)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11RasterizerState2** ppRasterizerStatePtr = &ppRasterizerState)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, RasterizerDesc2*, ID3D11RasterizerState2**, int>)LpVtbl[56])(@this, pRasterizerDesc, ppRasterizerStatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState2(ref RasterizerDesc2 pRasterizerDesc, ID3D11RasterizerState2** ppRasterizerState)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RasterizerDesc2* pRasterizerDescPtr = &pRasterizerDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, RasterizerDesc2*, ID3D11RasterizerState2**, int>)LpVtbl[56])(@this, pRasterizerDescPtr, ppRasterizerState);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRasterizerState2(ref RasterizerDesc2 pRasterizerDesc, ref ID3D11RasterizerState2* ppRasterizerState)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RasterizerDesc2* pRasterizerDescPtr = &pRasterizerDesc)
+            {
+                fixed (ID3D11RasterizerState2** ppRasterizerStatePtr = &ppRasterizerState)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, RasterizerDesc2*, ID3D11RasterizerState2**, int>)LpVtbl[56])(@this, pRasterizerDescPtr, ppRasterizerStatePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ID3D11Resource* pResource, ShaderResourceViewDesc1* pDesc1, ID3D11ShaderResourceView1** ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResource, pDesc1, ppSRView1);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ID3D11Resource* pResource, ShaderResourceViewDesc1* pDesc1, ref ID3D11ShaderResourceView1* ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11ShaderResourceView1** ppSRView1Ptr = &ppSRView1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResource, pDesc1, ppSRView1Ptr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ID3D11Resource* pResource, ref ShaderResourceViewDesc1 pDesc1, ID3D11ShaderResourceView1** ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ShaderResourceViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResource, pDesc1Ptr, ppSRView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ID3D11Resource* pResource, ref ShaderResourceViewDesc1 pDesc1, ref ID3D11ShaderResourceView1* ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ShaderResourceViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (ID3D11ShaderResourceView1** ppSRView1Ptr = &ppSRView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResource, pDesc1Ptr, ppSRView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ref ID3D11Resource pResource, ShaderResourceViewDesc1* pDesc1, ID3D11ShaderResourceView1** ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResourcePtr, pDesc1, ppSRView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ref ID3D11Resource pResource, ShaderResourceViewDesc1* pDesc1, ref ID3D11ShaderResourceView1* ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (ID3D11ShaderResourceView1** ppSRView1Ptr = &ppSRView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResourcePtr, pDesc1, ppSRView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ref ID3D11Resource pResource, ref ShaderResourceViewDesc1 pDesc1, ID3D11ShaderResourceView1** ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (ShaderResourceViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResourcePtr, pDesc1Ptr, ppSRView1);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateShaderResourceView1(ref ID3D11Resource pResource, ref ShaderResourceViewDesc1 pDesc1, ref ID3D11ShaderResourceView1* ppSRView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (ShaderResourceViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    fixed (ID3D11ShaderResourceView1** ppSRView1Ptr = &ppSRView1)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, ShaderResourceViewDesc1*, ID3D11ShaderResourceView1**, int>)LpVtbl[57])(@this, pResourcePtr, pDesc1Ptr, ppSRView1Ptr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ID3D11Resource* pResource, UnorderedAccessViewDesc1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResource, pDesc1, ppUAView1);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ID3D11Resource* pResource, UnorderedAccessViewDesc1* pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11UnorderedAccessView1** ppUAView1Ptr = &ppUAView1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResource, pDesc1, ppUAView1Ptr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ID3D11Resource* pResource, ref UnorderedAccessViewDesc1 pDesc1, ID3D11UnorderedAccessView1** ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (UnorderedAccessViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResource, pDesc1Ptr, ppUAView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ID3D11Resource* pResource, ref UnorderedAccessViewDesc1 pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (UnorderedAccessViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (ID3D11UnorderedAccessView1** ppUAView1Ptr = &ppUAView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResource, pDesc1Ptr, ppUAView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ref ID3D11Resource pResource, UnorderedAccessViewDesc1* pDesc1, ID3D11UnorderedAccessView1** ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResourcePtr, pDesc1, ppUAView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ref ID3D11Resource pResource, UnorderedAccessViewDesc1* pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (ID3D11UnorderedAccessView1** ppUAView1Ptr = &ppUAView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResourcePtr, pDesc1, ppUAView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ref ID3D11Resource pResource, ref UnorderedAccessViewDesc1 pDesc1, ID3D11UnorderedAccessView1** ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (UnorderedAccessViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResourcePtr, pDesc1Ptr, ppUAView1);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateUnorderedAccessView1(ref ID3D11Resource pResource, ref UnorderedAccessViewDesc1 pDesc1, ref ID3D11UnorderedAccessView1* ppUAView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (UnorderedAccessViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    fixed (ID3D11UnorderedAccessView1** ppUAView1Ptr = &ppUAView1)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, UnorderedAccessViewDesc1*, ID3D11UnorderedAccessView1**, int>)LpVtbl[58])(@this, pResourcePtr, pDesc1Ptr, ppUAView1Ptr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ID3D11Resource* pResource, RenderTargetViewDesc1* pDesc1, ID3D11RenderTargetView1** ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResource, pDesc1, ppRTView1);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ID3D11Resource* pResource, RenderTargetViewDesc1* pDesc1, ref ID3D11RenderTargetView1* ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11RenderTargetView1** ppRTView1Ptr = &ppRTView1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResource, pDesc1, ppRTView1Ptr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ID3D11Resource* pResource, ref RenderTargetViewDesc1 pDesc1, ID3D11RenderTargetView1** ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RenderTargetViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResource, pDesc1Ptr, ppRTView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ID3D11Resource* pResource, ref RenderTargetViewDesc1 pDesc1, ref ID3D11RenderTargetView1* ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (RenderTargetViewDesc1* pDesc1Ptr = &pDesc1)
+            {
+                fixed (ID3D11RenderTargetView1** ppRTView1Ptr = &ppRTView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResource, pDesc1Ptr, ppRTView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ref ID3D11Resource pResource, RenderTargetViewDesc1* pDesc1, ID3D11RenderTargetView1** ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResourcePtr, pDesc1, ppRTView1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ref ID3D11Resource pResource, RenderTargetViewDesc1* pDesc1, ref ID3D11RenderTargetView1* ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (ID3D11RenderTargetView1** ppRTView1Ptr = &ppRTView1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResourcePtr, pDesc1, ppRTView1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ref ID3D11Resource pResource, ref RenderTargetViewDesc1 pDesc1, ID3D11RenderTargetView1** ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (RenderTargetViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResourcePtr, pDesc1Ptr, ppRTView1);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateRenderTargetView1(ref ID3D11Resource pResource, ref RenderTargetViewDesc1 pDesc1, ref ID3D11RenderTargetView1* ppRTView1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Resource* pResourcePtr = &pResource)
+            {
+                fixed (RenderTargetViewDesc1* pDesc1Ptr = &pDesc1)
+                {
+                    fixed (ID3D11RenderTargetView1** ppRTView1Ptr = &ppRTView1)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, RenderTargetViewDesc1*, ID3D11RenderTargetView1**, int>)LpVtbl[59])(@this, pResourcePtr, pDesc1Ptr, ppRTView1Ptr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateQuery1(QueryDesc1* pQueryDesc1, ID3D11Query1** ppQuery1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, QueryDesc1*, ID3D11Query1**, int>)LpVtbl[60])(@this, pQueryDesc1, ppQuery1);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateQuery1(QueryDesc1* pQueryDesc1, ref ID3D11Query1* ppQuery1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Query1** ppQuery1Ptr = &ppQuery1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, QueryDesc1*, ID3D11Query1**, int>)LpVtbl[60])(@this, pQueryDesc1, ppQuery1Ptr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateQuery1(ref QueryDesc1 pQueryDesc1, ID3D11Query1** ppQuery1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (QueryDesc1* pQueryDesc1Ptr = &pQueryDesc1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, QueryDesc1*, ID3D11Query1**, int>)LpVtbl[60])(@this, pQueryDesc1Ptr, ppQuery1);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateQuery1(ref QueryDesc1 pQueryDesc1, ref ID3D11Query1* ppQuery1)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (QueryDesc1* pQueryDesc1Ptr = &pQueryDesc1)
+            {
+                fixed (ID3D11Query1** ppQuery1Ptr = &ppQuery1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, QueryDesc1*, ID3D11Query1**, int>)LpVtbl[60])(@this, pQueryDesc1Ptr, ppQuery1Ptr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext3(ID3D11DeviceContext3** ppImmediateContext)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11DeviceContext3**, void>)LpVtbl[61])(@this, ppImmediateContext);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetImmediateContext3(ref ID3D11DeviceContext3* ppImmediateContext)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11DeviceContext3** ppImmediateContextPtr = &ppImmediateContext)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11DeviceContext3**, void>)LpVtbl[61])(@this, ppImmediateContextPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext3(uint ContextFlags, ID3D11DeviceContext3** ppDeferredContext)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint, ID3D11DeviceContext3**, int>)LpVtbl[62])(@this, ContextFlags, ppDeferredContext);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDeferredContext3(uint ContextFlags, ref ID3D11DeviceContext3* ppDeferredContext)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11DeviceContext3** ppDeferredContextPtr = &ppDeferredContext)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint, ID3D11DeviceContext3**, int>)LpVtbl[62])(@this, ContextFlags, ppDeferredContextPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pSrcDataPtr = &pSrcData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (T0* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[63])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (T0* pSrcDataPtr = &pSrcData)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteToSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void WriteToSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
+            {
+                fixed (Box* pDstBoxPtr = &pDstBox)
+                {
+                    fixed (T0* pSrcDataPtr = &pSrcData)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device3*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[63])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstData, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBox);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Box* pSrcBoxPtr = &pSrcBox)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstData, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBoxPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstData, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBox);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox)
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstData, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBox);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResource, SrcSubresource, pSrcBoxPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBox);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
+                {
+                    fixed (Box* pSrcBoxPtr = &pSrcBox)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[64])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, pSrcResourcePtr, SrcSubresource, pSrcBoxPtr);
+                    }
+                }
+            }
         }
 
     }

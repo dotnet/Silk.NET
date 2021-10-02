@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("7071e1f0-e84b-4b33-974f-12fa49de65c5")]
     [NativeName("Name", "ID3D12Tools")]
     public unsafe partial struct ID3D12Tools
     {
+        public static readonly Guid Guid = new("7071e1f0-e84b-4b33-974f-12fa49de65c5");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Tools val)
             => Unsafe.As<ID3D12Tools, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,22 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12Tools*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EnableShaderInstrumentation(int bEnable)
+        {
+            var @this = (ID3D12Tools*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Tools*, int, void>)LpVtbl[3])(@this, bEnable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ShaderInstrumentationEnabled()
+        {
+            var @this = (ID3D12Tools*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, int>)LpVtbl[4])(@this);
             return ret;
         }
 

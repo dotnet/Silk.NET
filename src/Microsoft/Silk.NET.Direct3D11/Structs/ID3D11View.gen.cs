@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("839d1216-bb2e-412b-b7f4-a9dbebe08ed1")]
     [NativeName("Name", "ID3D11View")]
     public unsafe partial struct ID3D11View
     {
+        public static readonly Guid Guid = new("839d1216-bb2e-412b-b7f4-a9dbebe08ed1");
+
         public static implicit operator ID3D11DeviceChild(ID3D11View val)
             => Unsafe.As<ID3D11View, ID3D11DeviceChild>(ref val);
 
@@ -326,6 +329,23 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResource(ID3D11Resource** ppResource)
+        {
+            var @this = (ID3D11View*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11View*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResource);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetResource(ref ID3D11Resource* ppResource)
+        {
+            var @this = (ID3D11View*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource** ppResourcePtr = &ppResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11View*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+            }
         }
 
     }

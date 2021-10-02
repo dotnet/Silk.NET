@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a24bc4d1-769e-43f7-8013-98ff566c18e2")]
     [NativeName("Name", "ID3D11CommandList")]
     public unsafe partial struct ID3D11CommandList
     {
+        public static readonly Guid Guid = new("a24bc4d1-769e-43f7-8013-98ff566c18e2");
+
         public static implicit operator ID3D11DeviceChild(ID3D11CommandList val)
             => Unsafe.As<ID3D11CommandList, ID3D11DeviceChild>(ref val);
 
@@ -325,6 +328,15 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11CommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetContextFlags()
+        {
+            var @this = (ID3D11CommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11CommandList*, uint>)LpVtbl[7])(@this);
             return ret;
         }
 

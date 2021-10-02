@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("81dadc15-2bad-4392-93c5-101345c4aa98")]
     [NativeName("Name", "ID3D12Device3")]
     public unsafe partial struct ID3D12Device3
     {
+        public static readonly Guid Guid = new("81dadc15-2bad-4392-93c5-101345c4aa98");
+
         public static implicit operator ID3D12Device2(ID3D12Device3 val)
             => Unsafe.As<ID3D12Device3, ID3D12Device2>(ref val);
 
@@ -5987,6 +5990,270 @@ namespace Silk.NET.Direct3D12
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress(void* pAddress, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddress, riid, ppvHeap);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress(void* pAddress, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvHeapPtr = &ppvHeap)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddress, riid, ppvHeapPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress(void* pAddress, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddress, riidPtr, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress(void* pAddress, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddress, riidPtr, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress<T0>(ref T0 pAddress, Guid* riid, void** ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pAddressPtr = &pAddress)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress<T0>(ref T0 pAddress, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pAddressPtr = &pAddress)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress<T0>(ref T0 pAddress, ref Guid riid, void** ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pAddressPtr = &pAddress)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromAddress<T0>(ref T0 pAddress, ref Guid riid, ref void* ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pAddressPtr = &pAddress)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvHeapPtr = &ppvHeap)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeapPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping(void* hFileMapping, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMapping, riid, ppvHeap);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping(void* hFileMapping, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvHeapPtr = &ppvHeap)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMapping, riid, ppvHeapPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping(void* hFileMapping, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping(void* hFileMapping, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMapping, riidPtr, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping<T0>(ref T0 hFileMapping, Guid* riid, void** ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFileMappingPtr = &hFileMapping)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping<T0>(ref T0 hFileMapping, Guid* riid, ref void* ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFileMappingPtr = &hFileMapping)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping<T0>(ref T0 hFileMapping, ref Guid riid, void** ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFileMappingPtr = &hFileMapping)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenExistingHeapFromFileMapping<T0>(ref T0 hFileMapping, ref Guid riid, ref void* ppvHeap) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFileMappingPtr = &hFileMapping)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvHeapPtr = &ppvHeap)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeapPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnqueueMakeResident(ResidencyFlags Flags, uint NumObjects, ID3D12Pageable** ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, ResidencyFlags, uint, ID3D12Pageable**, ID3D12Fence*, ulong, int>)LpVtbl[50])(@this, Flags, NumObjects, ppObjects, pFenceToSignal, FenceValueToSignal);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnqueueMakeResident(ResidencyFlags Flags, uint NumObjects, ID3D12Pageable** ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Fence* pFenceToSignalPtr = &pFenceToSignal)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, ResidencyFlags, uint, ID3D12Pageable**, ID3D12Fence*, ulong, int>)LpVtbl[50])(@this, Flags, NumObjects, ppObjects, pFenceToSignalPtr, FenceValueToSignal);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnqueueMakeResident(ResidencyFlags Flags, uint NumObjects, ref ID3D12Pageable* ppObjects, ID3D12Fence* pFenceToSignal, ulong FenceValueToSignal)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, ResidencyFlags, uint, ID3D12Pageable**, ID3D12Fence*, ulong, int>)LpVtbl[50])(@this, Flags, NumObjects, ppObjectsPtr, pFenceToSignal, FenceValueToSignal);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnqueueMakeResident(ResidencyFlags Flags, uint NumObjects, ref ID3D12Pageable* ppObjects, ref ID3D12Fence pFenceToSignal, ulong FenceValueToSignal)
+        {
+            var @this = (ID3D12Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
+            {
+                fixed (ID3D12Fence* pFenceToSignalPtr = &pFenceToSignal)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device3*, ResidencyFlags, uint, ID3D12Pageable**, ID3D12Fence*, ulong, int>)LpVtbl[50])(@this, Flags, NumObjects, ppObjectsPtr, pFenceToSignalPtr, FenceValueToSignal);
                 }
             }
             return ret;

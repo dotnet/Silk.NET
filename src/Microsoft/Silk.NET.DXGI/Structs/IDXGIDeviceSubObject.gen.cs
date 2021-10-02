@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("3d3e0379-f9de-4d58-bb6c-18d62992f1a6")]
     [NativeName("Name", "IDXGIDeviceSubObject")]
     public unsafe partial struct IDXGIDeviceSubObject
     {
+        public static readonly Guid Guid = new("3d3e0379-f9de-4d58-bb6c-18d62992f1a6");
+
         public static implicit operator IDXGIObject(IDXGIDeviceSubObject val)
             => Unsafe.As<IDXGIDeviceSubObject, IDXGIObject>(ref val);
 
@@ -354,6 +357,54 @@ namespace Silk.NET.DXGI
                 fixed (void** ppParentPtr = &ppParent)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(Guid* riid, void** ppDevice)
+        {
+            var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(Guid* riid, ref void* ppDevice)
+        {
+            var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppDevicePtr = &ppDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref Guid riid, void** ppDevice)
+        {
+            var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref Guid riid, ref void* ppDevice)
+        {
+            var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppDevicePtr = &ppDevice)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
             }
             return ret;

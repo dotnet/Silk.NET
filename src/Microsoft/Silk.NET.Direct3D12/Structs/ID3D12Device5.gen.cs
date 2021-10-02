@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("8b4f173b-2fea-4b80-8f58-4307191ab95d")]
     [NativeName("Name", "ID3D12Device5")]
     public unsafe partial struct ID3D12Device5
     {
+        public static readonly Guid Guid = new("8b4f173b-2fea-4b80-8f58-4307191ab95d");
+
         public static implicit operator ID3D12Device4(ID3D12Device5 val)
             => Unsafe.As<ID3D12Device5, ID3D12Device4>(ref val);
 
@@ -8392,6 +8395,818 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, Guid* riid, void** ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwner, riid, ppvTracker);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, Guid* riid, ref void* ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvTrackerPtr = &ppvTracker)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwner, riid, ppvTrackerPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, ref Guid riid, void** ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwner, riidPtr, ppvTracker);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ID3D12LifetimeOwner* pOwner, ref Guid riid, ref void* ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvTrackerPtr = &ppvTracker)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwner, riidPtr, ppvTrackerPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ref ID3D12LifetimeOwner pOwner, Guid* riid, void** ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12LifetimeOwner* pOwnerPtr = &pOwner)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwnerPtr, riid, ppvTracker);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ref ID3D12LifetimeOwner pOwner, Guid* riid, ref void* ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12LifetimeOwner* pOwnerPtr = &pOwner)
+            {
+                fixed (void** ppvTrackerPtr = &ppvTracker)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwnerPtr, riid, ppvTrackerPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ref ID3D12LifetimeOwner pOwner, ref Guid riid, void** ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12LifetimeOwner* pOwnerPtr = &pOwner)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwnerPtr, riidPtr, ppvTracker);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateLifetimeTracker(ref ID3D12LifetimeOwner pOwner, ref Guid riid, ref void* ppvTracker)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12LifetimeOwner* pOwnerPtr = &pOwner)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvTrackerPtr = &ppvTracker)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[57])(@this, pOwnerPtr, riidPtr, ppvTrackerPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void RemoveDevice()
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12Device5*, void>)LpVtbl[58])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommands(uint* pNumMetaCommands, MetaCommandDesc* pDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, uint*, MetaCommandDesc*, int>)LpVtbl[59])(@this, pNumMetaCommands, pDescs);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommands(uint* pNumMetaCommands, ref MetaCommandDesc pDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (MetaCommandDesc* pDescsPtr = &pDescs)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, uint*, MetaCommandDesc*, int>)LpVtbl[59])(@this, pNumMetaCommands, pDescsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommands(ref uint pNumMetaCommands, MetaCommandDesc* pDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pNumMetaCommandsPtr = &pNumMetaCommands)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, uint*, MetaCommandDesc*, int>)LpVtbl[59])(@this, pNumMetaCommandsPtr, pDescs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EnumerateMetaCommands(ref uint pNumMetaCommands, ref MetaCommandDesc pDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pNumMetaCommandsPtr = &pNumMetaCommands)
+            {
+                fixed (MetaCommandDesc* pDescsPtr = &pDescs)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, uint*, MetaCommandDesc*, int>)LpVtbl[59])(@this, pNumMetaCommandsPtr, pDescsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, uint* pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytes, pParameterCount, pParameterDescs);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, uint* pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytes, pParameterCount, pParameterDescsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, ref uint pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pParameterCountPtr = &pParameterCount)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytes, pParameterCountPtr, pParameterDescs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, ref uint pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pParameterCountPtr = &pParameterCount)
+            {
+                fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytes, pParameterCountPtr, pParameterDescsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, uint* pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytesPtr, pParameterCount, pParameterDescs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, uint* pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+            {
+                fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytesPtr, pParameterCount, pParameterDescsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, ref uint pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+            {
+                fixed (uint* pParameterCountPtr = &pParameterCount)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytesPtr, pParameterCountPtr, pParameterDescs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(Guid* CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, ref uint pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+            {
+                fixed (uint* pParameterCountPtr = &pParameterCount)
+                {
+                    fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandId, Stage, pTotalStructureSizeInBytesPtr, pParameterCountPtr, pParameterDescsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, uint* pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytes, pParameterCount, pParameterDescs);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, uint* pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytes, pParameterCount, pParameterDescsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, ref uint pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pParameterCountPtr = &pParameterCount)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytes, pParameterCountPtr, pParameterDescs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, uint* pTotalStructureSizeInBytes, ref uint pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pParameterCountPtr = &pParameterCount)
+                {
+                    fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytes, pParameterCountPtr, pParameterDescsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, uint* pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytesPtr, pParameterCount, pParameterDescs);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, uint* pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+                {
+                    fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytesPtr, pParameterCount, pParameterDescsPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, ref uint pParameterCount, MetaCommandParameterDesc* pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+                {
+                    fixed (uint* pParameterCountPtr = &pParameterCount)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytesPtr, pParameterCountPtr, pParameterDescs);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EnumerateMetaCommandParameters(ref Guid CommandId, MetaCommandParameterStage Stage, ref uint pTotalStructureSizeInBytes, ref uint pParameterCount, ref MetaCommandParameterDesc pParameterDescs)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (uint* pTotalStructureSizeInBytesPtr = &pTotalStructureSizeInBytes)
+                {
+                    fixed (uint* pParameterCountPtr = &pParameterCount)
+                    {
+                        fixed (MetaCommandParameterDesc* pParameterDescsPtr = &pParameterDescs)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, MetaCommandParameterStage, uint*, uint*, MetaCommandParameterDesc*, int>)LpVtbl[60])(@this, CommandIdPtr, Stage, pTotalStructureSizeInBytesPtr, pParameterCountPtr, pParameterDescsPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(Guid* CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            {
+                fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(Guid* CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand(ref Guid CommandId, uint NodeMask, void* pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersData, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, void** ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, Guid* riid, ref void* ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                {
+                    fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, void** ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateMetaCommand<T0>(ref Guid CommandId, uint NodeMask, ref T0 pCreationParametersData, nuint CreationParametersDataSizeInBytes, ref Guid riid, ref void* ppMetaCommand) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* CommandIdPtr = &CommandId)
+            {
+                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppMetaCommandPtr = &ppMetaCommand)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(StateObjectDesc* pDesc, Guid* riid, void** ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDesc, riid, ppStateObject);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(StateObjectDesc* pDesc, Guid* riid, ref void* ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppStateObjectPtr = &ppStateObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDesc, riid, ppStateObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(StateObjectDesc* pDesc, ref Guid riid, void** ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDesc, riidPtr, ppStateObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(StateObjectDesc* pDesc, ref Guid riid, ref void* ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppStateObjectPtr = &ppStateObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDesc, riidPtr, ppStateObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(ref StateObjectDesc pDesc, Guid* riid, void** ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDescPtr, riid, ppStateObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(ref StateObjectDesc pDesc, Guid* riid, ref void* ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppStateObjectPtr = &ppStateObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDescPtr, riid, ppStateObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(ref StateObjectDesc pDesc, ref Guid riid, void** ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDescPtr, riidPtr, ppStateObject);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateStateObject(ref StateObjectDesc pDesc, ref Guid riid, ref void* ppStateObject)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (StateObjectDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppStateObjectPtr = &ppStateObject)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, StateObjectDesc*, Guid*, void**, int>)LpVtbl[62])(@this, pDescPtr, riidPtr, ppStateObjectPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetRaytracingAccelerationStructurePrebuildInfo(BuildRaytracingAccelerationStructureInputs* pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Device5*, BuildRaytracingAccelerationStructureInputs*, RaytracingAccelerationStructurePrebuildInfo*, void>)LpVtbl[63])(@this, pDesc, pInfo);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetRaytracingAccelerationStructurePrebuildInfo(BuildRaytracingAccelerationStructureInputs* pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RaytracingAccelerationStructurePrebuildInfo* pInfoPtr = &pInfo)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12Device5*, BuildRaytracingAccelerationStructureInputs*, RaytracingAccelerationStructurePrebuildInfo*, void>)LpVtbl[63])(@this, pDesc, pInfoPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetRaytracingAccelerationStructurePrebuildInfo(ref BuildRaytracingAccelerationStructureInputs pDesc, RaytracingAccelerationStructurePrebuildInfo* pInfo)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (BuildRaytracingAccelerationStructureInputs* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12Device5*, BuildRaytracingAccelerationStructureInputs*, RaytracingAccelerationStructurePrebuildInfo*, void>)LpVtbl[63])(@this, pDescPtr, pInfo);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetRaytracingAccelerationStructurePrebuildInfo(ref BuildRaytracingAccelerationStructureInputs pDesc, ref RaytracingAccelerationStructurePrebuildInfo pInfo)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (BuildRaytracingAccelerationStructureInputs* pDescPtr = &pDesc)
+            {
+                fixed (RaytracingAccelerationStructurePrebuildInfo* pInfoPtr = &pInfo)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12Device5*, BuildRaytracingAccelerationStructureInputs*, RaytracingAccelerationStructurePrebuildInfo*, void>)LpVtbl[63])(@this, pDescPtr, pInfoPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(SerializedDataType SerializedDataType, SerializedDataDriverMatchingIdentifier* pIdentifierToCheck)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            DriverMatchingIdentifierStatus ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, SerializedDataType, SerializedDataDriverMatchingIdentifier*, DriverMatchingIdentifierStatus>)LpVtbl[64])(@this, SerializedDataType, pIdentifierToCheck);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly DriverMatchingIdentifierStatus CheckDriverMatchingIdentifier(SerializedDataType SerializedDataType, ref SerializedDataDriverMatchingIdentifier pIdentifierToCheck)
+        {
+            var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            DriverMatchingIdentifierStatus ret = default;
+            fixed (SerializedDataDriverMatchingIdentifier* pIdentifierToCheckPtr = &pIdentifierToCheck)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device5*, SerializedDataType, SerializedDataDriverMatchingIdentifier*, DriverMatchingIdentifierStatus>)LpVtbl[64])(@this, SerializedDataType, pIdentifierToCheckPtr);
+            }
+            return ret;
         }
 
     }

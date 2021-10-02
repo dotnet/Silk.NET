@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("dbd5ae51-3317-4f0a-adf9-1d7cedcaae0b")]
     [NativeName("Name", "ID3D12DeviceRemovedExtendedDataSettings1")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings1
     {
+        public static readonly Guid Guid = new("dbd5ae51-3317-4f0a-adf9-1d7cedcaae0b");
+
         public static implicit operator ID3D12DeviceRemovedExtendedDataSettings(ID3D12DeviceRemovedExtendedDataSettings1 val)
             => Unsafe.As<ID3D12DeviceRemovedExtendedDataSettings1, ID3D12DeviceRemovedExtendedDataSettings>(ref val);
 
@@ -126,6 +129,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetBreadcrumbContextEnablement(DredEnablement Enablement)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[6])(@this, Enablement);
         }
 
     }

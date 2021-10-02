@@ -107,5 +107,44 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
+        {
+            var @this = (IDirect3DStateBlock9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DStateBlock9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
+        {
+            var @this = (IDirect3DStateBlock9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DStateBlock9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Capture()
+        {
+            var @this = (IDirect3DStateBlock9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DStateBlock9*, int>)LpVtbl[4])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Apply()
+        {
+            var @this = (IDirect3DStateBlock9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DStateBlock9*, int>)LpVtbl[5])(@this);
+            return ret;
+        }
+
     }
 }

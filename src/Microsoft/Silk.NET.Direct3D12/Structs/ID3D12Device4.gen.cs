@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("e865df17-a9ee-46f9-a463-3098315aa2e5")]
     [NativeName("Name", "ID3D12Device4")]
     public unsafe partial struct ID3D12Device4
     {
+        public static readonly Guid Guid = new("e865df17-a9ee-46f9-a463-3098315aa2e5");
+
         public static implicit operator ID3D12Device3(ID3D12Device4 val)
             => Unsafe.As<ID3D12Device4, ID3D12Device3>(ref val);
 
@@ -6257,6 +6260,2138 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommandList1(uint nodeMask, CommandListType type, CommandListFlags flags, Guid* riid, void** ppCommandList)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, CommandListType, CommandListFlags, Guid*, void**, int>)LpVtbl[51])(@this, nodeMask, type, flags, riid, ppCommandList);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommandList1(uint nodeMask, CommandListType type, CommandListFlags flags, Guid* riid, ref void* ppCommandList)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppCommandListPtr = &ppCommandList)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, CommandListType, CommandListFlags, Guid*, void**, int>)LpVtbl[51])(@this, nodeMask, type, flags, riid, ppCommandListPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommandList1(uint nodeMask, CommandListType type, CommandListFlags flags, ref Guid riid, void** ppCommandList)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, CommandListType, CommandListFlags, Guid*, void**, int>)LpVtbl[51])(@this, nodeMask, type, flags, riidPtr, ppCommandList);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommandList1(uint nodeMask, CommandListType type, CommandListFlags flags, ref Guid riid, ref void* ppCommandList)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppCommandListPtr = &ppCommandList)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, CommandListType, CommandListFlags, Guid*, void**, int>)LpVtbl[51])(@this, nodeMask, type, flags, riidPtr, ppCommandListPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ProtectedResourceSessionDesc* pDesc, Guid* riid, void** ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDesc, riid, ppSession);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ProtectedResourceSessionDesc* pDesc, Guid* riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppSessionPtr = &ppSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDesc, riid, ppSessionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ProtectedResourceSessionDesc* pDesc, ref Guid riid, void** ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDesc, riidPtr, ppSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ProtectedResourceSessionDesc* pDesc, ref Guid riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppSessionPtr = &ppSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDesc, riidPtr, ppSessionPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ref ProtectedResourceSessionDesc pDesc, Guid* riid, void** ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDescPtr, riid, ppSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ref ProtectedResourceSessionDesc pDesc, Guid* riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppSessionPtr = &ppSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDescPtr, riid, ppSessionPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ref ProtectedResourceSessionDesc pDesc, ref Guid riid, void** ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDescPtr, riidPtr, ppSession);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateProtectedResourceSession(ref ProtectedResourceSessionDesc pDesc, ref Guid riid, ref void* ppSession)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ProtectedResourceSessionDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppSessionPtr = &ppSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ProtectedResourceSessionDesc*, Guid*, void**, int>)LpVtbl[52])(@this, pDescPtr, riidPtr, ppSessionPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvResourcePtr = &ppvResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidResourcePtr = &riidResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidResourcePtr = &riidResource)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (Guid* riidResourcePtr = &riidResource)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResource, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (Guid* riidResourcePtr = &riidResource)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResource, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (Guid* riidResourcePtr = &riidResource)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSession, riidResourcePtr, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResource, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                        {
+                            fixed (Guid* riidResourcePtr = &riidResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResource);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCommittedResource1(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riidResource, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (ResourceDesc* pDescPtr = &pDesc)
+                {
+                    fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                    {
+                        fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                        {
+                            fixed (Guid* riidResourcePtr = &riidResource)
+                            {
+                                fixed (void** ppvResourcePtr = &ppvResource)
+                                {
+                                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[53])(@this, pHeapPropertiesPtr, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidResourcePtr, ppvResourcePtr);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSession, riid, ppvHeap);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvHeapPtr = &ppvHeap)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSession, riid, ppvHeapPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSession, riidPtr, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSession, riidPtr, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSessionPtr, riid, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSessionPtr, riid, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSessionPtr, riidPtr, ppvHeap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(HeapDesc* pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvHeapPtr = &ppvHeap)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDesc, pProtectedSessionPtr, riidPtr, ppvHeapPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSession, riid, ppvHeap);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppvHeapPtr = &ppvHeap)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSession, riid, ppvHeapPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSession, riidPtr, ppvHeap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvHeapPtr = &ppvHeap)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSession, riidPtr, ppvHeapPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSessionPtr, riid, ppvHeap);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvHeapPtr = &ppvHeap)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSessionPtr, riid, ppvHeapPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSessionPtr, riidPtr, ppvHeap);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateHeap1(ref HeapDesc pDesc, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvHeap)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppvHeapPtr = &ppvHeap)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, HeapDesc*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[54])(@this, pDescPtr, pProtectedSessionPtr, riidPtr, ppvHeapPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSession, riid, ppvResource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvResourcePtr = &ppvResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSession, riid, ppvResourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSession, riidPtr, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSession, riidPtr, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riid, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riid, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riidPtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riidPtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSession, riid, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSession, riid, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSession, riidPtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSession, riidPtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riid, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riid, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidPtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDesc, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidPtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSession, riid, ppvResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (void** ppvResourcePtr = &ppvResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSession, riid, ppvResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSession, riidPtr, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (Guid* riidPtr = &riid)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSession, riidPtr, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riid, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riid, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riidPtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValue, pProtectedSessionPtr, riidPtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSession, riid, ppvResource);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (void** ppvResourcePtr = &ppvResource)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSession, riid, ppvResourcePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSession, riidPtr, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ID3D12ProtectedResourceSession* pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (Guid* riidPtr = &riid)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSession, riidPtr, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riid, ppvResource);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, Guid* riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (void** ppvResourcePtr = &ppvResource)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riid, ppvResourcePtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, void** ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidPtr = &riid)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidPtr, ppvResource);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateReservedResource1(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref ID3D12ProtectedResourceSession pProtectedSession, ref Guid riid, ref void* ppvResource)
+        {
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ResourceDesc* pDescPtr = &pDesc)
+            {
+                fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
+                {
+                    fixed (ID3D12ProtectedResourceSession* pProtectedSessionPtr = &pProtectedSession)
+                    {
+                        fixed (Guid* riidPtr = &riid)
+                        {
+                            fixed (void** ppvResourcePtr = &ppvResource)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceDesc*, ResourceStates, ClearValue*, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[55])(@this, pDescPtr, InitialState, pOptimizedClearValuePtr, pProtectedSessionPtr, riidPtr, ppvResourcePtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ResourceAllocationInfo GetResourceAllocationInfo1(uint visibleMask, uint numResourceDescs, ResourceDesc* pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
+        {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceAllocationInfo* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo1*, ResourceAllocationInfo*>)LpVtbl[56])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescs, pResourceAllocationInfo1);
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ResourceAllocationInfo GetResourceAllocationInfo1(uint visibleMask, uint numResourceDescs, ResourceDesc* pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
+        {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceAllocationInfo* ret = default;
+            fixed (ResourceAllocationInfo1* pResourceAllocationInfo1Ptr = &pResourceAllocationInfo1)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo1*, ResourceAllocationInfo*>)LpVtbl[56])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescs, pResourceAllocationInfo1Ptr);
+            }
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ResourceAllocationInfo GetResourceAllocationInfo1(uint visibleMask, uint numResourceDescs, ref ResourceDesc pResourceDescs, ResourceAllocationInfo1* pResourceAllocationInfo1)
+        {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceAllocationInfo* ret = default;
+            fixed (ResourceDesc* pResourceDescsPtr = &pResourceDescs)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo1*, ResourceAllocationInfo*>)LpVtbl[56])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescsPtr, pResourceAllocationInfo1);
+            }
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ResourceAllocationInfo GetResourceAllocationInfo1(uint visibleMask, uint numResourceDescs, ref ResourceDesc pResourceDescs, ref ResourceAllocationInfo1 pResourceAllocationInfo1)
+        {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceAllocationInfo* ret = default;
+            fixed (ResourceDesc* pResourceDescsPtr = &pResourceDescs)
+            {
+                fixed (ResourceAllocationInfo1* pResourceAllocationInfo1Ptr = &pResourceAllocationInfo1)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo1*, ResourceAllocationInfo*>)LpVtbl[56])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescsPtr, pResourceAllocationInfo1Ptr);
+                }
+            }
+            return *ret;
         }
 
     }

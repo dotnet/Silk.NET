@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("c1b6694f-ff09-44a9-b03c-77900a0a1d17")]
     [NativeName("Name", "IDXGIFactory6")]
     public unsafe partial struct IDXGIFactory6
     {
+        public static readonly Guid Guid = new("c1b6694f-ff09-44a9-b03c-77900a0a1d17");
+
         public static implicit operator IDXGIFactory5(IDXGIFactory6 val)
             => Unsafe.As<IDXGIFactory6, IDXGIFactory5>(ref val);
 
@@ -2214,6 +2217,54 @@ namespace Silk.NET.DXGI
             fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Feature, T0*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapter);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapterPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapter);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvAdapterPtr = &ppvAdapter)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapterPtr);
+                }
             }
             return ret;
         }

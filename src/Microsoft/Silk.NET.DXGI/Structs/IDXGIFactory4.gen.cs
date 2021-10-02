@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("1bc6ea02-ef36-464f-bf0c-21ca39e5168a")]
     [NativeName("Name", "IDXGIFactory4")]
     public unsafe partial struct IDXGIFactory4
     {
+        public static readonly Guid Guid = new("1bc6ea02-ef36-464f-bf0c-21ca39e5168a");
+
         public static implicit operator IDXGIFactory3(IDXGIFactory4 val)
             => Unsafe.As<IDXGIFactory4, IDXGIFactory3>(ref val);
 
@@ -2092,6 +2095,102 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory4*, uint>)LpVtbl[25])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, Guid* riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapter);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, Guid* riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapterPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, ref Guid riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapter);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, ref Guid riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvAdapterPtr = &ppvAdapter)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapterPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumWarpAdapter(Guid* riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapter);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumWarpAdapter(Guid* riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapterPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumWarpAdapter(ref Guid riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapter);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumWarpAdapter(ref Guid riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvAdapterPtr = &ppvAdapter)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory4*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapterPtr);
+                }
+            }
             return ret;
         }
 

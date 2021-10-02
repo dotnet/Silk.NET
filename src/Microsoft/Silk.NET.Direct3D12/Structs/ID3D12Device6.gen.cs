@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("c70b221b-40e4-4a17-89af-025a0727a6dc")]
     [NativeName("Name", "ID3D12Device6")]
     public unsafe partial struct ID3D12Device6
     {
+        public static readonly Guid Guid = new("c70b221b-40e4-4a17-89af-025a0727a6dc");
+
         public static implicit operator ID3D12Device5(ID3D12Device6 val)
             => Unsafe.As<ID3D12Device6, ID3D12Device5>(ref val);
 
@@ -9205,6 +9208,54 @@ namespace Silk.NET.Direct3D12
             fixed (SerializedDataDriverMatchingIdentifier* pIdentifierToCheckPtr = &pIdentifierToCheck)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device6*, SerializedDataType, SerializedDataDriverMatchingIdentifier*, DriverMatchingIdentifierStatus>)LpVtbl[64])(@this, SerializedDataType, pIdentifierToCheckPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetBackgroundProcessingMode(BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, void* hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired)
+        {
+            var @this = (ID3D12Device6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device6*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesired);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetBackgroundProcessingMode(BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, void* hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired)
+        {
+            var @this = (ID3D12Device6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device6*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletion, pbFurtherMeasurementsDesiredPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetBackgroundProcessingMode<T0>(BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref T0 hEventToSignalUponCompletion, int* pbFurtherMeasurementsDesired) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device6*, BackgroundProcessingMode, MeasurementsAction, T0*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesired);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBackgroundProcessingMode<T0>(BackgroundProcessingMode Mode, MeasurementsAction MeasurementsAction, ref T0 hEventToSignalUponCompletion, ref int pbFurtherMeasurementsDesired) where T0 : unmanaged
+        {
+            var @this = (ID3D12Device6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+            {
+                fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device6*, BackgroundProcessingMode, MeasurementsAction, T0*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
+                }
             }
             return ret;
         }

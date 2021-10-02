@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("304fdb32-bede-410a-8545-943ac6a46138")]
     [NativeName("Name", "ID3D12VideoProcessor")]
     public unsafe partial struct ID3D12VideoProcessor
     {
+        public static readonly Guid Guid = new("304fdb32-bede-410a-8545-943ac6a46138");
+
         public static implicit operator ID3D12Pageable(ID3D12VideoProcessor val)
             => Unsafe.As<ID3D12VideoProcessor, ID3D12Pageable>(ref val);
 
@@ -395,6 +398,56 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetNodeMask()
+        {
+            var @this = (ID3D12VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor*, uint>)LpVtbl[8])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetNumInputStreamDescs()
+        {
+            var @this = (ID3D12VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor*, uint>)LpVtbl[9])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetInputStreamDescs(uint NumInputStreamDescs, VideoProcessInputStreamDesc* pInputStreamDescs)
+        {
+            var @this = (ID3D12VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessor*, uint, VideoProcessInputStreamDesc*, int>)LpVtbl[10])(@this, NumInputStreamDescs, pInputStreamDescs);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetInputStreamDescs(uint NumInputStreamDescs, ref VideoProcessInputStreamDesc pInputStreamDescs)
+        {
+            var @this = (ID3D12VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoProcessInputStreamDesc* pInputStreamDescsPtr = &pInputStreamDescs)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessor*, uint, VideoProcessInputStreamDesc*, int>)LpVtbl[10])(@this, NumInputStreamDescs, pInputStreamDescsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly VideoProcessOutputStreamDesc GetOutputStreamDesc()
+        {
+            VideoProcessOutputStreamDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12VideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            VideoProcessOutputStreamDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessor*, VideoProcessOutputStreamDesc*, VideoProcessOutputStreamDesc*>)LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
     }

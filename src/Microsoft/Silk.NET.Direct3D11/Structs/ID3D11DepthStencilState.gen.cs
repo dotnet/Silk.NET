@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("03823efb-8d8f-4e1c-9aa2-f64bb2cbfdf1")]
     [NativeName("Name", "ID3D11DepthStencilState")]
     public unsafe partial struct ID3D11DepthStencilState
     {
+        public static readonly Guid Guid = new("03823efb-8d8f-4e1c-9aa2-f64bb2cbfdf1");
+
         public static implicit operator ID3D11DeviceChild(ID3D11DepthStencilState val)
             => Unsafe.As<ID3D11DepthStencilState, ID3D11DeviceChild>(ref val);
 
@@ -326,6 +329,23 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(DepthStencilDesc* pDesc)
+        {
+            var @this = (ID3D11DepthStencilState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DepthStencilState*, DepthStencilDesc*, void>)LpVtbl[7])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref DepthStencilDesc pDesc)
+        {
+            var @this = (ID3D11DepthStencilState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (DepthStencilDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DepthStencilState*, DepthStencilDesc*, void>)LpVtbl[7])(@this, pDescPtr);
+            }
         }
 
     }

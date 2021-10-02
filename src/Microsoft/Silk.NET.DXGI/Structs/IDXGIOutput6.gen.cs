@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("068346e8-aaec-4b84-add7-137f513f77a1")]
     [NativeName("Name", "IDXGIOutput6")]
     public unsafe partial struct IDXGIOutput6
     {
+        public static readonly Guid Guid = new("068346e8-aaec-4b84-add7-137f513f77a1");
+
         public static implicit operator IDXGIOutput5(IDXGIOutput6 val)
             => Unsafe.As<IDXGIOutput6, IDXGIOutput5>(ref val);
 
@@ -1151,6 +1154,48 @@ namespace Silk.NET.DXGI
                         ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
                     }
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc1(OutputDesc1* pDesc)
+        {
+            var @this = (IDXGIOutput6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput6*, OutputDesc1*, int>)LpVtbl[27])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc1(ref OutputDesc1 pDesc)
+        {
+            var @this = (IDXGIOutput6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutputDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput6*, OutputDesc1*, int>)LpVtbl[27])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckHardwareCompositionSupport(uint* pFlags)
+        {
+            var @this = (IDXGIOutput6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput6*, uint*, int>)LpVtbl[28])(@this, pFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckHardwareCompositionSupport(ref uint pFlags)
+        {
+            var @this = (IDXGIOutput6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pFlagsPtr = &pFlags)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput6*, uint*, int>)LpVtbl[28])(@this, pFlagsPtr);
             }
             return ret;
         }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
+    [Guid("8ba5fb08-5195-40e2-ac58-0d989c3a0102")]
     [NativeName("Name", "ID3D10Blob")]
     public unsafe partial struct ID3D10Blob
     {
+        public static readonly Guid Guid = new("8ba5fb08-5195-40e2-ac58-0d989c3a0102");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D10Blob val)
             => Unsafe.As<ID3D10Blob, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,24 @@ namespace Silk.NET.Core.Native
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void* GetBufferPointer()
+        {
+            var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, void*>)LpVtbl[3])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly nuint GetBufferSize()
+        {
+            var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            nuint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, nuint>)LpVtbl[4])(@this);
             return ret;
         }
 

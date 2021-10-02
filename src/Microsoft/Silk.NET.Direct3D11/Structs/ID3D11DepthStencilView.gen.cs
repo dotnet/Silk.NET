@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9fdac92a-1876-48c3-afad-25b94f84a9b6")]
     [NativeName("Name", "ID3D11DepthStencilView")]
     public unsafe partial struct ID3D11DepthStencilView
     {
+        public static readonly Guid Guid = new("9fdac92a-1876-48c3-afad-25b94f84a9b6");
+
         public static implicit operator ID3D11View(ID3D11DepthStencilView val)
             => Unsafe.As<ID3D11DepthStencilView, ID3D11View>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11DepthStencilView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(DepthStencilViewDesc* pDesc)
+        {
+            var @this = (ID3D11DepthStencilView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11DepthStencilView*, DepthStencilViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref DepthStencilViewDesc pDesc)
+        {
+            var @this = (ID3D11DepthStencilView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (DepthStencilViewDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11DepthStencilView*, DepthStencilViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

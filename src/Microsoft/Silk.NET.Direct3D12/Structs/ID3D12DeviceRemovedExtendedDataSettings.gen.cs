@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("82bc481c-6b9b-4030-aedb-7ee3d1df1e63")]
     [NativeName("Name", "ID3D12DeviceRemovedExtendedDataSettings")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings
     {
+        public static readonly Guid Guid = new("82bc481c-6b9b-4030-aedb-7ee3d1df1e63");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12DeviceRemovedExtendedDataSettings val)
             => Unsafe.As<ID3D12DeviceRemovedExtendedDataSettings, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,27 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12DeviceRemovedExtendedDataSettings*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetAutoBreadcrumbsEnablement(DredEnablement Enablement)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedDataSettings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPageFaultEnablement(DredEnablement Enablement)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedDataSettings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetWatsonDumpEnablement(DredEnablement Enablement)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedDataSettings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
         }
 
     }

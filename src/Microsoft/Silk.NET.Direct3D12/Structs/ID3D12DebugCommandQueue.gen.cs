@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("09e0bf36-54ac-484f-8847-4baeeab6053a")]
     [NativeName("Name", "ID3D12DebugCommandQueue")]
     public unsafe partial struct ID3D12DebugCommandQueue
     {
+        public static readonly Guid Guid = new("09e0bf36-54ac-484f-8847-4baeeab6053a");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12DebugCommandQueue val)
             => Unsafe.As<ID3D12DebugCommandQueue, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,27 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12DebugCommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandQueue*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
+        {
+            var @this = (ID3D12DebugCommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandQueue*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResource, Subresource, State);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AssertResourceState(ref ID3D12Resource pResource, uint Subresource, uint State)
+        {
+            var @this = (ID3D12DebugCommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12Resource* pResourcePtr = &pResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandQueue*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResourcePtr, Subresource, State);
+            }
             return ret;
         }
 

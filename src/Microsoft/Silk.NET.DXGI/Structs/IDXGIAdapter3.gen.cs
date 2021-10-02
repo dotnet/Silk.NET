@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("645967a4-1392-4310-a798-8053ce3e93fd")]
     [NativeName("Name", "IDXGIAdapter3")]
     public unsafe partial struct IDXGIAdapter3
     {
+        public static readonly Guid Guid = new("645967a4-1392-4310-a798-8053ce3e93fd");
+
         public static implicit operator IDXGIAdapter2(IDXGIAdapter3 val)
             => Unsafe.As<IDXGIAdapter3, IDXGIAdapter2>(ref val);
 
@@ -498,6 +501,146 @@ namespace Silk.NET.DXGI
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, AdapterDesc2*, int>)LpVtbl[11])(@this, pDescPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, uint* pdwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, ref uint pdwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookiePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UnregisterHardwareContentProtectionTeardownStatus(uint dwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, void>)LpVtbl[13])(@this, dwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, QueryVideoMemoryInfo* pVideoMemoryInfo)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ref QueryVideoMemoryInfo pVideoMemoryInfo)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (QueryVideoMemoryInfo* pVideoMemoryInfoPtr = &pVideoMemoryInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfoPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetVideoMemoryReservation(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ulong Reservation)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, MemorySegmentGroup, ulong, int>)LpVtbl[15])(@this, NodeIndex, MemorySegmentGroup, Reservation);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, uint* pdwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, ref uint pdwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                fixed (uint* pdwCookiePtr = &pdwCookie)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookiePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void UnregisterVideoMemoryBudgetChangeNotification(uint dwCookie)
+        {
+            var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, void>)LpVtbl[17])(@this, dwCookie);
         }
 
     }

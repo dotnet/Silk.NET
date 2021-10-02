@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("2411e7e1-12ac-4ccf-bd14-9798e8534dc0")]
     [NativeName("Name", "IDXGIAdapter")]
     public unsafe partial struct IDXGIAdapter
     {
+        public static readonly Guid Guid = new("2411e7e1-12ac-4ccf-bd14-9798e8534dc0");
+
         public static implicit operator IDXGIObject(IDXGIAdapter val)
             => Unsafe.As<IDXGIAdapter, IDXGIObject>(ref val);
 
@@ -354,6 +357,96 @@ namespace Silk.NET.DXGI
                 fixed (void** ppParentPtr = &ppParent)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumOutputs(uint Output, IDXGIOutput** ppOutput)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutput);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumOutputs(uint Output, ref IDXGIOutput* ppOutput)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIOutput** ppOutputPtr = &ppOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutputPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(AdapterDesc* pDesc)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, AdapterDesc*, int>)LpVtbl[8])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref AdapterDesc pDesc)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (AdapterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, AdapterDesc*, int>)LpVtbl[8])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, long* pUMDVersion)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersion);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, ref long pUMDVersion)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (long* pUMDVersionPtr = &pUMDVersion)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckInterfaceSupport(ref Guid InterfaceName, long* pUMDVersion)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* InterfaceNamePtr = &InterfaceName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersion);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckInterfaceSupport(ref Guid InterfaceName, ref long pUMDVersion)
+        {
+            var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* InterfaceNamePtr = &InterfaceName)
+            {
+                fixed (long* pUMDVersionPtr = &pUMDVersion)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersionPtr);
                 }
             }
             return ret;

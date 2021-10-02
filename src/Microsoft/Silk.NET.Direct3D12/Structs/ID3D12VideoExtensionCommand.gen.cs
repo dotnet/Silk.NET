@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("554e41e8-ae8e-4a8c-b7d2-5b4f274a30e4")]
     [NativeName("Name", "ID3D12VideoExtensionCommand")]
     public unsafe partial struct ID3D12VideoExtensionCommand
     {
+        public static readonly Guid Guid = new("554e41e8-ae8e-4a8c-b7d2-5b4f274a30e4");
+
         public static implicit operator ID3D12Pageable(ID3D12VideoExtensionCommand val)
             => Unsafe.As<ID3D12VideoExtensionCommand, ID3D12Pageable>(ref val);
 
@@ -392,6 +395,65 @@ namespace Silk.NET.Direct3D12
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly VideoExtensionCommandDesc GetDesc()
+        {
+            VideoExtensionCommandDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12VideoExtensionCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            VideoExtensionCommandDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, VideoExtensionCommandDesc*, VideoExtensionCommandDesc*>)LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(Guid* riid, void** ppProtectedSession)
+        {
+            var @this = (ID3D12VideoExtensionCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, Guid*, void**, int>)LpVtbl[9])(@this, riid, ppProtectedSession);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(Guid* riid, ref void* ppProtectedSession)
+        {
+            var @this = (ID3D12VideoExtensionCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppProtectedSessionPtr = &ppProtectedSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, Guid*, void**, int>)LpVtbl[9])(@this, riid, ppProtectedSessionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(ref Guid riid, void** ppProtectedSession)
+        {
+            var @this = (ID3D12VideoExtensionCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, Guid*, void**, int>)LpVtbl[9])(@this, riidPtr, ppProtectedSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(ref Guid riid, ref void* ppProtectedSession)
+        {
+            var @this = (ID3D12VideoExtensionCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppProtectedSessionPtr = &ppProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoExtensionCommand*, Guid*, void**, int>)LpVtbl[9])(@this, riidPtr, ppProtectedSessionPtr);
                 }
             }
             return ret;

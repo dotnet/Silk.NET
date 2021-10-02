@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("cafcb56c-6ac3-4889-bf47-9e23bbd260ec")]
     [NativeName("Name", "IDXGISurface")]
     public unsafe partial struct IDXGISurface
     {
+        public static readonly Guid Guid = new("cafcb56c-6ac3-4889-bf47-9e23bbd260ec");
+
         public static implicit operator IDXGIDeviceSubObject(IDXGISurface val)
             => Unsafe.As<IDXGISurface, IDXGIDeviceSubObject>(ref val);
 
@@ -407,6 +410,57 @@ namespace Silk.NET.DXGI
                     ret = ((delegate* unmanaged[Cdecl]<IDXGISurface*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(SurfaceDesc* pDesc)
+        {
+            var @this = (IDXGISurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref SurfaceDesc pDesc)
+        {
+            var @this = (IDXGISurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SurfaceDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Map(MappedRect* pLockedRect, uint MapFlags)
+        {
+            var @this = (IDXGISurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Map(ref MappedRect pLockedRect, uint MapFlags)
+        {
+            var @this = (IDXGISurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (MappedRect* pLockedRectPtr = &pLockedRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Unmap()
+        {
+            var @this = (IDXGISurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface*, int>)LpVtbl[10])(@this);
             return ret;
         }
 

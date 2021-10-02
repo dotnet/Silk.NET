@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("9d5e227a-4430-4161-88b3-3eca6bb16e19")]
     [NativeName("Name", "ID3D12Resource1")]
     public unsafe partial struct ID3D12Resource1
     {
+        public static readonly Guid Guid = new("9d5e227a-4430-4161-88b3-3eca6bb16e19");
+
         public static implicit operator ID3D12Resource(ID3D12Resource1 val)
             => Unsafe.As<ID3D12Resource1, ID3D12Resource>(ref val);
 
@@ -624,6 +627,54 @@ namespace Silk.NET.Direct3D12
                 fixed (HeapFlags* pHeapFlagsPtr = &pHeapFlags)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource1*, HeapProperties*, HeapFlags*, int>)LpVtbl[14])(@this, pHeapPropertiesPtr, pHeapFlagsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(Guid* riid, void** ppProtectedSession)
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource1*, Guid*, void**, int>)LpVtbl[15])(@this, riid, ppProtectedSession);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(Guid* riid, ref void* ppProtectedSession)
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppProtectedSessionPtr = &ppProtectedSession)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource1*, Guid*, void**, int>)LpVtbl[15])(@this, riid, ppProtectedSessionPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(ref Guid riid, void** ppProtectedSession)
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource1*, Guid*, void**, int>)LpVtbl[15])(@this, riidPtr, ppProtectedSession);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetProtectedResourceSession(ref Guid riid, ref void* ppProtectedSession)
+        {
+            var @this = (ID3D12Resource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppProtectedSessionPtr = &ppProtectedSession)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource1*, Guid*, void**, int>)LpVtbl[15])(@this, riidPtr, ppProtectedSessionPtr);
                 }
             }
             return ret;

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("770aae78-f26f-4dba-a829-253c83d1b387")]
     [NativeName("Name", "IDXGIFactory1")]
     public unsafe partial struct IDXGIFactory1
     {
+        public static readonly Guid Guid = new("770aae78-f26f-4dba-a829-253c83d1b387");
+
         public static implicit operator IDXGIFactory(IDXGIFactory1 val)
             => Unsafe.As<IDXGIFactory1, IDXGIFactory>(ref val);
 
@@ -539,6 +542,36 @@ namespace Silk.NET.DXGI
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory1*, nint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapters1(uint Adapter, IDXGIAdapter1** ppAdapter)
+        {
+            var @this = (IDXGIFactory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory1*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapter);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EnumAdapters1(uint Adapter, ref IDXGIAdapter1* ppAdapter)
+        {
+            var @this = (IDXGIFactory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIAdapter1** ppAdapterPtr = &ppAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory1*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapterPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int IsCurrent()
+        {
+            var @this = (IDXGIFactory1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory1*, int>)LpVtbl[13])(@this);
             return ret;
         }
 

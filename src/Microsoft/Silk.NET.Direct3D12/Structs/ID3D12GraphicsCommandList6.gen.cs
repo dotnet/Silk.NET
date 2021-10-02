@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("c3827890-e548-4cfa-96cf-5689a9370f80")]
     [NativeName("Name", "ID3D12GraphicsCommandList6")]
     public unsafe partial struct ID3D12GraphicsCommandList6
     {
+        public static readonly Guid Guid = new("c3827890-e548-4cfa-96cf-5689a9370f80");
+
         public static implicit operator ID3D12GraphicsCommandList5(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList5>(ref val);
 
@@ -2682,6 +2685,13 @@ namespace Silk.NET.Direct3D12
             {
                 ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList6*, ID3D12Resource*, void>)LpVtbl[78])(@this, shadingRateImagePtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DispatchMesh(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ)
+        {
+            var @this = (ID3D12GraphicsCommandList6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList6*, uint, uint, uint, void>)LpVtbl[79])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
         }
 
     }

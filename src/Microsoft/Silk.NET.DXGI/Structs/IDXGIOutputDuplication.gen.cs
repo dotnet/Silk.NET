@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("191cfac3-a341-470d-b26e-a864f428319c")]
     [NativeName("Name", "IDXGIOutputDuplication")]
     public unsafe partial struct IDXGIOutputDuplication
     {
+        public static readonly Guid Guid = new("191cfac3-a341-470d-b26e-a864f428319c");
+
         public static implicit operator IDXGIObject(IDXGIOutputDuplication val)
             => Unsafe.As<IDXGIOutputDuplication, IDXGIObject>(ref val);
 
@@ -356,6 +359,314 @@ namespace Silk.NET.DXGI
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(OutduplDesc* pDesc)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, OutduplDesc*, void>)LpVtbl[7])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref OutduplDesc pDesc)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (OutduplDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, OutduplDesc*, void>)LpVtbl[7])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AcquireNextFrame(uint TimeoutInMilliseconds, OutduplFrameInfo* pFrameInfo, IDXGIResource** ppDesktopResource)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplFrameInfo*, IDXGIResource**, int>)LpVtbl[8])(@this, TimeoutInMilliseconds, pFrameInfo, ppDesktopResource);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AcquireNextFrame(uint TimeoutInMilliseconds, OutduplFrameInfo* pFrameInfo, ref IDXGIResource* ppDesktopResource)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIResource** ppDesktopResourcePtr = &ppDesktopResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplFrameInfo*, IDXGIResource**, int>)LpVtbl[8])(@this, TimeoutInMilliseconds, pFrameInfo, ppDesktopResourcePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AcquireNextFrame(uint TimeoutInMilliseconds, ref OutduplFrameInfo pFrameInfo, IDXGIResource** ppDesktopResource)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutduplFrameInfo* pFrameInfoPtr = &pFrameInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplFrameInfo*, IDXGIResource**, int>)LpVtbl[8])(@this, TimeoutInMilliseconds, pFrameInfoPtr, ppDesktopResource);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AcquireNextFrame(uint TimeoutInMilliseconds, ref OutduplFrameInfo pFrameInfo, ref IDXGIResource* ppDesktopResource)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutduplFrameInfo* pFrameInfoPtr = &pFrameInfo)
+            {
+                fixed (IDXGIResource** ppDesktopResourcePtr = &ppDesktopResource)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplFrameInfo*, IDXGIResource**, int>)LpVtbl[8])(@this, TimeoutInMilliseconds, pFrameInfoPtr, ppDesktopResourcePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<int>* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<int>* pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequiredPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<int> pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequired);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<int> pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+            {
+                fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequiredPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameMoveRects(uint MoveRectsBufferSize, OutduplMoveRect* pMoveRectBuffer, uint* pMoveRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplMoveRect*, uint*, int>)LpVtbl[10])(@this, MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequired);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameMoveRects(uint MoveRectsBufferSize, OutduplMoveRect* pMoveRectBuffer, ref uint pMoveRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pMoveRectsBufferSizeRequiredPtr = &pMoveRectsBufferSizeRequired)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplMoveRect*, uint*, int>)LpVtbl[10])(@this, MoveRectsBufferSize, pMoveRectBuffer, pMoveRectsBufferSizeRequiredPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFrameMoveRects(uint MoveRectsBufferSize, ref OutduplMoveRect pMoveRectBuffer, uint* pMoveRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutduplMoveRect* pMoveRectBufferPtr = &pMoveRectBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplMoveRect*, uint*, int>)LpVtbl[10])(@this, MoveRectsBufferSize, pMoveRectBufferPtr, pMoveRectsBufferSizeRequired);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFrameMoveRects(uint MoveRectsBufferSize, ref OutduplMoveRect pMoveRectBuffer, ref uint pMoveRectsBufferSizeRequired)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutduplMoveRect* pMoveRectBufferPtr = &pMoveRectBuffer)
+            {
+                fixed (uint* pMoveRectsBufferSizeRequiredPtr = &pMoveRectsBufferSizeRequired)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, OutduplMoveRect*, uint*, int>)LpVtbl[10])(@this, MoveRectsBufferSize, pMoveRectBufferPtr, pMoveRectsBufferSizeRequiredPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequired, pPointerShapeInfoPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfo);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape(uint PointerShapeBufferSize, void* pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+            {
+                fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, void*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBuffer, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfoPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape<T0>(uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, T0*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequired, pPointerShapeInfo);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape<T0>(uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, uint* pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo) where T0 : unmanaged
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+            {
+                fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, T0*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequired, pPointerShapeInfoPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFramePointerShape<T0>(uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, OutduplPointerShapeInfo* pPointerShapeInfo) where T0 : unmanaged
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+            {
+                fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, T0*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfo);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFramePointerShape<T0>(uint PointerShapeBufferSize, ref T0 pPointerShapeBuffer, ref uint pPointerShapeBufferSizeRequired, ref OutduplPointerShapeInfo pPointerShapeInfo) where T0 : unmanaged
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pPointerShapeBufferPtr = &pPointerShapeBuffer)
+            {
+                fixed (uint* pPointerShapeBufferSizeRequiredPtr = &pPointerShapeBufferSizeRequired)
+                {
+                    fixed (OutduplPointerShapeInfo* pPointerShapeInfoPtr = &pPointerShapeInfo)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, T0*, uint*, OutduplPointerShapeInfo*, int>)LpVtbl[11])(@this, PointerShapeBufferSize, pPointerShapeBufferPtr, pPointerShapeBufferSizeRequiredPtr, pPointerShapeInfoPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int MapDesktopSurface(MappedRect* pLockedRect)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, MappedRect*, int>)LpVtbl[12])(@this, pLockedRect);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int MapDesktopSurface(ref MappedRect pLockedRect)
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (MappedRect* pLockedRectPtr = &pLockedRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, MappedRect*, int>)LpVtbl[12])(@this, pLockedRectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int UnMapDesktopSurface()
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, int>)LpVtbl[13])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReleaseFrame()
+        {
+            var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutputDuplication*, int>)LpVtbl[14])(@this);
             return ret;
         }
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("696442be-a72e-4059-bc79-5b5c98040fad")]
     [NativeName("Name", "ID3D12Resource")]
     public unsafe partial struct ID3D12Resource
     {
+        public static readonly Guid Guid = new("696442be-a72e-4059-bc79-5b5c98040fad");
+
         public static implicit operator ID3D12Pageable(ID3D12Resource val)
             => Unsafe.As<ID3D12Resource, ID3D12Pageable>(ref val);
 
@@ -392,6 +395,235 @@ namespace Silk.NET.Direct3D12
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Map(uint Subresource, Range* pReadRange, void** ppData)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void**, int>)LpVtbl[8])(@this, Subresource, pReadRange, ppData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Map(uint Subresource, Range* pReadRange, ref void* ppData)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppDataPtr = &ppData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void**, int>)LpVtbl[8])(@this, Subresource, pReadRange, ppDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Map(uint Subresource, ref Range pReadRange, void** ppData)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Range* pReadRangePtr = &pReadRange)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void**, int>)LpVtbl[8])(@this, Subresource, pReadRangePtr, ppData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Map(uint Subresource, ref Range pReadRange, ref void* ppData)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Range* pReadRangePtr = &pReadRange)
+            {
+                fixed (void** ppDataPtr = &ppData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void**, int>)LpVtbl[8])(@this, Subresource, pReadRangePtr, ppDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void Unmap(uint Subresource, Range* pWrittenRange)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void>)LpVtbl[9])(@this, Subresource, pWrittenRange);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Unmap(uint Subresource, ref Range pWrittenRange)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Range* pWrittenRangePtr = &pWrittenRange)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Range*, void>)LpVtbl[9])(@this, Subresource, pWrittenRangePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ResourceDesc GetDesc()
+        {
+            ResourceDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ResourceDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, ResourceDesc*, ResourceDesc*>)LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetGPUVirtualAddress()
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource*, ulong>)LpVtbl[11])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int WriteToSubresource(uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Box*, void*, uint, uint, int>)LpVtbl[12])(@this, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pSrcDataPtr = &pSrcData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Box*, T0*, uint, uint, int>)LpVtbl[12])(@this, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int WriteToSubresource(uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Box*, void*, uint, uint, int>)LpVtbl[12])(@this, DstSubresource, pDstBoxPtr, pSrcData, SrcRowPitch, SrcDepthPitch);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int WriteToSubresource<T0>(uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Box* pDstBoxPtr = &pDstBox)
+            {
+                fixed (T0* pSrcDataPtr = &pSrcData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, uint, Box*, T0*, uint, uint, int>)LpVtbl[12])(@this, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, void*, uint, uint, uint, Box*, int>)LpVtbl[13])(@this, pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Box* pSrcBoxPtr = &pSrcBox)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, void*, uint, uint, uint, Box*, int>)LpVtbl[13])(@this, pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBoxPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, T0*, uint, uint, uint, Box*, int>)LpVtbl[13])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBox);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDstDataPtr = &pDstData)
+            {
+                fixed (Box* pSrcBoxPtr = &pSrcBox)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, T0*, uint, uint, uint, Box*, int>)LpVtbl[13])(@this, pDstDataPtr, DstRowPitch, DstDepthPitch, SrcSubresource, pSrcBoxPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetHeapProperties(HeapProperties* pHeapProperties, HeapFlags* pHeapFlags)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, HeapProperties*, HeapFlags*, int>)LpVtbl[14])(@this, pHeapProperties, pHeapFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetHeapProperties(HeapProperties* pHeapProperties, ref HeapFlags pHeapFlags)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapFlags* pHeapFlagsPtr = &pHeapFlags)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, HeapProperties*, HeapFlags*, int>)LpVtbl[14])(@this, pHeapProperties, pHeapFlagsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetHeapProperties(ref HeapProperties pHeapProperties, HeapFlags* pHeapFlags)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, HeapProperties*, HeapFlags*, int>)LpVtbl[14])(@this, pHeapPropertiesPtr, pHeapFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetHeapProperties(ref HeapProperties pHeapProperties, ref HeapFlags pHeapFlags)
+        {
+            var @this = (ID3D12Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
+            {
+                fixed (HeapFlags* pHeapFlagsPtr = &pHeapFlags)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Resource*, HeapProperties*, HeapFlags*, int>)LpVtbl[14])(@this, pHeapPropertiesPtr, pHeapFlagsPtr);
                 }
             }
             return ret;

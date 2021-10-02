@@ -459,5 +459,26 @@ namespace Silk.NET.XAudio
             ((delegate* unmanaged[Stdcall]<IXAudio2MasteringVoice*, void>)LpVtbl[18])(@this);
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetChannelMask(uint* pChannelmask)
+        {
+            var @this = (IXAudio2MasteringVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IXAudio2MasteringVoice*, uint*, int>)LpVtbl[19])(@this, pChannelmask);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetChannelMask(ref uint pChannelmask)
+        {
+            var @this = (IXAudio2MasteringVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pChannelmaskPtr = &pChannelmask)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2MasteringVoice*, uint*, int>)LpVtbl[19])(@this, pChannelmaskPtr);
+            }
+            return ret;
+        }
+
     }
 }

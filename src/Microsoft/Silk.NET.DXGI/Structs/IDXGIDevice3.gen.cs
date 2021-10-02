@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("6007896c-3244-4afd-bf18-a6d3beda5023")]
     [NativeName("Name", "IDXGIDevice3")]
     public unsafe partial struct IDXGIDevice3
     {
+        public static readonly Guid Guid = new("6007896c-3244-4afd-bf18-a6d3beda5023");
+
         public static implicit operator IDXGIDevice2(IDXGIDevice3 val)
             => Unsafe.As<IDXGIDevice3, IDXGIDevice2>(ref val);
 
@@ -693,6 +696,13 @@ namespace Silk.NET.DXGI
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice3*, T0*, int>)LpVtbl[16])(@this, hEventPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Trim()
+        {
+            var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<IDXGIDevice3*, void>)LpVtbl[17])(@this);
         }
 
     }

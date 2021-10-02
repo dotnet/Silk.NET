@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("38c3e585-ff17-412c-9150-4fc6f9d72a28")]
     [NativeName("Name", "ID3D12GraphicsCommandList2")]
     public unsafe partial struct ID3D12GraphicsCommandList2
     {
+        public static readonly Guid Guid = new("38c3e585-ff17-412c-9150-4fc6f9d72a28");
+
         public static implicit operator ID3D12GraphicsCommandList1(ID3D12GraphicsCommandList2 val)
             => Unsafe.As<ID3D12GraphicsCommandList2, ID3D12GraphicsCommandList1>(ref val);
 
@@ -2331,6 +2334,46 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint, void>)LpVtbl[65])(@this, Mask);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
+        {
+            var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[66])(@this, Count, pParams, pModes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes)
+        {
+            var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateMode* pModesPtr = &pModes)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[66])(@this, Count, pParams, pModesPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes)
+        {
+            var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[66])(@this, Count, pParamsPtr, pModes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void WriteBufferImmediate(uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes)
+        {
+            var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
+            {
+                fixed (WritebufferimmediateMode* pModesPtr = &pModes)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[66])(@this, Count, pParamsPtr, pModesPtr);
+                }
+            }
         }
 
     }

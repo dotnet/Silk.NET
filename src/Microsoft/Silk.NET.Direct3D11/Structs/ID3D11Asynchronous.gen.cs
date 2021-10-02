@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("4b35d0cd-1e15-4258-9c98-1b1333f6dd3b")]
     [NativeName("Name", "ID3D11Asynchronous")]
     public unsafe partial struct ID3D11Asynchronous
     {
+        public static readonly Guid Guid = new("4b35d0cd-1e15-4258-9c98-1b1333f6dd3b");
+
         public static implicit operator ID3D11DeviceChild(ID3D11Asynchronous val)
             => Unsafe.As<ID3D11Asynchronous, ID3D11DeviceChild>(ref val);
 
@@ -325,6 +328,15 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Asynchronous*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetDataSize()
+        {
+            var @this = (ID3D11Asynchronous*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Asynchronous*, uint>)LpVtbl[7])(@this);
             return ret;
         }
 

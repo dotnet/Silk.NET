@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("8455293a-0cbd-4831-9b39-fbdbab724723")]
     [NativeName("Name", "ID3D12VideoEncodeCommandList")]
     public unsafe partial struct ID3D12VideoEncodeCommandList
     {
+        public static readonly Guid Guid = new("8455293a-0cbd-4831-9b39-fbdbab724723");
+
         public static implicit operator ID3D12CommandList(ID3D12VideoEncodeCommandList val)
             => Unsafe.As<ID3D12VideoEncodeCommandList, ID3D12CommandList>(ref val);
 
@@ -404,6 +407,421 @@ namespace Silk.NET.Direct3D12
             CommandListType ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, CommandListType>)LpVtbl[8])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Close()
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, int>)LpVtbl[9])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Reset(ID3D12CommandAllocator* pAllocator)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12CommandAllocator*, int>)LpVtbl[10])(@this, pAllocator);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset(ref ID3D12CommandAllocator pAllocator)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D12CommandAllocator* pAllocatorPtr = &pAllocator)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12CommandAllocator*, int>)LpVtbl[10])(@this, pAllocatorPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearState()
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, void>)LpVtbl[11])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResourceBarrier(uint NumBarriers, ResourceBarrier* pBarriers)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, ResourceBarrier*, void>)LpVtbl[12])(@this, NumBarriers, pBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResourceBarrier(uint NumBarriers, ref ResourceBarrier pBarriers)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, ResourceBarrier*, void>)LpVtbl[12])(@this, NumBarriers, pBarriersPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, DiscardRegion* pRegion)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResource, pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, ref DiscardRegion pRegion)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (DiscardRegion* pRegionPtr = &pRegion)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResource, pRegionPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource(ref ID3D12Resource pResource, DiscardRegion* pRegion)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pResourcePtr = &pResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResourcePtr, pRegion);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource(ref ID3D12Resource pResource, ref DiscardRegion pRegion)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pResourcePtr = &pResource)
+            {
+                fixed (DiscardRegion* pRegionPtr = &pRegion)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[13])(@this, pResourcePtr, pRegionPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BeginQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[14])(@this, pQueryHeap, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginQuery(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[14])(@this, pQueryHeapPtr, Type, Index);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EndQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[15])(@this, pQueryHeap, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndQuery(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint Index)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[15])(@this, pQueryHeapPtr, Type, Index);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveQueryData(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
+            {
+                fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[16])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetPredication(ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[17])(@this, pBuffer, AlignedBufferOffset, Operation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPredication(ref ID3D12Resource pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pBufferPtr = &pBuffer)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[17])(@this, pBufferPtr, AlignedBufferOffset, Operation);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetMarker(uint Metadata, void* pData, uint Size)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)LpVtbl[18])(@this, Metadata, pData, Size);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetMarker<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDataPtr = &pData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, T0*, uint, void>)LpVtbl[18])(@this, Metadata, pDataPtr, Size);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void BeginEvent(uint Metadata, void* pData, uint Size)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)LpVtbl[19])(@this, Metadata, pData, Size);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginEvent<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (T0* pDataPtr = &pData)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, T0*, uint, void>)LpVtbl[19])(@this, Metadata, pDataPtr, Size);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndEvent()
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, void>)LpVtbl[20])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArgumentsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArguments);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimator, pOutputArgumentsPtr, pInputArgumentsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ref ID3D12VideoMotionEstimator pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArguments);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ref ID3D12VideoMotionEstimator pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
+            {
+                fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArguments, pInputArgumentsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void EstimateMotion(ref ID3D12VideoMotionEstimator pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
+            {
+                fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArguments);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EstimateMotion(ref ID3D12VideoMotionEstimator pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
+            {
+                fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
+                {
+                    fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)LpVtbl[21])(@this, pMotionEstimatorPtr, pOutputArgumentsPtr, pInputArgumentsPtr);
+                    }
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveMotionVectorHeap(ResolveVideoMotionVectorHeapOutput* pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArguments, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveMotionVectorHeap(ResolveVideoMotionVectorHeapOutput* pOutputArguments, ref ResolveVideoMotionVectorHeapInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ResolveVideoMotionVectorHeapInput* pInputArgumentsPtr = &pInputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArguments, pInputArgumentsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ResolveMotionVectorHeap(ref ResolveVideoMotionVectorHeapOutput pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ResolveVideoMotionVectorHeapOutput* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArguments);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveMotionVectorHeap(ref ResolveVideoMotionVectorHeapOutput pOutputArguments, ref ResolveVideoMotionVectorHeapInput pInputArguments)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ResolveVideoMotionVectorHeapOutput* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                fixed (ResolveVideoMotionVectorHeapInput* pInputArgumentsPtr = &pInputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)LpVtbl[22])(@this, pOutputArgumentsPtr, pInputArgumentsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParams, pModes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateMode* pModesPtr = &pModes)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParams, pModesPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void WriteBufferImmediate(uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParamsPtr, pModes);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void WriteBufferImmediate(uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
+            {
+                fixed (WritebufferimmediateMode* pModesPtr = &pModes)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[23])(@this, Count, pParamsPtr, pModesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12ProtectedResourceSession*, void>)LpVtbl[24])(@this, pProtectedResourceSession);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetProtectedResourceSession(ref ID3D12ProtectedResourceSession pProtectedResourceSession)
+        {
+            var @this = (ID3D12VideoEncodeCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoEncodeCommandList*, ID3D12ProtectedResourceSession*, void>)LpVtbl[24])(@this, pProtectedResourceSessionPtr);
+            }
         }
 
     }

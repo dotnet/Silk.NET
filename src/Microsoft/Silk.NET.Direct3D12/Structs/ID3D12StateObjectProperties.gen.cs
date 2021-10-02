@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("de5fa827-9bf9-4f26-89ff-d7f56fde3860")]
     [NativeName("Name", "ID3D12StateObjectProperties")]
     public unsafe partial struct ID3D12StateObjectProperties
     {
+        public static readonly Guid Guid = new("de5fa827-9bf9-4f26-89ff-d7f56fde3860");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12StateObjectProperties val)
             => Unsafe.As<ID3D12StateObjectProperties, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,86 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void* GetShaderIdentifier(char* pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, void*>)LpVtbl[3])(@this, pExportName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void* GetShaderIdentifier(ref char pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            fixed (char* pExportNamePtr = &pExportName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, void*>)LpVtbl[3])(@this, pExportNamePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void* GetShaderIdentifier(string pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, void*>)LpVtbl[3])(@this, pExportNamePtr);
+            Marshal.FreeHGlobal((nint)pExportNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ulong GetShaderStackSize(char* pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, ulong>)LpVtbl[4])(@this, pExportName);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetShaderStackSize(ref char pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            fixed (char* pExportNamePtr = &pExportName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetShaderStackSize(string pExportName)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
+            Marshal.FreeHGlobal((nint)pExportNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetPipelineStackSize()
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong>)LpVtbl[5])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPipelineStackSize(ulong PipelineStackSizeInBytes)
+        {
+            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, ulong, void>)LpVtbl[6])(@this, PipelineStackSizeInBytes);
         }
 
     }

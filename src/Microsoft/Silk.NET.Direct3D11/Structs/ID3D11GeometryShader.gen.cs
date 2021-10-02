@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("38325b96-effb-4022-ba02-2e795b70275c")]
     [NativeName("Name", "ID3D11GeometryShader")]
     public unsafe partial struct ID3D11GeometryShader
     {
+        public static readonly Guid Guid = new("38325b96-effb-4022-ba02-2e795b70275c");
+
         public static implicit operator ID3D11DeviceChild(ID3D11GeometryShader val)
             => Unsafe.As<ID3D11GeometryShader, ID3D11DeviceChild>(ref val);
 

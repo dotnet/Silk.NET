@@ -27,15 +27,26 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DPixelShader9
         (
+            uint? version = null,
             void** lpVtbl = null
         ) : this()
         {
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Version")]
+        public uint Version;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -104,6 +115,75 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFunction(void* arg0, uint* pSizeOfData)
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFunction(void* arg0, ref uint pSizeOfData)
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pSizeOfDataPtr = &pSizeOfData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0, pSizeOfDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFunction<T0>(ref T0 arg0, uint* pSizeOfData) where T0 : unmanaged
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* arg0Ptr = &arg0)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFunction<T0>(ref T0 arg0, ref uint pSizeOfData) where T0 : unmanaged
+        {
+            var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* arg0Ptr = &arg0)
+            {
+                fixed (uint* pSizeOfDataPtr = &pSizeOfData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DPixelShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                }
+            }
             return ret;
         }
 

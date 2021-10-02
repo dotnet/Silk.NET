@@ -342,5 +342,57 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        public readonly uint SetLOD(uint LODNew)
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetLOD()
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, uint>)LpVtbl[12])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetLevelCount()
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, uint>)LpVtbl[13])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAutoGenFilterType(Texturefiltertype FilterType)
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly Texturefiltertype GetAutoGenFilterType()
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            Texturefiltertype ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, Texturefiltertype>)LpVtbl[15])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GenerateMipSubLevels()
+        {
+            var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, void>)LpVtbl[16])(@this);
+        }
+
     }
 }

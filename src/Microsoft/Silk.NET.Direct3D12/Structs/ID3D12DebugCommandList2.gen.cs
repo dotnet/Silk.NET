@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("aeb575cf-4e06-48be-ba3b-c450fc96652e")]
     [NativeName("Name", "ID3D12DebugCommandList2")]
     public unsafe partial struct ID3D12DebugCommandList2
     {
+        public static readonly Guid Guid = new("aeb575cf-4e06-48be-ba3b-c450fc96652e");
+
         public static implicit operator ID3D12DebugCommandList(ID3D12DebugCommandList2 val)
             => Unsafe.As<ID3D12DebugCommandList2, ID3D12DebugCommandList>(ref val);
 
@@ -143,6 +146,48 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             DebugFeature ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, DebugFeature>)LpVtbl[5])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetDebugParameter(DebugCommandListParameterType Type, void* pData, uint DataSize)
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)LpVtbl[6])(@this, Type, pData, DataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetDebugParameter<T0>(DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, T0*, uint, int>)LpVtbl[6])(@this, Type, pDataPtr, DataSize);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDebugParameter(DebugCommandListParameterType Type, void* pData, uint DataSize)
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, void*, uint, int>)LpVtbl[7])(@this, Type, pData, DataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDebugParameter<T0>(DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+        {
+            var @this = (ID3D12DebugCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList2*, DebugCommandListParameterType, T0*, uint, int>)LpVtbl[7])(@this, Type, pDataPtr, DataSize);
+            }
             return ret;
         }
 

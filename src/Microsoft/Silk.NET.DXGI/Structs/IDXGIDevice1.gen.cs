@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("77db970f-6276-48ba-ba28-070143b4392c")]
     [NativeName("Name", "IDXGIDevice1")]
     public unsafe partial struct IDXGIDevice1
     {
+        public static readonly Guid Guid = new("77db970f-6276-48ba-ba28-070143b4392c");
+
         public static implicit operator IDXGIDevice(IDXGIDevice1 val)
             => Unsafe.As<IDXGIDevice1, IDXGIDevice>(ref val);
 
@@ -565,6 +568,36 @@ namespace Silk.NET.DXGI
             fixed (int* pPriorityPtr = &pPriority)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice1*, int*, int>)LpVtbl[11])(@this, pPriorityPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMaximumFrameLatency(uint MaxLatency)
+        {
+            var @this = (IDXGIDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice1*, uint, int>)LpVtbl[12])(@this, MaxLatency);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetMaximumFrameLatency(uint* pMaxLatency)
+        {
+            var @this = (IDXGIDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice1*, uint*, int>)LpVtbl[13])(@this, pMaxLatency);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetMaximumFrameLatency(ref uint pMaxLatency)
+        {
+            var @this = (IDXGIDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pMaxLatencyPtr = &pMaxLatency)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice1*, uint*, int>)LpVtbl[13])(@this, pMaxLatencyPtr);
             }
             return ret;
         }

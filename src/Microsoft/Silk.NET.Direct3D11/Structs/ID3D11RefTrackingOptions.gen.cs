@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("193dacdf-0db2-4c05-a55c-ef06cac56fd9")]
     [NativeName("Name", "ID3D11RefTrackingOptions")]
     public unsafe partial struct ID3D11RefTrackingOptions
     {
+        public static readonly Guid Guid = new("193dacdf-0db2-4c05-a55c-ef06cac56fd9");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11RefTrackingOptions val)
             => Unsafe.As<ID3D11RefTrackingOptions, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,15 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11RefTrackingOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11RefTrackingOptions*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTrackingOptions(uint uOptions)
+        {
+            var @this = (ID3D11RefTrackingOptions*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RefTrackingOptions*, uint, int>)LpVtbl[3])(@this, uOptions);
             return ret;
         }
 

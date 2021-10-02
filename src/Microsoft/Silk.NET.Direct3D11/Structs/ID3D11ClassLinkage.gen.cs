@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("ddf57cba-9543-46e4-a12b-f207a0fe7fed")]
     [NativeName("Name", "ID3D11ClassLinkage")]
     public unsafe partial struct ID3D11ClassLinkage
     {
+        public static readonly Guid Guid = new("ddf57cba-9543-46e4-a12b-f207a0fe7fed");
+
         public static implicit operator ID3D11DeviceChild(ID3D11ClassLinkage val)
             => Unsafe.As<ID3D11ClassLinkage, ID3D11DeviceChild>(ref val);
 
@@ -325,6 +328,152 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(byte* pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceName, InstanceIndex, ppInstance);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(byte* pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceName, InstanceIndex, ppInstancePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(ref byte pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pClassInstanceNamePtr = &pClassInstanceName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstance);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(ref byte pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pClassInstanceNamePtr = &pClassInstanceName)
+            {
+                fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstancePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pClassInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassInstanceName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstance);
+            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetClassInstance(string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pClassInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassInstanceName);
+            fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstancePtr);
+            }
+            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstance);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(byte* pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeName, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstancePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(ref byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pClassTypeNamePtr = &pClassTypeName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstance);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(ref byte pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pClassTypeNamePtr = &pClassTypeName)
+            {
+                fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstancePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pClassTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassTypeName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstance);
+            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateClassInstance(string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        {
+            var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pClassTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassTypeName);
+            fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstancePtr);
+            }
+            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
             return ret;
         }
 

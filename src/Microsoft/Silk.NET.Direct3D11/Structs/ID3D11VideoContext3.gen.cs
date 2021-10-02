@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a9e2faa0-cb39-418f-a0b7-d8aad4de672e")]
     [NativeName("Name", "ID3D11VideoContext3")]
     public unsafe partial struct ID3D11VideoContext3
     {
+        public static readonly Guid Guid = new("a9e2faa0-cb39-418f-a0b7-d8aad4de672e");
+
         public static implicit operator ID3D11VideoContext2(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, ID3D11VideoContext2>(ref val);
 
@@ -8460,6 +8463,582 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+            {
+                fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pContentKeyPtr = &pContentKey)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pContentKeyPtr = &pContentKey)
+            {
+                fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pContentKeyPtr = &pContentKey)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pContentKeyPtr = &pContentKey)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (T0* pContentKeyPtr = &pContentKey)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                    {
+                        fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKey, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, uint* pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    {
+                        fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ID3D11Buffer** ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    {
+                        fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecoderBeginFrame1<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey, uint NumComponentHistograms, ref uint pHistogramOffsets, ref ID3D11Buffer* ppHistogramBuffers) where T0 : unmanaged
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
+                {
+                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    {
+                        fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
+                        {
+                            fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers2(ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc2* pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc2*, int>)LpVtbl[84])(@this, pDecoder, NumBuffers, pBufferDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers2(ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc2 pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderBufferDesc2* pBufferDescPtr = &pBufferDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc2*, int>)LpVtbl[84])(@this, pDecoder, NumBuffers, pBufferDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SubmitDecoderBuffers2(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc2* pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc2*, int>)LpVtbl[84])(@this, pDecoderPtr, NumBuffers, pBufferDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SubmitDecoderBuffers2(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc2 pBufferDesc)
+        {
+            var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
+            {
+                fixed (VideoDecoderBufferDesc2* pBufferDescPtr = &pBufferDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, VideoDecoderBufferDesc2*, int>)LpVtbl[84])(@this, pDecoderPtr, NumBuffers, pBufferDescPtr);
+                }
+            }
+            return ret;
         }
 
     }

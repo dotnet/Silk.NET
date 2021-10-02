@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("c5a05f0c-16f2-4adf-9f4d-a8c4d58ac550")]
     [NativeName("Name", "IDXGIDebug1")]
     public unsafe partial struct IDXGIDebug1
     {
+        public static readonly Guid Guid = new("c5a05f0c-16f2-4adf-9f4d-a8c4d58ac550");
+
         public static implicit operator IDXGIDebug(IDXGIDebug1 val)
             => Unsafe.As<IDXGIDebug1, IDXGIDebug>(ref val);
 
@@ -113,6 +116,29 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, Guid, DebugRloFlags, int>)LpVtbl[3])(@this, apiid, flags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EnableLeakTrackingForThread()
+        {
+            var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, void>)LpVtbl[4])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DisableLeakTrackingForThread()
+        {
+            var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, void>)LpVtbl[5])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int IsLeakTrackingEnabledForThread()
+        {
+            var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, int>)LpVtbl[6])(@this);
             return ret;
         }
 

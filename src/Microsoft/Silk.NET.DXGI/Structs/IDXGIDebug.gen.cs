@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("119e7452-de9e-40fe-8806-88f90c12b441")]
     [NativeName("Name", "IDXGIDebug")]
     public unsafe partial struct IDXGIDebug
     {
+        public static readonly Guid Guid = new("119e7452-de9e-40fe-8806-88f90c12b441");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDebug val)
             => Unsafe.As<IDXGIDebug, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,15 @@ namespace Silk.NET.DXGI
             var @this = (IDXGIDebug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReportLiveObjects(Guid apiid, DebugRloFlags flags)
+        {
+            var @this = (IDXGIDebug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDebug*, Guid, DebugRloFlags, int>)LpVtbl[3])(@this, apiid, flags);
             return ret;
         }
 

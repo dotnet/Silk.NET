@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("29038f61-3839-4626-91fd-086879011a05")]
     [NativeName("Name", "IDXGIAdapter1")]
     public unsafe partial struct IDXGIAdapter1
     {
+        public static readonly Guid Guid = new("29038f61-3839-4626-91fd-086879011a05");
+
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter1 val)
             => Unsafe.As<IDXGIAdapter1, Silk.NET.DXGI.IDXGIAdapter>(ref val);
 
@@ -448,6 +451,27 @@ namespace Silk.NET.DXGI
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter1*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersionPtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc1(AdapterDesc1* pDesc)
+        {
+            var @this = (IDXGIAdapter1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter1*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc1(ref AdapterDesc1 pDesc)
+        {
+            var @this = (IDXGIAdapter1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (AdapterDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter1*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDescPtr);
             }
             return ret;
         }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("0946b7c9-ebf6-4047-bb73-8683e27dbb1f")]
     [NativeName("Name", "ID3D12VideoDecoderHeap")]
     public unsafe partial struct ID3D12VideoDecoderHeap
     {
+        public static readonly Guid Guid = new("0946b7c9-ebf6-4047-bb73-8683e27dbb1f");
+
         public static implicit operator ID3D12Pageable(ID3D12VideoDecoderHeap val)
             => Unsafe.As<ID3D12VideoDecoderHeap, ID3D12Pageable>(ref val);
 
@@ -395,6 +398,17 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly VideoDecoderHeapDesc GetDesc()
+        {
+            VideoDecoderHeapDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12VideoDecoderHeap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            VideoDecoderHeapDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDecoderHeap*, VideoDecoderHeapDesc*, VideoDecoderHeapDesc*>)LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
     }

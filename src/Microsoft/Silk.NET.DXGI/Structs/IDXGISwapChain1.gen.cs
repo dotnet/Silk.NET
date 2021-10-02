@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("790a45f7-0d42-4876-983a-0a55cfe6f4aa")]
     [NativeName("Name", "IDXGISwapChain1")]
     public unsafe partial struct IDXGISwapChain1
     {
+        public static readonly Guid Guid = new("790a45f7-0d42-4876-983a-0a55cfe6f4aa");
+
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain1 val)
             => Unsafe.As<IDXGISwapChain1, Silk.NET.DXGI.IDXGISwapChain>(ref val);
 
@@ -649,6 +652,240 @@ namespace Silk.NET.DXGI
             fixed (uint* pLastPresentCountPtr = &pLastPresentCount)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, uint*, int>)LpVtbl[17])(@this, pLastPresentCountPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc1(SwapChainDesc1* pDesc)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, SwapChainDesc1*, int>)LpVtbl[18])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc1(ref SwapChainDesc1 pDesc)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, SwapChainDesc1*, int>)LpVtbl[18])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetFullscreenDesc(SwapChainFullscreenDesc* pDesc)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, SwapChainFullscreenDesc*, int>)LpVtbl[19])(@this, pDesc);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetFullscreenDesc(ref SwapChainFullscreenDesc pDesc)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (SwapChainFullscreenDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, SwapChainFullscreenDesc*, int>)LpVtbl[19])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetHwnd(nint* pHwnd)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, nint*, int>)LpVtbl[20])(@this, pHwnd);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetHwnd(ref nint pHwnd)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (nint* pHwndPtr = &pHwnd)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, nint*, int>)LpVtbl[20])(@this, pHwndPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCoreWindow(Guid* refiid, void** ppUnk)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, Guid*, void**, int>)LpVtbl[21])(@this, refiid, ppUnk);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCoreWindow(Guid* refiid, ref void* ppUnk)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppUnkPtr = &ppUnk)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, Guid*, void**, int>)LpVtbl[21])(@this, refiid, ppUnkPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCoreWindow(ref Guid refiid, void** ppUnk)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* refiidPtr = &refiid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, Guid*, void**, int>)LpVtbl[21])(@this, refiidPtr, ppUnk);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCoreWindow(ref Guid refiid, ref void* ppUnk)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* refiidPtr = &refiid)
+            {
+                fixed (void** ppUnkPtr = &ppUnk)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, Guid*, void**, int>)LpVtbl[21])(@this, refiidPtr, ppUnkPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int Present1(uint SyncInterval, uint PresentFlags, PresentParameters* pPresentParameters)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, uint, uint, PresentParameters*, int>)LpVtbl[22])(@this, SyncInterval, PresentFlags, pPresentParameters);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Present1(uint SyncInterval, uint PresentFlags, ref PresentParameters pPresentParameters)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (PresentParameters* pPresentParametersPtr = &pPresentParameters)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, uint, uint, PresentParameters*, int>)LpVtbl[22])(@this, SyncInterval, PresentFlags, pPresentParametersPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int IsTemporaryMonoSupported()
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, int>)LpVtbl[23])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetRestrictToOutput(IDXGIOutput** ppRestrictToOutput)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, IDXGIOutput**, int>)LpVtbl[24])(@this, ppRestrictToOutput);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetRestrictToOutput(ref IDXGIOutput* ppRestrictToOutput)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIOutput** ppRestrictToOutputPtr = &ppRestrictToOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, IDXGIOutput**, int>)LpVtbl[24])(@this, ppRestrictToOutputPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetBackgroundColor(D3Dcolorvalue* pColor)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, D3Dcolorvalue*, int>)LpVtbl[25])(@this, pColor);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBackgroundColor(ref D3Dcolorvalue pColor)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (D3Dcolorvalue* pColorPtr = &pColor)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, D3Dcolorvalue*, int>)LpVtbl[25])(@this, pColorPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetBackgroundColor(D3Dcolorvalue* pColor)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, D3Dcolorvalue*, int>)LpVtbl[26])(@this, pColor);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetBackgroundColor(ref D3Dcolorvalue pColor)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (D3Dcolorvalue* pColorPtr = &pColor)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, D3Dcolorvalue*, int>)LpVtbl[26])(@this, pColorPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetRotation(ModeRotation Rotation)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, ModeRotation, int>)LpVtbl[27])(@this, Rotation);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetRotation(ModeRotation* pRotation)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, ModeRotation*, int>)LpVtbl[28])(@this, pRotation);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetRotation(ref ModeRotation pRotation)
+        {
+            var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ModeRotation* pRotationPtr = &pRotation)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain1*, ModeRotation*, int>)LpVtbl[28])(@this, pRotationPtr);
             }
             return ret;
         }

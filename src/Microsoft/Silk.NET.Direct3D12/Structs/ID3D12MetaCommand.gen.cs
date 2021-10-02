@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("dbb84c27-36ce-4fc9-b801-f048c46ac570")]
     [NativeName("Name", "ID3D12MetaCommand")]
     public unsafe partial struct ID3D12MetaCommand
     {
+        public static readonly Guid Guid = new("dbb84c27-36ce-4fc9-b801-f048c46ac570");
+
         public static implicit operator ID3D12Pageable(ID3D12MetaCommand val)
             => Unsafe.As<ID3D12MetaCommand, ID3D12Pageable>(ref val);
 
@@ -394,6 +397,15 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12MetaCommand*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ulong GetRequiredParameterResourceSize(MetaCommandParameterStage Stage, uint ParameterIndex)
+        {
+            var @this = (ID3D12MetaCommand*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12MetaCommand*, MetaCommandParameterStage, uint, ulong>)LpVtbl[8])(@this, Stage, ParameterIndex);
             return ret;
         }
 

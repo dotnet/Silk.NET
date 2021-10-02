@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("a8be2ac4-199f-4946-b331-79599fb98de7")]
     [NativeName("Name", "IDXGISwapChain2")]
     public unsafe partial struct IDXGISwapChain2
     {
+        public static readonly Guid Guid = new("a8be2ac4-199f-4946-b331-79599fb98de7");
+
         public static implicit operator IDXGISwapChain1(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, IDXGISwapChain1>(ref val);
 
@@ -886,6 +889,144 @@ namespace Silk.NET.DXGI
             fixed (ModeRotation* pRotationPtr = &pRotation)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, ModeRotation*, int>)LpVtbl[28])(@this, pRotationPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetSourceSize(uint Width, uint Height)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint, uint, int>)LpVtbl[29])(@this, Width, Height);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSourceSize(uint* pWidth, uint* pHeight)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, uint*, int>)LpVtbl[30])(@this, pWidth, pHeight);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSourceSize(uint* pWidth, ref uint pHeight)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pHeightPtr = &pHeight)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, uint*, int>)LpVtbl[30])(@this, pWidth, pHeightPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSourceSize(ref uint pWidth, uint* pHeight)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pWidthPtr = &pWidth)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, uint*, int>)LpVtbl[30])(@this, pWidthPtr, pHeight);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSourceSize(ref uint pWidth, ref uint pHeight)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pWidthPtr = &pWidth)
+            {
+                fixed (uint* pHeightPtr = &pHeight)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, uint*, int>)LpVtbl[30])(@this, pWidthPtr, pHeightPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMaximumFrameLatency(uint MaxLatency)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint, int>)LpVtbl[31])(@this, MaxLatency);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetMaximumFrameLatency(uint* pMaxLatency)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, int>)LpVtbl[32])(@this, pMaxLatency);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetMaximumFrameLatency(ref uint pMaxLatency)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pMaxLatencyPtr = &pMaxLatency)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, uint*, int>)LpVtbl[32])(@this, pMaxLatencyPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void* GetFrameLatencyWaitableObject()
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, void*>)LpVtbl[33])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetMatrixTransform(Matrix3X2F* pMatrix)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, Matrix3X2F*, int>)LpVtbl[34])(@this, pMatrix);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMatrixTransform(ref Matrix3X2F pMatrix)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Matrix3X2F* pMatrixPtr = &pMatrix)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, Matrix3X2F*, int>)LpVtbl[34])(@this, pMatrixPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetMatrixTransform(Matrix3X2F* pMatrix)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, Matrix3X2F*, int>)LpVtbl[35])(@this, pMatrix);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetMatrixTransform(ref Matrix3X2F pMatrix)
+        {
+            var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Matrix3X2F* pMatrixPtr = &pMatrix)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, Matrix3X2F*, int>)LpVtbl[35])(@this, pMatrixPtr);
             }
             return ret;
         }

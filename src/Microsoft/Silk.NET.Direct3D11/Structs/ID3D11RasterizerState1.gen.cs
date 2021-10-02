@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("1217d7a6-5039-418c-b042-9cbe256afd6e")]
     [NativeName("Name", "ID3D11RasterizerState1")]
     public unsafe partial struct ID3D11RasterizerState1
     {
+        public static readonly Guid Guid = new("1217d7a6-5039-418c-b042-9cbe256afd6e");
+
         public static implicit operator ID3D11RasterizerState(ID3D11RasterizerState1 val)
             => Unsafe.As<ID3D11RasterizerState1, ID3D11RasterizerState>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (RasterizerDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11RasterizerState1*, RasterizerDesc*, void>)LpVtbl[7])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc1(RasterizerDesc1* pDesc)
+        {
+            var @this = (ID3D11RasterizerState1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11RasterizerState1*, RasterizerDesc1*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc1(ref RasterizerDesc1 pDesc)
+        {
+            var @this = (ID3D11RasterizerState1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RasterizerDesc1* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11RasterizerState1*, RasterizerDesc1*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

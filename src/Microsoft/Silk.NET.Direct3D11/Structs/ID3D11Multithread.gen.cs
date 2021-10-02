@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9b7e4e00-342c-4106-a19f-4f2704f689f0")]
     [NativeName("Name", "ID3D11Multithread")]
     public unsafe partial struct ID3D11Multithread
     {
+        public static readonly Guid Guid = new("9b7e4e00-342c-4106-a19f-4f2704f689f0");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Multithread val)
             => Unsafe.As<ID3D11Multithread, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,38 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Enter()
+        {
+            var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, void>)LpVtbl[3])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void Leave()
+        {
+            var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, void>)LpVtbl[4])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMultithreadProtected(int bMTProtect)
+        {
+            var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, int, int>)LpVtbl[5])(@this, bMTProtect);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetMultithreadProtected()
+        {
+            var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int>)LpVtbl[6])(@this);
             return ret;
         }
 

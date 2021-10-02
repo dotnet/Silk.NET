@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("ea9dbf1a-c88e-4486-854a-98aa0138f30c")]
     [NativeName("Name", "IDXGIDisplayControl")]
     public unsafe partial struct IDXGIDisplayControl
     {
+        public static readonly Guid Guid = new("ea9dbf1a-c88e-4486-854a-98aa0138f30c");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDisplayControl val)
             => Unsafe.As<IDXGIDisplayControl, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,22 @@ namespace Silk.NET.DXGI
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int IsStereoEnabled()
+        {
+            var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int>)LpVtbl[3])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetStereoEnabled(int enabled)
+        {
+            var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, int, void>)LpVtbl[4])(@this, enabled);
         }
 
     }

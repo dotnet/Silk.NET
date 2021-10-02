@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("e667af9f-cd56-4f46-83ce-032e595d70a8")]
     [NativeName("Name", "ID3D12LifetimeOwner")]
     public unsafe partial struct ID3D12LifetimeOwner
     {
+        public static readonly Guid Guid = new("e667af9f-cd56-4f46-83ce-032e595d70a8");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12LifetimeOwner val)
             => Unsafe.As<ID3D12LifetimeOwner, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,13 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void LifetimeStateUpdated(LifetimeState NewState)
+        {
+            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, LifetimeState, void>)LpVtbl[3])(@this, NewState);
         }
 
     }

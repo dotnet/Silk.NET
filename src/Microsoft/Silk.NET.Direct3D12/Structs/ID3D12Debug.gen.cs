@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("344488b7-6846-474b-b989-f027448245e0")]
     [NativeName("Name", "ID3D12Debug")]
     public unsafe partial struct ID3D12Debug
     {
+        public static readonly Guid Guid = new("344488b7-6846-474b-b989-f027448245e0");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug val)
             => Unsafe.As<ID3D12Debug, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -102,6 +105,13 @@ namespace Silk.NET.Direct3D12
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug*, uint>)LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EnableDebugLayer()
+        {
+            var @this = (ID3D12Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug*, void>)LpVtbl[3])(@this);
         }
 
     }

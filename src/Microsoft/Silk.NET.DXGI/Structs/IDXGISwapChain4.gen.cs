@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("3d585d5a-bd4a-489e-b1f4-3dbcb6452ffb")]
     [NativeName("Name", "IDXGISwapChain4")]
     public unsafe partial struct IDXGISwapChain4
     {
+        public static readonly Guid Guid = new("3d585d5a-bd4a-489e-b1f4-3dbcb6452ffb");
+
         public static implicit operator IDXGISwapChain3(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGISwapChain3>(ref val);
 
@@ -1117,6 +1120,27 @@ namespace Silk.NET.DXGI
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain4*, uint, uint, uint, Silk.NET.DXGI.Format, uint, uint*, Silk.NET.Core.Native.IUnknown**, int>)LpVtbl[39])(@this, BufferCount, Width, Height, Format, SwapChainFlags, pCreationNodeMaskPtr, ppPresentQueuePtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetHDRMetaData(HdrMetadataType Type, uint Size, void* pMetaData)
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)LpVtbl[40])(@this, Type, Size, pMetaData);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetHDRMetaData<T0>(HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        {
+            var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pMetaDataPtr = &pMetaData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain4*, HdrMetadataType, uint, T0*, int>)LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
             }
             return ret;
         }

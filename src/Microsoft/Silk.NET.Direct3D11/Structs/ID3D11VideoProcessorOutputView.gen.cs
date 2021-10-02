@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("a048285e-25a9-4527-bd93-d68b68c44254")]
     [NativeName("Name", "ID3D11VideoProcessorOutputView")]
     public unsafe partial struct ID3D11VideoProcessorOutputView
     {
+        public static readonly Guid Guid = new("a048285e-25a9-4527-bd93-d68b68c44254");
+
         public static implicit operator ID3D11View(ID3D11VideoProcessorOutputView val)
             => Unsafe.As<ID3D11VideoProcessorOutputView, ID3D11View>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorOutputView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(VideoProcessorOutputViewDesc* pDesc)
+        {
+            var @this = (ID3D11VideoProcessorOutputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorOutputView*, VideoProcessorOutputViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref VideoProcessorOutputViewDesc pDesc)
+        {
+            var @this = (ID3D11VideoProcessorOutputView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessorOutputViewDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorOutputView*, VideoProcessorOutputViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

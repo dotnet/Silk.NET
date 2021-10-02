@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("f8fb5c27-c6b3-4f75-a4c8-439af2ef564c")]
     [NativeName("Name", "ID3D11Texture1D")]
     public unsafe partial struct ID3D11Texture1D
     {
+        public static readonly Guid Guid = new("f8fb5c27-c6b3-4f75-a4c8-439af2ef564c");
+
         public static implicit operator ID3D11Resource(ID3D11Texture1D val)
             => Unsafe.As<ID3D11Texture1D, ID3D11Resource>(ref val);
 
@@ -362,6 +365,23 @@ namespace Silk.NET.Direct3D11
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D11Texture1D*, uint>)LpVtbl[9])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc(Texture1DDesc* pDesc)
+        {
+            var @this = (ID3D11Texture1D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Texture1D*, Texture1DDesc*, void>)LpVtbl[10])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc(ref Texture1DDesc pDesc)
+        {
+            var @this = (ID3D11Texture1D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Texture1DDesc* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Texture1D*, Texture1DDesc*, void>)LpVtbl[10])(@this, pDescPtr);
+            }
         }
 
     }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("6102dee4-af59-4b09-b999-b44d73f09b24")]
     [NativeName("Name", "ID3D12CommandAllocator")]
     public unsafe partial struct ID3D12CommandAllocator
     {
+        public static readonly Guid Guid = new("6102dee4-af59-4b09-b999-b44d73f09b24");
+
         public static implicit operator ID3D12Pageable(ID3D12CommandAllocator val)
             => Unsafe.As<ID3D12CommandAllocator, ID3D12Pageable>(ref val);
 
@@ -394,6 +397,15 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12CommandAllocator*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset()
+        {
+            var @this = (ID3D12CommandAllocator*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12CommandAllocator*, int>)LpVtbl[8])(@this);
             return ret;
         }
 

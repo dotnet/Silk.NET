@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("6cd696f4-f289-40cc-8091-5a6c0a099c3d")]
     [NativeName("Name", "ID3D12ProtectedResourceSession")]
     public unsafe partial struct ID3D12ProtectedResourceSession
     {
+        public static readonly Guid Guid = new("6cd696f4-f289-40cc-8091-5a6c0a099c3d");
+
         public static implicit operator ID3D12ProtectedSession(ID3D12ProtectedResourceSession val)
             => Unsafe.As<ID3D12ProtectedResourceSession, ID3D12ProtectedSession>(ref val);
 
@@ -452,6 +455,17 @@ namespace Silk.NET.Direct3D12
             ProtectedSessionStatus ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession*, ProtectedSessionStatus>)LpVtbl[9])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ProtectedResourceSessionDesc GetDesc()
+        {
+            ProtectedResourceSessionDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12ProtectedResourceSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ProtectedResourceSessionDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ProtectedResourceSession*, ProtectedResourceSessionDesc*, ProtectedResourceSessionDesc*>)LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
     }

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("0d9658ae-ed45-469e-a61d-970ec583cab4")]
     [NativeName("Name", "ID3D12QueryHeap")]
     public unsafe partial struct ID3D12QueryHeap
     {
+        public static readonly Guid Guid = new("0d9658ae-ed45-469e-a61d-970ec583cab4");
+
         public static implicit operator ID3D12Pageable(ID3D12QueryHeap val)
             => Unsafe.As<ID3D12QueryHeap, ID3D12Pageable>(ref val);
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("8efb471d-616c-4f49-90f7-127bb763fa51")]
     [NativeName("Name", "ID3D12DescriptorHeap")]
     public unsafe partial struct ID3D12DescriptorHeap
     {
+        public static readonly Guid Guid = new("8efb471d-616c-4f49-90f7-127bb763fa51");
+
         public static implicit operator ID3D12Pageable(ID3D12DescriptorHeap val)
             => Unsafe.As<ID3D12DescriptorHeap, ID3D12Pageable>(ref val);
 
@@ -395,6 +398,39 @@ namespace Silk.NET.Direct3D12
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly DescriptorHeapDesc GetDesc()
+        {
+            DescriptorHeapDesc silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12DescriptorHeap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            DescriptorHeapDesc* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DescriptorHeap*, DescriptorHeapDesc*, DescriptorHeapDesc*>)LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly CpuDescriptorHandle GetCPUDescriptorHandleForHeapStart()
+        {
+            CpuDescriptorHandle silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12DescriptorHeap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            CpuDescriptorHandle* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DescriptorHeap*, CpuDescriptorHandle*, CpuDescriptorHandle*>)LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly GpuDescriptorHandle GetGPUDescriptorHandleForHeapStart()
+        {
+            GpuDescriptorHandle silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+            var @this = (ID3D12DescriptorHeap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            GpuDescriptorHandle* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DescriptorHeap*, GpuDescriptorHandle*, GpuDescriptorHandle*>)LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
     }

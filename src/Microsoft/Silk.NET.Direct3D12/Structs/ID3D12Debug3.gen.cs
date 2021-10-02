@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("5cf4e58f-f671-4ff1-a542-3686e3d153d1")]
     [NativeName("Name", "ID3D12Debug3")]
     public unsafe partial struct ID3D12Debug3
     {
+        public static readonly Guid Guid = new("5cf4e58f-f671-4ff1-a542-3686e3d153d1");
+
         public static implicit operator ID3D12Debug(ID3D12Debug3 val)
             => Unsafe.As<ID3D12Debug3, ID3D12Debug>(ref val);
 
@@ -112,6 +115,27 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Debug3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D12Debug3*, void>)LpVtbl[3])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetEnableGPUBasedValidation(int Enable)
+        {
+            var @this = (ID3D12Debug3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug3*, int, void>)LpVtbl[4])(@this, Enable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetEnableSynchronizedCommandQueueValidation(int Enable)
+        {
+            var @this = (ID3D12Debug3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug3*, int, void>)LpVtbl[5])(@this, Enable);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetGPUBasedValidationFlags(GpuBasedValidationFlags Flags)
+        {
+            var @this = (ID3D12Debug3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12Debug3*, GpuBasedValidationFlags, void>)LpVtbl[6])(@this, Flags);
         }
 
     }

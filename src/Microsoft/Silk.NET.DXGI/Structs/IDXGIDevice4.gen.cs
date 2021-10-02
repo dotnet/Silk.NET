@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("95b4f95f-d8da-4ca4-9ee6-3b76d5968a10")]
     [NativeName("Name", "IDXGIDevice4")]
     public unsafe partial struct IDXGIDevice4
     {
+        public static readonly Guid Guid = new("95b4f95f-d8da-4ca4-9ee6-3b76d5968a10");
+
         public static implicit operator IDXGIDevice3(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIDevice3>(ref val);
 
@@ -703,6 +706,75 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, void>)LpVtbl[17])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OfferResources1(uint NumResources, IDXGIResource** ppResources, OfferResourcePriority Priority, uint Flags)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, OfferResourcePriority, uint, int>)LpVtbl[18])(@this, NumResources, ppResources, Priority, Flags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OfferResources1(uint NumResources, ref IDXGIResource* ppResources, OfferResourcePriority Priority, uint Flags)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIResource** ppResourcesPtr = &ppResources)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, OfferResourcePriority, uint, int>)LpVtbl[18])(@this, NumResources, ppResourcesPtr, Priority, Flags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReclaimResources1(uint NumResources, IDXGIResource** ppResources, ReclaimResourceResults* pResults)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, ReclaimResourceResults*, int>)LpVtbl[19])(@this, NumResources, ppResources, pResults);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReclaimResources1(uint NumResources, IDXGIResource** ppResources, ref ReclaimResourceResults pResults)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ReclaimResourceResults* pResultsPtr = &pResults)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, ReclaimResourceResults*, int>)LpVtbl[19])(@this, NumResources, ppResources, pResultsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReclaimResources1(uint NumResources, ref IDXGIResource* ppResources, ReclaimResourceResults* pResults)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIResource** ppResourcesPtr = &ppResources)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, ReclaimResourceResults*, int>)LpVtbl[19])(@this, NumResources, ppResourcesPtr, pResults);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int ReclaimResources1(uint NumResources, ref IDXGIResource* ppResources, ref ReclaimResourceResults pResults)
+        {
+            var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDXGIResource** ppResourcesPtr = &ppResources)
+            {
+                fixed (ReclaimResourceResults* pResultsPtr = &pResults)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint, IDXGIResource**, ReclaimResourceResults*, int>)LpVtbl[19])(@this, NumResources, ppResourcesPtr, pResultsPtr);
+                }
+            }
+            return ret;
         }
 
     }

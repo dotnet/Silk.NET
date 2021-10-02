@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("542c5c4d-7596-434f-8c93-4efa6766f267")]
     [NativeName("Name", "ID3D12VideoProcessCommandList1")]
     public unsafe partial struct ID3D12VideoProcessCommandList1
     {
+        public static readonly Guid Guid = new("542c5c4d-7596-434f-8c93-4efa6766f267");
+
         public static implicit operator ID3D12VideoProcessCommandList(ID3D12VideoProcessCommandList1 val)
             => Unsafe.As<ID3D12VideoProcessCommandList1, ID3D12VideoProcessCommandList>(ref val);
 
@@ -763,6 +766,98 @@ namespace Silk.NET.Direct3D12
                 fixed (WritebufferimmediateMode* pModesPtr = &pModes)
                 {
                     ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)LpVtbl[22])(@this, Count, pParamsPtr, pModesPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments1* pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArguments);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments1 pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessor, pOutputArguments, NumInputStreams, pInputArgumentsPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments1* pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessor, pOutputArgumentsPtr, NumInputStreams, pInputArguments);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments1 pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
+            {
+                fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessor, pOutputArgumentsPtr, NumInputStreams, pInputArgumentsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments1* pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pOutputArguments, NumInputStreams, pInputArguments);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments1 pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pOutputArguments, NumInputStreams, pInputArgumentsPtr);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, VideoProcessInputStreamArguments1* pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
+                {
+                    ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pOutputArgumentsPtr, NumInputStreams, pInputArguments);
+                }
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, ref VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, ref VideoProcessInputStreamArguments1 pInputArguments)
+        {
+            var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
+            {
+                fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
+                {
+                    fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
+                    {
+                        ((delegate* unmanaged[Cdecl]<ID3D12VideoProcessCommandList1*, ID3D12VideoProcessor*, VideoProcessOutputStreamArguments*, uint, VideoProcessInputStreamArguments1*, void>)LpVtbl[23])(@this, pVideoProcessorPtr, pOutputArgumentsPtr, NumInputStreams, pInputArgumentsPtr);
+                    }
                 }
             }
         }

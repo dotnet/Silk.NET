@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("7632e1f5-ee65-4dca-87fd-84cd75f8838d")]
     [NativeName("Name", "IDXGIFactory5")]
     public unsafe partial struct IDXGIFactory5
     {
+        public static readonly Guid Guid = new("7632e1f5-ee65-4dca-87fd-84cd75f8838d");
+
         public static implicit operator IDXGIFactory4(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory4>(ref val);
 
@@ -2190,6 +2193,27 @@ namespace Silk.NET.DXGI
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory5*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapterPtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckFeatureSupport(Feature Feature, void* pFeatureSupportData, uint FeatureSupportDataSize)
+        {
+            var @this = (IDXGIFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory5*, Feature, void*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory5*, Feature, T0*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
             return ret;
         }

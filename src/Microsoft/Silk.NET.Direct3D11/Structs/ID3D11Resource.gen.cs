@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("dc8e63f3-d12b-4952-b47b-5e45026a862d")]
     [NativeName("Name", "ID3D11Resource")]
     public unsafe partial struct ID3D11Resource
     {
+        public static readonly Guid Guid = new("dc8e63f3-d12b-4952-b47b-5e45026a862d");
+
         public static implicit operator ID3D11DeviceChild(ID3D11Resource val)
             => Unsafe.As<ID3D11Resource, ID3D11DeviceChild>(ref val);
 
@@ -325,6 +328,39 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Resource*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetType(ResourceDimension* pResourceDimension)
+        {
+            var @this = (ID3D11Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Resource*, ResourceDimension*, void>)LpVtbl[7])(@this, pResourceDimension);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetType(ref ResourceDimension pResourceDimension)
+        {
+            var @this = (ID3D11Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ResourceDimension* pResourceDimensionPtr = &pResourceDimension)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11Resource*, ResourceDimension*, void>)LpVtbl[7])(@this, pResourceDimensionPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetEvictionPriority(uint EvictionPriority)
+        {
+            var @this = (ID3D11Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11Resource*, uint, void>)LpVtbl[8])(@this, EvictionPriority);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetEvictionPriority()
+        {
+            var @this = (ID3D11Resource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Resource*, uint>)LpVtbl[9])(@this);
             return ret;
         }
 

@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("3015a308-dcbd-47aa-a747-192486d14d4a")]
     [NativeName("Name", "ID3D11AuthenticatedChannel")]
     public unsafe partial struct ID3D11AuthenticatedChannel
     {
+        public static readonly Guid Guid = new("3015a308-dcbd-47aa-a747-192486d14d4a");
+
         public static implicit operator ID3D11DeviceChild(ID3D11AuthenticatedChannel val)
             => Unsafe.As<ID3D11AuthenticatedChannel, ID3D11DeviceChild>(ref val);
 
@@ -326,6 +329,76 @@ namespace Silk.NET.Direct3D11
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCertificateSize(uint* pCertificateSize)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, uint*, int>)LpVtbl[7])(@this, pCertificateSize);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificateSize(ref uint pCertificateSize)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pCertificateSizePtr = &pCertificateSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, uint*, int>)LpVtbl[7])(@this, pCertificateSizePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCertificate(uint CertificateSize, byte* pCertificate)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, uint, byte*, int>)LpVtbl[8])(@this, CertificateSize, pCertificate);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificate(uint CertificateSize, ref byte pCertificate)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (byte* pCertificatePtr = &pCertificate)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, uint, byte*, int>)LpVtbl[8])(@this, CertificateSize, pCertificatePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCertificate(uint CertificateSize, string pCertificate)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pCertificatePtr = (byte*) Marshal.StringToHGlobalAnsi(pCertificate);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, uint, byte*, int>)LpVtbl[8])(@this, CertificateSize, pCertificatePtr);
+            Marshal.FreeHGlobal((nint)pCertificatePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetChannelHandle(void** pChannelHandle)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, void**, void>)LpVtbl[9])(@this, pChannelHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetChannelHandle(ref void* pChannelHandle)
+        {
+            var @this = (ID3D11AuthenticatedChannel*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void** pChannelHandlePtr = &pChannelHandle)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11AuthenticatedChannel*, void**, void>)LpVtbl[9])(@this, pChannelHandlePtr);
+            }
         }
 
     }

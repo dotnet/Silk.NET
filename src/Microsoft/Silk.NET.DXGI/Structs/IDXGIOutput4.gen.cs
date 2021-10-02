@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("dc7dca35-2196-414d-9f53-617884032a60")]
     [NativeName("Name", "IDXGIOutput4")]
     public unsafe partial struct IDXGIOutput4
     {
+        public static readonly Guid Guid = new("dc7dca35-2196-414d-9f53-617884032a60");
+
         public static implicit operator IDXGIOutput3(IDXGIOutput4 val)
             => Unsafe.As<IDXGIOutput4, IDXGIOutput3>(ref val);
 
@@ -988,6 +991,54 @@ namespace Silk.NET.DXGI
                 fixed (uint* pFlagsPtr = &pFlags)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput4*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlagsPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Native.IUnknown* pConcernedDevice, uint* pFlags)
+        {
+            var @this = (IDXGIOutput4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput4*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlags);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Native.IUnknown* pConcernedDevice, ref uint pFlags)
+        {
+            var @this = (IDXGIOutput4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (uint* pFlagsPtr = &pFlags)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput4*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlagsPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, uint* pFlags)
+        {
+            var @this = (IDXGIOutput4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput4*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlags);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, ref uint pFlags)
+        {
+            var @this = (IDXGIOutput4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+            {
+                fixed (uint* pFlagsPtr = &pFlags)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput4*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlagsPtr);
                 }
             }
             return ret;

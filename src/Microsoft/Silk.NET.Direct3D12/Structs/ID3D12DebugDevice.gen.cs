@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("3febd6dd-4973-4787-8194-e45f9e28923e")]
     [NativeName("Name", "ID3D12DebugDevice")]
     public unsafe partial struct ID3D12DebugDevice
     {
+        public static readonly Guid Guid = new("3febd6dd-4973-4787-8194-e45f9e28923e");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12DebugDevice val)
             => Unsafe.As<ID3D12DebugDevice, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -101,6 +104,33 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12DebugDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
             ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugDevice*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetFeatureMask(DebugFeature Mask)
+        {
+            var @this = (ID3D12DebugDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice*, DebugFeature, int>)LpVtbl[3])(@this, Mask);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly DebugFeature GetFeatureMask()
+        {
+            var @this = (ID3D12DebugDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            DebugFeature ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugDevice*, DebugFeature>)LpVtbl[4])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ReportLiveDeviceObjects(RldoFlags Flags)
+        {
+            var @this = (ID3D12DebugDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice*, RldoFlags, int>)LpVtbl[5])(@this, Flags);
             return ret;
         }
 

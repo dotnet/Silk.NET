@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("cc86fabe-da55-401d-85e7-e3c9de2877e9")]
     [NativeName("Name", "ID3D11BlendState1")]
     public unsafe partial struct ID3D11BlendState1
     {
+        public static readonly Guid Guid = new("cc86fabe-da55-401d-85e7-e3c9de2877e9");
+
         public static implicit operator ID3D11BlendState(ID3D11BlendState1 val)
             => Unsafe.As<ID3D11BlendState1, ID3D11BlendState>(ref val);
 
@@ -345,6 +348,23 @@ namespace Silk.NET.Direct3D11
             fixed (BlendDesc* pDescPtr = &pDesc)
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11BlendState1*, BlendDesc*, void>)LpVtbl[7])(@this, pDescPtr);
+            }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetDesc1(BlendDesc1* pDesc)
+        {
+            var @this = (ID3D11BlendState1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11BlendState1*, BlendDesc1*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetDesc1(ref BlendDesc1 pDesc)
+        {
+            var @this = (ID3D11BlendState1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (BlendDesc1* pDescPtr = &pDesc)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11BlendState1*, BlendDesc1*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

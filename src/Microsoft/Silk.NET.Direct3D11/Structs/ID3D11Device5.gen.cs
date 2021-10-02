@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("8ffde202-a0e7-45df-9e01-e837801b5ea0")]
     [NativeName("Name", "ID3D11Device5")]
     public unsafe partial struct ID3D11Device5
     {
+        public static readonly Guid Guid = new("8ffde202-a0e7-45df-9e01-e837801b5ea0");
+
         public static implicit operator ID3D11Device4(ID3D11Device5 val)
             => Unsafe.As<ID3D11Device5, ID3D11Device4>(ref val);
 
@@ -45483,6 +45486,162 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11Device5*, uint, void>)LpVtbl[66])(@this, dwCookie);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence(void* hFence, Guid* ReturnedInterface, void** ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, void*, Guid*, void**, int>)LpVtbl[67])(@this, hFence, ReturnedInterface, ppFence);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence(void* hFence, Guid* ReturnedInterface, ref void* ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppFencePtr = &ppFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, void*, Guid*, void**, int>)LpVtbl[67])(@this, hFence, ReturnedInterface, ppFencePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence(void* hFence, ref Guid ReturnedInterface, void** ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, void*, Guid*, void**, int>)LpVtbl[67])(@this, hFence, ReturnedInterfacePtr, ppFence);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence(void* hFence, ref Guid ReturnedInterface, ref void* ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                fixed (void** ppFencePtr = &ppFence)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, void*, Guid*, void**, int>)LpVtbl[67])(@this, hFence, ReturnedInterfacePtr, ppFencePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence<T0>(ref T0 hFence, Guid* ReturnedInterface, void** ppFence) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFencePtr = &hFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, T0*, Guid*, void**, int>)LpVtbl[67])(@this, hFencePtr, ReturnedInterface, ppFence);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence<T0>(ref T0 hFence, Guid* ReturnedInterface, ref void* ppFence) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFencePtr = &hFence)
+            {
+                fixed (void** ppFencePtr = &ppFence)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, T0*, Guid*, void**, int>)LpVtbl[67])(@this, hFencePtr, ReturnedInterface, ppFencePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence<T0>(ref T0 hFence, ref Guid ReturnedInterface, void** ppFence) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFencePtr = &hFence)
+            {
+                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, T0*, Guid*, void**, int>)LpVtbl[67])(@this, hFencePtr, ReturnedInterfacePtr, ppFence);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int OpenSharedFence<T0>(ref T0 hFence, ref Guid ReturnedInterface, ref void* ppFence) where T0 : unmanaged
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (T0* hFencePtr = &hFence)
+            {
+                fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+                {
+                    fixed (void** ppFencePtr = &ppFence)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, T0*, Guid*, void**, int>)LpVtbl[67])(@this, hFencePtr, ReturnedInterfacePtr, ppFencePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateFence(ulong InitialValue, FenceFlag Flags, Guid* ReturnedInterface, void** ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, ulong, FenceFlag, Guid*, void**, int>)LpVtbl[68])(@this, InitialValue, Flags, ReturnedInterface, ppFence);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateFence(ulong InitialValue, FenceFlag Flags, Guid* ReturnedInterface, ref void* ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** ppFencePtr = &ppFence)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, ulong, FenceFlag, Guid*, void**, int>)LpVtbl[68])(@this, InitialValue, Flags, ReturnedInterface, ppFencePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateFence(ulong InitialValue, FenceFlag Flags, ref Guid ReturnedInterface, void** ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, ulong, FenceFlag, Guid*, void**, int>)LpVtbl[68])(@this, InitialValue, Flags, ReturnedInterfacePtr, ppFence);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateFence(ulong InitialValue, FenceFlag Flags, ref Guid ReturnedInterface, ref void* ppFence)
+        {
+            var @this = (ID3D11Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* ReturnedInterfacePtr = &ReturnedInterface)
+            {
+                fixed (void** ppFencePtr = &ppFence)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device5*, ulong, FenceFlag, Guid*, void**, int>)LpVtbl[68])(@this, InitialValue, Flags, ReturnedInterfacePtr, ppFencePtr);
+                }
+            }
+            return ret;
         }
 
     }

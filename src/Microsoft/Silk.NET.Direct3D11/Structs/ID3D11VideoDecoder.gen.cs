@@ -16,9 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("3c9c5b51-995d-48d1-9b8d-fa5caeded65c")]
     [NativeName("Name", "ID3D11VideoDecoder")]
     public unsafe partial struct ID3D11VideoDecoder
     {
+        public static readonly Guid Guid = new("3c9c5b51-995d-48d1-9b8d-fa5caeded65c");
+
         public static implicit operator ID3D11DeviceChild(ID3D11VideoDecoder val)
             => Unsafe.As<ID3D11VideoDecoder, ID3D11DeviceChild>(ref val);
 
@@ -324,6 +327,75 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCreationParameters(VideoDecoderDesc* pVideoDesc, VideoDecoderConfig* pConfig)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, VideoDecoderDesc*, VideoDecoderConfig*, int>)LpVtbl[7])(@this, pVideoDesc, pConfig);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCreationParameters(VideoDecoderDesc* pVideoDesc, ref VideoDecoderConfig pConfig)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, VideoDecoderDesc*, VideoDecoderConfig*, int>)LpVtbl[7])(@this, pVideoDesc, pConfigPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetCreationParameters(ref VideoDecoderDesc pVideoDesc, VideoDecoderConfig* pConfig)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pVideoDescPtr = &pVideoDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, VideoDecoderDesc*, VideoDecoderConfig*, int>)LpVtbl[7])(@this, pVideoDescPtr, pConfig);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetCreationParameters(ref VideoDecoderDesc pVideoDesc, ref VideoDecoderConfig pConfig)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (VideoDecoderDesc* pVideoDescPtr = &pVideoDesc)
+            {
+                fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, VideoDecoderDesc*, VideoDecoderConfig*, int>)LpVtbl[7])(@this, pVideoDescPtr, pConfigPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDriverHandle(void** pDriverHandle)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, void**, int>)LpVtbl[8])(@this, pDriverHandle);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDriverHandle(ref void* pDriverHandle)
+        {
+            var @this = (ID3D11VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (void** pDriverHandlePtr = &pDriverHandle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDecoder*, void**, int>)LpVtbl[8])(@this, pDriverHandlePtr);
             }
             return ret;
         }
