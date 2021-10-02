@@ -14,17 +14,18 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_DISPLAY_COLOR_SPACE")]
-public unsafe partial struct DisplayColorSpace
+namespace Silk.NET.DXGI
 {
-    [NativeName("Type", "FLOAT [8][2]")]
-    [NativeName("Type.Name", "FLOAT [8][2]")]
-    [NativeName("Name", "PrimaryCoordinates")]
-    public fixed float PrimaryCoordinates[16];
-    [NativeName("Type", "FLOAT [16][2]")]
-    [NativeName("Type.Name", "FLOAT [16][2]")]
-    [NativeName("Name", "WhitePoints")]
-    public fixed float WhitePoints[32];
+    [NativeName("Name", "DXGI_DISPLAY_COLOR_SPACE")]
+    public unsafe partial struct DisplayColorSpace
+    {
+        [NativeName("Type", "FLOAT [8][2]")]
+        [NativeName("Type.Name", "FLOAT [8][2]")]
+        [NativeName("Name", "PrimaryCoordinates")]
+        public fixed float PrimaryCoordinates[16];
+        [NativeName("Type", "FLOAT [16][2]")]
+        [NativeName("Type.Name", "FLOAT [16][2]")]
+        [NativeName("Name", "WhitePoints")]
+        public fixed float WhitePoints[32];
+    }
 }

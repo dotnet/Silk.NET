@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPerformanceStreamMarkerInfoINTEL")]
-public unsafe partial struct PerformanceStreamMarkerInfoINTEL
+namespace Silk.NET.Vulkan
 {
-    public PerformanceStreamMarkerInfoINTEL
-    (
+    [NativeName("Name", "VkPerformanceStreamMarkerInfoINTEL")]
+    public unsafe partial struct PerformanceStreamMarkerInfoINTEL
+    {
+        public PerformanceStreamMarkerInfoINTEL
+        (
             StructureType? sType = StructureType.PerformanceStreamMarkerInfoIntel,
             void* pNext = null,
             uint? marker = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (marker is not null)
+            {
+                Marker = marker.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (marker is not null)
-        {
-            Marker = marker.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "marker")]
+        public uint Marker;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "marker")]
-    public uint Marker;
 }

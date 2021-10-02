@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_OUTDUPL_FLAG")]
-public enum OutduplFlag : int
+namespace Silk.NET.DXGI
 {
-    [NativeName("Name", "DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY")]
-    OutduplCompositedUICaptureOnly = 0x1,
+    [NativeName("Name", "DXGI_OUTDUPL_FLAG")]
+    public enum OutduplFlag : int
+    {
+        [NativeName("Name", "DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY")]
+        OutduplCompositedUICaptureOnly = 0x1,
+    }
 }

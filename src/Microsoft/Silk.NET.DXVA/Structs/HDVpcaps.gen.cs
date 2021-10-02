@@ -14,80 +14,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_VPCAPS")]
-public unsafe partial struct HDVpcaps
+namespace Silk.NET.DXVA
 {
-    public HDVpcaps
-    (
+    [NativeName("Name", "_DXVAHD_VPCAPS")]
+    public unsafe partial struct HDVpcaps
+    {
+        public HDVpcaps
+        (
             Guid? vPGuid = null,
             uint? pastFrames = null,
             uint? futureFrames = null,
             uint? processorCaps = null,
             uint? iTelecineCaps = null,
             uint? customRateCount = null
-    ) : this()
-    {
-        if (vPGuid is not null)
+        ) : this()
         {
-            VPGuid = vPGuid.Value;
+            if (vPGuid is not null)
+            {
+                VPGuid = vPGuid.Value;
+            }
+
+            if (pastFrames is not null)
+            {
+                PastFrames = pastFrames.Value;
+            }
+
+            if (futureFrames is not null)
+            {
+                FutureFrames = futureFrames.Value;
+            }
+
+            if (processorCaps is not null)
+            {
+                ProcessorCaps = processorCaps.Value;
+            }
+
+            if (iTelecineCaps is not null)
+            {
+                ITelecineCaps = iTelecineCaps.Value;
+            }
+
+            if (customRateCount is not null)
+            {
+                CustomRateCount = customRateCount.Value;
+            }
         }
 
-        if (pastFrames is not null)
-        {
-            PastFrames = pastFrames.Value;
-        }
 
-        if (futureFrames is not null)
-        {
-            FutureFrames = futureFrames.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "VPGuid")]
+        public Guid VPGuid;
 
-        if (processorCaps is not null)
-        {
-            ProcessorCaps = processorCaps.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "PastFrames")]
+        public uint PastFrames;
 
-        if (iTelecineCaps is not null)
-        {
-            ITelecineCaps = iTelecineCaps.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FutureFrames")]
+        public uint FutureFrames;
 
-        if (customRateCount is not null)
-        {
-            CustomRateCount = customRateCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ProcessorCaps")]
+        public uint ProcessorCaps;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ITelecineCaps")]
+        public uint ITelecineCaps;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "CustomRateCount")]
+        public uint CustomRateCount;
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "VPGuid")]
-    public Guid VPGuid;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "PastFrames")]
-    public uint PastFrames;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FutureFrames")]
-    public uint FutureFrames;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ProcessorCaps")]
-    public uint ProcessorCaps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ITelecineCaps")]
-    public uint ITelecineCaps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "CustomRateCount")]
-    public uint CustomRateCount;
 }

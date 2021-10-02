@@ -12,27 +12,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR;
-
-public static class KhrCreateCommandQueueOverloads
+namespace Silk.NET.OpenCL.Extensions.KHR
 {
-    public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+    public static class KhrCreateCommandQueueOverloads
     {
-        // SpanOverloader
-        return thisApi.CreateCommandQueueWithProperties(context, device, properties, out errcode_ret.GetPinnableReference());
-    }
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateCommandQueueWithProperties(context, device, properties, out errcode_ret.GetPinnableReference());
+        }
 
-    public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<KHR> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
-    {
-        // SpanOverloader
-        return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), errcode_ret);
-    }
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<KHR> properties, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), errcode_ret);
+        }
 
-    public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<KHR> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-    {
-        // SpanOverloader
-        return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), out errcode_ret.GetPinnableReference());
-    }
+        public static unsafe nint CreateCommandQueueWithProperties(this KhrCreateCommandQueue thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ReadOnlySpan<KHR> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        {
+            // SpanOverloader
+            return thisApi.CreateCommandQueueWithProperties(context, device, in properties.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
 
+    }
 }
 

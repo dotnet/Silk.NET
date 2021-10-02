@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "IndexMaterialParameterEXT")]
-public enum IndexMaterialParameterEXT : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_INDEX_OFFSET")]
-    IndexOffset = 0xD13,
+    [NativeName("Name", "IndexMaterialParameterEXT")]
+    public enum IndexMaterialParameterEXT : int
+    {
+        [NativeName("Name", "GL_INDEX_OFFSET")]
+        IndexOffset = 0xD13,
+    }
 }

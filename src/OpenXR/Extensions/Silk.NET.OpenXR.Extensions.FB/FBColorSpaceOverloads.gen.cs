@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.FB;
-
-public static class FBColorSpaceOverloads
+namespace Silk.NET.OpenXR.Extensions.FB
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
+    public static class FBColorSpaceOverloads
     {
-        // SpanOverloader
-        return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, colorSpaceCountOutput, ref colorSpaces.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, colorSpaceCountOutput, ref colorSpaces.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces)
-    {
-        // SpanOverloader
-        return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, ref colorSpaceCountOutput.GetPinnableReference(), colorSpaces);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, ref colorSpaceCountOutput.GetPinnableReference(), colorSpaces);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
-    {
-        // SpanOverloader
-        return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, ref colorSpaceCountOutput.GetPinnableReference(), ref colorSpaces.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, ref colorSpaceCountOutput.GetPinnableReference(), ref colorSpaces.GetPinnableReference());
+        }
 
+    }
 }
 

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT")]
-public unsafe partial struct AuthenticatedConfigureInitializeInput
+namespace Silk.NET.Direct3D11
 {
-    public AuthenticatedConfigureInitializeInput
-    (
+    [NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT")]
+    public unsafe partial struct AuthenticatedConfigureInitializeInput
+    {
+        public AuthenticatedConfigureInitializeInput
+        (
             AuthenticatedConfigureInput? parameters = null,
             uint? startSequenceQuery = null,
             uint? startSequenceConfigure = null
-    ) : this()
-    {
-        if (parameters is not null)
+        ) : this()
         {
-            Parameters = parameters.Value;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (startSequenceQuery is not null)
+            {
+                StartSequenceQuery = startSequenceQuery.Value;
+            }
+
+            if (startSequenceConfigure is not null)
+            {
+                StartSequenceConfigure = startSequenceConfigure.Value;
+            }
         }
 
-        if (startSequenceQuery is not null)
-        {
-            StartSequenceQuery = startSequenceQuery.Value;
-        }
 
-        if (startSequenceConfigure is not null)
-        {
-            StartSequenceConfigure = startSequenceConfigure.Value;
-        }
+        [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+        [NativeName("Name", "Parameters")]
+        public AuthenticatedConfigureInput Parameters;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StartSequenceQuery")]
+        public uint StartSequenceQuery;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StartSequenceConfigure")]
+        public uint StartSequenceConfigure;
     }
-
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-    [NativeName("Name", "Parameters")]
-    public AuthenticatedConfigureInput Parameters;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StartSequenceQuery")]
-    public uint StartSequenceQuery;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StartSequenceConfigure")]
-    public uint StartSequenceConfigure;
 }

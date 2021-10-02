@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS")]
-public unsafe partial struct FeatureDataVideoProcessMaxInputStreams
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataVideoProcessMaxInputStreams
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_PROCESS_MAX_INPUT_STREAMS")]
+    public unsafe partial struct FeatureDataVideoProcessMaxInputStreams
+    {
+        public FeatureDataVideoProcessMaxInputStreams
+        (
             uint? nodeIndex = null,
             uint? maxInputStreams = null
-    ) : this()
-    {
-        if (nodeIndex is not null)
+        ) : this()
         {
-            NodeIndex = nodeIndex.Value;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (maxInputStreams is not null)
+            {
+                MaxInputStreams = maxInputStreams.Value;
+            }
         }
 
-        if (maxInputStreams is not null)
-        {
-            MaxInputStreams = maxInputStreams.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NodeIndex")]
+        public uint NodeIndex;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxInputStreams")]
+        public uint MaxInputStreams;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NodeIndex")]
-    public uint NodeIndex;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxInputStreams")]
-    public uint MaxInputStreams;
 }

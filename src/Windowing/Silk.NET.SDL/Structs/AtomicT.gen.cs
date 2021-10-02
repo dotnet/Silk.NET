@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_atomic_t")]
-public unsafe partial struct AtomicT
+namespace Silk.NET.SDL
 {
-    public AtomicT
-    (
-            int? value = null
-    ) : this()
+    [NativeName("Name", "SDL_atomic_t")]
+    public unsafe partial struct AtomicT
     {
-        if (value is not null)
+        public AtomicT
+        (
+            int? value = null
+        ) : this()
         {
-            Value = value.Value;
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
+
+
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "value")]
+        public int Value;
     }
-
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "value")]
-    public int Value;
 }

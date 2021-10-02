@@ -7,19 +7,20 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrReferenceSpaceType")]
-public enum ReferenceSpaceType : int
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_VIEW")]
-    View = 1,
-    [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_LOCAL")]
-    Local = 2,
-    [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_STAGE")]
-    Stage = 3,
-    [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT")]
-    UnboundedMsft = 1000038000,
-    [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_COMBINED_EYE_VARJO")]
-    CombinedEyeVarjo = 1000121000,
+    [NativeName("Name", "XrReferenceSpaceType")]
+    public enum ReferenceSpaceType : int
+    {
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_VIEW")]
+        View = 1,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_LOCAL")]
+        Local = 2,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_STAGE")]
+        Stage = 3,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT")]
+        UnboundedMsft = 1000038000,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_COMBINED_EYE_VARJO")]
+        CombinedEyeVarjo = 1000121000,
+    }
 }

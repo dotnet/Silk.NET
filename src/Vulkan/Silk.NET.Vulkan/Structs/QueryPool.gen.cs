@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkQueryPool")]
-public unsafe partial struct QueryPool
+namespace Silk.NET.Vulkan
 {
-    public QueryPool
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkQueryPool")]
+    public unsafe partial struct QueryPool
     {
-        if (handle is not null)
+        public QueryPool
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

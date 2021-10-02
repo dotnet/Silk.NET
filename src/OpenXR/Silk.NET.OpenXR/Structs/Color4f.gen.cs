@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrColor4f")]
-public unsafe partial struct Color4f
+namespace Silk.NET.OpenXR
 {
-    public Color4f
-    (
+    [NativeName("Name", "XrColor4f")]
+    public unsafe partial struct Color4f
+    {
+        public Color4f
+        (
             float? r = null,
             float? g = null,
             float? b = null,
             float? a = null
-    ) : this()
-    {
-        if (r is not null)
+        ) : this()
         {
-            R = r.Value;
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
-        if (g is not null)
-        {
-            G = g.Value;
-        }
-
-        if (b is not null)
-        {
-            B = b.Value;
-        }
-
-        if (a is not null)
-        {
-            A = a.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "r")]
+        public float R;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "g")]
+        public float G;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "b")]
+        public float B;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "a")]
+        public float A;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "r")]
-    public float R;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "g")]
-    public float G;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "b")]
-    public float B;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "a")]
-    public float A;
 }

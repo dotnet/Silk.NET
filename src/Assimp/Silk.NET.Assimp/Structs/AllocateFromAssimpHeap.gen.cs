@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "AllocateFromAssimpHeap")]
-public unsafe partial struct AllocateFromAssimpHeap
+namespace Silk.NET.Assimp
 {
+    [NativeName("Name", "AllocateFromAssimpHeap")]
+    public unsafe partial struct AllocateFromAssimpHeap
+    {
+    }
 }

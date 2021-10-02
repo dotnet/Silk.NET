@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkStridedDeviceAddressRegionKHR")]
-public unsafe partial struct StridedDeviceAddressRegionKHR
+namespace Silk.NET.Vulkan
 {
-    public StridedDeviceAddressRegionKHR
-    (
+    [NativeName("Name", "VkStridedDeviceAddressRegionKHR")]
+    public unsafe partial struct StridedDeviceAddressRegionKHR
+    {
+        public StridedDeviceAddressRegionKHR
+        (
             ulong? deviceAddress = null,
             ulong? stride = null,
             ulong? size = null
-    ) : this()
-    {
-        if (deviceAddress is not null)
+        ) : this()
         {
-            DeviceAddress = deviceAddress.Value;
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
-        if (stride is not null)
-        {
-            Stride = stride.Value;
-        }
-
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "deviceAddress")]
+        public ulong DeviceAddress;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "stride")]
+        public ulong Stride;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceAddress")]
-    [NativeName("Type.Name", "VkDeviceAddress")]
-    [NativeName("Name", "deviceAddress")]
-    public ulong DeviceAddress;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "stride")]
-    public ulong Stride;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "size")]
-    public ulong Size;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBufferMemoryRequirementsInfo2KHR")]
-public unsafe partial struct BufferMemoryRequirementsInfo2KHR
+namespace Silk.NET.Vulkan
 {
-    public BufferMemoryRequirementsInfo2KHR
-    (
+    [NativeName("Name", "VkBufferMemoryRequirementsInfo2KHR")]
+    public unsafe partial struct BufferMemoryRequirementsInfo2KHR
+    {
+        public BufferMemoryRequirementsInfo2KHR
+        (
             StructureType? sType = StructureType.BufferMemoryRequirementsInfo2,
             void* pNext = null,
             Buffer? buffer = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (buffer is not null)
-        {
-            Buffer = buffer.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
+        public Buffer Buffer;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBuffer")]
-    [NativeName("Type.Name", "VkBuffer")]
-    [NativeName("Name", "buffer")]
-    public Buffer Buffer;
 }

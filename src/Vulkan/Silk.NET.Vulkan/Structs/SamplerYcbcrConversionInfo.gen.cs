@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSamplerYcbcrConversionInfo")]
-public unsafe partial struct SamplerYcbcrConversionInfo
+namespace Silk.NET.Vulkan
 {
-    public SamplerYcbcrConversionInfo
-    (
+    [NativeName("Name", "VkSamplerYcbcrConversionInfo")]
+    public unsafe partial struct SamplerYcbcrConversionInfo
+    {
+        public SamplerYcbcrConversionInfo
+        (
             StructureType? sType = StructureType.SamplerYcbcrConversionInfo,
             void* pNext = null,
             SamplerYcbcrConversion? conversion = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conversion is not null)
+            {
+                Conversion = conversion.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (conversion is not null)
-        {
-            Conversion = conversion.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkSamplerYcbcrConversion")]
+        [NativeName("Type.Name", "VkSamplerYcbcrConversion")]
+        [NativeName("Name", "conversion")]
+        public SamplerYcbcrConversion Conversion;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkSamplerYcbcrConversion")]
-    [NativeName("Type.Name", "VkSamplerYcbcrConversion")]
-    [NativeName("Name", "conversion")]
-    public SamplerYcbcrConversion Conversion;
 }

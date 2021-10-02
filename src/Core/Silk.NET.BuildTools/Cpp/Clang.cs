@@ -888,6 +888,11 @@ namespace Silk.NET.BuildTools.Cpp
                 for (var i = 0; i < recordDecl.Decls.Count; i++)
                 {
                     var decl = recordDecl.Decls[i];
+                    if (i == 0 && recordDecl.SourceRange.Start == decl.SourceRange.Start)
+                    {
+                        continue; // why is this even a thing oml
+                    }
+                    
                     switch (decl)
                     {
                         case FieldDecl field:
@@ -994,7 +999,7 @@ namespace Silk.NET.BuildTools.Cpp
                                     if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
                                     {
                                         skip = true;
-                                        if (renameNestedName)
+                                        if (renameNestedName && !string.IsNullOrWhiteSpace(nestedFieldDecl.Name))
                                         {
                                             task.RenamedNativeNames[nestedName] =
                                                 nestedNameMapped + nestedFieldDecl.Name.Pascalize();
@@ -1156,7 +1161,7 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                             else
                             {
-                                Console.WriteLine("Skipping...");
+                                Console.WriteLine("Preferring existing definition.");
                                 break;
                             }
                         }

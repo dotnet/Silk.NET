@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_FILTER_RANGE_DATA")]
-public unsafe partial struct HDFilterRangeData
+namespace Silk.NET.DXVA
 {
-    public HDFilterRangeData
-    (
+    [NativeName("Name", "_DXVAHD_FILTER_RANGE_DATA")]
+    public unsafe partial struct HDFilterRangeData
+    {
+        public HDFilterRangeData
+        (
             int? minimum = null,
             int? maximum = null,
             int? @default = null,
             float? multiplier = null
-    ) : this()
-    {
-        if (minimum is not null)
+        ) : this()
         {
-            Minimum = minimum.Value;
+            if (minimum is not null)
+            {
+                Minimum = minimum.Value;
+            }
+
+            if (maximum is not null)
+            {
+                Maximum = maximum.Value;
+            }
+
+            if (@default is not null)
+            {
+                Default = @default.Value;
+            }
+
+            if (multiplier is not null)
+            {
+                Multiplier = multiplier.Value;
+            }
         }
 
-        if (maximum is not null)
-        {
-            Maximum = maximum.Value;
-        }
 
-        if (@default is not null)
-        {
-            Default = @default.Value;
-        }
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "Minimum")]
+        public int Minimum;
 
-        if (multiplier is not null)
-        {
-            Multiplier = multiplier.Value;
-        }
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "Maximum")]
+        public int Maximum;
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "Default")]
+        public int Default;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Multiplier")]
+        public float Multiplier;
     }
-
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "Minimum")]
-    public int Minimum;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "Maximum")]
-    public int Maximum;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "Default")]
-    public int Default;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Multiplier")]
-    public float Multiplier;
 }

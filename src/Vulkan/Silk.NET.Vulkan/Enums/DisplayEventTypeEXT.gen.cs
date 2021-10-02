@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDisplayEventTypeEXT")]
-public enum DisplayEventTypeEXT : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT")]
-    DisplayEventTypeFirstPixelOutExt = 0,
+    [NativeName("Name", "VkDisplayEventTypeEXT")]
+    public enum DisplayEventTypeEXT : int
+    {
+        [NativeName("Name", "VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT")]
+        DisplayEventTypeFirstPixelOutExt = 0,
+    }
 }

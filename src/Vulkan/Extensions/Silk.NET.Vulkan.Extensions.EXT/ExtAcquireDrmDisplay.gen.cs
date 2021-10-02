@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-[Extension("VK_EXT_acquire_drm_display")]
-public unsafe partial class ExtAcquireDrmDisplay : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    public const string ExtensionName = "VK_EXT_acquire_drm_display";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkAcquireDrmDisplayEXT")]
-    public partial Result AcquireDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] DisplayKHR display);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
-    public unsafe partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* display);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
-    public partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR display);
-
-    public ExtAcquireDrmDisplay(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_EXT_acquire_drm_display")]
+    public unsafe partial class ExtAcquireDrmDisplay : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_EXT_acquire_drm_display";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkAcquireDrmDisplayEXT")]
+        public partial Result AcquireDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] DisplayKHR display);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
+        public unsafe partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* display);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDrmDisplayEXT")]
+        public partial Result GetDrmDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR display);
+
+        public ExtAcquireDrmDisplay(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

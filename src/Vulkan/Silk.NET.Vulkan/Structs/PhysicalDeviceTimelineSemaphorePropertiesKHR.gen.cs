@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceTimelineSemaphorePropertiesKHR")]
-public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceTimelineSemaphorePropertiesKHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceTimelineSemaphorePropertiesKHR")]
+    public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKHR
+    {
+        public PhysicalDeviceTimelineSemaphorePropertiesKHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
             void* pNext = null,
             ulong? maxTimelineSemaphoreValueDifference = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxTimelineSemaphoreValueDifference is not null)
+            {
+                MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (maxTimelineSemaphoreValueDifference is not null)
-        {
-            MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "maxTimelineSemaphoreValueDifference")]
+        public ulong MaxTimelineSemaphoreValueDifference;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "maxTimelineSemaphoreValueDifference")]
-    public ulong MaxTimelineSemaphoreValueDifference;
 }

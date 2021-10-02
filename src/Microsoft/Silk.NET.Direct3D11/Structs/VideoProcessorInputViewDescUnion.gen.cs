@@ -14,27 +14,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_d3d11_L11375_C5")]
-public unsafe partial struct VideoProcessorInputViewDescUnion
+namespace Silk.NET.Direct3D11
 {
-    public VideoProcessorInputViewDescUnion
-    (
-            Tex2DVpiv? texture2D = null
-    ) : this()
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_d3d11_L11375_C5")]
+    public unsafe partial struct VideoProcessorInputViewDescUnion
     {
-        if (texture2D is not null)
+        public VideoProcessorInputViewDescUnion
+        (
+            Tex2DVpiv? texture2D = null
+        ) : this()
         {
-            Texture2D = texture2D.Value;
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
         }
-    }
 
 
         [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX2D_VPIV")]
-    [NativeName("Type.Name", "D3D11_TEX2D_VPIV")]
-    [NativeName("Name", "Texture2D")]
-    public Tex2DVpiv Texture2D;
+        [NativeName("Type", "D3D11_TEX2D_VPIV")]
+        [NativeName("Type.Name", "D3D11_TEX2D_VPIV")]
+        [NativeName("Name", "Texture2D")]
+        public Tex2DVpiv Texture2D;
+    }
 }

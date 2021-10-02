@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrVulkanGraphicsDeviceGetInfoKHR")]
-public unsafe partial struct VulkanGraphicsDeviceGetInfoKHR
+namespace Silk.NET.OpenXR
 {
-    public VulkanGraphicsDeviceGetInfoKHR
-    (
+    [NativeName("Name", "XrVulkanGraphicsDeviceGetInfoKHR")]
+    public unsafe partial struct VulkanGraphicsDeviceGetInfoKHR
+    {
+        public VulkanGraphicsDeviceGetInfoKHR
+        (
             StructureType? type = StructureType.TypeVulkanGraphicsDeviceGetInfoKhr,
             void* next = null,
             ulong? systemId = null,
             Silk.NET.Core.Native.VkHandle? vulkanInstance = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (systemId is not null)
+            {
+                SystemId = systemId.Value;
+            }
+
+            if (vulkanInstance is not null)
+            {
+                VulkanInstance = vulkanInstance.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (systemId is not null)
-        {
-            SystemId = systemId.Value;
-        }
-
-        if (vulkanInstance is not null)
-        {
-            VulkanInstance = vulkanInstance.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrSystemId")]
+        [NativeName("Type.Name", "XrSystemId")]
+        [NativeName("Name", "systemId")]
+        public ulong SystemId;
+/// <summary></summary>
+        [NativeName("Type", "VkInstance")]
+        [NativeName("Type.Name", "VkInstance")]
+        [NativeName("Name", "vulkanInstance")]
+        public Silk.NET.Core.Native.VkHandle VulkanInstance;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrSystemId")]
-    [NativeName("Type.Name", "XrSystemId")]
-    [NativeName("Name", "systemId")]
-    public ulong SystemId;
-/// <summary></summary>
-    [NativeName("Type", "VkInstance")]
-    [NativeName("Type.Name", "VkInstance")]
-    [NativeName("Name", "vulkanInstance")]
-    public Silk.NET.Core.Native.VkHandle VulkanInstance;
 }

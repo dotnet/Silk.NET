@@ -7,17 +7,18 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0010")]
-public enum MIDLMIDLItfDxva2api000000000010 : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVA2_SampleData_RFF")]
-    DXVA2SampleDataRff = 0x1,
-    [NativeName("Name", "DXVA2_SampleData_TFF")]
-    DXVA2SampleDataTff = 0x2,
-    [NativeName("Name", "DXVA2_SampleData_RFF_TFF_Present")]
-    DXVA2SampleDataRffTffPresent = 0x4,
-    [NativeName("Name", "DXVA2_SampleData_Mask")]
-    DXVA2SampleDataMask = 0xFFFF,
+    [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0010")]
+    public enum MIDLMIDLItfDxva2api000000000010 : int
+    {
+        [NativeName("Name", "DXVA2_SampleData_RFF")]
+        DXVA2SampleDataRff = 0x1,
+        [NativeName("Name", "DXVA2_SampleData_TFF")]
+        DXVA2SampleDataTff = 0x2,
+        [NativeName("Name", "DXVA2_SampleData_RFF_TFF_Present")]
+        DXVA2SampleDataRffTffPresent = 0x4,
+        [NativeName("Name", "DXVA2_SampleData_Mask")]
+        DXVA2SampleDataMask = 0xFFFF,
+    }
 }

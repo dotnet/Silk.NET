@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DOVERLAYCAPS")]
-public unsafe partial struct Overlaycaps
+namespace Silk.NET.Direct3D9
 {
-    public Overlaycaps
-    (
+    [NativeName("Name", "_D3DOVERLAYCAPS")]
+    public unsafe partial struct Overlaycaps
+    {
+        public Overlaycaps
+        (
             uint? caps = null,
             uint? maxOverlayDisplayWidth = null,
             uint? maxOverlayDisplayHeight = null
-    ) : this()
-    {
-        if (caps is not null)
+        ) : this()
         {
-            Caps = caps.Value;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (maxOverlayDisplayWidth is not null)
+            {
+                MaxOverlayDisplayWidth = maxOverlayDisplayWidth.Value;
+            }
+
+            if (maxOverlayDisplayHeight is not null)
+            {
+                MaxOverlayDisplayHeight = maxOverlayDisplayHeight.Value;
+            }
         }
 
-        if (maxOverlayDisplayWidth is not null)
-        {
-            MaxOverlayDisplayWidth = maxOverlayDisplayWidth.Value;
-        }
 
-        if (maxOverlayDisplayHeight is not null)
-        {
-            MaxOverlayDisplayHeight = maxOverlayDisplayHeight.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Caps")]
+        public uint Caps;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxOverlayDisplayWidth")]
+        public uint MaxOverlayDisplayWidth;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxOverlayDisplayHeight")]
+        public uint MaxOverlayDisplayHeight;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Caps")]
-    public uint Caps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxOverlayDisplayWidth")]
-    public uint MaxOverlayDisplayWidth;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxOverlayDisplayHeight")]
-    public uint MaxOverlayDisplayHeight;
 }

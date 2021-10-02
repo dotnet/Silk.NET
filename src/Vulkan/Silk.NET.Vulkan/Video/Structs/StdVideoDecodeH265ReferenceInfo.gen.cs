@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoDecodeH265ReferenceInfo")]
-public unsafe partial struct StdVideoDecodeH265ReferenceInfo
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoDecodeH265ReferenceInfo
-    (
+    [NativeName("Name", "StdVideoDecodeH265ReferenceInfo")]
+    public unsafe partial struct StdVideoDecodeH265ReferenceInfo
+    {
+        public StdVideoDecodeH265ReferenceInfo
+        (
             int? picOrderCntVal = null,
             StdVideoDecodeH265ReferenceInfoFlags? flags = null
-    ) : this()
-    {
-        if (picOrderCntVal is not null)
+        ) : this()
         {
-            PicOrderCntVal = picOrderCntVal.Value;
+            if (picOrderCntVal is not null)
+            {
+                PicOrderCntVal = picOrderCntVal.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "PicOrderCntVal")]
+        public int PicOrderCntVal;
+
+        [NativeName("Type", "StdVideoDecodeH265ReferenceInfoFlags")]
+        [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfoFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoDecodeH265ReferenceInfoFlags Flags;
     }
-
-
-    [NativeName("Type", "int32_t")]
-    [NativeName("Type.Name", "int32_t")]
-    [NativeName("Name", "PicOrderCntVal")]
-    public int PicOrderCntVal;
-
-    [NativeName("Type", "StdVideoDecodeH265ReferenceInfoFlags")]
-    [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfoFlags")]
-    [NativeName("Name", "flags")]
-    public StdVideoDecodeH265ReferenceInfoFlags Flags;
 }

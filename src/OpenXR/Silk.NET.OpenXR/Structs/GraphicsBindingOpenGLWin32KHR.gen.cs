@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrGraphicsBindingOpenGLWin32KHR")]
-public unsafe partial struct GraphicsBindingOpenGLWin32KHR
+namespace Silk.NET.OpenXR
 {
-    public GraphicsBindingOpenGLWin32KHR
-    (
+    [NativeName("Name", "XrGraphicsBindingOpenGLWin32KHR")]
+    public unsafe partial struct GraphicsBindingOpenGLWin32KHR
+    {
+        public GraphicsBindingOpenGLWin32KHR
+        (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglWin32Khr,
             void* next = null,
             nint? hDC = null,
             nint? hGlrc = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (hDC is not null)
+            {
+                HDC = hDC.Value;
+            }
+
+            if (hGlrc is not null)
+            {
+                HGlrc = hGlrc.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (hDC is not null)
-        {
-            HDC = hDC.Value;
-        }
-
-        if (hGlrc is not null)
-        {
-            HGlrc = hGlrc.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "HDC")]
+        [NativeName("Type.Name", "HDC")]
+        [NativeName("Name", "hDC")]
+        public nint HDC;
+/// <summary></summary>
+        [NativeName("Type", "HGLRC")]
+        [NativeName("Type.Name", "HGLRC")]
+        [NativeName("Name", "hGLRC")]
+        public nint HGlrc;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "HDC")]
-    [NativeName("Type.Name", "HDC")]
-    [NativeName("Name", "hDC")]
-    public nint HDC;
-/// <summary></summary>
-    [NativeName("Type", "HGLRC")]
-    [NativeName("Type.Name", "HGLRC")]
-    [NativeName("Name", "hGLRC")]
-    public nint HGlrc;
 }

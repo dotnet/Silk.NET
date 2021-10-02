@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDescriptorSetLayout")]
-public unsafe partial struct DescriptorSetLayout
+namespace Silk.NET.Vulkan
 {
-    public DescriptorSetLayout
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkDescriptorSetLayout")]
+    public unsafe partial struct DescriptorSetLayout
     {
-        if (handle is not null)
+        public DescriptorSetLayout
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

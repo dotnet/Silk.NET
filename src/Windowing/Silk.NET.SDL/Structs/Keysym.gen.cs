@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_Keysym")]
-public unsafe partial struct Keysym
+namespace Silk.NET.SDL
 {
-    public Keysym
-    (
+    [NativeName("Name", "SDL_Keysym")]
+    public unsafe partial struct Keysym
+    {
+        public Keysym
+        (
             Scancode? scancode = null,
             int? sym = null,
             ushort? mod = null,
             uint? unused = null
-    ) : this()
-    {
-        if (scancode is not null)
+        ) : this()
         {
-            Scancode = scancode.Value;
+            if (scancode is not null)
+            {
+                Scancode = scancode.Value;
+            }
+
+            if (sym is not null)
+            {
+                Sym = sym.Value;
+            }
+
+            if (mod is not null)
+            {
+                Mod = mod.Value;
+            }
+
+            if (unused is not null)
+            {
+                Unused = unused.Value;
+            }
         }
 
-        if (sym is not null)
-        {
-            Sym = sym.Value;
-        }
 
-        if (mod is not null)
-        {
-            Mod = mod.Value;
-        }
+        [NativeName("Type", "SDL_Scancode")]
+        [NativeName("Type.Name", "SDL_Scancode")]
+        [NativeName("Name", "scancode")]
+        public Scancode Scancode;
 
-        if (unused is not null)
-        {
-            Unused = unused.Value;
-        }
+        [NativeName("Type", "SDL_Keycode")]
+        [NativeName("Type.Name", "SDL_Keycode")]
+        [NativeName("Name", "sym")]
+        public int Sym;
+
+        [NativeName("Type", "Uint16")]
+        [NativeName("Type.Name", "Uint16")]
+        [NativeName("Name", "mod")]
+        public ushort Mod;
+
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "unused")]
+        public uint Unused;
     }
-
-
-    [NativeName("Type", "SDL_Scancode")]
-    [NativeName("Type.Name", "SDL_Scancode")]
-    [NativeName("Name", "scancode")]
-    public Scancode Scancode;
-
-    [NativeName("Type", "SDL_Keycode")]
-    [NativeName("Type.Name", "SDL_Keycode")]
-    [NativeName("Name", "sym")]
-    public int Sym;
-
-    [NativeName("Type", "Uint16")]
-    [NativeName("Type.Name", "Uint16")]
-    [NativeName("Name", "mod")]
-    public ushort Mod;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "unused")]
-    public uint Unused;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoH265SequenceParameterSetVui")]
-public unsafe partial struct StdVideoH265SequenceParameterSetVui
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoH265SequenceParameterSetVui
-    (
+    [NativeName("Name", "StdVideoH265SequenceParameterSetVui")]
+    public unsafe partial struct StdVideoH265SequenceParameterSetVui
+    {
+        public StdVideoH265SequenceParameterSetVui
+        (
             byte? aspectRatioIdc = null,
             ushort? sarWidth = null,
             ushort? sarHeight = null,
@@ -44,237 +44,238 @@ public unsafe partial struct StdVideoH265SequenceParameterSetVui
             byte? log2MaxMvLengthHorizontal = null,
             byte? log2MaxMvLengthVertical = null,
             StdVideoH265SpsVuiFlags? flags = null
-    ) : this()
-    {
-        if (aspectRatioIdc is not null)
+        ) : this()
         {
-            AspectRatioIdc = aspectRatioIdc.Value;
+            if (aspectRatioIdc is not null)
+            {
+                AspectRatioIdc = aspectRatioIdc.Value;
+            }
+
+            if (sarWidth is not null)
+            {
+                SarWidth = sarWidth.Value;
+            }
+
+            if (sarHeight is not null)
+            {
+                SarHeight = sarHeight.Value;
+            }
+
+            if (videoFormat is not null)
+            {
+                VideoFormat = videoFormat.Value;
+            }
+
+            if (colourPrimaries is not null)
+            {
+                ColourPrimaries = colourPrimaries.Value;
+            }
+
+            if (transferCharacteristics is not null)
+            {
+                TransferCharacteristics = transferCharacteristics.Value;
+            }
+
+            if (matrixCoeffs is not null)
+            {
+                MatrixCoeffs = matrixCoeffs.Value;
+            }
+
+            if (chromaSampleLocTypeTopField is not null)
+            {
+                ChromaSampleLocTypeTopField = chromaSampleLocTypeTopField.Value;
+            }
+
+            if (chromaSampleLocTypeBottomField is not null)
+            {
+                ChromaSampleLocTypeBottomField = chromaSampleLocTypeBottomField.Value;
+            }
+
+            if (defDispWinLeftOffset is not null)
+            {
+                DefDispWinLeftOffset = defDispWinLeftOffset.Value;
+            }
+
+            if (defDispWinRightOffset is not null)
+            {
+                DefDispWinRightOffset = defDispWinRightOffset.Value;
+            }
+
+            if (defDispWinTopOffset is not null)
+            {
+                DefDispWinTopOffset = defDispWinTopOffset.Value;
+            }
+
+            if (defDispWinBottomOffset is not null)
+            {
+                DefDispWinBottomOffset = defDispWinBottomOffset.Value;
+            }
+
+            if (vuiNumUnitsInTick is not null)
+            {
+                VuiNumUnitsInTick = vuiNumUnitsInTick.Value;
+            }
+
+            if (vuiTimeScale is not null)
+            {
+                VuiTimeScale = vuiTimeScale.Value;
+            }
+
+            if (vuiNumTicksPocDiffOneMinus1 is not null)
+            {
+                VuiNumTicksPocDiffOneMinus1 = vuiNumTicksPocDiffOneMinus1.Value;
+            }
+
+            if (hrdParameters is not null)
+            {
+                HrdParameters = hrdParameters;
+            }
+
+            if (minSpatialSegmentationIdc is not null)
+            {
+                MinSpatialSegmentationIdc = minSpatialSegmentationIdc.Value;
+            }
+
+            if (maxBytesPerPicDenom is not null)
+            {
+                MaxBytesPerPicDenom = maxBytesPerPicDenom.Value;
+            }
+
+            if (maxBitsPerMinCuDenom is not null)
+            {
+                MaxBitsPerMinCuDenom = maxBitsPerMinCuDenom.Value;
+            }
+
+            if (log2MaxMvLengthHorizontal is not null)
+            {
+                Log2MaxMvLengthHorizontal = log2MaxMvLengthHorizontal.Value;
+            }
+
+            if (log2MaxMvLengthVertical is not null)
+            {
+                Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
-        if (sarWidth is not null)
-        {
-            SarWidth = sarWidth.Value;
-        }
 
-        if (sarHeight is not null)
-        {
-            SarHeight = sarHeight.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "aspect_ratio_idc")]
+        public byte AspectRatioIdc;
 
-        if (videoFormat is not null)
-        {
-            VideoFormat = videoFormat.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "sar_width")]
+        public ushort SarWidth;
 
-        if (colourPrimaries is not null)
-        {
-            ColourPrimaries = colourPrimaries.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "sar_height")]
+        public ushort SarHeight;
 
-        if (transferCharacteristics is not null)
-        {
-            TransferCharacteristics = transferCharacteristics.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "video_format")]
+        public byte VideoFormat;
 
-        if (matrixCoeffs is not null)
-        {
-            MatrixCoeffs = matrixCoeffs.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "colour_primaries")]
+        public byte ColourPrimaries;
 
-        if (chromaSampleLocTypeTopField is not null)
-        {
-            ChromaSampleLocTypeTopField = chromaSampleLocTypeTopField.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "transfer_characteristics")]
+        public byte TransferCharacteristics;
 
-        if (chromaSampleLocTypeBottomField is not null)
-        {
-            ChromaSampleLocTypeBottomField = chromaSampleLocTypeBottomField.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "matrix_coeffs")]
+        public byte MatrixCoeffs;
 
-        if (defDispWinLeftOffset is not null)
-        {
-            DefDispWinLeftOffset = defDispWinLeftOffset.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "chroma_sample_loc_type_top_field")]
+        public byte ChromaSampleLocTypeTopField;
 
-        if (defDispWinRightOffset is not null)
-        {
-            DefDispWinRightOffset = defDispWinRightOffset.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "chroma_sample_loc_type_bottom_field")]
+        public byte ChromaSampleLocTypeBottomField;
 
-        if (defDispWinTopOffset is not null)
-        {
-            DefDispWinTopOffset = defDispWinTopOffset.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "def_disp_win_left_offset")]
+        public ushort DefDispWinLeftOffset;
 
-        if (defDispWinBottomOffset is not null)
-        {
-            DefDispWinBottomOffset = defDispWinBottomOffset.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "def_disp_win_right_offset")]
+        public ushort DefDispWinRightOffset;
 
-        if (vuiNumUnitsInTick is not null)
-        {
-            VuiNumUnitsInTick = vuiNumUnitsInTick.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "def_disp_win_top_offset")]
+        public ushort DefDispWinTopOffset;
 
-        if (vuiTimeScale is not null)
-        {
-            VuiTimeScale = vuiTimeScale.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "def_disp_win_bottom_offset")]
+        public ushort DefDispWinBottomOffset;
 
-        if (vuiNumTicksPocDiffOneMinus1 is not null)
-        {
-            VuiNumTicksPocDiffOneMinus1 = vuiNumTicksPocDiffOneMinus1.Value;
-        }
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vui_num_units_in_tick")]
+        public uint VuiNumUnitsInTick;
 
-        if (hrdParameters is not null)
-        {
-            HrdParameters = hrdParameters;
-        }
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vui_time_scale")]
+        public uint VuiTimeScale;
 
-        if (minSpatialSegmentationIdc is not null)
-        {
-            MinSpatialSegmentationIdc = minSpatialSegmentationIdc.Value;
-        }
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vui_num_ticks_poc_diff_one_minus1")]
+        public uint VuiNumTicksPocDiffOneMinus1;
 
-        if (maxBytesPerPicDenom is not null)
-        {
-            MaxBytesPerPicDenom = maxBytesPerPicDenom.Value;
-        }
+        [NativeName("Type", "StdVideoH265HrdParameters *")]
+        [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
+        [NativeName("Name", "hrd_parameters")]
+        public StdVideoH265HrdParameters* HrdParameters;
 
-        if (maxBitsPerMinCuDenom is not null)
-        {
-            MaxBitsPerMinCuDenom = maxBitsPerMinCuDenom.Value;
-        }
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "min_spatial_segmentation_idc")]
+        public ushort MinSpatialSegmentationIdc;
 
-        if (log2MaxMvLengthHorizontal is not null)
-        {
-            Log2MaxMvLengthHorizontal = log2MaxMvLengthHorizontal.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "max_bytes_per_pic_denom")]
+        public byte MaxBytesPerPicDenom;
 
-        if (log2MaxMvLengthVertical is not null)
-        {
-            Log2MaxMvLengthVertical = log2MaxMvLengthVertical.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "max_bits_per_min_cu_denom")]
+        public byte MaxBitsPerMinCuDenom;
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "log2_max_mv_length_horizontal")]
+        public byte Log2MaxMvLengthHorizontal;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "log2_max_mv_length_vertical")]
+        public byte Log2MaxMvLengthVertical;
+
+        [NativeName("Type", "StdVideoH265SpsVuiFlags")]
+        [NativeName("Type.Name", "StdVideoH265SpsVuiFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265SpsVuiFlags Flags;
     }
-
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "aspect_ratio_idc")]
-    public byte AspectRatioIdc;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "sar_width")]
-    public ushort SarWidth;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "sar_height")]
-    public ushort SarHeight;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "video_format")]
-    public byte VideoFormat;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "colour_primaries")]
-    public byte ColourPrimaries;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "transfer_characteristics")]
-    public byte TransferCharacteristics;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "matrix_coeffs")]
-    public byte MatrixCoeffs;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "chroma_sample_loc_type_top_field")]
-    public byte ChromaSampleLocTypeTopField;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "chroma_sample_loc_type_bottom_field")]
-    public byte ChromaSampleLocTypeBottomField;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "def_disp_win_left_offset")]
-    public ushort DefDispWinLeftOffset;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "def_disp_win_right_offset")]
-    public ushort DefDispWinRightOffset;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "def_disp_win_top_offset")]
-    public ushort DefDispWinTopOffset;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "def_disp_win_bottom_offset")]
-    public ushort DefDispWinBottomOffset;
-
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vui_num_units_in_tick")]
-    public uint VuiNumUnitsInTick;
-
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vui_time_scale")]
-    public uint VuiTimeScale;
-
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vui_num_ticks_poc_diff_one_minus1")]
-    public uint VuiNumTicksPocDiffOneMinus1;
-
-    [NativeName("Type", "StdVideoH265HrdParameters *")]
-    [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
-    [NativeName("Name", "hrd_parameters")]
-    public StdVideoH265HrdParameters* HrdParameters;
-
-    [NativeName("Type", "uint16_t")]
-    [NativeName("Type.Name", "uint16_t")]
-    [NativeName("Name", "min_spatial_segmentation_idc")]
-    public ushort MinSpatialSegmentationIdc;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "max_bytes_per_pic_denom")]
-    public byte MaxBytesPerPicDenom;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "max_bits_per_min_cu_denom")]
-    public byte MaxBitsPerMinCuDenom;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "log2_max_mv_length_horizontal")]
-    public byte Log2MaxMvLengthHorizontal;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "log2_max_mv_length_vertical")]
-    public byte Log2MaxMvLengthVertical;
-
-    [NativeName("Type", "StdVideoH265SpsVuiFlags")]
-    [NativeName("Type.Name", "StdVideoH265SpsVuiFlags")]
-    [NativeName("Name", "flags")]
-    public StdVideoH265SpsVuiFlags Flags;
 }

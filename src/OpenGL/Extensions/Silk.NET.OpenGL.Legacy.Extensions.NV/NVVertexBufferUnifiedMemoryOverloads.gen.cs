@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-public static class NVVertexBufferUnifiedMemoryOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public static unsafe void GetIntegerui64(this NVVertexBufferUnifiedMemory thisApi, [Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] Span<ulong> result)
+    public static class NVVertexBufferUnifiedMemoryOverloads
     {
-        // SpanOverloader
-        thisApi.GetIntegerui64(value, index, out result.GetPinnableReference());
-    }
+        public static unsafe void GetIntegerui64(this NVVertexBufferUnifiedMemory thisApi, [Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] Span<ulong> result)
+        {
+            // SpanOverloader
+            thisApi.GetIntegerui64(value, index, out result.GetPinnableReference());
+        }
 
+    }
 }
 

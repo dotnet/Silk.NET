@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrHandJointVelocityEXT")]
-public unsafe partial struct HandJointVelocityEXT
+namespace Silk.NET.OpenXR
 {
-    public HandJointVelocityEXT
-    (
+    [NativeName("Name", "XrHandJointVelocityEXT")]
+    public unsafe partial struct HandJointVelocityEXT
+    {
+        public HandJointVelocityEXT
+        (
             SpaceVelocityFlags? velocityFlags = null,
             Vector3f? linearVelocity = null,
             Vector3f? angularVelocity = null
-    ) : this()
-    {
-        if (velocityFlags is not null)
+        ) : this()
         {
-            VelocityFlags = velocityFlags.Value;
+            if (velocityFlags is not null)
+            {
+                VelocityFlags = velocityFlags.Value;
+            }
+
+            if (linearVelocity is not null)
+            {
+                LinearVelocity = linearVelocity.Value;
+            }
+
+            if (angularVelocity is not null)
+            {
+                AngularVelocity = angularVelocity.Value;
+            }
         }
 
-        if (linearVelocity is not null)
-        {
-            LinearVelocity = linearVelocity.Value;
-        }
-
-        if (angularVelocity is not null)
-        {
-            AngularVelocity = angularVelocity.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrSpaceVelocityFlags")]
+        [NativeName("Type.Name", "XrSpaceVelocityFlags")]
+        [NativeName("Name", "velocityFlags")]
+        public SpaceVelocityFlags VelocityFlags;
+/// <summary></summary>
+        [NativeName("Type", "XrVector3f")]
+        [NativeName("Type.Name", "XrVector3f")]
+        [NativeName("Name", "linearVelocity")]
+        public Vector3f LinearVelocity;
+/// <summary></summary>
+        [NativeName("Type", "XrVector3f")]
+        [NativeName("Type.Name", "XrVector3f")]
+        [NativeName("Name", "angularVelocity")]
+        public Vector3f AngularVelocity;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrSpaceVelocityFlags")]
-    [NativeName("Type.Name", "XrSpaceVelocityFlags")]
-    [NativeName("Name", "velocityFlags")]
-    public SpaceVelocityFlags VelocityFlags;
-/// <summary></summary>
-    [NativeName("Type", "XrVector3f")]
-    [NativeName("Type.Name", "XrVector3f")]
-    [NativeName("Name", "linearVelocity")]
-    public Vector3f LinearVelocity;
-/// <summary></summary>
-    [NativeName("Type", "XrVector3f")]
-    [NativeName("Type.Name", "XrVector3f")]
-    [NativeName("Name", "angularVelocity")]
-    public Vector3f AngularVelocity;
 }

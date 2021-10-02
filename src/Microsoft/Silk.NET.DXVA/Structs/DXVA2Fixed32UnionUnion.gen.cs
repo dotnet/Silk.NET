@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "__AnonymousRecord_dxva2api_L459_C9")]
-public unsafe partial struct DXVA2Fixed32UnionUnion
+namespace Silk.NET.DXVA
 {
-    public DXVA2Fixed32UnionUnion
-    (
+    [NativeName("Name", "__AnonymousRecord_dxva2api_L459_C9")]
+    public unsafe partial struct DXVA2Fixed32UnionUnion
+    {
+        public DXVA2Fixed32UnionUnion
+        (
             ushort? fraction = null,
             short? value = null
-    ) : this()
-    {
-        if (fraction is not null)
+        ) : this()
         {
-            Fraction = fraction.Value;
+            if (fraction is not null)
+            {
+                Fraction = fraction.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
-        if (value is not null)
-        {
-            Value = value.Value;
-        }
+
+        [NativeName("Type", "USHORT")]
+        [NativeName("Type.Name", "USHORT")]
+        [NativeName("Name", "Fraction")]
+        public ushort Fraction;
+
+        [NativeName("Type", "SHORT")]
+        [NativeName("Type.Name", "SHORT")]
+        [NativeName("Name", "Value")]
+        public short Value;
     }
-
-
-    [NativeName("Type", "USHORT")]
-    [NativeName("Type.Name", "USHORT")]
-    [NativeName("Name", "Fraction")]
-    public ushort Fraction;
-
-    [NativeName("Type", "SHORT")]
-    [NativeName("Type.Name", "SHORT")]
-    [NativeName("Name", "Value")]
-    public short Value;
 }

@@ -7,16 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkVideoCodingQualityPresetFlagsKHR")]
-public enum VideoCodingQualityPresetFlagsKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_NORMAL_BIT_KHR")]
-    VideoCodingQualityPresetNormalBitKhr = 1,
-    [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_POWER_BIT_KHR")]
-    VideoCodingQualityPresetPowerBitKhr = 2,
-    [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_QUALITY_BIT_KHR")]
-    VideoCodingQualityPresetQualityBitKhr = 4,
+    [Flags()]
+    [NativeName("Name", "VkVideoCodingQualityPresetFlagsKHR")]
+    public enum VideoCodingQualityPresetFlagsKHR : int
+    {
+        [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_NORMAL_BIT_KHR")]
+        VideoCodingQualityPresetNormalBitKhr = 1,
+        [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_POWER_BIT_KHR")]
+        VideoCodingQualityPresetPowerBitKhr = 2,
+        [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_QUALITY_BIT_KHR")]
+        VideoCodingQualityPresetQualityBitKhr = 4,
+    }
 }

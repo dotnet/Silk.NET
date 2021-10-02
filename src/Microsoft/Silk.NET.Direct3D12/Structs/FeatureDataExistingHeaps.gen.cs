@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_EXISTING_HEAPS")]
-public unsafe partial struct FeatureDataExistingHeaps
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataExistingHeaps
-    (
-            int? supported = null
-    ) : this()
+    [NativeName("Name", "D3D12_FEATURE_DATA_EXISTING_HEAPS")]
+    public unsafe partial struct FeatureDataExistingHeaps
     {
-        if (supported is not null)
+        public FeatureDataExistingHeaps
+        (
+            int? supported = null
+        ) : this()
         {
-            Supported = supported.Value;
+            if (supported is not null)
+            {
+                Supported = supported.Value;
+            }
         }
+
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Supported")]
+        public int Supported;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Supported")]
-    public int Supported;
 }

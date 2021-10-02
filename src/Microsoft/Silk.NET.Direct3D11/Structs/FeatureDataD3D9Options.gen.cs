@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_FEATURE_DATA_D3D9_OPTIONS")]
-public unsafe partial struct FeatureDataD3D9Options
+namespace Silk.NET.Direct3D11
 {
-    public FeatureDataD3D9Options
-    (
-            int? fullNonPow2TextureSupport = null
-    ) : this()
+    [NativeName("Name", "D3D11_FEATURE_DATA_D3D9_OPTIONS")]
+    public unsafe partial struct FeatureDataD3D9Options
     {
-        if (fullNonPow2TextureSupport is not null)
+        public FeatureDataD3D9Options
+        (
+            int? fullNonPow2TextureSupport = null
+        ) : this()
         {
-            FullNonPow2TextureSupport = fullNonPow2TextureSupport.Value;
+            if (fullNonPow2TextureSupport is not null)
+            {
+                FullNonPow2TextureSupport = fullNonPow2TextureSupport.Value;
+            }
         }
+
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "FullNonPow2TextureSupport")]
+        public int FullNonPow2TextureSupport;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "FullNonPow2TextureSupport")]
-    public int FullNonPow2TextureSupport;
 }

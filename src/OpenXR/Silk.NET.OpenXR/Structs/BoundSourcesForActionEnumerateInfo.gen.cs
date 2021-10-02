@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrBoundSourcesForActionEnumerateInfo")]
-public unsafe partial struct BoundSourcesForActionEnumerateInfo
+namespace Silk.NET.OpenXR
 {
-    public BoundSourcesForActionEnumerateInfo
-    (
+    [NativeName("Name", "XrBoundSourcesForActionEnumerateInfo")]
+    public unsafe partial struct BoundSourcesForActionEnumerateInfo
+    {
+        public BoundSourcesForActionEnumerateInfo
+        (
             StructureType? type = StructureType.TypeBoundSourcesForActionEnumerateInfo,
             void* next = null,
             Action? action = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (action is not null)
-        {
-            Action = action.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrAction")]
+        [NativeName("Type.Name", "XrAction")]
+        [NativeName("Name", "action")]
+        public Action Action;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrAction")]
-    [NativeName("Type.Name", "XrAction")]
-    [NativeName("Name", "action")]
-    public Action Action;
 }

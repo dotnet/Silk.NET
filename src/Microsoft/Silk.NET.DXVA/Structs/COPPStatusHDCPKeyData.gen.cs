@@ -14,80 +14,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPStatusHDCPKeyData")]
-public unsafe partial struct COPPStatusHDCPKeyData
+namespace Silk.NET.DXVA
 {
-    public COPPStatusHDCPKeyData
-    (
+    [NativeName("Name", "_DXVA_COPPStatusHDCPKeyData")]
+    public unsafe partial struct COPPStatusHDCPKeyData
+    {
+        public COPPStatusHDCPKeyData
+        (
             Guid? rApp = null,
             uint? dwFlags = null,
             uint? dwHDCPFlags = null,
             Guid? bKey = null,
             Guid? reserved1 = null,
             Guid? reserved2 = null
-    ) : this()
-    {
-        if (rApp is not null)
+        ) : this()
         {
-            RApp = rApp.Value;
+            if (rApp is not null)
+            {
+                RApp = rApp.Value;
+            }
+
+            if (dwFlags is not null)
+            {
+                DwFlags = dwFlags.Value;
+            }
+
+            if (dwHDCPFlags is not null)
+            {
+                DwHDCPFlags = dwHDCPFlags.Value;
+            }
+
+            if (bKey is not null)
+            {
+                BKey = bKey.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
+            }
+
+            if (reserved2 is not null)
+            {
+                Reserved2 = reserved2.Value;
+            }
         }
 
-        if (dwFlags is not null)
-        {
-            DwFlags = dwFlags.Value;
-        }
 
-        if (dwHDCPFlags is not null)
-        {
-            DwHDCPFlags = dwHDCPFlags.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "rApp")]
+        public Guid RApp;
 
-        if (bKey is not null)
-        {
-            BKey = bKey.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "dwFlags")]
+        public uint DwFlags;
 
-        if (reserved1 is not null)
-        {
-            Reserved1 = reserved1.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "dwHDCPFlags")]
+        public uint DwHDCPFlags;
 
-        if (reserved2 is not null)
-        {
-            Reserved2 = reserved2.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "BKey")]
+        public Guid BKey;
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "Reserved1")]
+        public Guid Reserved1;
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "Reserved2")]
+        public Guid Reserved2;
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "rApp")]
-    public Guid RApp;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "dwFlags")]
-    public uint DwFlags;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "dwHDCPFlags")]
-    public uint DwHDCPFlags;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "BKey")]
-    public Guid BKey;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "Reserved1")]
-    public Guid Reserved1;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "Reserved2")]
-    public Guid Reserved2;
 }

@@ -7,17 +7,18 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_DEVICE_CAPS")]
-public enum HDDeviceCaps : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVAHD_DEVICE_CAPS_LINEAR_SPACE")]
-    HDDeviceCapsLinearSpace = 0x1,
-    [NativeName("Name", "DXVAHD_DEVICE_CAPS_xvYCC")]
-    HDDeviceCapsXvYcc = 0x2,
-    [NativeName("Name", "DXVAHD_DEVICE_CAPS_RGB_RANGE_CONVERSION")]
-    HDDeviceCapsRgbRangeConversion = 0x4,
-    [NativeName("Name", "DXVAHD_DEVICE_CAPS_YCbCr_MATRIX_CONVERSION")]
-    HDDeviceCapsYCbCrMatrixConversion = 0x8,
+    [NativeName("Name", "_DXVAHD_DEVICE_CAPS")]
+    public enum HDDeviceCaps : int
+    {
+        [NativeName("Name", "DXVAHD_DEVICE_CAPS_LINEAR_SPACE")]
+        HDDeviceCapsLinearSpace = 0x1,
+        [NativeName("Name", "DXVAHD_DEVICE_CAPS_xvYCC")]
+        HDDeviceCapsXvYcc = 0x2,
+        [NativeName("Name", "DXVAHD_DEVICE_CAPS_RGB_RANGE_CONVERSION")]
+        HDDeviceCapsRgbRangeConversion = 0x4,
+        [NativeName("Name", "DXVAHD_DEVICE_CAPS_YCbCr_MATRIX_CONVERSION")]
+        HDDeviceCapsYCbCrMatrixConversion = 0x8,
+    }
 }

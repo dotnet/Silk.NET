@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneMeshesMSFT")]
-public unsafe partial struct SceneMeshesMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneMeshesMSFT
-    (
+    [NativeName("Name", "XrSceneMeshesMSFT")]
+    public unsafe partial struct SceneMeshesMSFT
+    {
+        public SceneMeshesMSFT
+        (
             StructureType? type = StructureType.TypeSceneMeshesMsft,
             void* next = null,
             uint? sceneMeshCount = null,
             SceneMeshMSFT* sceneMeshes = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (sceneMeshCount is not null)
+            {
+                SceneMeshCount = sceneMeshCount.Value;
+            }
+
+            if (sceneMeshes is not null)
+            {
+                SceneMeshes = sceneMeshes;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (sceneMeshCount is not null)
-        {
-            SceneMeshCount = sceneMeshCount.Value;
-        }
-
-        if (sceneMeshes is not null)
-        {
-            SceneMeshes = sceneMeshes;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "sceneMeshCount")]
+        public uint SceneMeshCount;
+/// <summary></summary>
+        [NativeName("Type", "XrSceneMeshMSFT*")]
+        [NativeName("Type.Name", "XrSceneMeshMSFT")]
+        [NativeName("Name", "sceneMeshes")]
+        public SceneMeshMSFT* SceneMeshes;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "sceneMeshCount")]
-    public uint SceneMeshCount;
-/// <summary></summary>
-    [NativeName("Type", "XrSceneMeshMSFT*")]
-    [NativeName("Type.Name", "XrSceneMeshMSFT")]
-    [NativeName("Name", "sceneMeshes")]
-    public SceneMeshMSFT* SceneMeshes;
 }

@@ -14,62 +14,63 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_GAMMA_CONTROL_CAPABILITIES")]
-public unsafe partial struct GammaControlCapabilities
+namespace Silk.NET.DXGI
 {
-    public GammaControlCapabilities
-    (
+    [NativeName("Name", "DXGI_GAMMA_CONTROL_CAPABILITIES")]
+    public unsafe partial struct GammaControlCapabilities
+    {
+        public GammaControlCapabilities
+        (
             int? scaleAndOffsetSupported = null,
             float? maxConvertedValue = null,
             float? minConvertedValue = null,
             uint? numGammaControlPoints = null
-    ) : this()
-    {
-        if (scaleAndOffsetSupported is not null)
+        ) : this()
         {
-            ScaleAndOffsetSupported = scaleAndOffsetSupported.Value;
+            if (scaleAndOffsetSupported is not null)
+            {
+                ScaleAndOffsetSupported = scaleAndOffsetSupported.Value;
+            }
+
+            if (maxConvertedValue is not null)
+            {
+                MaxConvertedValue = maxConvertedValue.Value;
+            }
+
+            if (minConvertedValue is not null)
+            {
+                MinConvertedValue = minConvertedValue.Value;
+            }
+
+            if (numGammaControlPoints is not null)
+            {
+                NumGammaControlPoints = numGammaControlPoints.Value;
+            }
         }
 
-        if (maxConvertedValue is not null)
-        {
-            MaxConvertedValue = maxConvertedValue.Value;
-        }
 
-        if (minConvertedValue is not null)
-        {
-            MinConvertedValue = minConvertedValue.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "ScaleAndOffsetSupported")]
+        public int ScaleAndOffsetSupported;
 
-        if (numGammaControlPoints is not null)
-        {
-            NumGammaControlPoints = numGammaControlPoints.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "MaxConvertedValue")]
+        public float MaxConvertedValue;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "MinConvertedValue")]
+        public float MinConvertedValue;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumGammaControlPoints")]
+        public uint NumGammaControlPoints;
+        [NativeName("Type", "float [1025]")]
+        [NativeName("Type.Name", "float [1025]")]
+        [NativeName("Name", "ControlPointPositions")]
+        public fixed float ControlPointPositions[1025];
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "ScaleAndOffsetSupported")]
-    public int ScaleAndOffsetSupported;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "MaxConvertedValue")]
-    public float MaxConvertedValue;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "MinConvertedValue")]
-    public float MinConvertedValue;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumGammaControlPoints")]
-    public uint NumGammaControlPoints;
-    [NativeName("Type", "float [1025]")]
-    [NativeName("Type.Name", "float [1025]")]
-    [NativeName("Name", "ControlPointPositions")]
-    public fixed float ControlPointPositions[1025];
 }

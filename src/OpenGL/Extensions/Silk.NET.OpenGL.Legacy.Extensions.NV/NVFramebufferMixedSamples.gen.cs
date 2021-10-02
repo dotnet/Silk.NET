@@ -14,51 +14,52 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-[Extension("NV_framebuffer_mixed_samples")]
-public unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public const string ExtensionName = "NV_framebuffer_mixed_samples";
-    [NativeApi(EntryPoint = "glCoverageModulationNV")]
-    public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
-
-    [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-    public unsafe partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
-
-    [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-    public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float v);
-
-    [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-    public unsafe partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
-
-    [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-    public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out float v);
-
-    [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-    public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-    [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-    public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-    public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+    [Extension("NV_framebuffer_mixed_samples")]
+    public unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        CoverageModulationTable((uint) v.Length, in v.GetPinnableReference());
-    }
+        public const string ExtensionName = "NV_framebuffer_mixed_samples";
+        [NativeApi(EntryPoint = "glCoverageModulationNV")]
+        public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
 
-    public unsafe float GetCoverageModulationTable()
-    {
-        const uint bufSize = 1;
-        // ReturnTypeOverloader
-        float ret = default;
-        GetCoverageModulationTable(bufSize, &ret);
-        return ret;
-    }
+        [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
+        public unsafe partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
 
-    public NVFramebufferMixedSamples(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
+        public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float v);
+
+        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
+        public unsafe partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+
+        [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
+        public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out float v);
+
+        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+
+        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
+
+        public unsafe void CoverageModulationTable([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            CoverageModulationTable((uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe float GetCoverageModulationTable()
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetCoverageModulationTable(bufSize, &ret);
+            return ret;
+        }
+
+        public NVFramebufferMixedSamples(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

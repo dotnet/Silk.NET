@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-[Extension("ARB_texture_buffer_range")]
-public unsafe partial class ArbTextureBufferRange : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_texture_buffer_range";
-    [NativeApi(EntryPoint = "glTexBufferRange")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRange")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRange")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRange")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    public ArbTextureBufferRange(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_texture_buffer_range")]
+    public unsafe partial class ArbTextureBufferRange : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_texture_buffer_range";
+        [NativeApi(EntryPoint = "glTexBufferRange")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRange")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRange")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRange")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        public ArbTextureBufferRange(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

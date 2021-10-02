@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageSubresourceLayers")]
-public unsafe partial struct ImageSubresourceLayers
+namespace Silk.NET.Vulkan
 {
-    public ImageSubresourceLayers
-    (
+    [NativeName("Name", "VkImageSubresourceLayers")]
+    public unsafe partial struct ImageSubresourceLayers
+    {
+        public ImageSubresourceLayers
+        (
             ImageAspectFlags? aspectMask = null,
             uint? mipLevel = null,
             uint? baseArrayLayer = null,
             uint? layerCount = null
-    ) : this()
-    {
-        if (aspectMask is not null)
+        ) : this()
         {
-            AspectMask = aspectMask.Value;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (mipLevel is not null)
+            {
+                MipLevel = mipLevel.Value;
+            }
+
+            if (baseArrayLayer is not null)
+            {
+                BaseArrayLayer = baseArrayLayer.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
         }
 
-        if (mipLevel is not null)
-        {
-            MipLevel = mipLevel.Value;
-        }
-
-        if (baseArrayLayer is not null)
-        {
-            BaseArrayLayer = baseArrayLayer.Value;
-        }
-
-        if (layerCount is not null)
-        {
-            LayerCount = layerCount.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
+        public ImageAspectFlags AspectMask;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "mipLevel")]
+        public uint MipLevel;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "baseArrayLayer")]
+        public uint BaseArrayLayer;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "layerCount")]
+        public uint LayerCount;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkImageAspectFlags")]
-    [NativeName("Type.Name", "VkImageAspectFlags")]
-    [NativeName("Name", "aspectMask")]
-    public ImageAspectFlags AspectMask;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "mipLevel")]
-    public uint MipLevel;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "baseArrayLayer")]
-    public uint BaseArrayLayer;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "layerCount")]
-    public uint LayerCount;
 }

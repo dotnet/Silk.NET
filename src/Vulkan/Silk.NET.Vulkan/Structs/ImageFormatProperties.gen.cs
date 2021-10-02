@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageFormatProperties")]
-public unsafe partial struct ImageFormatProperties
+namespace Silk.NET.Vulkan
 {
-    public ImageFormatProperties
-    (
+    [NativeName("Name", "VkImageFormatProperties")]
+    public unsafe partial struct ImageFormatProperties
+    {
+        public ImageFormatProperties
+        (
             Extent3D? maxExtent = null,
             uint? maxMipLevels = null,
             uint? maxArrayLayers = null,
             SampleCountFlags? sampleCounts = null,
             ulong? maxResourceSize = null
-    ) : this()
-    {
-        if (maxExtent is not null)
+        ) : this()
         {
-            MaxExtent = maxExtent.Value;
+            if (maxExtent is not null)
+            {
+                MaxExtent = maxExtent.Value;
+            }
+
+            if (maxMipLevels is not null)
+            {
+                MaxMipLevels = maxMipLevels.Value;
+            }
+
+            if (maxArrayLayers is not null)
+            {
+                MaxArrayLayers = maxArrayLayers.Value;
+            }
+
+            if (sampleCounts is not null)
+            {
+                SampleCounts = sampleCounts.Value;
+            }
+
+            if (maxResourceSize is not null)
+            {
+                MaxResourceSize = maxResourceSize.Value;
+            }
         }
 
-        if (maxMipLevels is not null)
-        {
-            MaxMipLevels = maxMipLevels.Value;
-        }
-
-        if (maxArrayLayers is not null)
-        {
-            MaxArrayLayers = maxArrayLayers.Value;
-        }
-
-        if (sampleCounts is not null)
-        {
-            SampleCounts = sampleCounts.Value;
-        }
-
-        if (maxResourceSize is not null)
-        {
-            MaxResourceSize = maxResourceSize.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkExtent3D")]
+        [NativeName("Type.Name", "VkExtent3D")]
+        [NativeName("Name", "maxExtent")]
+        public Extent3D MaxExtent;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMipLevels")]
+        public uint MaxMipLevels;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxArrayLayers")]
+        public uint MaxArrayLayers;
+/// <summary></summary>
+        [NativeName("Type", "VkSampleCountFlags")]
+        [NativeName("Type.Name", "VkSampleCountFlags")]
+        [NativeName("Name", "sampleCounts")]
+        public SampleCountFlags SampleCounts;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "maxResourceSize")]
+        public ulong MaxResourceSize;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkExtent3D")]
-    [NativeName("Type.Name", "VkExtent3D")]
-    [NativeName("Name", "maxExtent")]
-    public Extent3D MaxExtent;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxMipLevels")]
-    public uint MaxMipLevels;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxArrayLayers")]
-    public uint MaxArrayLayers;
-/// <summary></summary>
-    [NativeName("Type", "VkSampleCountFlags")]
-    [NativeName("Type.Name", "VkSampleCountFlags")]
-    [NativeName("Name", "sampleCounts")]
-    public SampleCountFlags SampleCounts;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "maxResourceSize")]
-    public ulong MaxResourceSize;
 }

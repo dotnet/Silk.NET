@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_AssertData")]
-public unsafe partial struct AssertData
+namespace Silk.NET.SDL
 {
-    public AssertData
-    (
+    [NativeName("Name", "SDL_AssertData")]
+    public unsafe partial struct AssertData
+    {
+        public AssertData
+        (
             int? alwaysIgnore = null,
             uint? triggerCount = null,
             byte* condition = null,
@@ -28,77 +28,78 @@ public unsafe partial struct AssertData
             int? linenum = null,
             byte* function = null,
             AssertData* next = null
-    ) : this()
-    {
-        if (alwaysIgnore is not null)
+        ) : this()
         {
-            AlwaysIgnore = alwaysIgnore.Value;
+            if (alwaysIgnore is not null)
+            {
+                AlwaysIgnore = alwaysIgnore.Value;
+            }
+
+            if (triggerCount is not null)
+            {
+                TriggerCount = triggerCount.Value;
+            }
+
+            if (condition is not null)
+            {
+                Condition = condition;
+            }
+
+            if (filename is not null)
+            {
+                Filename = filename;
+            }
+
+            if (linenum is not null)
+            {
+                Linenum = linenum.Value;
+            }
+
+            if (function is not null)
+            {
+                Function = function;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
-        if (triggerCount is not null)
-        {
-            TriggerCount = triggerCount.Value;
-        }
 
-        if (condition is not null)
-        {
-            Condition = condition;
-        }
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "always_ignore")]
+        public int AlwaysIgnore;
 
-        if (filename is not null)
-        {
-            Filename = filename;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "trigger_count")]
+        public uint TriggerCount;
 
-        if (linenum is not null)
-        {
-            Linenum = linenum.Value;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "condition")]
+        public byte* Condition;
 
-        if (function is not null)
-        {
-            Function = function;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "filename")]
+        public byte* Filename;
 
-        if (next is not null)
-        {
-            Next = next;
-        }
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "linenum")]
+        public int Linenum;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "function")]
+        public byte* Function;
+
+        [NativeName("Type", "const struct SDL_AssertData *")]
+        [NativeName("Type.Name", "const struct SDL_AssertData *")]
+        [NativeName("Name", "next")]
+        public AssertData* Next;
     }
-
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "always_ignore")]
-    public int AlwaysIgnore;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "trigger_count")]
-    public uint TriggerCount;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "condition")]
-    public byte* Condition;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "filename")]
-    public byte* Filename;
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "linenum")]
-    public int Linenum;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "function")]
-    public byte* Function;
-
-    [NativeName("Type", "const struct SDL_AssertData *")]
-    [NativeName("Type.Name", "const struct SDL_AssertData *")]
-    [NativeName("Name", "next")]
-    public AssertData* Next;
 }

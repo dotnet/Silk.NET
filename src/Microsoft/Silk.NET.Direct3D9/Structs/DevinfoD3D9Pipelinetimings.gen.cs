@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DDEVINFO_D3D9PIPELINETIMINGS")]
-public unsafe partial struct DevinfoD3D9Pipelinetimings
+namespace Silk.NET.Direct3D9
 {
-    public DevinfoD3D9Pipelinetimings
-    (
+    [NativeName("Name", "_D3DDEVINFO_D3D9PIPELINETIMINGS")]
+    public unsafe partial struct DevinfoD3D9Pipelinetimings
+    {
+        public DevinfoD3D9Pipelinetimings
+        (
             float? vertexProcessingTimePercent = null,
             float? pixelProcessingTimePercent = null,
             float? otherGPUProcessingTimePercent = null,
             float? gPUIdleTimePercent = null
-    ) : this()
-    {
-        if (vertexProcessingTimePercent is not null)
+        ) : this()
         {
-            VertexProcessingTimePercent = vertexProcessingTimePercent.Value;
+            if (vertexProcessingTimePercent is not null)
+            {
+                VertexProcessingTimePercent = vertexProcessingTimePercent.Value;
+            }
+
+            if (pixelProcessingTimePercent is not null)
+            {
+                PixelProcessingTimePercent = pixelProcessingTimePercent.Value;
+            }
+
+            if (otherGPUProcessingTimePercent is not null)
+            {
+                OtherGPUProcessingTimePercent = otherGPUProcessingTimePercent.Value;
+            }
+
+            if (gPUIdleTimePercent is not null)
+            {
+                GPUIdleTimePercent = gPUIdleTimePercent.Value;
+            }
         }
 
-        if (pixelProcessingTimePercent is not null)
-        {
-            PixelProcessingTimePercent = pixelProcessingTimePercent.Value;
-        }
 
-        if (otherGPUProcessingTimePercent is not null)
-        {
-            OtherGPUProcessingTimePercent = otherGPUProcessingTimePercent.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "VertexProcessingTimePercent")]
+        public float VertexProcessingTimePercent;
 
-        if (gPUIdleTimePercent is not null)
-        {
-            GPUIdleTimePercent = gPUIdleTimePercent.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "PixelProcessingTimePercent")]
+        public float PixelProcessingTimePercent;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "OtherGPUProcessingTimePercent")]
+        public float OtherGPUProcessingTimePercent;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "GPUIdleTimePercent")]
+        public float GPUIdleTimePercent;
     }
-
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "VertexProcessingTimePercent")]
-    public float VertexProcessingTimePercent;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "PixelProcessingTimePercent")]
-    public float PixelProcessingTimePercent;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "OtherGPUProcessingTimePercent")]
-    public float OtherGPUProcessingTimePercent;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "GPUIdleTimePercent")]
-    public float GPUIdleTimePercent;
 }

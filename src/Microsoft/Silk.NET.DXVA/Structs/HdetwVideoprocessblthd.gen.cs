@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHDETW_VIDEOPROCESSBLTHD")]
-public unsafe partial struct HdetwVideoprocessblthd
+namespace Silk.NET.DXVA
 {
-    public HdetwVideoprocessblthd
-    (
+    [NativeName("Name", "_DXVAHDETW_VIDEOPROCESSBLTHD")]
+    public unsafe partial struct HdetwVideoprocessblthd
+    {
+        public HdetwVideoprocessblthd
+        (
             ulong? pObject = null,
             ulong? pOutputSurface = null,
             Silk.NET.Maths.Rectangle<int>? targetRect = null,
@@ -29,87 +29,88 @@ public unsafe partial struct HdetwVideoprocessblthd
             uint? outputFrame = null,
             uint? streamCount = null,
             int? enter = null
-    ) : this()
-    {
-        if (pObject is not null)
+        ) : this()
         {
-            PObject = pObject.Value;
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
+
+            if (pOutputSurface is not null)
+            {
+                POutputSurface = pOutputSurface.Value;
+            }
+
+            if (targetRect is not null)
+            {
+                TargetRect = targetRect.Value;
+            }
+
+            if (outputFormat is not null)
+            {
+                OutputFormat = outputFormat.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
+
+            if (outputFrame is not null)
+            {
+                OutputFrame = outputFrame.Value;
+            }
+
+            if (streamCount is not null)
+            {
+                StreamCount = streamCount.Value;
+            }
+
+            if (enter is not null)
+            {
+                Enter = enter.Value;
+            }
         }
 
-        if (pOutputSurface is not null)
-        {
-            POutputSurface = pOutputSurface.Value;
-        }
 
-        if (targetRect is not null)
-        {
-            TargetRect = targetRect.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
 
-        if (outputFormat is not null)
-        {
-            OutputFormat = outputFormat.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pOutputSurface")]
+        public ulong POutputSurface;
 
-        if (colorSpace is not null)
-        {
-            ColorSpace = colorSpace.Value;
-        }
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "TargetRect")]
+        public Silk.NET.Maths.Rectangle<int> TargetRect;
 
-        if (outputFrame is not null)
-        {
-            OutputFrame = outputFrame.Value;
-        }
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "OutputFormat")]
+        public Silk.NET.Direct3D9.Format OutputFormat;
 
-        if (streamCount is not null)
-        {
-            StreamCount = streamCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ColorSpace")]
+        public uint ColorSpace;
 
-        if (enter is not null)
-        {
-            Enter = enter.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "OutputFrame")]
+        public uint OutputFrame;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StreamCount")]
+        public uint StreamCount;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enter")]
+        public int Enter;
     }
-
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pOutputSurface")]
-    public ulong POutputSurface;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "TargetRect")]
-    public Silk.NET.Maths.Rectangle<int> TargetRect;
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "OutputFormat")]
-    public Silk.NET.Direct3D9.Format OutputFormat;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ColorSpace")]
-    public uint ColorSpace;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "OutputFrame")]
-    public uint OutputFrame;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StreamCount")]
-    public uint StreamCount;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enter")]
-    public int Enter;
 }

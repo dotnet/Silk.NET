@@ -14,68 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrHandCapsuleFB")]
-public unsafe partial struct HandCapsuleFB
+namespace Silk.NET.OpenXR
 {
-    public HandCapsuleFB
-    (
+    [NativeName("Name", "XrHandCapsuleFB")]
+    public unsafe partial struct HandCapsuleFB
+    {
+        public HandCapsuleFB
+        (
             float? radius = null,
             HandJointEXT? joint = null
-    ) : this()
-    {
-        if (radius is not null)
+        ) : this()
         {
-            Radius = radius.Value;
-        }
-
-        if (joint is not null)
-        {
-            Joint = joint.Value;
-        }
-    }
-
-        /// <summary></summary>
-    [NativeName("Type", "XrVector3f")]
-    [NativeName("Type.Name", "XrVector3f")]
-    [NativeName("Name", "points")]
-    public PointsBuffer Points;
-
-    public struct PointsBuffer
-    {
-        public Vector3f Element0;
-        public Vector3f Element1;
-        public ref Vector3f this[int index]
-        {
-            get
+            if (radius is not null)
             {
-                if (index > 1 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                Radius = radius.Value;
+            }
 
-                fixed (Vector3f* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+            if (joint is not null)
+            {
+                Joint = joint.Value;
             }
         }
 
+        /// <summary></summary>
+        [NativeName("Type", "XrVector3f")]
+        [NativeName("Type.Name", "XrVector3f")]
+        [NativeName("Name", "points")]
+        public PointsBuffer Points;
+
+        public struct PointsBuffer
+        {
+            public Vector3f Element0;
+            public Vector3f Element1;
+            public ref Vector3f this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Vector3f* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
 #if NETSTANDARD2_1
-        public Span<Vector3f> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 2);
+            public Span<Vector3f> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
-    }
+        }
 
 /// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "radius")]
-    public float Radius;
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "radius")]
+        public float Radius;
 /// <summary></summary>
-    [NativeName("Type", "XrHandJointEXT")]
-    [NativeName("Type.Name", "XrHandJointEXT")]
-    [NativeName("Name", "joint")]
-    public HandJointEXT Joint;
+        [NativeName("Type", "XrHandJointEXT")]
+        [NativeName("Type.Name", "XrHandJointEXT")]
+        [NativeName("Name", "joint")]
+        public HandJointEXT Joint;
+    }
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_TEX1D_ARRAY_RTV")]
-public unsafe partial struct Tex1DArrayRtv
+namespace Silk.NET.Direct3D12
 {
-    public Tex1DArrayRtv
-    (
+    [NativeName("Name", "D3D12_TEX1D_ARRAY_RTV")]
+    public unsafe partial struct Tex1DArrayRtv
+    {
+        public Tex1DArrayRtv
+        (
             uint? mipSlice = null,
             uint? firstArraySlice = null,
             uint? arraySize = null
-    ) : this()
-    {
-        if (mipSlice is not null)
+        ) : this()
         {
-            MipSlice = mipSlice.Value;
+            if (mipSlice is not null)
+            {
+                MipSlice = mipSlice.Value;
+            }
+
+            if (firstArraySlice is not null)
+            {
+                FirstArraySlice = firstArraySlice.Value;
+            }
+
+            if (arraySize is not null)
+            {
+                ArraySize = arraySize.Value;
+            }
         }
 
-        if (firstArraySlice is not null)
-        {
-            FirstArraySlice = firstArraySlice.Value;
-        }
 
-        if (arraySize is not null)
-        {
-            ArraySize = arraySize.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MipSlice")]
+        public uint MipSlice;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FirstArraySlice")]
+        public uint FirstArraySlice;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ArraySize")]
+        public uint ArraySize;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MipSlice")]
-    public uint MipSlice;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FirstArraySlice")]
-    public uint FirstArraySlice;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ArraySize")]
-    public uint ArraySize;
 }

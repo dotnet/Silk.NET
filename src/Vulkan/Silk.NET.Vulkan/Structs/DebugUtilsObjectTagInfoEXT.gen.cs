@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDebugUtilsObjectTagInfoEXT")]
-public unsafe partial struct DebugUtilsObjectTagInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DebugUtilsObjectTagInfoEXT
-    (
+    [NativeName("Name", "VkDebugUtilsObjectTagInfoEXT")]
+    public unsafe partial struct DebugUtilsObjectTagInfoEXT
+    {
+        public DebugUtilsObjectTagInfoEXT
+        (
             StructureType? sType = StructureType.DebugUtilsObjectTagInfoExt,
             void* pNext = null,
             ObjectType? objectType = null,
@@ -28,77 +28,78 @@ public unsafe partial struct DebugUtilsObjectTagInfoEXT
             ulong? tagName = null,
             nuint? tagSize = null,
             void* pTag = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (objectHandle is not null)
+            {
+                ObjectHandle = objectHandle.Value;
+            }
+
+            if (tagName is not null)
+            {
+                TagName = tagName.Value;
+            }
+
+            if (tagSize is not null)
+            {
+                TagSize = tagSize.Value;
+            }
+
+            if (pTag is not null)
+            {
+                PTag = pTag;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (objectType is not null)
-        {
-            ObjectType = objectType.Value;
-        }
-
-        if (objectHandle is not null)
-        {
-            ObjectHandle = objectHandle.Value;
-        }
-
-        if (tagName is not null)
-        {
-            TagName = tagName.Value;
-        }
-
-        if (tagSize is not null)
-        {
-            TagSize = tagSize.Value;
-        }
-
-        if (pTag is not null)
-        {
-            PTag = pTag;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkObjectType")]
+        [NativeName("Type.Name", "VkObjectType")]
+        [NativeName("Name", "objectType")]
+        public ObjectType ObjectType;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "objectHandle")]
+        public ulong ObjectHandle;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "tagName")]
+        public ulong TagName;
+/// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "tagSize")]
+        public nuint TagSize;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pTag")]
+        public void* PTag;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkObjectType")]
-    [NativeName("Type.Name", "VkObjectType")]
-    [NativeName("Name", "objectType")]
-    public ObjectType ObjectType;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "objectHandle")]
-    public ulong ObjectHandle;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "tagName")]
-    public ulong TagName;
-/// <summary></summary>
-    [NativeName("Type", "size_t")]
-    [NativeName("Type.Name", "size_t")]
-    [NativeName("Name", "tagSize")]
-    public nuint TagSize;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pTag")]
-    public void* PTag;
 }

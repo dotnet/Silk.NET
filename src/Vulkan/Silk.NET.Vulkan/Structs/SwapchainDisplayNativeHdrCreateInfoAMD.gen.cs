@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSwapchainDisplayNativeHdrCreateInfoAMD")]
-public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
+namespace Silk.NET.Vulkan
 {
-    public SwapchainDisplayNativeHdrCreateInfoAMD
-    (
+    [NativeName("Name", "VkSwapchainDisplayNativeHdrCreateInfoAMD")]
+    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
+    {
+        public SwapchainDisplayNativeHdrCreateInfoAMD
+        (
             StructureType? sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
             void* pNext = null,
             Bool32? localDimmingEnable = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (localDimmingEnable is not null)
+            {
+                LocalDimmingEnable = localDimmingEnable.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (localDimmingEnable is not null)
-        {
-            LocalDimmingEnable = localDimmingEnable.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "localDimmingEnable")]
+        public Bool32 LocalDimmingEnable;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "localDimmingEnable")]
-    public Bool32 LocalDimmingEnable;
 }

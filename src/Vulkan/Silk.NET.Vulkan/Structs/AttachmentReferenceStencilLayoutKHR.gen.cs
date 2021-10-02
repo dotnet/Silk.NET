@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkAttachmentReferenceStencilLayoutKHR")]
-public unsafe partial struct AttachmentReferenceStencilLayoutKHR
+namespace Silk.NET.Vulkan
 {
-    public AttachmentReferenceStencilLayoutKHR
-    (
+    [NativeName("Name", "VkAttachmentReferenceStencilLayoutKHR")]
+    public unsafe partial struct AttachmentReferenceStencilLayoutKHR
+    {
+        public AttachmentReferenceStencilLayoutKHR
+        (
             StructureType? sType = StructureType.AttachmentReferenceStencilLayout,
             void* pNext = null,
             ImageLayout? stencilLayout = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilLayout is not null)
+            {
+                StencilLayout = stencilLayout.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (stencilLayout is not null)
-        {
-            StencilLayout = stencilLayout.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "stencilLayout")]
+        public ImageLayout StencilLayout;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImageLayout")]
-    [NativeName("Type.Name", "VkImageLayout")]
-    [NativeName("Name", "stencilLayout")]
-    public ImageLayout StencilLayout;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiCamera")]
-public unsafe partial struct Camera
+namespace Silk.NET.Assimp
 {
-    public Camera
-    (
+    [NativeName("Name", "aiCamera")]
+    public unsafe partial struct Camera
+    {
+        public Camera
+        (
             AssimpString? mName = null,
             System.Numerics.Vector3? mPosition = null,
             System.Numerics.Vector3? mUp = null,
@@ -29,87 +29,88 @@ public unsafe partial struct Camera
             float? mClipPlaneNear = null,
             float? mClipPlaneFar = null,
             float? mAspect = null
-    ) : this()
-    {
-        if (mName is not null)
+        ) : this()
         {
-            MName = mName.Value;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mPosition is not null)
+            {
+                MPosition = mPosition.Value;
+            }
+
+            if (mUp is not null)
+            {
+                MUp = mUp.Value;
+            }
+
+            if (mLookAt is not null)
+            {
+                MLookAt = mLookAt.Value;
+            }
+
+            if (mHorizontalFOV is not null)
+            {
+                MHorizontalFOV = mHorizontalFOV.Value;
+            }
+
+            if (mClipPlaneNear is not null)
+            {
+                MClipPlaneNear = mClipPlaneNear.Value;
+            }
+
+            if (mClipPlaneFar is not null)
+            {
+                MClipPlaneFar = mClipPlaneFar.Value;
+            }
+
+            if (mAspect is not null)
+            {
+                MAspect = mAspect.Value;
+            }
         }
 
-        if (mPosition is not null)
-        {
-            MPosition = mPosition.Value;
-        }
 
-        if (mUp is not null)
-        {
-            MUp = mUp.Value;
-        }
+        [NativeName("Type", "aiString")]
+        [NativeName("Type.Name", "aiString")]
+        [NativeName("Name", "mName")]
+        public AssimpString MName;
 
-        if (mLookAt is not null)
-        {
-            MLookAt = mLookAt.Value;
-        }
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "mPosition")]
+        public System.Numerics.Vector3 MPosition;
 
-        if (mHorizontalFOV is not null)
-        {
-            MHorizontalFOV = mHorizontalFOV.Value;
-        }
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "mUp")]
+        public System.Numerics.Vector3 MUp;
 
-        if (mClipPlaneNear is not null)
-        {
-            MClipPlaneNear = mClipPlaneNear.Value;
-        }
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "mLookAt")]
+        public System.Numerics.Vector3 MLookAt;
 
-        if (mClipPlaneFar is not null)
-        {
-            MClipPlaneFar = mClipPlaneFar.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mHorizontalFOV")]
+        public float MHorizontalFOV;
 
-        if (mAspect is not null)
-        {
-            MAspect = mAspect.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mClipPlaneNear")]
+        public float MClipPlaneNear;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mClipPlaneFar")]
+        public float MClipPlaneFar;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mAspect")]
+        public float MAspect;
     }
-
-
-    [NativeName("Type", "aiString")]
-    [NativeName("Type.Name", "aiString")]
-    [NativeName("Name", "mName")]
-    public AssimpString MName;
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "mPosition")]
-    public System.Numerics.Vector3 MPosition;
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "mUp")]
-    public System.Numerics.Vector3 MUp;
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "mLookAt")]
-    public System.Numerics.Vector3 MLookAt;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "mHorizontalFOV")]
-    public float MHorizontalFOV;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "mClipPlaneNear")]
-    public float MClipPlaneNear;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "mClipPlaneFar")]
-    public float MClipPlaneFar;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "mAspect")]
-    public float MAspect;
 }

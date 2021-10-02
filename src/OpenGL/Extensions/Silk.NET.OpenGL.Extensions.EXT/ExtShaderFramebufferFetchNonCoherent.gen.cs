@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.EXT;
-
-[Extension("EXT_shader_framebuffer_fetch_non_coherent")]
-public unsafe partial class ExtShaderFramebufferFetchNonCoherent : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_shader_framebuffer_fetch_non_coherent";
-    [NativeApi(EntryPoint = "glFramebufferFetchBarrierEXT")]
-    public partial void FramebufferFetchBarrier();
-
-    public ExtShaderFramebufferFetchNonCoherent(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_shader_framebuffer_fetch_non_coherent")]
+    public unsafe partial class ExtShaderFramebufferFetchNonCoherent : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_shader_framebuffer_fetch_non_coherent";
+        [NativeApi(EntryPoint = "glFramebufferFetchBarrierEXT")]
+        public partial void FramebufferFetchBarrier();
+
+        public ExtShaderFramebufferFetchNonCoherent(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

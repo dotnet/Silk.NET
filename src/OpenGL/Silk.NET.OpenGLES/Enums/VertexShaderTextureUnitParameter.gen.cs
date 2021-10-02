@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "VertexShaderTextureUnitParameter")]
-public enum VertexShaderTextureUnitParameter : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_CURRENT_TEXTURE_COORDS")]
-    CurrentTextureCoords = 0xB03,
-    [NativeName("Name", "GL_TEXTURE_MATRIX")]
-    TextureMatrix = 0xBA8,
+    [NativeName("Name", "VertexShaderTextureUnitParameter")]
+    public enum VertexShaderTextureUnitParameter : int
+    {
+        [NativeName("Name", "GL_CURRENT_TEXTURE_COORDS")]
+        CurrentTextureCoords = 0xB03,
+        [NativeName("Name", "GL_TEXTURE_MATRIX")]
+        TextureMatrix = 0xBA8,
+    }
 }

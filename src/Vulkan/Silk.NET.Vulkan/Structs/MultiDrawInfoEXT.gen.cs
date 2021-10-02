@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkMultiDrawInfoEXT")]
-public unsafe partial struct MultiDrawInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public MultiDrawInfoEXT
-    (
+    [NativeName("Name", "VkMultiDrawInfoEXT")]
+    public unsafe partial struct MultiDrawInfoEXT
+    {
+        public MultiDrawInfoEXT
+        (
             uint? firstVertex = null,
             uint? vertexCount = null
-    ) : this()
-    {
-        if (firstVertex is not null)
+        ) : this()
         {
-            FirstVertex = firstVertex.Value;
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (vertexCount is not null)
+            {
+                VertexCount = vertexCount.Value;
+            }
         }
 
-        if (vertexCount is not null)
-        {
-            VertexCount = vertexCount.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstVertex")]
+        public uint FirstVertex;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexCount")]
+        public uint VertexCount;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "firstVertex")]
-    public uint FirstVertex;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vertexCount")]
-    public uint VertexCount;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION")]
-public unsafe partial struct AuthenticatedchannelConfigurecryptosession
+namespace Silk.NET.Direct3D9
 {
-    public AuthenticatedchannelConfigurecryptosession
-    (
+    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION")]
+    public unsafe partial struct AuthenticatedchannelConfigurecryptosession
+    {
+        public AuthenticatedchannelConfigurecryptosession
+        (
             AuthenticatedchannelConfigureInput? parameters = null,
             void* dXVA2DecodeHandle = null,
             void* cryptoSessionHandle = null,
             void* deviceHandle = null
-    ) : this()
-    {
-        if (parameters is not null)
+        ) : this()
         {
-            Parameters = parameters.Value;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (dXVA2DecodeHandle is not null)
+            {
+                DXVA2DecodeHandle = dXVA2DecodeHandle;
+            }
+
+            if (cryptoSessionHandle is not null)
+            {
+                CryptoSessionHandle = cryptoSessionHandle;
+            }
+
+            if (deviceHandle is not null)
+            {
+                DeviceHandle = deviceHandle;
+            }
         }
 
-        if (dXVA2DecodeHandle is not null)
-        {
-            DXVA2DecodeHandle = dXVA2DecodeHandle;
-        }
 
-        if (cryptoSessionHandle is not null)
-        {
-            CryptoSessionHandle = cryptoSessionHandle;
-        }
+        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT")]
+        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT")]
+        [NativeName("Name", "Parameters")]
+        public AuthenticatedchannelConfigureInput Parameters;
 
-        if (deviceHandle is not null)
-        {
-            DeviceHandle = deviceHandle;
-        }
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "DXVA2DecodeHandle")]
+        public void* DXVA2DecodeHandle;
+
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "CryptoSessionHandle")]
+        public void* CryptoSessionHandle;
+
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "DeviceHandle")]
+        public void* DeviceHandle;
     }
-
-
-    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT")]
-    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT")]
-    [NativeName("Name", "Parameters")]
-    public AuthenticatedchannelConfigureInput Parameters;
-
-    [NativeName("Type", "HANDLE")]
-    [NativeName("Type.Name", "HANDLE")]
-    [NativeName("Name", "DXVA2DecodeHandle")]
-    public void* DXVA2DecodeHandle;
-
-    [NativeName("Type", "HANDLE")]
-    [NativeName("Type.Name", "HANDLE")]
-    [NativeName("Name", "CryptoSessionHandle")]
-    public void* CryptoSessionHandle;
-
-    [NativeName("Type", "HANDLE")]
-    [NativeName("Type.Name", "HANDLE")]
-    [NativeName("Name", "DeviceHandle")]
-    public void* DeviceHandle;
 }

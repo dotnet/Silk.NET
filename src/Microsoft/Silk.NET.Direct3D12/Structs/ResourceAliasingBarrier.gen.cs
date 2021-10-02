@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RESOURCE_ALIASING_BARRIER")]
-public unsafe partial struct ResourceAliasingBarrier
+namespace Silk.NET.Direct3D12
 {
-    public ResourceAliasingBarrier
-    (
+    [NativeName("Name", "D3D12_RESOURCE_ALIASING_BARRIER")]
+    public unsafe partial struct ResourceAliasingBarrier
+    {
+        public ResourceAliasingBarrier
+        (
             ID3D12Resource* pResourceBefore = null,
             ID3D12Resource* pResourceAfter = null
-    ) : this()
-    {
-        if (pResourceBefore is not null)
+        ) : this()
         {
-            PResourceBefore = pResourceBefore;
+            if (pResourceBefore is not null)
+            {
+                PResourceBefore = pResourceBefore;
+            }
+
+            if (pResourceAfter is not null)
+            {
+                PResourceAfter = pResourceAfter;
+            }
         }
 
-        if (pResourceAfter is not null)
-        {
-            PResourceAfter = pResourceAfter;
-        }
+
+        [NativeName("Type", "ID3D12Resource *")]
+        [NativeName("Type.Name", "ID3D12Resource *")]
+        [NativeName("Name", "pResourceBefore")]
+        public ID3D12Resource* PResourceBefore;
+
+        [NativeName("Type", "ID3D12Resource *")]
+        [NativeName("Type.Name", "ID3D12Resource *")]
+        [NativeName("Name", "pResourceAfter")]
+        public ID3D12Resource* PResourceAfter;
     }
-
-
-    [NativeName("Type", "ID3D12Resource *")]
-    [NativeName("Type.Name", "ID3D12Resource *")]
-    [NativeName("Name", "pResourceBefore")]
-    public ID3D12Resource* PResourceBefore;
-
-    [NativeName("Type", "ID3D12Resource *")]
-    [NativeName("Type.Name", "ID3D12Resource *")]
-    [NativeName("Name", "pResourceAfter")]
-    public ID3D12Resource* PResourceAfter;
 }

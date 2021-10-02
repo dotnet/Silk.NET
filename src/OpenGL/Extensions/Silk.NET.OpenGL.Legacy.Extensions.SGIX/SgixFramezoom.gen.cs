@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
-
-[Extension("SGIX_framezoom")]
-public unsafe partial class SgixFramezoom : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
-    public const string ExtensionName = "SGIX_framezoom";
-    [NativeApi(EntryPoint = "glFrameZoomSGIX")]
-    public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
-
-    public SgixFramezoom(INativeContext ctx)
-        : base(ctx)
+    [Extension("SGIX_framezoom")]
+    public unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
+        public const string ExtensionName = "SGIX_framezoom";
+        [NativeApi(EntryPoint = "glFrameZoomSGIX")]
+        public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
+
+        public SgixFramezoom(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

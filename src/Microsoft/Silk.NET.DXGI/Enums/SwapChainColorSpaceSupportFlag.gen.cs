@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG")]
-public enum SwapChainColorSpaceSupportFlag : int
+namespace Silk.NET.DXGI
 {
-    [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
-    SwapChainColorSpaceSupportFlagPresent = 0x1,
-    [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT")]
-    SwapChainColorSpaceSupportFlagOverlayPresent = 0x2,
+    [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG")]
+    public enum SwapChainColorSpaceSupportFlag : int
+    {
+        [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
+        SwapChainColorSpaceSupportFlagPresent = 0x1,
+        [NativeName("Name", "DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT")]
+        SwapChainColorSpaceSupportFlagOverlayPresent = 0x2,
+    }
 }

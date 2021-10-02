@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceShaderClockFeaturesKHR")]
-public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceShaderClockFeaturesKHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceShaderClockFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
+    {
+        public PhysicalDeviceShaderClockFeaturesKHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceShaderClockFeaturesKhr,
             void* pNext = null,
             Bool32? shaderSubgroupClock = null,
             Bool32? shaderDeviceClock = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSubgroupClock is not null)
+            {
+                ShaderSubgroupClock = shaderSubgroupClock.Value;
+            }
+
+            if (shaderDeviceClock is not null)
+            {
+                ShaderDeviceClock = shaderDeviceClock.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (shaderSubgroupClock is not null)
-        {
-            ShaderSubgroupClock = shaderSubgroupClock.Value;
-        }
-
-        if (shaderDeviceClock is not null)
-        {
-            ShaderDeviceClock = shaderDeviceClock.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSubgroupClock")]
+        public Bool32 ShaderSubgroupClock;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDeviceClock")]
+        public Bool32 ShaderDeviceClock;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "shaderSubgroupClock")]
-    public Bool32 ShaderSubgroupClock;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "shaderDeviceClock")]
-    public Bool32 ShaderDeviceClock;
 }

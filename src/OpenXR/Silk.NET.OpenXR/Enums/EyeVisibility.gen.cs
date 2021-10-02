@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrEyeVisibility")]
-public enum EyeVisibility : int
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_EYE_VISIBILITY_BOTH")]
-    Both = 0,
-    [NativeName("Name", "XR_EYE_VISIBILITY_LEFT")]
-    Left = 1,
-    [NativeName("Name", "XR_EYE_VISIBILITY_RIGHT")]
-    Right = 2,
+    [NativeName("Name", "XrEyeVisibility")]
+    public enum EyeVisibility : int
+    {
+        [NativeName("Name", "XR_EYE_VISIBILITY_BOTH")]
+        Both = 0,
+        [NativeName("Name", "XR_EYE_VISIBILITY_LEFT")]
+        Left = 1,
+        [NativeName("Name", "XR_EYE_VISIBILITY_RIGHT")]
+        Right = 2,
+    }
 }

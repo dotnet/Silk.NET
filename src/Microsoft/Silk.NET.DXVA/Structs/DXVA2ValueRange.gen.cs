@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA2_ValueRange")]
-public unsafe partial struct DXVA2ValueRange
+namespace Silk.NET.DXVA
 {
-    public DXVA2ValueRange
-    (
+    [NativeName("Name", "_DXVA2_ValueRange")]
+    public unsafe partial struct DXVA2ValueRange
+    {
+        public DXVA2ValueRange
+        (
             DXVA2Fixed32? minValue = null,
             DXVA2Fixed32? maxValue = null,
             DXVA2Fixed32? defaultValue = null,
             DXVA2Fixed32? stepSize = null
-    ) : this()
-    {
-        if (minValue is not null)
+        ) : this()
         {
-            MinValue = minValue.Value;
+            if (minValue is not null)
+            {
+                MinValue = minValue.Value;
+            }
+
+            if (maxValue is not null)
+            {
+                MaxValue = maxValue.Value;
+            }
+
+            if (defaultValue is not null)
+            {
+                DefaultValue = defaultValue.Value;
+            }
+
+            if (stepSize is not null)
+            {
+                StepSize = stepSize.Value;
+            }
         }
 
-        if (maxValue is not null)
-        {
-            MaxValue = maxValue.Value;
-        }
 
-        if (defaultValue is not null)
-        {
-            DefaultValue = defaultValue.Value;
-        }
+        [NativeName("Type", "DXVA2_Fixed32")]
+        [NativeName("Type.Name", "DXVA2_Fixed32")]
+        [NativeName("Name", "MinValue")]
+        public DXVA2Fixed32 MinValue;
 
-        if (stepSize is not null)
-        {
-            StepSize = stepSize.Value;
-        }
+        [NativeName("Type", "DXVA2_Fixed32")]
+        [NativeName("Type.Name", "DXVA2_Fixed32")]
+        [NativeName("Name", "MaxValue")]
+        public DXVA2Fixed32 MaxValue;
+
+        [NativeName("Type", "DXVA2_Fixed32")]
+        [NativeName("Type.Name", "DXVA2_Fixed32")]
+        [NativeName("Name", "DefaultValue")]
+        public DXVA2Fixed32 DefaultValue;
+
+        [NativeName("Type", "DXVA2_Fixed32")]
+        [NativeName("Type.Name", "DXVA2_Fixed32")]
+        [NativeName("Name", "StepSize")]
+        public DXVA2Fixed32 StepSize;
     }
-
-
-    [NativeName("Type", "DXVA2_Fixed32")]
-    [NativeName("Type.Name", "DXVA2_Fixed32")]
-    [NativeName("Name", "MinValue")]
-    public DXVA2Fixed32 MinValue;
-
-    [NativeName("Type", "DXVA2_Fixed32")]
-    [NativeName("Type.Name", "DXVA2_Fixed32")]
-    [NativeName("Name", "MaxValue")]
-    public DXVA2Fixed32 MaxValue;
-
-    [NativeName("Type", "DXVA2_Fixed32")]
-    [NativeName("Type.Name", "DXVA2_Fixed32")]
-    [NativeName("Name", "DefaultValue")]
-    public DXVA2Fixed32 DefaultValue;
-
-    [NativeName("Type", "DXVA2_Fixed32")]
-    [NativeName("Type.Name", "DXVA2_Fixed32")]
-    [NativeName("Name", "StepSize")]
-    public DXVA2Fixed32 StepSize;
 }

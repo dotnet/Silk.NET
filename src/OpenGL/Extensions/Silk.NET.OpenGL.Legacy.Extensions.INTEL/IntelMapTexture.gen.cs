@@ -14,33 +14,34 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL;
-
-[Extension("INTEL_map_texture")]
-public unsafe partial class IntelMapTexture : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
 {
-    public const string ExtensionName = "INTEL_map_texture";
-    [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
-    public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
-
-    [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
-    public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
-
-    [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
-    public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
-
-    [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
-    public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
-
-    [NativeApi(EntryPoint = "glSyncTextureINTEL")]
-    public partial void SyncTexture([Flow(FlowDirection.In)] uint texture);
-
-    [NativeApi(EntryPoint = "glUnmapTexture2DINTEL")]
-    public partial void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
-
-    public IntelMapTexture(INativeContext ctx)
-        : base(ctx)
+    [Extension("INTEL_map_texture")]
+    public unsafe partial class IntelMapTexture : NativeExtension<GL>
     {
+        public const string ExtensionName = "INTEL_map_texture";
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
+
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
+
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
+
+        [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
+        public unsafe partial void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
+
+        [NativeApi(EntryPoint = "glSyncTextureINTEL")]
+        public partial void SyncTexture([Flow(FlowDirection.In)] uint texture);
+
+        [NativeApi(EntryPoint = "glUnmapTexture2DINTEL")]
+        public partial void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+
+        public IntelMapTexture(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

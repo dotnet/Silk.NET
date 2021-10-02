@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkAttachmentReference")]
-public unsafe partial struct AttachmentReference
+namespace Silk.NET.Vulkan
 {
-    public AttachmentReference
-    (
+    [NativeName("Name", "VkAttachmentReference")]
+    public unsafe partial struct AttachmentReference
+    {
+        public AttachmentReference
+        (
             uint? attachment = null,
             ImageLayout? layout = null
-    ) : this()
-    {
-        if (attachment is not null)
+        ) : this()
         {
-            Attachment = attachment.Value;
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
         }
 
-        if (layout is not null)
-        {
-            Layout = layout.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "attachment")]
+        public uint Attachment;
+/// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "layout")]
+        public ImageLayout Layout;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "attachment")]
-    public uint Attachment;
-/// <summary></summary>
-    [NativeName("Type", "VkImageLayout")]
-    [NativeName("Type.Name", "VkImageLayout")]
-    [NativeName("Name", "layout")]
-    public ImageLayout Layout;
 }

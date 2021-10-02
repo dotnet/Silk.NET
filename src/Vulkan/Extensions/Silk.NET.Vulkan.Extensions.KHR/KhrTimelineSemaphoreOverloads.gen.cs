@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-public static class KhrTimelineSemaphoreOverloads
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetSemaphoreCounterValue(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ulong> pValue)
+    public static class KhrTimelineSemaphoreOverloads
     {
-        // SpanOverloader
-        return thisApi.GetSemaphoreCounterValue(device, semaphore, out pValue.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetSemaphoreCounterValue(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ulong> pValue)
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreCounterValue(device, semaphore, out pValue.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result SignalSemaphore(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreSignalInfo> pSignalInfo)
-    {
-        // SpanOverloader
-        return thisApi.SignalSemaphore(device, in pSignalInfo.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result SignalSemaphore(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreSignalInfo> pSignalInfo)
+        {
+            // SpanOverloader
+            return thisApi.SignalSemaphore(device, in pSignalInfo.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result WaitSemaphores(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreWaitInfo> pWaitInfo, [Count(Count = 0)] ulong timeout)
-    {
-        // SpanOverloader
-        return thisApi.WaitSemaphores(device, in pWaitInfo.GetPinnableReference(), timeout);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result WaitSemaphores(this KhrTimelineSemaphore thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreWaitInfo> pWaitInfo, [Count(Count = 0)] ulong timeout)
+        {
+            // SpanOverloader
+            return thisApi.WaitSemaphores(device, in pWaitInfo.GetPinnableReference(), timeout);
+        }
 
+    }
 }
 

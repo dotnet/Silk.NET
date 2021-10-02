@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_SERIALIZATION_DESC")]
-public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoSerializationDesc
+namespace Silk.NET.Direct3D12
 {
-    public RaytracingAccelerationStructurePostbuildInfoSerializationDesc
-    (
+    [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_SERIALIZATION_DESC")]
+    public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoSerializationDesc
+    {
+        public RaytracingAccelerationStructurePostbuildInfoSerializationDesc
+        (
             ulong? serializedSizeInBytes = null,
             ulong? numBottomLevelAccelerationStructurePointers = null
-    ) : this()
-    {
-        if (serializedSizeInBytes is not null)
+        ) : this()
         {
-            SerializedSizeInBytes = serializedSizeInBytes.Value;
+            if (serializedSizeInBytes is not null)
+            {
+                SerializedSizeInBytes = serializedSizeInBytes.Value;
+            }
+
+            if (numBottomLevelAccelerationStructurePointers is not null)
+            {
+                NumBottomLevelAccelerationStructurePointers = numBottomLevelAccelerationStructurePointers.Value;
+            }
         }
 
-        if (numBottomLevelAccelerationStructurePointers is not null)
-        {
-            NumBottomLevelAccelerationStructurePointers = numBottomLevelAccelerationStructurePointers.Value;
-        }
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "SerializedSizeInBytes")]
+        public ulong SerializedSizeInBytes;
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "NumBottomLevelAccelerationStructurePointers")]
+        public ulong NumBottomLevelAccelerationStructurePointers;
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "SerializedSizeInBytes")]
-    public ulong SerializedSizeInBytes;
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "NumBottomLevelAccelerationStructurePointers")]
-    public ulong NumBottomLevelAccelerationStructurePointers;
 }

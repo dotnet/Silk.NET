@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "TexBumpParameterATI")]
-public enum TexBumpParameterATI : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_BUMP_ROT_MATRIX_ATI")]
-    BumpRotMatrixAti = 0x8775,
+    [NativeName("Name", "TexBumpParameterATI")]
+    public enum TexBumpParameterATI : int
+    {
+        [NativeName("Name", "GL_BUMP_ROT_MATRIX_ATI")]
+        BumpRotMatrixAti = 0x8775,
+    }
 }

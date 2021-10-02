@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "PixelStoreSubsampleRate")]
-public enum PixelStoreSubsampleRate : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_PIXEL_SUBSAMPLE_4444_SGIX")]
-    PixelSubsample4444Sgix = 0x85A2,
-    [NativeName("Name", "GL_PIXEL_SUBSAMPLE_2424_SGIX")]
-    PixelSubsample2424Sgix = 0x85A3,
-    [NativeName("Name", "GL_PIXEL_SUBSAMPLE_4242_SGIX")]
-    PixelSubsample4242Sgix = 0x85A4,
+    [NativeName("Name", "PixelStoreSubsampleRate")]
+    public enum PixelStoreSubsampleRate : int
+    {
+        [NativeName("Name", "GL_PIXEL_SUBSAMPLE_4444_SGIX")]
+        PixelSubsample4444Sgix = 0x85A2,
+        [NativeName("Name", "GL_PIXEL_SUBSAMPLE_2424_SGIX")]
+        PixelSubsample2424Sgix = 0x85A3,
+        [NativeName("Name", "GL_PIXEL_SUBSAMPLE_4242_SGIX")]
+        PixelSubsample4242Sgix = 0x85A4,
+    }
 }

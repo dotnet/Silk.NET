@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.QCOM;
-
-public static class QComFramebufferFoveatedOverloads
+namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
-    public static unsafe void FramebufferFoveationConfig(this QComFramebufferFoveated thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> providedFeatures)
+    public static class QComFramebufferFoveatedOverloads
     {
-        // SpanOverloader
-        thisApi.FramebufferFoveationConfig(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, out providedFeatures.GetPinnableReference());
-    }
+        public static unsafe void FramebufferFoveationConfig(this QComFramebufferFoveated thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> providedFeatures)
+        {
+            // SpanOverloader
+            thisApi.FramebufferFoveationConfig(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, out providedFeatures.GetPinnableReference());
+        }
 
+    }
 }
 

@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-public unsafe readonly struct PfnTimerCallback : IDisposable
+namespace Silk.NET.SDL
 {
-    private readonly void* _handle;
-    public delegate* unmanaged[Cdecl]<uint, void*, uint> Handle => (delegate* unmanaged[Cdecl]<uint, void*, uint>) _handle;
-    public PfnTimerCallback
-    (
-        delegate* unmanaged[Cdecl]<uint, void*, uint> ptr
-    ) => _handle = ptr;
+    public unsafe readonly struct PfnTimerCallback : IDisposable
+    {
+        private readonly void* _handle;
+        public delegate* unmanaged[Cdecl]<uint, void*, uint> Handle => (delegate* unmanaged[Cdecl]<uint, void*, uint>) _handle;
+        public PfnTimerCallback
+        (
+            delegate* unmanaged[Cdecl]<uint, void*, uint> ptr
+        ) => _handle = ptr;
 
-    public PfnTimerCallback
-    (
-         TimerCallback proc
-    ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
+        public PfnTimerCallback
+        (
+             TimerCallback proc
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
-    public static PfnTimerCallback From(TimerCallback proc) => new PfnTimerCallback(proc);
-    public void Dispose() => SilkMarshal.Free((nint) _handle);
+        public static PfnTimerCallback From(TimerCallback proc) => new PfnTimerCallback(proc);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-    public static implicit operator nint(PfnTimerCallback pfn) => (nint) pfn.Handle;
-    public static explicit operator PfnTimerCallback(nint pfn)
-        => new PfnTimerCallback((delegate* unmanaged[Cdecl]<uint, void*, uint>) pfn);
+        public static implicit operator nint(PfnTimerCallback pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnTimerCallback(nint pfn)
+            => new PfnTimerCallback((delegate* unmanaged[Cdecl]<uint, void*, uint>) pfn);
 
-    public static implicit operator PfnTimerCallback(TimerCallback proc)
-        => new PfnTimerCallback(proc);
+        public static implicit operator PfnTimerCallback(TimerCallback proc)
+            => new PfnTimerCallback(proc);
 
-    public static explicit operator TimerCallback(PfnTimerCallback pfn)
-        => SilkMarshal.PtrToDelegate<TimerCallback>(pfn);
+        public static explicit operator TimerCallback(PfnTimerCallback pfn)
+            => SilkMarshal.PtrToDelegate<TimerCallback>(pfn);
 
-    public static implicit operator delegate* unmanaged[Cdecl]<uint, void*, uint>(PfnTimerCallback pfn) => pfn.Handle;
-    public static implicit operator PfnTimerCallback(delegate* unmanaged[Cdecl]<uint, void*, uint> ptr) => new PfnTimerCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<uint, void*, uint>(PfnTimerCallback pfn) => pfn.Handle;
+        public static implicit operator PfnTimerCallback(delegate* unmanaged[Cdecl]<uint, void*, uint> ptr) => new PfnTimerCallback(ptr);
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate uint TimerCallback(uint arg0, void* arg1);
 }
-
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public unsafe delegate uint TimerCallback(uint arg0, void* arg1);
 

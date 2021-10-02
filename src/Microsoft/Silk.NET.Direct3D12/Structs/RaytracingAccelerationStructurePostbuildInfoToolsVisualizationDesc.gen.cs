@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC")]
-public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoToolsVisualizationDesc
+namespace Silk.NET.Direct3D12
 {
-    public RaytracingAccelerationStructurePostbuildInfoToolsVisualizationDesc
-    (
-            ulong? decodedSizeInBytes = null
-    ) : this()
+    [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TOOLS_VISUALIZATION_DESC")]
+    public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoToolsVisualizationDesc
     {
-        if (decodedSizeInBytes is not null)
+        public RaytracingAccelerationStructurePostbuildInfoToolsVisualizationDesc
+        (
+            ulong? decodedSizeInBytes = null
+        ) : this()
         {
-            DecodedSizeInBytes = decodedSizeInBytes.Value;
+            if (decodedSizeInBytes is not null)
+            {
+                DecodedSizeInBytes = decodedSizeInBytes.Value;
+            }
         }
+
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "DecodedSizeInBytes")]
+        public ulong DecodedSizeInBytes;
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "DecodedSizeInBytes")]
-    public ulong DecodedSizeInBytes;
 }

@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT;
-
-public static class ExtWindowRectanglesOverloads
+namespace Silk.NET.OpenGLES.Extensions.EXT
 {
-    public static unsafe void WindowRectangles(this ExtWindowRectangles thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> box)
+    public static class ExtWindowRectanglesOverloads
     {
-        // SpanOverloader
-        thisApi.WindowRectangles(mode, count, in box.GetPinnableReference());
-    }
+        public static unsafe void WindowRectangles(this ExtWindowRectangles thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> box)
+        {
+            // SpanOverloader
+            thisApi.WindowRectangles(mode, count, in box.GetPinnableReference());
+        }
 
+    }
 }
 

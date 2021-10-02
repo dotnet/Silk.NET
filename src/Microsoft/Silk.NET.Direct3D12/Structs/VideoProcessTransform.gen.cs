@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_VIDEO_PROCESS_TRANSFORM")]
-public unsafe partial struct VideoProcessTransform
+namespace Silk.NET.Direct3D12
 {
-    public VideoProcessTransform
-    (
+    [NativeName("Name", "D3D12_VIDEO_PROCESS_TRANSFORM")]
+    public unsafe partial struct VideoProcessTransform
+    {
+        public VideoProcessTransform
+        (
             Silk.NET.Maths.Rectangle<int>? sourceRectangle = null,
             Silk.NET.Maths.Rectangle<int>? destinationRectangle = null,
             VideoProcessOrientation? orientation = null
-    ) : this()
-    {
-        if (sourceRectangle is not null)
+        ) : this()
         {
-            SourceRectangle = sourceRectangle.Value;
+            if (sourceRectangle is not null)
+            {
+                SourceRectangle = sourceRectangle.Value;
+            }
+
+            if (destinationRectangle is not null)
+            {
+                DestinationRectangle = destinationRectangle.Value;
+            }
+
+            if (orientation is not null)
+            {
+                Orientation = orientation.Value;
+            }
         }
 
-        if (destinationRectangle is not null)
-        {
-            DestinationRectangle = destinationRectangle.Value;
-        }
 
-        if (orientation is not null)
-        {
-            Orientation = orientation.Value;
-        }
+        [NativeName("Type", "D3D12_RECT")]
+        [NativeName("Type.Name", "D3D12_RECT")]
+        [NativeName("Name", "SourceRectangle")]
+        public Silk.NET.Maths.Rectangle<int> SourceRectangle;
+
+        [NativeName("Type", "D3D12_RECT")]
+        [NativeName("Type.Name", "D3D12_RECT")]
+        [NativeName("Name", "DestinationRectangle")]
+        public Silk.NET.Maths.Rectangle<int> DestinationRectangle;
+
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_ORIENTATION")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_ORIENTATION")]
+        [NativeName("Name", "Orientation")]
+        public VideoProcessOrientation Orientation;
     }
-
-
-    [NativeName("Type", "D3D12_RECT")]
-    [NativeName("Type.Name", "D3D12_RECT")]
-    [NativeName("Name", "SourceRectangle")]
-    public Silk.NET.Maths.Rectangle<int> SourceRectangle;
-
-    [NativeName("Type", "D3D12_RECT")]
-    [NativeName("Type.Name", "D3D12_RECT")]
-    [NativeName("Name", "DestinationRectangle")]
-    public Silk.NET.Maths.Rectangle<int> DestinationRectangle;
-
-    [NativeName("Type", "D3D12_VIDEO_PROCESS_ORIENTATION")]
-    [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_ORIENTATION")]
-    [NativeName("Name", "Orientation")]
-    public VideoProcessOrientation Orientation;
 }

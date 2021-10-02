@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS")]
-public unsafe partial struct DebugCommandListGpuBasedValidationSettings
+namespace Silk.NET.Direct3D12
 {
-    public DebugCommandListGpuBasedValidationSettings
-    (
-            GpuBasedValidationShaderPatchMode? shaderPatchMode = null
-    ) : this()
+    [NativeName("Name", "D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS")]
+    public unsafe partial struct DebugCommandListGpuBasedValidationSettings
     {
-        if (shaderPatchMode is not null)
+        public DebugCommandListGpuBasedValidationSettings
+        (
+            GpuBasedValidationShaderPatchMode? shaderPatchMode = null
+        ) : this()
         {
-            ShaderPatchMode = shaderPatchMode.Value;
+            if (shaderPatchMode is not null)
+            {
+                ShaderPatchMode = shaderPatchMode.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE")]
+        [NativeName("Type.Name", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE")]
+        [NativeName("Name", "ShaderPatchMode")]
+        public GpuBasedValidationShaderPatchMode ShaderPatchMode;
     }
-
-
-    [NativeName("Type", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE")]
-    [NativeName("Type.Name", "D3D12_GPU_BASED_VALIDATION_SHADER_PATCH_MODE")]
-    [NativeName("Name", "ShaderPatchMode")]
-    public GpuBasedValidationShaderPatchMode ShaderPatchMode;
 }

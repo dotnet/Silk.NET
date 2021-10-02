@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSpatialAnchorCreateInfoMSFT")]
-public unsafe partial struct SpatialAnchorCreateInfoMSFT
+namespace Silk.NET.OpenXR
 {
-    public SpatialAnchorCreateInfoMSFT
-    (
+    [NativeName("Name", "XrSpatialAnchorCreateInfoMSFT")]
+    public unsafe partial struct SpatialAnchorCreateInfoMSFT
+    {
+        public SpatialAnchorCreateInfoMSFT
+        (
             StructureType? type = StructureType.TypeSpatialAnchorCreateInfoMsft,
             void* next = null,
             Space? space = null,
             Posef? pose = null,
             long? time = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (space is not null)
-        {
-            Space = space.Value;
-        }
-
-        if (pose is not null)
-        {
-            Pose = pose.Value;
-        }
-
-        if (time is not null)
-        {
-            Time = time.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrSpace")]
+        [NativeName("Type.Name", "XrSpace")]
+        [NativeName("Name", "space")]
+        public Space Space;
+/// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "pose")]
+        public Posef Pose;
+/// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "time")]
+        public long Time;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrSpace")]
-    [NativeName("Type.Name", "XrSpace")]
-    [NativeName("Name", "space")]
-    public Space Space;
-/// <summary></summary>
-    [NativeName("Type", "XrPosef")]
-    [NativeName("Type.Name", "XrPosef")]
-    [NativeName("Name", "pose")]
-    public Posef Pose;
-/// <summary></summary>
-    [NativeName("Type", "XrTime")]
-    [NativeName("Type.Name", "XrTime")]
-    [NativeName("Name", "time")]
-    public long Time;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkRenderPassInputAttachmentAspectCreateInfoKHR")]
-public unsafe partial struct RenderPassInputAttachmentAspectCreateInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public RenderPassInputAttachmentAspectCreateInfoKHR
-    (
+    [NativeName("Name", "VkRenderPassInputAttachmentAspectCreateInfoKHR")]
+    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfoKHR
+    {
+        public RenderPassInputAttachmentAspectCreateInfoKHR
+        (
             StructureType? sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
             void* pNext = null,
             uint? aspectReferenceCount = null,
             InputAttachmentAspectReference* pAspectReferences = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (aspectReferenceCount is not null)
+            {
+                AspectReferenceCount = aspectReferenceCount.Value;
+            }
+
+            if (pAspectReferences is not null)
+            {
+                PAspectReferences = pAspectReferences;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (aspectReferenceCount is not null)
-        {
-            AspectReferenceCount = aspectReferenceCount.Value;
-        }
-
-        if (pAspectReferences is not null)
-        {
-            PAspectReferences = pAspectReferences;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "aspectReferenceCount")]
+        public uint AspectReferenceCount;
+/// <summary></summary>
+        [NativeName("Type", "VkInputAttachmentAspectReference*")]
+        [NativeName("Type.Name", "VkInputAttachmentAspectReference")]
+        [NativeName("Name", "pAspectReferences")]
+        public InputAttachmentAspectReference* PAspectReferences;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "aspectReferenceCount")]
-    public uint AspectReferenceCount;
-/// <summary></summary>
-    [NativeName("Type", "VkInputAttachmentAspectReference*")]
-    [NativeName("Type.Name", "VkInputAttachmentAspectReference")]
-    [NativeName("Name", "pAspectReferences")]
-    public InputAttachmentAspectReference* PAspectReferences;
 }

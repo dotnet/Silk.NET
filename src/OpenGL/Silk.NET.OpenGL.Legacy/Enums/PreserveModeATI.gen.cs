@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy;
-
-[NativeName("Name", "PreserveModeATI")]
-public enum PreserveModeATI : int
+namespace Silk.NET.OpenGL.Legacy
 {
-    [NativeName("Name", "GL_PRESERVE_ATI")]
-    PreserveAti = 0x8762,
-    [NativeName("Name", "GL_DISCARD_ATI")]
-    DiscardAti = 0x8763,
+    [NativeName("Name", "PreserveModeATI")]
+    public enum PreserveModeATI : int
+    {
+        [NativeName("Name", "GL_PRESERVE_ATI")]
+        PreserveAti = 0x8762,
+        [NativeName("Name", "GL_DISCARD_ATI")]
+        DiscardAti = 0x8763,
+    }
 }

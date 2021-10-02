@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.APPLE;
-
-[Extension("APPLE_copy_texture_levels")]
-public unsafe partial class AppleCopyTextureLevels : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.APPLE
 {
-    public const string ExtensionName = "APPLE_copy_texture_levels";
-    [NativeApi(EntryPoint = "glCopyTextureLevelsAPPLE")]
-    public partial void CopyTextureLevel([Flow(FlowDirection.In)] uint destinationTexture, [Flow(FlowDirection.In)] uint sourceTexture, [Flow(FlowDirection.In)] int sourceBaseLevel, [Flow(FlowDirection.In)] uint sourceLevelCount);
-
-    public AppleCopyTextureLevels(INativeContext ctx)
-        : base(ctx)
+    [Extension("APPLE_copy_texture_levels")]
+    public unsafe partial class AppleCopyTextureLevels : NativeExtension<GL>
     {
+        public const string ExtensionName = "APPLE_copy_texture_levels";
+        [NativeApi(EntryPoint = "glCopyTextureLevelsAPPLE")]
+        public partial void CopyTextureLevel([Flow(FlowDirection.In)] uint destinationTexture, [Flow(FlowDirection.In)] uint sourceTexture, [Flow(FlowDirection.In)] int sourceBaseLevel, [Flow(FlowDirection.In)] uint sourceLevelCount);
+
+        public AppleCopyTextureLevels(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

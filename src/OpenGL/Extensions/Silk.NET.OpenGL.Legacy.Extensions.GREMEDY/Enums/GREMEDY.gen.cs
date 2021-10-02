@@ -7,9 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY;
-
-[NativeName("Name", "GLenum")]
-public enum GREMEDY : int
+namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
+    [NativeName("Name", "GLenum")]
+    public enum GREMEDY : int
+    {
+    }
 }

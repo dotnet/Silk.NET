@@ -7,10 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrCompositionLayerSpaceWarpInfoFlagsFB")]
-public enum CompositionLayerSpaceWarpInfoFlagsFB : long
+namespace Silk.NET.OpenXR
 {
+    [Flags()]
+    [NativeName("Name", "XrCompositionLayerSpaceWarpInfoFlagsFB")]
+    public enum CompositionLayerSpaceWarpInfoFlagsFB : long
+    {
+    }
 }

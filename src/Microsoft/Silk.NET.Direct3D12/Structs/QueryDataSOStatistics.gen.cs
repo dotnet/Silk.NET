@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_QUERY_DATA_SO_STATISTICS")]
-public unsafe partial struct QueryDataSOStatistics
+namespace Silk.NET.Direct3D12
 {
-    public QueryDataSOStatistics
-    (
+    [NativeName("Name", "D3D12_QUERY_DATA_SO_STATISTICS")]
+    public unsafe partial struct QueryDataSOStatistics
+    {
+        public QueryDataSOStatistics
+        (
             ulong? numPrimitivesWritten = null,
             ulong? primitivesStorageNeeded = null
-    ) : this()
-    {
-        if (numPrimitivesWritten is not null)
+        ) : this()
         {
-            NumPrimitivesWritten = numPrimitivesWritten.Value;
+            if (numPrimitivesWritten is not null)
+            {
+                NumPrimitivesWritten = numPrimitivesWritten.Value;
+            }
+
+            if (primitivesStorageNeeded is not null)
+            {
+                PrimitivesStorageNeeded = primitivesStorageNeeded.Value;
+            }
         }
 
-        if (primitivesStorageNeeded is not null)
-        {
-            PrimitivesStorageNeeded = primitivesStorageNeeded.Value;
-        }
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "NumPrimitivesWritten")]
+        public ulong NumPrimitivesWritten;
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "PrimitivesStorageNeeded")]
+        public ulong PrimitivesStorageNeeded;
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "NumPrimitivesWritten")]
-    public ulong NumPrimitivesWritten;
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "PrimitivesStorageNeeded")]
-    public ulong PrimitivesStorageNeeded;
 }

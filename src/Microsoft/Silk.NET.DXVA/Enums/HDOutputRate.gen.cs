@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_OUTPUT_RATE")]
-public enum HDOutputRate : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVAHD_OUTPUT_RATE_NORMAL")]
-    HDOutputRateNormal = 0x0,
-    [NativeName("Name", "DXVAHD_OUTPUT_RATE_HALF")]
-    HDOutputRateHalf = 0x1,
-    [NativeName("Name", "DXVAHD_OUTPUT_RATE_CUSTOM")]
-    HDOutputRateCustom = 0x2,
+    [NativeName("Name", "_DXVAHD_OUTPUT_RATE")]
+    public enum HDOutputRate : int
+    {
+        [NativeName("Name", "DXVAHD_OUTPUT_RATE_NORMAL")]
+        HDOutputRateNormal = 0x0,
+        [NativeName("Name", "DXVAHD_OUTPUT_RATE_HALF")]
+        HDOutputRateHalf = 0x1,
+        [NativeName("Name", "DXVAHD_OUTPUT_RATE_CUSTOM")]
+        HDOutputRateCustom = 0x2,
+    }
 }

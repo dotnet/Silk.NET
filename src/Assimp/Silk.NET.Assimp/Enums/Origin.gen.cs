@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiOrigin")]
-public enum Origin : int
+namespace Silk.NET.Assimp
 {
-    [NativeName("Name", "aiOrigin_SET")]
-    OriginSet = 0x0,
-    [NativeName("Name", "aiOrigin_CUR")]
-    OriginCur = 0x1,
-    [NativeName("Name", "aiOrigin_END")]
-    OriginEnd = 0x2,
+    [NativeName("Name", "aiOrigin")]
+    public enum Origin : int
+    {
+        [NativeName("Name", "aiOrigin_SET")]
+        OriginSet = 0x0,
+        [NativeName("Name", "aiOrigin_CUR")]
+        OriginCur = 0x1,
+        [NativeName("Name", "aiOrigin_END")]
+        OriginEnd = 0x2,
+    }
 }

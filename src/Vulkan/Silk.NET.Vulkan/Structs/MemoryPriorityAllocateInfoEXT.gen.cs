@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkMemoryPriorityAllocateInfoEXT")]
-public unsafe partial struct MemoryPriorityAllocateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public MemoryPriorityAllocateInfoEXT
-    (
+    [NativeName("Name", "VkMemoryPriorityAllocateInfoEXT")]
+    public unsafe partial struct MemoryPriorityAllocateInfoEXT
+    {
+        public MemoryPriorityAllocateInfoEXT
+        (
             StructureType? sType = StructureType.MemoryPriorityAllocateInfoExt,
             void* pNext = null,
             float? priority = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (priority is not null)
-        {
-            Priority = priority.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "priority")]
+        public float Priority;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "priority")]
-    public float Priority;
 }

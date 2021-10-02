@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_FRect")]
-public unsafe partial struct FRect
+namespace Silk.NET.SDL
 {
-    public FRect
-    (
+    [NativeName("Name", "SDL_FRect")]
+    public unsafe partial struct FRect
+    {
+        public FRect
+        (
             float? x = null,
             float? y = null,
             float? w = null,
             float? h = null
-    ) : this()
-    {
-        if (x is not null)
+        ) : this()
         {
-            X = x.Value;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
         }
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
 
-        if (w is not null)
-        {
-            W = w.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
+        public float X;
 
-        if (h is not null)
-        {
-            H = h.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
+        public float Y;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "w")]
+        public float W;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "h")]
+        public float H;
     }
-
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "x")]
-    public float X;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "y")]
-    public float Y;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "w")]
-    public float W;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "h")]
-    public float H;
 }

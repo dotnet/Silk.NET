@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_CLEAR_FLAGS")]
-public enum ClearFlags : int
+namespace Silk.NET.Direct3D12
 {
-    [NativeName("Name", "D3D12_CLEAR_FLAG_DEPTH")]
-    ClearFlagDepth = 0x1,
-    [NativeName("Name", "D3D12_CLEAR_FLAG_STENCIL")]
-    ClearFlagStencil = 0x2,
+    [NativeName("Name", "D3D12_CLEAR_FLAGS")]
+    public enum ClearFlags : int
+    {
+        [NativeName("Name", "D3D12_CLEAR_FLAG_DEPTH")]
+        ClearFlagDepth = 0x1,
+        [NativeName("Name", "D3D12_CLEAR_FLAG_STENCIL")]
+        ClearFlagStencil = 0x2,
+    }
 }

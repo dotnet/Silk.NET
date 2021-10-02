@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_MouseMotionEvent")]
-public unsafe partial struct MouseMotionEvent
+namespace Silk.NET.SDL
 {
-    public MouseMotionEvent
-    (
+    [NativeName("Name", "SDL_MouseMotionEvent")]
+    public unsafe partial struct MouseMotionEvent
+    {
+        public MouseMotionEvent
+        (
             uint? type = null,
             uint? timestamp = null,
             uint? windowID = null,
@@ -30,97 +30,98 @@ public unsafe partial struct MouseMotionEvent
             int? y = null,
             int? xrel = null,
             int? yrel = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (xrel is not null)
+            {
+                Xrel = xrel.Value;
+            }
+
+            if (yrel is not null)
+            {
+                Yrel = yrel.Value;
+            }
         }
 
-        if (timestamp is not null)
-        {
-            Timestamp = timestamp.Value;
-        }
 
-        if (windowID is not null)
-        {
-            WindowID = windowID.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "type")]
+        public uint Type;
 
-        if (which is not null)
-        {
-            Which = which.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "timestamp")]
+        public uint Timestamp;
 
-        if (state is not null)
-        {
-            State = state.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "windowID")]
+        public uint WindowID;
 
-        if (x is not null)
-        {
-            X = x.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "which")]
+        public uint Which;
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "state")]
+        public uint State;
 
-        if (xrel is not null)
-        {
-            Xrel = xrel.Value;
-        }
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "x")]
+        public int X;
 
-        if (yrel is not null)
-        {
-            Yrel = yrel.Value;
-        }
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "y")]
+        public int Y;
+
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "xrel")]
+        public int Xrel;
+
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "yrel")]
+        public int Yrel;
     }
-
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "type")]
-    public uint Type;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "timestamp")]
-    public uint Timestamp;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "windowID")]
-    public uint WindowID;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "which")]
-    public uint Which;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "state")]
-    public uint State;
-
-    [NativeName("Type", "Sint32")]
-    [NativeName("Type.Name", "Sint32")]
-    [NativeName("Name", "x")]
-    public int X;
-
-    [NativeName("Type", "Sint32")]
-    [NativeName("Type.Name", "Sint32")]
-    [NativeName("Name", "y")]
-    public int Y;
-
-    [NativeName("Type", "Sint32")]
-    [NativeName("Type.Name", "Sint32")]
-    [NativeName("Name", "xrel")]
-    public int Xrel;
-
-    [NativeName("Type", "Sint32")]
-    [NativeName("Type.Name", "Sint32")]
-    [NativeName("Name", "yrel")]
-    public int Yrel;
 }

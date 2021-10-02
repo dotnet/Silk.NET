@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_VideoDesc")]
-public unsafe partial struct VideoDesc
+namespace Silk.NET.DXVA
 {
-    public VideoDesc
-    (
+    [NativeName("Name", "_DXVA_VideoDesc")]
+    public unsafe partial struct VideoDesc
+    {
+        public VideoDesc
+        (
             uint? size = null,
             uint? sampleWidth = null,
             uint? sampleHeight = null,
@@ -28,77 +28,78 @@ public unsafe partial struct VideoDesc
             Silk.NET.Direct3D9.Format? d3dFormat = null,
             Frequency? inputSampleFreq = null,
             Frequency? outputFrameFreq = null
-    ) : this()
-    {
-        if (size is not null)
+        ) : this()
         {
-            Size = size.Value;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (sampleWidth is not null)
+            {
+                SampleWidth = sampleWidth.Value;
+            }
+
+            if (sampleHeight is not null)
+            {
+                SampleHeight = sampleHeight.Value;
+            }
+
+            if (sampleFormat is not null)
+            {
+                SampleFormat = sampleFormat.Value;
+            }
+
+            if (d3dFormat is not null)
+            {
+                D3dFormat = d3dFormat.Value;
+            }
+
+            if (inputSampleFreq is not null)
+            {
+                InputSampleFreq = inputSampleFreq.Value;
+            }
+
+            if (outputFrameFreq is not null)
+            {
+                OutputFrameFreq = outputFrameFreq.Value;
+            }
         }
 
-        if (sampleWidth is not null)
-        {
-            SampleWidth = sampleWidth.Value;
-        }
 
-        if (sampleHeight is not null)
-        {
-            SampleHeight = sampleHeight.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Size")]
+        public uint Size;
 
-        if (sampleFormat is not null)
-        {
-            SampleFormat = sampleFormat.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleWidth")]
+        public uint SampleWidth;
 
-        if (d3dFormat is not null)
-        {
-            D3dFormat = d3dFormat.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleHeight")]
+        public uint SampleHeight;
 
-        if (inputSampleFreq is not null)
-        {
-            InputSampleFreq = inputSampleFreq.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleFormat")]
+        public uint SampleFormat;
 
-        if (outputFrameFreq is not null)
-        {
-            OutputFrameFreq = outputFrameFreq.Value;
-        }
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "d3dFormat")]
+        public Silk.NET.Direct3D9.Format D3dFormat;
+
+        [NativeName("Type", "DXVA_Frequency")]
+        [NativeName("Type.Name", "DXVA_Frequency")]
+        [NativeName("Name", "InputSampleFreq")]
+        public Frequency InputSampleFreq;
+
+        [NativeName("Type", "DXVA_Frequency")]
+        [NativeName("Type.Name", "DXVA_Frequency")]
+        [NativeName("Name", "OutputFrameFreq")]
+        public Frequency OutputFrameFreq;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Size")]
-    public uint Size;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "SampleWidth")]
-    public uint SampleWidth;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "SampleHeight")]
-    public uint SampleHeight;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "SampleFormat")]
-    public uint SampleFormat;
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "d3dFormat")]
-    public Silk.NET.Direct3D9.Format D3dFormat;
-
-    [NativeName("Type", "DXVA_Frequency")]
-    [NativeName("Type.Name", "DXVA_Frequency")]
-    [NativeName("Name", "InputSampleFreq")]
-    public Frequency InputSampleFreq;
-
-    [NativeName("Type", "DXVA_Frequency")]
-    [NativeName("Type.Name", "DXVA_Frequency")]
-    [NativeName("Name", "OutputFrameFreq")]
-    public Frequency OutputFrameFreq;
 }

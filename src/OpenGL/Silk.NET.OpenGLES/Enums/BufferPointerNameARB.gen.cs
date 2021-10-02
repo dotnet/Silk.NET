@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "BufferPointerNameARB")]
-public enum BufferPointerNameARB : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_BUFFER_MAP_POINTER")]
-    BufferMapPointer = 0x88BD,
-    [NativeName("Name", "GL_BUFFER_MAP_POINTER_ARB")]
-    BufferMapPointerArb = 0x88BD,
+    [NativeName("Name", "BufferPointerNameARB")]
+    public enum BufferPointerNameARB : int
+    {
+        [NativeName("Name", "GL_BUFFER_MAP_POINTER")]
+        BufferMapPointer = 0x88BD,
+        [NativeName("Name", "GL_BUFFER_MAP_POINTER_ARB")]
+        BufferMapPointerArb = 0x88BD,
+    }
 }

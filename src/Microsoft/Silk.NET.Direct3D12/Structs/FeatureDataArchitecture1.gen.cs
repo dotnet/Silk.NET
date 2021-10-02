@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_ARCHITECTURE1")]
-public unsafe partial struct FeatureDataArchitecture1
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataArchitecture1
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_ARCHITECTURE1")]
+    public unsafe partial struct FeatureDataArchitecture1
+    {
+        public FeatureDataArchitecture1
+        (
             uint? nodeIndex = null,
             int? tileBasedRenderer = null,
             int? uMA = null,
             int? cacheCoherentUMA = null,
             int? isolatedMMU = null
-    ) : this()
-    {
-        if (nodeIndex is not null)
+        ) : this()
         {
-            NodeIndex = nodeIndex.Value;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (tileBasedRenderer is not null)
+            {
+                TileBasedRenderer = tileBasedRenderer.Value;
+            }
+
+            if (uMA is not null)
+            {
+                UMA = uMA.Value;
+            }
+
+            if (cacheCoherentUMA is not null)
+            {
+                CacheCoherentUMA = cacheCoherentUMA.Value;
+            }
+
+            if (isolatedMMU is not null)
+            {
+                IsolatedMMU = isolatedMMU.Value;
+            }
         }
 
-        if (tileBasedRenderer is not null)
-        {
-            TileBasedRenderer = tileBasedRenderer.Value;
-        }
 
-        if (uMA is not null)
-        {
-            UMA = uMA.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NodeIndex")]
+        public uint NodeIndex;
 
-        if (cacheCoherentUMA is not null)
-        {
-            CacheCoherentUMA = cacheCoherentUMA.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "TileBasedRenderer")]
+        public int TileBasedRenderer;
 
-        if (isolatedMMU is not null)
-        {
-            IsolatedMMU = isolatedMMU.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "UMA")]
+        public int UMA;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "CacheCoherentUMA")]
+        public int CacheCoherentUMA;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "IsolatedMMU")]
+        public int IsolatedMMU;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NodeIndex")]
-    public uint NodeIndex;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "TileBasedRenderer")]
-    public int TileBasedRenderer;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "UMA")]
-    public int UMA;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "CacheCoherentUMA")]
-    public int CacheCoherentUMA;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "IsolatedMMU")]
-    public int IsolatedMMU;
 }

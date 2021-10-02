@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageSubresource")]
-public unsafe partial struct ImageSubresource
+namespace Silk.NET.Vulkan
 {
-    public ImageSubresource
-    (
+    [NativeName("Name", "VkImageSubresource")]
+    public unsafe partial struct ImageSubresource
+    {
+        public ImageSubresource
+        (
             ImageAspectFlags? aspectMask = null,
             uint? mipLevel = null,
             uint? arrayLayer = null
-    ) : this()
-    {
-        if (aspectMask is not null)
+        ) : this()
         {
-            AspectMask = aspectMask.Value;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (mipLevel is not null)
+            {
+                MipLevel = mipLevel.Value;
+            }
+
+            if (arrayLayer is not null)
+            {
+                ArrayLayer = arrayLayer.Value;
+            }
         }
 
-        if (mipLevel is not null)
-        {
-            MipLevel = mipLevel.Value;
-        }
-
-        if (arrayLayer is not null)
-        {
-            ArrayLayer = arrayLayer.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
+        public ImageAspectFlags AspectMask;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "mipLevel")]
+        public uint MipLevel;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "arrayLayer")]
+        public uint ArrayLayer;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkImageAspectFlags")]
-    [NativeName("Type.Name", "VkImageAspectFlags")]
-    [NativeName("Name", "aspectMask")]
-    public ImageAspectFlags AspectMask;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "mipLevel")]
-    public uint MipLevel;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "arrayLayer")]
-    public uint ArrayLayer;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "DXVA2Trace_DecodeDevGetBufferData")]
-public unsafe partial struct DXVA2TraceDecodeDevGetBufferData
+namespace Silk.NET.DXVA
 {
-    public DXVA2TraceDecodeDevGetBufferData
-    (
+    [NativeName("Name", "DXVA2Trace_DecodeDevGetBufferData")]
+    public unsafe partial struct DXVA2TraceDecodeDevGetBufferData
+    {
+        public DXVA2TraceDecodeDevGetBufferData
+        (
             _EVENT_TRACE_HEADER? wmiHeader = null,
             ulong? pObject = null,
             uint? bufferType = null,
             int? enter = null
-    ) : this()
-    {
-        if (wmiHeader is not null)
+        ) : this()
         {
-            WmiHeader = wmiHeader.Value;
+            if (wmiHeader is not null)
+            {
+                WmiHeader = wmiHeader.Value;
+            }
+
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
+
+            if (bufferType is not null)
+            {
+                BufferType = bufferType.Value;
+            }
+
+            if (enter is not null)
+            {
+                Enter = enter.Value;
+            }
         }
 
-        if (pObject is not null)
-        {
-            PObject = pObject.Value;
-        }
 
-        if (bufferType is not null)
-        {
-            BufferType = bufferType.Value;
-        }
+        [NativeName("Type", "EVENT_TRACE_HEADER")]
+        [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
+        [NativeName("Name", "wmiHeader")]
+        public _EVENT_TRACE_HEADER WmiHeader;
 
-        if (enter is not null)
-        {
-            Enter = enter.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BufferType")]
+        public uint BufferType;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enter")]
+        public int Enter;
     }
-
-
-    [NativeName("Type", "EVENT_TRACE_HEADER")]
-    [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
-    [NativeName("Name", "wmiHeader")]
-    public _EVENT_TRACE_HEADER WmiHeader;
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BufferType")]
-    public uint BufferType;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enter")]
-    public int Enter;
 }

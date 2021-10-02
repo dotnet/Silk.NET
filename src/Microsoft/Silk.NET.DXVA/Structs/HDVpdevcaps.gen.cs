@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_VPDEVCAPS")]
-public unsafe partial struct HDVpdevcaps
+namespace Silk.NET.DXVA
 {
-    public HDVpdevcaps
-    (
+    [NativeName("Name", "_DXVAHD_VPDEVCAPS")]
+    public unsafe partial struct HDVpdevcaps
+    {
+        public HDVpdevcaps
+        (
             HDDeviceType? deviceType = null,
             uint? deviceCaps = null,
             uint? featureCaps = null,
@@ -32,117 +32,118 @@ public unsafe partial struct HDVpdevcaps
             uint? videoProcessorCount = null,
             uint? maxInputStreams = null,
             uint? maxStreamStates = null
-    ) : this()
-    {
-        if (deviceType is not null)
+        ) : this()
         {
-            DeviceType = deviceType.Value;
+            if (deviceType is not null)
+            {
+                DeviceType = deviceType.Value;
+            }
+
+            if (deviceCaps is not null)
+            {
+                DeviceCaps = deviceCaps.Value;
+            }
+
+            if (featureCaps is not null)
+            {
+                FeatureCaps = featureCaps.Value;
+            }
+
+            if (filterCaps is not null)
+            {
+                FilterCaps = filterCaps.Value;
+            }
+
+            if (inputFormatCaps is not null)
+            {
+                InputFormatCaps = inputFormatCaps.Value;
+            }
+
+            if (inputPool is not null)
+            {
+                InputPool = inputPool.Value;
+            }
+
+            if (outputFormatCount is not null)
+            {
+                OutputFormatCount = outputFormatCount.Value;
+            }
+
+            if (inputFormatCount is not null)
+            {
+                InputFormatCount = inputFormatCount.Value;
+            }
+
+            if (videoProcessorCount is not null)
+            {
+                VideoProcessorCount = videoProcessorCount.Value;
+            }
+
+            if (maxInputStreams is not null)
+            {
+                MaxInputStreams = maxInputStreams.Value;
+            }
+
+            if (maxStreamStates is not null)
+            {
+                MaxStreamStates = maxStreamStates.Value;
+            }
         }
 
-        if (deviceCaps is not null)
-        {
-            DeviceCaps = deviceCaps.Value;
-        }
 
-        if (featureCaps is not null)
-        {
-            FeatureCaps = featureCaps.Value;
-        }
+        [NativeName("Type", "DXVAHD_DEVICE_TYPE")]
+        [NativeName("Type.Name", "DXVAHD_DEVICE_TYPE")]
+        [NativeName("Name", "DeviceType")]
+        public HDDeviceType DeviceType;
 
-        if (filterCaps is not null)
-        {
-            FilterCaps = filterCaps.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DeviceCaps")]
+        public uint DeviceCaps;
 
-        if (inputFormatCaps is not null)
-        {
-            InputFormatCaps = inputFormatCaps.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FeatureCaps")]
+        public uint FeatureCaps;
 
-        if (inputPool is not null)
-        {
-            InputPool = inputPool.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FilterCaps")]
+        public uint FilterCaps;
 
-        if (outputFormatCount is not null)
-        {
-            OutputFormatCount = outputFormatCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InputFormatCaps")]
+        public uint InputFormatCaps;
 
-        if (inputFormatCount is not null)
-        {
-            InputFormatCount = inputFormatCount.Value;
-        }
+        [NativeName("Type", "D3DPOOL")]
+        [NativeName("Type.Name", "D3DPOOL")]
+        [NativeName("Name", "InputPool")]
+        public Silk.NET.Direct3D9.Pool InputPool;
 
-        if (videoProcessorCount is not null)
-        {
-            VideoProcessorCount = videoProcessorCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "OutputFormatCount")]
+        public uint OutputFormatCount;
 
-        if (maxInputStreams is not null)
-        {
-            MaxInputStreams = maxInputStreams.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InputFormatCount")]
+        public uint InputFormatCount;
 
-        if (maxStreamStates is not null)
-        {
-            MaxStreamStates = maxStreamStates.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "VideoProcessorCount")]
+        public uint VideoProcessorCount;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxInputStreams")]
+        public uint MaxInputStreams;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxStreamStates")]
+        public uint MaxStreamStates;
     }
-
-
-    [NativeName("Type", "DXVAHD_DEVICE_TYPE")]
-    [NativeName("Type.Name", "DXVAHD_DEVICE_TYPE")]
-    [NativeName("Name", "DeviceType")]
-    public HDDeviceType DeviceType;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DeviceCaps")]
-    public uint DeviceCaps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FeatureCaps")]
-    public uint FeatureCaps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FilterCaps")]
-    public uint FilterCaps;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InputFormatCaps")]
-    public uint InputFormatCaps;
-
-    [NativeName("Type", "D3DPOOL")]
-    [NativeName("Type.Name", "D3DPOOL")]
-    [NativeName("Name", "InputPool")]
-    public Silk.NET.Direct3D9.Pool InputPool;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "OutputFormatCount")]
-    public uint OutputFormatCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InputFormatCount")]
-    public uint InputFormatCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "VideoProcessorCount")]
-    public uint VideoProcessorCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxInputStreams")]
-    public uint MaxInputStreams;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxStreamStates")]
-    public uint MaxStreamStates;
 }

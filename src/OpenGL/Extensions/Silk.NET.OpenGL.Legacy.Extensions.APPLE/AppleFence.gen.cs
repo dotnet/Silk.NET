@@ -14,78 +14,79 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE;
-
-[Extension("APPLE_fence")]
-public unsafe partial class AppleFence : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
-    public const string ExtensionName = "APPLE_fence";
-    [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-    public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
-
-    [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-    public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
-
-    [NativeApi(EntryPoint = "glFinishFenceAPPLE")]
-    public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
-
-    [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
-    public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
-
-    [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
-    public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
-
-    [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-    public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
-
-    [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-    public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
-
-    [NativeApi(EntryPoint = "glIsFenceAPPLE")]
-    public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
-
-    [NativeApi(EntryPoint = "glSetFenceAPPLE")]
-    public partial void SetFence([Flow(FlowDirection.In)] uint fence);
-
-    [NativeApi(EntryPoint = "glTestFenceAPPLE")]
-    public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
-
-    [NativeApi(EntryPoint = "glTestObjectAPPLE")]
-    public partial bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
-
-    [NativeApi(EntryPoint = "glTestObjectAPPLE")]
-    public partial bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);
-
-    public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
+    [Extension("APPLE_fence")]
+    public unsafe partial class AppleFence : NativeExtension<GL>
     {
-        // ArrayParameterOverloader
-        DeleteFences(1, &fences);
-    }
+        public const string ExtensionName = "APPLE_fence";
+        [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
+        public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
-    public unsafe void DeleteFences([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
-    {
-        // ImplicitCountSpanOverloader
-        DeleteFences((uint) fences.Length, in fences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
+        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
 
-    public unsafe uint GenFence()
-    {
-        const uint n = 1;
-        // ReturnTypeOverloader
-        uint ret = default;
-        GenFences(n, &ret);
-        return ret;
-    }
+        [NativeApi(EntryPoint = "glFinishFenceAPPLE")]
+        public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
 
-    public unsafe void GenFences([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
-    {
-        // ImplicitCountSpanOverloader
-        GenFences((uint) fences.Length, out fences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
+        public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
 
-    public AppleFence(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
+        public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
+
+        [NativeApi(EntryPoint = "glGenFencesAPPLE")]
+        public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+
+        [NativeApi(EntryPoint = "glGenFencesAPPLE")]
+        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
+
+        [NativeApi(EntryPoint = "glIsFenceAPPLE")]
+        public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
+
+        [NativeApi(EntryPoint = "glSetFenceAPPLE")]
+        public partial void SetFence([Flow(FlowDirection.In)] uint fence);
+
+        [NativeApi(EntryPoint = "glTestFenceAPPLE")]
+        public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
+
+        [NativeApi(EntryPoint = "glTestObjectAPPLE")]
+        public partial bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
+
+        [NativeApi(EntryPoint = "glTestObjectAPPLE")]
+        public partial bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);
+
+        public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
+        {
+            // ArrayParameterOverloader
+            DeleteFences(1, &fences);
+        }
+
+        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteFences((uint) fences.Length, in fences.GetPinnableReference());
+        }
+
+        public unsafe uint GenFence()
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GenFences(n, &ret);
+            return ret;
+        }
+
+        public unsafe void GenFences([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+        {
+            // ImplicitCountSpanOverloader
+            GenFences((uint) fences.Length, out fences.GetPinnableReference());
+        }
+
+        public AppleFence(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

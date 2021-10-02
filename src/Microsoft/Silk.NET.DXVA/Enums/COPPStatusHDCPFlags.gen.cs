@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_COPP_StatusHDCPFlags")]
-public enum COPPStatusHDCPFlags : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "COPP_HDCPRepeater")]
-    CoppHdcprepeater = 0x1,
-    [NativeName("Name", "COPP_HDCPFlagsReserved")]
-    CoppHdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+    [NativeName("Name", "_COPP_StatusHDCPFlags")]
+    public enum COPPStatusHDCPFlags : int
+    {
+        [NativeName("Name", "COPP_HDCPRepeater")]
+        CoppHdcprepeater = 0x1,
+        [NativeName("Name", "COPP_HDCPFlagsReserved")]
+        CoppHdcpflagsReserved = unchecked((int) 0xFFFFFFFFFFFFFFFE),
+    }
 }

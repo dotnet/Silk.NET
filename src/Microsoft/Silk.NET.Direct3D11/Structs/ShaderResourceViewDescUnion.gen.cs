@@ -14,14 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_d3d11_L3381_C5")]
-public unsafe partial struct ShaderResourceViewDescUnion
+namespace Silk.NET.Direct3D11
 {
-    public ShaderResourceViewDescUnion
-    (
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_d3d11_L3381_C5")]
+    public unsafe partial struct ShaderResourceViewDescUnion
+    {
+        public ShaderResourceViewDescUnion
+        (
             BufferSrv? buffer = null,
             Tex1DSrv? texture1D = null,
             Tex1DArraySrv? texture1DArray = null,
@@ -33,128 +33,129 @@ public unsafe partial struct ShaderResourceViewDescUnion
             TexcubeSrv? textureCube = null,
             TexcubeArraySrv? textureCubeArray = null,
             BufferexSrv? bufferEx = null
-    ) : this()
-    {
-        if (buffer is not null)
+        ) : this()
         {
-            Buffer = buffer.Value;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
+            }
+
+            if (texture3D is not null)
+            {
+                Texture3D = texture3D.Value;
+            }
+
+            if (textureCube is not null)
+            {
+                TextureCube = textureCube.Value;
+            }
+
+            if (textureCubeArray is not null)
+            {
+                TextureCubeArray = textureCubeArray.Value;
+            }
+
+            if (bufferEx is not null)
+            {
+                BufferEx = bufferEx.Value;
+            }
         }
 
-        if (texture1D is not null)
-        {
-            Texture1D = texture1D.Value;
-        }
 
-        if (texture1DArray is not null)
-        {
-            Texture1DArray = texture1DArray.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_BUFFER_SRV")]
+        [NativeName("Type.Name", "D3D11_BUFFER_SRV")]
+        [NativeName("Name", "Buffer")]
+        public BufferSrv Buffer;
 
-        if (texture2D is not null)
-        {
-            Texture2D = texture2D.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX1D_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX1D_SRV")]
+        [NativeName("Name", "Texture1D")]
+        public Tex1DSrv Texture1D;
 
-        if (texture2DArray is not null)
-        {
-            Texture2DArray = texture2DArray.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX1D_ARRAY_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX1D_ARRAY_SRV")]
+        [NativeName("Name", "Texture1DArray")]
+        public Tex1DArraySrv Texture1DArray;
 
-        if (texture2DMS is not null)
-        {
-            Texture2DMS = texture2DMS.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX2D_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX2D_SRV")]
+        [NativeName("Name", "Texture2D")]
+        public Tex2DSrv Texture2D;
 
-        if (texture2DMSArray is not null)
-        {
-            Texture2DMSArray = texture2DMSArray.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX2D_ARRAY_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX2D_ARRAY_SRV")]
+        [NativeName("Name", "Texture2DArray")]
+        public Tex2DArraySrv Texture2DArray;
 
-        if (texture3D is not null)
-        {
-            Texture3D = texture3D.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX2DMS_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX2DMS_SRV")]
+        [NativeName("Name", "Texture2DMS")]
+        public Tex2DmsSrv Texture2DMS;
 
-        if (textureCube is not null)
-        {
-            TextureCube = textureCube.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX2DMS_ARRAY_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX2DMS_ARRAY_SRV")]
+        [NativeName("Name", "Texture2DMSArray")]
+        public Tex2DmsArraySrv Texture2DMSArray;
 
-        if (textureCubeArray is not null)
-        {
-            TextureCubeArray = textureCubeArray.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEX3D_SRV")]
+        [NativeName("Type.Name", "D3D11_TEX3D_SRV")]
+        [NativeName("Name", "Texture3D")]
+        public Tex3DSrv Texture3D;
 
-        if (bufferEx is not null)
-        {
-            BufferEx = bufferEx.Value;
-        }
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEXCUBE_SRV")]
+        [NativeName("Type.Name", "D3D11_TEXCUBE_SRV")]
+        [NativeName("Name", "TextureCube")]
+        public TexcubeSrv TextureCube;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_TEXCUBE_ARRAY_SRV")]
+        [NativeName("Type.Name", "D3D11_TEXCUBE_ARRAY_SRV")]
+        [NativeName("Name", "TextureCubeArray")]
+        public TexcubeArraySrv TextureCubeArray;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D11_BUFFEREX_SRV")]
+        [NativeName("Type.Name", "D3D11_BUFFEREX_SRV")]
+        [NativeName("Name", "BufferEx")]
+        public BufferexSrv BufferEx;
     }
-
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_BUFFER_SRV")]
-    [NativeName("Type.Name", "D3D11_BUFFER_SRV")]
-    [NativeName("Name", "Buffer")]
-    public BufferSrv Buffer;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX1D_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX1D_SRV")]
-    [NativeName("Name", "Texture1D")]
-    public Tex1DSrv Texture1D;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX1D_ARRAY_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX1D_ARRAY_SRV")]
-    [NativeName("Name", "Texture1DArray")]
-    public Tex1DArraySrv Texture1DArray;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX2D_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX2D_SRV")]
-    [NativeName("Name", "Texture2D")]
-    public Tex2DSrv Texture2D;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX2D_ARRAY_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX2D_ARRAY_SRV")]
-    [NativeName("Name", "Texture2DArray")]
-    public Tex2DArraySrv Texture2DArray;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX2DMS_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX2DMS_SRV")]
-    [NativeName("Name", "Texture2DMS")]
-    public Tex2DmsSrv Texture2DMS;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX2DMS_ARRAY_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX2DMS_ARRAY_SRV")]
-    [NativeName("Name", "Texture2DMSArray")]
-    public Tex2DmsArraySrv Texture2DMSArray;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEX3D_SRV")]
-    [NativeName("Type.Name", "D3D11_TEX3D_SRV")]
-    [NativeName("Name", "Texture3D")]
-    public Tex3DSrv Texture3D;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEXCUBE_SRV")]
-    [NativeName("Type.Name", "D3D11_TEXCUBE_SRV")]
-    [NativeName("Name", "TextureCube")]
-    public TexcubeSrv TextureCube;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_TEXCUBE_ARRAY_SRV")]
-    [NativeName("Type.Name", "D3D11_TEXCUBE_ARRAY_SRV")]
-    [NativeName("Name", "TextureCubeArray")]
-    public TexcubeArraySrv TextureCubeArray;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D11_BUFFEREX_SRV")]
-    [NativeName("Type.Name", "D3D11_BUFFEREX_SRV")]
-    [NativeName("Name", "BufferEx")]
-    public BufferexSrv BufferEx;
 }

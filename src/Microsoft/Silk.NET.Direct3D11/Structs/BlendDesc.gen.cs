@@ -14,74 +14,75 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_BLEND_DESC")]
-public unsafe partial struct BlendDesc
+namespace Silk.NET.Direct3D11
 {
-    public BlendDesc
-    (
+    [NativeName("Name", "D3D11_BLEND_DESC")]
+    public unsafe partial struct BlendDesc
+    {
+        public BlendDesc
+        (
             int? alphaToCoverageEnable = null,
             int? independentBlendEnable = null
-    ) : this()
-    {
-        if (alphaToCoverageEnable is not null)
+        ) : this()
         {
-            AlphaToCoverageEnable = alphaToCoverageEnable.Value;
-        }
-
-        if (independentBlendEnable is not null)
-        {
-            IndependentBlendEnable = independentBlendEnable.Value;
-        }
-    }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "AlphaToCoverageEnable")]
-    public int AlphaToCoverageEnable;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "IndependentBlendEnable")]
-    public int IndependentBlendEnable;
-        
-    [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
-    [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
-    [NativeName("Name", "RenderTarget")]
-    public RenderTargetBuffer RenderTarget;
-
-    public struct RenderTargetBuffer
-    {
-        public RenderTargetBlendDesc Element0;
-        public RenderTargetBlendDesc Element1;
-        public RenderTargetBlendDesc Element2;
-        public RenderTargetBlendDesc Element3;
-        public RenderTargetBlendDesc Element4;
-        public RenderTargetBlendDesc Element5;
-        public RenderTargetBlendDesc Element6;
-        public RenderTargetBlendDesc Element7;
-        public ref RenderTargetBlendDesc this[int index]
-        {
-            get
+            if (alphaToCoverageEnable is not null)
             {
-                if (index > 7 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                AlphaToCoverageEnable = alphaToCoverageEnable.Value;
+            }
 
-                fixed (RenderTargetBlendDesc* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+            if (independentBlendEnable is not null)
+            {
+                IndependentBlendEnable = independentBlendEnable.Value;
             }
         }
 
-#if NETSTANDARD2_1
-        public Span<RenderTargetBlendDesc> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
-    }
 
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "AlphaToCoverageEnable")]
+        public int AlphaToCoverageEnable;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "IndependentBlendEnable")]
+        public int IndependentBlendEnable;
+        
+        [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
+        [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
+        [NativeName("Name", "RenderTarget")]
+        public RenderTargetBuffer RenderTarget;
+
+        public struct RenderTargetBuffer
+        {
+            public RenderTargetBlendDesc Element0;
+            public RenderTargetBlendDesc Element1;
+            public RenderTargetBlendDesc Element2;
+            public RenderTargetBlendDesc Element3;
+            public RenderTargetBlendDesc Element4;
+            public RenderTargetBlendDesc Element5;
+            public RenderTargetBlendDesc Element6;
+            public RenderTargetBlendDesc Element7;
+            public ref RenderTargetBlendDesc this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (RenderTargetBlendDesc* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<RenderTargetBlendDesc> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 8);
+#endif
+        }
+
+    }
 }

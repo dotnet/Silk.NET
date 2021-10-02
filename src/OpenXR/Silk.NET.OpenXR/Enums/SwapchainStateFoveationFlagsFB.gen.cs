@@ -7,10 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrSwapchainStateFoveationFlagsFB")]
-public enum SwapchainStateFoveationFlagsFB : long
+namespace Silk.NET.OpenXR
 {
+    [Flags()]
+    [NativeName("Name", "XrSwapchainStateFoveationFlagsFB")]
+    public enum SwapchainStateFoveationFlagsFB : long
+    {
+    }
 }

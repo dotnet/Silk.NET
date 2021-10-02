@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT")]
-public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceBlendOperationAdvancedFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
+    {
+        public PhysicalDeviceBlendOperationAdvancedFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceBlendOperationAdvancedFeaturesExt,
             void* pNext = null,
             Bool32? advancedBlendCoherentOperations = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (advancedBlendCoherentOperations is not null)
+            {
+                AdvancedBlendCoherentOperations = advancedBlendCoherentOperations.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (advancedBlendCoherentOperations is not null)
-        {
-            AdvancedBlendCoherentOperations = advancedBlendCoherentOperations.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "advancedBlendCoherentOperations")]
+        public Bool32 AdvancedBlendCoherentOperations;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "advancedBlendCoherentOperations")]
-    public Bool32 AdvancedBlendCoherentOperations;
 }

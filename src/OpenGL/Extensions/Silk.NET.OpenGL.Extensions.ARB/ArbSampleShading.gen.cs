@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-[Extension("ARB_sample_shading")]
-public unsafe partial class ArbSampleShading : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_sample_shading";
-    [NativeApi(EntryPoint = "glMinSampleShadingARB")]
-    public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
-
-    public ArbSampleShading(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_sample_shading")]
+    public unsafe partial class ArbSampleShading : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_sample_shading";
+        [NativeApi(EntryPoint = "glMinSampleShadingARB")]
+        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
+
+        public ArbSampleShading(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

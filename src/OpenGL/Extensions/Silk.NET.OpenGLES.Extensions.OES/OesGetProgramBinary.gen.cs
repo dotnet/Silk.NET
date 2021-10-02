@@ -14,75 +14,76 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OES;
-
-[Extension("OES_get_program_binary")]
-public unsafe partial class OesGetProgramBinary : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.OES
 {
-    public const string ExtensionName = "OES_get_program_binary";
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
-
-    [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
-    public partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "glProgramBinaryOES")]
-    public unsafe partial void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] int length);
-
-    [NativeApi(EntryPoint = "glProgramBinaryOES")]
-    public partial void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] int length) where T0 : unmanaged;
-
-    public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+    [Extension("OES_get_program_binary")]
+    public unsafe partial class OesGetProgramBinary : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, binaryFormat, out binary.GetPinnableReference());
-    }
+        public const string ExtensionName = "OES_get_program_binary";
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
-    public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
-    {
-        // ImplicitCountSpanOverloader
-        GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, out binaryFormat, out binary.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
 
-    public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
-    {
-        // ImplicitCountSpanOverloader
-        GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, binaryFormat, out binary.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
-    public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
-    {
-        // ImplicitCountSpanOverloader
-        GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, out binaryFormat, out binary.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
 
-    public unsafe void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (int) (binary.Length * Unsafe.SizeOf<T0>()));
-    }
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
-    public OesGetProgramBinary(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
+
+        [NativeApi(EntryPoint = "glGetProgramBinaryOES")]
+        public partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 binary) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glProgramBinaryOES")]
+        public unsafe partial void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] int length);
+
+        [NativeApi(EntryPoint = "glProgramBinaryOES")]
+        public partial void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] int length) where T0 : unmanaged;
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out OES binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (int) (binary.Length * Unsafe.SizeOf<T0>()));
+        }
+
+        public OesGetProgramBinary(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

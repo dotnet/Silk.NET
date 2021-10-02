@@ -14,30 +14,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL;
-
-[NativeName("Name", "cl_name_version_khr")]
-public unsafe partial struct NameVersionKhr
+namespace Silk.NET.OpenCL
 {
-    public NameVersionKhr
-    (
-            uint? version = null
-    ) : this()
+    [NativeName("Name", "cl_name_version_khr")]
+    public unsafe partial struct NameVersionKhr
     {
-        if (version is not null)
+        public NameVersionKhr
+        (
+            uint? version = null
+        ) : this()
         {
-            Version = version.Value;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
         }
-    }
 
 /// <summary></summary>
-    [NativeName("Type", "cl_version_khr")]
-    [NativeName("Type.Name", "cl_version_khr")]
-    [NativeName("Name", "version")]
-    public uint Version;
-    /// <summary></summary>
-    [NativeName("Type", "char")]
-    [NativeName("Type.Name", "char")]
-    [NativeName("Name", "name")]
-    public fixed byte Name[100];
+        [NativeName("Type", "cl_version_khr")]
+        [NativeName("Type.Name", "cl_version_khr")]
+        [NativeName("Name", "version")]
+        public uint Version;
+        /// <summary></summary>
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "name")]
+        public fixed byte Name[100];
+    }
 }

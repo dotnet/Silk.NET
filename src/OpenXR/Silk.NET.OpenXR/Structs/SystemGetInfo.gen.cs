@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSystemGetInfo")]
-public unsafe partial struct SystemGetInfo
+namespace Silk.NET.OpenXR
 {
-    public SystemGetInfo
-    (
+    [NativeName("Name", "XrSystemGetInfo")]
+    public unsafe partial struct SystemGetInfo
+    {
+        public SystemGetInfo
+        (
             StructureType? type = StructureType.TypeSystemGetInfo,
             void* next = null,
             FormFactor? formFactor = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (formFactor is not null)
+            {
+                FormFactor = formFactor.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (formFactor is not null)
-        {
-            FormFactor = formFactor.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrFormFactor")]
+        [NativeName("Type.Name", "XrFormFactor")]
+        [NativeName("Name", "formFactor")]
+        public FormFactor FormFactor;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrFormFactor")]
-    [NativeName("Type.Name", "XrFormFactor")]
-    [NativeName("Name", "formFactor")]
-    public FormFactor FormFactor;
 }

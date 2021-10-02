@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrActionSuggestedBinding")]
-public unsafe partial struct ActionSuggestedBinding
+namespace Silk.NET.OpenXR
 {
-    public ActionSuggestedBinding
-    (
+    [NativeName("Name", "XrActionSuggestedBinding")]
+    public unsafe partial struct ActionSuggestedBinding
+    {
+        public ActionSuggestedBinding
+        (
             Action? action = null,
             ulong? binding = null
-    ) : this()
-    {
-        if (action is not null)
+        ) : this()
         {
-            Action = action.Value;
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
         }
 
-        if (binding is not null)
-        {
-            Binding = binding.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrAction")]
+        [NativeName("Type.Name", "XrAction")]
+        [NativeName("Name", "action")]
+        public Action Action;
+/// <summary></summary>
+        [NativeName("Type", "XrPath")]
+        [NativeName("Type.Name", "XrPath")]
+        [NativeName("Name", "binding")]
+        public ulong Binding;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrAction")]
-    [NativeName("Type.Name", "XrAction")]
-    [NativeName("Name", "action")]
-    public Action Action;
-/// <summary></summary>
-    [NativeName("Type", "XrPath")]
-    [NativeName("Type.Name", "XrPath")]
-    [NativeName("Name", "binding")]
-    public ulong Binding;
 }

@@ -14,19 +14,20 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-[Extension("VK_EXT_pageable_device_local_memory")]
-public unsafe partial class ExtPageableDeviceLocalMemory : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    public const string ExtensionName = "VK_EXT_pageable_device_local_memory";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkSetDeviceMemoryPriorityEXT")]
-    public partial void SetDeviceMemoryPriority([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] float priority);
-
-    public ExtPageableDeviceLocalMemory(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_EXT_pageable_device_local_memory")]
+    public unsafe partial class ExtPageableDeviceLocalMemory : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_EXT_pageable_device_local_memory";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkSetDeviceMemoryPriorityEXT")]
+        public partial void SetDeviceMemoryPriority([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] float priority);
+
+        public ExtPageableDeviceLocalMemory(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

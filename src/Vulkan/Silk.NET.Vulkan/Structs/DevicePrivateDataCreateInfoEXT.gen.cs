@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDevicePrivateDataCreateInfoEXT")]
-public unsafe partial struct DevicePrivateDataCreateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DevicePrivateDataCreateInfoEXT
-    (
+    [NativeName("Name", "VkDevicePrivateDataCreateInfoEXT")]
+    public unsafe partial struct DevicePrivateDataCreateInfoEXT
+    {
+        public DevicePrivateDataCreateInfoEXT
+        (
             StructureType? sType = StructureType.DevicePrivateDataCreateInfoExt,
             void* pNext = null,
             uint? privateDataSlotRequestCount = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (privateDataSlotRequestCount is not null)
+            {
+                PrivateDataSlotRequestCount = privateDataSlotRequestCount.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (privateDataSlotRequestCount is not null)
-        {
-            PrivateDataSlotRequestCount = privateDataSlotRequestCount.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "privateDataSlotRequestCount")]
+        public uint PrivateDataSlotRequestCount;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "privateDataSlotRequestCount")]
-    public uint PrivateDataSlotRequestCount;
 }

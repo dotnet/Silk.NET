@@ -14,42 +14,43 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
-
-[Extension("AMD_name_gen_delete")]
-public unsafe partial class AmdNameGenDelete : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
-    public const string ExtensionName = "AMD_name_gen_delete";
-    [NativeApi(EntryPoint = "glDeleteNamesAMD")]
-    public unsafe partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] uint* names);
-
-    [NativeApi(EntryPoint = "glDeleteNamesAMD")]
-    public partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] in uint names);
-
-    [NativeApi(EntryPoint = "glGenNamesAMD")]
-    public unsafe partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] uint* names);
-
-    [NativeApi(EntryPoint = "glGenNamesAMD")]
-    public partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] out uint names);
-
-    [NativeApi(EntryPoint = "glIsNameAMD")]
-    public partial bool IsName([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint name);
-
-    public unsafe void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.In)] ReadOnlySpan<uint> names)
+    [Extension("AMD_name_gen_delete")]
+    public unsafe partial class AmdNameGenDelete : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        DeleteNames(identifier, (uint) names.Length, in names.GetPinnableReference());
-    }
+        public const string ExtensionName = "AMD_name_gen_delete";
+        [NativeApi(EntryPoint = "glDeleteNamesAMD")]
+        public unsafe partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] uint* names);
 
-    public unsafe void GenNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
-    {
-        // ImplicitCountSpanOverloader
-        GenNames(identifier, (uint) names.Length, out names.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteNamesAMD")]
+        public partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] in uint names);
 
-    public AmdNameGenDelete(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGenNamesAMD")]
+        public unsafe partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] uint* names);
+
+        [NativeApi(EntryPoint = "glGenNamesAMD")]
+        public partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] out uint names);
+
+        [NativeApi(EntryPoint = "glIsNameAMD")]
+        public partial bool IsName([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint name);
+
+        public unsafe void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.In)] ReadOnlySpan<uint> names)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteNames(identifier, (uint) names.Length, in names.GetPinnableReference());
+        }
+
+        public unsafe void GenNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
+        {
+            // ImplicitCountSpanOverloader
+            GenNames(identifier, (uint) names.Length, out names.GetPinnableReference());
+        }
+
+        public AmdNameGenDelete(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBufferViewCreateInfo")]
-public unsafe partial struct BufferViewCreateInfo
+namespace Silk.NET.Vulkan
 {
-    public BufferViewCreateInfo
-    (
+    [NativeName("Name", "VkBufferViewCreateInfo")]
+    public unsafe partial struct BufferViewCreateInfo
+    {
+        public BufferViewCreateInfo
+        (
             StructureType? sType = StructureType.BufferViewCreateInfo,
             void* pNext = null,
             uint? flags = null,
@@ -28,77 +28,78 @@ public unsafe partial struct BufferViewCreateInfo
             Format? format = null,
             ulong? offset = null,
             ulong? range = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (buffer is not null)
-        {
-            Buffer = buffer.Value;
-        }
-
-        if (format is not null)
-        {
-            Format = format.Value;
-        }
-
-        if (offset is not null)
-        {
-            Offset = offset.Value;
-        }
-
-        if (range is not null)
-        {
-            Range = range.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBufferViewCreateFlags")]
+        [NativeName("Type.Name", "VkBufferViewCreateFlags")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
+/// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
+        public Buffer Buffer;
+/// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
+        public Format Format;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "offset")]
+        public ulong Offset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "range")]
+        public ulong Range;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBufferViewCreateFlags")]
-    [NativeName("Type.Name", "VkBufferViewCreateFlags")]
-    [NativeName("Name", "flags")]
-    public uint Flags;
-/// <summary></summary>
-    [NativeName("Type", "VkBuffer")]
-    [NativeName("Type.Name", "VkBuffer")]
-    [NativeName("Name", "buffer")]
-    public Buffer Buffer;
-/// <summary></summary>
-    [NativeName("Type", "VkFormat")]
-    [NativeName("Type.Name", "VkFormat")]
-    [NativeName("Name", "format")]
-    public Format Format;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "offset")]
-    public ulong Offset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "range")]
-    public ulong Range;
 }

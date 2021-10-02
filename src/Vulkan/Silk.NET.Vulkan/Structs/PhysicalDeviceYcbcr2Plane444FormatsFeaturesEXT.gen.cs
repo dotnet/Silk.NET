@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT")]
-public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
+    {
+        public PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceYcbcr2Plane444FormatsFeaturesExt,
             void* pNext = null,
             Bool32? ycbcr2plane444formats = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (ycbcr2plane444formats is not null)
+            {
+                Ycbcr2plane444formats = ycbcr2plane444formats.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (ycbcr2plane444formats is not null)
-        {
-            Ycbcr2plane444formats = ycbcr2plane444formats.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "ycbcr2plane444Formats")]
+        public Bool32 Ycbcr2plane444formats;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "ycbcr2plane444Formats")]
-    public Bool32 Ycbcr2plane444formats;
 }

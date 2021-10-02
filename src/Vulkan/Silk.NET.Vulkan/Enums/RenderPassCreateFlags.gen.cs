@@ -7,14 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkRenderPassCreateFlags")]
-public enum RenderPassCreateFlags : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_RENDER_PASS_CREATE_RESERVED_0_BIT_KHR")]
-    RenderPassCreateReserved0BitKhr = 1,
-    [NativeName("Name", "VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
-    RenderPassCreateTransformBitQCom = 2,
+    [Flags()]
+    [NativeName("Name", "VkRenderPassCreateFlags")]
+    public enum RenderPassCreateFlags : int
+    {
+        [NativeName("Name", "VK_RENDER_PASS_CREATE_RESERVED_0_BIT_KHR")]
+        RenderPassCreateReserved0BitKhr = 1,
+        [NativeName("Name", "VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
+        RenderPassCreateTransformBitQCom = 2,
+    }
 }

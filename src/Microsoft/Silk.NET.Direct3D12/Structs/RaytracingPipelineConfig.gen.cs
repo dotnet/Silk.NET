@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RAYTRACING_PIPELINE_CONFIG")]
-public unsafe partial struct RaytracingPipelineConfig
+namespace Silk.NET.Direct3D12
 {
-    public RaytracingPipelineConfig
-    (
-            uint? maxTraceRecursionDepth = null
-    ) : this()
+    [NativeName("Name", "D3D12_RAYTRACING_PIPELINE_CONFIG")]
+    public unsafe partial struct RaytracingPipelineConfig
     {
-        if (maxTraceRecursionDepth is not null)
+        public RaytracingPipelineConfig
+        (
+            uint? maxTraceRecursionDepth = null
+        ) : this()
         {
-            MaxTraceRecursionDepth = maxTraceRecursionDepth.Value;
+            if (maxTraceRecursionDepth is not null)
+            {
+                MaxTraceRecursionDepth = maxTraceRecursionDepth.Value;
+            }
         }
+
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxTraceRecursionDepth")]
+        public uint MaxTraceRecursionDepth;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxTraceRecursionDepth")]
-    public uint MaxTraceRecursionDepth;
 }

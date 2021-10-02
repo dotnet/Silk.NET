@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrFormFactor")]
-public enum FormFactor : int
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY")]
-    HeadMountedDisplay = 1,
-    [NativeName("Name", "XR_FORM_FACTOR_HANDHELD_DISPLAY")]
-    HandheldDisplay = 2,
+    [NativeName("Name", "XrFormFactor")]
+    public enum FormFactor : int
+    {
+        [NativeName("Name", "XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY")]
+        HeadMountedDisplay = 1,
+        [NativeName("Name", "XR_FORM_FACTOR_HANDHELD_DISPLAY")]
+        HandheldDisplay = 2,
+    }
 }

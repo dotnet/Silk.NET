@@ -14,38 +14,39 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-[Extension("VK_KHR_push_descriptor")]
-public unsafe partial class KhrPushDescriptor : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    public const string ExtensionName = "VK_KHR_push_descriptor";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
-    public unsafe partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
-    public partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] in WriteDescriptorSet pDescriptorWrites);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
-    public unsafe partial void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
-    public partial void CmdPushDescriptorSetWithTemplate<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
-
-    /// <summary>To be documented.</summary>
-    public unsafe void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+    [Extension("VK_KHR_push_descriptor")]
+    public unsafe partial class KhrPushDescriptor : NativeExtension<Vk>
     {
-        // ImplicitCountSpanOverloader
-        CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, (uint) pDescriptorWrites.Length, in pDescriptorWrites.GetPinnableReference());
-    }
+        public const string ExtensionName = "VK_KHR_push_descriptor";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
+        public unsafe partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
 
-    public KhrPushDescriptor(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
+        public partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] in WriteDescriptorSet pDescriptorWrites);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
+        public unsafe partial void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
+        public partial void CmdPushDescriptorSetWithTemplate<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+        {
+            // ImplicitCountSpanOverloader
+            CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, (uint) pDescriptorWrites.Length, in pDescriptorWrites.GetPinnableReference());
+        }
+
+        public KhrPushDescriptor(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

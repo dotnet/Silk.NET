@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_VideoSample2")]
-public unsafe partial struct VideoSample2
+namespace Silk.NET.DXVA
 {
-    public VideoSample2
-    (
+    [NativeName("Name", "_DXVA_VideoSample2")]
+    public unsafe partial struct VideoSample2
+    {
+        public VideoSample2
+        (
             long? rtStart = null,
             long? rtEnd = null,
             uint? sampleFormat = null,
@@ -28,123 +28,124 @@ public unsafe partial struct VideoSample2
             void* lpDDSSrcSurface = null,
             Silk.NET.Maths.Rectangle<int>? rcSrc = null,
             Silk.NET.Maths.Rectangle<int>? rcDst = null
-    ) : this()
-    {
-        if (rtStart is not null)
+        ) : this()
         {
-            RtStart = rtStart.Value;
-        }
-
-        if (rtEnd is not null)
-        {
-            RtEnd = rtEnd.Value;
-        }
-
-        if (sampleFormat is not null)
-        {
-            SampleFormat = sampleFormat.Value;
-        }
-
-        if (sampleFlags is not null)
-        {
-            SampleFlags = sampleFlags.Value;
-        }
-
-        if (lpDDSSrcSurface is not null)
-        {
-            LpDDSSrcSurface = lpDDSSrcSurface;
-        }
-
-        if (rcSrc is not null)
-        {
-            RcSrc = rcSrc.Value;
-        }
-
-        if (rcDst is not null)
-        {
-            RcDst = rcDst.Value;
-        }
-    }
-
-
-    [NativeName("Type", "REFERENCE_TIME")]
-    [NativeName("Type.Name", "REFERENCE_TIME")]
-    [NativeName("Name", "rtStart")]
-    public long RtStart;
-
-    [NativeName("Type", "REFERENCE_TIME")]
-    [NativeName("Type.Name", "REFERENCE_TIME")]
-    [NativeName("Name", "rtEnd")]
-    public long RtEnd;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "SampleFormat")]
-    public uint SampleFormat;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "SampleFlags")]
-    public uint SampleFlags;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "lpDDSSrcSurface")]
-    public void* LpDDSSrcSurface;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "rcSrc")]
-    public Silk.NET.Maths.Rectangle<int> RcSrc;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "rcDst")]
-    public Silk.NET.Maths.Rectangle<int> RcDst;
-        
-    [NativeName("Type", "DXVA_AYUVsample2 [16]")]
-    [NativeName("Type.Name", "DXVA_AYUVsample2 [16]")]
-    [NativeName("Name", "Palette")]
-    public PaletteBuffer Palette;
-
-    public struct PaletteBuffer
-    {
-        public AYUVsample2 Element0;
-        public AYUVsample2 Element1;
-        public AYUVsample2 Element2;
-        public AYUVsample2 Element3;
-        public AYUVsample2 Element4;
-        public AYUVsample2 Element5;
-        public AYUVsample2 Element6;
-        public AYUVsample2 Element7;
-        public AYUVsample2 Element8;
-        public AYUVsample2 Element9;
-        public AYUVsample2 Element10;
-        public AYUVsample2 Element11;
-        public AYUVsample2 Element12;
-        public AYUVsample2 Element13;
-        public AYUVsample2 Element14;
-        public AYUVsample2 Element15;
-        public ref AYUVsample2 this[int index]
-        {
-            get
+            if (rtStart is not null)
             {
-                if (index > 15 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                RtStart = rtStart.Value;
+            }
 
-                fixed (AYUVsample2* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+            if (rtEnd is not null)
+            {
+                RtEnd = rtEnd.Value;
+            }
+
+            if (sampleFormat is not null)
+            {
+                SampleFormat = sampleFormat.Value;
+            }
+
+            if (sampleFlags is not null)
+            {
+                SampleFlags = sampleFlags.Value;
+            }
+
+            if (lpDDSSrcSurface is not null)
+            {
+                LpDDSSrcSurface = lpDDSSrcSurface;
+            }
+
+            if (rcSrc is not null)
+            {
+                RcSrc = rcSrc.Value;
+            }
+
+            if (rcDst is not null)
+            {
+                RcDst = rcDst.Value;
             }
         }
 
-#if NETSTANDARD2_1
-        public Span<AYUVsample2> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 16);
-#endif
-    }
 
+        [NativeName("Type", "REFERENCE_TIME")]
+        [NativeName("Type.Name", "REFERENCE_TIME")]
+        [NativeName("Name", "rtStart")]
+        public long RtStart;
+
+        [NativeName("Type", "REFERENCE_TIME")]
+        [NativeName("Type.Name", "REFERENCE_TIME")]
+        [NativeName("Name", "rtEnd")]
+        public long RtEnd;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleFormat")]
+        public uint SampleFormat;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleFlags")]
+        public uint SampleFlags;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "lpDDSSrcSurface")]
+        public void* LpDDSSrcSurface;
+
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "rcSrc")]
+        public Silk.NET.Maths.Rectangle<int> RcSrc;
+
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "rcDst")]
+        public Silk.NET.Maths.Rectangle<int> RcDst;
+        
+        [NativeName("Type", "DXVA_AYUVsample2 [16]")]
+        [NativeName("Type.Name", "DXVA_AYUVsample2 [16]")]
+        [NativeName("Name", "Palette")]
+        public PaletteBuffer Palette;
+
+        public struct PaletteBuffer
+        {
+            public AYUVsample2 Element0;
+            public AYUVsample2 Element1;
+            public AYUVsample2 Element2;
+            public AYUVsample2 Element3;
+            public AYUVsample2 Element4;
+            public AYUVsample2 Element5;
+            public AYUVsample2 Element6;
+            public AYUVsample2 Element7;
+            public AYUVsample2 Element8;
+            public AYUVsample2 Element9;
+            public AYUVsample2 Element10;
+            public AYUVsample2 Element11;
+            public AYUVsample2 Element12;
+            public AYUVsample2 Element13;
+            public AYUVsample2 Element14;
+            public AYUVsample2 Element15;
+            public ref AYUVsample2 this[int index]
+            {
+                get
+                {
+                    if (index > 15 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (AYUVsample2* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<AYUVsample2> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 16);
+#endif
+        }
+
+    }
 }

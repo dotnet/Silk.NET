@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV")]
-public unsafe partial struct RaytracingAccelerationStructureSrv
+namespace Silk.NET.Direct3D12
 {
-    public RaytracingAccelerationStructureSrv
-    (
-            ulong? location = null
-    ) : this()
+    [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV")]
+    public unsafe partial struct RaytracingAccelerationStructureSrv
     {
-        if (location is not null)
+        public RaytracingAccelerationStructureSrv
+        (
+            ulong? location = null
+        ) : this()
         {
-            Location = location.Value;
+            if (location is not null)
+            {
+                Location = location.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
+        [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
+        [NativeName("Name", "Location")]
+        public ulong Location;
     }
-
-
-    [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
-    [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
-    [NativeName("Name", "Location")]
-    public ulong Location;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineInfoKHR")]
-public unsafe partial struct PipelineInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public PipelineInfoKHR
-    (
+    [NativeName("Name", "VkPipelineInfoKHR")]
+    public unsafe partial struct PipelineInfoKHR
+    {
+        public PipelineInfoKHR
+        (
             StructureType? sType = StructureType.PipelineInfoKhr,
             void* pNext = null,
             Pipeline? pipeline = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipeline is not null)
+            {
+                Pipeline = pipeline.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (pipeline is not null)
-        {
-            Pipeline = pipeline.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPipeline")]
+        [NativeName("Type.Name", "VkPipeline")]
+        [NativeName("Name", "pipeline")]
+        public Pipeline Pipeline;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPipeline")]
-    [NativeName("Type.Name", "VkPipeline")]
-    [NativeName("Name", "pipeline")]
-    public Pipeline Pipeline;
 }

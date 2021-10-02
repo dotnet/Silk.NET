@@ -7,18 +7,19 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L73_C9")]
-[NativeName("Name", "SDL_GameControllerBindType")]
-public enum GameControllerBindType : int
+namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_NONE")]
-    ControllerBindtypeNone = 0x0,
-    [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_BUTTON")]
-    ControllerBindtypeButton = 0x1,
-    [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_AXIS")]
-    ControllerBindtypeAxis = 0x2,
-    [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_HAT")]
-    ControllerBindtypeHat = 0x3,
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L73_C9")]
+    [NativeName("Name", "SDL_GameControllerBindType")]
+    public enum GameControllerBindType : int
+    {
+        [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_NONE")]
+        ControllerBindtypeNone = 0x0,
+        [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_BUTTON")]
+        ControllerBindtypeButton = 0x1,
+        [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_AXIS")]
+        ControllerBindtypeAxis = 0x2,
+        [NativeName("Name", "SDL_CONTROLLER_BINDTYPE_HAT")]
+        ControllerBindtypeHat = 0x3,
+    }
 }

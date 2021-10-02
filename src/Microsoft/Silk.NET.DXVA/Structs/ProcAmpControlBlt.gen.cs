@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_ProcAmpControlBlt")]
-public unsafe partial struct ProcAmpControlBlt
+namespace Silk.NET.DXVA
 {
-    public ProcAmpControlBlt
-    (
+    [NativeName("Name", "_DXVA_ProcAmpControlBlt")]
+    public unsafe partial struct ProcAmpControlBlt
+    {
+        public ProcAmpControlBlt
+        (
             uint? size = null,
             Silk.NET.Maths.Rectangle<int>? dstRect = null,
             Silk.NET.Maths.Rectangle<int>? srcRect = null,
@@ -29,87 +29,88 @@ public unsafe partial struct ProcAmpControlBlt
             float? contrast = null,
             float? hue = null,
             float? saturation = null
-    ) : this()
-    {
-        if (size is not null)
+        ) : this()
         {
-            Size = size.Value;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (dstRect is not null)
+            {
+                DstRect = dstRect.Value;
+            }
+
+            if (srcRect is not null)
+            {
+                SrcRect = srcRect.Value;
+            }
+
+            if (alpha is not null)
+            {
+                Alpha = alpha.Value;
+            }
+
+            if (brightness is not null)
+            {
+                Brightness = brightness.Value;
+            }
+
+            if (contrast is not null)
+            {
+                Contrast = contrast.Value;
+            }
+
+            if (hue is not null)
+            {
+                Hue = hue.Value;
+            }
+
+            if (saturation is not null)
+            {
+                Saturation = saturation.Value;
+            }
         }
 
-        if (dstRect is not null)
-        {
-            DstRect = dstRect.Value;
-        }
 
-        if (srcRect is not null)
-        {
-            SrcRect = srcRect.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Size")]
+        public uint Size;
 
-        if (alpha is not null)
-        {
-            Alpha = alpha.Value;
-        }
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "DstRect")]
+        public Silk.NET.Maths.Rectangle<int> DstRect;
 
-        if (brightness is not null)
-        {
-            Brightness = brightness.Value;
-        }
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "SrcRect")]
+        public Silk.NET.Maths.Rectangle<int> SrcRect;
 
-        if (contrast is not null)
-        {
-            Contrast = contrast.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Alpha")]
+        public float Alpha;
 
-        if (hue is not null)
-        {
-            Hue = hue.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Brightness")]
+        public float Brightness;
 
-        if (saturation is not null)
-        {
-            Saturation = saturation.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Contrast")]
+        public float Contrast;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Hue")]
+        public float Hue;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Saturation")]
+        public float Saturation;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Size")]
-    public uint Size;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "DstRect")]
-    public Silk.NET.Maths.Rectangle<int> DstRect;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "SrcRect")]
-    public Silk.NET.Maths.Rectangle<int> SrcRect;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Alpha")]
-    public float Alpha;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Brightness")]
-    public float Brightness;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Contrast")]
-    public float Contrast;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Hue")]
-    public float Hue;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "Saturation")]
-    public float Saturation;
 }

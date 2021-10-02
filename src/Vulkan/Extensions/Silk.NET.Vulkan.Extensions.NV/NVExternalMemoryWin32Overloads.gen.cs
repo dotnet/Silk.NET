@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV;
-
-public static class NVExternalMemoryWin32Overloads
+namespace Silk.NET.Vulkan.Extensions.NV
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetMemoryWin32Handle(this NVExternalMemoryWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pHandle)
+    public static class NVExternalMemoryWin32Overloads
     {
-        // SpanOverloader
-        return thisApi.GetMemoryWin32Handle(device, memory, handleType, out pHandle.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetMemoryWin32Handle(this NVExternalMemoryWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> pHandle)
+        {
+            // SpanOverloader
+            return thisApi.GetMemoryWin32Handle(device, memory, handleType, out pHandle.GetPinnableReference());
+        }
 
+    }
 }
 

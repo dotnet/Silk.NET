@@ -7,10 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkPrivateDataSlotCreateFlagsEXT")]
-public enum PrivateDataSlotCreateFlagsEXT : int
+namespace Silk.NET.Vulkan
 {
+    [Flags()]
+    [NativeName("Name", "VkPrivateDataSlotCreateFlagsEXT")]
+    public enum PrivateDataSlotCreateFlagsEXT : int
+    {
+    }
 }

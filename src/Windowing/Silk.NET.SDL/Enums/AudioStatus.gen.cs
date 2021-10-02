@@ -7,16 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L570_C9")]
-[NativeName("Name", "SDL_AudioStatus")]
-public enum AudioStatus : int
+namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_AUDIO_STOPPED")]
-    AudioStopped = 0x0,
-    [NativeName("Name", "SDL_AUDIO_PLAYING")]
-    AudioPlaying = 0x1,
-    [NativeName("Name", "SDL_AUDIO_PAUSED")]
-    AudioPaused = 0x2,
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L570_C9")]
+    [NativeName("Name", "SDL_AudioStatus")]
+    public enum AudioStatus : int
+    {
+        [NativeName("Name", "SDL_AUDIO_STOPPED")]
+        AudioStopped = 0x0,
+        [NativeName("Name", "SDL_AUDIO_PLAYING")]
+        AudioPlaying = 0x1,
+        [NativeName("Name", "SDL_AUDIO_PAUSED")]
+        AudioPaused = 0x2,
+    }
 }

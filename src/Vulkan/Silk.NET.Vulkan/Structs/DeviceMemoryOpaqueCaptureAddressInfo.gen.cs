@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfo")]
-public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfo
+namespace Silk.NET.Vulkan
 {
-    public DeviceMemoryOpaqueCaptureAddressInfo
-    (
+    [NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfo")]
+    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfo
+    {
+        public DeviceMemoryOpaqueCaptureAddressInfo
+        (
             StructureType? sType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo,
             void* pNext = null,
             DeviceMemory? memory = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (memory is not null)
-        {
-            Memory = memory.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceMemory")]
+        [NativeName("Type.Name", "VkDeviceMemory")]
+        [NativeName("Name", "memory")]
+        public DeviceMemory Memory;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceMemory")]
-    [NativeName("Type.Name", "VkDeviceMemory")]
-    [NativeName("Name", "memory")]
-    public DeviceMemory Memory;
 }

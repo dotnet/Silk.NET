@@ -14,87 +14,88 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-[Extension("NV_parameter_buffer_object")]
-public unsafe partial class NVParameterBufferObject : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public const string ExtensionName = "NV_parameter_buffer_object";
-    [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
-    public unsafe partial void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
-    public partial void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
-    public unsafe partial void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
-    public partial void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
-    public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
-    public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
-    public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
-    public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
-    public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
-    public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
-    public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
-
-    [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
-    public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
-
-    public unsafe void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+    [Extension("NV_parameter_buffer_object")]
+    public unsafe partial class NVParameterBufferObject : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParameters(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        public const string ExtensionName = "NV_parameter_buffer_object";
+        [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
+        public unsafe partial void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-    public unsafe void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParameters(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
+        public partial void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
-    public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
+        public unsafe partial void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* @params);
 
-    public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glProgramBufferParametersfvNV")]
+        public partial void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
-    public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
+        public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
 
-    public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
-    {
-        // ImplicitCountSpanOverloader
-        ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
+        public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
 
-    public NVParameterBufferObject(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
+        public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glProgramBufferParametersIivNV")]
+        public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
+        public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
+
+        [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
+        public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
+
+        [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
+        public unsafe partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
+
+        [NativeApi(EntryPoint = "glProgramBufferParametersIuivNV")]
+        public partial void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
+
+        public unsafe void ProgramBufferParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParameters(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBufferParameters([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParameters(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBufferParametersI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint bindingIndex, [Flow(FlowDirection.In)] uint wordIndex, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBufferParametersI(target, bindingIndex, wordIndex, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public NVParameterBufferObject(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

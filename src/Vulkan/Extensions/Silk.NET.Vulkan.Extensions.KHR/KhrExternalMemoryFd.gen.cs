@@ -14,39 +14,40 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-[Extension("VK_KHR_external_memory_fd")]
-public unsafe partial class KhrExternalMemoryFd : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    public const string ExtensionName = "VK_KHR_external_memory_fd";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
-    public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
-    public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
-    public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
-    public partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdPropertiesKHR")]
-    public unsafe partial Result GetMemoryFdProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryFdPropertiesKHR* pMemoryFdProperties);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetMemoryFdPropertiesKHR")]
-    public partial Result GetMemoryFdProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryFdPropertiesKHR pMemoryFdProperties);
-
-    public KhrExternalMemoryFd(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_KHR_external_memory_fd")]
+    public unsafe partial class KhrExternalMemoryFd : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_KHR_external_memory_fd";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
+        public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
+        public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
+        public unsafe partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdKHR")]
+        public partial Result GetMemoryF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdPropertiesKHR")]
+        public unsafe partial Result GetMemoryFdProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryFdPropertiesKHR* pMemoryFdProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryFdPropertiesKHR")]
+        public partial Result GetMemoryFdProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryFdPropertiesKHR pMemoryFdProperties);
+
+        public KhrExternalMemoryFd(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

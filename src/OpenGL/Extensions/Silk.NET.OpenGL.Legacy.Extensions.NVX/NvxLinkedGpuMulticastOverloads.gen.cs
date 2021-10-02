@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NVX;
-
-public static class NvxLinkedGpuMulticastOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
 {
-    public static unsafe void LgpunamedBufferSubData<T0>(this NvxLinkedGpuMulticast thisApi, [Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+    public static class NvxLinkedGpuMulticastOverloads
     {
-        // SpanOverloader
-        thisApi.LgpunamedBufferSubData(gpuMask, buffer, offset, size, in data.GetPinnableReference());
-    }
+        public static unsafe void LgpunamedBufferSubData<T0>(this NvxLinkedGpuMulticast thisApi, [Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.LgpunamedBufferSubData(gpuMask, buffer, offset, size, in data.GetPinnableReference());
+        }
 
+    }
 }
 

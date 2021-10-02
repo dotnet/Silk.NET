@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSystemEyeGazeInteractionPropertiesEXT")]
-public unsafe partial struct SystemEyeGazeInteractionPropertiesEXT
+namespace Silk.NET.OpenXR
 {
-    public SystemEyeGazeInteractionPropertiesEXT
-    (
+    [NativeName("Name", "XrSystemEyeGazeInteractionPropertiesEXT")]
+    public unsafe partial struct SystemEyeGazeInteractionPropertiesEXT
+    {
+        public SystemEyeGazeInteractionPropertiesEXT
+        (
             StructureType? type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
             void* next = null,
             uint? supportsEyeGazeInteraction = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsEyeGazeInteraction is not null)
+            {
+                SupportsEyeGazeInteraction = supportsEyeGazeInteraction.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (supportsEyeGazeInteraction is not null)
-        {
-            SupportsEyeGazeInteraction = supportsEyeGazeInteraction.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "supportsEyeGazeInteraction")]
+        public uint SupportsEyeGazeInteraction;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrBool32")]
-    [NativeName("Type.Name", "XrBool32")]
-    [NativeName("Name", "supportsEyeGazeInteraction")]
-    public uint SupportsEyeGazeInteraction;
 }

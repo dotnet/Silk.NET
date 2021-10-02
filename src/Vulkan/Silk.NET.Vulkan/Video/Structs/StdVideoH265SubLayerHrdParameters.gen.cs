@@ -14,41 +14,42 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoH265SubLayerHrdParameters")]
-public unsafe partial struct StdVideoH265SubLayerHrdParameters
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoH265SubLayerHrdParameters
-    (
-            uint? cbrFlag = null
-    ) : this()
+    [NativeName("Name", "StdVideoH265SubLayerHrdParameters")]
+    public unsafe partial struct StdVideoH265SubLayerHrdParameters
     {
-        if (cbrFlag is not null)
+        public StdVideoH265SubLayerHrdParameters
+        (
+            uint? cbrFlag = null
+        ) : this()
         {
-            CbrFlag = cbrFlag.Value;
+            if (cbrFlag is not null)
+            {
+                CbrFlag = cbrFlag.Value;
+            }
         }
+
+        [NativeName("Type", "uint32_t [32]")]
+        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Name", "bit_rate_value_minus1")]
+        public fixed uint BitRateValueMinus1[32];
+        [NativeName("Type", "uint32_t [32]")]
+        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Name", "cpb_size_value_minus1")]
+        public fixed uint CpbSizeValueMinus1[32];
+        [NativeName("Type", "uint32_t [32]")]
+        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Name", "cpb_size_du_value_minus1")]
+        public fixed uint CpbSizeDuValueMinus1[32];
+        [NativeName("Type", "uint32_t [32]")]
+        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Name", "bit_rate_du_value_minus1")]
+        public fixed uint BitRateDuValueMinus1[32];
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "cbr_flag")]
+        public uint CbrFlag;
     }
-
-    [NativeName("Type", "uint32_t [32]")]
-    [NativeName("Type.Name", "uint32_t [32]")]
-    [NativeName("Name", "bit_rate_value_minus1")]
-    public fixed uint BitRateValueMinus1[32];
-    [NativeName("Type", "uint32_t [32]")]
-    [NativeName("Type.Name", "uint32_t [32]")]
-    [NativeName("Name", "cpb_size_value_minus1")]
-    public fixed uint CpbSizeValueMinus1[32];
-    [NativeName("Type", "uint32_t [32]")]
-    [NativeName("Type.Name", "uint32_t [32]")]
-    [NativeName("Name", "cpb_size_du_value_minus1")]
-    public fixed uint CpbSizeDuValueMinus1[32];
-    [NativeName("Type", "uint32_t [32]")]
-    [NativeName("Type.Name", "uint32_t [32]")]
-    [NativeName("Name", "bit_rate_du_value_minus1")]
-    public fixed uint BitRateDuValueMinus1[32];
-
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "cbr_flag")]
-    public uint CbrFlag;
 }

@@ -7,14 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkExternalSemaphoreFeatureFlagsKHR")]
-public enum ExternalSemaphoreFeatureFlagsKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
-    ExternalSemaphoreFeatureExportableBit = 1,
-    [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
-    ExternalSemaphoreFeatureImportableBit = 2,
+    [Flags()]
+    [NativeName("Name", "VkExternalSemaphoreFeatureFlagsKHR")]
+    public enum ExternalSemaphoreFeatureFlagsKHR : int
+    {
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
+        ExternalSemaphoreFeatureExportableBit = 1,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
+        ExternalSemaphoreFeatureImportableBit = 2,
+    }
 }

@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "ImageTransformTargetHP")]
-public enum ImageTransformTargetHP : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_IMAGE_TRANSFORM_2D_HP")]
-    ImageTransform2DHP = 0x8161,
+    [NativeName("Name", "ImageTransformTargetHP")]
+    public enum ImageTransformTargetHP : int
+    {
+        [NativeName("Name", "GL_IMAGE_TRANSFORM_2D_HP")]
+        ImageTransform2DHP = 0x8161,
+    }
 }

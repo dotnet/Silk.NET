@@ -14,27 +14,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_d3d12_L17439_C5")]
-public unsafe partial struct RenderPassBeginningAccessUnion
+namespace Silk.NET.Direct3D12
 {
-    public RenderPassBeginningAccessUnion
-    (
-            RenderPassBeginningAccessClearParameters? clear = null
-    ) : this()
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L17439_C5")]
+    public unsafe partial struct RenderPassBeginningAccessUnion
     {
-        if (clear is not null)
+        public RenderPassBeginningAccessUnion
+        (
+            RenderPassBeginningAccessClearParameters? clear = null
+        ) : this()
         {
-            Clear = clear.Value;
+            if (clear is not null)
+            {
+                Clear = clear.Value;
+            }
         }
-    }
 
 
         [FieldOffset(0)]
-    [NativeName("Type", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
-    [NativeName("Type.Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
-    [NativeName("Name", "Clear")]
-    public RenderPassBeginningAccessClearParameters Clear;
+        [NativeName("Type", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
+        [NativeName("Type.Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
+        [NativeName("Name", "Clear")]
+        public RenderPassBeginningAccessClearParameters Clear;
+    }
 }

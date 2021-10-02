@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSecondaryViewConfigurationSwapchainCreateInfoMSFT")]
-public unsafe partial struct SecondaryViewConfigurationSwapchainCreateInfoMSFT
+namespace Silk.NET.OpenXR
 {
-    public SecondaryViewConfigurationSwapchainCreateInfoMSFT
-    (
+    [NativeName("Name", "XrSecondaryViewConfigurationSwapchainCreateInfoMSFT")]
+    public unsafe partial struct SecondaryViewConfigurationSwapchainCreateInfoMSFT
+    {
+        public SecondaryViewConfigurationSwapchainCreateInfoMSFT
+        (
             StructureType? type = StructureType.TypeSecondaryViewConfigurationSwapchainCreateInfoMsft,
             void* next = null,
             ViewConfigurationType? viewConfigurationType = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (viewConfigurationType is not null)
-        {
-            ViewConfigurationType = viewConfigurationType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrViewConfigurationType")]
+        [NativeName("Type.Name", "XrViewConfigurationType")]
+        [NativeName("Name", "viewConfigurationType")]
+        public ViewConfigurationType ViewConfigurationType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrViewConfigurationType")]
-    [NativeName("Type.Name", "XrViewConfigurationType")]
-    [NativeName("Name", "viewConfigurationType")]
-    public ViewConfigurationType ViewConfigurationType;
 }

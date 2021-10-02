@@ -14,39 +14,40 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OES;
-
-[Extension("OES_texture_buffer")]
-public unsafe partial class OesTextureBuffer : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.OES
 {
-    public const string ExtensionName = "OES_texture_buffer";
-    [NativeApi(EntryPoint = "glTexBufferOES")]
-    public partial void TexBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-    [NativeApi(EntryPoint = "glTexBufferOES")]
-    public partial void TexBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-    [NativeApi(EntryPoint = "glTexBufferOES")]
-    public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-    [NativeApi(EntryPoint = "glTexBufferOES")]
-    public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-    [NativeApi(EntryPoint = "glTexBufferRangeOES")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRangeOES")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRangeOES")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    [NativeApi(EntryPoint = "glTexBufferRangeOES")]
-    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-    public OesTextureBuffer(INativeContext ctx)
-        : base(ctx)
+    [Extension("OES_texture_buffer")]
+    public unsafe partial class OesTextureBuffer : NativeExtension<GL>
     {
+        public const string ExtensionName = "OES_texture_buffer";
+        [NativeApi(EntryPoint = "glTexBufferOES")]
+        public partial void TexBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+        [NativeApi(EntryPoint = "glTexBufferOES")]
+        public partial void TexBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+        [NativeApi(EntryPoint = "glTexBufferOES")]
+        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+        [NativeApi(EntryPoint = "glTexBufferOES")]
+        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+        [NativeApi(EntryPoint = "glTexBufferRangeOES")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRangeOES")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRangeOES")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        [NativeApi(EntryPoint = "glTexBufferRangeOES")]
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+        public OesTextureBuffer(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

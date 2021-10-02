@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "VertexShaderWriteMaskEXT")]
-public enum VertexShaderWriteMaskEXT : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_FALSE")]
-    False = 0x0,
-    [NativeName("Name", "GL_TRUE")]
-    True = 0x1,
+    [NativeName("Name", "VertexShaderWriteMaskEXT")]
+    public enum VertexShaderWriteMaskEXT : int
+    {
+        [NativeName("Name", "GL_FALSE")]
+        False = 0x0,
+        [NativeName("Name", "GL_TRUE")]
+        True = 0x1,
+    }
 }

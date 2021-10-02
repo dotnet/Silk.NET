@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DVSHADERCAPS2_0")]
-public unsafe partial struct Vshadercaps20
+namespace Silk.NET.Direct3D9
 {
-    public Vshadercaps20
-    (
+    [NativeName("Name", "_D3DVSHADERCAPS2_0")]
+    public unsafe partial struct Vshadercaps20
+    {
+        public Vshadercaps20
+        (
             uint? caps = null,
             int? dynamicFlowControlDepth = null,
             int? numTemps = null,
             int? staticFlowControlDepth = null
-    ) : this()
-    {
-        if (caps is not null)
+        ) : this()
         {
-            Caps = caps.Value;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (dynamicFlowControlDepth is not null)
+            {
+                DynamicFlowControlDepth = dynamicFlowControlDepth.Value;
+            }
+
+            if (numTemps is not null)
+            {
+                NumTemps = numTemps.Value;
+            }
+
+            if (staticFlowControlDepth is not null)
+            {
+                StaticFlowControlDepth = staticFlowControlDepth.Value;
+            }
         }
 
-        if (dynamicFlowControlDepth is not null)
-        {
-            DynamicFlowControlDepth = dynamicFlowControlDepth.Value;
-        }
 
-        if (numTemps is not null)
-        {
-            NumTemps = numTemps.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Caps")]
+        public uint Caps;
 
-        if (staticFlowControlDepth is not null)
-        {
-            StaticFlowControlDepth = staticFlowControlDepth.Value;
-        }
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "DynamicFlowControlDepth")]
+        public int DynamicFlowControlDepth;
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "NumTemps")]
+        public int NumTemps;
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "StaticFlowControlDepth")]
+        public int StaticFlowControlDepth;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Caps")]
-    public uint Caps;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "DynamicFlowControlDepth")]
-    public int DynamicFlowControlDepth;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "NumTemps")]
-    public int NumTemps;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "StaticFlowControlDepth")]
-    public int StaticFlowControlDepth;
 }

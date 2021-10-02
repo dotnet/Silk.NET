@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkMemoryGetFdInfoKHR")]
-public unsafe partial struct MemoryGetFdInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public MemoryGetFdInfoKHR
-    (
+    [NativeName("Name", "VkMemoryGetFdInfoKHR")]
+    public unsafe partial struct MemoryGetFdInfoKHR
+    {
+        public MemoryGetFdInfoKHR
+        (
             StructureType? sType = StructureType.MemoryGetFDInfoKhr,
             void* pNext = null,
             DeviceMemory? memory = null,
             ExternalMemoryHandleTypeFlags? handleType = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (memory is not null)
-        {
-            Memory = memory.Value;
-        }
-
-        if (handleType is not null)
-        {
-            HandleType = handleType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceMemory")]
+        [NativeName("Type.Name", "VkDeviceMemory")]
+        [NativeName("Name", "memory")]
+        public DeviceMemory Memory;
+/// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Name", "handleType")]
+        public ExternalMemoryHandleTypeFlags HandleType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceMemory")]
-    [NativeName("Type.Name", "VkDeviceMemory")]
-    [NativeName("Name", "memory")]
-    public DeviceMemory Memory;
-/// <summary></summary>
-    [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
-    [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
-    [NativeName("Name", "handleType")]
-    public ExternalMemoryHandleTypeFlags HandleType;
 }

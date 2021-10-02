@@ -7,16 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_events_L662_C9")]
-[NativeName("Name", "SDL_eventaction")]
-public enum Eventaction : int
+namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_ADDEVENT")]
-    Addevent = 0x0,
-    [NativeName("Name", "SDL_PEEKEVENT")]
-    Peekevent = 0x1,
-    [NativeName("Name", "SDL_GETEVENT")]
-    Getevent = 0x2,
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_events_L662_C9")]
+    [NativeName("Name", "SDL_eventaction")]
+    public enum Eventaction : int
+    {
+        [NativeName("Name", "SDL_ADDEVENT")]
+        Addevent = 0x0,
+        [NativeName("Name", "SDL_PEEKEVENT")]
+        Peekevent = 0x1,
+        [NativeName("Name", "SDL_GETEVENT")]
+        Getevent = 0x2,
+    }
 }

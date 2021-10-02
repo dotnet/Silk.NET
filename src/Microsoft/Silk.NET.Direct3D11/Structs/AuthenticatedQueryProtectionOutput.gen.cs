@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT")]
-public unsafe partial struct AuthenticatedQueryProtectionOutput
+namespace Silk.NET.Direct3D11
 {
-    public AuthenticatedQueryProtectionOutput
-    (
+    [NativeName("Name", "D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT")]
+    public unsafe partial struct AuthenticatedQueryProtectionOutput
+    {
+        public AuthenticatedQueryProtectionOutput
+        (
             AuthenticatedQueryOutput? output = null,
             AuthenticatedProtectionFlags? protectionFlags = null
-    ) : this()
-    {
-        if (output is not null)
+        ) : this()
         {
-            Output = output.Value;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (protectionFlags is not null)
+            {
+                ProtectionFlags = protectionFlags.Value;
+            }
         }
 
-        if (protectionFlags is not null)
-        {
-            ProtectionFlags = protectionFlags.Value;
-        }
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+        [NativeName("Name", "Output")]
+        public AuthenticatedQueryOutput Output;
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
+        [NativeName("Name", "ProtectionFlags")]
+        public AuthenticatedProtectionFlags ProtectionFlags;
     }
-
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-    [NativeName("Name", "Output")]
-    public AuthenticatedQueryOutput Output;
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
-    [NativeName("Name", "ProtectionFlags")]
-    public AuthenticatedProtectionFlags ProtectionFlags;
 }

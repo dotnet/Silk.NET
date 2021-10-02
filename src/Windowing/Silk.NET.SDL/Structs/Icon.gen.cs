@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "_SDL_iconv_t")]
-public unsafe partial struct Icon
+namespace Silk.NET.SDL
 {
+    [NativeName("Name", "_SDL_iconv_t")]
+    public unsafe partial struct Icon
+    {
+    }
 }

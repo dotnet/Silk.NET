@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_DeinterlaceQueryModeCaps")]
-public unsafe partial struct DeinterlaceQueryModeCaps
+namespace Silk.NET.DXVA
 {
-    public DeinterlaceQueryModeCaps
-    (
+    [NativeName("Name", "_DXVA_DeinterlaceQueryModeCaps")]
+    public unsafe partial struct DeinterlaceQueryModeCaps
+    {
+        public DeinterlaceQueryModeCaps
+        (
             uint? size = null,
             Guid? guid = null,
             VideoDesc? videoDesc = null
-    ) : this()
-    {
-        if (size is not null)
+        ) : this()
         {
-            Size = size.Value;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (guid is not null)
+            {
+                Guid = guid.Value;
+            }
+
+            if (videoDesc is not null)
+            {
+                VideoDesc = videoDesc.Value;
+            }
         }
 
-        if (guid is not null)
-        {
-            Guid = guid.Value;
-        }
 
-        if (videoDesc is not null)
-        {
-            VideoDesc = videoDesc.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Size")]
+        public uint Size;
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "Guid")]
+        public Guid Guid;
+
+        [NativeName("Type", "DXVA_VideoDesc")]
+        [NativeName("Type.Name", "DXVA_VideoDesc")]
+        [NativeName("Name", "VideoDesc")]
+        public VideoDesc VideoDesc;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Size")]
-    public uint Size;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "Guid")]
-    public Guid Guid;
-
-    [NativeName("Type", "DXVA_VideoDesc")]
-    [NativeName("Type.Name", "DXVA_VideoDesc")]
-    [NativeName("Name", "VideoDesc")]
-    public VideoDesc VideoDesc;
 }

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DLOCKED_RECT")]
-public unsafe partial struct LockedRect
+namespace Silk.NET.Direct3D9
 {
-    public LockedRect
-    (
+    [NativeName("Name", "_D3DLOCKED_RECT")]
+    public unsafe partial struct LockedRect
+    {
+        public LockedRect
+        (
             int? pitch = null,
             void* pBits = null
-    ) : this()
-    {
-        if (pitch is not null)
+        ) : this()
         {
-            Pitch = pitch.Value;
+            if (pitch is not null)
+            {
+                Pitch = pitch.Value;
+            }
+
+            if (pBits is not null)
+            {
+                PBits = pBits;
+            }
         }
 
-        if (pBits is not null)
-        {
-            PBits = pBits;
-        }
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "Pitch")]
+        public int Pitch;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "pBits")]
+        public void* PBits;
     }
-
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "Pitch")]
-    public int Pitch;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "pBits")]
-    public void* PBits;
 }

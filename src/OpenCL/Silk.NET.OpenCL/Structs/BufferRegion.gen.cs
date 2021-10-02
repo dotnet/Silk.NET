@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL;
-
-[NativeName("Name", "cl_buffer_region")]
-public unsafe partial struct BufferRegion
+namespace Silk.NET.OpenCL
 {
-    public BufferRegion
-    (
+    [NativeName("Name", "cl_buffer_region")]
+    public unsafe partial struct BufferRegion
+    {
+        public BufferRegion
+        (
             nuint? origin = null,
             nuint? size = null
-    ) : this()
-    {
-        if (origin is not null)
+        ) : this()
         {
-            Origin = origin.Value;
+            if (origin is not null)
+            {
+                Origin = origin.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "origin")]
+        public nuint Origin;
+/// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "size")]
+        public nuint Size;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "size_t")]
-    [NativeName("Type.Name", "size_t")]
-    [NativeName("Name", "origin")]
-    public nuint Origin;
-/// <summary></summary>
-    [NativeName("Type", "size_t")]
-    [NativeName("Type.Name", "size_t")]
-    [NativeName("Name", "size")]
-    public nuint Size;
 }

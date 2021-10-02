@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSparseImageMemoryRequirements")]
-public unsafe partial struct SparseImageMemoryRequirements
+namespace Silk.NET.Vulkan
 {
-    public SparseImageMemoryRequirements
-    (
+    [NativeName("Name", "VkSparseImageMemoryRequirements")]
+    public unsafe partial struct SparseImageMemoryRequirements
+    {
+        public SparseImageMemoryRequirements
+        (
             SparseImageFormatProperties? formatProperties = null,
             uint? imageMipTailFirstLod = null,
             ulong? imageMipTailSize = null,
             ulong? imageMipTailOffset = null,
             ulong? imageMipTailStride = null
-    ) : this()
-    {
-        if (formatProperties is not null)
+        ) : this()
         {
-            FormatProperties = formatProperties.Value;
+            if (formatProperties is not null)
+            {
+                FormatProperties = formatProperties.Value;
+            }
+
+            if (imageMipTailFirstLod is not null)
+            {
+                ImageMipTailFirstLod = imageMipTailFirstLod.Value;
+            }
+
+            if (imageMipTailSize is not null)
+            {
+                ImageMipTailSize = imageMipTailSize.Value;
+            }
+
+            if (imageMipTailOffset is not null)
+            {
+                ImageMipTailOffset = imageMipTailOffset.Value;
+            }
+
+            if (imageMipTailStride is not null)
+            {
+                ImageMipTailStride = imageMipTailStride.Value;
+            }
         }
 
-        if (imageMipTailFirstLod is not null)
-        {
-            ImageMipTailFirstLod = imageMipTailFirstLod.Value;
-        }
-
-        if (imageMipTailSize is not null)
-        {
-            ImageMipTailSize = imageMipTailSize.Value;
-        }
-
-        if (imageMipTailOffset is not null)
-        {
-            ImageMipTailOffset = imageMipTailOffset.Value;
-        }
-
-        if (imageMipTailStride is not null)
-        {
-            ImageMipTailStride = imageMipTailStride.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkSparseImageFormatProperties")]
+        [NativeName("Type.Name", "VkSparseImageFormatProperties")]
+        [NativeName("Name", "formatProperties")]
+        public SparseImageFormatProperties FormatProperties;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "imageMipTailFirstLod")]
+        public uint ImageMipTailFirstLod;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "imageMipTailSize")]
+        public ulong ImageMipTailSize;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "imageMipTailOffset")]
+        public ulong ImageMipTailOffset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "imageMipTailStride")]
+        public ulong ImageMipTailStride;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkSparseImageFormatProperties")]
-    [NativeName("Type.Name", "VkSparseImageFormatProperties")]
-    [NativeName("Name", "formatProperties")]
-    public SparseImageFormatProperties FormatProperties;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "imageMipTailFirstLod")]
-    public uint ImageMipTailFirstLod;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "imageMipTailSize")]
-    public ulong ImageMipTailSize;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "imageMipTailOffset")]
-    public ulong ImageMipTailOffset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "imageMipTailStride")]
-    public ulong ImageMipTailStride;
 }

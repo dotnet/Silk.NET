@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_index_material")]
-public unsafe partial class ExtIndexMaterial : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_index_material";
-    [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-    public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
-
-    [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-    public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
-
-    [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-    public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT mode);
-
-    [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-    public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
-
-    public ExtIndexMaterial(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_index_material")]
+    public unsafe partial class ExtIndexMaterial : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_index_material";
+        [NativeApi(EntryPoint = "glIndexMaterialEXT")]
+        public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+
+        [NativeApi(EntryPoint = "glIndexMaterialEXT")]
+        public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+
+        [NativeApi(EntryPoint = "glIndexMaterialEXT")]
+        public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT mode);
+
+        [NativeApi(EntryPoint = "glIndexMaterialEXT")]
+        public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+
+        public ExtIndexMaterial(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_DESC")]
-public unsafe partial struct VideoExtensionCommandDesc
+namespace Silk.NET.Direct3D12
 {
-    public VideoExtensionCommandDesc
-    (
+    [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_DESC")]
+    public unsafe partial struct VideoExtensionCommandDesc
+    {
+        public VideoExtensionCommandDesc
+        (
             uint? nodeMask = null,
             Guid? commandId = null
-    ) : this()
-    {
-        if (nodeMask is not null)
+        ) : this()
         {
-            NodeMask = nodeMask.Value;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
         }
 
-        if (commandId is not null)
-        {
-            CommandId = commandId.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NodeMask")]
+        public uint NodeMask;
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "CommandId")]
+        public Guid CommandId;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NodeMask")]
-    public uint NodeMask;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "CommandId")]
-    public Guid CommandId;
 }

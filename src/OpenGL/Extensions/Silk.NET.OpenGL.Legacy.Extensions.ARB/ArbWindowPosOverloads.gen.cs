@@ -12,57 +12,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-public static class ArbWindowPosOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+    public static class ArbWindowPosOverloads
     {
-        // SpanOverloader
-        thisApi.WindowPos2(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos2(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos2(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos2(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos2(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos2(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos2(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos2(this ArbWindowPos thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos2(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos3(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos3(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos3(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos3(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos3(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos3(in v.GetPinnableReference());
+        }
 
-    public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
-    {
-        // SpanOverloader
-        thisApi.WindowPos3(in v.GetPinnableReference());
-    }
+        public static unsafe void WindowPos3(this ArbWindowPos thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // SpanOverloader
+            thisApi.WindowPos3(in v.GetPinnableReference());
+        }
 
+    }
 }
 

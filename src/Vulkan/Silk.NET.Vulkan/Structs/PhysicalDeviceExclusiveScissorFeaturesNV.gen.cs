@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceExclusiveScissorFeaturesNV")]
-public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceExclusiveScissorFeaturesNV
-    (
+    [NativeName("Name", "VkPhysicalDeviceExclusiveScissorFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
+    {
+        public PhysicalDeviceExclusiveScissorFeaturesNV
+        (
             StructureType? sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
             void* pNext = null,
             Bool32? exclusiveScissor = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exclusiveScissor is not null)
+            {
+                ExclusiveScissor = exclusiveScissor.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (exclusiveScissor is not null)
-        {
-            ExclusiveScissor = exclusiveScissor.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "exclusiveScissor")]
+        public Bool32 ExclusiveScissor;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "exclusiveScissor")]
-    public Bool32 ExclusiveScissor;
 }

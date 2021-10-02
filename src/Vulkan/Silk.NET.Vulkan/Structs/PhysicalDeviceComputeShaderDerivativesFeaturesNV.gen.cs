@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceComputeShaderDerivativesFeaturesNV")]
-public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesNV
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceComputeShaderDerivativesFeaturesNV
-    (
+    [NativeName("Name", "VkPhysicalDeviceComputeShaderDerivativesFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesNV
+    {
+        public PhysicalDeviceComputeShaderDerivativesFeaturesNV
+        (
             StructureType? sType = StructureType.PhysicalDeviceComputeShaderDerivativesFeaturesNV,
             void* pNext = null,
             Bool32? computeDerivativeGroupQuads = null,
             Bool32? computeDerivativeGroupLinear = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (computeDerivativeGroupQuads is not null)
+            {
+                ComputeDerivativeGroupQuads = computeDerivativeGroupQuads.Value;
+            }
+
+            if (computeDerivativeGroupLinear is not null)
+            {
+                ComputeDerivativeGroupLinear = computeDerivativeGroupLinear.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (computeDerivativeGroupQuads is not null)
-        {
-            ComputeDerivativeGroupQuads = computeDerivativeGroupQuads.Value;
-        }
-
-        if (computeDerivativeGroupLinear is not null)
-        {
-            ComputeDerivativeGroupLinear = computeDerivativeGroupLinear.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "computeDerivativeGroupQuads")]
+        public Bool32 ComputeDerivativeGroupQuads;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "computeDerivativeGroupLinear")]
+        public Bool32 ComputeDerivativeGroupLinear;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "computeDerivativeGroupQuads")]
-    public Bool32 ComputeDerivativeGroupQuads;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "computeDerivativeGroupLinear")]
-    public Bool32 ComputeDerivativeGroupLinear;
 }

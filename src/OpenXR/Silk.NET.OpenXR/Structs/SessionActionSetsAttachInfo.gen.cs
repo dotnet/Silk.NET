@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSessionActionSetsAttachInfo")]
-public unsafe partial struct SessionActionSetsAttachInfo
+namespace Silk.NET.OpenXR
 {
-    public SessionActionSetsAttachInfo
-    (
+    [NativeName("Name", "XrSessionActionSetsAttachInfo")]
+    public unsafe partial struct SessionActionSetsAttachInfo
+    {
+        public SessionActionSetsAttachInfo
+        (
             StructureType? type = StructureType.TypeSessionActionSetsAttachInfo,
             void* next = null,
             uint? countActionSets = null,
             ActionSet* actionSets = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (countActionSets is not null)
+            {
+                CountActionSets = countActionSets.Value;
+            }
+
+            if (actionSets is not null)
+            {
+                ActionSets = actionSets;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (countActionSets is not null)
-        {
-            CountActionSets = countActionSets.Value;
-        }
-
-        if (actionSets is not null)
-        {
-            ActionSets = actionSets;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "countActionSets")]
+        public uint CountActionSets;
+/// <summary></summary>
+        [NativeName("Type", "XrActionSet*")]
+        [NativeName("Type.Name", "XrActionSet")]
+        [NativeName("Name", "actionSets")]
+        public ActionSet* ActionSets;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "countActionSets")]
-    public uint CountActionSets;
-/// <summary></summary>
-    [NativeName("Type", "XrActionSet*")]
-    [NativeName("Type.Name", "XrActionSet")]
-    [NativeName("Name", "actionSets")]
-    public ActionSet* ActionSets;
 }

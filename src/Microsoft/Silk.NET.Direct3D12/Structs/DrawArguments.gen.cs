@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DRAW_ARGUMENTS")]
-public unsafe partial struct DrawArguments
+namespace Silk.NET.Direct3D12
 {
-    public DrawArguments
-    (
+    [NativeName("Name", "D3D12_DRAW_ARGUMENTS")]
+    public unsafe partial struct DrawArguments
+    {
+        public DrawArguments
+        (
             uint? vertexCountPerInstance = null,
             uint? instanceCount = null,
             uint? startVertexLocation = null,
             uint? startInstanceLocation = null
-    ) : this()
-    {
-        if (vertexCountPerInstance is not null)
+        ) : this()
         {
-            VertexCountPerInstance = vertexCountPerInstance.Value;
+            if (vertexCountPerInstance is not null)
+            {
+                VertexCountPerInstance = vertexCountPerInstance.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (startVertexLocation is not null)
+            {
+                StartVertexLocation = startVertexLocation.Value;
+            }
+
+            if (startInstanceLocation is not null)
+            {
+                StartInstanceLocation = startInstanceLocation.Value;
+            }
         }
 
-        if (instanceCount is not null)
-        {
-            InstanceCount = instanceCount.Value;
-        }
 
-        if (startVertexLocation is not null)
-        {
-            StartVertexLocation = startVertexLocation.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "VertexCountPerInstance")]
+        public uint VertexCountPerInstance;
 
-        if (startInstanceLocation is not null)
-        {
-            StartInstanceLocation = startInstanceLocation.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InstanceCount")]
+        public uint InstanceCount;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StartVertexLocation")]
+        public uint StartVertexLocation;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StartInstanceLocation")]
+        public uint StartInstanceLocation;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "VertexCountPerInstance")]
-    public uint VertexCountPerInstance;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InstanceCount")]
-    public uint InstanceCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StartVertexLocation")]
-    public uint StartVertexLocation;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StartInstanceLocation")]
-    public uint StartInstanceLocation;
 }

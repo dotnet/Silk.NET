@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-[Extension("VK_EXT_conditional_rendering")]
-public unsafe partial class ExtConditionalRendering : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    public const string ExtensionName = "VK_EXT_conditional_rendering";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT")]
-    public unsafe partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT")]
-    public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT")]
-    public partial void CmdEndConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer);
-
-    public ExtConditionalRendering(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_EXT_conditional_rendering")]
+    public unsafe partial class ExtConditionalRendering : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_EXT_conditional_rendering";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT")]
+        public unsafe partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT")]
+        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT")]
+        public partial void CmdEndConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer);
+
+        public ExtConditionalRendering(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

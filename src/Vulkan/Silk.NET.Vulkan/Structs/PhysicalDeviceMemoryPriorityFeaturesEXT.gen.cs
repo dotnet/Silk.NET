@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceMemoryPriorityFeaturesEXT")]
-public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceMemoryPriorityFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceMemoryPriorityFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
+    {
+        public PhysicalDeviceMemoryPriorityFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceMemoryPriorityFeaturesExt,
             void* pNext = null,
             Bool32? memoryPriority = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryPriority is not null)
+            {
+                MemoryPriority = memoryPriority.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (memoryPriority is not null)
-        {
-            MemoryPriority = memoryPriority.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "memoryPriority")]
+        public Bool32 MemoryPriority;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "memoryPriority")]
-    public Bool32 MemoryPriority;
 }

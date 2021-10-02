@@ -14,52 +14,53 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDebugMarkerMarkerInfoEXT")]
-public unsafe partial struct DebugMarkerMarkerInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DebugMarkerMarkerInfoEXT
-    (
+    [NativeName("Name", "VkDebugMarkerMarkerInfoEXT")]
+    public unsafe partial struct DebugMarkerMarkerInfoEXT
+    {
+        public DebugMarkerMarkerInfoEXT
+        (
             StructureType? sType = StructureType.DebugMarkerMarkerInfoExt,
             void* pNext = null,
             byte* pMarkerName = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pMarkerName is not null)
+            {
+                PMarkerName = pMarkerName;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (pMarkerName is not null)
-        {
-            PMarkerName = pMarkerName;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "pMarkerName")]
+        public byte* PMarkerName;
+        /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "color")]
+        public fixed float Color[4];
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "char*")]
-    [NativeName("Type.Name", "char")]
-    [NativeName("Name", "pMarkerName")]
-    public byte* PMarkerName;
-    /// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "color")]
-    public fixed float Color[4];
 }

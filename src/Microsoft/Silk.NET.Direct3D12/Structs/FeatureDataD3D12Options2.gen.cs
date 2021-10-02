@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS2")]
-public unsafe partial struct FeatureDataD3D12Options2
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataD3D12Options2
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS2")]
+    public unsafe partial struct FeatureDataD3D12Options2
+    {
+        public FeatureDataD3D12Options2
+        (
             int? depthBoundsTestSupported = null,
             ProgrammableSamplePositionsTier? programmableSamplePositionsTier = null
-    ) : this()
-    {
-        if (depthBoundsTestSupported is not null)
+        ) : this()
         {
-            DepthBoundsTestSupported = depthBoundsTestSupported.Value;
+            if (depthBoundsTestSupported is not null)
+            {
+                DepthBoundsTestSupported = depthBoundsTestSupported.Value;
+            }
+
+            if (programmableSamplePositionsTier is not null)
+            {
+                ProgrammableSamplePositionsTier = programmableSamplePositionsTier.Value;
+            }
         }
 
-        if (programmableSamplePositionsTier is not null)
-        {
-            ProgrammableSamplePositionsTier = programmableSamplePositionsTier.Value;
-        }
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "DepthBoundsTestSupported")]
+        public int DepthBoundsTestSupported;
+
+        [NativeName("Type", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
+        [NativeName("Type.Name", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
+        [NativeName("Name", "ProgrammableSamplePositionsTier")]
+        public ProgrammableSamplePositionsTier ProgrammableSamplePositionsTier;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "DepthBoundsTestSupported")]
-    public int DepthBoundsTestSupported;
-
-    [NativeName("Type", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
-    [NativeName("Type.Name", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
-    [NativeName("Name", "ProgrammableSamplePositionsTier")]
-    public ProgrammableSamplePositionsTier ProgrammableSamplePositionsTier;
 }

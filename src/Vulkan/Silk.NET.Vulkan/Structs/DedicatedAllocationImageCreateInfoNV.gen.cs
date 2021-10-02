@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDedicatedAllocationImageCreateInfoNV")]
-public unsafe partial struct DedicatedAllocationImageCreateInfoNV
+namespace Silk.NET.Vulkan
 {
-    public DedicatedAllocationImageCreateInfoNV
-    (
+    [NativeName("Name", "VkDedicatedAllocationImageCreateInfoNV")]
+    public unsafe partial struct DedicatedAllocationImageCreateInfoNV
+    {
+        public DedicatedAllocationImageCreateInfoNV
+        (
             StructureType? sType = StructureType.DedicatedAllocationImageCreateInfoNV,
             void* pNext = null,
             Bool32? dedicatedAllocation = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dedicatedAllocation is not null)
+            {
+                DedicatedAllocation = dedicatedAllocation.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (dedicatedAllocation is not null)
-        {
-            DedicatedAllocation = dedicatedAllocation.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "dedicatedAllocation")]
+        public Bool32 DedicatedAllocation;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "dedicatedAllocation")]
-    public Bool32 DedicatedAllocation;
 }

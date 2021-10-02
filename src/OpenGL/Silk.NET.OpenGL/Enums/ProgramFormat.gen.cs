@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "ProgramFormat")]
-public enum ProgramFormat : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_PROGRAM_FORMAT_ASCII_ARB")]
-    ProgramFormatAsciiArb = 0x8875,
+    [NativeName("Name", "ProgramFormat")]
+    public enum ProgramFormat : int
+    {
+        [NativeName("Name", "GL_PROGRAM_FORMAT_ASCII_ARB")]
+        ProgramFormatAsciiArb = 0x8875,
+    }
 }

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT")]
-public unsafe partial struct AuthenticatedQueryChannelTypeOutput
+namespace Silk.NET.Direct3D11
 {
-    public AuthenticatedQueryChannelTypeOutput
-    (
+    [NativeName("Name", "D3D11_AUTHENTICATED_QUERY_CHANNEL_TYPE_OUTPUT")]
+    public unsafe partial struct AuthenticatedQueryChannelTypeOutput
+    {
+        public AuthenticatedQueryChannelTypeOutput
+        (
             AuthenticatedQueryOutput? output = null,
             AuthenticatedChannelType? channelType = null
-    ) : this()
-    {
-        if (output is not null)
+        ) : this()
         {
-            Output = output.Value;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (channelType is not null)
+            {
+                ChannelType = channelType.Value;
+            }
         }
 
-        if (channelType is not null)
-        {
-            ChannelType = channelType.Value;
-        }
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+        [NativeName("Name", "Output")]
+        public AuthenticatedQueryOutput Output;
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_CHANNEL_TYPE")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CHANNEL_TYPE")]
+        [NativeName("Name", "ChannelType")]
+        public AuthenticatedChannelType ChannelType;
     }
-
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-    [NativeName("Name", "Output")]
-    public AuthenticatedQueryOutput Output;
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_CHANNEL_TYPE")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CHANNEL_TYPE")]
-    [NativeName("Name", "ChannelType")]
-    public AuthenticatedChannelType ChannelType;
 }

@@ -7,14 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrCompositionLayerSecureContentFlagsFB")]
-public enum CompositionLayerSecureContentFlagsFB : long
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_EXCLUDE_LAYER_BIT_FB")]
-    CompositionLayerSecureContentExcludeLayerBitFB = 1,
-    [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_REPLACE_LAYER_BIT_FB")]
-    CompositionLayerSecureContentReplaceLayerBitFB = 2,
+    [Flags()]
+    [NativeName("Name", "XrCompositionLayerSecureContentFlagsFB")]
+    public enum CompositionLayerSecureContentFlagsFB : long
+    {
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_EXCLUDE_LAYER_BIT_FB")]
+        CompositionLayerSecureContentExcludeLayerBitFB = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_REPLACE_LAYER_BIT_FB")]
+        CompositionLayerSecureContentReplaceLayerBitFB = 2,
+    }
 }

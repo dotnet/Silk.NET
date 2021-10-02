@@ -14,29 +14,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_TRACE_VALUE")]
-public unsafe partial struct TraceValue
+namespace Silk.NET.Direct3D11
 {
-    public TraceValue
-    (
-            byte? validMask = null
-    ) : this()
+    [NativeName("Name", "D3D11_TRACE_VALUE")]
+    public unsafe partial struct TraceValue
     {
-        if (validMask is not null)
+        public TraceValue
+        (
+            byte? validMask = null
+        ) : this()
         {
-            ValidMask = validMask.Value;
+            if (validMask is not null)
+            {
+                ValidMask = validMask.Value;
+            }
         }
+
+        [NativeName("Type", "UINT [4]")]
+        [NativeName("Type.Name", "UINT [4]")]
+        [NativeName("Name", "Bits")]
+        public fixed uint Bits[4];
+
+        [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK")]
+        [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK")]
+        [NativeName("Name", "ValidMask")]
+        public byte ValidMask;
     }
-
-    [NativeName("Type", "UINT [4]")]
-    [NativeName("Type.Name", "UINT [4]")]
-    [NativeName("Name", "Bits")]
-    public fixed uint Bits[4];
-
-    [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK")]
-    [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK")]
-    [NativeName("Name", "ValidMask")]
-    public byte ValidMask;
 }

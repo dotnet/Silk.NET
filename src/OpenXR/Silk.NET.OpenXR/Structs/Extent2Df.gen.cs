@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrExtent2Df")]
-public unsafe partial struct Extent2Df
+namespace Silk.NET.OpenXR
 {
-    public Extent2Df
-    (
+    [NativeName("Name", "XrExtent2Df")]
+    public unsafe partial struct Extent2Df
+    {
+        public Extent2Df
+        (
             float? width = null,
             float? height = null
-    ) : this()
-    {
-        if (width is not null)
+        ) : this()
         {
-            Width = width.Value;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
-        if (height is not null)
-        {
-            Height = height.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "width")]
+        public float Width;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "height")]
+        public float Height;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "width")]
-    public float Width;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "height")]
-    public float Height;
 }

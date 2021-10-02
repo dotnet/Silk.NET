@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT")]
-public unsafe partial struct FeatureDataGpuVirtualAddressSupport
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataGpuVirtualAddressSupport
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_GPU_VIRTUAL_ADDRESS_SUPPORT")]
+    public unsafe partial struct FeatureDataGpuVirtualAddressSupport
+    {
+        public FeatureDataGpuVirtualAddressSupport
+        (
             uint? maxGPUVirtualAddressBitsPerResource = null,
             uint? maxGPUVirtualAddressBitsPerProcess = null
-    ) : this()
-    {
-        if (maxGPUVirtualAddressBitsPerResource is not null)
+        ) : this()
         {
-            MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
+            if (maxGPUVirtualAddressBitsPerResource is not null)
+            {
+                MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
+            }
+
+            if (maxGPUVirtualAddressBitsPerProcess is not null)
+            {
+                MaxGPUVirtualAddressBitsPerProcess = maxGPUVirtualAddressBitsPerProcess.Value;
+            }
         }
 
-        if (maxGPUVirtualAddressBitsPerProcess is not null)
-        {
-            MaxGPUVirtualAddressBitsPerProcess = maxGPUVirtualAddressBitsPerProcess.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxGPUVirtualAddressBitsPerResource")]
+        public uint MaxGPUVirtualAddressBitsPerResource;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxGPUVirtualAddressBitsPerProcess")]
+        public uint MaxGPUVirtualAddressBitsPerProcess;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxGPUVirtualAddressBitsPerResource")]
-    public uint MaxGPUVirtualAddressBitsPerResource;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxGPUVirtualAddressBitsPerProcess")]
-    public uint MaxGPUVirtualAddressBitsPerProcess;
 }

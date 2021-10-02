@@ -14,99 +14,100 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.MSFT;
-
-[Extension("XR_MSFT_scene_understanding_serialization")]
-public unsafe partial class MsftSceneUnderstandingSerialization : NativeExtension<XR>
+namespace Silk.NET.OpenXR.Extensions.MSFT
 {
-    public const string ExtensionName = "XR_MSFT_scene_understanding_serialization";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
-    public unsafe partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] SceneDeserializeInfoMSFT* deserializeInfo);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
-    public partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in SceneDeserializeInfoMSFT deserializeInfo);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, string buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
-    public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, string buffer);
-
-    /// <summary>To be documented.</summary>
-    public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+    [Extension("XR_MSFT_scene_understanding_serialization")]
+    public unsafe partial class MsftSceneUnderstandingSerialization : NativeExtension<XR>
     {
-        // ImplicitCountSpanOverloader
-        return GetSerializedSceneFragmentDataMsft(scene, getInfo, (uint) buffer.Length, readOutput, ref buffer.GetPinnableReference());
-    }
+        public const string ExtensionName = "XR_MSFT_scene_understanding_serialization";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
+        public unsafe partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] SceneDeserializeInfoMSFT* deserializeInfo);
 
-    /// <summary>To be documented.</summary>
-    public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-    {
-        // ImplicitCountSpanOverloader
-        return GetSerializedSceneFragmentDataMsft(scene, getInfo, (uint) buffer.Length, ref readOutput, ref buffer.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrDeserializeSceneMSFT")]
+        public partial Result DeserializeSceneMsft([Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] in SceneDeserializeInfoMSFT deserializeInfo);
 
-    /// <summary>To be documented.</summary>
-    public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-    {
-        // ImplicitCountSpanOverloader
-        return GetSerializedSceneFragmentDataMsft(scene, in getInfo, (uint) buffer.Length, readOutput, ref buffer.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
 
-    /// <summary>To be documented.</summary>
-    public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-    {
-        // ImplicitCountSpanOverloader
-        return GetSerializedSceneFragmentDataMsft(scene, in getInfo, (uint) buffer.Length, ref readOutput, ref buffer.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
 
-    public MsftSceneUnderstandingSerialization(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, string buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] ref byte buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public unsafe partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] byte* buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] ref byte buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSerializedSceneFragmentDataMSFT")]
+        public partial Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] ref uint readOutput, string buffer);
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return GetSerializedSceneFragmentDataMsft(scene, getInfo, (uint) buffer.Length, readOutput, ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return GetSerializedSceneFragmentDataMsft(scene, getInfo, (uint) buffer.Length, ref readOutput, ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return GetSerializedSceneFragmentDataMsft(scene, in getInfo, (uint) buffer.Length, readOutput, ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetSerializedSceneFragmentDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] in SerializedSceneFragmentDataGetInfoMSFT getInfo, [Count(Count = 0)] ref uint readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return GetSerializedSceneFragmentDataMsft(scene, in getInfo, (uint) buffer.Length, ref readOutput, ref buffer.GetPinnableReference());
+        }
+
+        public MsftSceneUnderstandingSerialization(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

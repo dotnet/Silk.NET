@@ -14,63 +14,64 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
-
-[Extension("SGIS_texture_color_mask")]
-public unsafe partial class SgisTextureColorMask : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
-    public const string ExtensionName = "SGIS_texture_color_mask";
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
-
-    [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-    public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
-
-    public SgisTextureColorMask(INativeContext ctx)
-        : base(ctx)
+    [Extension("SGIS_texture_color_mask")]
+    public unsafe partial class SgisTextureColorMask : NativeExtension<GL>
     {
+        public const string ExtensionName = "SGIS_texture_color_mask";
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] bool alpha);
+
+        [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
+        public partial void TextureColorMask([Flow(FlowDirection.In)] Boolean red, [Flow(FlowDirection.In)] Boolean green, [Flow(FlowDirection.In)] Boolean blue, [Flow(FlowDirection.In)] Boolean alpha);
+
+        public SgisTextureColorMask(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

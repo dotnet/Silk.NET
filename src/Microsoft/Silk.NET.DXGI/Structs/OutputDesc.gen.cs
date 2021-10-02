@@ -14,62 +14,63 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_OUTPUT_DESC")]
-public unsafe partial struct OutputDesc
+namespace Silk.NET.DXGI
 {
-    public OutputDesc
-    (
+    [NativeName("Name", "DXGI_OUTPUT_DESC")]
+    public unsafe partial struct OutputDesc
+    {
+        public OutputDesc
+        (
             Silk.NET.Maths.Rectangle<int>? desktopCoordinates = null,
             int? attachedToDesktop = null,
             ModeRotation? rotation = null,
             nint? monitor = null
-    ) : this()
-    {
-        if (desktopCoordinates is not null)
+        ) : this()
         {
-            DesktopCoordinates = desktopCoordinates.Value;
+            if (desktopCoordinates is not null)
+            {
+                DesktopCoordinates = desktopCoordinates.Value;
+            }
+
+            if (attachedToDesktop is not null)
+            {
+                AttachedToDesktop = attachedToDesktop.Value;
+            }
+
+            if (rotation is not null)
+            {
+                Rotation = rotation.Value;
+            }
+
+            if (monitor is not null)
+            {
+                Monitor = monitor.Value;
+            }
         }
 
-        if (attachedToDesktop is not null)
-        {
-            AttachedToDesktop = attachedToDesktop.Value;
-        }
+        [NativeName("Type", "WCHAR [32]")]
+        [NativeName("Type.Name", "WCHAR [32]")]
+        [NativeName("Name", "DeviceName")]
+        public fixed char DeviceName[32];
 
-        if (rotation is not null)
-        {
-            Rotation = rotation.Value;
-        }
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "DesktopCoordinates")]
+        public Silk.NET.Maths.Rectangle<int> DesktopCoordinates;
 
-        if (monitor is not null)
-        {
-            Monitor = monitor.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "AttachedToDesktop")]
+        public int AttachedToDesktop;
+
+        [NativeName("Type", "DXGI_MODE_ROTATION")]
+        [NativeName("Type.Name", "DXGI_MODE_ROTATION")]
+        [NativeName("Name", "Rotation")]
+        public ModeRotation Rotation;
+
+        [NativeName("Type", "HMONITOR")]
+        [NativeName("Type.Name", "HMONITOR")]
+        [NativeName("Name", "Monitor")]
+        public nint Monitor;
     }
-
-    [NativeName("Type", "WCHAR [32]")]
-    [NativeName("Type.Name", "WCHAR [32]")]
-    [NativeName("Name", "DeviceName")]
-    public fixed char DeviceName[32];
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "DesktopCoordinates")]
-    public Silk.NET.Maths.Rectangle<int> DesktopCoordinates;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "AttachedToDesktop")]
-    public int AttachedToDesktop;
-
-    [NativeName("Type", "DXGI_MODE_ROTATION")]
-    [NativeName("Type.Name", "DXGI_MODE_ROTATION")]
-    [NativeName("Name", "Rotation")]
-    public ModeRotation Rotation;
-
-    [NativeName("Type", "HMONITOR")]
-    [NativeName("Type.Name", "HMONITOR")]
-    [NativeName("Name", "Monitor")]
-    public nint Monitor;
 }

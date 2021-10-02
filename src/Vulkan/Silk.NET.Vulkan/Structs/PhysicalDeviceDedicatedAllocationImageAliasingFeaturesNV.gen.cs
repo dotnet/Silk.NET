@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV")]
-public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
-    (
+    [NativeName("Name", "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
+    {
+        public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
+        (
             StructureType? sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
             void* pNext = null,
             Bool32? dedicatedAllocationImageAliasing = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dedicatedAllocationImageAliasing is not null)
+            {
+                DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (dedicatedAllocationImageAliasing is not null)
-        {
-            DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "dedicatedAllocationImageAliasing")]
+        public Bool32 DedicatedAllocationImageAliasing;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "dedicatedAllocationImageAliasing")]
-    public Bool32 DedicatedAllocationImageAliasing;
 }

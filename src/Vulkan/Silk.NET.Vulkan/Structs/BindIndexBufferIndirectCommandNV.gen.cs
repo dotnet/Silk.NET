@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBindIndexBufferIndirectCommandNV")]
-public unsafe partial struct BindIndexBufferIndirectCommandNV
+namespace Silk.NET.Vulkan
 {
-    public BindIndexBufferIndirectCommandNV
-    (
+    [NativeName("Name", "VkBindIndexBufferIndirectCommandNV")]
+    public unsafe partial struct BindIndexBufferIndirectCommandNV
+    {
+        public BindIndexBufferIndirectCommandNV
+        (
             ulong? bufferAddress = null,
             uint? size = null,
             IndexType? indexType = null
-    ) : this()
-    {
-        if (bufferAddress is not null)
+        ) : this()
         {
-            BufferAddress = bufferAddress.Value;
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
         }
 
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
-
-        if (indexType is not null)
-        {
-            IndexType = indexType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "bufferAddress")]
+        public ulong BufferAddress;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "size")]
+        public uint Size;
+/// <summary></summary>
+        [NativeName("Type", "VkIndexType")]
+        [NativeName("Type.Name", "VkIndexType")]
+        [NativeName("Name", "indexType")]
+        public IndexType IndexType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceAddress")]
-    [NativeName("Type.Name", "VkDeviceAddress")]
-    [NativeName("Name", "bufferAddress")]
-    public ulong BufferAddress;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "size")]
-    public uint Size;
-/// <summary></summary>
-    [NativeName("Type", "VkIndexType")]
-    [NativeName("Type.Name", "VkIndexType")]
-    [NativeName("Name", "indexType")]
-    public IndexType IndexType;
 }

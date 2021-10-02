@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_ROOT_DESCRIPTOR_TABLE")]
-public unsafe partial struct RootDescriptorTable
+namespace Silk.NET.Direct3D12
 {
-    public RootDescriptorTable
-    (
+    [NativeName("Name", "D3D12_ROOT_DESCRIPTOR_TABLE")]
+    public unsafe partial struct RootDescriptorTable
+    {
+        public RootDescriptorTable
+        (
             uint? numDescriptorRanges = null,
             DescriptorRange* pDescriptorRanges = null
-    ) : this()
-    {
-        if (numDescriptorRanges is not null)
+        ) : this()
         {
-            NumDescriptorRanges = numDescriptorRanges.Value;
+            if (numDescriptorRanges is not null)
+            {
+                NumDescriptorRanges = numDescriptorRanges.Value;
+            }
+
+            if (pDescriptorRanges is not null)
+            {
+                PDescriptorRanges = pDescriptorRanges;
+            }
         }
 
-        if (pDescriptorRanges is not null)
-        {
-            PDescriptorRanges = pDescriptorRanges;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumDescriptorRanges")]
+        public uint NumDescriptorRanges;
+
+        [NativeName("Type", "const D3D12_DESCRIPTOR_RANGE *")]
+        [NativeName("Type.Name", "const D3D12_DESCRIPTOR_RANGE *")]
+        [NativeName("Name", "pDescriptorRanges")]
+        public DescriptorRange* PDescriptorRanges;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumDescriptorRanges")]
-    public uint NumDescriptorRanges;
-
-    [NativeName("Type", "const D3D12_DESCRIPTOR_RANGE *")]
-    [NativeName("Type.Name", "const D3D12_DESCRIPTOR_RANGE *")]
-    [NativeName("Name", "pDescriptorRanges")]
-    public DescriptorRange* PDescriptorRanges;
 }

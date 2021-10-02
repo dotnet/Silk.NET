@@ -14,57 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS")]
-public unsafe partial struct VideoProcessOutputStreamArguments
+namespace Silk.NET.Direct3D12
 {
-    public VideoProcessOutputStreamArguments
-    (
+    [NativeName("Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS")]
+    public unsafe partial struct VideoProcessOutputStreamArguments
+    {
+        public VideoProcessOutputStreamArguments
+        (
             Silk.NET.Maths.Rectangle<int>? targetRectangle = null
-    ) : this()
-    {
-        if (targetRectangle is not null)
+        ) : this()
         {
-            TargetRectangle = targetRectangle.Value;
-        }
-    }
-
-        
-    [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-    [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-    [NativeName("Name", "OutputStream")]
-    public OutputStreamBuffer OutputStream;
-
-    public struct OutputStreamBuffer
-    {
-        public VideoProcessOutputStream Element0;
-        public VideoProcessOutputStream Element1;
-        public ref VideoProcessOutputStream this[int index]
-        {
-            get
+            if (targetRectangle is not null)
             {
-                if (index > 1 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
-
-                fixed (VideoProcessOutputStream* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+                TargetRectangle = targetRectangle.Value;
             }
         }
 
+        
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
+        [NativeName("Name", "OutputStream")]
+        public OutputStreamBuffer OutputStream;
+
+        public struct OutputStreamBuffer
+        {
+            public VideoProcessOutputStream Element0;
+            public VideoProcessOutputStream Element1;
+            public ref VideoProcessOutputStream this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoProcessOutputStream* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
 #if NETSTANDARD2_1
-        public Span<VideoProcessOutputStream> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 2);
+            public Span<VideoProcessOutputStream> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
+        }
+
+
+        [NativeName("Type", "D3D12_RECT")]
+        [NativeName("Type.Name", "D3D12_RECT")]
+        [NativeName("Name", "TargetRectangle")]
+        public Silk.NET.Maths.Rectangle<int> TargetRectangle;
     }
-
-
-    [NativeName("Type", "D3D12_RECT")]
-    [NativeName("Type.Name", "D3D12_RECT")]
-    [NativeName("Name", "TargetRectangle")]
-    public Silk.NET.Maths.Rectangle<int> TargetRectangle;
 }

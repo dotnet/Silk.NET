@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkOffset2D")]
-public unsafe partial struct Offset2D
+namespace Silk.NET.Vulkan
 {
-    public Offset2D
-    (
+    [NativeName("Name", "VkOffset2D")]
+    public unsafe partial struct Offset2D
+    {
+        public Offset2D
+        (
             int? x = null,
             int? y = null
-    ) : this()
-    {
-        if (x is not null)
+        ) : this()
         {
-            X = x.Value;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "x")]
+        public int X;
+/// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "y")]
+        public int Y;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "int32_t")]
-    [NativeName("Type.Name", "int32_t")]
-    [NativeName("Name", "x")]
-    public int X;
-/// <summary></summary>
-    [NativeName("Type", "int32_t")]
-    [NativeName("Type.Name", "int32_t")]
-    [NativeName("Name", "y")]
-    public int Y;
 }

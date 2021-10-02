@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSwapchainImageD3D11KHR")]
-public unsafe partial struct SwapchainImageD3D11KHR
+namespace Silk.NET.OpenXR
 {
-    public SwapchainImageD3D11KHR
-    (
+    [NativeName("Name", "XrSwapchainImageD3D11KHR")]
+    public unsafe partial struct SwapchainImageD3D11KHR
+    {
+        public SwapchainImageD3D11KHR
+        (
             StructureType? type = StructureType.TypeSwapchainImageD3D11Khr,
             void* next = null,
             void* texture = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (texture is not null)
+            {
+                Texture = texture;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (texture is not null)
-        {
-            Texture = texture;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "ID3D11Texture2D*")]
+        [NativeName("Type.Name", "ID3D11Texture2D")]
+        [NativeName("Name", "texture")]
+        public void* Texture;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "ID3D11Texture2D*")]
-    [NativeName("Type.Name", "ID3D11Texture2D")]
-    [NativeName("Name", "texture")]
-    public void* Texture;
 }

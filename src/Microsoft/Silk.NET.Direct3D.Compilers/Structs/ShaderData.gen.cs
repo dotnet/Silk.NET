@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D.Compilers;
-
-[NativeName("Name", "_D3D_SHADER_DATA")]
-public unsafe partial struct ShaderData
+namespace Silk.NET.Direct3D.Compilers
 {
-    public ShaderData
-    (
+    [NativeName("Name", "_D3D_SHADER_DATA")]
+    public unsafe partial struct ShaderData
+    {
+        public ShaderData
+        (
             void* pBytecode = null,
             nuint? bytecodeLength = null
-    ) : this()
-    {
-        if (pBytecode is not null)
+        ) : this()
         {
-            PBytecode = pBytecode;
+            if (pBytecode is not null)
+            {
+                PBytecode = pBytecode;
+            }
+
+            if (bytecodeLength is not null)
+            {
+                BytecodeLength = bytecodeLength.Value;
+            }
         }
 
-        if (bytecodeLength is not null)
-        {
-            BytecodeLength = bytecodeLength.Value;
-        }
+
+        [NativeName("Type", "LPCVOID")]
+        [NativeName("Type.Name", "LPCVOID")]
+        [NativeName("Name", "pBytecode")]
+        public void* PBytecode;
+
+        [NativeName("Type", "SIZE_T")]
+        [NativeName("Type.Name", "SIZE_T")]
+        [NativeName("Name", "BytecodeLength")]
+        public nuint BytecodeLength;
     }
-
-
-    [NativeName("Type", "LPCVOID")]
-    [NativeName("Type.Name", "LPCVOID")]
-    [NativeName("Name", "pBytecode")]
-    public void* PBytecode;
-
-    [NativeName("Type", "SIZE_T")]
-    [NativeName("Type.Name", "SIZE_T")]
-    [NativeName("Name", "BytecodeLength")]
-    public nuint BytecodeLength;
 }

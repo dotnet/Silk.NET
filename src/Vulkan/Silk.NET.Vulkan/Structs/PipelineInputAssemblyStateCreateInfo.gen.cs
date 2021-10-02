@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineInputAssemblyStateCreateInfo")]
-public unsafe partial struct PipelineInputAssemblyStateCreateInfo
+namespace Silk.NET.Vulkan
 {
-    public PipelineInputAssemblyStateCreateInfo
-    (
+    [NativeName("Name", "VkPipelineInputAssemblyStateCreateInfo")]
+    public unsafe partial struct PipelineInputAssemblyStateCreateInfo
+    {
+        public PipelineInputAssemblyStateCreateInfo
+        (
             StructureType? sType = StructureType.PipelineInputAssemblyStateCreateInfo,
             void* pNext = null,
             uint? flags = null,
             PrimitiveTopology? topology = null,
             Bool32? primitiveRestartEnable = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (topology is not null)
+            {
+                Topology = topology.Value;
+            }
+
+            if (primitiveRestartEnable is not null)
+            {
+                PrimitiveRestartEnable = primitiveRestartEnable.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (topology is not null)
-        {
-            Topology = topology.Value;
-        }
-
-        if (primitiveRestartEnable is not null)
-        {
-            PrimitiveRestartEnable = primitiveRestartEnable.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPipelineInputAssemblyStateCreateFlags")]
+        [NativeName("Type.Name", "VkPipelineInputAssemblyStateCreateFlags")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
+/// <summary></summary>
+        [NativeName("Type", "VkPrimitiveTopology")]
+        [NativeName("Type.Name", "VkPrimitiveTopology")]
+        [NativeName("Name", "topology")]
+        public PrimitiveTopology Topology;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "primitiveRestartEnable")]
+        public Bool32 PrimitiveRestartEnable;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPipelineInputAssemblyStateCreateFlags")]
-    [NativeName("Type.Name", "VkPipelineInputAssemblyStateCreateFlags")]
-    [NativeName("Name", "flags")]
-    public uint Flags;
-/// <summary></summary>
-    [NativeName("Type", "VkPrimitiveTopology")]
-    [NativeName("Type.Name", "VkPrimitiveTopology")]
-    [NativeName("Name", "topology")]
-    public PrimitiveTopology Topology;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "primitiveRestartEnable")]
-    public Bool32 PrimitiveRestartEnable;
 }

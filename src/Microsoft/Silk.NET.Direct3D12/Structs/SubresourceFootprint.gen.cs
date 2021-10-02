@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_SUBRESOURCE_FOOTPRINT")]
-public unsafe partial struct SubresourceFootprint
+namespace Silk.NET.Direct3D12
 {
-    public SubresourceFootprint
-    (
+    [NativeName("Name", "D3D12_SUBRESOURCE_FOOTPRINT")]
+    public unsafe partial struct SubresourceFootprint
+    {
+        public SubresourceFootprint
+        (
             Silk.NET.DXGI.Format? format = null,
             uint? width = null,
             uint? height = null,
             uint? depth = null,
             uint? rowPitch = null
-    ) : this()
-    {
-        if (format is not null)
+        ) : this()
         {
-            Format = format.Value;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
         }
 
-        if (width is not null)
-        {
-            Width = width.Value;
-        }
 
-        if (height is not null)
-        {
-            Height = height.Value;
-        }
+        [NativeName("Type", "DXGI_FORMAT")]
+        [NativeName("Type.Name", "DXGI_FORMAT")]
+        [NativeName("Name", "Format")]
+        public Silk.NET.DXGI.Format Format;
 
-        if (depth is not null)
-        {
-            Depth = depth.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Width")]
+        public uint Width;
 
-        if (rowPitch is not null)
-        {
-            RowPitch = rowPitch.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Height")]
+        public uint Height;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Depth")]
+        public uint Depth;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "RowPitch")]
+        public uint RowPitch;
     }
-
-
-    [NativeName("Type", "DXGI_FORMAT")]
-    [NativeName("Type.Name", "DXGI_FORMAT")]
-    [NativeName("Name", "Format")]
-    public Silk.NET.DXGI.Format Format;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Width")]
-    public uint Width;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Height")]
-    public uint Height;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Depth")]
-    public uint Depth;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "RowPitch")]
-    public uint RowPitch;
 }

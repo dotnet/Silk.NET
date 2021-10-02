@@ -14,49 +14,50 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[Guid("42757488-334f-47fe-982e-1a65d08cc462")]
-[NativeName("Name", "ID3D11FunctionParameterReflection")]
-public unsafe partial struct ID3D11FunctionParameterReflection
+namespace Silk.NET.Direct3D11
 {
-    public static readonly Guid Guid = new("42757488-334f-47fe-982e-1a65d08cc462");
+    [Guid("42757488-334f-47fe-982e-1a65d08cc462")]
+    [NativeName("Name", "ID3D11FunctionParameterReflection")]
+    public unsafe partial struct ID3D11FunctionParameterReflection
+    {
+        public static readonly Guid Guid = new("42757488-334f-47fe-982e-1a65d08cc462");
 
-    public ID3D11FunctionParameterReflection
-    (
+        public ID3D11FunctionParameterReflection
+        (
             void** lpVtbl = null
-    ) : this()
-    {
-        if (lpVtbl is not null)
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
-    }
 
 
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "lpVtbl")]
-    public void** LpVtbl;
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int GetDesc(ParameterDesc* pDesc)
-    {
-        var @this = (ID3D11FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly int GetDesc(ref ParameterDesc pDesc)
-    {
-        var @this = (ID3D11FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (ParameterDesc* pDescPtr = &pDesc)
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "lpVtbl")]
+        public void** LpVtbl;
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetDesc(ParameterDesc* pDesc)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);
+            var @this = (ID3D11FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
+            return ret;
         }
-        return ret;
-    }
 
+        /// <summary>To be documented.</summary>
+        public readonly int GetDesc(ref ParameterDesc pDesc)
+        {
+            var @this = (ID3D11FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (ParameterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);
+            }
+            return ret;
+        }
+
+    }
 }

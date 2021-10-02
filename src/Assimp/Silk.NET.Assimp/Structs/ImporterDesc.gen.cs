@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiImporterDesc")]
-public unsafe partial struct ImporterDesc
+namespace Silk.NET.Assimp
 {
-    public ImporterDesc
-    (
+    [NativeName("Name", "aiImporterDesc")]
+    public unsafe partial struct ImporterDesc
+    {
+        public ImporterDesc
+        (
             byte* mName = null,
             byte* mAuthor = null,
             byte* mMaintainer = null,
@@ -31,107 +31,108 @@ public unsafe partial struct ImporterDesc
             uint? mMaxMajor = null,
             uint? mMaxMinor = null,
             byte* mFileExtensions = null
-    ) : this()
-    {
-        if (mName is not null)
+        ) : this()
         {
-            MName = mName;
+            if (mName is not null)
+            {
+                MName = mName;
+            }
+
+            if (mAuthor is not null)
+            {
+                MAuthor = mAuthor;
+            }
+
+            if (mMaintainer is not null)
+            {
+                MMaintainer = mMaintainer;
+            }
+
+            if (mComments is not null)
+            {
+                MComments = mComments;
+            }
+
+            if (mFlags is not null)
+            {
+                MFlags = mFlags.Value;
+            }
+
+            if (mMinMajor is not null)
+            {
+                MMinMajor = mMinMajor.Value;
+            }
+
+            if (mMinMinor is not null)
+            {
+                MMinMinor = mMinMinor.Value;
+            }
+
+            if (mMaxMajor is not null)
+            {
+                MMaxMajor = mMaxMajor.Value;
+            }
+
+            if (mMaxMinor is not null)
+            {
+                MMaxMinor = mMaxMinor.Value;
+            }
+
+            if (mFileExtensions is not null)
+            {
+                MFileExtensions = mFileExtensions;
+            }
         }
 
-        if (mAuthor is not null)
-        {
-            MAuthor = mAuthor;
-        }
 
-        if (mMaintainer is not null)
-        {
-            MMaintainer = mMaintainer;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "mName")]
+        public byte* MName;
 
-        if (mComments is not null)
-        {
-            MComments = mComments;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "mAuthor")]
+        public byte* MAuthor;
 
-        if (mFlags is not null)
-        {
-            MFlags = mFlags.Value;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "mMaintainer")]
+        public byte* MMaintainer;
 
-        if (mMinMajor is not null)
-        {
-            MMinMajor = mMinMajor.Value;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "mComments")]
+        public byte* MComments;
 
-        if (mMinMinor is not null)
-        {
-            MMinMinor = mMinMinor.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mFlags")]
+        public uint MFlags;
 
-        if (mMaxMajor is not null)
-        {
-            MMaxMajor = mMaxMajor.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mMinMajor")]
+        public uint MMinMajor;
 
-        if (mMaxMinor is not null)
-        {
-            MMaxMinor = mMaxMinor.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mMinMinor")]
+        public uint MMinMinor;
 
-        if (mFileExtensions is not null)
-        {
-            MFileExtensions = mFileExtensions;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mMaxMajor")]
+        public uint MMaxMajor;
+
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mMaxMinor")]
+        public uint MMaxMinor;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "mFileExtensions")]
+        public byte* MFileExtensions;
     }
-
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "mName")]
-    public byte* MName;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "mAuthor")]
-    public byte* MAuthor;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "mMaintainer")]
-    public byte* MMaintainer;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "mComments")]
-    public byte* MComments;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mFlags")]
-    public uint MFlags;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mMinMajor")]
-    public uint MMinMajor;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mMinMinor")]
-    public uint MMinMinor;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mMaxMajor")]
-    public uint MMaxMajor;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mMaxMinor")]
-    public uint MMaxMinor;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "mFileExtensions")]
-    public byte* MFileExtensions;
 }

@@ -14,108 +14,109 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NVX;
-
-[Extension("NVX_progress_fence")]
-public unsafe partial class NvxProgressFence : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
 {
-    public const string ExtensionName = "NVX_progress_fence";
-    [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
-    public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
-    public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
-    public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
-    public partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    [NativeApi(EntryPoint = "glCreateProgressFenceNVX")]
-    public partial uint CreateProgressFence();
-
-    [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
-    public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
-    public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
-    public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
-    public partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
-    public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
-    public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
-    public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
-
-    [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
-    public partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
-
-    public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+    [Extension("NVX_progress_fence")]
+    public unsafe partial class NvxProgressFence : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        ClientWaitSemaphore((uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
-    }
+        public const string ExtensionName = "NVX_progress_fence";
+        [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
+        public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
 
-    public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        ClientWaitSemaphore((uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
-    }
+        [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
+        public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
 
-    public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        ClientWaitSemaphore((uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
+        public unsafe partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
 
-    public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        SignalSemaphore(signalGpu, (uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glClientWaitSemaphoreui64NVX")]
+        public partial void ClientWaitSemaphore([Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
 
-    public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        SignalSemaphore(signalGpu, (uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
-    }
+        [NativeApi(EntryPoint = "glCreateProgressFenceNVX")]
+        public partial uint CreateProgressFence();
 
-    public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        SignalSemaphore(signalGpu, (uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
+        public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
 
-    public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        WaitSemaphore(waitGpu, (uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
+        public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
 
-    public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        WaitSemaphore(waitGpu, (uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
-    }
+        [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
+        public unsafe partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
 
-    public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
-    {
-        // ImplicitCountSpanOverloader
-        WaitSemaphore(waitGpu, (uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glSignalSemaphoreui64NVX")]
+        public partial void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
 
-    public NvxProgressFence(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
+        public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
+
+        [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
+        public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
+
+        [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
+        public unsafe partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray);
+
+        [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
+        public partial void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in uint semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] in ulong fenceValueArray);
+
+        public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            ClientWaitSemaphore((uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
+        }
+
+        public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            ClientWaitSemaphore((uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
+        }
+
+        public unsafe void ClientWaitSemaphore([Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            ClientWaitSemaphore((uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
+        }
+
+        public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            SignalSemaphore(signalGpu, (uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
+        }
+
+        public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            SignalSemaphore(signalGpu, (uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
+        }
+
+        public unsafe void SignalSemaphore([Flow(FlowDirection.In)] uint signalGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            SignalSemaphore(signalGpu, (uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
+        }
+
+        public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] uint* semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            WaitSemaphore(waitGpu, (uint) fenceValueArray.Length, semaphoreArray, in fenceValueArray.GetPinnableReference());
+        }
+
+        public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ulong* fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            WaitSemaphore(waitGpu, (uint) semaphoreArray.Length, in semaphoreArray.GetPinnableReference(), fenceValueArray);
+        }
+
+        public unsafe void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> fenceValueArray)
+        {
+            // ImplicitCountSpanOverloader
+            WaitSemaphore(waitGpu, (uint) fenceValueArray.Length, in semaphoreArray.GetPinnableReference(), in fenceValueArray.GetPinnableReference());
+        }
+
+        public NvxProgressFence(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_JoyButtonEvent")]
-public unsafe partial struct JoyButtonEvent
+namespace Silk.NET.SDL
 {
-    public JoyButtonEvent
-    (
+    [NativeName("Name", "SDL_JoyButtonEvent")]
+    public unsafe partial struct JoyButtonEvent
+    {
+        public JoyButtonEvent
+        (
             uint? type = null,
             uint? timestamp = null,
             int? which = null,
@@ -28,77 +28,78 @@ public unsafe partial struct JoyButtonEvent
             byte? state = null,
             byte? padding1 = null,
             byte? padding2 = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
         }
 
-        if (timestamp is not null)
-        {
-            Timestamp = timestamp.Value;
-        }
 
-        if (which is not null)
-        {
-            Which = which.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "type")]
+        public uint Type;
 
-        if (button is not null)
-        {
-            Button = button.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "timestamp")]
+        public uint Timestamp;
 
-        if (state is not null)
-        {
-            State = state.Value;
-        }
+        [NativeName("Type", "SDL_JoystickID")]
+        [NativeName("Type.Name", "SDL_JoystickID")]
+        [NativeName("Name", "which")]
+        public int Which;
 
-        if (padding1 is not null)
-        {
-            Padding1 = padding1.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "button")]
+        public byte Button;
 
-        if (padding2 is not null)
-        {
-            Padding2 = padding2.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "state")]
+        public byte State;
+
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "padding1")]
+        public byte Padding1;
+
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "padding2")]
+        public byte Padding2;
     }
-
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "type")]
-    public uint Type;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "timestamp")]
-    public uint Timestamp;
-
-    [NativeName("Type", "SDL_JoystickID")]
-    [NativeName("Type.Name", "SDL_JoystickID")]
-    [NativeName("Name", "which")]
-    public int Which;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "button")]
-    public byte Button;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "state")]
-    public byte State;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "padding1")]
-    public byte Padding1;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "padding2")]
-    public byte Padding2;
 }

@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
-
-public static class SgixIglooInterfaceOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
-    public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
+    public static class SgixIglooInterfaceOverloads
     {
-        // SpanOverloader
-        thisApi.IglooInterface(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void IglooInterface<T0>(this SgixIglooInterface thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @params) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.IglooInterface(pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

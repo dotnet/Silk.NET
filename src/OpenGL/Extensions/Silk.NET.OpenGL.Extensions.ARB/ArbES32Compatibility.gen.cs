@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-[Extension("ARB_ES3_2_compatibility")]
-public unsafe partial class ArbES32Compatibility : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_ES3_2_compatibility";
-    [NativeApi(EntryPoint = "glPrimitiveBoundingBoxARB")]
-    public partial void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
-
-    public ArbES32Compatibility(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_ES3_2_compatibility")]
+    public unsafe partial class ArbES32Compatibility : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_ES3_2_compatibility";
+        [NativeApi(EntryPoint = "glPrimitiveBoundingBoxARB")]
+        public partial void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
+
+        public ArbES32Compatibility(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

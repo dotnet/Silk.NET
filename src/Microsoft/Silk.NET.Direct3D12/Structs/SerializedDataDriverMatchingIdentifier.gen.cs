@@ -14,29 +14,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER")]
-public unsafe partial struct SerializedDataDriverMatchingIdentifier
+namespace Silk.NET.Direct3D12
 {
-    public SerializedDataDriverMatchingIdentifier
-    (
-            Guid? driverOpaqueGUID = null
-    ) : this()
+    [NativeName("Name", "D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER")]
+    public unsafe partial struct SerializedDataDriverMatchingIdentifier
     {
-        if (driverOpaqueGUID is not null)
+        public SerializedDataDriverMatchingIdentifier
+        (
+            Guid? driverOpaqueGUID = null
+        ) : this()
         {
-            DriverOpaqueGUID = driverOpaqueGUID.Value;
+            if (driverOpaqueGUID is not null)
+            {
+                DriverOpaqueGUID = driverOpaqueGUID.Value;
+            }
         }
+
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "DriverOpaqueGUID")]
+        public Guid DriverOpaqueGUID;
+        [NativeName("Type", "BYTE [16]")]
+        [NativeName("Type.Name", "BYTE [16]")]
+        [NativeName("Name", "DriverOpaqueVersioningData")]
+        public fixed byte DriverOpaqueVersioningData[16];
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "DriverOpaqueGUID")]
-    public Guid DriverOpaqueGUID;
-    [NativeName("Type", "BYTE [16]")]
-    [NativeName("Type.Name", "BYTE [16]")]
-    [NativeName("Name", "DriverOpaqueVersioningData")]
-    public fixed byte DriverOpaqueVersioningData[16];
 }

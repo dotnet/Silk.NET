@@ -12,39 +12,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-public static class ArbBindlessTextureOverloads
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public static unsafe void GetVertexAttribL(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] Span<ulong> @params)
+    public static class ArbBindlessTextureOverloads
     {
-        // SpanOverloader
-        thisApi.GetVertexAttribL(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribL(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] Span<ulong> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribL(index, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetVertexAttribL(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] Span<ulong> @params)
-    {
-        // SpanOverloader
-        thisApi.GetVertexAttribL(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribL(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] Span<ulong> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribL(index, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void ProgramUniformHandle(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
-    {
-        // SpanOverloader
-        thisApi.ProgramUniformHandle(program, location, count, in values.GetPinnableReference());
-    }
+        public static unsafe void ProgramUniformHandle(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformHandle(program, location, count, in values.GetPinnableReference());
+        }
 
-    public static unsafe void UniformHandle(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
-    {
-        // SpanOverloader
-        thisApi.UniformHandle(location, count, in value.GetPinnableReference());
-    }
+        public static unsafe void UniformHandle(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // SpanOverloader
+            thisApi.UniformHandle(location, count, in value.GetPinnableReference());
+        }
 
-    public static unsafe void VertexAttribL1(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> v)
-    {
-        // SpanOverloader
-        thisApi.VertexAttribL1(index, in v.GetPinnableReference());
-    }
+        public static unsafe void VertexAttribL1(this ArbBindlessTexture thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<ulong> v)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribL1(index, in v.GetPinnableReference());
+        }
 
+    }
 }
 

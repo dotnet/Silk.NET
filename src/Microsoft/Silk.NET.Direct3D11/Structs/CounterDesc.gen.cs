@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_COUNTER_DESC")]
-public unsafe partial struct CounterDesc
+namespace Silk.NET.Direct3D11
 {
-    public CounterDesc
-    (
+    [NativeName("Name", "D3D11_COUNTER_DESC")]
+    public unsafe partial struct CounterDesc
+    {
+        public CounterDesc
+        (
             Counter? counter = null,
             uint? miscFlags = null
-    ) : this()
-    {
-        if (counter is not null)
+        ) : this()
         {
-            Counter = counter.Value;
+            if (counter is not null)
+            {
+                Counter = counter.Value;
+            }
+
+            if (miscFlags is not null)
+            {
+                MiscFlags = miscFlags.Value;
+            }
         }
 
-        if (miscFlags is not null)
-        {
-            MiscFlags = miscFlags.Value;
-        }
+
+        [NativeName("Type", "D3D11_COUNTER")]
+        [NativeName("Type.Name", "D3D11_COUNTER")]
+        [NativeName("Name", "Counter")]
+        public Counter Counter;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MiscFlags")]
+        public uint MiscFlags;
     }
-
-
-    [NativeName("Type", "D3D11_COUNTER")]
-    [NativeName("Type.Name", "D3D11_COUNTER")]
-    [NativeName("Name", "Counter")]
-    public Counter Counter;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MiscFlags")]
-    public uint MiscFlags;
 }

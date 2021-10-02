@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_DeinterlaceCaps")]
-public unsafe partial struct DeinterlaceCaps
+namespace Silk.NET.DXVA
 {
-    public DeinterlaceCaps
-    (
+    [NativeName("Name", "_DXVA_DeinterlaceCaps")]
+    public unsafe partial struct DeinterlaceCaps
+    {
+        public DeinterlaceCaps
+        (
             uint? size = null,
             uint? numPreviousOutputFrames = null,
             uint? inputPool = null,
@@ -29,87 +29,88 @@ public unsafe partial struct DeinterlaceCaps
             Silk.NET.Direct3D9.Format? d3dOutputFormat = null,
             VideoProcessCaps? videoProcessingCaps = null,
             DeinterlaceTech? deinterlaceTechnology = null
-    ) : this()
-    {
-        if (size is not null)
+        ) : this()
         {
-            Size = size.Value;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (numPreviousOutputFrames is not null)
+            {
+                NumPreviousOutputFrames = numPreviousOutputFrames.Value;
+            }
+
+            if (inputPool is not null)
+            {
+                InputPool = inputPool.Value;
+            }
+
+            if (numForwardRefSamples is not null)
+            {
+                NumForwardRefSamples = numForwardRefSamples.Value;
+            }
+
+            if (numBackwardRefSamples is not null)
+            {
+                NumBackwardRefSamples = numBackwardRefSamples.Value;
+            }
+
+            if (d3dOutputFormat is not null)
+            {
+                D3dOutputFormat = d3dOutputFormat.Value;
+            }
+
+            if (videoProcessingCaps is not null)
+            {
+                VideoProcessingCaps = videoProcessingCaps.Value;
+            }
+
+            if (deinterlaceTechnology is not null)
+            {
+                DeinterlaceTechnology = deinterlaceTechnology.Value;
+            }
         }
 
-        if (numPreviousOutputFrames is not null)
-        {
-            NumPreviousOutputFrames = numPreviousOutputFrames.Value;
-        }
 
-        if (inputPool is not null)
-        {
-            InputPool = inputPool.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Size")]
+        public uint Size;
 
-        if (numForwardRefSamples is not null)
-        {
-            NumForwardRefSamples = numForwardRefSamples.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "NumPreviousOutputFrames")]
+        public uint NumPreviousOutputFrames;
 
-        if (numBackwardRefSamples is not null)
-        {
-            NumBackwardRefSamples = numBackwardRefSamples.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "InputPool")]
+        public uint InputPool;
 
-        if (d3dOutputFormat is not null)
-        {
-            D3dOutputFormat = d3dOutputFormat.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "NumForwardRefSamples")]
+        public uint NumForwardRefSamples;
 
-        if (videoProcessingCaps is not null)
-        {
-            VideoProcessingCaps = videoProcessingCaps.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "NumBackwardRefSamples")]
+        public uint NumBackwardRefSamples;
 
-        if (deinterlaceTechnology is not null)
-        {
-            DeinterlaceTechnology = deinterlaceTechnology.Value;
-        }
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "d3dOutputFormat")]
+        public Silk.NET.Direct3D9.Format D3dOutputFormat;
+
+        [NativeName("Type", "DXVA_VideoProcessCaps")]
+        [NativeName("Type.Name", "DXVA_VideoProcessCaps")]
+        [NativeName("Name", "VideoProcessingCaps")]
+        public VideoProcessCaps VideoProcessingCaps;
+
+        [NativeName("Type", "DXVA_DeinterlaceTech")]
+        [NativeName("Type.Name", "DXVA_DeinterlaceTech")]
+        [NativeName("Name", "DeinterlaceTechnology")]
+        public DeinterlaceTech DeinterlaceTechnology;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Size")]
-    public uint Size;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "NumPreviousOutputFrames")]
-    public uint NumPreviousOutputFrames;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "InputPool")]
-    public uint InputPool;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "NumForwardRefSamples")]
-    public uint NumForwardRefSamples;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "NumBackwardRefSamples")]
-    public uint NumBackwardRefSamples;
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "d3dOutputFormat")]
-    public Silk.NET.Direct3D9.Format D3dOutputFormat;
-
-    [NativeName("Type", "DXVA_VideoProcessCaps")]
-    [NativeName("Type.Name", "DXVA_VideoProcessCaps")]
-    [NativeName("Name", "VideoProcessingCaps")]
-    public VideoProcessCaps VideoProcessingCaps;
-
-    [NativeName("Type", "DXVA_DeinterlaceTech")]
-    [NativeName("Type.Name", "DXVA_DeinterlaceTech")]
-    [NativeName("Name", "DeinterlaceTechnology")]
-    public DeinterlaceTech DeinterlaceTechnology;
 }

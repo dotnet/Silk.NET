@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "_SDL_Haptic")]
-public unsafe partial struct Haptic
+namespace Silk.NET.SDL
 {
+    [NativeName("Name", "_SDL_Haptic")]
+    public unsafe partial struct Haptic
+    {
+    }
 }

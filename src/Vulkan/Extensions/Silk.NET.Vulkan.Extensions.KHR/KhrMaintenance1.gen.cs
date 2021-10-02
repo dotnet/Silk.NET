@@ -14,19 +14,20 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-[Extension("VK_KHR_maintenance1")]
-public unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    public const string ExtensionName = "VK_KHR_maintenance1";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkTrimCommandPoolKHR")]
-    public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
-
-    public KhrMaintenance1(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_KHR_maintenance1")]
+    public unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_KHR_maintenance1";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkTrimCommandPoolKHR")]
+        public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
+
+        public KhrMaintenance1(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

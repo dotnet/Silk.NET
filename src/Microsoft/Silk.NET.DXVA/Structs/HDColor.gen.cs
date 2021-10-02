@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "_DXVAHD_COLOR")]
-public unsafe partial struct HDColor
+namespace Silk.NET.DXVA
 {
-    public HDColor
-    (
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "_DXVAHD_COLOR")]
+    public unsafe partial struct HDColor
+    {
+        public HDColor
+        (
             HDColorRgba? rGB = null,
             HDCOLORYCbCrA? yCbCr = null
-    ) : this()
-    {
-        if (rGB is not null)
+        ) : this()
         {
-            RGB = rGB.Value;
+            if (rGB is not null)
+            {
+                RGB = rGB.Value;
+            }
+
+            if (yCbCr is not null)
+            {
+                YCbCr = yCbCr.Value;
+            }
         }
 
-        if (yCbCr is not null)
-        {
-            YCbCr = yCbCr.Value;
-        }
+
+        [FieldOffset(0)]
+        [NativeName("Type", "DXVAHD_COLOR_RGBA")]
+        [NativeName("Type.Name", "DXVAHD_COLOR_RGBA")]
+        [NativeName("Name", "RGB")]
+        public HDColorRgba RGB;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "DXVAHD_COLOR_YCbCrA")]
+        [NativeName("Type.Name", "DXVAHD_COLOR_YCbCrA")]
+        [NativeName("Name", "YCbCr")]
+        public HDCOLORYCbCrA YCbCr;
     }
-
-
-        [FieldOffset(0)]
-    [NativeName("Type", "DXVAHD_COLOR_RGBA")]
-    [NativeName("Type.Name", "DXVAHD_COLOR_RGBA")]
-    [NativeName("Name", "RGB")]
-    public HDColorRgba RGB;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "DXVAHD_COLOR_YCbCrA")]
-    [NativeName("Type.Name", "DXVAHD_COLOR_YCbCrA")]
-    [NativeName("Name", "YCbCr")]
-    public HDCOLORYCbCrA YCbCr;
 }

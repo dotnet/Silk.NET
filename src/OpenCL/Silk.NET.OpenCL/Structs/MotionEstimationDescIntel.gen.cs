@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL;
-
-[NativeName("Name", "cl_motion_estimation_desc_intel")]
-public unsafe partial struct MotionEstimationDescIntel
+namespace Silk.NET.OpenCL
 {
-    public MotionEstimationDescIntel
-    (
+    [NativeName("Name", "cl_motion_estimation_desc_intel")]
+    public unsafe partial struct MotionEstimationDescIntel
+    {
+        public MotionEstimationDescIntel
+        (
             uint? mbBlockType = null,
             uint? subpixelMode = null,
             uint? sadAdjustMode = null,
             uint? searchPathType = null
-    ) : this()
-    {
-        if (mbBlockType is not null)
+        ) : this()
         {
-            MbBlockType = mbBlockType.Value;
+            if (mbBlockType is not null)
+            {
+                MbBlockType = mbBlockType.Value;
+            }
+
+            if (subpixelMode is not null)
+            {
+                SubpixelMode = subpixelMode.Value;
+            }
+
+            if (sadAdjustMode is not null)
+            {
+                SadAdjustMode = sadAdjustMode.Value;
+            }
+
+            if (searchPathType is not null)
+            {
+                SearchPathType = searchPathType.Value;
+            }
         }
 
-        if (subpixelMode is not null)
-        {
-            SubpixelMode = subpixelMode.Value;
-        }
-
-        if (sadAdjustMode is not null)
-        {
-            SadAdjustMode = sadAdjustMode.Value;
-        }
-
-        if (searchPathType is not null)
-        {
-            SearchPathType = searchPathType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "mb_block_type")]
+        public uint MbBlockType;
+/// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "subpixel_mode")]
+        public uint SubpixelMode;
+/// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "sad_adjust_mode")]
+        public uint SadAdjustMode;
+/// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "search_path_type")]
+        public uint SearchPathType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "cl_uint")]
-    [NativeName("Type.Name", "cl_uint")]
-    [NativeName("Name", "mb_block_type")]
-    public uint MbBlockType;
-/// <summary></summary>
-    [NativeName("Type", "cl_uint")]
-    [NativeName("Type.Name", "cl_uint")]
-    [NativeName("Name", "subpixel_mode")]
-    public uint SubpixelMode;
-/// <summary></summary>
-    [NativeName("Type", "cl_uint")]
-    [NativeName("Type.Name", "cl_uint")]
-    [NativeName("Name", "sad_adjust_mode")]
-    public uint SadAdjustMode;
-/// <summary></summary>
-    [NativeName("Type", "cl_uint")]
-    [NativeName("Type.Name", "cl_uint")]
-    [NativeName("Name", "search_path_type")]
-    public uint SearchPathType;
 }

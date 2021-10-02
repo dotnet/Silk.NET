@@ -12,105 +12,106 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.HP;
-
-public static class HPImageTransformOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.HP
 {
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    public static class HPImageTransformOverloads
     {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetImageTransformParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ImageTransformParameter(this HPImageTransform thisApi, [Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ImageTransformParameter(target, pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

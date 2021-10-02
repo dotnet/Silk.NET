@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_TouchFingerEvent")]
-public unsafe partial struct TouchFingerEvent
+namespace Silk.NET.SDL
 {
-    public TouchFingerEvent
-    (
+    [NativeName("Name", "SDL_TouchFingerEvent")]
+    public unsafe partial struct TouchFingerEvent
+    {
+        public TouchFingerEvent
+        (
             uint? type = null,
             uint? timestamp = null,
             long? touchId = null,
@@ -31,107 +31,108 @@ public unsafe partial struct TouchFingerEvent
             float? dy = null,
             float? pressure = null,
             uint? windowID = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (touchId is not null)
+            {
+                TouchId = touchId.Value;
+            }
+
+            if (fingerId is not null)
+            {
+                FingerId = fingerId.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (dx is not null)
+            {
+                Dx = dx.Value;
+            }
+
+            if (dy is not null)
+            {
+                Dy = dy.Value;
+            }
+
+            if (pressure is not null)
+            {
+                Pressure = pressure.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
         }
 
-        if (timestamp is not null)
-        {
-            Timestamp = timestamp.Value;
-        }
 
-        if (touchId is not null)
-        {
-            TouchId = touchId.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "type")]
+        public uint Type;
 
-        if (fingerId is not null)
-        {
-            FingerId = fingerId.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "timestamp")]
+        public uint Timestamp;
 
-        if (x is not null)
-        {
-            X = x.Value;
-        }
+        [NativeName("Type", "SDL_TouchID")]
+        [NativeName("Type.Name", "SDL_TouchID")]
+        [NativeName("Name", "touchId")]
+        public long TouchId;
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
+        [NativeName("Type", "SDL_FingerID")]
+        [NativeName("Type.Name", "SDL_FingerID")]
+        [NativeName("Name", "fingerId")]
+        public long FingerId;
 
-        if (dx is not null)
-        {
-            Dx = dx.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
+        public float X;
 
-        if (dy is not null)
-        {
-            Dy = dy.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
+        public float Y;
 
-        if (pressure is not null)
-        {
-            Pressure = pressure.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "dx")]
+        public float Dx;
 
-        if (windowID is not null)
-        {
-            WindowID = windowID.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "dy")]
+        public float Dy;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "pressure")]
+        public float Pressure;
+
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "windowID")]
+        public uint WindowID;
     }
-
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "type")]
-    public uint Type;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "timestamp")]
-    public uint Timestamp;
-
-    [NativeName("Type", "SDL_TouchID")]
-    [NativeName("Type.Name", "SDL_TouchID")]
-    [NativeName("Name", "touchId")]
-    public long TouchId;
-
-    [NativeName("Type", "SDL_FingerID")]
-    [NativeName("Type.Name", "SDL_FingerID")]
-    [NativeName("Name", "fingerId")]
-    public long FingerId;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "x")]
-    public float X;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "y")]
-    public float Y;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "dx")]
-    public float Dx;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "dy")]
-    public float Dy;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "pressure")]
-    public float Pressure;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "windowID")]
-    public uint WindowID;
 }

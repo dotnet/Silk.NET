@@ -7,14 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrSwapchainCreateFoveationFlagsFB")]
-public enum SwapchainCreateFoveationFlagsFB : long
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_SCALED_BIN_BIT_FB")]
-    SwapchainCreateFoveationScaledBinBitFB = 1,
-    [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_FRAGMENT_DENSITY_MAP_BIT_FB")]
-    SwapchainCreateFoveationFragmentDensityMapBitFB = 2,
+    [Flags()]
+    [NativeName("Name", "XrSwapchainCreateFoveationFlagsFB")]
+    public enum SwapchainCreateFoveationFlagsFB : long
+    {
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_SCALED_BIN_BIT_FB")]
+        SwapchainCreateFoveationScaledBinBitFB = 1,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_FOVEATION_FRAGMENT_DENSITY_MAP_BIT_FB")]
+        SwapchainCreateFoveationFragmentDensityMapBitFB = 2,
+    }
 }

@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_LOCAL_ROOT_SIGNATURE")]
-public unsafe partial struct LocalRootSignature
+namespace Silk.NET.Direct3D12
 {
-    public LocalRootSignature
-    (
-            ID3D12RootSignature* pLocalRootSignature = null
-    ) : this()
+    [NativeName("Name", "D3D12_LOCAL_ROOT_SIGNATURE")]
+    public unsafe partial struct LocalRootSignature
     {
-        if (pLocalRootSignature is not null)
+        public LocalRootSignature
+        (
+            ID3D12RootSignature* pLocalRootSignature = null
+        ) : this()
         {
-            PLocalRootSignature = pLocalRootSignature;
+            if (pLocalRootSignature is not null)
+            {
+                PLocalRootSignature = pLocalRootSignature;
+            }
         }
+
+
+        [NativeName("Type", "ID3D12RootSignature *")]
+        [NativeName("Type.Name", "ID3D12RootSignature *")]
+        [NativeName("Name", "pLocalRootSignature")]
+        public ID3D12RootSignature* PLocalRootSignature;
     }
-
-
-    [NativeName("Type", "ID3D12RootSignature *")]
-    [NativeName("Type.Name", "ID3D12RootSignature *")]
-    [NativeName("Name", "pLocalRootSignature")]
-    public ID3D12RootSignature* PLocalRootSignature;
 }

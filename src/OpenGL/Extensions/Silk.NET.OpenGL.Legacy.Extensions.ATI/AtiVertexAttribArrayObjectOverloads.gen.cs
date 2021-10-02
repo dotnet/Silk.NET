@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
-
-public static class AtiVertexAttribArrayObjectOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
-    public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+    public static class AtiVertexAttribArrayObjectOverloads
     {
-        // SpanOverloader
-        thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetVertexAttribArrayObject(this AtiVertexAttribArrayObject thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetVertexAttribArrayObject(index, pname, out @params.GetPinnableReference());
+        }
 
+    }
 }
 

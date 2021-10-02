@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_VIDEO_DECODER_BUFFER_DESC2")]
-public unsafe partial struct VideoDecoderBufferDesc2
+namespace Silk.NET.Direct3D11
 {
-    public VideoDecoderBufferDesc2
-    (
+    [NativeName("Name", "D3D11_VIDEO_DECODER_BUFFER_DESC2")]
+    public unsafe partial struct VideoDecoderBufferDesc2
+    {
+        public VideoDecoderBufferDesc2
+        (
             VideoDecoderBufferType? bufferType = null,
             uint? dataOffset = null,
             uint? dataSize = null,
@@ -30,97 +30,98 @@ public unsafe partial struct VideoDecoderBufferDesc2
             uint? subSampleMappingCount = null,
             uint? cBlocksStripeEncrypted = null,
             uint? cBlocksStripeClear = null
-    ) : this()
-    {
-        if (bufferType is not null)
+        ) : this()
         {
-            BufferType = bufferType.Value;
+            if (bufferType is not null)
+            {
+                BufferType = bufferType.Value;
+            }
+
+            if (dataOffset is not null)
+            {
+                DataOffset = dataOffset.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pIV is not null)
+            {
+                PIV = pIV;
+            }
+
+            if (iVSize is not null)
+            {
+                IVSize = iVSize.Value;
+            }
+
+            if (pSubSampleMappingBlock is not null)
+            {
+                PSubSampleMappingBlock = pSubSampleMappingBlock;
+            }
+
+            if (subSampleMappingCount is not null)
+            {
+                SubSampleMappingCount = subSampleMappingCount.Value;
+            }
+
+            if (cBlocksStripeEncrypted is not null)
+            {
+                CBlocksStripeEncrypted = cBlocksStripeEncrypted.Value;
+            }
+
+            if (cBlocksStripeClear is not null)
+            {
+                CBlocksStripeClear = cBlocksStripeClear.Value;
+            }
         }
 
-        if (dataOffset is not null)
-        {
-            DataOffset = dataOffset.Value;
-        }
 
-        if (dataSize is not null)
-        {
-            DataSize = dataSize.Value;
-        }
+        [NativeName("Type", "D3D11_VIDEO_DECODER_BUFFER_TYPE")]
+        [NativeName("Type.Name", "D3D11_VIDEO_DECODER_BUFFER_TYPE")]
+        [NativeName("Name", "BufferType")]
+        public VideoDecoderBufferType BufferType;
 
-        if (pIV is not null)
-        {
-            PIV = pIV;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DataOffset")]
+        public uint DataOffset;
 
-        if (iVSize is not null)
-        {
-            IVSize = iVSize.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DataSize")]
+        public uint DataSize;
 
-        if (pSubSampleMappingBlock is not null)
-        {
-            PSubSampleMappingBlock = pSubSampleMappingBlock;
-        }
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "pIV")]
+        public void* PIV;
 
-        if (subSampleMappingCount is not null)
-        {
-            SubSampleMappingCount = subSampleMappingCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "IVSize")]
+        public uint IVSize;
 
-        if (cBlocksStripeEncrypted is not null)
-        {
-            CBlocksStripeEncrypted = cBlocksStripeEncrypted.Value;
-        }
+        [NativeName("Type", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK *")]
+        [NativeName("Type.Name", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK *")]
+        [NativeName("Name", "pSubSampleMappingBlock")]
+        public VideoDecoderSubSampleMappingBlock* PSubSampleMappingBlock;
 
-        if (cBlocksStripeClear is not null)
-        {
-            CBlocksStripeClear = cBlocksStripeClear.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "SubSampleMappingCount")]
+        public uint SubSampleMappingCount;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cBlocksStripeEncrypted")]
+        public uint CBlocksStripeEncrypted;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cBlocksStripeClear")]
+        public uint CBlocksStripeClear;
     }
-
-
-    [NativeName("Type", "D3D11_VIDEO_DECODER_BUFFER_TYPE")]
-    [NativeName("Type.Name", "D3D11_VIDEO_DECODER_BUFFER_TYPE")]
-    [NativeName("Name", "BufferType")]
-    public VideoDecoderBufferType BufferType;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DataOffset")]
-    public uint DataOffset;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DataSize")]
-    public uint DataSize;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "pIV")]
-    public void* PIV;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "IVSize")]
-    public uint IVSize;
-
-    [NativeName("Type", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK *")]
-    [NativeName("Type.Name", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK *")]
-    [NativeName("Name", "pSubSampleMappingBlock")]
-    public VideoDecoderSubSampleMappingBlock* PSubSampleMappingBlock;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "SubSampleMappingCount")]
-    public uint SubSampleMappingCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cBlocksStripeEncrypted")]
-    public uint CBlocksStripeEncrypted;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cBlocksStripeClear")]
-    public uint CBlocksStripeClear;
 }

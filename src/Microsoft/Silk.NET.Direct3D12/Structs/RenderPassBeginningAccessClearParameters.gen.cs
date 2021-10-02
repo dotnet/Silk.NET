@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
-public unsafe partial struct RenderPassBeginningAccessClearParameters
+namespace Silk.NET.Direct3D12
 {
-    public RenderPassBeginningAccessClearParameters
-    (
-            ClearValue? clearValue = null
-    ) : this()
+    [NativeName("Name", "D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS")]
+    public unsafe partial struct RenderPassBeginningAccessClearParameters
     {
-        if (clearValue is not null)
+        public RenderPassBeginningAccessClearParameters
+        (
+            ClearValue? clearValue = null
+        ) : this()
         {
-            ClearValue = clearValue.Value;
+            if (clearValue is not null)
+            {
+                ClearValue = clearValue.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3D12_CLEAR_VALUE")]
+        [NativeName("Type.Name", "D3D12_CLEAR_VALUE")]
+        [NativeName("Name", "ClearValue")]
+        public ClearValue ClearValue;
     }
-
-
-    [NativeName("Type", "D3D12_CLEAR_VALUE")]
-    [NativeName("Type.Name", "D3D12_CLEAR_VALUE")]
-    [NativeName("Name", "ClearValue")]
-    public ClearValue ClearValue;
 }

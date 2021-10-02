@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_FEATURE_DATA_FORMAT_SUPPORT")]
-public unsafe partial struct FeatureDataFormatSupport
+namespace Silk.NET.Direct3D11
 {
-    public FeatureDataFormatSupport
-    (
+    [NativeName("Name", "D3D11_FEATURE_DATA_FORMAT_SUPPORT")]
+    public unsafe partial struct FeatureDataFormatSupport
+    {
+        public FeatureDataFormatSupport
+        (
             Silk.NET.DXGI.Format? inFormat = null,
             uint? outFormatSupport = null
-    ) : this()
-    {
-        if (inFormat is not null)
+        ) : this()
         {
-            InFormat = inFormat.Value;
+            if (inFormat is not null)
+            {
+                InFormat = inFormat.Value;
+            }
+
+            if (outFormatSupport is not null)
+            {
+                OutFormatSupport = outFormatSupport.Value;
+            }
         }
 
-        if (outFormatSupport is not null)
-        {
-            OutFormatSupport = outFormatSupport.Value;
-        }
+
+        [NativeName("Type", "DXGI_FORMAT")]
+        [NativeName("Type.Name", "DXGI_FORMAT")]
+        [NativeName("Name", "InFormat")]
+        public Silk.NET.DXGI.Format InFormat;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "OutFormatSupport")]
+        public uint OutFormatSupport;
     }
-
-
-    [NativeName("Type", "DXGI_FORMAT")]
-    [NativeName("Type.Name", "DXGI_FORMAT")]
-    [NativeName("Name", "InFormat")]
-    public Silk.NET.DXGI.Format InFormat;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "OutFormatSupport")]
-    public uint OutFormatSupport;
 }

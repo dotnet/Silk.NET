@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-public static class ExtAcquireDrmDisplayOverloads
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetDrmDisplay(this ExtAcquireDrmDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayKHR> display)
+    public static class ExtAcquireDrmDisplayOverloads
     {
-        // SpanOverloader
-        return thisApi.GetDrmDisplay(physicalDevice, drmFd, connectorId, out display.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetDrmDisplay(this ExtAcquireDrmDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] int drmFd, [Count(Count = 0)] uint connectorId, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayKHR> display)
+        {
+            // SpanOverloader
+            return thisApi.GetDrmDisplay(physicalDevice, drmFd, connectorId, out display.GetPinnableReference());
+        }
 
+    }
 }
 

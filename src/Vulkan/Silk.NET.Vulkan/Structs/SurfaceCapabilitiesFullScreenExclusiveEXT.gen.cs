@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSurfaceCapabilitiesFullScreenExclusiveEXT")]
-public unsafe partial struct SurfaceCapabilitiesFullScreenExclusiveEXT
+namespace Silk.NET.Vulkan
 {
-    public SurfaceCapabilitiesFullScreenExclusiveEXT
-    (
+    [NativeName("Name", "VkSurfaceCapabilitiesFullScreenExclusiveEXT")]
+    public unsafe partial struct SurfaceCapabilitiesFullScreenExclusiveEXT
+    {
+        public SurfaceCapabilitiesFullScreenExclusiveEXT
+        (
             StructureType? sType = StructureType.SurfaceCapabilitiesFullScreenExclusiveExt,
             void* pNext = null,
             Bool32? fullScreenExclusiveSupported = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fullScreenExclusiveSupported is not null)
+            {
+                FullScreenExclusiveSupported = fullScreenExclusiveSupported.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (fullScreenExclusiveSupported is not null)
-        {
-            FullScreenExclusiveSupported = fullScreenExclusiveSupported.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fullScreenExclusiveSupported")]
+        public Bool32 FullScreenExclusiveSupported;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "fullScreenExclusiveSupported")]
-    public Bool32 FullScreenExclusiveSupported;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneFrustumBoundMSFT")]
-public unsafe partial struct SceneFrustumBoundMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneFrustumBoundMSFT
-    (
+    [NativeName("Name", "XrSceneFrustumBoundMSFT")]
+    public unsafe partial struct SceneFrustumBoundMSFT
+    {
+        public SceneFrustumBoundMSFT
+        (
             Posef? pose = null,
             Fovf? fov = null,
             float? farDistance = null
-    ) : this()
-    {
-        if (pose is not null)
+        ) : this()
         {
-            Pose = pose.Value;
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (fov is not null)
+            {
+                Fov = fov.Value;
+            }
+
+            if (farDistance is not null)
+            {
+                FarDistance = farDistance.Value;
+            }
         }
 
-        if (fov is not null)
-        {
-            Fov = fov.Value;
-        }
-
-        if (farDistance is not null)
-        {
-            FarDistance = farDistance.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "pose")]
+        public Posef Pose;
+/// <summary></summary>
+        [NativeName("Type", "XrFovf")]
+        [NativeName("Type.Name", "XrFovf")]
+        [NativeName("Name", "fov")]
+        public Fovf Fov;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "farDistance")]
+        public float FarDistance;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrPosef")]
-    [NativeName("Type.Name", "XrPosef")]
-    [NativeName("Name", "pose")]
-    public Posef Pose;
-/// <summary></summary>
-    [NativeName("Type", "XrFovf")]
-    [NativeName("Type.Name", "XrFovf")]
-    [NativeName("Name", "fov")]
-    public Fovf Fov;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "farDistance")]
-    public float FarDistance;
 }

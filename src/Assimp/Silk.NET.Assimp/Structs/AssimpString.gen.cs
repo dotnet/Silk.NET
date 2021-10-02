@@ -14,29 +14,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiString")]
-public unsafe partial struct AssimpString
+namespace Silk.NET.Assimp
 {
-    public AssimpString
-    (
-            uint? length = null
-    ) : this()
+    [NativeName("Name", "aiString")]
+    public unsafe partial struct AssimpString
     {
-        if (length is not null)
+        public AssimpString
+        (
+            uint? length = null
+        ) : this()
         {
-            Length = length.Value;
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
         }
+
+
+        [NativeName("Type", "ai_uint32")]
+        [NativeName("Type.Name", "ai_uint32")]
+        [NativeName("Name", "length")]
+        public uint Length;
+        [NativeName("Type", "char [1024]")]
+        [NativeName("Type.Name", "char [1024]")]
+        [NativeName("Name", "data")]
+        public fixed byte Data[1024];
     }
-
-
-    [NativeName("Type", "ai_uint32")]
-    [NativeName("Type.Name", "ai_uint32")]
-    [NativeName("Name", "length")]
-    public uint Length;
-    [NativeName("Type", "char [1024]")]
-    [NativeName("Type.Name", "char [1024]")]
-    [NativeName("Name", "data")]
-    public fixed byte Data[1024];
 }

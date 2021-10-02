@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-public static class ExtDiscardRectanglesOverloads
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe void CmdSetDiscardRectangle(this ExtDiscardRectangles thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pDiscardRectangles)
+    public static class ExtDiscardRectanglesOverloads
     {
-        // SpanOverloader
-        thisApi.CmdSetDiscardRectangle(commandBuffer, firstDiscardRectangle, discardRectangleCount, in pDiscardRectangles.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetDiscardRectangle(this ExtDiscardRectangles thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pDiscardRectangles)
+        {
+            // SpanOverloader
+            thisApi.CmdSetDiscardRectangle(commandBuffer, firstDiscardRectangle, discardRectangleCount, in pDiscardRectangles.GetPinnableReference());
+        }
 
+    }
 }
 

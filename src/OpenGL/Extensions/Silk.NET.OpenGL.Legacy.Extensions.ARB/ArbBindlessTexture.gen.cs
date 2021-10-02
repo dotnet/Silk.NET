@@ -14,102 +14,103 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-[Extension("ARB_bindless_texture")]
-public unsafe partial class ArbBindlessTexture : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_bindless_texture";
-    [NativeApi(EntryPoint = "glGetImageHandleARB")]
-    public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
-
-    [NativeApi(EntryPoint = "glGetImageHandleARB")]
-    public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
-
-    [NativeApi(EntryPoint = "glGetImageHandleARB")]
-    public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
-
-    [NativeApi(EntryPoint = "glGetImageHandleARB")]
-    public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
-
-    [NativeApi(EntryPoint = "glGetTextureHandleARB")]
-    public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
-
-    [NativeApi(EntryPoint = "glGetTextureSamplerHandleARB")]
-    public partial ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
-
-    [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
-    public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] ulong* @params);
-
-    [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
-    public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] out ulong @params);
-
-    [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
-    public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] ulong* @params);
-
-    [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
-    public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] out ulong @params);
-
-    [NativeApi(EntryPoint = "glIsImageHandleResidentARB")]
-    public partial bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
-
-    [NativeApi(EntryPoint = "glIsTextureHandleResidentARB")]
-    public partial bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
-
-    [NativeApi(EntryPoint = "glMakeImageHandleNonResidentARB")]
-    public partial void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
-
-    [NativeApi(EntryPoint = "glMakeImageHandleResidentARB")]
-    public partial void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] ARB access);
-
-    [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentARB")]
-    public partial void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
-
-    [NativeApi(EntryPoint = "glMakeTextureHandleResidentARB")]
-    public partial void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
-
-    [NativeApi(EntryPoint = "glProgramUniformHandleui64ARB")]
-    public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
-
-    [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB")]
-    public unsafe partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
-
-    [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB")]
-    public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong values);
-
-    [NativeApi(EntryPoint = "glUniformHandleui64ARB")]
-    public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
-
-    [NativeApi(EntryPoint = "glUniformHandleui64vARB")]
-    public unsafe partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
-
-    [NativeApi(EntryPoint = "glUniformHandleui64vARB")]
-    public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
-
-    [NativeApi(EntryPoint = "glVertexAttribL1ui64ARB")]
-    public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong x);
-
-    [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
-    public unsafe partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong* v);
-
-    [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
-    public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in ulong v);
-
-    public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+    [Extension("ARB_bindless_texture")]
+    public unsafe partial class ArbBindlessTexture : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
-    }
+        public const string ExtensionName = "ARB_bindless_texture";
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
 
-    public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
-    {
-        // ImplicitCountSpanOverloader
-        UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
 
-    public ArbBindlessTexture(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
+
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+
+        [NativeApi(EntryPoint = "glGetTextureHandleARB")]
+        public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+
+        [NativeApi(EntryPoint = "glGetTextureSamplerHandleARB")]
+        public partial ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+
+        [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
+        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] ulong* @params);
+
+        [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
+        public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.Out)] out ulong @params);
+
+        [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
+        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] ulong* @params);
+
+        [NativeApi(EntryPoint = "glGetVertexAttribLui64vARB")]
+        public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Flow(FlowDirection.Out)] out ulong @params);
+
+        [NativeApi(EntryPoint = "glIsImageHandleResidentARB")]
+        public partial bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
+
+        [NativeApi(EntryPoint = "glIsTextureHandleResidentARB")]
+        public partial bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+
+        [NativeApi(EntryPoint = "glMakeImageHandleNonResidentARB")]
+        public partial void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+
+        [NativeApi(EntryPoint = "glMakeImageHandleResidentARB")]
+        public partial void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] ARB access);
+
+        [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentARB")]
+        public partial void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+
+        [NativeApi(EntryPoint = "glMakeTextureHandleResidentARB")]
+        public partial void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+
+        [NativeApi(EntryPoint = "glProgramUniformHandleui64ARB")]
+        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+
+        [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB")]
+        public unsafe partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+
+        [NativeApi(EntryPoint = "glProgramUniformHandleui64vARB")]
+        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong values);
+
+        [NativeApi(EntryPoint = "glUniformHandleui64ARB")]
+        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+
+        [NativeApi(EntryPoint = "glUniformHandleui64vARB")]
+        public unsafe partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+
+        [NativeApi(EntryPoint = "glUniformHandleui64vARB")]
+        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
+
+        [NativeApi(EntryPoint = "glVertexAttribL1ui64ARB")]
+        public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong x);
+
+        [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
+        public unsafe partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong* v);
+
+        [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
+        public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in ulong v);
+
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public ArbBindlessTexture(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkShadingRatePaletteNV")]
-public unsafe partial struct ShadingRatePaletteNV
+namespace Silk.NET.Vulkan
 {
-    public ShadingRatePaletteNV
-    (
+    [NativeName("Name", "VkShadingRatePaletteNV")]
+    public unsafe partial struct ShadingRatePaletteNV
+    {
+        public ShadingRatePaletteNV
+        (
             uint? shadingRatePaletteEntryCount = null,
             ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = null
-    ) : this()
-    {
-        if (shadingRatePaletteEntryCount is not null)
+        ) : this()
         {
-            ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount.Value;
+            if (shadingRatePaletteEntryCount is not null)
+            {
+                ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount.Value;
+            }
+
+            if (pShadingRatePaletteEntries is not null)
+            {
+                PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            }
         }
 
-        if (pShadingRatePaletteEntries is not null)
-        {
-            PShadingRatePaletteEntries = pShadingRatePaletteEntries;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "shadingRatePaletteEntryCount")]
+        public uint ShadingRatePaletteEntryCount;
+/// <summary></summary>
+        [NativeName("Type", "VkShadingRatePaletteEntryNV*")]
+        [NativeName("Type.Name", "VkShadingRatePaletteEntryNV")]
+        [NativeName("Name", "pShadingRatePaletteEntries")]
+        public ShadingRatePaletteEntryNV* PShadingRatePaletteEntries;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "shadingRatePaletteEntryCount")]
-    public uint ShadingRatePaletteEntryCount;
-/// <summary></summary>
-    [NativeName("Type", "VkShadingRatePaletteEntryNV*")]
-    [NativeName("Type.Name", "VkShadingRatePaletteEntryNV")]
-    [NativeName("Name", "pShadingRatePaletteEntries")]
-    public ShadingRatePaletteEntryNV* PShadingRatePaletteEntries;
 }

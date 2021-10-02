@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBindShaderGroupIndirectCommandNV")]
-public unsafe partial struct BindShaderGroupIndirectCommandNV
+namespace Silk.NET.Vulkan
 {
-    public BindShaderGroupIndirectCommandNV
-    (
-            uint? groupIndex = null
-    ) : this()
+    [NativeName("Name", "VkBindShaderGroupIndirectCommandNV")]
+    public unsafe partial struct BindShaderGroupIndirectCommandNV
     {
-        if (groupIndex is not null)
+        public BindShaderGroupIndirectCommandNV
+        (
+            uint? groupIndex = null
+        ) : this()
         {
-            GroupIndex = groupIndex.Value;
+            if (groupIndex is not null)
+            {
+                GroupIndex = groupIndex.Value;
+            }
         }
-    }
 
 /// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "groupIndex")]
-    public uint GroupIndex;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "groupIndex")]
+        public uint GroupIndex;
+    }
 }

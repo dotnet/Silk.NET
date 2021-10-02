@@ -14,12 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio;
-
-[Guid("4fc3b166-972a-40cf-bc37-7db03db2fba3")]
-[NativeName("Name", "AudioVolumeMeter")]
-public unsafe partial struct AudioVolumeMeter
+namespace Silk.NET.XAudio
 {
-    public static readonly Guid Guid = new("4fc3b166-972a-40cf-bc37-7db03db2fba3");
+    [Guid("4fc3b166-972a-40cf-bc37-7db03db2fba3")]
+    [NativeName("Name", "AudioVolumeMeter")]
+    public unsafe partial struct AudioVolumeMeter
+    {
+        public static readonly Guid Guid = new("4fc3b166-972a-40cf-bc37-7db03db2fba3");
 
+    }
 }

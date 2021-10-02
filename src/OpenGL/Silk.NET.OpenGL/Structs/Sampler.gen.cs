@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "sampler")]
-public unsafe partial struct Sampler
+namespace Silk.NET.OpenGL
 {
-    public Sampler
-    (
-            uint? handle = null
-    ) : this()
+    [NativeName("Name", "sampler")]
+    public unsafe partial struct Sampler
     {
-        if (handle is not null)
+        public Sampler
+        (
+            uint? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public uint Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public uint Handle;
 }

@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDescriptorUpdateTemplateTypeKHR")]
-public enum DescriptorUpdateTemplateTypeKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
-    DescriptorUpdateTemplateTypeDescriptorSet = 0,
+    [NativeName("Name", "VkDescriptorUpdateTemplateTypeKHR")]
+    public enum DescriptorUpdateTemplateTypeKHR : int
+    {
+        [NativeName("Name", "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
+        DescriptorUpdateTemplateTypeDescriptorSet = 0,
+    }
 }

@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-public static class ArbFramebufferNoAttachmentsOverloads
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    public static class ArbFramebufferNoAttachmentsOverloads
     {
-        // SpanOverloader
-        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetFramebufferParameter(this ArbFramebufferNoAttachments thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+        }
 
+    }
 }
 

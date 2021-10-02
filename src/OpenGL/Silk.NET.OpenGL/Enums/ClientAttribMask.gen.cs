@@ -7,9 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "ClientAttribMask")]
-public enum ClientAttribMask : int
+namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "ClientAttribMask")]
+    public enum ClientAttribMask : int
+    {
+    }
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkShaderModuleValidationCacheCreateInfoEXT")]
-public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public ShaderModuleValidationCacheCreateInfoEXT
-    (
+    [NativeName("Name", "VkShaderModuleValidationCacheCreateInfoEXT")]
+    public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
+    {
+        public ShaderModuleValidationCacheCreateInfoEXT
+        (
             StructureType? sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
             void* pNext = null,
             ValidationCacheEXT? validationCache = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (validationCache is not null)
+            {
+                ValidationCache = validationCache.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (validationCache is not null)
-        {
-            ValidationCache = validationCache.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkValidationCacheEXT")]
+        [NativeName("Type.Name", "VkValidationCacheEXT")]
+        [NativeName("Name", "validationCache")]
+        public ValidationCacheEXT ValidationCache;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkValidationCacheEXT")]
-    [NativeName("Type.Name", "VkValidationCacheEXT")]
-    [NativeName("Name", "validationCache")]
-    public ValidationCacheEXT ValidationCache;
 }

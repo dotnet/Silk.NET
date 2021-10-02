@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.EXT;
-
-[Extension("EXT_polygon_offset_clamp")]
-public unsafe partial class ExtPolygonOffsetClamp : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_polygon_offset_clamp";
-    [NativeApi(EntryPoint = "glPolygonOffsetClampEXT")]
-    public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
-
-    public ExtPolygonOffsetClamp(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_polygon_offset_clamp")]
+    public unsafe partial class ExtPolygonOffsetClamp : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_polygon_offset_clamp";
+        [NativeApi(EntryPoint = "glPolygonOffsetClampEXT")]
+        public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
+
+        public ExtPolygonOffsetClamp(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

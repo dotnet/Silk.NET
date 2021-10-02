@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceFeatures2")]
-public unsafe partial struct PhysicalDeviceFeatures2
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceFeatures2
-    (
+    [NativeName("Name", "VkPhysicalDeviceFeatures2")]
+    public unsafe partial struct PhysicalDeviceFeatures2
+    {
+        public PhysicalDeviceFeatures2
+        (
             StructureType? sType = StructureType.PhysicalDeviceFeatures2,
             void* pNext = null,
             PhysicalDeviceFeatures? features = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (features is not null)
+            {
+                Features = features.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (features is not null)
-        {
-            Features = features.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPhysicalDeviceFeatures")]
+        [NativeName("Type.Name", "VkPhysicalDeviceFeatures")]
+        [NativeName("Name", "features")]
+        public PhysicalDeviceFeatures Features;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPhysicalDeviceFeatures")]
-    [NativeName("Type.Name", "VkPhysicalDeviceFeatures")]
-    [NativeName("Name", "features")]
-    public PhysicalDeviceFeatures Features;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSemaphoreSignalInfoKHR")]
-public unsafe partial struct SemaphoreSignalInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public SemaphoreSignalInfoKHR
-    (
+    [NativeName("Name", "VkSemaphoreSignalInfoKHR")]
+    public unsafe partial struct SemaphoreSignalInfoKHR
+    {
+        public SemaphoreSignalInfoKHR
+        (
             StructureType? sType = StructureType.SemaphoreSignalInfo,
             void* pNext = null,
             Semaphore? semaphore = null,
             ulong? value = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (semaphore is not null)
-        {
-            Semaphore = semaphore.Value;
-        }
-
-        if (value is not null)
-        {
-            Value = value.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkSemaphore")]
+        [NativeName("Type.Name", "VkSemaphore")]
+        [NativeName("Name", "semaphore")]
+        public Semaphore Semaphore;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "value")]
+        public ulong Value;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkSemaphore")]
-    [NativeName("Type.Name", "VkSemaphore")]
-    [NativeName("Name", "semaphore")]
-    public Semaphore Semaphore;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "value")]
-    public ulong Value;
 }

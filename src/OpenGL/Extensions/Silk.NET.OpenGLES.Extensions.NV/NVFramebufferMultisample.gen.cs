@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV;
-
-[Extension("NV_framebuffer_multisample")]
-public unsafe partial class NVFramebufferMultisample : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.NV
 {
-    public const string ExtensionName = "NV_framebuffer_multisample";
-    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
-    public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
-    public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
-    public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
-    public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-    public NVFramebufferMultisample(INativeContext ctx)
-        : base(ctx)
+    [Extension("NV_framebuffer_multisample")]
+    public unsafe partial class NVFramebufferMultisample : NativeExtension<GL>
     {
+        public const string ExtensionName = "NV_framebuffer_multisample";
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        public NVFramebufferMultisample(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

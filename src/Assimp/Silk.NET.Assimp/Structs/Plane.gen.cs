@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiPlane")]
-public unsafe partial struct Plane
+namespace Silk.NET.Assimp
 {
-    public Plane
-    (
+    [NativeName("Name", "aiPlane")]
+    public unsafe partial struct Plane
+    {
+        public Plane
+        (
             float? a = null,
             float? b = null,
             float? c = null,
             float? d = null
-    ) : this()
-    {
-        if (a is not null)
+        ) : this()
         {
-            A = a.Value;
+            if (a is not null)
+            {
+                A = a.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (c is not null)
+            {
+                C = c.Value;
+            }
+
+            if (d is not null)
+            {
+                D = d.Value;
+            }
         }
 
-        if (b is not null)
-        {
-            B = b.Value;
-        }
 
-        if (c is not null)
-        {
-            C = c.Value;
-        }
+        [NativeName("Type", "ai_real")]
+        [NativeName("Type.Name", "ai_real")]
+        [NativeName("Name", "a")]
+        public float A;
 
-        if (d is not null)
-        {
-            D = d.Value;
-        }
+        [NativeName("Type", "ai_real")]
+        [NativeName("Type.Name", "ai_real")]
+        [NativeName("Name", "b")]
+        public float B;
+
+        [NativeName("Type", "ai_real")]
+        [NativeName("Type.Name", "ai_real")]
+        [NativeName("Name", "c")]
+        public float C;
+
+        [NativeName("Type", "ai_real")]
+        [NativeName("Type.Name", "ai_real")]
+        [NativeName("Name", "d")]
+        public float D;
     }
-
-
-    [NativeName("Type", "ai_real")]
-    [NativeName("Type.Name", "ai_real")]
-    [NativeName("Name", "a")]
-    public float A;
-
-    [NativeName("Type", "ai_real")]
-    [NativeName("Type.Name", "ai_real")]
-    [NativeName("Name", "b")]
-    public float B;
-
-    [NativeName("Type", "ai_real")]
-    [NativeName("Type.Name", "ai_real")]
-    [NativeName("Name", "c")]
-    public float C;
-
-    [NativeName("Type", "ai_real")]
-    [NativeName("Type.Name", "ai_real")]
-    [NativeName("Name", "d")]
-    public float D;
 }

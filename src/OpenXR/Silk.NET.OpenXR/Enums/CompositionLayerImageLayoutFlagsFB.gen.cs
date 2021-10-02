@@ -7,12 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrCompositionLayerImageLayoutFlagsFB")]
-public enum CompositionLayerImageLayoutFlagsFB : long
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_COMPOSITION_LAYER_IMAGE_LAYOUT_VERTICAL_FLIP_BIT_FB")]
-    CompositionLayerImageLayoutVerticalFlipBitFB = 1,
+    [Flags()]
+    [NativeName("Name", "XrCompositionLayerImageLayoutFlagsFB")]
+    public enum CompositionLayerImageLayoutFlagsFB : long
+    {
+        [NativeName("Name", "XR_COMPOSITION_LAYER_IMAGE_LAYOUT_VERTICAL_FLIP_BIT_FB")]
+        CompositionLayerImageLayoutVerticalFlipBitFB = 1,
+    }
 }

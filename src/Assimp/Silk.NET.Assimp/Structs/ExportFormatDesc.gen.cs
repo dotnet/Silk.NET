@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiExportFormatDesc")]
-public unsafe partial struct ExportFormatDesc
+namespace Silk.NET.Assimp
 {
-    public ExportFormatDesc
-    (
+    [NativeName("Name", "aiExportFormatDesc")]
+    public unsafe partial struct ExportFormatDesc
+    {
+        public ExportFormatDesc
+        (
             byte* id = null,
             byte* description = null,
             byte* fileExtension = null
-    ) : this()
-    {
-        if (id is not null)
+        ) : this()
         {
-            Id = id;
+            if (id is not null)
+            {
+                Id = id;
+            }
+
+            if (description is not null)
+            {
+                Description = description;
+            }
+
+            if (fileExtension is not null)
+            {
+                FileExtension = fileExtension;
+            }
         }
 
-        if (description is not null)
-        {
-            Description = description;
-        }
 
-        if (fileExtension is not null)
-        {
-            FileExtension = fileExtension;
-        }
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "id")]
+        public byte* Id;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "description")]
+        public byte* Description;
+
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
+        [NativeName("Name", "fileExtension")]
+        public byte* FileExtension;
     }
-
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "id")]
-    public byte* Id;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "description")]
-    public byte* Description;
-
-    [NativeName("Type", "const char *")]
-    [NativeName("Type.Name", "const char *")]
-    [NativeName("Name", "fileExtension")]
-    public byte* FileExtension;
 }

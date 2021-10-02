@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "SyncCondition")]
-public enum SyncCondition : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_SYNC_GPU_COMMANDS_COMPLETE")]
-    SyncGpuCommandsComplete = 0x9117,
+    [NativeName("Name", "SyncCondition")]
+    public enum SyncCondition : int
+    {
+        [NativeName("Name", "GL_SYNC_GPU_COMMANDS_COMPLETE")]
+        SyncGpuCommandsComplete = 0x9117,
+    }
 }

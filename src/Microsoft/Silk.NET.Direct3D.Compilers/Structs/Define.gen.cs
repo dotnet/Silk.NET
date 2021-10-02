@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D.Compilers;
-
-[NativeName("Name", "DxcDefine")]
-public unsafe partial struct Define
+namespace Silk.NET.Direct3D.Compilers
 {
-    public Define
-    (
+    [NativeName("Name", "DxcDefine")]
+    public unsafe partial struct Define
+    {
+        public Define
+        (
             char* name = null,
             char* value = null
-    ) : this()
-    {
-        if (name is not null)
+        ) : this()
         {
-            Name = name;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (value is not null)
+            {
+                Value = value;
+            }
         }
 
-        if (value is not null)
-        {
-            Value = value;
-        }
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "Name")]
+        public char* Name;
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "Value")]
+        public char* Value;
     }
-
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "Name")]
-    public char* Name;
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "Value")]
-    public char* Value;
 }

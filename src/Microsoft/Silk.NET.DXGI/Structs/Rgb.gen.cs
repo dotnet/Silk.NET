@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_RGB")]
-public unsafe partial struct Rgb
+namespace Silk.NET.DXGI
 {
-    public Rgb
-    (
+    [NativeName("Name", "DXGI_RGB")]
+    public unsafe partial struct Rgb
+    {
+        public Rgb
+        (
             float? red = null,
             float? green = null,
             float? blue = null
-    ) : this()
-    {
-        if (red is not null)
+        ) : this()
         {
-            Red = red.Value;
+            if (red is not null)
+            {
+                Red = red.Value;
+            }
+
+            if (green is not null)
+            {
+                Green = green.Value;
+            }
+
+            if (blue is not null)
+            {
+                Blue = blue.Value;
+            }
         }
 
-        if (green is not null)
-        {
-            Green = green.Value;
-        }
 
-        if (blue is not null)
-        {
-            Blue = blue.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Red")]
+        public float Red;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Green")]
+        public float Green;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Blue")]
+        public float Blue;
     }
-
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Red")]
-    public float Red;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Green")]
-    public float Green;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Blue")]
-    public float Blue;
 }

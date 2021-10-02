@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_FEATURE_DATA_ARCHITECTURE_INFO")]
-public unsafe partial struct FeatureDataArchitectureInfo
+namespace Silk.NET.Direct3D11
 {
-    public FeatureDataArchitectureInfo
-    (
-            int? tileBasedDeferredRenderer = null
-    ) : this()
+    [NativeName("Name", "D3D11_FEATURE_DATA_ARCHITECTURE_INFO")]
+    public unsafe partial struct FeatureDataArchitectureInfo
     {
-        if (tileBasedDeferredRenderer is not null)
+        public FeatureDataArchitectureInfo
+        (
+            int? tileBasedDeferredRenderer = null
+        ) : this()
         {
-            TileBasedDeferredRenderer = tileBasedDeferredRenderer.Value;
+            if (tileBasedDeferredRenderer is not null)
+            {
+                TileBasedDeferredRenderer = tileBasedDeferredRenderer.Value;
+            }
         }
+
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "TileBasedDeferredRenderer")]
+        public int TileBasedDeferredRenderer;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "TileBasedDeferredRenderer")]
-    public int TileBasedDeferredRenderer;
 }

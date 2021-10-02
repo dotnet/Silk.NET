@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OES;
-
-[Extension("OES_geometry_shader")]
-public unsafe partial class OesGeometryShader : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.OES
 {
-    public const string ExtensionName = "OES_geometry_shader";
-    [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-    public partial void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-    public partial void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-    public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-    public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
-
-    public OesGeometryShader(INativeContext ctx)
-        : base(ctx)
+    [Extension("OES_geometry_shader")]
+    public unsafe partial class OesGeometryShader : NativeExtension<GL>
     {
+        public const string ExtensionName = "OES_geometry_shader";
+        [NativeApi(EntryPoint = "glFramebufferTextureOES")]
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureOES")]
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureOES")]
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureOES")]
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+
+        public OesGeometryShader(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

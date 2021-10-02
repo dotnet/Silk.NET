@@ -14,267 +14,268 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_texture_object")]
-public unsafe partial class ExtTextureObject : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_texture_object";
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
-
-    [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-    public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
-
-    [NativeApi(EntryPoint = "glBindTextureEXT")]
-    public partial void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
-
-    [NativeApi(EntryPoint = "glBindTextureEXT")]
-    public partial void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture);
-
-    [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-    public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
-
-    [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-    public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures);
-
-    [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-    public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures);
-
-    [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-    public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures);
-
-    [NativeApi(EntryPoint = "glGenTexturesEXT")]
-    public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
-
-    [NativeApi(EntryPoint = "glGenTexturesEXT")]
-    public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint textures);
-
-    [NativeApi(EntryPoint = "glGenTexturesEXT")]
-    public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Texture* textures);
-
-    [NativeApi(EntryPoint = "glGenTexturesEXT")]
-    public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Texture textures);
-
-    [NativeApi(EntryPoint = "glIsTextureEXT")]
-    public partial bool IsTexture([Flow(FlowDirection.In)] uint texture);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
-
-    [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-    public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
-
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+    [Extension("EXT_texture_object")]
+    public unsafe partial class ExtTextureObject : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-    }
+        public const string ExtensionName = "EXT_texture_object";
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
-    public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
-    {
-        // ImplicitCountSpanOverloader
-        return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
 
-    public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
-    {
-        // ArrayParameterOverloader
-        DeleteTextures(1, &textures);
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-    public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
-    {
-        // ImplicitCountSpanOverloader
-        DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-    public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
-    {
-        // ImplicitCountSpanOverloader
-        DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
 
-    public unsafe uint GenTexture()
-    {
-        const uint n = 1;
-        // ReturnTypeOverloader
-        uint ret = default;
-        GenTextures(n, &ret);
-        return ret;
-    }
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
-    public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
-    {
-        // ImplicitCountSpanOverloader
-        GenTextures((uint) textures.Length, out textures.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glBindTextureEXT")]
+        public partial void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
 
-    public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
-    {
-        // ImplicitCountSpanOverloader
-        GenTextures((uint) textures.Length, out textures.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glBindTextureEXT")]
+        public partial void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
-    }
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
-    }
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
-    public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
-    {
-        // ImplicitCountSpanOverloader
-        PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint textures);
 
-    public ExtTextureObject(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Texture* textures);
+
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Texture textures);
+
+        [NativeApi(EntryPoint = "glIsTextureEXT")]
+        public partial bool IsTexture([Flow(FlowDirection.In)] uint texture);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
+        {
+            // ArrayParameterOverloader
+            DeleteTextures(1, &textures);
+        }
+
+        public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe uint GenTexture()
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GenTextures(n, &ret);
+            return ret;
+        }
+
+        public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            GenTextures((uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            GenTextures((uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
+        public ExtTextureObject(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

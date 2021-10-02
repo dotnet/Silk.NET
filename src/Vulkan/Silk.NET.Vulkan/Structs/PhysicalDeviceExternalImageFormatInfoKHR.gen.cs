@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfoKHR")]
-public unsafe partial struct PhysicalDeviceExternalImageFormatInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceExternalImageFormatInfoKHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfoKHR")]
+    public unsafe partial struct PhysicalDeviceExternalImageFormatInfoKHR
+    {
+        public PhysicalDeviceExternalImageFormatInfoKHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceExternalImageFormatInfo,
             void* pNext = null,
             ExternalMemoryHandleTypeFlags? handleType = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (handleType is not null)
-        {
-            HandleType = handleType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Name", "handleType")]
+        public ExternalMemoryHandleTypeFlags HandleType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
-    [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
-    [NativeName("Name", "handleType")]
-    public ExternalMemoryHandleTypeFlags HandleType;
 }

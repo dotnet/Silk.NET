@@ -12,27 +12,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-public static class ArbSampleLocationsOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public static unsafe void FramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+    public static class ArbSampleLocationsOverloads
     {
-        // SpanOverloader
-        thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
-    }
+        public static unsafe void FramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
+        }
 
-    public static unsafe void FramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-    {
-        // SpanOverloader
-        thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
-    }
+        public static unsafe void FramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
+        }
 
-    public static unsafe void NamedFramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-    {
-        // SpanOverloader
-        thisApi.NamedFramebufferSampleLocations(framebuffer, start, count, in v.GetPinnableReference());
-    }
+        public static unsafe void NamedFramebufferSampleLocations(this ArbSampleLocations thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.NamedFramebufferSampleLocations(framebuffer, start, count, in v.GetPinnableReference());
+        }
 
+    }
 }
 

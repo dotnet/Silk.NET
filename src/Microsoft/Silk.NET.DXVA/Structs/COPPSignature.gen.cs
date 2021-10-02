@@ -14,13 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPSignature")]
-public unsafe partial struct COPPSignature
+namespace Silk.NET.DXVA
 {
-    [NativeName("Type", "UCHAR [256]")]
-    [NativeName("Type.Name", "UCHAR [256]")]
-    [NativeName("Name", "Signature")]
-    public fixed byte Signature[256];
+    [NativeName("Name", "_DXVA_COPPSignature")]
+    public unsafe partial struct COPPSignature
+    {
+        [NativeName("Type", "UCHAR [256]")]
+        [NativeName("Type.Name", "UCHAR [256]")]
+        [NativeName("Name", "Signature")]
+        public fixed byte Signature[256];
+    }
 }

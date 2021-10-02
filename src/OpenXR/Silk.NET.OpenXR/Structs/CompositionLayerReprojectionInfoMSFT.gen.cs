@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrCompositionLayerReprojectionInfoMSFT")]
-public unsafe partial struct CompositionLayerReprojectionInfoMSFT
+namespace Silk.NET.OpenXR
 {
-    public CompositionLayerReprojectionInfoMSFT
-    (
+    [NativeName("Name", "XrCompositionLayerReprojectionInfoMSFT")]
+    public unsafe partial struct CompositionLayerReprojectionInfoMSFT
+    {
+        public CompositionLayerReprojectionInfoMSFT
+        (
             StructureType? type = StructureType.TypeCompositionLayerReprojectionInfoMsft,
             void* next = null,
             ReprojectionModeMSFT? reprojectionMode = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (reprojectionMode is not null)
+            {
+                ReprojectionMode = reprojectionMode.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (reprojectionMode is not null)
-        {
-            ReprojectionMode = reprojectionMode.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrReprojectionModeMSFT")]
+        [NativeName("Type.Name", "XrReprojectionModeMSFT")]
+        [NativeName("Name", "reprojectionMode")]
+        public ReprojectionModeMSFT ReprojectionMode;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrReprojectionModeMSFT")]
-    [NativeName("Type.Name", "XrReprojectionModeMSFT")]
-    [NativeName("Name", "reprojectionMode")]
-    public ReprojectionModeMSFT ReprojectionMode;
 }

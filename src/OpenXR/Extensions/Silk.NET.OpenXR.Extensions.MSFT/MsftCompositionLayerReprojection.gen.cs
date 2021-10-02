@@ -14,45 +14,46 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.MSFT;
-
-[Extension("XR_MSFT_composition_layer_reprojection")]
-public unsafe partial class MsftCompositionLayerReprojection : NativeExtension<XR>
+namespace Silk.NET.OpenXR.Extensions.MSFT
 {
-    public const string ExtensionName = "XR_MSFT_composition_layer_reprojection";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
-    public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
-    public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
-    public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
-    public partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
-
-    /// <summary>To be documented.</summary>
-    public unsafe Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+    [Extension("XR_MSFT_composition_layer_reprojection")]
+    public unsafe partial class MsftCompositionLayerReprojection : NativeExtension<XR>
     {
-        // ImplicitCountSpanOverloader
-        return EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, (uint) modes.Length, modeCountOutput, ref modes.GetPinnableReference());
-    }
+        public const string ExtensionName = "XR_MSFT_composition_layer_reprojection";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
 
-    /// <summary>To be documented.</summary>
-    public unsafe Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
-    {
-        // ImplicitCountSpanOverloader
-        return EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, (uint) modes.Length, ref modeCountOutput, ref modes.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
 
-    public MsftCompositionLayerReprojection(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        public unsafe partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrEnumerateReprojectionModesMSFT")]
+        public partial Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] ref ReprojectionModeMSFT modes);
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, (uint) modes.Length, modeCountOutput, ref modes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateReprojectionModesMsft([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] ref uint modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, (uint) modes.Length, ref modeCountOutput, ref modes.GetPinnableReference());
+        }
+
+        public MsftCompositionLayerReprojection(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

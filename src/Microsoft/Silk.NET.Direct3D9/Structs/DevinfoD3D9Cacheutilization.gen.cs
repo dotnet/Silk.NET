@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DDEVINFO_D3D9CACHEUTILIZATION")]
-public unsafe partial struct DevinfoD3D9Cacheutilization
+namespace Silk.NET.Direct3D9
 {
-    public DevinfoD3D9Cacheutilization
-    (
+    [NativeName("Name", "_D3DDEVINFO_D3D9CACHEUTILIZATION")]
+    public unsafe partial struct DevinfoD3D9Cacheutilization
+    {
+        public DevinfoD3D9Cacheutilization
+        (
             float? textureCacheHitRate = null,
             float? postTransformVertexCacheHitRate = null
-    ) : this()
-    {
-        if (textureCacheHitRate is not null)
+        ) : this()
         {
-            TextureCacheHitRate = textureCacheHitRate.Value;
+            if (textureCacheHitRate is not null)
+            {
+                TextureCacheHitRate = textureCacheHitRate.Value;
+            }
+
+            if (postTransformVertexCacheHitRate is not null)
+            {
+                PostTransformVertexCacheHitRate = postTransformVertexCacheHitRate.Value;
+            }
         }
 
-        if (postTransformVertexCacheHitRate is not null)
-        {
-            PostTransformVertexCacheHitRate = postTransformVertexCacheHitRate.Value;
-        }
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "TextureCacheHitRate")]
+        public float TextureCacheHitRate;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "PostTransformVertexCacheHitRate")]
+        public float PostTransformVertexCacheHitRate;
     }
-
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "TextureCacheHitRate")]
-    public float TextureCacheHitRate;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "PostTransformVertexCacheHitRate")]
-    public float PostTransformVertexCacheHitRate;
 }

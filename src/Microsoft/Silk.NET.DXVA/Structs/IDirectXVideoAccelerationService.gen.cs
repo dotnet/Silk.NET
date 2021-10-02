@@ -14,145 +14,95 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[Guid("fc51a550-d5e7-11d9-af55-00054e43ff02")]
-[NativeName("Name", "IDirectXVideoAccelerationService")]
-public unsafe partial struct IDirectXVideoAccelerationService
+namespace Silk.NET.DXVA
 {
-    public static readonly Guid Guid = new("fc51a550-d5e7-11d9-af55-00054e43ff02");
+    [NativeName("Name", "IDirectXVideoAccelerationService")]
+    public unsafe partial struct IDirectXVideoAccelerationService
+    {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDirectXVideoAccelerationService val)
+            => Unsafe.As<IDirectXVideoAccelerationService, Silk.NET.Core.Native.IUnknown>(ref val);
 
-    public static implicit operator Silk.NET.Core.Native.IUnknown(IDirectXVideoAccelerationService val)
-        => Unsafe.As<IDirectXVideoAccelerationService, Silk.NET.Core.Native.IUnknown>(ref val);
-
-    public IDirectXVideoAccelerationService
-    (
+        public IDirectXVideoAccelerationService
+        (
             void** lpVtbl = null
-    ) : this()
-    {
-        if (lpVtbl is not null)
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
-    }
 
 
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "lpVtbl")]
-    public void** LpVtbl;
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "lpVtbl")]
+        public void** LpVtbl;
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly uint AddRef()
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)LpVtbl[1])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly uint Release()
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)LpVtbl[2])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateSurface(uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, IDirect3DSurface9** ppSurface, void** pSharedHandle)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateSurface(uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (void** pSharedHandlePtr = &pSharedHandle)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandlePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateSurface(uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandle);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateSurface(uint Width, uint Height, uint BackBuffers, Silk.NET.Direct3D9.Format Format, Silk.NET.Direct3D9.Pool Pool, uint Usage, uint DxvaType, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
-    {
-        var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
-        {
-            fixed (void** pSharedHandlePtr = &pSharedHandle)
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
+            return ret;
         }
-        return ret;
-    }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvObjectPtr = &ppvObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoAccelerationService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint AddRef()
+        {
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)LpVtbl[1])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint Release()
+        {
+            var @this = (IDirectXVideoAccelerationService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoAccelerationService*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+    }
 }

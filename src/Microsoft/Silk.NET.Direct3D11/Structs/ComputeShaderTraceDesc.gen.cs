@@ -14,33 +14,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_COMPUTE_SHADER_TRACE_DESC")]
-public unsafe partial struct ComputeShaderTraceDesc
+namespace Silk.NET.Direct3D11
 {
-    public ComputeShaderTraceDesc
-    (
-            ulong? invocation = null
-    ) : this()
+    [NativeName("Name", "D3D11_COMPUTE_SHADER_TRACE_DESC")]
+    public unsafe partial struct ComputeShaderTraceDesc
     {
-        if (invocation is not null)
+        public ComputeShaderTraceDesc
+        (
+            ulong? invocation = null
+        ) : this()
         {
-            Invocation = invocation.Value;
+            if (invocation is not null)
+            {
+                Invocation = invocation.Value;
+            }
         }
+
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "Invocation")]
+        public ulong Invocation;
+        [NativeName("Type", "UINT [3]")]
+        [NativeName("Type.Name", "UINT [3]")]
+        [NativeName("Name", "ThreadIDInGroup")]
+        public fixed uint ThreadIDInGroup[3];
+        [NativeName("Type", "UINT [3]")]
+        [NativeName("Type.Name", "UINT [3]")]
+        [NativeName("Name", "ThreadGroupID")]
+        public fixed uint ThreadGroupID[3];
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "Invocation")]
-    public ulong Invocation;
-    [NativeName("Type", "UINT [3]")]
-    [NativeName("Type.Name", "UINT [3]")]
-    [NativeName("Name", "ThreadIDInGroup")]
-    public fixed uint ThreadIDInGroup[3];
-    [NativeName("Type", "UINT [3]")]
-    [NativeName("Type.Name", "UINT [3]")]
-    [NativeName("Name", "ThreadGroupID")]
-    public fixed uint ThreadGroupID[3];
 }

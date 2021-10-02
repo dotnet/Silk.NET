@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy;
-
-[NativeName("Name", "display list")]
-public unsafe partial struct DisplayList
+namespace Silk.NET.OpenGL.Legacy
 {
-    public DisplayList
-    (
-            uint? handle = null
-    ) : this()
+    [NativeName("Name", "display list")]
+    public unsafe partial struct DisplayList
     {
-        if (handle is not null)
+        public DisplayList
+        (
+            uint? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public uint Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public uint Handle;
 }

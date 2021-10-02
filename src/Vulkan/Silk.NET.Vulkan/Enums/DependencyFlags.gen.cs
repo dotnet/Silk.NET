@@ -7,20 +7,21 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkDependencyFlags")]
-public enum DependencyFlags : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_DEPENDENCY_BY_REGION_BIT")]
-    DependencyByRegionBit = 1,
-    [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
-    DependencyViewLocalBitKhr = 2,
-    [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
-    DependencyDeviceGroupBitKhr = 4,
-    [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
-    DependencyDeviceGroupBit = 4,
-    [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT")]
-    DependencyViewLocalBit = 2,
+    [Flags()]
+    [NativeName("Name", "VkDependencyFlags")]
+    public enum DependencyFlags : int
+    {
+        [NativeName("Name", "VK_DEPENDENCY_BY_REGION_BIT")]
+        DependencyByRegionBit = 1,
+        [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
+        DependencyViewLocalBitKhr = 2,
+        [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
+        DependencyDeviceGroupBitKhr = 4,
+        [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
+        DependencyDeviceGroupBit = 4,
+        [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT")]
+        DependencyViewLocalBit = 2,
+    }
 }

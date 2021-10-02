@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-public static class ExtCullVertexOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+    public static class ExtCullVertexOverloads
     {
-        // SpanOverloader
-        thisApi.CullParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        {
+            // SpanOverloader
+            thisApi.CullParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
-    {
-        // SpanOverloader
-        thisApi.CullParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        {
+            // SpanOverloader
+            thisApi.CullParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.CullParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.CullParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.CullParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void CullParameter(this ExtCullVertex thisApi, [Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.CullParameter(pname, out @params.GetPinnableReference());
+        }
 
+    }
 }
 

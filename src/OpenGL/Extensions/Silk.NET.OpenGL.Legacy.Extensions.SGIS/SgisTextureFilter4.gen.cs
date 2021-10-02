@@ -14,87 +14,88 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
-
-[Extension("SGIS_texture_filter4")]
-public unsafe partial class SgisTextureFilter4 : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
-    public const string ExtensionName = "SGIS_texture_filter4";
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
-
-    [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-    public partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
-
-    [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-    public partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
-
-    public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+    [Extension("SGIS_texture_filter4")]
+    public unsafe partial class SgisTextureFilter4 : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
-    }
+        public const string ExtensionName = "SGIS_texture_filter4";
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
 
-    public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
-    {
-        // ImplicitCountSpanOverloader
-        TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
 
-    public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
-    {
-        // ImplicitCountSpanOverloader
-        TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
 
-    public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
-    {
-        // ImplicitCountSpanOverloader
-        TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public partial void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
 
-    public SgisTextureFilter4(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
+
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
+
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public unsafe partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
+
+        [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
+        public partial void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public partial void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public unsafe partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+
+        [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
+        public partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public SgisTextureFilter4(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

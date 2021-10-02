@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
-public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
-    (
+    [NativeName("Name", "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+    {
+        public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+        (
             StructureType? sType = StructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNV,
             void* pNext = null,
             Bool32? representativeFragmentTest = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (representativeFragmentTest is not null)
+            {
+                RepresentativeFragmentTest = representativeFragmentTest.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (representativeFragmentTest is not null)
-        {
-            RepresentativeFragmentTest = representativeFragmentTest.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "representativeFragmentTest")]
+        public Bool32 RepresentativeFragmentTest;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "representativeFragmentTest")]
-    public Bool32 RepresentativeFragmentTest;
 }

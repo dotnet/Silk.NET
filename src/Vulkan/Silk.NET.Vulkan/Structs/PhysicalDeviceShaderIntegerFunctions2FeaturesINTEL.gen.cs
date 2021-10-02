@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL")]
-public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
-    (
+    [NativeName("Name", "VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL")]
+    public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
+    {
+        public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
+        (
             StructureType? sType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesIntel,
             void* pNext = null,
             Bool32? shaderIntegerFunctions2 = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderIntegerFunctions2 is not null)
+            {
+                ShaderIntegerFunctions2 = shaderIntegerFunctions2.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (shaderIntegerFunctions2 is not null)
-        {
-            ShaderIntegerFunctions2 = shaderIntegerFunctions2.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderIntegerFunctions2")]
+        public Bool32 ShaderIntegerFunctions2;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "shaderIntegerFunctions2")]
-    public Bool32 ShaderIntegerFunctions2;
 }

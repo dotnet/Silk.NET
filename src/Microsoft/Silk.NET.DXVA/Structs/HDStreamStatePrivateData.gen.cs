@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_PRIVATE_DATA")]
-public unsafe partial struct HDStreamStatePrivateData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStatePrivateData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_PRIVATE_DATA")]
+    public unsafe partial struct HDStreamStatePrivateData
+    {
+        public HDStreamStatePrivateData
+        (
             Guid? guid = null,
             uint? dataSize = null,
             void* pData = null
-    ) : this()
-    {
-        if (guid is not null)
+        ) : this()
         {
-            Guid = guid.Value;
+            if (guid is not null)
+            {
+                Guid = guid.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
-        if (dataSize is not null)
-        {
-            DataSize = dataSize.Value;
-        }
 
-        if (pData is not null)
-        {
-            PData = pData;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "Guid")]
+        public Guid Guid;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DataSize")]
+        public uint DataSize;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "pData")]
+        public void* PData;
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "Guid")]
-    public Guid Guid;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DataSize")]
-    public uint DataSize;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "pData")]
-    public void* PData;
 }

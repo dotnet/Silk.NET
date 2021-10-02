@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D.Compilers;
-
-[NativeName("Name", "ID3D10Effect")]
-public unsafe partial struct ID3D10Effect
+namespace Silk.NET.Direct3D.Compilers
 {
+    [NativeName("Name", "ID3D10Effect")]
+    public unsafe partial struct ID3D10Effect
+    {
+    }
 }

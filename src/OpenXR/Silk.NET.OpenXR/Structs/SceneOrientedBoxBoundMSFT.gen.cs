@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneOrientedBoxBoundMSFT")]
-public unsafe partial struct SceneOrientedBoxBoundMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneOrientedBoxBoundMSFT
-    (
+    [NativeName("Name", "XrSceneOrientedBoxBoundMSFT")]
+    public unsafe partial struct SceneOrientedBoxBoundMSFT
+    {
+        public SceneOrientedBoxBoundMSFT
+        (
             Posef? pose = null,
             Vector3f? extents = null
-    ) : this()
-    {
-        if (pose is not null)
+        ) : this()
         {
-            Pose = pose.Value;
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (extents is not null)
+            {
+                Extents = extents.Value;
+            }
         }
 
-        if (extents is not null)
-        {
-            Extents = extents.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "pose")]
+        public Posef Pose;
+/// <summary></summary>
+        [NativeName("Type", "XrVector3f")]
+        [NativeName("Type.Name", "XrVector3f")]
+        [NativeName("Name", "extents")]
+        public Vector3f Extents;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrPosef")]
-    [NativeName("Type.Name", "XrPosef")]
-    [NativeName("Name", "pose")]
-    public Posef Pose;
-/// <summary></summary>
-    [NativeName("Type", "XrVector3f")]
-    [NativeName("Type.Name", "XrVector3f")]
-    [NativeName("Name", "extents")]
-    public Vector3f Extents;
 }

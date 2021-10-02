@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_geometry_shader4")]
-public unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_geometry_shader4";
-    [NativeApi(EntryPoint = "glProgramParameteriEXT")]
-    public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
-
-    [NativeApi(EntryPoint = "glProgramParameteriEXT")]
-    public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
-
-    public ExtGeometryShader4(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_geometry_shader4")]
+    public unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_geometry_shader4";
+        [NativeApi(EntryPoint = "glProgramParameteriEXT")]
+        public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
+
+        [NativeApi(EntryPoint = "glProgramParameteriEXT")]
+        public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
+
+        public ExtGeometryShader4(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

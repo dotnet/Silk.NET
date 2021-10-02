@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrInstanceCreateInfoAndroidKHR")]
-public unsafe partial struct InstanceCreateInfoAndroidKHR
+namespace Silk.NET.OpenXR
 {
-    public InstanceCreateInfoAndroidKHR
-    (
+    [NativeName("Name", "XrInstanceCreateInfoAndroidKHR")]
+    public unsafe partial struct InstanceCreateInfoAndroidKHR
+    {
+        public InstanceCreateInfoAndroidKHR
+        (
             StructureType? type = StructureType.TypeInstanceCreateInfoAndroidKhr,
             void* next = null,
             void* applicationVM = null,
             void* applicationActivity = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (applicationVM is not null)
+            {
+                ApplicationVM = applicationVM;
+            }
+
+            if (applicationActivity is not null)
+            {
+                ApplicationActivity = applicationActivity;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (applicationVM is not null)
-        {
-            ApplicationVM = applicationVM;
-        }
-
-        if (applicationActivity is not null)
-        {
-            ApplicationActivity = applicationActivity;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "applicationVM")]
+        public void* ApplicationVM;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "applicationActivity")]
+        public void* ApplicationActivity;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "applicationVM")]
-    public void* ApplicationVM;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "applicationActivity")]
-    public void* ApplicationActivity;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPresentRegionsKHR")]
-public unsafe partial struct PresentRegionsKHR
+namespace Silk.NET.Vulkan
 {
-    public PresentRegionsKHR
-    (
+    [NativeName("Name", "VkPresentRegionsKHR")]
+    public unsafe partial struct PresentRegionsKHR
+    {
+        public PresentRegionsKHR
+        (
             StructureType? sType = StructureType.PresentRegionsKhr,
             void* pNext = null,
             uint? swapchainCount = null,
             PresentRegionKHR* pRegions = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchainCount is not null)
+            {
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pRegions is not null)
+            {
+                PRegions = pRegions;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (swapchainCount is not null)
-        {
-            SwapchainCount = swapchainCount.Value;
-        }
-
-        if (pRegions is not null)
-        {
-            PRegions = pRegions;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "swapchainCount")]
+        public uint SwapchainCount;
+/// <summary></summary>
+        [NativeName("Type", "VkPresentRegionKHR*")]
+        [NativeName("Type.Name", "VkPresentRegionKHR")]
+        [NativeName("Name", "pRegions")]
+        public PresentRegionKHR* PRegions;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "swapchainCount")]
-    public uint SwapchainCount;
-/// <summary></summary>
-    [NativeName("Type", "VkPresentRegionKHR*")]
-    [NativeName("Type.Name", "VkPresentRegionKHR")]
-    [NativeName("Name", "pRegions")]
-    public PresentRegionKHR* PRegions;
 }

@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "TransformFeedbackBufferMode")]
-public enum TransformFeedbackBufferMode : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_INTERLEAVED_ATTRIBS")]
-    InterleavedAttribs = 0x8C8C,
-    [NativeName("Name", "GL_SEPARATE_ATTRIBS")]
-    SeparateAttribs = 0x8C8D,
+    [NativeName("Name", "TransformFeedbackBufferMode")]
+    public enum TransformFeedbackBufferMode : int
+    {
+        [NativeName("Name", "GL_INTERLEAVED_ATTRIBS")]
+        InterleavedAttribs = 0x8C8C,
+        [NativeName("Name", "GL_SEPARATE_ATTRIBS")]
+        SeparateAttribs = 0x8C8D,
+    }
 }

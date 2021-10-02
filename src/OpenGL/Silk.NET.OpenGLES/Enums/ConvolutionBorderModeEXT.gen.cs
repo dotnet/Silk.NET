@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "ConvolutionBorderModeEXT")]
-public enum ConvolutionBorderModeEXT : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_REDUCE")]
-    Reduce = 0x8016,
-    [NativeName("Name", "GL_REDUCE_EXT")]
-    ReduceExt = 0x8016,
+    [NativeName("Name", "ConvolutionBorderModeEXT")]
+    public enum ConvolutionBorderModeEXT : int
+    {
+        [NativeName("Name", "GL_REDUCE")]
+        Reduce = 0x8016,
+        [NativeName("Name", "GL_REDUCE_EXT")]
+        ReduceExt = 0x8016,
+    }
 }

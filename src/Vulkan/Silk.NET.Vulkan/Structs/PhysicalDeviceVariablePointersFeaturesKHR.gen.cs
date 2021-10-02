@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceVariablePointersFeaturesKHR")]
-public unsafe partial struct PhysicalDeviceVariablePointersFeaturesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceVariablePointersFeaturesKHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceVariablePointersFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceVariablePointersFeaturesKHR
+    {
+        public PhysicalDeviceVariablePointersFeaturesKHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceVariablePointersFeatures,
             void* pNext = null,
             Bool32? variablePointersStorageBuffer = null,
             Bool32? variablePointers = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (variablePointersStorageBuffer is not null)
+            {
+                VariablePointersStorageBuffer = variablePointersStorageBuffer.Value;
+            }
+
+            if (variablePointers is not null)
+            {
+                VariablePointers = variablePointers.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (variablePointersStorageBuffer is not null)
-        {
-            VariablePointersStorageBuffer = variablePointersStorageBuffer.Value;
-        }
-
-        if (variablePointers is not null)
-        {
-            VariablePointers = variablePointers.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "variablePointersStorageBuffer")]
+        public Bool32 VariablePointersStorageBuffer;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "variablePointers")]
+        public Bool32 VariablePointers;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "variablePointersStorageBuffer")]
-    public Bool32 VariablePointersStorageBuffer;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "variablePointers")]
-    public Bool32 VariablePointers;
 }

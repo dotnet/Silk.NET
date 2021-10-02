@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "__AnonymousRecord_SDL_gamecontroller_L91_C9")]
-public unsafe partial struct GameControllerHatValue
+namespace Silk.NET.SDL
 {
-    public GameControllerHatValue
-    (
+    [NativeName("Name", "__AnonymousRecord_SDL_gamecontroller_L91_C9")]
+    public unsafe partial struct GameControllerHatValue
+    {
+        public GameControllerHatValue
+        (
             int? hat = null,
             int? hatMask = null
-    ) : this()
-    {
-        if (hat is not null)
+        ) : this()
         {
-            Hat = hat.Value;
+            if (hat is not null)
+            {
+                Hat = hat.Value;
+            }
+
+            if (hatMask is not null)
+            {
+                HatMask = hatMask.Value;
+            }
         }
 
-        if (hatMask is not null)
-        {
-            HatMask = hatMask.Value;
-        }
+
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "hat")]
+        public int Hat;
+
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "hat_mask")]
+        public int HatMask;
     }
-
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "hat")]
-    public int Hat;
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "hat_mask")]
-    public int HatMask;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBindVertexBufferIndirectCommandNV")]
-public unsafe partial struct BindVertexBufferIndirectCommandNV
+namespace Silk.NET.Vulkan
 {
-    public BindVertexBufferIndirectCommandNV
-    (
+    [NativeName("Name", "VkBindVertexBufferIndirectCommandNV")]
+    public unsafe partial struct BindVertexBufferIndirectCommandNV
+    {
+        public BindVertexBufferIndirectCommandNV
+        (
             ulong? bufferAddress = null,
             uint? size = null,
             uint? stride = null
-    ) : this()
-    {
-        if (bufferAddress is not null)
+        ) : this()
         {
-            BufferAddress = bufferAddress.Value;
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
-
-        if (stride is not null)
-        {
-            Stride = stride.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "bufferAddress")]
+        public ulong BufferAddress;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "size")]
+        public uint Size;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "stride")]
+        public uint Stride;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceAddress")]
-    [NativeName("Type.Name", "VkDeviceAddress")]
-    [NativeName("Name", "bufferAddress")]
-    public ulong BufferAddress;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "size")]
-    public uint Size;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "stride")]
-    public uint Stride;
 }

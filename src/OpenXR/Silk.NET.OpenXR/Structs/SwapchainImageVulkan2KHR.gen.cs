@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSwapchainImageVulkan2KHR")]
-public unsafe partial struct SwapchainImageVulkan2KHR
+namespace Silk.NET.OpenXR
 {
-    public SwapchainImageVulkan2KHR
-    (
+    [NativeName("Name", "XrSwapchainImageVulkan2KHR")]
+    public unsafe partial struct SwapchainImageVulkan2KHR
+    {
+        public SwapchainImageVulkan2KHR
+        (
             StructureType? type = StructureType.TypeSwapchainImageVulkanKhr,
             void* next = null,
             ulong? image = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (image is not null)
-        {
-            Image = image.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "VkImage")]
+        [NativeName("Type.Name", "VkImage")]
+        [NativeName("Name", "image")]
+        public ulong Image;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "VkImage")]
-    [NativeName("Type.Name", "VkImage")]
-    [NativeName("Name", "image")]
-    public ulong Image;
 }

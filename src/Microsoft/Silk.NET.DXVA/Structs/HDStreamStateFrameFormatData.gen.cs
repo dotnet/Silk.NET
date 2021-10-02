@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA")]
-public unsafe partial struct HDStreamStateFrameFormatData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateFrameFormatData
-    (
-            HDFrameFormat? frameFormat = null
-    ) : this()
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA")]
+    public unsafe partial struct HDStreamStateFrameFormatData
     {
-        if (frameFormat is not null)
+        public HDStreamStateFrameFormatData
+        (
+            HDFrameFormat? frameFormat = null
+        ) : this()
         {
-            FrameFormat = frameFormat.Value;
+            if (frameFormat is not null)
+            {
+                FrameFormat = frameFormat.Value;
+            }
         }
+
+
+        [NativeName("Type", "DXVAHD_FRAME_FORMAT")]
+        [NativeName("Type.Name", "DXVAHD_FRAME_FORMAT")]
+        [NativeName("Name", "FrameFormat")]
+        public HDFrameFormat FrameFormat;
     }
-
-
-    [NativeName("Type", "DXVAHD_FRAME_FORMAT")]
-    [NativeName("Type.Name", "DXVAHD_FRAME_FORMAT")]
-    [NativeName("Name", "FrameFormat")]
-    public HDFrameFormat FrameFormat;
 }

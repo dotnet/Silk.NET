@@ -7,12 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkDeviceQueueCreateFlags")]
-public enum DeviceQueueCreateFlags : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT")]
-    DeviceQueueCreateProtectedBit = 1,
+    [Flags()]
+    [NativeName("Name", "VkDeviceQueueCreateFlags")]
+    public enum DeviceQueueCreateFlags : int
+    {
+        [NativeName("Name", "VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT")]
+        DeviceQueueCreateProtectedBit = 1,
+    }
 }

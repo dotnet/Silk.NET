@@ -14,39 +14,40 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.INTEL;
-
-[Extension("INTEL_create_buffer_with_properties")]
-public unsafe partial class IntelCreateBufferWithProperties : NativeExtension<CL>
+namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    public const string ExtensionName = "INTEL_create_buffer_with_properties";
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-    [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    public partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
-    public IntelCreateBufferWithProperties(INativeContext ctx)
-        : base(ctx)
+    [Extension("INTEL_create_buffer_with_properties")]
+    public unsafe partial class IntelCreateBufferWithProperties : NativeExtension<CL>
     {
+        public const string ExtensionName = "INTEL_create_buffer_with_properties";
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public unsafe partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        public partial nint CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+        public IntelCreateBufferWithProperties(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

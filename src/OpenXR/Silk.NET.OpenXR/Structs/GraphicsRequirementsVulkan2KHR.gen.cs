@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrGraphicsRequirementsVulkan2KHR")]
-public unsafe partial struct GraphicsRequirementsVulkan2KHR
+namespace Silk.NET.OpenXR
 {
-    public GraphicsRequirementsVulkan2KHR
-    (
+    [NativeName("Name", "XrGraphicsRequirementsVulkan2KHR")]
+    public unsafe partial struct GraphicsRequirementsVulkan2KHR
+    {
+        public GraphicsRequirementsVulkan2KHR
+        (
             StructureType? type = StructureType.TypeGraphicsRequirementsVulkanKhr,
             void* next = null,
             ulong? minApiVersionSupported = null,
             ulong? maxApiVersionSupported = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (minApiVersionSupported is not null)
+            {
+                MinApiVersionSupported = minApiVersionSupported.Value;
+            }
+
+            if (maxApiVersionSupported is not null)
+            {
+                MaxApiVersionSupported = maxApiVersionSupported.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (minApiVersionSupported is not null)
-        {
-            MinApiVersionSupported = minApiVersionSupported.Value;
-        }
-
-        if (maxApiVersionSupported is not null)
-        {
-            MaxApiVersionSupported = maxApiVersionSupported.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrVersion")]
+        [NativeName("Type.Name", "XrVersion")]
+        [NativeName("Name", "minApiVersionSupported")]
+        public ulong MinApiVersionSupported;
+/// <summary></summary>
+        [NativeName("Type", "XrVersion")]
+        [NativeName("Type.Name", "XrVersion")]
+        [NativeName("Name", "maxApiVersionSupported")]
+        public ulong MaxApiVersionSupported;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrVersion")]
-    [NativeName("Type.Name", "XrVersion")]
-    [NativeName("Name", "minApiVersionSupported")]
-    public ulong MinApiVersionSupported;
-/// <summary></summary>
-    [NativeName("Type", "XrVersion")]
-    [NativeName("Type.Name", "XrVersion")]
-    [NativeName("Name", "maxApiVersionSupported")]
-    public ulong MaxApiVersionSupported;
 }

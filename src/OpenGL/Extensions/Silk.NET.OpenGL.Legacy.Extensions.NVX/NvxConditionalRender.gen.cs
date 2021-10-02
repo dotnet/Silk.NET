@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NVX;
-
-[Extension("NVX_conditional_render")]
-public unsafe partial class NvxConditionalRender : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
 {
-    public const string ExtensionName = "NVX_conditional_render";
-    [NativeApi(EntryPoint = "glBeginConditionalRenderNVX")]
-    public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
-
-    [NativeApi(EntryPoint = "glEndConditionalRenderNVX")]
-    public partial void EndConditionalRender();
-
-    public NvxConditionalRender(INativeContext ctx)
-        : base(ctx)
+    [Extension("NVX_conditional_render")]
+    public unsafe partial class NvxConditionalRender : NativeExtension<GL>
     {
+        public const string ExtensionName = "NVX_conditional_render";
+        [NativeApi(EntryPoint = "glBeginConditionalRenderNVX")]
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
+
+        [NativeApi(EntryPoint = "glEndConditionalRenderNVX")]
+        public partial void EndConditionalRender();
+
+        public NvxConditionalRender(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

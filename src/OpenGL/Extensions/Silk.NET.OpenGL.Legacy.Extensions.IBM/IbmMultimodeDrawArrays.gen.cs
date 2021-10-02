@@ -14,327 +14,328 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.IBM;
-
-[Extension("IBM_multimode_draw_arrays")]
-public unsafe partial class IbmMultimodeDrawArrays : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
 {
-    public const string ExtensionName = "IBM_multimode_draw_arrays";
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-    public partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-    public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
-
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+    [Extension("IBM_multimode_draw_arrays")]
+    public unsafe partial class IbmMultimodeDrawArrays : NativeExtension<GL>
     {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        public const string ExtensionName = "IBM_multimode_draw_arrays";
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawArrays(in mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public unsafe partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
+        public partial void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
-    {
-        // ImplicitCountSpanOverloader
-        MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
-    }
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
 
-    public IbmMultimodeDrawArrays(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
+        public unsafe partial void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, first, in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, in first.GetPinnableReference(), count, (uint) first.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawArrays(in mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in IBM mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, indices, (uint) count.Length, modestride);
+        }
+
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount, modestride"), Flow(FlowDirection.In)] in PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] int modestride)
+        {
+            // ImplicitCountSpanOverloader
+            MultiModeDrawElements(in mode, in count.GetPinnableReference(), type, in indices, (uint) count.Length, modestride);
+        }
+
+        public IbmMultimodeDrawArrays(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

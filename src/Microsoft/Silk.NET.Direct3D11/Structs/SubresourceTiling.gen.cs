@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_SUBRESOURCE_TILING")]
-public unsafe partial struct SubresourceTiling
+namespace Silk.NET.Direct3D11
 {
-    public SubresourceTiling
-    (
+    [NativeName("Name", "D3D11_SUBRESOURCE_TILING")]
+    public unsafe partial struct SubresourceTiling
+    {
+        public SubresourceTiling
+        (
             uint? widthInTiles = null,
             ushort? heightInTiles = null,
             ushort? depthInTiles = null,
             uint? startTileIndexInOverallResource = null
-    ) : this()
-    {
-        if (widthInTiles is not null)
+        ) : this()
         {
-            WidthInTiles = widthInTiles.Value;
+            if (widthInTiles is not null)
+            {
+                WidthInTiles = widthInTiles.Value;
+            }
+
+            if (heightInTiles is not null)
+            {
+                HeightInTiles = heightInTiles.Value;
+            }
+
+            if (depthInTiles is not null)
+            {
+                DepthInTiles = depthInTiles.Value;
+            }
+
+            if (startTileIndexInOverallResource is not null)
+            {
+                StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
+            }
         }
 
-        if (heightInTiles is not null)
-        {
-            HeightInTiles = heightInTiles.Value;
-        }
 
-        if (depthInTiles is not null)
-        {
-            DepthInTiles = depthInTiles.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "WidthInTiles")]
+        public uint WidthInTiles;
 
-        if (startTileIndexInOverallResource is not null)
-        {
-            StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
-        }
+        [NativeName("Type", "UINT16")]
+        [NativeName("Type.Name", "UINT16")]
+        [NativeName("Name", "HeightInTiles")]
+        public ushort HeightInTiles;
+
+        [NativeName("Type", "UINT16")]
+        [NativeName("Type.Name", "UINT16")]
+        [NativeName("Name", "DepthInTiles")]
+        public ushort DepthInTiles;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StartTileIndexInOverallResource")]
+        public uint StartTileIndexInOverallResource;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "WidthInTiles")]
-    public uint WidthInTiles;
-
-    [NativeName("Type", "UINT16")]
-    [NativeName("Type.Name", "UINT16")]
-    [NativeName("Name", "HeightInTiles")]
-    public ushort HeightInTiles;
-
-    [NativeName("Type", "UINT16")]
-    [NativeName("Type.Name", "UINT16")]
-    [NativeName("Name", "DepthInTiles")]
-    public ushort DepthInTiles;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StartTileIndexInOverallResource")]
-    public uint StartTileIndexInOverallResource;
 }

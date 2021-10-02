@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_SAMPLER_DESC")]
-public unsafe partial struct SamplerDesc
+namespace Silk.NET.Direct3D12
 {
-    public SamplerDesc
-    (
+    [NativeName("Name", "D3D12_SAMPLER_DESC")]
+    public unsafe partial struct SamplerDesc
+    {
+        public SamplerDesc
+        (
             Filter? filter = null,
             TextureAddressMode? addressU = null,
             TextureAddressMode? addressV = null,
@@ -30,101 +30,102 @@ public unsafe partial struct SamplerDesc
             ComparisonFunc? comparisonFunc = null,
             float? minLOD = null,
             float? maxLOD = null
-    ) : this()
-    {
-        if (filter is not null)
+        ) : this()
         {
-            Filter = filter.Value;
+            if (filter is not null)
+            {
+                Filter = filter.Value;
+            }
+
+            if (addressU is not null)
+            {
+                AddressU = addressU.Value;
+            }
+
+            if (addressV is not null)
+            {
+                AddressV = addressV.Value;
+            }
+
+            if (addressW is not null)
+            {
+                AddressW = addressW.Value;
+            }
+
+            if (mipLODBias is not null)
+            {
+                MipLODBias = mipLODBias.Value;
+            }
+
+            if (maxAnisotropy is not null)
+            {
+                MaxAnisotropy = maxAnisotropy.Value;
+            }
+
+            if (comparisonFunc is not null)
+            {
+                ComparisonFunc = comparisonFunc.Value;
+            }
+
+            if (minLOD is not null)
+            {
+                MinLOD = minLOD.Value;
+            }
+
+            if (maxLOD is not null)
+            {
+                MaxLOD = maxLOD.Value;
+            }
         }
 
-        if (addressU is not null)
-        {
-            AddressU = addressU.Value;
-        }
 
-        if (addressV is not null)
-        {
-            AddressV = addressV.Value;
-        }
+        [NativeName("Type", "D3D12_FILTER")]
+        [NativeName("Type.Name", "D3D12_FILTER")]
+        [NativeName("Name", "Filter")]
+        public Filter Filter;
 
-        if (addressW is not null)
-        {
-            AddressW = addressW.Value;
-        }
+        [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Name", "AddressU")]
+        public TextureAddressMode AddressU;
 
-        if (mipLODBias is not null)
-        {
-            MipLODBias = mipLODBias.Value;
-        }
+        [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Name", "AddressV")]
+        public TextureAddressMode AddressV;
 
-        if (maxAnisotropy is not null)
-        {
-            MaxAnisotropy = maxAnisotropy.Value;
-        }
+        [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
+        [NativeName("Name", "AddressW")]
+        public TextureAddressMode AddressW;
 
-        if (comparisonFunc is not null)
-        {
-            ComparisonFunc = comparisonFunc.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MipLODBias")]
+        public float MipLODBias;
 
-        if (minLOD is not null)
-        {
-            MinLOD = minLOD.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MaxAnisotropy")]
+        public uint MaxAnisotropy;
 
-        if (maxLOD is not null)
-        {
-            MaxLOD = maxLOD.Value;
-        }
+        [NativeName("Type", "D3D12_COMPARISON_FUNC")]
+        [NativeName("Type.Name", "D3D12_COMPARISON_FUNC")]
+        [NativeName("Name", "ComparisonFunc")]
+        public ComparisonFunc ComparisonFunc;
+        [NativeName("Type", "FLOAT [4]")]
+        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Name", "BorderColor")]
+        public fixed float BorderColor[4];
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MinLOD")]
+        public float MinLOD;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MaxLOD")]
+        public float MaxLOD;
     }
-
-
-    [NativeName("Type", "D3D12_FILTER")]
-    [NativeName("Type.Name", "D3D12_FILTER")]
-    [NativeName("Name", "Filter")]
-    public Filter Filter;
-
-    [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Name", "AddressU")]
-    public TextureAddressMode AddressU;
-
-    [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Name", "AddressV")]
-    public TextureAddressMode AddressV;
-
-    [NativeName("Type", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Type.Name", "D3D12_TEXTURE_ADDRESS_MODE")]
-    [NativeName("Name", "AddressW")]
-    public TextureAddressMode AddressW;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MipLODBias")]
-    public float MipLODBias;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MaxAnisotropy")]
-    public uint MaxAnisotropy;
-
-    [NativeName("Type", "D3D12_COMPARISON_FUNC")]
-    [NativeName("Type.Name", "D3D12_COMPARISON_FUNC")]
-    [NativeName("Name", "ComparisonFunc")]
-    public ComparisonFunc ComparisonFunc;
-    [NativeName("Type", "FLOAT [4]")]
-    [NativeName("Type.Name", "FLOAT [4]")]
-    [NativeName("Name", "BorderColor")]
-    public fixed float BorderColor[4];
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MinLOD")]
-    public float MinLOD;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MaxLOD")]
-    public float MaxLOD;
 }

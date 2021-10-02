@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.KHR;
-
-public static class KhrLoaderInitOverloads
+namespace Silk.NET.OpenXR.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result InitializeLoader(this KhrLoaderInit thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<LoaderInitInfoBaseHeaderKHR> loaderInitInfo)
+    public static class KhrLoaderInitOverloads
     {
-        // SpanOverloader
-        return thisApi.InitializeLoader(in loaderInitInfo.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result InitializeLoader(this KhrLoaderInit thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<LoaderInitInfoBaseHeaderKHR> loaderInitInfo)
+        {
+            // SpanOverloader
+            return thisApi.InitializeLoader(in loaderInitInfo.GetPinnableReference());
+        }
 
+    }
 }
 

@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR;
-
-[Extension("KHR_icd")]
-public unsafe partial class KhrIcd : NativeExtension<CL>
+namespace Silk.NET.OpenCL.Extensions.KHR
 {
-    public const string ExtensionName = "KHR_icd";
-    [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
-    public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
-
-    [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
-    public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* platforms, [Flow(FlowDirection.Out)] out uint num_platforms);
-
-    [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
-    public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
-
-    [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
-    public partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint platforms, [Flow(FlowDirection.Out)] out uint num_platforms);
-
-    public KhrIcd(INativeContext ctx)
-        : base(ctx)
+    [Extension("KHR_icd")]
+    public unsafe partial class KhrIcd : NativeExtension<CL>
     {
+        public const string ExtensionName = "KHR_icd";
+        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
+        public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
+
+        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
+        public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* platforms, [Flow(FlowDirection.Out)] out uint num_platforms);
+
+        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
+        public unsafe partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
+
+        [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
+        public partial int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint platforms, [Flow(FlowDirection.Out)] out uint num_platforms);
+
+        public KhrIcd(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

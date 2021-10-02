@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineCacheCreateInfo")]
-public unsafe partial struct PipelineCacheCreateInfo
+namespace Silk.NET.Vulkan
 {
-    public PipelineCacheCreateInfo
-    (
+    [NativeName("Name", "VkPipelineCacheCreateInfo")]
+    public unsafe partial struct PipelineCacheCreateInfo
+    {
+        public PipelineCacheCreateInfo
+        (
             StructureType? sType = StructureType.PipelineCacheCreateInfo,
             void* pNext = null,
             PipelineCacheCreateFlags? flags = null,
             nuint? initialDataSize = null,
             void* pInitialData = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (initialDataSize is not null)
+            {
+                InitialDataSize = initialDataSize.Value;
+            }
+
+            if (pInitialData is not null)
+            {
+                PInitialData = pInitialData;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (initialDataSize is not null)
-        {
-            InitialDataSize = initialDataSize.Value;
-        }
-
-        if (pInitialData is not null)
-        {
-            PInitialData = pInitialData;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPipelineCacheCreateFlags")]
+        [NativeName("Type.Name", "VkPipelineCacheCreateFlags")]
+        [NativeName("Name", "flags")]
+        public PipelineCacheCreateFlags Flags;
+/// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "initialDataSize")]
+        public nuint InitialDataSize;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pInitialData")]
+        public void* PInitialData;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPipelineCacheCreateFlags")]
-    [NativeName("Type.Name", "VkPipelineCacheCreateFlags")]
-    [NativeName("Name", "flags")]
-    public PipelineCacheCreateFlags Flags;
-/// <summary></summary>
-    [NativeName("Type", "size_t")]
-    [NativeName("Type.Name", "size_t")]
-    [NativeName("Name", "initialDataSize")]
-    public nuint InitialDataSize;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pInitialData")]
-    public void* PInitialData;
 }

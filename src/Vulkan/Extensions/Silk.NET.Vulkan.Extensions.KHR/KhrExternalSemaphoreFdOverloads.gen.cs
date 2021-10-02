@@ -12,37 +12,38 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-public static class KhrExternalSemaphoreFdOverloads
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
+    public static class KhrExternalSemaphoreFdOverloads
     {
-        // SpanOverloader
-        return thisApi.GetSemaphoreF(device, pGetFdInfo, out pFd.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreF(device, pGetFdInfo, out pFd.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd)
-    {
-        // SpanOverloader
-        return thisApi.GetSemaphoreF(device, in pGetFdInfo.GetPinnableReference(), pFd);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd)
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreF(device, in pGetFdInfo.GetPinnableReference(), pFd);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
-    {
-        // SpanOverloader
-        return thisApi.GetSemaphoreF(device, in pGetFdInfo.GetPinnableReference(), out pFd.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SemaphoreGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
+        {
+            // SpanOverloader
+            return thisApi.GetSemaphoreF(device, in pGetFdInfo.GetPinnableReference(), out pFd.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result ImportSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo)
-    {
-        // SpanOverloader
-        return thisApi.ImportSemaphoreF(device, in pImportSemaphoreFdInfo.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result ImportSemaphoreF(this KhrExternalSemaphoreFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo)
+        {
+            // SpanOverloader
+            return thisApi.ImportSemaphoreF(device, in pImportSemaphoreFdInfo.GetPinnableReference());
+        }
 
+    }
 }
 

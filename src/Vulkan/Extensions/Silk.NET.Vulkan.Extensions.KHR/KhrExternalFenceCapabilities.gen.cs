@@ -14,31 +14,32 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-[Extension("VK_KHR_external_fence_capabilities")]
-public unsafe partial class KhrExternalFenceCapabilities : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    public const string ExtensionName = "VK_KHR_external_fence_capabilities";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
-    public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
-    public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
-    public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
-    public partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
-
-    public KhrExternalFenceCapabilities(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_KHR_external_fence_capabilities")]
+    public unsafe partial class KhrExternalFenceCapabilities : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_KHR_external_fence_capabilities";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFencePropertiesKHR")]
+        public partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
+
+        public KhrExternalFenceCapabilities(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkCommandBufferBeginInfo")]
-public unsafe partial struct CommandBufferBeginInfo
+namespace Silk.NET.Vulkan
 {
-    public CommandBufferBeginInfo
-    (
+    [NativeName("Name", "VkCommandBufferBeginInfo")]
+    public unsafe partial struct CommandBufferBeginInfo
+    {
+        public CommandBufferBeginInfo
+        (
             StructureType? sType = StructureType.CommandBufferBeginInfo,
             void* pNext = null,
             CommandBufferUsageFlags? flags = null,
             CommandBufferInheritanceInfo* pInheritanceInfo = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pInheritanceInfo is not null)
+            {
+                PInheritanceInfo = pInheritanceInfo;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (pInheritanceInfo is not null)
-        {
-            PInheritanceInfo = pInheritanceInfo;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkCommandBufferUsageFlags")]
+        [NativeName("Type.Name", "VkCommandBufferUsageFlags")]
+        [NativeName("Name", "flags")]
+        public CommandBufferUsageFlags Flags;
+/// <summary></summary>
+        [NativeName("Type", "VkCommandBufferInheritanceInfo*")]
+        [NativeName("Type.Name", "VkCommandBufferInheritanceInfo")]
+        [NativeName("Name", "pInheritanceInfo")]
+        public CommandBufferInheritanceInfo* PInheritanceInfo;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkCommandBufferUsageFlags")]
-    [NativeName("Type.Name", "VkCommandBufferUsageFlags")]
-    [NativeName("Name", "flags")]
-    public CommandBufferUsageFlags Flags;
-/// <summary></summary>
-    [NativeName("Type", "VkCommandBufferInheritanceInfo*")]
-    [NativeName("Type.Name", "VkCommandBufferInheritanceInfo")]
-    [NativeName("Name", "pInheritanceInfo")]
-    public CommandBufferInheritanceInfo* PInheritanceInfo;
 }

@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-public static class KhrExternalFenceCapabilitiesOverloads
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
+    public static class KhrExternalFenceCapabilitiesOverloads
     {
-        // SpanOverloader
-        thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, pExternalFenceInfo, out pExternalFenceProperties.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
+        {
+            // SpanOverloader
+            thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, pExternalFenceInfo, out pExternalFenceProperties.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties)
-    {
-        // SpanOverloader
-        thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo.GetPinnableReference(), pExternalFenceProperties);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties)
+        {
+            // SpanOverloader
+            thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo.GetPinnableReference(), pExternalFenceProperties);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
-    {
-        // SpanOverloader
-        thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo.GetPinnableReference(), out pExternalFenceProperties.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
+        {
+            // SpanOverloader
+            thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo.GetPinnableReference(), out pExternalFenceProperties.GetPinnableReference());
+        }
 
+    }
 }
 

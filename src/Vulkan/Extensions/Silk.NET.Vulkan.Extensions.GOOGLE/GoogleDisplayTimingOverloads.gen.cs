@@ -12,37 +12,38 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.GOOGLE;
-
-public static class GoogleDisplayTimingOverloads
+namespace Silk.NET.Vulkan.Extensions.GOOGLE
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] Span<PastPresentationTimingGOOGLE> pPresentationTimings)
+    public static class GoogleDisplayTimingOverloads
     {
-        // SpanOverloader
-        return thisApi.GetPastPresentationTiming(device, swapchain, pPresentationTimingCount, out pPresentationTimings.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] Span<PastPresentationTimingGOOGLE> pPresentationTimings)
+        {
+            // SpanOverloader
+            return thisApi.GetPastPresentationTiming(device, swapchain, pPresentationTimingCount, out pPresentationTimings.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] PastPresentationTimingGOOGLE* pPresentationTimings)
-    {
-        // SpanOverloader
-        return thisApi.GetPastPresentationTiming(device, swapchain, ref pPresentationTimingCount.GetPinnableReference(), pPresentationTimings);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] PastPresentationTimingGOOGLE* pPresentationTimings)
+        {
+            // SpanOverloader
+            return thisApi.GetPastPresentationTiming(device, swapchain, ref pPresentationTimingCount.GetPinnableReference(), pPresentationTimings);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] Span<PastPresentationTimingGOOGLE> pPresentationTimings)
-    {
-        // SpanOverloader
-        return thisApi.GetPastPresentationTiming(device, swapchain, ref pPresentationTimingCount.GetPinnableReference(), out pPresentationTimings.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPastPresentationTiming(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pPresentationTimingCount, [Count(Parameter = "pPresentationTimingCount"), Flow(FlowDirection.Out)] Span<PastPresentationTimingGOOGLE> pPresentationTimings)
+        {
+            // SpanOverloader
+            return thisApi.GetPastPresentationTiming(device, swapchain, ref pPresentationTimingCount.GetPinnableReference(), out pPresentationTimings.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetRefreshCycleDuration(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.Out)] Span<RefreshCycleDurationGOOGLE> pDisplayTimingProperties)
-    {
-        // SpanOverloader
-        return thisApi.GetRefreshCycleDuration(device, swapchain, out pDisplayTimingProperties.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetRefreshCycleDuration(this GoogleDisplayTiming thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.Out)] Span<RefreshCycleDurationGOOGLE> pDisplayTimingProperties)
+        {
+            // SpanOverloader
+            return thisApi.GetRefreshCycleDuration(device, swapchain, out pDisplayTimingProperties.GetPinnableReference());
+        }
 
+    }
 }
 

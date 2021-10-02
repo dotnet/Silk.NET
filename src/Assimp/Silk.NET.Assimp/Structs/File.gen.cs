@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiFile")]
-public unsafe partial struct File
+namespace Silk.NET.Assimp
 {
-    public File
-    (
+    [NativeName("Name", "aiFile")]
+    public unsafe partial struct File
+    {
+        public File
+        (
             PfnFileReadProc? readProc = null,
             PfnFileReadProc? writeProc = null,
             PfnFileTellProc? tellProc = null,
@@ -28,77 +28,78 @@ public unsafe partial struct File
             PfnFileSeek? seekProc = null,
             PfnFileFlushProc? flushProc = null,
             byte* userData = null
-    ) : this()
-    {
-        if (readProc is not null)
+        ) : this()
         {
-            ReadProc = readProc.Value;
+            if (readProc is not null)
+            {
+                ReadProc = readProc.Value;
+            }
+
+            if (writeProc is not null)
+            {
+                WriteProc = writeProc.Value;
+            }
+
+            if (tellProc is not null)
+            {
+                TellProc = tellProc.Value;
+            }
+
+            if (fileSizeProc is not null)
+            {
+                FileSizeProc = fileSizeProc.Value;
+            }
+
+            if (seekProc is not null)
+            {
+                SeekProc = seekProc.Value;
+            }
+
+            if (flushProc is not null)
+            {
+                FlushProc = flushProc.Value;
+            }
+
+            if (userData is not null)
+            {
+                UserData = userData;
+            }
         }
 
-        if (writeProc is not null)
-        {
-            WriteProc = writeProc.Value;
-        }
 
-        if (tellProc is not null)
-        {
-            TellProc = tellProc.Value;
-        }
+        [NativeName("Type", "aiFileReadProc")]
+        [NativeName("Type.Name", "aiFileReadProc")]
+        [NativeName("Name", "ReadProc")]
+        public PfnFileReadProc ReadProc;
 
-        if (fileSizeProc is not null)
-        {
-            FileSizeProc = fileSizeProc.Value;
-        }
+        [NativeName("Type", "aiFileWriteProc")]
+        [NativeName("Type.Name", "aiFileWriteProc")]
+        [NativeName("Name", "WriteProc")]
+        public PfnFileReadProc WriteProc;
 
-        if (seekProc is not null)
-        {
-            SeekProc = seekProc.Value;
-        }
+        [NativeName("Type", "aiFileTellProc")]
+        [NativeName("Type.Name", "aiFileTellProc")]
+        [NativeName("Name", "TellProc")]
+        public PfnFileTellProc TellProc;
 
-        if (flushProc is not null)
-        {
-            FlushProc = flushProc.Value;
-        }
+        [NativeName("Type", "aiFileTellProc")]
+        [NativeName("Type.Name", "aiFileTellProc")]
+        [NativeName("Name", "FileSizeProc")]
+        public PfnFileTellProc FileSizeProc;
 
-        if (userData is not null)
-        {
-            UserData = userData;
-        }
+        [NativeName("Type", "aiFileSeek")]
+        [NativeName("Type.Name", "aiFileSeek")]
+        [NativeName("Name", "SeekProc")]
+        public PfnFileSeek SeekProc;
+
+        [NativeName("Type", "aiFileFlushProc")]
+        [NativeName("Type.Name", "aiFileFlushProc")]
+        [NativeName("Name", "FlushProc")]
+        public PfnFileFlushProc FlushProc;
+
+        [NativeName("Type", "aiUserData")]
+        [NativeName("Type.Name", "aiUserData")]
+        [NativeName("Name", "UserData")]
+        public byte* UserData;
     }
-
-
-    [NativeName("Type", "aiFileReadProc")]
-    [NativeName("Type.Name", "aiFileReadProc")]
-    [NativeName("Name", "ReadProc")]
-    public PfnFileReadProc ReadProc;
-
-    [NativeName("Type", "aiFileWriteProc")]
-    [NativeName("Type.Name", "aiFileWriteProc")]
-    [NativeName("Name", "WriteProc")]
-    public PfnFileReadProc WriteProc;
-
-    [NativeName("Type", "aiFileTellProc")]
-    [NativeName("Type.Name", "aiFileTellProc")]
-    [NativeName("Name", "TellProc")]
-    public PfnFileTellProc TellProc;
-
-    [NativeName("Type", "aiFileTellProc")]
-    [NativeName("Type.Name", "aiFileTellProc")]
-    [NativeName("Name", "FileSizeProc")]
-    public PfnFileTellProc FileSizeProc;
-
-    [NativeName("Type", "aiFileSeek")]
-    [NativeName("Type.Name", "aiFileSeek")]
-    [NativeName("Name", "SeekProc")]
-    public PfnFileSeek SeekProc;
-
-    [NativeName("Type", "aiFileFlushProc")]
-    [NativeName("Type.Name", "aiFileFlushProc")]
-    [NativeName("Name", "FlushProc")]
-    public PfnFileFlushProc FlushProc;
-
-    [NativeName("Type", "aiUserData")]
-    [NativeName("Type.Name", "aiUserData")]
-    [NativeName("Name", "UserData")]
-    public byte* UserData;
 }

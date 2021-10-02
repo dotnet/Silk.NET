@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_GEOMETRY_SHADER_TRACE_DESC")]
-public unsafe partial struct GeometryShaderTraceDesc
+namespace Silk.NET.Direct3D11
 {
-    public GeometryShaderTraceDesc
-    (
-            ulong? invocation = null
-    ) : this()
+    [NativeName("Name", "D3D11_GEOMETRY_SHADER_TRACE_DESC")]
+    public unsafe partial struct GeometryShaderTraceDesc
     {
-        if (invocation is not null)
+        public GeometryShaderTraceDesc
+        (
+            ulong? invocation = null
+        ) : this()
         {
-            Invocation = invocation.Value;
+            if (invocation is not null)
+            {
+                Invocation = invocation.Value;
+            }
         }
+
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "Invocation")]
+        public ulong Invocation;
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "Invocation")]
-    public ulong Invocation;
 }

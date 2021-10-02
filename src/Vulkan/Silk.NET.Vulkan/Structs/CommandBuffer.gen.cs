@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkCommandBuffer")]
-public unsafe partial struct CommandBuffer
+namespace Silk.NET.Vulkan
 {
-    public CommandBuffer
-    (
-            nint? handle = null
-    ) : this()
+    [NativeName("Name", "VkCommandBuffer")]
+    public unsafe partial struct CommandBuffer
     {
-        if (handle is not null)
+        public CommandBuffer
+        (
+            nint? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public nint Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public nint Handle;
 }

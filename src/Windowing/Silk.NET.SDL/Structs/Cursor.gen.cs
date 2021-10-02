@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_Cursor")]
-public unsafe partial struct Cursor
+namespace Silk.NET.SDL
 {
+    [NativeName("Name", "SDL_Cursor")]
+    public unsafe partial struct Cursor
+    {
+    }
 }

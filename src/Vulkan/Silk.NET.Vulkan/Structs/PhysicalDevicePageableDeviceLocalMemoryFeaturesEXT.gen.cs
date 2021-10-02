@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT")]
-public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT")]
+    public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
+    {
+        public PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDevicePageableDeviceLocalMemoryFeaturesExt,
             void* pNext = null,
             Bool32? pageableDeviceLocalMemory = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pageableDeviceLocalMemory is not null)
+            {
+                PageableDeviceLocalMemory = pageableDeviceLocalMemory.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (pageableDeviceLocalMemory is not null)
-        {
-            PageableDeviceLocalMemory = pageableDeviceLocalMemory.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "pageableDeviceLocalMemory")]
+        public Bool32 PageableDeviceLocalMemory;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "pageableDeviceLocalMemory")]
-    public Bool32 PageableDeviceLocalMemory;
 }

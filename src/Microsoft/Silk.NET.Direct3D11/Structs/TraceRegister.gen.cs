@@ -14,78 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_TRACE_REGISTER")]
-public unsafe partial struct TraceRegister
+namespace Silk.NET.Direct3D11
 {
-    public TraceRegister
-    (
+    [NativeName("Name", "D3D11_TRACE_REGISTER")]
+    public unsafe partial struct TraceRegister
+    {
+        public TraceRegister
+        (
             TraceRegisterType? regType = null,
-            TraceRegisterUnion? anonymous = null,
             byte? operandIndex = null,
-            byte? flags = null,
-            ushort? index1D = null
-    ) : this()
-    {
-        if (regType is not null)
+            byte? flags = null
+        ) : this()
         {
-            RegType = regType.Value;
+            if (regType is not null)
+            {
+                RegType = regType.Value;
+            }
+
+            if (operandIndex is not null)
+            {
+                OperandIndex = operandIndex.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
-        if (anonymous is not null)
-        {
-            Anonymous = anonymous.Value;
-        }
 
-        if (operandIndex is not null)
-        {
-            OperandIndex = operandIndex.Value;
-        }
+        [NativeName("Type", "D3D11_TRACE_REGISTER_TYPE")]
+        [NativeName("Type.Name", "D3D11_TRACE_REGISTER_TYPE")]
+        [NativeName("Name", "RegType")]
+        public TraceRegisterType RegType;
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+        [NativeName("Type", "UINT8")]
+        [NativeName("Type.Name", "UINT8")]
+        [NativeName("Name", "OperandIndex")]
+        public byte OperandIndex;
 
-        if (index1D is not null)
-        {
-            Index1D = index1D.Value;
-        }
+        [NativeName("Type", "UINT8")]
+        [NativeName("Type.Name", "UINT8")]
+        [NativeName("Name", "Flags")]
+        public byte Flags;
     }
-
-
-    [NativeName("Type", "D3D11_TRACE_REGISTER_TYPE")]
-    [NativeName("Type.Name", "D3D11_TRACE_REGISTER_TYPE")]
-    [NativeName("Name", "RegType")]
-    public TraceRegisterType RegType;
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L226_C5")]
-    [NativeName("Name", "anonymous1")]
-    public TraceRegisterUnion Anonymous;
-
-    [NativeName("Type", "UINT8")]
-    [NativeName("Type.Name", "UINT8")]
-    [NativeName("Name", "OperandIndex")]
-    public byte OperandIndex;
-
-    [NativeName("Type", "UINT8")]
-    [NativeName("Type.Name", "UINT8")]
-    [NativeName("Name", "Flags")]
-    public byte Flags;
-#if NETSTANDARD2_1
-    public ref ushort Index1D
-    {
-        [MethodImpl((MethodImplOptions) 768)]
-        get => ref Anonymous.Index1D;
-    }
-#else
-    public ushort Index1D
-    {
-        get => Anonymous.Index1D;
-        set => Anonymous.Index1D = value;
-    }
-#endif
-
 }

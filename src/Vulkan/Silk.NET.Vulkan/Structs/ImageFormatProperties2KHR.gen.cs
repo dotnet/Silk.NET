@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageFormatProperties2KHR")]
-public unsafe partial struct ImageFormatProperties2KHR
+namespace Silk.NET.Vulkan
 {
-    public ImageFormatProperties2KHR
-    (
+    [NativeName("Name", "VkImageFormatProperties2KHR")]
+    public unsafe partial struct ImageFormatProperties2KHR
+    {
+        public ImageFormatProperties2KHR
+        (
             StructureType? sType = StructureType.ImageFormatProperties2,
             void* pNext = null,
             ImageFormatProperties? imageFormatProperties = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageFormatProperties is not null)
+            {
+                ImageFormatProperties = imageFormatProperties.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (imageFormatProperties is not null)
-        {
-            ImageFormatProperties = imageFormatProperties.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImageFormatProperties")]
+        [NativeName("Type.Name", "VkImageFormatProperties")]
+        [NativeName("Name", "imageFormatProperties")]
+        public ImageFormatProperties ImageFormatProperties;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImageFormatProperties")]
-    [NativeName("Type.Name", "VkImageFormatProperties")]
-    [NativeName("Name", "imageFormatProperties")]
-    public ImageFormatProperties ImageFormatProperties;
 }

@@ -14,80 +14,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DVERTEXBUFFER_DESC")]
-public unsafe partial struct VertexbufferDesc
+namespace Silk.NET.Direct3D9
 {
-    public VertexbufferDesc
-    (
+    [NativeName("Name", "_D3DVERTEXBUFFER_DESC")]
+    public unsafe partial struct VertexbufferDesc
+    {
+        public VertexbufferDesc
+        (
             Format? format = null,
             Resourcetype? type = null,
             uint? usage = null,
             Pool? pool = null,
             uint? size = null,
             uint? fVF = null
-    ) : this()
-    {
-        if (format is not null)
+        ) : this()
         {
-            Format = format.Value;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (fVF is not null)
+            {
+                FVF = fVF.Value;
+            }
         }
 
-        if (type is not null)
-        {
-            Type = type.Value;
-        }
 
-        if (usage is not null)
-        {
-            Usage = usage.Value;
-        }
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "Format")]
+        public Format Format;
 
-        if (pool is not null)
-        {
-            Pool = pool.Value;
-        }
+        [NativeName("Type", "D3DRESOURCETYPE")]
+        [NativeName("Type.Name", "D3DRESOURCETYPE")]
+        [NativeName("Name", "Type")]
+        public Resourcetype Type;
 
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Usage")]
+        public uint Usage;
 
-        if (fVF is not null)
-        {
-            FVF = fVF.Value;
-        }
+        [NativeName("Type", "D3DPOOL")]
+        [NativeName("Type.Name", "D3DPOOL")]
+        [NativeName("Name", "Pool")]
+        public Pool Pool;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Size")]
+        public uint Size;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "FVF")]
+        public uint FVF;
     }
-
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "Format")]
-    public Format Format;
-
-    [NativeName("Type", "D3DRESOURCETYPE")]
-    [NativeName("Type.Name", "D3DRESOURCETYPE")]
-    [NativeName("Name", "Type")]
-    public Resourcetype Type;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Usage")]
-    public uint Usage;
-
-    [NativeName("Type", "D3DPOOL")]
-    [NativeName("Type.Name", "D3DPOOL")]
-    [NativeName("Name", "Pool")]
-    public Pool Pool;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Size")]
-    public uint Size;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "FVF")]
-    public uint FVF;
 }

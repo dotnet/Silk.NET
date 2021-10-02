@@ -14,23 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.KHR;
-
-[Extension("XR_KHR_D3D12_enable")]
-public unsafe partial class KhrD3D12Enable : NativeExtension<XR>
+namespace Silk.NET.OpenXR.Extensions.KHR
 {
-    public const string ExtensionName = "XR_KHR_D3D12_enable";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]
-    public unsafe partial Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D12KHR* graphicsRequirements);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]
-    public partial Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D12KHR graphicsRequirements);
-
-    public KhrD3D12Enable(INativeContext ctx)
-        : base(ctx)
+    [Extension("XR_KHR_D3D12_enable")]
+    public unsafe partial class KhrD3D12Enable : NativeExtension<XR>
     {
+        public const string ExtensionName = "XR_KHR_D3D12_enable";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]
+        public unsafe partial Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D12KHR* graphicsRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]
+        public partial Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D12KHR graphicsRequirements);
+
+        public KhrD3D12Enable(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

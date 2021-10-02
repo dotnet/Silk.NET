@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVertexInputBindingDivisorDescriptionEXT")]
-public unsafe partial struct VertexInputBindingDivisorDescriptionEXT
+namespace Silk.NET.Vulkan
 {
-    public VertexInputBindingDivisorDescriptionEXT
-    (
+    [NativeName("Name", "VkVertexInputBindingDivisorDescriptionEXT")]
+    public unsafe partial struct VertexInputBindingDivisorDescriptionEXT
+    {
+        public VertexInputBindingDivisorDescriptionEXT
+        (
             uint? binding = null,
             uint? divisor = null
-    ) : this()
-    {
-        if (binding is not null)
+        ) : this()
         {
-            Binding = binding.Value;
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (divisor is not null)
+            {
+                Divisor = divisor.Value;
+            }
         }
 
-        if (divisor is not null)
-        {
-            Divisor = divisor.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "binding")]
+        public uint Binding;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "divisor")]
+        public uint Divisor;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "binding")]
-    public uint Binding;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "divisor")]
-    public uint Divisor;
 }

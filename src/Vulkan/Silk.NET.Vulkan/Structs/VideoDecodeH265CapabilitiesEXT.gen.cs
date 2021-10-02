@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-public unsafe partial struct VideoDecodeH265CapabilitiesEXT
+namespace Silk.NET.Vulkan
 {
-    public VideoDecodeH265CapabilitiesEXT
-    (
+    [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
+    public unsafe partial struct VideoDecodeH265CapabilitiesEXT
+    {
+        public VideoDecodeH265CapabilitiesEXT
+        (
             StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
             void* pNext = null,
             uint? maxLevel = null,
             ExtensionProperties? stdExtensionVersion = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxLevel is not null)
+            {
+                MaxLevel = maxLevel.Value;
+            }
+
+            if (stdExtensionVersion is not null)
+            {
+                StdExtensionVersion = stdExtensionVersion.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (maxLevel is not null)
-        {
-            MaxLevel = maxLevel.Value;
-        }
-
-        if (stdExtensionVersion is not null)
-        {
-            StdExtensionVersion = stdExtensionVersion.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxLevel")]
+        public uint MaxLevel;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "stdExtensionVersion")]
+        public ExtensionProperties StdExtensionVersion;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxLevel")]
-    public uint MaxLevel;
-/// <summary></summary>
-    [NativeName("Type", "VkExtensionProperties")]
-    [NativeName("Type.Name", "VkExtensionProperties")]
-    [NativeName("Name", "stdExtensionVersion")]
-    public ExtensionProperties StdExtensionVersion;
 }

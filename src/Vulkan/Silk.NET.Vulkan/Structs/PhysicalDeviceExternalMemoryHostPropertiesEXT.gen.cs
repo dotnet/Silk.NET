@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceExternalMemoryHostPropertiesEXT")]
-public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceExternalMemoryHostPropertiesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceExternalMemoryHostPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
+    {
+        public PhysicalDeviceExternalMemoryHostPropertiesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesExt,
             void* pNext = null,
             ulong? minImportedHostPointerAlignment = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (minImportedHostPointerAlignment is not null)
+            {
+                MinImportedHostPointerAlignment = minImportedHostPointerAlignment.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (minImportedHostPointerAlignment is not null)
-        {
-            MinImportedHostPointerAlignment = minImportedHostPointerAlignment.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "minImportedHostPointerAlignment")]
+        public ulong MinImportedHostPointerAlignment;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "minImportedHostPointerAlignment")]
-    public ulong MinImportedHostPointerAlignment;
 }

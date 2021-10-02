@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_ROOT_SIGNATURE")]
-public unsafe partial struct FeatureDataRootSignature
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataRootSignature
-    (
-            D3DRootSignatureVersion? highestVersion = null
-    ) : this()
+    [NativeName("Name", "D3D12_FEATURE_DATA_ROOT_SIGNATURE")]
+    public unsafe partial struct FeatureDataRootSignature
     {
-        if (highestVersion is not null)
+        public FeatureDataRootSignature
+        (
+            D3DRootSignatureVersion? highestVersion = null
+        ) : this()
         {
-            HighestVersion = highestVersion.Value;
+            if (highestVersion is not null)
+            {
+                HighestVersion = highestVersion.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3D_ROOT_SIGNATURE_VERSION")]
+        [NativeName("Type.Name", "D3D_ROOT_SIGNATURE_VERSION")]
+        [NativeName("Name", "HighestVersion")]
+        public D3DRootSignatureVersion HighestVersion;
     }
-
-
-    [NativeName("Type", "D3D_ROOT_SIGNATURE_VERSION")]
-    [NativeName("Type.Name", "D3D_ROOT_SIGNATURE_VERSION")]
-    [NativeName("Name", "HighestVersion")]
-    public D3DRootSignatureVersion HighestVersion;
 }

@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_index_func")]
-public unsafe partial class ExtIndexFunc : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_index_func";
-    [NativeApi(EntryPoint = "glIndexFuncEXT")]
-    public partial void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
-
-    [NativeApi(EntryPoint = "glIndexFuncEXT")]
-    public partial void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
-
-    public ExtIndexFunc(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_index_func")]
+    public unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_index_func";
+        [NativeApi(EntryPoint = "glIndexFuncEXT")]
+        public partial void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
+
+        [NativeApi(EntryPoint = "glIndexFuncEXT")]
+        public partial void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
+
+        public ExtIndexFunc(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

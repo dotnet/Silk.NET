@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkAccelerationStructureMotionInstanceNV")]
-public unsafe partial struct AccelerationStructureMotionInstanceNV
+namespace Silk.NET.Vulkan
 {
-    public AccelerationStructureMotionInstanceNV
-    (
+    [NativeName("Name", "VkAccelerationStructureMotionInstanceNV")]
+    public unsafe partial struct AccelerationStructureMotionInstanceNV
+    {
+        public AccelerationStructureMotionInstanceNV
+        (
             AccelerationStructureMotionInstanceTypeNV? type = null,
             uint? flags = null,
             AccelerationStructureMotionInstanceDataNV? data = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (data is not null)
-        {
-            Data = data.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureMotionInstanceTypeNV")]
+        [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceTypeNV")]
+        [NativeName("Name", "type")]
+        public AccelerationStructureMotionInstanceTypeNV Type;
+/// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureMotionInstanceFlagsNV")]
+        [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceFlagsNV")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
+/// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureMotionInstanceDataNV")]
+        [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceDataNV")]
+        [NativeName("Name", "data")]
+        public AccelerationStructureMotionInstanceDataNV Data;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkAccelerationStructureMotionInstanceTypeNV")]
-    [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceTypeNV")]
-    [NativeName("Name", "type")]
-    public AccelerationStructureMotionInstanceTypeNV Type;
-/// <summary></summary>
-    [NativeName("Type", "VkAccelerationStructureMotionInstanceFlagsNV")]
-    [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceFlagsNV")]
-    [NativeName("Name", "flags")]
-    public uint Flags;
-/// <summary></summary>
-    [NativeName("Type", "VkAccelerationStructureMotionInstanceDataNV")]
-    [NativeName("Type.Name", "VkAccelerationStructureMotionInstanceDataNV")]
-    [NativeName("Name", "data")]
-    public AccelerationStructureMotionInstanceDataNV Data;
 }

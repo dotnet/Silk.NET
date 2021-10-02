@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkTessellationDomainOrigin")]
-public enum TessellationDomainOrigin : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT")]
-    UpperLeft = 0,
-    [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT")]
-    LowerLeft = 1,
+    [NativeName("Name", "VkTessellationDomainOrigin")]
+    public enum TessellationDomainOrigin : int
+    {
+        [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT")]
+        UpperLeft = 0,
+        [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT")]
+        LowerLeft = 1,
+    }
 }

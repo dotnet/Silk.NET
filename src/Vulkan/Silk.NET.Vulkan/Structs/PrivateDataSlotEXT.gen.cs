@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPrivateDataSlotEXT")]
-public unsafe partial struct PrivateDataSlotEXT
+namespace Silk.NET.Vulkan
 {
-    public PrivateDataSlotEXT
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkPrivateDataSlotEXT")]
+    public unsafe partial struct PrivateDataSlotEXT
     {
-        if (handle is not null)
+        public PrivateDataSlotEXT
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

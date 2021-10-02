@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrInteractionProfileSuggestedBinding")]
-public unsafe partial struct InteractionProfileSuggestedBinding
+namespace Silk.NET.OpenXR
 {
-    public InteractionProfileSuggestedBinding
-    (
+    [NativeName("Name", "XrInteractionProfileSuggestedBinding")]
+    public unsafe partial struct InteractionProfileSuggestedBinding
+    {
+        public InteractionProfileSuggestedBinding
+        (
             StructureType? type = StructureType.TypeInteractionProfileSuggestedBinding,
             void* next = null,
             ulong? interactionProfile = null,
             uint? countSuggestedBindings = null,
             ActionSuggestedBinding* suggestedBindings = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (interactionProfile is not null)
+            {
+                InteractionProfile = interactionProfile.Value;
+            }
+
+            if (countSuggestedBindings is not null)
+            {
+                CountSuggestedBindings = countSuggestedBindings.Value;
+            }
+
+            if (suggestedBindings is not null)
+            {
+                SuggestedBindings = suggestedBindings;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (interactionProfile is not null)
-        {
-            InteractionProfile = interactionProfile.Value;
-        }
-
-        if (countSuggestedBindings is not null)
-        {
-            CountSuggestedBindings = countSuggestedBindings.Value;
-        }
-
-        if (suggestedBindings is not null)
-        {
-            SuggestedBindings = suggestedBindings;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrPath")]
+        [NativeName("Type.Name", "XrPath")]
+        [NativeName("Name", "interactionProfile")]
+        public ulong InteractionProfile;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "countSuggestedBindings")]
+        public uint CountSuggestedBindings;
+/// <summary></summary>
+        [NativeName("Type", "XrActionSuggestedBinding*")]
+        [NativeName("Type.Name", "XrActionSuggestedBinding")]
+        [NativeName("Name", "suggestedBindings")]
+        public ActionSuggestedBinding* SuggestedBindings;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrPath")]
-    [NativeName("Type.Name", "XrPath")]
-    [NativeName("Name", "interactionProfile")]
-    public ulong InteractionProfile;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "countSuggestedBindings")]
-    public uint CountSuggestedBindings;
-/// <summary></summary>
-    [NativeName("Type", "XrActionSuggestedBinding*")]
-    [NativeName("Type.Name", "XrActionSuggestedBinding")]
-    [NativeName("Name", "suggestedBindings")]
-    public ActionSuggestedBinding* SuggestedBindings;
 }

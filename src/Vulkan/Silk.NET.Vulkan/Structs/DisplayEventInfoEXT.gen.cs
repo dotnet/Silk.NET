@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDisplayEventInfoEXT")]
-public unsafe partial struct DisplayEventInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DisplayEventInfoEXT
-    (
+    [NativeName("Name", "VkDisplayEventInfoEXT")]
+    public unsafe partial struct DisplayEventInfoEXT
+    {
+        public DisplayEventInfoEXT
+        (
             StructureType? sType = StructureType.DisplayEventInfoExt,
             void* pNext = null,
             DisplayEventTypeEXT? displayEvent = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (displayEvent is not null)
+            {
+                DisplayEvent = displayEvent.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (displayEvent is not null)
-        {
-            DisplayEvent = displayEvent.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDisplayEventTypeEXT")]
+        [NativeName("Type.Name", "VkDisplayEventTypeEXT")]
+        [NativeName("Name", "displayEvent")]
+        public DisplayEventTypeEXT DisplayEvent;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDisplayEventTypeEXT")]
-    [NativeName("Type.Name", "VkDisplayEventTypeEXT")]
-    [NativeName("Name", "displayEvent")]
-    public DisplayEventTypeEXT DisplayEvent;
 }

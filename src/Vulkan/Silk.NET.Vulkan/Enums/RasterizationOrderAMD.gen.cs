@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkRasterizationOrderAMD")]
-public enum RasterizationOrderAMD : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_RASTERIZATION_ORDER_STRICT_AMD")]
-    RasterizationOrderStrictAmd = 0,
-    [NativeName("Name", "VK_RASTERIZATION_ORDER_RELAXED_AMD")]
-    RasterizationOrderRelaxedAmd = 1,
+    [NativeName("Name", "VkRasterizationOrderAMD")]
+    public enum RasterizationOrderAMD : int
+    {
+        [NativeName("Name", "VK_RASTERIZATION_ORDER_STRICT_AMD")]
+        RasterizationOrderStrictAmd = 0,
+        [NativeName("Name", "VK_RASTERIZATION_ORDER_RELAXED_AMD")]
+        RasterizationOrderRelaxedAmd = 1,
+    }
 }

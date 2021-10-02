@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrControllerModelNodeStateMSFT")]
-public unsafe partial struct ControllerModelNodeStateMSFT
+namespace Silk.NET.OpenXR
 {
-    public ControllerModelNodeStateMSFT
-    (
+    [NativeName("Name", "XrControllerModelNodeStateMSFT")]
+    public unsafe partial struct ControllerModelNodeStateMSFT
+    {
+        public ControllerModelNodeStateMSFT
+        (
             StructureType? type = StructureType.TypeControllerModelNodeStateMsft,
             void* next = null,
             Posef? nodePose = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (nodePose is not null)
+            {
+                NodePose = nodePose.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (nodePose is not null)
-        {
-            NodePose = nodePose.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "nodePose")]
+        public Posef NodePose;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrPosef")]
-    [NativeName("Type.Name", "XrPosef")]
-    [NativeName("Name", "nodePose")]
-    public Posef NodePose;
 }

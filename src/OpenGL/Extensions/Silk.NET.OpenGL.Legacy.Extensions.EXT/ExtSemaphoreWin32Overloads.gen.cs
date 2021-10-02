@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-public static class ExtSemaphoreWin32Overloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
+    public static class ExtSemaphoreWin32Overloads
     {
-        // SpanOverloader
-        thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, out handle.GetPinnableReference());
-    }
+        public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, out handle.GetPinnableReference());
+        }
 
-    public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, out handle.GetPinnableReference());
-    }
+        public static unsafe void ImportSemaphoreWin32Handle<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] Span<T0> handle) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ImportSemaphoreWin32Handle(semaphore, handleType, out handle.GetPinnableReference());
+        }
 
-    public static unsafe void ImportSemaphoreWin32Name<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> name) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.ImportSemaphoreWin32Name(semaphore, handleType, in name.GetPinnableReference());
-    }
+        public static unsafe void ImportSemaphoreWin32Name<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> name) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ImportSemaphoreWin32Name(semaphore, handleType, in name.GetPinnableReference());
+        }
 
-    public static unsafe void ImportSemaphoreWin32Name<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> name) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.ImportSemaphoreWin32Name(semaphore, handleType, in name.GetPinnableReference());
-    }
+        public static unsafe void ImportSemaphoreWin32Name<T0>(this ExtSemaphoreWin32 thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] ReadOnlySpan<T0> name) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ImportSemaphoreWin32Name(semaphore, handleType, in name.GetPinnableReference());
+        }
 
+    }
 }
 

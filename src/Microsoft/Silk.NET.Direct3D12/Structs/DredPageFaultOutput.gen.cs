@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DRED_PAGE_FAULT_OUTPUT")]
-public unsafe partial struct DredPageFaultOutput
+namespace Silk.NET.Direct3D12
 {
-    public DredPageFaultOutput
-    (
+    [NativeName("Name", "D3D12_DRED_PAGE_FAULT_OUTPUT")]
+    public unsafe partial struct DredPageFaultOutput
+    {
+        public DredPageFaultOutput
+        (
             ulong? pageFaultVA = null,
             DredAllocationNode* pHeadExistingAllocationNode = null,
             DredAllocationNode* pHeadRecentFreedAllocationNode = null
-    ) : this()
-    {
-        if (pageFaultVA is not null)
+        ) : this()
         {
-            PageFaultVA = pageFaultVA.Value;
+            if (pageFaultVA is not null)
+            {
+                PageFaultVA = pageFaultVA.Value;
+            }
+
+            if (pHeadExistingAllocationNode is not null)
+            {
+                PHeadExistingAllocationNode = pHeadExistingAllocationNode;
+            }
+
+            if (pHeadRecentFreedAllocationNode is not null)
+            {
+                PHeadRecentFreedAllocationNode = pHeadRecentFreedAllocationNode;
+            }
         }
 
-        if (pHeadExistingAllocationNode is not null)
-        {
-            PHeadExistingAllocationNode = pHeadExistingAllocationNode;
-        }
 
-        if (pHeadRecentFreedAllocationNode is not null)
-        {
-            PHeadRecentFreedAllocationNode = pHeadRecentFreedAllocationNode;
-        }
+        [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
+        [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
+        [NativeName("Name", "PageFaultVA")]
+        public ulong PageFaultVA;
+
+        [NativeName("Type", "const D3D12_DRED_ALLOCATION_NODE *")]
+        [NativeName("Type.Name", "const D3D12_DRED_ALLOCATION_NODE *")]
+        [NativeName("Name", "pHeadExistingAllocationNode")]
+        public DredAllocationNode* PHeadExistingAllocationNode;
+
+        [NativeName("Type", "const D3D12_DRED_ALLOCATION_NODE *")]
+        [NativeName("Type.Name", "const D3D12_DRED_ALLOCATION_NODE *")]
+        [NativeName("Name", "pHeadRecentFreedAllocationNode")]
+        public DredAllocationNode* PHeadRecentFreedAllocationNode;
     }
-
-
-    [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
-    [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
-    [NativeName("Name", "PageFaultVA")]
-    public ulong PageFaultVA;
-
-    [NativeName("Type", "const D3D12_DRED_ALLOCATION_NODE *")]
-    [NativeName("Type.Name", "const D3D12_DRED_ALLOCATION_NODE *")]
-    [NativeName("Name", "pHeadExistingAllocationNode")]
-    public DredAllocationNode* PHeadExistingAllocationNode;
-
-    [NativeName("Type", "const D3D12_DRED_ALLOCATION_NODE *")]
-    [NativeName("Type.Name", "const D3D12_DRED_ALLOCATION_NODE *")]
-    [NativeName("Name", "pHeadRecentFreedAllocationNode")]
-    public DredAllocationNode* PHeadRecentFreedAllocationNode;
 }

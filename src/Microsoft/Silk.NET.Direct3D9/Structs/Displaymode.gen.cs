@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DDISPLAYMODE")]
-public unsafe partial struct Displaymode
+namespace Silk.NET.Direct3D9
 {
-    public Displaymode
-    (
+    [NativeName("Name", "_D3DDISPLAYMODE")]
+    public unsafe partial struct Displaymode
+    {
+        public Displaymode
+        (
             uint? width = null,
             uint? height = null,
             uint? refreshRate = null,
             Format? format = null
-    ) : this()
-    {
-        if (width is not null)
+        ) : this()
         {
-            Width = width.Value;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
-        if (height is not null)
-        {
-            Height = height.Value;
-        }
 
-        if (refreshRate is not null)
-        {
-            RefreshRate = refreshRate.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Width")]
+        public uint Width;
 
-        if (format is not null)
-        {
-            Format = format.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Height")]
+        public uint Height;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "RefreshRate")]
+        public uint RefreshRate;
+
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "Format")]
+        public Format Format;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Width")]
-    public uint Width;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Height")]
-    public uint Height;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "RefreshRate")]
-    public uint RefreshRate;
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "Format")]
-    public Format Format;
 }

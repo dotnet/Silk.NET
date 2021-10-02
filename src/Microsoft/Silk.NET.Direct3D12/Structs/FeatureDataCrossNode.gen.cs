@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_CROSS_NODE")]
-public unsafe partial struct FeatureDataCrossNode
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataCrossNode
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_CROSS_NODE")]
+    public unsafe partial struct FeatureDataCrossNode
+    {
+        public FeatureDataCrossNode
+        (
             CrossNodeSharingTier? sharingTier = null,
             int? atomicShaderInstructions = null
-    ) : this()
-    {
-        if (sharingTier is not null)
+        ) : this()
         {
-            SharingTier = sharingTier.Value;
+            if (sharingTier is not null)
+            {
+                SharingTier = sharingTier.Value;
+            }
+
+            if (atomicShaderInstructions is not null)
+            {
+                AtomicShaderInstructions = atomicShaderInstructions.Value;
+            }
         }
 
-        if (atomicShaderInstructions is not null)
-        {
-            AtomicShaderInstructions = atomicShaderInstructions.Value;
-        }
+
+        [NativeName("Type", "D3D12_CROSS_NODE_SHARING_TIER")]
+        [NativeName("Type.Name", "D3D12_CROSS_NODE_SHARING_TIER")]
+        [NativeName("Name", "SharingTier")]
+        public CrossNodeSharingTier SharingTier;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "AtomicShaderInstructions")]
+        public int AtomicShaderInstructions;
     }
-
-
-    [NativeName("Type", "D3D12_CROSS_NODE_SHARING_TIER")]
-    [NativeName("Type.Name", "D3D12_CROSS_NODE_SHARING_TIER")]
-    [NativeName("Name", "SharingTier")]
-    public CrossNodeSharingTier SharingTier;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "AtomicShaderInstructions")]
-    public int AtomicShaderInstructions;
 }

@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
-
-public static class SgixAsyncOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
-    public static unsafe int FinishAsync(this SgixAsync thisApi, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> markerp)
+    public static class SgixAsyncOverloads
     {
-        // SpanOverloader
-        return thisApi.FinishAsync(out markerp.GetPinnableReference());
-    }
+        public static unsafe int FinishAsync(this SgixAsync thisApi, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> markerp)
+        {
+            // SpanOverloader
+            return thisApi.FinishAsync(out markerp.GetPinnableReference());
+        }
 
-    public static unsafe int PollAsync(this SgixAsync thisApi, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> markerp)
-    {
-        // SpanOverloader
-        return thisApi.PollAsync(out markerp.GetPinnableReference());
-    }
+        public static unsafe int PollAsync(this SgixAsync thisApi, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> markerp)
+        {
+            // SpanOverloader
+            return thisApi.PollAsync(out markerp.GetPinnableReference());
+        }
 
+    }
 }
 

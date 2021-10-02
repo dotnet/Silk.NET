@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
-public unsafe partial struct DredAutoBreadcrumbsOutput1
+namespace Silk.NET.Direct3D12
 {
-    public DredAutoBreadcrumbsOutput1
-    (
-            AutoBreadcrumbNode1* pHeadAutoBreadcrumbNode = null
-    ) : this()
+    [NativeName("Name", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
+    public unsafe partial struct DredAutoBreadcrumbsOutput1
     {
-        if (pHeadAutoBreadcrumbNode is not null)
+        public DredAutoBreadcrumbsOutput1
+        (
+            AutoBreadcrumbNode1* pHeadAutoBreadcrumbNode = null
+        ) : this()
         {
-            PHeadAutoBreadcrumbNode = pHeadAutoBreadcrumbNode;
+            if (pHeadAutoBreadcrumbNode is not null)
+            {
+                PHeadAutoBreadcrumbNode = pHeadAutoBreadcrumbNode;
+            }
         }
+
+
+        [NativeName("Type", "const D3D12_AUTO_BREADCRUMB_NODE1 *")]
+        [NativeName("Type.Name", "const D3D12_AUTO_BREADCRUMB_NODE1 *")]
+        [NativeName("Name", "pHeadAutoBreadcrumbNode")]
+        public AutoBreadcrumbNode1* PHeadAutoBreadcrumbNode;
     }
-
-
-    [NativeName("Type", "const D3D12_AUTO_BREADCRUMB_NODE1 *")]
-    [NativeName("Type.Name", "const D3D12_AUTO_BREADCRUMB_NODE1 *")]
-    [NativeName("Name", "pHeadAutoBreadcrumbNode")]
-    public AutoBreadcrumbNode1* PHeadAutoBreadcrumbNode;
 }

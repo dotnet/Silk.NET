@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE")]
-public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
-    (
+    [NativeName("Name", "VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE")]
+    public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
+    {
+        public PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
+        (
             StructureType? sType = StructureType.PhysicalDeviceMutableDescriptorTypeFeaturesValve,
             void* pNext = null,
             Bool32? mutableDescriptorType = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (mutableDescriptorType is not null)
+            {
+                MutableDescriptorType = mutableDescriptorType.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (mutableDescriptorType is not null)
-        {
-            MutableDescriptorType = mutableDescriptorType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "mutableDescriptorType")]
+        public Bool32 MutableDescriptorType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "mutableDescriptorType")]
-    public Bool32 MutableDescriptorType;
 }

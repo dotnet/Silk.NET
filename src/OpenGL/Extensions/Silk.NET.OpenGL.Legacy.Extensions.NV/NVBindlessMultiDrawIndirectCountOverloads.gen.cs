@@ -12,45 +12,46 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-public static class NVBindlessMultiDrawIndirectCountOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public static unsafe void MultiDrawArraysIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+    public static class NVBindlessMultiDrawIndirectCountOverloads
     {
-        // SpanOverloader
-        thisApi.MultiDrawArraysIndirectBindlessCount(mode, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawArraysIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawArraysIndirectBindlessCount(mode, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
-    public static unsafe void MultiDrawArraysIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.MultiDrawArraysIndirectBindlessCount(mode, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawArraysIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawArraysIndirectBindlessCount(mode, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
-    public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
-    public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
-    public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
-    public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
-    {
-        // SpanOverloader
-        thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
-    }
+        public static unsafe void MultiDrawElementsIndirectBindlessCount<T0>(this NVBindlessMultiDrawIndirectCount thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint maxDrawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.MultiDrawElementsIndirectBindlessCount(mode, type, in indirect.GetPinnableReference(), drawCount, maxDrawCount, stride, vertexBufferCount);
+        }
 
+    }
 }
 

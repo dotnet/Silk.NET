@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_FEATURE_DATA_D3D11_OPTIONS3")]
-public unsafe partial struct FeatureDataD3D11Options3
+namespace Silk.NET.Direct3D11
 {
-    public FeatureDataD3D11Options3
-    (
-            int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizer = null
-    ) : this()
+    [NativeName("Name", "D3D11_FEATURE_DATA_D3D11_OPTIONS3")]
+    public unsafe partial struct FeatureDataD3D11Options3
     {
-        if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizer is not null)
+        public FeatureDataD3D11Options3
+        (
+            int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizer = null
+        ) : this()
         {
-            VPAndRTArrayIndexFromAnyShaderFeedingRasterizer = vPAndRTArrayIndexFromAnyShaderFeedingRasterizer.Value;
+            if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizer is not null)
+            {
+                VPAndRTArrayIndexFromAnyShaderFeedingRasterizer = vPAndRTArrayIndexFromAnyShaderFeedingRasterizer.Value;
+            }
         }
+
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizer")]
+        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizer")]
-    public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
 }

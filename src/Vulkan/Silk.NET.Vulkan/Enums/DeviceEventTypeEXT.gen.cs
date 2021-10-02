@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDeviceEventTypeEXT")]
-public enum DeviceEventTypeEXT : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
-    DeviceEventTypeDisplayHotplugExt = 0,
+    [NativeName("Name", "VkDeviceEventTypeEXT")]
+    public enum DeviceEventTypeEXT : int
+    {
+        [NativeName("Name", "VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
+        DeviceEventTypeDisplayHotplugExt = 0,
+    }
 }

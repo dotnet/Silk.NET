@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV;
-
-[Extension("NV_read_buffer")]
-public unsafe partial class NVReadBuffer : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.NV
 {
-    public const string ExtensionName = "NV_read_buffer";
-    [NativeApi(EntryPoint = "glReadBufferNV")]
-    public partial void ReadBuffer([Flow(FlowDirection.In)] NV mode);
-
-    public NVReadBuffer(INativeContext ctx)
-        : base(ctx)
+    [Extension("NV_read_buffer")]
+    public unsafe partial class NVReadBuffer : NativeExtension<GL>
     {
+        public const string ExtensionName = "NV_read_buffer";
+        [NativeApi(EntryPoint = "glReadBufferNV")]
+        public partial void ReadBuffer([Flow(FlowDirection.In)] NV mode);
+
+        public NVReadBuffer(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_cond")]
-public unsafe partial struct Cond
+namespace Silk.NET.SDL
 {
+    [NativeName("Name", "SDL_cond")]
+    public unsafe partial struct Cond
+    {
+    }
 }

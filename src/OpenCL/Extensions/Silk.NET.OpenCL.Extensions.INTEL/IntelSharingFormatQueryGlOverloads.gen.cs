@@ -12,27 +12,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.INTEL;
-
-public static class IntelSharingFormatQueryGlOverloads
+namespace Silk.NET.OpenCL.Extensions.INTEL
 {
-    public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] Span<uint> num_texture_formats)
+    public static class IntelSharingFormatQueryGlOverloads
     {
-        // SpanOverloader
-        return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, gl_formats, out num_texture_formats.GetPinnableReference());
-    }
+        public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] Span<uint> num_texture_formats)
+        {
+            // SpanOverloader
+            return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, gl_formats, out num_texture_formats.GetPinnableReference());
+        }
 
-    public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<uint> gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats)
-    {
-        // SpanOverloader
-        return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, out gl_formats.GetPinnableReference(), num_texture_formats);
-    }
+        public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<uint> gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats)
+        {
+            // SpanOverloader
+            return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, out gl_formats.GetPinnableReference(), num_texture_formats);
+        }
 
-    public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<uint> gl_formats, [Flow(FlowDirection.Out)] Span<uint> num_texture_formats)
-    {
-        // SpanOverloader
-        return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, out gl_formats.GetPinnableReference(), out num_texture_formats.GetPinnableReference());
-    }
+        public static unsafe int GetSupportedGltextureFormats(this IntelSharingFormatQueryGl thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<uint> gl_formats, [Flow(FlowDirection.Out)] Span<uint> num_texture_formats)
+        {
+            // SpanOverloader
+            return thisApi.GetSupportedGltextureFormats(context, flags, image_type, num_entries, out gl_formats.GetPinnableReference(), out num_texture_formats.GetPinnableReference());
+        }
 
+    }
 }
 

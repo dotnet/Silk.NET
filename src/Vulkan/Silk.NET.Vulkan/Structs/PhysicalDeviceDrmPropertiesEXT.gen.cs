@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceDrmPropertiesEXT")]
-public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceDrmPropertiesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceDrmPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
+    {
+        public PhysicalDeviceDrmPropertiesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceDrmPropertiesExt,
             void* pNext = null,
             Bool32? hasPrimary = null,
@@ -29,87 +29,88 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             long? primaryMinor = null,
             long? renderMajor = null,
             long? renderMinor = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (hasPrimary is not null)
+            {
+                HasPrimary = hasPrimary.Value;
+            }
+
+            if (hasRender is not null)
+            {
+                HasRender = hasRender.Value;
+            }
+
+            if (primaryMajor is not null)
+            {
+                PrimaryMajor = primaryMajor.Value;
+            }
+
+            if (primaryMinor is not null)
+            {
+                PrimaryMinor = primaryMinor.Value;
+            }
+
+            if (renderMajor is not null)
+            {
+                RenderMajor = renderMajor.Value;
+            }
+
+            if (renderMinor is not null)
+            {
+                RenderMinor = renderMinor.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (hasPrimary is not null)
-        {
-            HasPrimary = hasPrimary.Value;
-        }
-
-        if (hasRender is not null)
-        {
-            HasRender = hasRender.Value;
-        }
-
-        if (primaryMajor is not null)
-        {
-            PrimaryMajor = primaryMajor.Value;
-        }
-
-        if (primaryMinor is not null)
-        {
-            PrimaryMinor = primaryMinor.Value;
-        }
-
-        if (renderMajor is not null)
-        {
-            RenderMajor = renderMajor.Value;
-        }
-
-        if (renderMinor is not null)
-        {
-            RenderMinor = renderMinor.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "hasPrimary")]
+        public Bool32 HasPrimary;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "hasRender")]
+        public Bool32 HasRender;
+/// <summary></summary>
+        [NativeName("Type", "int64_t")]
+        [NativeName("Type.Name", "int64_t")]
+        [NativeName("Name", "primaryMajor")]
+        public long PrimaryMajor;
+/// <summary></summary>
+        [NativeName("Type", "int64_t")]
+        [NativeName("Type.Name", "int64_t")]
+        [NativeName("Name", "primaryMinor")]
+        public long PrimaryMinor;
+/// <summary></summary>
+        [NativeName("Type", "int64_t")]
+        [NativeName("Type.Name", "int64_t")]
+        [NativeName("Name", "renderMajor")]
+        public long RenderMajor;
+/// <summary></summary>
+        [NativeName("Type", "int64_t")]
+        [NativeName("Type.Name", "int64_t")]
+        [NativeName("Name", "renderMinor")]
+        public long RenderMinor;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "hasPrimary")]
-    public Bool32 HasPrimary;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "hasRender")]
-    public Bool32 HasRender;
-/// <summary></summary>
-    [NativeName("Type", "int64_t")]
-    [NativeName("Type.Name", "int64_t")]
-    [NativeName("Name", "primaryMajor")]
-    public long PrimaryMajor;
-/// <summary></summary>
-    [NativeName("Type", "int64_t")]
-    [NativeName("Type.Name", "int64_t")]
-    [NativeName("Name", "primaryMinor")]
-    public long PrimaryMinor;
-/// <summary></summary>
-    [NativeName("Type", "int64_t")]
-    [NativeName("Type.Name", "int64_t")]
-    [NativeName("Name", "renderMajor")]
-    public long RenderMajor;
-/// <summary></summary>
-    [NativeName("Type", "int64_t")]
-    [NativeName("Type.Name", "int64_t")]
-    [NativeName("Name", "renderMinor")]
-    public long RenderMinor;
 }

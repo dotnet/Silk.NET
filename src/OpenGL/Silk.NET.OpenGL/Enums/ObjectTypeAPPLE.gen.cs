@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "ObjectTypeAPPLE")]
-public enum ObjectTypeAPPLE : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_DRAW_PIXELS_APPLE")]
-    DrawPixelsApple = 0x8A0A,
-    [NativeName("Name", "GL_FENCE_APPLE")]
-    FenceApple = 0x8A0B,
+    [NativeName("Name", "ObjectTypeAPPLE")]
+    public enum ObjectTypeAPPLE : int
+    {
+        [NativeName("Name", "GL_DRAW_PIXELS_APPLE")]
+        DrawPixelsApple = 0x8A0A,
+        [NativeName("Name", "GL_FENCE_APPLE")]
+        FenceApple = 0x8A0B,
+    }
 }

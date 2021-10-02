@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDevicePerformanceQueryPropertiesKHR")]
-public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDevicePerformanceQueryPropertiesKHR
-    (
+    [NativeName("Name", "VkPhysicalDevicePerformanceQueryPropertiesKHR")]
+    public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
+    {
+        public PhysicalDevicePerformanceQueryPropertiesKHR
+        (
             StructureType? sType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr,
             void* pNext = null,
             Bool32? allowCommandBufferQueryCopies = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allowCommandBufferQueryCopies is not null)
+            {
+                AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (allowCommandBufferQueryCopies is not null)
-        {
-            AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "allowCommandBufferQueryCopies")]
+        public Bool32 AllowCommandBufferQueryCopies;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "allowCommandBufferQueryCopies")]
-    public Bool32 AllowCommandBufferQueryCopies;
 }

@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-[Extension("ARB_parallel_shader_compile")]
-public unsafe partial class ArbParallelShaderCompile : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_parallel_shader_compile";
-    [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB")]
-    public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
-
-    public ArbParallelShaderCompile(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_parallel_shader_compile")]
+    public unsafe partial class ArbParallelShaderCompile : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_parallel_shader_compile";
+        [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB")]
+        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+
+        public ArbParallelShaderCompile(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

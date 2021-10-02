@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA")]
-public unsafe partial struct HDStreamStateOutputRateData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateOutputRateData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA")]
+    public unsafe partial struct HDStreamStateOutputRateData
+    {
+        public HDStreamStateOutputRateData
+        (
             int? repeatFrame = null,
             HDOutputRate? outputRate = null,
             HDRational? customRate = null
-    ) : this()
-    {
-        if (repeatFrame is not null)
+        ) : this()
         {
-            RepeatFrame = repeatFrame.Value;
+            if (repeatFrame is not null)
+            {
+                RepeatFrame = repeatFrame.Value;
+            }
+
+            if (outputRate is not null)
+            {
+                OutputRate = outputRate.Value;
+            }
+
+            if (customRate is not null)
+            {
+                CustomRate = customRate.Value;
+            }
         }
 
-        if (outputRate is not null)
-        {
-            OutputRate = outputRate.Value;
-        }
 
-        if (customRate is not null)
-        {
-            CustomRate = customRate.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "RepeatFrame")]
+        public int RepeatFrame;
+
+        [NativeName("Type", "DXVAHD_OUTPUT_RATE")]
+        [NativeName("Type.Name", "DXVAHD_OUTPUT_RATE")]
+        [NativeName("Name", "OutputRate")]
+        public HDOutputRate OutputRate;
+
+        [NativeName("Type", "DXVAHD_RATIONAL")]
+        [NativeName("Type.Name", "DXVAHD_RATIONAL")]
+        [NativeName("Name", "CustomRate")]
+        public HDRational CustomRate;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "RepeatFrame")]
-    public int RepeatFrame;
-
-    [NativeName("Type", "DXVAHD_OUTPUT_RATE")]
-    [NativeName("Type.Name", "DXVAHD_OUTPUT_RATE")]
-    [NativeName("Name", "OutputRate")]
-    public HDOutputRate OutputRate;
-
-    [NativeName("Type", "DXVAHD_RATIONAL")]
-    [NativeName("Type.Name", "DXVAHD_RATIONAL")]
-    [NativeName("Name", "CustomRate")]
-    public HDRational CustomRate;
 }

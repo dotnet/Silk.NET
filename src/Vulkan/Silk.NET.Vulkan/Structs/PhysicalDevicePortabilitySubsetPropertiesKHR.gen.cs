@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDevicePortabilitySubsetPropertiesKHR")]
-public unsafe partial struct PhysicalDevicePortabilitySubsetPropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDevicePortabilitySubsetPropertiesKHR
-    (
+    [NativeName("Name", "VkPhysicalDevicePortabilitySubsetPropertiesKHR")]
+    public unsafe partial struct PhysicalDevicePortabilitySubsetPropertiesKHR
+    {
+        public PhysicalDevicePortabilitySubsetPropertiesKHR
+        (
             StructureType? sType = StructureType.PhysicalDevicePortabilitySubsetPropertiesKhr,
             void* pNext = null,
             uint? minVertexInputBindingStrideAlignment = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (minVertexInputBindingStrideAlignment is not null)
+            {
+                MinVertexInputBindingStrideAlignment = minVertexInputBindingStrideAlignment.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (minVertexInputBindingStrideAlignment is not null)
-        {
-            MinVertexInputBindingStrideAlignment = minVertexInputBindingStrideAlignment.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "minVertexInputBindingStrideAlignment")]
+        public uint MinVertexInputBindingStrideAlignment;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "minVertexInputBindingStrideAlignment")]
-    public uint MinVertexInputBindingStrideAlignment;
 }

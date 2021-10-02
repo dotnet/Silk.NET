@@ -7,9 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "GetPixelMap")]
-public enum GetPixelMap : int
+namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "GetPixelMap")]
+    public enum GetPixelMap : int
+    {
+    }
 }

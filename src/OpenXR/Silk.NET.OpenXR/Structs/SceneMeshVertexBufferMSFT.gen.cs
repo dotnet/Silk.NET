@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneMeshVertexBufferMSFT")]
-public unsafe partial struct SceneMeshVertexBufferMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneMeshVertexBufferMSFT
-    (
+    [NativeName("Name", "XrSceneMeshVertexBufferMSFT")]
+    public unsafe partial struct SceneMeshVertexBufferMSFT
+    {
+        public SceneMeshVertexBufferMSFT
+        (
             StructureType? type = StructureType.TypeSceneMeshVertexBufferMsft,
             void* next = null,
             uint? vertexCapacityInput = null,
             uint? vertexCountOutput = null,
             Vector3f* vertices = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (vertexCapacityInput is not null)
+            {
+                VertexCapacityInput = vertexCapacityInput.Value;
+            }
+
+            if (vertexCountOutput is not null)
+            {
+                VertexCountOutput = vertexCountOutput.Value;
+            }
+
+            if (vertices is not null)
+            {
+                Vertices = vertices;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (vertexCapacityInput is not null)
-        {
-            VertexCapacityInput = vertexCapacityInput.Value;
-        }
-
-        if (vertexCountOutput is not null)
-        {
-            VertexCountOutput = vertexCountOutput.Value;
-        }
-
-        if (vertices is not null)
-        {
-            Vertices = vertices;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexCapacityInput")]
+        public uint VertexCapacityInput;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexCountOutput")]
+        public uint VertexCountOutput;
+/// <summary></summary>
+        [NativeName("Type", "XrVector3f*")]
+        [NativeName("Type.Name", "XrVector3f")]
+        [NativeName("Name", "vertices")]
+        public Vector3f* Vertices;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vertexCapacityInput")]
-    public uint VertexCapacityInput;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "vertexCountOutput")]
-    public uint VertexCountOutput;
-/// <summary></summary>
-    [NativeName("Type", "XrVector3f*")]
-    [NativeName("Type.Name", "XrVector3f")]
-    [NativeName("Name", "vertices")]
-    public Vector3f* Vertices;
 }

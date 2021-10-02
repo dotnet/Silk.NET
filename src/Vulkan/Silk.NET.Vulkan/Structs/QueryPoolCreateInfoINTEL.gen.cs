@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
-public unsafe partial struct QueryPoolCreateInfoINTEL
+namespace Silk.NET.Vulkan
 {
-    public QueryPoolCreateInfoINTEL
-    (
+    [NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
+    public unsafe partial struct QueryPoolCreateInfoINTEL
+    {
+        public QueryPoolCreateInfoINTEL
+        (
             StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
             void* pNext = null,
             QueryPoolSamplingModeINTEL? performanceCountersSampling = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCountersSampling is not null)
+            {
+                PerformanceCountersSampling = performanceCountersSampling.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (performanceCountersSampling is not null)
-        {
-            PerformanceCountersSampling = performanceCountersSampling.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkQueryPoolSamplingModeINTEL")]
+        [NativeName("Type.Name", "VkQueryPoolSamplingModeINTEL")]
+        [NativeName("Name", "performanceCountersSampling")]
+        public QueryPoolSamplingModeINTEL PerformanceCountersSampling;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkQueryPoolSamplingModeINTEL")]
-    [NativeName("Type.Name", "VkQueryPoolSamplingModeINTEL")]
-    [NativeName("Name", "performanceCountersSampling")]
-    public QueryPoolSamplingModeINTEL PerformanceCountersSampling;
 }

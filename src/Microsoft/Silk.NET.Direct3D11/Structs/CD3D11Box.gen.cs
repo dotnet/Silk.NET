@@ -14,80 +14,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "CD3D11_BOX")]
-public unsafe partial struct CD3D11Box
+namespace Silk.NET.Direct3D11
 {
-    public CD3D11Box
-    (
+    [NativeName("Name", "CD3D11_BOX")]
+    public unsafe partial struct CD3D11Box
+    {
+        public CD3D11Box
+        (
             uint? left = null,
             uint? top = null,
             uint? front = null,
             uint? right = null,
             uint? bottom = null,
             uint? back = null
-    ) : this()
-    {
-        if (left is not null)
+        ) : this()
         {
-            Left = left.Value;
+            if (left is not null)
+            {
+                Left = left.Value;
+            }
+
+            if (top is not null)
+            {
+                Top = top.Value;
+            }
+
+            if (front is not null)
+            {
+                Front = front.Value;
+            }
+
+            if (right is not null)
+            {
+                Right = right.Value;
+            }
+
+            if (bottom is not null)
+            {
+                Bottom = bottom.Value;
+            }
+
+            if (back is not null)
+            {
+                Back = back.Value;
+            }
         }
 
-        if (top is not null)
-        {
-            Top = top.Value;
-        }
 
-        if (front is not null)
-        {
-            Front = front.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "left")]
+        public uint Left;
 
-        if (right is not null)
-        {
-            Right = right.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "top")]
+        public uint Top;
 
-        if (bottom is not null)
-        {
-            Bottom = bottom.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "front")]
+        public uint Front;
 
-        if (back is not null)
-        {
-            Back = back.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "right")]
+        public uint Right;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "bottom")]
+        public uint Bottom;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "back")]
+        public uint Back;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "left")]
-    public uint Left;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "top")]
-    public uint Top;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "front")]
-    public uint Front;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "right")]
-    public uint Right;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "bottom")]
-    public uint Bottom;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "back")]
-    public uint Back;
 }

@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoSessionParametersKHR")]
-public unsafe partial struct VideoSessionParametersKHR
+namespace Silk.NET.Vulkan
 {
-    public VideoSessionParametersKHR
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkVideoSessionParametersKHR")]
+    public unsafe partial struct VideoSessionParametersKHR
     {
-        if (handle is not null)
+        public VideoSessionParametersKHR
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

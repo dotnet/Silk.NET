@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPSetProtectionLevelCmdData")]
-public unsafe partial struct COPPSetProtectionLevelCmdData
+namespace Silk.NET.DXVA
 {
-    public COPPSetProtectionLevelCmdData
-    (
+    [NativeName("Name", "_DXVA_COPPSetProtectionLevelCmdData")]
+    public unsafe partial struct COPPSetProtectionLevelCmdData
+    {
+        public COPPSetProtectionLevelCmdData
+        (
             uint? protType = null,
             uint? protLevel = null,
             uint? extendedInfoChangeMask = null,
             uint? extendedInfoData = null
-    ) : this()
-    {
-        if (protType is not null)
+        ) : this()
         {
-            ProtType = protType.Value;
+            if (protType is not null)
+            {
+                ProtType = protType.Value;
+            }
+
+            if (protLevel is not null)
+            {
+                ProtLevel = protLevel.Value;
+            }
+
+            if (extendedInfoChangeMask is not null)
+            {
+                ExtendedInfoChangeMask = extendedInfoChangeMask.Value;
+            }
+
+            if (extendedInfoData is not null)
+            {
+                ExtendedInfoData = extendedInfoData.Value;
+            }
         }
 
-        if (protLevel is not null)
-        {
-            ProtLevel = protLevel.Value;
-        }
 
-        if (extendedInfoChangeMask is not null)
-        {
-            ExtendedInfoChangeMask = extendedInfoChangeMask.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ProtType")]
+        public uint ProtType;
 
-        if (extendedInfoData is not null)
-        {
-            ExtendedInfoData = extendedInfoData.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ProtLevel")]
+        public uint ProtLevel;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ExtendedInfoChangeMask")]
+        public uint ExtendedInfoChangeMask;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ExtendedInfoData")]
+        public uint ExtendedInfoData;
     }
-
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ProtType")]
-    public uint ProtType;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ProtLevel")]
-    public uint ProtLevel;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ExtendedInfoChangeMask")]
-    public uint ExtendedInfoChangeMask;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ExtendedInfoData")]
-    public uint ExtendedInfoData;
 }

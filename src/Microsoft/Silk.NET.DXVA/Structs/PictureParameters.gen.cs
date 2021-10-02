@@ -14,14 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-[NativeName("Name", "_DXVA_PictureParameters")]
-public unsafe partial struct PictureParameters
+namespace Silk.NET.DXVA
 {
-    public PictureParameters
-    (
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [NativeName("Name", "_DXVA_PictureParameters")]
+    public unsafe partial struct PictureParameters
+    {
+        public PictureParameters
+        (
             ushort? wDecodedPictureIndex = null,
             ushort? wDeblockedPictureIndex = null,
             ushort? wForwardRefPictureIndex = null,
@@ -58,367 +58,368 @@ public unsafe partial struct PictureParameters
             ushort? wBitstreamPCEelements = null,
             byte? bBitstreamConcealmentNeed = null,
             byte? bBitstreamConcealmentMethod = null
-    ) : this()
-    {
-        if (wDecodedPictureIndex is not null)
+        ) : this()
         {
-            WDecodedPictureIndex = wDecodedPictureIndex.Value;
+            if (wDecodedPictureIndex is not null)
+            {
+                WDecodedPictureIndex = wDecodedPictureIndex.Value;
+            }
+
+            if (wDeblockedPictureIndex is not null)
+            {
+                WDeblockedPictureIndex = wDeblockedPictureIndex.Value;
+            }
+
+            if (wForwardRefPictureIndex is not null)
+            {
+                WForwardRefPictureIndex = wForwardRefPictureIndex.Value;
+            }
+
+            if (wBackwardRefPictureIndex is not null)
+            {
+                WBackwardRefPictureIndex = wBackwardRefPictureIndex.Value;
+            }
+
+            if (wPicWidthInMBminus1 is not null)
+            {
+                WPicWidthInMBminus1 = wPicWidthInMBminus1.Value;
+            }
+
+            if (wPicHeightInMBminus1 is not null)
+            {
+                WPicHeightInMBminus1 = wPicHeightInMBminus1.Value;
+            }
+
+            if (bMacroblockWidthMinus1 is not null)
+            {
+                BMacroblockWidthMinus1 = bMacroblockWidthMinus1.Value;
+            }
+
+            if (bMacroblockHeightMinus1 is not null)
+            {
+                BMacroblockHeightMinus1 = bMacroblockHeightMinus1.Value;
+            }
+
+            if (bBlockWidthMinus1 is not null)
+            {
+                BBlockWidthMinus1 = bBlockWidthMinus1.Value;
+            }
+
+            if (bBlockHeightMinus1 is not null)
+            {
+                BBlockHeightMinus1 = bBlockHeightMinus1.Value;
+            }
+
+            if (bBPPminus1 is not null)
+            {
+                BBPPminus1 = bBPPminus1.Value;
+            }
+
+            if (bPicStructure is not null)
+            {
+                BPicStructure = bPicStructure.Value;
+            }
+
+            if (bSecondField is not null)
+            {
+                BSecondField = bSecondField.Value;
+            }
+
+            if (bPicIntra is not null)
+            {
+                BPicIntra = bPicIntra.Value;
+            }
+
+            if (bPicBackwardPrediction is not null)
+            {
+                BPicBackwardPrediction = bPicBackwardPrediction.Value;
+            }
+
+            if (bBidirectionalAveragingMode is not null)
+            {
+                BBidirectionalAveragingMode = bBidirectionalAveragingMode.Value;
+            }
+
+            if (bMVprecisionAndChromaRelation is not null)
+            {
+                BMVprecisionAndChromaRelation = bMVprecisionAndChromaRelation.Value;
+            }
+
+            if (bChromaFormat is not null)
+            {
+                BChromaFormat = bChromaFormat.Value;
+            }
+
+            if (bPicScanFixed is not null)
+            {
+                BPicScanFixed = bPicScanFixed.Value;
+            }
+
+            if (bPicScanMethod is not null)
+            {
+                BPicScanMethod = bPicScanMethod.Value;
+            }
+
+            if (bPicReadbackRequests is not null)
+            {
+                BPicReadbackRequests = bPicReadbackRequests.Value;
+            }
+
+            if (bRcontrol is not null)
+            {
+                BRcontrol = bRcontrol.Value;
+            }
+
+            if (bPicSpatialResid8 is not null)
+            {
+                BPicSpatialResid8 = bPicSpatialResid8.Value;
+            }
+
+            if (bPicOverflowBlocks is not null)
+            {
+                BPicOverflowBlocks = bPicOverflowBlocks.Value;
+            }
+
+            if (bPicExtrapolation is not null)
+            {
+                BPicExtrapolation = bPicExtrapolation.Value;
+            }
+
+            if (bPicDeblocked is not null)
+            {
+                BPicDeblocked = bPicDeblocked.Value;
+            }
+
+            if (bPicDeblockConfined is not null)
+            {
+                BPicDeblockConfined = bPicDeblockConfined.Value;
+            }
+
+            if (bPic4MVallowed is not null)
+            {
+                BPic4MVallowed = bPic4MVallowed.Value;
+            }
+
+            if (bPicOBMC is not null)
+            {
+                BPicOBMC = bPicOBMC.Value;
+            }
+
+            if (bPicBinPB is not null)
+            {
+                BPicBinPB = bPicBinPB.Value;
+            }
+
+            if (bMVRPS is not null)
+            {
+                BMVRPS = bMVRPS.Value;
+            }
+
+            if (bReservedBits is not null)
+            {
+                BReservedBits = bReservedBits.Value;
+            }
+
+            if (wBitstreamFcodes is not null)
+            {
+                WBitstreamFcodes = wBitstreamFcodes.Value;
+            }
+
+            if (wBitstreamPCEelements is not null)
+            {
+                WBitstreamPCEelements = wBitstreamPCEelements.Value;
+            }
+
+            if (bBitstreamConcealmentNeed is not null)
+            {
+                BBitstreamConcealmentNeed = bBitstreamConcealmentNeed.Value;
+            }
+
+            if (bBitstreamConcealmentMethod is not null)
+            {
+                BBitstreamConcealmentMethod = bBitstreamConcealmentMethod.Value;
+            }
         }
 
-        if (wDeblockedPictureIndex is not null)
-        {
-            WDeblockedPictureIndex = wDeblockedPictureIndex.Value;
-        }
 
-        if (wForwardRefPictureIndex is not null)
-        {
-            WForwardRefPictureIndex = wForwardRefPictureIndex.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wDecodedPictureIndex")]
+        public ushort WDecodedPictureIndex;
 
-        if (wBackwardRefPictureIndex is not null)
-        {
-            WBackwardRefPictureIndex = wBackwardRefPictureIndex.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wDeblockedPictureIndex")]
+        public ushort WDeblockedPictureIndex;
 
-        if (wPicWidthInMBminus1 is not null)
-        {
-            WPicWidthInMBminus1 = wPicWidthInMBminus1.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wForwardRefPictureIndex")]
+        public ushort WForwardRefPictureIndex;
 
-        if (wPicHeightInMBminus1 is not null)
-        {
-            WPicHeightInMBminus1 = wPicHeightInMBminus1.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wBackwardRefPictureIndex")]
+        public ushort WBackwardRefPictureIndex;
 
-        if (bMacroblockWidthMinus1 is not null)
-        {
-            BMacroblockWidthMinus1 = bMacroblockWidthMinus1.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wPicWidthInMBminus1")]
+        public ushort WPicWidthInMBminus1;
 
-        if (bMacroblockHeightMinus1 is not null)
-        {
-            BMacroblockHeightMinus1 = bMacroblockHeightMinus1.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wPicHeightInMBminus1")]
+        public ushort WPicHeightInMBminus1;
 
-        if (bBlockWidthMinus1 is not null)
-        {
-            BBlockWidthMinus1 = bBlockWidthMinus1.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bMacroblockWidthMinus1")]
+        public byte BMacroblockWidthMinus1;
 
-        if (bBlockHeightMinus1 is not null)
-        {
-            BBlockHeightMinus1 = bBlockHeightMinus1.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bMacroblockHeightMinus1")]
+        public byte BMacroblockHeightMinus1;
 
-        if (bBPPminus1 is not null)
-        {
-            BBPPminus1 = bBPPminus1.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBlockWidthMinus1")]
+        public byte BBlockWidthMinus1;
 
-        if (bPicStructure is not null)
-        {
-            BPicStructure = bPicStructure.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBlockHeightMinus1")]
+        public byte BBlockHeightMinus1;
 
-        if (bSecondField is not null)
-        {
-            BSecondField = bSecondField.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBPPminus1")]
+        public byte BBPPminus1;
 
-        if (bPicIntra is not null)
-        {
-            BPicIntra = bPicIntra.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicStructure")]
+        public byte BPicStructure;
 
-        if (bPicBackwardPrediction is not null)
-        {
-            BPicBackwardPrediction = bPicBackwardPrediction.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bSecondField")]
+        public byte BSecondField;
 
-        if (bBidirectionalAveragingMode is not null)
-        {
-            BBidirectionalAveragingMode = bBidirectionalAveragingMode.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicIntra")]
+        public byte BPicIntra;
 
-        if (bMVprecisionAndChromaRelation is not null)
-        {
-            BMVprecisionAndChromaRelation = bMVprecisionAndChromaRelation.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicBackwardPrediction")]
+        public byte BPicBackwardPrediction;
 
-        if (bChromaFormat is not null)
-        {
-            BChromaFormat = bChromaFormat.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBidirectionalAveragingMode")]
+        public byte BBidirectionalAveragingMode;
 
-        if (bPicScanFixed is not null)
-        {
-            BPicScanFixed = bPicScanFixed.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bMVprecisionAndChromaRelation")]
+        public byte BMVprecisionAndChromaRelation;
 
-        if (bPicScanMethod is not null)
-        {
-            BPicScanMethod = bPicScanMethod.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bChromaFormat")]
+        public byte BChromaFormat;
 
-        if (bPicReadbackRequests is not null)
-        {
-            BPicReadbackRequests = bPicReadbackRequests.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicScanFixed")]
+        public byte BPicScanFixed;
 
-        if (bRcontrol is not null)
-        {
-            BRcontrol = bRcontrol.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicScanMethod")]
+        public byte BPicScanMethod;
 
-        if (bPicSpatialResid8 is not null)
-        {
-            BPicSpatialResid8 = bPicSpatialResid8.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicReadbackRequests")]
+        public byte BPicReadbackRequests;
 
-        if (bPicOverflowBlocks is not null)
-        {
-            BPicOverflowBlocks = bPicOverflowBlocks.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bRcontrol")]
+        public byte BRcontrol;
 
-        if (bPicExtrapolation is not null)
-        {
-            BPicExtrapolation = bPicExtrapolation.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicSpatialResid8")]
+        public byte BPicSpatialResid8;
 
-        if (bPicDeblocked is not null)
-        {
-            BPicDeblocked = bPicDeblocked.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicOverflowBlocks")]
+        public byte BPicOverflowBlocks;
 
-        if (bPicDeblockConfined is not null)
-        {
-            BPicDeblockConfined = bPicDeblockConfined.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicExtrapolation")]
+        public byte BPicExtrapolation;
 
-        if (bPic4MVallowed is not null)
-        {
-            BPic4MVallowed = bPic4MVallowed.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicDeblocked")]
+        public byte BPicDeblocked;
 
-        if (bPicOBMC is not null)
-        {
-            BPicOBMC = bPicOBMC.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicDeblockConfined")]
+        public byte BPicDeblockConfined;
 
-        if (bPicBinPB is not null)
-        {
-            BPicBinPB = bPicBinPB.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPic4MVallowed")]
+        public byte BPic4MVallowed;
 
-        if (bMVRPS is not null)
-        {
-            BMVRPS = bMVRPS.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicOBMC")]
+        public byte BPicOBMC;
 
-        if (bReservedBits is not null)
-        {
-            BReservedBits = bReservedBits.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bPicBinPB")]
+        public byte BPicBinPB;
 
-        if (wBitstreamFcodes is not null)
-        {
-            WBitstreamFcodes = wBitstreamFcodes.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bMV_RPS")]
+        public byte BMVRPS;
 
-        if (wBitstreamPCEelements is not null)
-        {
-            WBitstreamPCEelements = wBitstreamPCEelements.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bReservedBits")]
+        public byte BReservedBits;
 
-        if (bBitstreamConcealmentNeed is not null)
-        {
-            BBitstreamConcealmentNeed = bBitstreamConcealmentNeed.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wBitstreamFcodes")]
+        public ushort WBitstreamFcodes;
 
-        if (bBitstreamConcealmentMethod is not null)
-        {
-            BBitstreamConcealmentMethod = bBitstreamConcealmentMethod.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "wBitstreamPCEelements")]
+        public ushort WBitstreamPCEelements;
+
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBitstreamConcealmentNeed")]
+        public byte BBitstreamConcealmentNeed;
+
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "bBitstreamConcealmentMethod")]
+        public byte BBitstreamConcealmentMethod;
     }
-
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wDecodedPictureIndex")]
-    public ushort WDecodedPictureIndex;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wDeblockedPictureIndex")]
-    public ushort WDeblockedPictureIndex;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wForwardRefPictureIndex")]
-    public ushort WForwardRefPictureIndex;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wBackwardRefPictureIndex")]
-    public ushort WBackwardRefPictureIndex;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wPicWidthInMBminus1")]
-    public ushort WPicWidthInMBminus1;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wPicHeightInMBminus1")]
-    public ushort WPicHeightInMBminus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bMacroblockWidthMinus1")]
-    public byte BMacroblockWidthMinus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bMacroblockHeightMinus1")]
-    public byte BMacroblockHeightMinus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBlockWidthMinus1")]
-    public byte BBlockWidthMinus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBlockHeightMinus1")]
-    public byte BBlockHeightMinus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBPPminus1")]
-    public byte BBPPminus1;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicStructure")]
-    public byte BPicStructure;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bSecondField")]
-    public byte BSecondField;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicIntra")]
-    public byte BPicIntra;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicBackwardPrediction")]
-    public byte BPicBackwardPrediction;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBidirectionalAveragingMode")]
-    public byte BBidirectionalAveragingMode;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bMVprecisionAndChromaRelation")]
-    public byte BMVprecisionAndChromaRelation;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bChromaFormat")]
-    public byte BChromaFormat;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicScanFixed")]
-    public byte BPicScanFixed;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicScanMethod")]
-    public byte BPicScanMethod;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicReadbackRequests")]
-    public byte BPicReadbackRequests;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bRcontrol")]
-    public byte BRcontrol;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicSpatialResid8")]
-    public byte BPicSpatialResid8;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicOverflowBlocks")]
-    public byte BPicOverflowBlocks;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicExtrapolation")]
-    public byte BPicExtrapolation;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicDeblocked")]
-    public byte BPicDeblocked;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicDeblockConfined")]
-    public byte BPicDeblockConfined;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPic4MVallowed")]
-    public byte BPic4MVallowed;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicOBMC")]
-    public byte BPicOBMC;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bPicBinPB")]
-    public byte BPicBinPB;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bMV_RPS")]
-    public byte BMVRPS;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bReservedBits")]
-    public byte BReservedBits;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wBitstreamFcodes")]
-    public ushort WBitstreamFcodes;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "wBitstreamPCEelements")]
-    public ushort WBitstreamPCEelements;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBitstreamConcealmentNeed")]
-    public byte BBitstreamConcealmentNeed;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "bBitstreamConcealmentMethod")]
-    public byte BBitstreamConcealmentMethod;
 }

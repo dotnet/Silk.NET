@@ -7,19 +7,20 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0006")]
-public enum MIDLMIDLItfDxva2api000000000006 : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVA2_DetailFilterTech_Unsupported")]
-    DXVA2DetailFilterTechUnsupported = 0x0,
-    [NativeName("Name", "DXVA2_DetailFilterTech_Unknown")]
-    DXVA2DetailFilterTechUnknown = 0x1,
-    [NativeName("Name", "DXVA2_DetailFilterTech_Edge")]
-    DXVA2DetailFilterTechEdge = 0x2,
-    [NativeName("Name", "DXVA2_DetailFilterTech_Sharpening")]
-    DXVA2DetailFilterTechSharpening = 0x4,
-    [NativeName("Name", "DXVA2_DetailFilterTech_Mask")]
-    DXVA2DetailFilterTechMask = 0x7,
+    [NativeName("Name", "__MIDL___MIDL_itf_dxva2api_0000_0000_0006")]
+    public enum MIDLMIDLItfDxva2api000000000006 : int
+    {
+        [NativeName("Name", "DXVA2_DetailFilterTech_Unsupported")]
+        DXVA2DetailFilterTechUnsupported = 0x0,
+        [NativeName("Name", "DXVA2_DetailFilterTech_Unknown")]
+        DXVA2DetailFilterTechUnknown = 0x1,
+        [NativeName("Name", "DXVA2_DetailFilterTech_Edge")]
+        DXVA2DetailFilterTechEdge = 0x2,
+        [NativeName("Name", "DXVA2_DetailFilterTech_Sharpening")]
+        DXVA2DetailFilterTechSharpening = 0x4,
+        [NativeName("Name", "DXVA2_DetailFilterTech_Mask")]
+        DXVA2DetailFilterTechMask = 0x7,
+    }
 }

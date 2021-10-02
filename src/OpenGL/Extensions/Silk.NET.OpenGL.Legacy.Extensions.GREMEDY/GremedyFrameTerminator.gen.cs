@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY;
-
-[Extension("GREMEDY_frame_terminator")]
-public unsafe partial class GremedyFrameTerminator : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
-    public const string ExtensionName = "GREMEDY_frame_terminator";
-    [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY")]
-    public partial void FrameTerminator();
-
-    public GremedyFrameTerminator(INativeContext ctx)
-        : base(ctx)
+    [Extension("GREMEDY_frame_terminator")]
+    public unsafe partial class GremedyFrameTerminator : NativeExtension<GL>
     {
+        public const string ExtensionName = "GREMEDY_frame_terminator";
+        [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY")]
+        public partial void FrameTerminator();
+
+        public GremedyFrameTerminator(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-public unsafe partial struct ExportFenceWin32HandleInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public ExportFenceWin32HandleInfoKHR
-    (
+    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
+    public unsafe partial struct ExportFenceWin32HandleInfoKHR
+    {
+        public ExportFenceWin32HandleInfoKHR
+        (
             StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
             void* pNext = null,
             nint* pAttributes = null,
             int? dwAccess = null,
             nint? name = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pAttributes is not null)
+            {
+                PAttributes = pAttributes;
+            }
+
+            if (dwAccess is not null)
+            {
+                DwAccess = dwAccess.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (pAttributes is not null)
-        {
-            PAttributes = pAttributes;
-        }
-
-        if (dwAccess is not null)
-        {
-            DwAccess = dwAccess.Value;
-        }
-
-        if (name is not null)
-        {
-            Name = name.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
+        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
+        [NativeName("Name", "pAttributes")]
+        public nint* PAttributes;
+/// <summary></summary>
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "dwAccess")]
+        public int DwAccess;
+/// <summary></summary>
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "name")]
+        public nint Name;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-    [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-    [NativeName("Name", "pAttributes")]
-    public nint* PAttributes;
-/// <summary></summary>
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "dwAccess")]
-    public int DwAccess;
-/// <summary></summary>
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "name")]
-    public nint Name;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHDETW_VIDEOPROCESSBLTSTATE")]
-public unsafe partial struct HdetwVideoprocessbltstate
+namespace Silk.NET.DXVA
 {
-    public HdetwVideoprocessbltstate
-    (
+    [NativeName("Name", "_DXVAHDETW_VIDEOPROCESSBLTSTATE")]
+    public unsafe partial struct HdetwVideoprocessbltstate
+    {
+        public HdetwVideoprocessbltstate
+        (
             ulong? pObject = null,
             HDBltState? state = null,
             uint? dataSize = null,
             int? setState = null
-    ) : this()
-    {
-        if (pObject is not null)
+        ) : this()
         {
-            PObject = pObject.Value;
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (setState is not null)
+            {
+                SetState = setState.Value;
+            }
         }
 
-        if (state is not null)
-        {
-            State = state.Value;
-        }
 
-        if (dataSize is not null)
-        {
-            DataSize = dataSize.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
 
-        if (setState is not null)
-        {
-            SetState = setState.Value;
-        }
+        [NativeName("Type", "DXVAHD_BLT_STATE")]
+        [NativeName("Type.Name", "DXVAHD_BLT_STATE")]
+        [NativeName("Name", "State")]
+        public HDBltState State;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DataSize")]
+        public uint DataSize;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "SetState")]
+        public int SetState;
     }
-
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
-
-    [NativeName("Type", "DXVAHD_BLT_STATE")]
-    [NativeName("Type.Name", "DXVAHD_BLT_STATE")]
-    [NativeName("Name", "State")]
-    public HDBltState State;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DataSize")]
-    public uint DataSize;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "SetState")]
-    public int SetState;
 }

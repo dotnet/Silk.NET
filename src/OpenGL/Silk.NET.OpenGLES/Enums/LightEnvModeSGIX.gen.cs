@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "LightEnvModeSGIX")]
-public enum LightEnvModeSGIX : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_ADD")]
-    Add = 0x104,
-    [NativeName("Name", "GL_REPLACE")]
-    Replace = 0x1E01,
-    [NativeName("Name", "GL_MODULATE")]
-    Modulate = 0x2100,
+    [NativeName("Name", "LightEnvModeSGIX")]
+    public enum LightEnvModeSGIX : int
+    {
+        [NativeName("Name", "GL_ADD")]
+        Add = 0x104,
+        [NativeName("Name", "GL_REPLACE")]
+        Replace = 0x1E01,
+        [NativeName("Name", "GL_MODULATE")]
+        Modulate = 0x2100,
+    }
 }

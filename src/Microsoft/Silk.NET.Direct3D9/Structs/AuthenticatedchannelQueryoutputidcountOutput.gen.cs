@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT")]
-public unsafe partial struct AuthenticatedchannelQueryoutputidcountOutput
+namespace Silk.NET.Direct3D9
 {
-    public AuthenticatedchannelQueryoutputidcountOutput
-    (
+    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT")]
+    public unsafe partial struct AuthenticatedchannelQueryoutputidcountOutput
+    {
+        public AuthenticatedchannelQueryoutputidcountOutput
+        (
             AuthenticatedchannelQueryOutput? output = null,
             void* deviceHandle = null,
             void* cryptoSessionHandle = null,
             uint? numOutputIDs = null
-    ) : this()
-    {
-        if (output is not null)
+        ) : this()
         {
-            Output = output.Value;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (deviceHandle is not null)
+            {
+                DeviceHandle = deviceHandle;
+            }
+
+            if (cryptoSessionHandle is not null)
+            {
+                CryptoSessionHandle = cryptoSessionHandle;
+            }
+
+            if (numOutputIDs is not null)
+            {
+                NumOutputIDs = numOutputIDs.Value;
+            }
         }
 
-        if (deviceHandle is not null)
-        {
-            DeviceHandle = deviceHandle;
-        }
 
-        if (cryptoSessionHandle is not null)
-        {
-            CryptoSessionHandle = cryptoSessionHandle;
-        }
+        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+        [NativeName("Name", "Output")]
+        public AuthenticatedchannelQueryOutput Output;
 
-        if (numOutputIDs is not null)
-        {
-            NumOutputIDs = numOutputIDs.Value;
-        }
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "DeviceHandle")]
+        public void* DeviceHandle;
+
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "CryptoSessionHandle")]
+        public void* CryptoSessionHandle;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumOutputIDs")]
+        public uint NumOutputIDs;
     }
-
-
-    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-    [NativeName("Name", "Output")]
-    public AuthenticatedchannelQueryOutput Output;
-
-    [NativeName("Type", "HANDLE")]
-    [NativeName("Type.Name", "HANDLE")]
-    [NativeName("Name", "DeviceHandle")]
-    public void* DeviceHandle;
-
-    [NativeName("Type", "HANDLE")]
-    [NativeName("Type.Name", "HANDLE")]
-    [NativeName("Name", "CryptoSessionHandle")]
-    public void* CryptoSessionHandle;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumOutputIDs")]
-    public uint NumOutputIDs;
 }

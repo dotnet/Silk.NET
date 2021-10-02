@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiLogStream")]
-public unsafe partial struct LogStream
+namespace Silk.NET.Assimp
 {
-    public LogStream
-    (
+    [NativeName("Name", "aiLogStream")]
+    public unsafe partial struct LogStream
+    {
+        public LogStream
+        (
             PfnLogStreamCallback? callback = null,
             byte* user = null
-    ) : this()
-    {
-        if (callback is not null)
+        ) : this()
         {
-            Callback = callback.Value;
+            if (callback is not null)
+            {
+                Callback = callback.Value;
+            }
+
+            if (user is not null)
+            {
+                User = user;
+            }
         }
 
-        if (user is not null)
-        {
-            User = user;
-        }
+
+        [NativeName("Type", "aiLogStreamCallback")]
+        [NativeName("Type.Name", "aiLogStreamCallback")]
+        [NativeName("Name", "callback")]
+        public PfnLogStreamCallback Callback;
+
+        [NativeName("Type", "char *")]
+        [NativeName("Type.Name", "char *")]
+        [NativeName("Name", "user")]
+        public byte* User;
     }
-
-
-    [NativeName("Type", "aiLogStreamCallback")]
-    [NativeName("Type.Name", "aiLogStreamCallback")]
-    [NativeName("Name", "callback")]
-    public PfnLogStreamCallback Callback;
-
-    [NativeName("Type", "char *")]
-    [NativeName("Type.Name", "char *")]
-    [NativeName("Name", "user")]
-    public byte* User;
 }

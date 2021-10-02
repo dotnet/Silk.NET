@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoGetMemoryPropertiesKHR")]
-public unsafe partial struct VideoGetMemoryPropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public VideoGetMemoryPropertiesKHR
-    (
+    [NativeName("Name", "VkVideoGetMemoryPropertiesKHR")]
+    public unsafe partial struct VideoGetMemoryPropertiesKHR
+    {
+        public VideoGetMemoryPropertiesKHR
+        (
             StructureType? sType = StructureType.VideoGetMemoryPropertiesKhr,
             void* pNext = null,
             uint? memoryBindIndex = null,
             MemoryRequirements2* pMemoryRequirements = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryBindIndex is not null)
+            {
+                MemoryBindIndex = memoryBindIndex.Value;
+            }
+
+            if (pMemoryRequirements is not null)
+            {
+                PMemoryRequirements = pMemoryRequirements;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (memoryBindIndex is not null)
-        {
-            MemoryBindIndex = memoryBindIndex.Value;
-        }
-
-        if (pMemoryRequirements is not null)
-        {
-            PMemoryRequirements = pMemoryRequirements;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "memoryBindIndex")]
+        public uint MemoryBindIndex;
+/// <summary></summary>
+        [NativeName("Type", "VkMemoryRequirements2*")]
+        [NativeName("Type.Name", "VkMemoryRequirements2")]
+        [NativeName("Name", "pMemoryRequirements")]
+        public MemoryRequirements2* PMemoryRequirements;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "memoryBindIndex")]
-    public uint MemoryBindIndex;
-/// <summary></summary>
-    [NativeName("Type", "VkMemoryRequirements2*")]
-    [NativeName("Type.Name", "VkMemoryRequirements2")]
-    [NativeName("Name", "pMemoryRequirements")]
-    public MemoryRequirements2* PMemoryRequirements;
 }

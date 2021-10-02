@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_BUFFEREX_SRV")]
-public unsafe partial struct BufferexSrv
+namespace Silk.NET.Direct3D11
 {
-    public BufferexSrv
-    (
+    [NativeName("Name", "D3D11_BUFFEREX_SRV")]
+    public unsafe partial struct BufferexSrv
+    {
+        public BufferexSrv
+        (
             uint? firstElement = null,
             uint? numElements = null,
             uint? flags = null
-    ) : this()
-    {
-        if (firstElement is not null)
+        ) : this()
         {
-            FirstElement = firstElement.Value;
+            if (firstElement is not null)
+            {
+                FirstElement = firstElement.Value;
+            }
+
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
-        if (numElements is not null)
-        {
-            NumElements = numElements.Value;
-        }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FirstElement")]
+        public uint FirstElement;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumElements")]
+        public uint NumElements;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Flags")]
+        public uint Flags;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FirstElement")]
-    public uint FirstElement;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumElements")]
-    public uint NumElements;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Flags")]
-    public uint Flags;
 }

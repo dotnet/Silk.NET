@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_PixelFormat")]
-public unsafe partial struct PixelFormat
+namespace Silk.NET.SDL
 {
-    public PixelFormat
-    (
+    [NativeName("Name", "SDL_PixelFormat")]
+    public unsafe partial struct PixelFormat
+    {
+        public PixelFormat
+        (
             uint? format = null,
             Palette* palette = null,
             byte? bitsPerPixel = null,
@@ -39,191 +39,192 @@ public unsafe partial struct PixelFormat
             byte? ashift = null,
             int? refcount = null,
             PixelFormat* next = null
-    ) : this()
-    {
-        if (format is not null)
+        ) : this()
         {
-            Format = format.Value;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (palette is not null)
+            {
+                Palette = palette;
+            }
+
+            if (bitsPerPixel is not null)
+            {
+                BitsPerPixel = bitsPerPixel.Value;
+            }
+
+            if (bytesPerPixel is not null)
+            {
+                BytesPerPixel = bytesPerPixel.Value;
+            }
+
+            if (rmask is not null)
+            {
+                Rmask = rmask.Value;
+            }
+
+            if (gmask is not null)
+            {
+                Gmask = gmask.Value;
+            }
+
+            if (bmask is not null)
+            {
+                Bmask = bmask.Value;
+            }
+
+            if (amask is not null)
+            {
+                Amask = amask.Value;
+            }
+
+            if (rloss is not null)
+            {
+                Rloss = rloss.Value;
+            }
+
+            if (gloss is not null)
+            {
+                Gloss = gloss.Value;
+            }
+
+            if (bloss is not null)
+            {
+                Bloss = bloss.Value;
+            }
+
+            if (aloss is not null)
+            {
+                Aloss = aloss.Value;
+            }
+
+            if (rshift is not null)
+            {
+                Rshift = rshift.Value;
+            }
+
+            if (gshift is not null)
+            {
+                Gshift = gshift.Value;
+            }
+
+            if (bshift is not null)
+            {
+                Bshift = bshift.Value;
+            }
+
+            if (ashift is not null)
+            {
+                Ashift = ashift.Value;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
-        if (palette is not null)
-        {
-            Palette = palette;
-        }
 
-        if (bitsPerPixel is not null)
-        {
-            BitsPerPixel = bitsPerPixel.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "format")]
+        public uint Format;
 
-        if (bytesPerPixel is not null)
-        {
-            BytesPerPixel = bytesPerPixel.Value;
-        }
+        [NativeName("Type", "SDL_Palette *")]
+        [NativeName("Type.Name", "SDL_Palette *")]
+        [NativeName("Name", "palette")]
+        public Palette* Palette;
 
-        if (rmask is not null)
-        {
-            Rmask = rmask.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "BitsPerPixel")]
+        public byte BitsPerPixel;
 
-        if (gmask is not null)
-        {
-            Gmask = gmask.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "BytesPerPixel")]
+        public byte BytesPerPixel;
+        [NativeName("Type", "Uint8 [2]")]
+        [NativeName("Type.Name", "Uint8 [2]")]
+        [NativeName("Name", "padding")]
+        public fixed byte Padding[2];
 
-        if (bmask is not null)
-        {
-            Bmask = bmask.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "Rmask")]
+        public uint Rmask;
 
-        if (amask is not null)
-        {
-            Amask = amask.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "Gmask")]
+        public uint Gmask;
 
-        if (rloss is not null)
-        {
-            Rloss = rloss.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "Bmask")]
+        public uint Bmask;
 
-        if (gloss is not null)
-        {
-            Gloss = gloss.Value;
-        }
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "Amask")]
+        public uint Amask;
 
-        if (bloss is not null)
-        {
-            Bloss = bloss.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Rloss")]
+        public byte Rloss;
 
-        if (aloss is not null)
-        {
-            Aloss = aloss.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Gloss")]
+        public byte Gloss;
 
-        if (rshift is not null)
-        {
-            Rshift = rshift.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Bloss")]
+        public byte Bloss;
 
-        if (gshift is not null)
-        {
-            Gshift = gshift.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Aloss")]
+        public byte Aloss;
 
-        if (bshift is not null)
-        {
-            Bshift = bshift.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Rshift")]
+        public byte Rshift;
 
-        if (ashift is not null)
-        {
-            Ashift = ashift.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Gshift")]
+        public byte Gshift;
 
-        if (refcount is not null)
-        {
-            Refcount = refcount.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Bshift")]
+        public byte Bshift;
 
-        if (next is not null)
-        {
-            Next = next;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "Ashift")]
+        public byte Ashift;
+
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "refcount")]
+        public int Refcount;
+
+        [NativeName("Type", "struct SDL_PixelFormat *")]
+        [NativeName("Type.Name", "struct SDL_PixelFormat *")]
+        [NativeName("Name", "next")]
+        public PixelFormat* Next;
     }
-
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "format")]
-    public uint Format;
-
-    [NativeName("Type", "SDL_Palette *")]
-    [NativeName("Type.Name", "SDL_Palette *")]
-    [NativeName("Name", "palette")]
-    public Palette* Palette;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "BitsPerPixel")]
-    public byte BitsPerPixel;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "BytesPerPixel")]
-    public byte BytesPerPixel;
-    [NativeName("Type", "Uint8 [2]")]
-    [NativeName("Type.Name", "Uint8 [2]")]
-    [NativeName("Name", "padding")]
-    public fixed byte Padding[2];
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "Rmask")]
-    public uint Rmask;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "Gmask")]
-    public uint Gmask;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "Bmask")]
-    public uint Bmask;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "Amask")]
-    public uint Amask;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Rloss")]
-    public byte Rloss;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Gloss")]
-    public byte Gloss;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Bloss")]
-    public byte Bloss;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Aloss")]
-    public byte Aloss;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Rshift")]
-    public byte Rshift;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Gshift")]
-    public byte Gshift;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Bshift")]
-    public byte Bshift;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "Ashift")]
-    public byte Ashift;
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "refcount")]
-    public int Refcount;
-
-    [NativeName("Type", "struct SDL_PixelFormat *")]
-    [NativeName("Type.Name", "struct SDL_PixelFormat *")]
-    [NativeName("Name", "next")]
-    public PixelFormat* Next;
 }

@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_SHADER_MODEL")]
-public unsafe partial struct FeatureDataShaderModel
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataShaderModel
-    (
-            D3DShaderModel? highestShaderModel = null
-    ) : this()
+    [NativeName("Name", "D3D12_FEATURE_DATA_SHADER_MODEL")]
+    public unsafe partial struct FeatureDataShaderModel
     {
-        if (highestShaderModel is not null)
+        public FeatureDataShaderModel
+        (
+            D3DShaderModel? highestShaderModel = null
+        ) : this()
         {
-            HighestShaderModel = highestShaderModel.Value;
+            if (highestShaderModel is not null)
+            {
+                HighestShaderModel = highestShaderModel.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3D_SHADER_MODEL")]
+        [NativeName("Type.Name", "D3D_SHADER_MODEL")]
+        [NativeName("Name", "HighestShaderModel")]
+        public D3DShaderModel HighestShaderModel;
     }
-
-
-    [NativeName("Type", "D3D_SHADER_MODEL")]
-    [NativeName("Type.Name", "D3D_SHADER_MODEL")]
-    [NativeName("Name", "HighestShaderModel")]
-    public D3DShaderModel HighestShaderModel;
 }

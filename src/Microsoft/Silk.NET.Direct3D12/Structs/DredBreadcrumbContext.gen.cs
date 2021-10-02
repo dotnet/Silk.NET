@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DRED_BREADCRUMB_CONTEXT")]
-public unsafe partial struct DredBreadcrumbContext
+namespace Silk.NET.Direct3D12
 {
-    public DredBreadcrumbContext
-    (
+    [NativeName("Name", "D3D12_DRED_BREADCRUMB_CONTEXT")]
+    public unsafe partial struct DredBreadcrumbContext
+    {
+        public DredBreadcrumbContext
+        (
             uint? breadcrumbIndex = null,
             char* pContextString = null
-    ) : this()
-    {
-        if (breadcrumbIndex is not null)
+        ) : this()
         {
-            BreadcrumbIndex = breadcrumbIndex.Value;
+            if (breadcrumbIndex is not null)
+            {
+                BreadcrumbIndex = breadcrumbIndex.Value;
+            }
+
+            if (pContextString is not null)
+            {
+                PContextString = pContextString;
+            }
         }
 
-        if (pContextString is not null)
-        {
-            PContextString = pContextString;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BreadcrumbIndex")]
+        public uint BreadcrumbIndex;
+
+        [NativeName("Type", "const wchar_t *")]
+        [NativeName("Type.Name", "const wchar_t *")]
+        [NativeName("Name", "pContextString")]
+        public char* PContextString;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BreadcrumbIndex")]
-    public uint BreadcrumbIndex;
-
-    [NativeName("Type", "const wchar_t *")]
-    [NativeName("Type.Name", "const wchar_t *")]
-    [NativeName("Name", "pContextString")]
-    public char* PContextString;
 }

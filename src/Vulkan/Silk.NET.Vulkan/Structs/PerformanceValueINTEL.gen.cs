@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPerformanceValueINTEL")]
-public unsafe partial struct PerformanceValueINTEL
+namespace Silk.NET.Vulkan
 {
-    public PerformanceValueINTEL
-    (
+    [NativeName("Name", "VkPerformanceValueINTEL")]
+    public unsafe partial struct PerformanceValueINTEL
+    {
+        public PerformanceValueINTEL
+        (
             PerformanceValueTypeINTEL? type = null,
             PerformanceValueDataINTEL? data = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
-        if (data is not null)
-        {
-            Data = data.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkPerformanceValueTypeINTEL")]
+        [NativeName("Type.Name", "VkPerformanceValueTypeINTEL")]
+        [NativeName("Name", "type")]
+        public PerformanceValueTypeINTEL Type;
+/// <summary></summary>
+        [NativeName("Type", "VkPerformanceValueDataINTEL")]
+        [NativeName("Type.Name", "VkPerformanceValueDataINTEL")]
+        [NativeName("Name", "data")]
+        public PerformanceValueDataINTEL Data;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkPerformanceValueTypeINTEL")]
-    [NativeName("Type.Name", "VkPerformanceValueTypeINTEL")]
-    [NativeName("Name", "type")]
-    public PerformanceValueTypeINTEL Type;
-/// <summary></summary>
-    [NativeName("Type", "VkPerformanceValueDataINTEL")]
-    [NativeName("Type.Name", "VkPerformanceValueDataINTEL")]
-    [NativeName("Name", "data")]
-    public PerformanceValueDataINTEL Data;
 }

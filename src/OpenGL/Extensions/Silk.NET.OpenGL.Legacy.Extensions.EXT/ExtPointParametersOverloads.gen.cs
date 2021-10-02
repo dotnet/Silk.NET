@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-public static class ExtPointParametersOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+    public static class ExtPointParametersOverloads
     {
-        // SpanOverloader
-        thisApi.PointParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.PointParameter(pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.PointParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PointParameter(this ExtPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.PointParameter(pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

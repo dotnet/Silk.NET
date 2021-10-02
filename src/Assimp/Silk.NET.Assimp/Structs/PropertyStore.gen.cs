@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiPropertyStore")]
-public unsafe partial struct PropertyStore
+namespace Silk.NET.Assimp
 {
-    public PropertyStore
-    (
-            byte? sentinel = null
-    ) : this()
+    [NativeName("Name", "aiPropertyStore")]
+    public unsafe partial struct PropertyStore
     {
-        if (sentinel is not null)
+        public PropertyStore
+        (
+            byte? sentinel = null
+        ) : this()
         {
-            Sentinel = sentinel.Value;
+            if (sentinel is not null)
+            {
+                Sentinel = sentinel.Value;
+            }
         }
+
+
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "sentinel")]
+        public byte Sentinel;
     }
-
-
-    [NativeName("Type", "char")]
-    [NativeName("Type.Name", "char")]
-    [NativeName("Name", "sentinel")]
-    public byte Sentinel;
 }

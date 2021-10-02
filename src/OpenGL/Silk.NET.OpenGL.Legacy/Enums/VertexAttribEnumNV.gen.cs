@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy;
-
-[NativeName("Name", "VertexAttribEnumNV")]
-public enum VertexAttribEnumNV : int
+namespace Silk.NET.OpenGL.Legacy
 {
-    [NativeName("Name", "GL_PROGRAM_PARAMETER_NV")]
-    ProgramParameterNV = 0x8644,
+    [NativeName("Name", "VertexAttribEnumNV")]
+    public enum VertexAttribEnumNV : int
+    {
+        [NativeName("Name", "GL_PROGRAM_PARAMETER_NV")]
+        ProgramParameterNV = 0x8644,
+    }
 }

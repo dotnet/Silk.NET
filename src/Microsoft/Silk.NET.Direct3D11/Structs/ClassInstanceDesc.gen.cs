@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_CLASS_INSTANCE_DESC")]
-public unsafe partial struct ClassInstanceDesc
+namespace Silk.NET.Direct3D11
 {
-    public ClassInstanceDesc
-    (
+    [NativeName("Name", "D3D11_CLASS_INSTANCE_DESC")]
+    public unsafe partial struct ClassInstanceDesc
+    {
+        public ClassInstanceDesc
+        (
             uint? instanceId = null,
             uint? instanceIndex = null,
             uint? typeId = null,
@@ -29,87 +29,88 @@ public unsafe partial struct ClassInstanceDesc
             uint? baseTexture = null,
             uint? baseSampler = null,
             int? created = null
-    ) : this()
-    {
-        if (instanceId is not null)
+        ) : this()
         {
-            InstanceId = instanceId.Value;
+            if (instanceId is not null)
+            {
+                InstanceId = instanceId.Value;
+            }
+
+            if (instanceIndex is not null)
+            {
+                InstanceIndex = instanceIndex.Value;
+            }
+
+            if (typeId is not null)
+            {
+                TypeId = typeId.Value;
+            }
+
+            if (constantBuffer is not null)
+            {
+                ConstantBuffer = constantBuffer.Value;
+            }
+
+            if (baseConstantBufferOffset is not null)
+            {
+                BaseConstantBufferOffset = baseConstantBufferOffset.Value;
+            }
+
+            if (baseTexture is not null)
+            {
+                BaseTexture = baseTexture.Value;
+            }
+
+            if (baseSampler is not null)
+            {
+                BaseSampler = baseSampler.Value;
+            }
+
+            if (created is not null)
+            {
+                Created = created.Value;
+            }
         }
 
-        if (instanceIndex is not null)
-        {
-            InstanceIndex = instanceIndex.Value;
-        }
 
-        if (typeId is not null)
-        {
-            TypeId = typeId.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InstanceId")]
+        public uint InstanceId;
 
-        if (constantBuffer is not null)
-        {
-            ConstantBuffer = constantBuffer.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InstanceIndex")]
+        public uint InstanceIndex;
 
-        if (baseConstantBufferOffset is not null)
-        {
-            BaseConstantBufferOffset = baseConstantBufferOffset.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TypeId")]
+        public uint TypeId;
 
-        if (baseTexture is not null)
-        {
-            BaseTexture = baseTexture.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ConstantBuffer")]
+        public uint ConstantBuffer;
 
-        if (baseSampler is not null)
-        {
-            BaseSampler = baseSampler.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BaseConstantBufferOffset")]
+        public uint BaseConstantBufferOffset;
 
-        if (created is not null)
-        {
-            Created = created.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BaseTexture")]
+        public uint BaseTexture;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BaseSampler")]
+        public uint BaseSampler;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Created")]
+        public int Created;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InstanceId")]
-    public uint InstanceId;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InstanceIndex")]
-    public uint InstanceIndex;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TypeId")]
-    public uint TypeId;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ConstantBuffer")]
-    public uint ConstantBuffer;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BaseConstantBufferOffset")]
-    public uint BaseConstantBufferOffset;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BaseTexture")]
-    public uint BaseTexture;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BaseSampler")]
-    public uint BaseSampler;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Created")]
-    public int Created;
 }

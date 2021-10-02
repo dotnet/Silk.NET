@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageSubresourceRange")]
-public unsafe partial struct ImageSubresourceRange
+namespace Silk.NET.Vulkan
 {
-    public ImageSubresourceRange
-    (
+    [NativeName("Name", "VkImageSubresourceRange")]
+    public unsafe partial struct ImageSubresourceRange
+    {
+        public ImageSubresourceRange
+        (
             ImageAspectFlags? aspectMask = null,
             uint? baseMipLevel = null,
             uint? levelCount = null,
             uint? baseArrayLayer = null,
             uint? layerCount = null
-    ) : this()
-    {
-        if (aspectMask is not null)
+        ) : this()
         {
-            AspectMask = aspectMask.Value;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (baseMipLevel is not null)
+            {
+                BaseMipLevel = baseMipLevel.Value;
+            }
+
+            if (levelCount is not null)
+            {
+                LevelCount = levelCount.Value;
+            }
+
+            if (baseArrayLayer is not null)
+            {
+                BaseArrayLayer = baseArrayLayer.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
         }
 
-        if (baseMipLevel is not null)
-        {
-            BaseMipLevel = baseMipLevel.Value;
-        }
-
-        if (levelCount is not null)
-        {
-            LevelCount = levelCount.Value;
-        }
-
-        if (baseArrayLayer is not null)
-        {
-            BaseArrayLayer = baseArrayLayer.Value;
-        }
-
-        if (layerCount is not null)
-        {
-            LayerCount = layerCount.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
+        public ImageAspectFlags AspectMask;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "baseMipLevel")]
+        public uint BaseMipLevel;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "levelCount")]
+        public uint LevelCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "baseArrayLayer")]
+        public uint BaseArrayLayer;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "layerCount")]
+        public uint LayerCount;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkImageAspectFlags")]
-    [NativeName("Type.Name", "VkImageAspectFlags")]
-    [NativeName("Name", "aspectMask")]
-    public ImageAspectFlags AspectMask;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "baseMipLevel")]
-    public uint BaseMipLevel;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "levelCount")]
-    public uint LevelCount;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "baseArrayLayer")]
-    public uint BaseArrayLayer;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "layerCount")]
-    public uint LayerCount;
 }

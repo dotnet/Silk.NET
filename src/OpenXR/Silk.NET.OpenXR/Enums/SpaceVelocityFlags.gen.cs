@@ -7,14 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrSpaceVelocityFlags")]
-public enum SpaceVelocityFlags : long
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_SPACE_VELOCITY_LINEAR_VALID_BIT")]
-    SpaceVelocityLinearValidBit = 1,
-    [NativeName("Name", "XR_SPACE_VELOCITY_ANGULAR_VALID_BIT")]
-    SpaceVelocityAngularValidBit = 2,
+    [Flags()]
+    [NativeName("Name", "XrSpaceVelocityFlags")]
+    public enum SpaceVelocityFlags : long
+    {
+        [NativeName("Name", "XR_SPACE_VELOCITY_LINEAR_VALID_BIT")]
+        SpaceVelocityLinearValidBit = 1,
+        [NativeName("Name", "XR_SPACE_VELOCITY_ANGULAR_VALID_BIT")]
+        SpaceVelocityAngularValidBit = 2,
+    }
 }

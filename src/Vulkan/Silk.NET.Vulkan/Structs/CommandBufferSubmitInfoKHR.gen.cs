@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkCommandBufferSubmitInfoKHR")]
-public unsafe partial struct CommandBufferSubmitInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public CommandBufferSubmitInfoKHR
-    (
+    [NativeName("Name", "VkCommandBufferSubmitInfoKHR")]
+    public unsafe partial struct CommandBufferSubmitInfoKHR
+    {
+        public CommandBufferSubmitInfoKHR
+        (
             StructureType? sType = StructureType.CommandBufferSubmitInfoKhr,
             void* pNext = null,
             CommandBuffer? commandBuffer = null,
             uint? deviceMask = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (commandBuffer is not null)
+            {
+                CommandBuffer = commandBuffer.Value;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (commandBuffer is not null)
-        {
-            CommandBuffer = commandBuffer.Value;
-        }
-
-        if (deviceMask is not null)
-        {
-            DeviceMask = deviceMask.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkCommandBuffer")]
+        [NativeName("Type.Name", "VkCommandBuffer")]
+        [NativeName("Name", "commandBuffer")]
+        public CommandBuffer CommandBuffer;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "deviceMask")]
+        public uint DeviceMask;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkCommandBuffer")]
-    [NativeName("Type.Name", "VkCommandBuffer")]
-    [NativeName("Name", "commandBuffer")]
-    public CommandBuffer CommandBuffer;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "deviceMask")]
-    public uint DeviceMask;
 }

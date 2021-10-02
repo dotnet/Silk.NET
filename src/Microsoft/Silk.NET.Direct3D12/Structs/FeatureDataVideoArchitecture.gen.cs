@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE")]
-public unsafe partial struct FeatureDataVideoArchitecture
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataVideoArchitecture
-    (
-            int? iOCoherent = null
-    ) : this()
+    [NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_ARCHITECTURE")]
+    public unsafe partial struct FeatureDataVideoArchitecture
     {
-        if (iOCoherent is not null)
+        public FeatureDataVideoArchitecture
+        (
+            int? iOCoherent = null
+        ) : this()
         {
-            IOCoherent = iOCoherent.Value;
+            if (iOCoherent is not null)
+            {
+                IOCoherent = iOCoherent.Value;
+            }
         }
+
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "IOCoherent")]
+        public int IOCoherent;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "IOCoherent")]
-    public int IOCoherent;
 }

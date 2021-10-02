@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "PatchParameterName")]
-public enum PatchParameterName : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_PATCH_VERTICES")]
-    PatchVertices = 0x8E72,
-    [NativeName("Name", "GL_PATCH_DEFAULT_INNER_LEVEL")]
-    PatchDefaultInnerLevel = 0x8E73,
-    [NativeName("Name", "GL_PATCH_DEFAULT_OUTER_LEVEL")]
-    PatchDefaultOuterLevel = 0x8E74,
+    [NativeName("Name", "PatchParameterName")]
+    public enum PatchParameterName : int
+    {
+        [NativeName("Name", "GL_PATCH_VERTICES")]
+        PatchVertices = 0x8E72,
+        [NativeName("Name", "GL_PATCH_DEFAULT_INNER_LEVEL")]
+        PatchDefaultInnerLevel = 0x8E73,
+        [NativeName("Name", "GL_PATCH_DEFAULT_OUTER_LEVEL")]
+        PatchDefaultOuterLevel = 0x8E74,
+    }
 }

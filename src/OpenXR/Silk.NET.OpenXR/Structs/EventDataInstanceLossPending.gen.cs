@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrEventDataInstanceLossPending")]
-public unsafe partial struct EventDataInstanceLossPending
+namespace Silk.NET.OpenXR
 {
-    public EventDataInstanceLossPending
-    (
+    [NativeName("Name", "XrEventDataInstanceLossPending")]
+    public unsafe partial struct EventDataInstanceLossPending
+    {
+        public EventDataInstanceLossPending
+        (
             StructureType? type = StructureType.TypeEventDataInstanceLossPending,
             void* next = null,
             long? lossTime = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (lossTime is not null)
+            {
+                LossTime = lossTime.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (lossTime is not null)
-        {
-            LossTime = lossTime.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "lossTime")]
+        public long LossTime;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrTime")]
-    [NativeName("Type.Name", "XrTime")]
-    [NativeName("Name", "lossTime")]
-    public long LossTime;
 }

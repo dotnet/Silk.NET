@@ -14,30 +14,31 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV;
-
-[Extension("VK_NV_clip_space_w_scaling")]
-public unsafe partial class NVClipSpaceWScaling : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.NV
 {
-    public const string ExtensionName = "VK_NV_clip_space_w_scaling";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
-    public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
-    public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in ViewportWScalingNV pViewportWScalings);
-
-    /// <summary>To be documented.</summary>
-    public unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
+    [Extension("VK_NV_clip_space_w_scaling")]
+    public unsafe partial class NVClipSpaceWScaling : NativeExtension<Vk>
     {
-        // ImplicitCountSpanOverloader
-        CmdSetViewportWScaling(commandBuffer, firstViewport, (uint) pViewportWScalings.Length, in pViewportWScalings.GetPinnableReference());
-    }
+        public const string ExtensionName = "VK_NV_clip_space_w_scaling";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
+        public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
 
-    public NVClipSpaceWScaling(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
+        public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in ViewportWScalingNV pViewportWScalings);
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetViewportWScaling(commandBuffer, firstViewport, (uint) pViewportWScalings.Length, in pViewportWScalings.GetPinnableReference());
+        }
+
+        public NVClipSpaceWScaling(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

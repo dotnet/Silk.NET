@@ -7,12 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkSwapchainImageUsageFlagsANDROID")]
-public enum SwapchainImageUsageFlagsANDROID : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
-    SwapchainImageUsageSharedBitAndroid = 1,
+    [Flags()]
+    [NativeName("Name", "VkSwapchainImageUsageFlagsANDROID")]
+    public enum SwapchainImageUsageFlagsANDROID : int
+    {
+        [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
+        SwapchainImageUsageSharedBitAndroid = 1,
+    }
 }

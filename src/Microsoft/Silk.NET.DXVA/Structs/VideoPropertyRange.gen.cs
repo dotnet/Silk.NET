@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_VideoPropertyRange")]
-public unsafe partial struct VideoPropertyRange
+namespace Silk.NET.DXVA
 {
-    public VideoPropertyRange
-    (
+    [NativeName("Name", "_DXVA_VideoPropertyRange")]
+    public unsafe partial struct VideoPropertyRange
+    {
+        public VideoPropertyRange
+        (
             float? minValue = null,
             float? maxValue = null,
             float? defaultValue = null,
             float? stepSize = null
-    ) : this()
-    {
-        if (minValue is not null)
+        ) : this()
         {
-            MinValue = minValue.Value;
+            if (minValue is not null)
+            {
+                MinValue = minValue.Value;
+            }
+
+            if (maxValue is not null)
+            {
+                MaxValue = maxValue.Value;
+            }
+
+            if (defaultValue is not null)
+            {
+                DefaultValue = defaultValue.Value;
+            }
+
+            if (stepSize is not null)
+            {
+                StepSize = stepSize.Value;
+            }
         }
 
-        if (maxValue is not null)
-        {
-            MaxValue = maxValue.Value;
-        }
 
-        if (defaultValue is not null)
-        {
-            DefaultValue = defaultValue.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MinValue")]
+        public float MinValue;
 
-        if (stepSize is not null)
-        {
-            StepSize = stepSize.Value;
-        }
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MaxValue")]
+        public float MaxValue;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "DefaultValue")]
+        public float DefaultValue;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "StepSize")]
+        public float StepSize;
     }
-
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MinValue")]
-    public float MinValue;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MaxValue")]
-    public float MaxValue;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "DefaultValue")]
-    public float DefaultValue;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "StepSize")]
-    public float StepSize;
 }

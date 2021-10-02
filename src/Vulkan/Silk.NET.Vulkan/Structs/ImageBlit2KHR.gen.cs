@@ -14,122 +14,123 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageBlit2KHR")]
-public unsafe partial struct ImageBlit2KHR
+namespace Silk.NET.Vulkan
 {
-    public ImageBlit2KHR
-    (
+    [NativeName("Name", "VkImageBlit2KHR")]
+    public unsafe partial struct ImageBlit2KHR
+    {
+        public ImageBlit2KHR
+        (
             StructureType? sType = StructureType.ImageBlit2Khr,
             void* pNext = null,
             ImageSubresourceLayers? srcSubresource = null,
             ImageSubresourceLayers? dstSubresource = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
-        }
-
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (srcSubresource is not null)
-        {
-            SrcSubresource = srcSubresource.Value;
-        }
-
-        if (dstSubresource is not null)
-        {
-            DstSubresource = dstSubresource.Value;
-        }
-    }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImageSubresourceLayers")]
-    [NativeName("Type.Name", "VkImageSubresourceLayers")]
-    [NativeName("Name", "srcSubresource")]
-    public ImageSubresourceLayers SrcSubresource;
-        /// <summary></summary>
-    [NativeName("Type", "VkOffset3D")]
-    [NativeName("Type.Name", "VkOffset3D")]
-    [NativeName("Name", "srcOffsets")]
-    public SrcOffsetsBuffer SrcOffsets;
-
-    public struct SrcOffsetsBuffer
-    {
-        public Offset3D Element0;
-        public Offset3D Element1;
-        public ref Offset3D this[int index]
-        {
-            get
+            if (sType is not null)
             {
-                if (index > 1 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                SType = sType.Value;
+            }
 
-                fixed (Offset3D* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
             }
         }
 
-#if NETSTANDARD2_1
-        public Span<Offset3D> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
-    }
-
 /// <summary></summary>
-    [NativeName("Type", "VkImageSubresourceLayers")]
-    [NativeName("Type.Name", "VkImageSubresourceLayers")]
-    [NativeName("Name", "dstSubresource")]
-    public ImageSubresourceLayers DstSubresource;
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImageSubresourceLayers")]
+        [NativeName("Type.Name", "VkImageSubresourceLayers")]
+        [NativeName("Name", "srcSubresource")]
+        public ImageSubresourceLayers SrcSubresource;
         /// <summary></summary>
-    [NativeName("Type", "VkOffset3D")]
-    [NativeName("Type.Name", "VkOffset3D")]
-    [NativeName("Name", "dstOffsets")]
-    public DstOffsetsBuffer DstOffsets;
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "srcOffsets")]
+        public SrcOffsetsBuffer SrcOffsets;
 
-    public struct DstOffsetsBuffer
-    {
-        public Offset3D Element0;
-        public Offset3D Element1;
-        public ref Offset3D this[int index]
+        public struct SrcOffsetsBuffer
         {
-            get
+            public Offset3D Element0;
+            public Offset3D Element1;
+            public ref Offset3D this[int index]
             {
-                if (index > 1 || index < 0)
+                get
                 {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
 
-                fixed (Offset3D* ptr = &Element0)
-                {
-                    return ref ptr[index];
+                    fixed (Offset3D* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
                 }
             }
-        }
 
 #if NETSTANDARD2_1
-        public Span<Offset3D> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 2);
+            public Span<Offset3D> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
-    }
+        }
 
+/// <summary></summary>
+        [NativeName("Type", "VkImageSubresourceLayers")]
+        [NativeName("Type.Name", "VkImageSubresourceLayers")]
+        [NativeName("Name", "dstSubresource")]
+        public ImageSubresourceLayers DstSubresource;
+        /// <summary></summary>
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "dstOffsets")]
+        public DstOffsetsBuffer DstOffsets;
+
+        public struct DstOffsetsBuffer
+        {
+            public Offset3D Element0;
+            public Offset3D Element1;
+            public ref Offset3D this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Offset3D* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Offset3D> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
+    }
 }

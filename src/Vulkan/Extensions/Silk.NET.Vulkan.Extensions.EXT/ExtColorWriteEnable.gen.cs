@@ -14,30 +14,31 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-[Extension("VK_EXT_color_write_enable")]
-public unsafe partial class ExtColorWriteEnable : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    public const string ExtensionName = "VK_EXT_color_write_enable";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
-    public unsafe partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] Bool32* pColorWriteEnables);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
-    public partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] in Bool32 pColorWriteEnables);
-
-    /// <summary>To be documented.</summary>
-    public unsafe void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] ReadOnlySpan<Bool32> pColorWriteEnables)
+    [Extension("VK_EXT_color_write_enable")]
+    public unsafe partial class ExtColorWriteEnable : NativeExtension<Vk>
     {
-        // ImplicitCountSpanOverloader
-        CmdSetColorWriteEnable(commandBuffer, (uint) pColorWriteEnables.Length, in pColorWriteEnables.GetPinnableReference());
-    }
+        public const string ExtensionName = "VK_EXT_color_write_enable";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
+        public unsafe partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] Bool32* pColorWriteEnables);
 
-    public ExtColorWriteEnable(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
+        public partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] in Bool32 pColorWriteEnables);
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] ReadOnlySpan<Bool32> pColorWriteEnables)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetColorWriteEnable(commandBuffer, (uint) pColorWriteEnables.Length, in pColorWriteEnables.GetPinnableReference());
+        }
+
+        public ExtColorWriteEnable(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV;
-
-public static class NVBindlessTextureOverloads
+namespace Silk.NET.OpenGLES.Extensions.NV
 {
-    public static unsafe void ProgramUniformHandle(this NVBindlessTexture thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+    public static class NVBindlessTextureOverloads
     {
-        // SpanOverloader
-        thisApi.ProgramUniformHandle(program, location, count, in values.GetPinnableReference());
-    }
+        public static unsafe void ProgramUniformHandle(this NVBindlessTexture thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformHandle(program, location, count, in values.GetPinnableReference());
+        }
 
-    public static unsafe void UniformHandle(this NVBindlessTexture thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
-    {
-        // SpanOverloader
-        thisApi.UniformHandle(location, count, in value.GetPinnableReference());
-    }
+        public static unsafe void UniformHandle(this NVBindlessTexture thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // SpanOverloader
+            thisApi.UniformHandle(location, count, in value.GetPinnableReference());
+        }
 
+    }
 }
 

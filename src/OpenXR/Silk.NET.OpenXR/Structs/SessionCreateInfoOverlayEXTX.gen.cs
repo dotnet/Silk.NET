@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSessionCreateInfoOverlayEXTX")]
-public unsafe partial struct SessionCreateInfoOverlayEXTX
+namespace Silk.NET.OpenXR
 {
-    public SessionCreateInfoOverlayEXTX
-    (
+    [NativeName("Name", "XrSessionCreateInfoOverlayEXTX")]
+    public unsafe partial struct SessionCreateInfoOverlayEXTX
+    {
+        public SessionCreateInfoOverlayEXTX
+        (
             StructureType? type = StructureType.TypeSessionCreateInfoOverlayExtx,
             void* next = null,
             OverlaySessionCreateFlagsEXTX? createFlags = null,
             uint? sessionLayersPlacement = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (sessionLayersPlacement is not null)
+            {
+                SessionLayersPlacement = sessionLayersPlacement.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (createFlags is not null)
-        {
-            CreateFlags = createFlags.Value;
-        }
-
-        if (sessionLayersPlacement is not null)
-        {
-            SessionLayersPlacement = sessionLayersPlacement.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrOverlaySessionCreateFlagsEXTX")]
+        [NativeName("Type.Name", "XrOverlaySessionCreateFlagsEXTX")]
+        [NativeName("Name", "createFlags")]
+        public OverlaySessionCreateFlagsEXTX CreateFlags;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "sessionLayersPlacement")]
+        public uint SessionLayersPlacement;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrOverlaySessionCreateFlagsEXTX")]
-    [NativeName("Type.Name", "XrOverlaySessionCreateFlagsEXTX")]
-    [NativeName("Name", "createFlags")]
-    public OverlaySessionCreateFlagsEXTX CreateFlags;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "sessionLayersPlacement")]
-    public uint SessionLayersPlacement;
 }

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkViewportWScalingNV")]
-public unsafe partial struct ViewportWScalingNV
+namespace Silk.NET.Vulkan
 {
-    public ViewportWScalingNV
-    (
+    [NativeName("Name", "VkViewportWScalingNV")]
+    public unsafe partial struct ViewportWScalingNV
+    {
+        public ViewportWScalingNV
+        (
             float? xcoeff = null,
             float? ycoeff = null
-    ) : this()
-    {
-        if (xcoeff is not null)
+        ) : this()
         {
-            Xcoeff = xcoeff.Value;
+            if (xcoeff is not null)
+            {
+                Xcoeff = xcoeff.Value;
+            }
+
+            if (ycoeff is not null)
+            {
+                Ycoeff = ycoeff.Value;
+            }
         }
 
-        if (ycoeff is not null)
-        {
-            Ycoeff = ycoeff.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "xcoeff")]
+        public float Xcoeff;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "ycoeff")]
+        public float Ycoeff;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "xcoeff")]
-    public float Xcoeff;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "ycoeff")]
-    public float Ycoeff;
 }

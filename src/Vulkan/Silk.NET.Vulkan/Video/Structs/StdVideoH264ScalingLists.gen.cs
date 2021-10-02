@@ -14,44 +14,45 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoH264ScalingLists")]
-public unsafe partial struct StdVideoH264ScalingLists
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoH264ScalingLists
-    (
+    [NativeName("Name", "StdVideoH264ScalingLists")]
+    public unsafe partial struct StdVideoH264ScalingLists
+    {
+        public StdVideoH264ScalingLists
+        (
             byte? scalingListPresentMask = null,
             byte? useDefaultScalingMatrixMask = null
-    ) : this()
-    {
-        if (scalingListPresentMask is not null)
+        ) : this()
         {
-            ScalingListPresentMask = scalingListPresentMask.Value;
+            if (scalingListPresentMask is not null)
+            {
+                ScalingListPresentMask = scalingListPresentMask.Value;
+            }
+
+            if (useDefaultScalingMatrixMask is not null)
+            {
+                UseDefaultScalingMatrixMask = useDefaultScalingMatrixMask.Value;
+            }
         }
 
-        if (useDefaultScalingMatrixMask is not null)
-        {
-            UseDefaultScalingMatrixMask = useDefaultScalingMatrixMask.Value;
-        }
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "scaling_list_present_mask")]
+        public byte ScalingListPresentMask;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "use_default_scaling_matrix_mask")]
+        public byte UseDefaultScalingMatrixMask;
+        [NativeName("Type", "uint8_t [6][16]")]
+        [NativeName("Type.Name", "uint8_t [6][16]")]
+        [NativeName("Name", "ScalingList4x4")]
+        public fixed byte ScalingList4x4[96];
+        [NativeName("Type", "uint8_t [2][64]")]
+        [NativeName("Type.Name", "uint8_t [2][64]")]
+        [NativeName("Name", "ScalingList8x8")]
+        public fixed byte ScalingList8x8[128];
     }
-
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "scaling_list_present_mask")]
-    public byte ScalingListPresentMask;
-
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "use_default_scaling_matrix_mask")]
-    public byte UseDefaultScalingMatrixMask;
-    [NativeName("Type", "uint8_t [6][16]")]
-    [NativeName("Type.Name", "uint8_t [6][16]")]
-    [NativeName("Name", "ScalingList4x4")]
-    public fixed byte ScalingList4x4[96];
-    [NativeName("Type", "uint8_t [2][64]")]
-    [NativeName("Type.Name", "uint8_t [2][64]")]
-    [NativeName("Name", "ScalingList8x8")]
-    public fixed byte ScalingList8x8[128];
 }

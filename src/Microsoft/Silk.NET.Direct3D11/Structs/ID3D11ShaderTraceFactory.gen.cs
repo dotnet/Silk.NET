@@ -14,205 +14,95 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[Guid("1fbad429-66ab-41cc-9617-667ac10e4459")]
-[NativeName("Name", "ID3D11ShaderTraceFactory")]
-public unsafe partial struct ID3D11ShaderTraceFactory
+namespace Silk.NET.Direct3D11
 {
-    public static readonly Guid Guid = new("1fbad429-66ab-41cc-9617-667ac10e4459");
+    [NativeName("Name", "ID3D11ShaderTraceFactory")]
+    public unsafe partial struct ID3D11ShaderTraceFactory
+    {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderTraceFactory val)
+            => Unsafe.As<ID3D11ShaderTraceFactory, Silk.NET.Core.Native.IUnknown>(ref val);
 
-    public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderTraceFactory val)
-        => Unsafe.As<ID3D11ShaderTraceFactory, Silk.NET.Core.Native.IUnknown>(ref val);
-
-    public ID3D11ShaderTraceFactory
-    (
+        public ID3D11ShaderTraceFactory
+        (
             void** lpVtbl = null
-    ) : this()
-    {
-        if (lpVtbl is not null)
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
-    }
 
 
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "lpVtbl")]
-    public void** LpVtbl;
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "lpVtbl")]
+        public void** LpVtbl;
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly uint AddRef()
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTraceFactory*, uint>)LpVtbl[1])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly uint Release()
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTraceFactory*, uint>)LpVtbl[2])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTrace);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTracePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTrace);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
-        {
-            fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTracePtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
             }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTrace);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
-        {
-            fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTracePtr);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
-        {
-            fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTrace);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
-    {
-        var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
-        {
-            fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
-            {
-                fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
+                fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTracePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTraceFactory*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
+            return ret;
         }
-        return ret;
-    }
 
+        /// <summary>To be documented.</summary>
+        public readonly uint AddRef()
+        {
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTraceFactory*, uint>)LpVtbl[1])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint Release()
+        {
+            var @this = (ID3D11ShaderTraceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTraceFactory*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+    }
 }

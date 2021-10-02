@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_VIDEO_DECODER_DESC")]
-public unsafe partial struct VideoDecoderDesc
+namespace Silk.NET.Direct3D12
 {
-    public VideoDecoderDesc
-    (
+    [NativeName("Name", "D3D12_VIDEO_DECODER_DESC")]
+    public unsafe partial struct VideoDecoderDesc
+    {
+        public VideoDecoderDesc
+        (
             uint? nodeMask = null,
             VideoDecodeConfiguration? configuration = null
-    ) : this()
-    {
-        if (nodeMask is not null)
+        ) : this()
         {
-            NodeMask = nodeMask.Value;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
         }
 
-        if (configuration is not null)
-        {
-            Configuration = configuration.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NodeMask")]
+        public uint NodeMask;
+
+        [NativeName("Type", "D3D12_VIDEO_DECODE_CONFIGURATION")]
+        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_CONFIGURATION")]
+        [NativeName("Name", "Configuration")]
+        public VideoDecodeConfiguration Configuration;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NodeMask")]
-    public uint NodeMask;
-
-    [NativeName("Type", "D3D12_VIDEO_DECODE_CONFIGURATION")]
-    [NativeName("Type.Name", "D3D12_VIDEO_DECODE_CONFIGURATION")]
-    [NativeName("Name", "Configuration")]
-    public VideoDecodeConfiguration Configuration;
 }

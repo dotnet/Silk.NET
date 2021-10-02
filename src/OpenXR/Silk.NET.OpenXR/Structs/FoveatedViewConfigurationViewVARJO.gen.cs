@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrFoveatedViewConfigurationViewVARJO")]
-public unsafe partial struct FoveatedViewConfigurationViewVARJO
+namespace Silk.NET.OpenXR
 {
-    public FoveatedViewConfigurationViewVARJO
-    (
+    [NativeName("Name", "XrFoveatedViewConfigurationViewVARJO")]
+    public unsafe partial struct FoveatedViewConfigurationViewVARJO
+    {
+        public FoveatedViewConfigurationViewVARJO
+        (
             StructureType? type = StructureType.TypeFoveatedViewConfigurationViewVarjo,
             void* next = null,
             uint? foveatedRenderingActive = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (foveatedRenderingActive is not null)
+            {
+                FoveatedRenderingActive = foveatedRenderingActive.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (foveatedRenderingActive is not null)
-        {
-            FoveatedRenderingActive = foveatedRenderingActive.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "foveatedRenderingActive")]
+        public uint FoveatedRenderingActive;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrBool32")]
-    [NativeName("Type.Name", "XrBool32")]
-    [NativeName("Name", "foveatedRenderingActive")]
-    public uint FoveatedRenderingActive;
 }

@@ -12,58 +12,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-public static class KhrDisplaySwapchainOverloads
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+    public static class KhrDisplaySwapchainOverloads
     {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, pAllocator, out pSwapchains.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, pAllocator, out pSwapchains.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, in pAllocator.GetPinnableReference(), pSwapchains);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, in pAllocator.GetPinnableReference(), pSwapchains);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pSwapchains.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pSwapchains.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), pAllocator, pSwapchains);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), pAllocator, pSwapchains);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pSwapchains.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pSwapchains.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSwapchains);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSwapchains);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
-    {
-        // SpanOverloader
-        return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSwapchains.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSharedSwapchain(this KhrDisplaySwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // SpanOverloader
+            return thisApi.CreateSharedSwapchain(device, swapchainCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSwapchains.GetPinnableReference());
+        }
 
+    }
 }
 

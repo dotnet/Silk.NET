@@ -14,80 +14,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT")]
-public unsafe partial struct PhysicalDeviceTexelBufferAlignmentPropertiesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceTexelBufferAlignmentPropertiesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceTexelBufferAlignmentPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceTexelBufferAlignmentPropertiesEXT
+    {
+        public PhysicalDeviceTexelBufferAlignmentPropertiesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceTexelBufferAlignmentPropertiesExt,
             void* pNext = null,
             ulong? storageTexelBufferOffsetAlignmentBytes = null,
             Bool32? storageTexelBufferOffsetSingleTexelAlignment = null,
             ulong? uniformTexelBufferOffsetAlignmentBytes = null,
             Bool32? uniformTexelBufferOffsetSingleTexelAlignment = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (storageTexelBufferOffsetAlignmentBytes is not null)
+            {
+                StorageTexelBufferOffsetAlignmentBytes = storageTexelBufferOffsetAlignmentBytes.Value;
+            }
+
+            if (storageTexelBufferOffsetSingleTexelAlignment is not null)
+            {
+                StorageTexelBufferOffsetSingleTexelAlignment = storageTexelBufferOffsetSingleTexelAlignment.Value;
+            }
+
+            if (uniformTexelBufferOffsetAlignmentBytes is not null)
+            {
+                UniformTexelBufferOffsetAlignmentBytes = uniformTexelBufferOffsetAlignmentBytes.Value;
+            }
+
+            if (uniformTexelBufferOffsetSingleTexelAlignment is not null)
+            {
+                UniformTexelBufferOffsetSingleTexelAlignment = uniformTexelBufferOffsetSingleTexelAlignment.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (storageTexelBufferOffsetAlignmentBytes is not null)
-        {
-            StorageTexelBufferOffsetAlignmentBytes = storageTexelBufferOffsetAlignmentBytes.Value;
-        }
-
-        if (storageTexelBufferOffsetSingleTexelAlignment is not null)
-        {
-            StorageTexelBufferOffsetSingleTexelAlignment = storageTexelBufferOffsetSingleTexelAlignment.Value;
-        }
-
-        if (uniformTexelBufferOffsetAlignmentBytes is not null)
-        {
-            UniformTexelBufferOffsetAlignmentBytes = uniformTexelBufferOffsetAlignmentBytes.Value;
-        }
-
-        if (uniformTexelBufferOffsetSingleTexelAlignment is not null)
-        {
-            UniformTexelBufferOffsetSingleTexelAlignment = uniformTexelBufferOffsetSingleTexelAlignment.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "storageTexelBufferOffsetAlignmentBytes")]
+        public ulong StorageTexelBufferOffsetAlignmentBytes;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageTexelBufferOffsetSingleTexelAlignment")]
+        public Bool32 StorageTexelBufferOffsetSingleTexelAlignment;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "uniformTexelBufferOffsetAlignmentBytes")]
+        public ulong UniformTexelBufferOffsetAlignmentBytes;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "uniformTexelBufferOffsetSingleTexelAlignment")]
+        public Bool32 UniformTexelBufferOffsetSingleTexelAlignment;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "storageTexelBufferOffsetAlignmentBytes")]
-    public ulong StorageTexelBufferOffsetAlignmentBytes;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "storageTexelBufferOffsetSingleTexelAlignment")]
-    public Bool32 StorageTexelBufferOffsetSingleTexelAlignment;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "uniformTexelBufferOffsetAlignmentBytes")]
-    public ulong UniformTexelBufferOffsetAlignmentBytes;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "uniformTexelBufferOffsetSingleTexelAlignment")]
-    public Bool32 UniformTexelBufferOffsetSingleTexelAlignment;
 }

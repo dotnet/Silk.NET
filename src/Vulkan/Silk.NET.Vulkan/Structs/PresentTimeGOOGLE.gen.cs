@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPresentTimeGOOGLE")]
-public unsafe partial struct PresentTimeGOOGLE
+namespace Silk.NET.Vulkan
 {
-    public PresentTimeGOOGLE
-    (
+    [NativeName("Name", "VkPresentTimeGOOGLE")]
+    public unsafe partial struct PresentTimeGOOGLE
+    {
+        public PresentTimeGOOGLE
+        (
             uint? presentID = null,
             ulong? desiredPresentTime = null
-    ) : this()
-    {
-        if (presentID is not null)
+        ) : this()
         {
-            PresentID = presentID.Value;
+            if (presentID is not null)
+            {
+                PresentID = presentID.Value;
+            }
+
+            if (desiredPresentTime is not null)
+            {
+                DesiredPresentTime = desiredPresentTime.Value;
+            }
         }
 
-        if (desiredPresentTime is not null)
-        {
-            DesiredPresentTime = desiredPresentTime.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "presentID")]
+        public uint PresentID;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "desiredPresentTime")]
+        public ulong DesiredPresentTime;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "presentID")]
-    public uint PresentID;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "desiredPresentTime")]
-    public ulong DesiredPresentTime;
 }

@@ -14,29 +14,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_HapticDirection")]
-public unsafe partial struct HapticDirection
+namespace Silk.NET.SDL
 {
-    public HapticDirection
-    (
-            byte? type = null
-    ) : this()
+    [NativeName("Name", "SDL_HapticDirection")]
+    public unsafe partial struct HapticDirection
     {
-        if (type is not null)
+        public HapticDirection
+        (
+            byte? type = null
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
         }
+
+
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "type")]
+        public byte Type;
+        [NativeName("Type", "Sint32 [3]")]
+        [NativeName("Type.Name", "Sint32 [3]")]
+        [NativeName("Name", "dir")]
+        public fixed int Dir[3];
     }
-
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "type")]
-    public byte Type;
-    [NativeName("Type", "Sint32 [3]")]
-    [NativeName("Type.Name", "Sint32 [3]")]
-    [NativeName("Name", "dir")]
-    public fixed int Dir[3];
 }

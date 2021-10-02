@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_FEATURE_DATA_ARCHITECTURE")]
-public unsafe partial struct FeatureDataArchitecture
+namespace Silk.NET.Direct3D12
 {
-    public FeatureDataArchitecture
-    (
+    [NativeName("Name", "D3D12_FEATURE_DATA_ARCHITECTURE")]
+    public unsafe partial struct FeatureDataArchitecture
+    {
+        public FeatureDataArchitecture
+        (
             uint? nodeIndex = null,
             int? tileBasedRenderer = null,
             int? uMA = null,
             int? cacheCoherentUMA = null
-    ) : this()
-    {
-        if (nodeIndex is not null)
+        ) : this()
         {
-            NodeIndex = nodeIndex.Value;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (tileBasedRenderer is not null)
+            {
+                TileBasedRenderer = tileBasedRenderer.Value;
+            }
+
+            if (uMA is not null)
+            {
+                UMA = uMA.Value;
+            }
+
+            if (cacheCoherentUMA is not null)
+            {
+                CacheCoherentUMA = cacheCoherentUMA.Value;
+            }
         }
 
-        if (tileBasedRenderer is not null)
-        {
-            TileBasedRenderer = tileBasedRenderer.Value;
-        }
 
-        if (uMA is not null)
-        {
-            UMA = uMA.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NodeIndex")]
+        public uint NodeIndex;
 
-        if (cacheCoherentUMA is not null)
-        {
-            CacheCoherentUMA = cacheCoherentUMA.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "TileBasedRenderer")]
+        public int TileBasedRenderer;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "UMA")]
+        public int UMA;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "CacheCoherentUMA")]
+        public int CacheCoherentUMA;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NodeIndex")]
-    public uint NodeIndex;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "TileBasedRenderer")]
-    public int TileBasedRenderer;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "UMA")]
-    public int UMA;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "CacheCoherentUMA")]
-    public int CacheCoherentUMA;
 }

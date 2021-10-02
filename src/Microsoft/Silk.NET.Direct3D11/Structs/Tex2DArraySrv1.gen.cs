@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_TEX2D_ARRAY_SRV1")]
-public unsafe partial struct Tex2DArraySrv1
+namespace Silk.NET.Direct3D11
 {
-    public Tex2DArraySrv1
-    (
+    [NativeName("Name", "D3D11_TEX2D_ARRAY_SRV1")]
+    public unsafe partial struct Tex2DArraySrv1
+    {
+        public Tex2DArraySrv1
+        (
             uint? mostDetailedMip = null,
             uint? mipLevels = null,
             uint? firstArraySlice = null,
             uint? arraySize = null,
             uint? planeSlice = null
-    ) : this()
-    {
-        if (mostDetailedMip is not null)
+        ) : this()
         {
-            MostDetailedMip = mostDetailedMip.Value;
+            if (mostDetailedMip is not null)
+            {
+                MostDetailedMip = mostDetailedMip.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (firstArraySlice is not null)
+            {
+                FirstArraySlice = firstArraySlice.Value;
+            }
+
+            if (arraySize is not null)
+            {
+                ArraySize = arraySize.Value;
+            }
+
+            if (planeSlice is not null)
+            {
+                PlaneSlice = planeSlice.Value;
+            }
         }
 
-        if (mipLevels is not null)
-        {
-            MipLevels = mipLevels.Value;
-        }
 
-        if (firstArraySlice is not null)
-        {
-            FirstArraySlice = firstArraySlice.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MostDetailedMip")]
+        public uint MostDetailedMip;
 
-        if (arraySize is not null)
-        {
-            ArraySize = arraySize.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MipLevels")]
+        public uint MipLevels;
 
-        if (planeSlice is not null)
-        {
-            PlaneSlice = planeSlice.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FirstArraySlice")]
+        public uint FirstArraySlice;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ArraySize")]
+        public uint ArraySize;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "PlaneSlice")]
+        public uint PlaneSlice;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MostDetailedMip")]
-    public uint MostDetailedMip;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MipLevels")]
-    public uint MipLevels;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FirstArraySlice")]
-    public uint FirstArraySlice;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ArraySize")]
-    public uint ArraySize;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "PlaneSlice")]
-    public uint PlaneSlice;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA2_VIDEOPROCESSBLT")]
-public unsafe partial struct DXVA2Videoprocessblt
+namespace Silk.NET.DXVA
 {
-    public DXVA2Videoprocessblt
-    (
+    [NativeName("Name", "_DXVA2_VIDEOPROCESSBLT")]
+    public unsafe partial struct DXVA2Videoprocessblt
+    {
+        public DXVA2Videoprocessblt
+        (
             long? targetFrame = null,
             Silk.NET.Maths.Rectangle<int>? targetRect = null,
             Silk.NET.Maths.Vector2D<int>? constrictionSize = null,
@@ -36,157 +36,158 @@ public unsafe partial struct DXVA2Videoprocessblt
             DXVA2FilterValues? detailFilterChroma = null,
             DXVA2Videosample* pSrcSurfaces = null,
             uint? numSrcSurfaces = null
-    ) : this()
-    {
-        if (targetFrame is not null)
+        ) : this()
         {
-            TargetFrame = targetFrame.Value;
+            if (targetFrame is not null)
+            {
+                TargetFrame = targetFrame.Value;
+            }
+
+            if (targetRect is not null)
+            {
+                TargetRect = targetRect.Value;
+            }
+
+            if (constrictionSize is not null)
+            {
+                ConstrictionSize = constrictionSize.Value;
+            }
+
+            if (streamingFlags is not null)
+            {
+                StreamingFlags = streamingFlags.Value;
+            }
+
+            if (backgroundColor is not null)
+            {
+                BackgroundColor = backgroundColor.Value;
+            }
+
+            if (destFormat is not null)
+            {
+                DestFormat = destFormat.Value;
+            }
+
+            if (destFlags is not null)
+            {
+                DestFlags = destFlags.Value;
+            }
+
+            if (procAmpValues is not null)
+            {
+                ProcAmpValues = procAmpValues.Value;
+            }
+
+            if (alpha is not null)
+            {
+                Alpha = alpha.Value;
+            }
+
+            if (noiseFilterLuma is not null)
+            {
+                NoiseFilterLuma = noiseFilterLuma.Value;
+            }
+
+            if (noiseFilterChroma is not null)
+            {
+                NoiseFilterChroma = noiseFilterChroma.Value;
+            }
+
+            if (detailFilterLuma is not null)
+            {
+                DetailFilterLuma = detailFilterLuma.Value;
+            }
+
+            if (detailFilterChroma is not null)
+            {
+                DetailFilterChroma = detailFilterChroma.Value;
+            }
+
+            if (pSrcSurfaces is not null)
+            {
+                PSrcSurfaces = pSrcSurfaces;
+            }
+
+            if (numSrcSurfaces is not null)
+            {
+                NumSrcSurfaces = numSrcSurfaces.Value;
+            }
         }
 
-        if (targetRect is not null)
-        {
-            TargetRect = targetRect.Value;
-        }
 
-        if (constrictionSize is not null)
-        {
-            ConstrictionSize = constrictionSize.Value;
-        }
+        [NativeName("Type", "REFERENCE_TIME")]
+        [NativeName("Type.Name", "REFERENCE_TIME")]
+        [NativeName("Name", "TargetFrame")]
+        public long TargetFrame;
 
-        if (streamingFlags is not null)
-        {
-            StreamingFlags = streamingFlags.Value;
-        }
+        [NativeName("Type", "RECT")]
+        [NativeName("Type.Name", "RECT")]
+        [NativeName("Name", "TargetRect")]
+        public Silk.NET.Maths.Rectangle<int> TargetRect;
 
-        if (backgroundColor is not null)
-        {
-            BackgroundColor = backgroundColor.Value;
-        }
+        [NativeName("Type", "SIZE")]
+        [NativeName("Type.Name", "SIZE")]
+        [NativeName("Name", "ConstrictionSize")]
+        public Silk.NET.Maths.Vector2D<int> ConstrictionSize;
 
-        if (destFormat is not null)
-        {
-            DestFormat = destFormat.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StreamingFlags")]
+        public uint StreamingFlags;
 
-        if (destFlags is not null)
-        {
-            DestFlags = destFlags.Value;
-        }
+        [NativeName("Type", "DXVA2_AYUVSample16")]
+        [NativeName("Type.Name", "DXVA2_AYUVSample16")]
+        [NativeName("Name", "BackgroundColor")]
+        public DXVA2AYUVSample16 BackgroundColor;
 
-        if (procAmpValues is not null)
-        {
-            ProcAmpValues = procAmpValues.Value;
-        }
+        [NativeName("Type", "DXVA2_ExtendedFormat")]
+        [NativeName("Type.Name", "DXVA2_ExtendedFormat")]
+        [NativeName("Name", "DestFormat")]
+        public DXVA2ExtendedFormat DestFormat;
 
-        if (alpha is not null)
-        {
-            Alpha = alpha.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DestFlags")]
+        public uint DestFlags;
 
-        if (noiseFilterLuma is not null)
-        {
-            NoiseFilterLuma = noiseFilterLuma.Value;
-        }
+        [NativeName("Type", "DXVA2_ProcAmpValues")]
+        [NativeName("Type.Name", "DXVA2_ProcAmpValues")]
+        [NativeName("Name", "ProcAmpValues")]
+        public DXVA2ProcAmpValues ProcAmpValues;
 
-        if (noiseFilterChroma is not null)
-        {
-            NoiseFilterChroma = noiseFilterChroma.Value;
-        }
+        [NativeName("Type", "DXVA2_Fixed32")]
+        [NativeName("Type.Name", "DXVA2_Fixed32")]
+        [NativeName("Name", "Alpha")]
+        public DXVA2Fixed32 Alpha;
 
-        if (detailFilterLuma is not null)
-        {
-            DetailFilterLuma = detailFilterLuma.Value;
-        }
+        [NativeName("Type", "DXVA2_FilterValues")]
+        [NativeName("Type.Name", "DXVA2_FilterValues")]
+        [NativeName("Name", "NoiseFilterLuma")]
+        public DXVA2FilterValues NoiseFilterLuma;
 
-        if (detailFilterChroma is not null)
-        {
-            DetailFilterChroma = detailFilterChroma.Value;
-        }
+        [NativeName("Type", "DXVA2_FilterValues")]
+        [NativeName("Type.Name", "DXVA2_FilterValues")]
+        [NativeName("Name", "NoiseFilterChroma")]
+        public DXVA2FilterValues NoiseFilterChroma;
 
-        if (pSrcSurfaces is not null)
-        {
-            PSrcSurfaces = pSrcSurfaces;
-        }
+        [NativeName("Type", "DXVA2_FilterValues")]
+        [NativeName("Type.Name", "DXVA2_FilterValues")]
+        [NativeName("Name", "DetailFilterLuma")]
+        public DXVA2FilterValues DetailFilterLuma;
 
-        if (numSrcSurfaces is not null)
-        {
-            NumSrcSurfaces = numSrcSurfaces.Value;
-        }
+        [NativeName("Type", "DXVA2_FilterValues")]
+        [NativeName("Type.Name", "DXVA2_FilterValues")]
+        [NativeName("Name", "DetailFilterChroma")]
+        public DXVA2FilterValues DetailFilterChroma;
+
+        [NativeName("Type", "DXVA2_VIDEOSAMPLE *")]
+        [NativeName("Type.Name", "DXVA2_VIDEOSAMPLE *")]
+        [NativeName("Name", "pSrcSurfaces")]
+        public DXVA2Videosample* PSrcSurfaces;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumSrcSurfaces")]
+        public uint NumSrcSurfaces;
     }
-
-
-    [NativeName("Type", "REFERENCE_TIME")]
-    [NativeName("Type.Name", "REFERENCE_TIME")]
-    [NativeName("Name", "TargetFrame")]
-    public long TargetFrame;
-
-    [NativeName("Type", "RECT")]
-    [NativeName("Type.Name", "RECT")]
-    [NativeName("Name", "TargetRect")]
-    public Silk.NET.Maths.Rectangle<int> TargetRect;
-
-    [NativeName("Type", "SIZE")]
-    [NativeName("Type.Name", "SIZE")]
-    [NativeName("Name", "ConstrictionSize")]
-    public Silk.NET.Maths.Vector2D<int> ConstrictionSize;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StreamingFlags")]
-    public uint StreamingFlags;
-
-    [NativeName("Type", "DXVA2_AYUVSample16")]
-    [NativeName("Type.Name", "DXVA2_AYUVSample16")]
-    [NativeName("Name", "BackgroundColor")]
-    public DXVA2AYUVSample16 BackgroundColor;
-
-    [NativeName("Type", "DXVA2_ExtendedFormat")]
-    [NativeName("Type.Name", "DXVA2_ExtendedFormat")]
-    [NativeName("Name", "DestFormat")]
-    public DXVA2ExtendedFormat DestFormat;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DestFlags")]
-    public uint DestFlags;
-
-    [NativeName("Type", "DXVA2_ProcAmpValues")]
-    [NativeName("Type.Name", "DXVA2_ProcAmpValues")]
-    [NativeName("Name", "ProcAmpValues")]
-    public DXVA2ProcAmpValues ProcAmpValues;
-
-    [NativeName("Type", "DXVA2_Fixed32")]
-    [NativeName("Type.Name", "DXVA2_Fixed32")]
-    [NativeName("Name", "Alpha")]
-    public DXVA2Fixed32 Alpha;
-
-    [NativeName("Type", "DXVA2_FilterValues")]
-    [NativeName("Type.Name", "DXVA2_FilterValues")]
-    [NativeName("Name", "NoiseFilterLuma")]
-    public DXVA2FilterValues NoiseFilterLuma;
-
-    [NativeName("Type", "DXVA2_FilterValues")]
-    [NativeName("Type.Name", "DXVA2_FilterValues")]
-    [NativeName("Name", "NoiseFilterChroma")]
-    public DXVA2FilterValues NoiseFilterChroma;
-
-    [NativeName("Type", "DXVA2_FilterValues")]
-    [NativeName("Type.Name", "DXVA2_FilterValues")]
-    [NativeName("Name", "DetailFilterLuma")]
-    public DXVA2FilterValues DetailFilterLuma;
-
-    [NativeName("Type", "DXVA2_FilterValues")]
-    [NativeName("Type.Name", "DXVA2_FilterValues")]
-    [NativeName("Name", "DetailFilterChroma")]
-    public DXVA2FilterValues DetailFilterChroma;
-
-    [NativeName("Type", "DXVA2_VIDEOSAMPLE *")]
-    [NativeName("Type.Name", "DXVA2_VIDEOSAMPLE *")]
-    [NativeName("Name", "pSrcSurfaces")]
-    public DXVA2Videosample* PSrcSurfaces;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumSrcSurfaces")]
-    public uint NumSrcSurfaces;
 }

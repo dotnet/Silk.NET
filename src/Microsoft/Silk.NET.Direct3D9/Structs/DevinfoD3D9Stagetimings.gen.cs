@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DDEVINFO_D3D9STAGETIMINGS")]
-public unsafe partial struct DevinfoD3D9Stagetimings
+namespace Silk.NET.Direct3D9
 {
-    public DevinfoD3D9Stagetimings
-    (
+    [NativeName("Name", "_D3DDEVINFO_D3D9STAGETIMINGS")]
+    public unsafe partial struct DevinfoD3D9Stagetimings
+    {
+        public DevinfoD3D9Stagetimings
+        (
             float? memoryProcessingPercent = null,
             float? computationProcessingPercent = null
-    ) : this()
-    {
-        if (memoryProcessingPercent is not null)
+        ) : this()
         {
-            MemoryProcessingPercent = memoryProcessingPercent.Value;
+            if (memoryProcessingPercent is not null)
+            {
+                MemoryProcessingPercent = memoryProcessingPercent.Value;
+            }
+
+            if (computationProcessingPercent is not null)
+            {
+                ComputationProcessingPercent = computationProcessingPercent.Value;
+            }
         }
 
-        if (computationProcessingPercent is not null)
-        {
-            ComputationProcessingPercent = computationProcessingPercent.Value;
-        }
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MemoryProcessingPercent")]
+        public float MemoryProcessingPercent;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "ComputationProcessingPercent")]
+        public float ComputationProcessingPercent;
     }
-
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "MemoryProcessingPercent")]
-    public float MemoryProcessingPercent;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "ComputationProcessingPercent")]
-    public float ComputationProcessingPercent;
 }

@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES;
-
-[NativeName("Name", "ClipControlOrigin")]
-public enum ClipControlOrigin : int
+namespace Silk.NET.OpenGLES
 {
-    [NativeName("Name", "GL_LOWER_LEFT")]
-    LowerLeft = 0x8CA1,
-    [NativeName("Name", "GL_UPPER_LEFT")]
-    UpperLeft = 0x8CA2,
+    [NativeName("Name", "ClipControlOrigin")]
+    public enum ClipControlOrigin : int
+    {
+        [NativeName("Name", "GL_LOWER_LEFT")]
+        LowerLeft = 0x8CA1,
+        [NativeName("Name", "GL_UPPER_LEFT")]
+        UpperLeft = 0x8CA2,
+    }
 }

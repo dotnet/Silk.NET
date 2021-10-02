@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDirectFBSurfaceCreateInfoEXT")]
-public unsafe partial struct DirectFBSurfaceCreateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DirectFBSurfaceCreateInfoEXT
-    (
+    [NativeName("Name", "VkDirectFBSurfaceCreateInfoEXT")]
+    public unsafe partial struct DirectFBSurfaceCreateInfoEXT
+    {
+        public DirectFBSurfaceCreateInfoEXT
+        (
             StructureType? sType = StructureType.DirectfbSurfaceCreateInfoExt,
             void* pNext = null,
             uint? flags = null,
             nint? dfb = null,
             nint? surface = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (dfb is not null)
+            {
+                Dfb = dfb.Value;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (dfb is not null)
-        {
-            Dfb = dfb.Value;
-        }
-
-        if (surface is not null)
-        {
-            Surface = surface.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDirectFBSurfaceCreateFlagsEXT")]
+        [NativeName("Type.Name", "VkDirectFBSurfaceCreateFlagsEXT")]
+        [NativeName("Name", "flags")]
+        public uint Flags;
+/// <summary></summary>
+        [NativeName("Type", "IDirectFB*")]
+        [NativeName("Type.Name", "IDirectFB")]
+        [NativeName("Name", "dfb")]
+        public nint Dfb;
+/// <summary></summary>
+        [NativeName("Type", "IDirectFBSurface*")]
+        [NativeName("Type.Name", "IDirectFBSurface")]
+        [NativeName("Name", "surface")]
+        public nint Surface;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDirectFBSurfaceCreateFlagsEXT")]
-    [NativeName("Type.Name", "VkDirectFBSurfaceCreateFlagsEXT")]
-    [NativeName("Name", "flags")]
-    public uint Flags;
-/// <summary></summary>
-    [NativeName("Type", "IDirectFB*")]
-    [NativeName("Type.Name", "IDirectFB")]
-    [NativeName("Name", "dfb")]
-    public nint Dfb;
-/// <summary></summary>
-    [NativeName("Type", "IDirectFBSurface*")]
-    [NativeName("Type.Name", "IDirectFBSurface")]
-    [NativeName("Name", "surface")]
-    public nint Surface;
 }

@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV;
-
-[Extension("NV_polygon_mode")]
-public unsafe partial class NVPolygonMode : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.NV
 {
-    public const string ExtensionName = "NV_polygon_mode";
-    [NativeApi(EntryPoint = "glPolygonModeNV")]
-    public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
-
-    [NativeApi(EntryPoint = "glPolygonModeNV")]
-    public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode);
-
-    [NativeApi(EntryPoint = "glPolygonModeNV")]
-    public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] NV mode);
-
-    [NativeApi(EntryPoint = "glPolygonModeNV")]
-    public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
-
-    public NVPolygonMode(INativeContext ctx)
-        : base(ctx)
+    [Extension("NV_polygon_mode")]
+    public unsafe partial class NVPolygonMode : NativeExtension<GL>
     {
+        public const string ExtensionName = "NV_polygon_mode";
+        [NativeApi(EntryPoint = "glPolygonModeNV")]
+        public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
+
+        [NativeApi(EntryPoint = "glPolygonModeNV")]
+        public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode);
+
+        [NativeApi(EntryPoint = "glPolygonModeNV")]
+        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] NV mode);
+
+        [NativeApi(EntryPoint = "glPolygonModeNV")]
+        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+
+        public NVPolygonMode(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

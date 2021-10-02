@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoDecodeH264CapabilitiesEXT")]
-public unsafe partial struct VideoDecodeH264CapabilitiesEXT
+namespace Silk.NET.Vulkan
 {
-    public VideoDecodeH264CapabilitiesEXT
-    (
+    [NativeName("Name", "VkVideoDecodeH264CapabilitiesEXT")]
+    public unsafe partial struct VideoDecodeH264CapabilitiesEXT
+    {
+        public VideoDecodeH264CapabilitiesEXT
+        (
             StructureType? sType = StructureType.VideoDecodeH264CapabilitiesExt,
             void* pNext = null,
             uint? maxLevel = null,
             Offset2D? fieldOffsetGranularity = null,
             ExtensionProperties? stdExtensionVersion = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxLevel is not null)
+            {
+                MaxLevel = maxLevel.Value;
+            }
+
+            if (fieldOffsetGranularity is not null)
+            {
+                FieldOffsetGranularity = fieldOffsetGranularity.Value;
+            }
+
+            if (stdExtensionVersion is not null)
+            {
+                StdExtensionVersion = stdExtensionVersion.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (maxLevel is not null)
-        {
-            MaxLevel = maxLevel.Value;
-        }
-
-        if (fieldOffsetGranularity is not null)
-        {
-            FieldOffsetGranularity = fieldOffsetGranularity.Value;
-        }
-
-        if (stdExtensionVersion is not null)
-        {
-            StdExtensionVersion = stdExtensionVersion.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxLevel")]
+        public uint MaxLevel;
+/// <summary></summary>
+        [NativeName("Type", "VkOffset2D")]
+        [NativeName("Type.Name", "VkOffset2D")]
+        [NativeName("Name", "fieldOffsetGranularity")]
+        public Offset2D FieldOffsetGranularity;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "stdExtensionVersion")]
+        public ExtensionProperties StdExtensionVersion;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxLevel")]
-    public uint MaxLevel;
-/// <summary></summary>
-    [NativeName("Type", "VkOffset2D")]
-    [NativeName("Type.Name", "VkOffset2D")]
-    [NativeName("Name", "fieldOffsetGranularity")]
-    public Offset2D FieldOffsetGranularity;
-/// <summary></summary>
-    [NativeName("Type", "VkExtensionProperties")]
-    [NativeName("Type.Name", "VkExtensionProperties")]
-    [NativeName("Name", "stdExtensionVersion")]
-    public ExtensionProperties StdExtensionVersion;
 }

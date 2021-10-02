@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RESOURCE_UAV_BARRIER")]
-public unsafe partial struct ResourceUavBarrier
+namespace Silk.NET.Direct3D12
 {
-    public ResourceUavBarrier
-    (
-            ID3D12Resource* pResource = null
-    ) : this()
+    [NativeName("Name", "D3D12_RESOURCE_UAV_BARRIER")]
+    public unsafe partial struct ResourceUavBarrier
     {
-        if (pResource is not null)
+        public ResourceUavBarrier
+        (
+            ID3D12Resource* pResource = null
+        ) : this()
         {
-            PResource = pResource;
+            if (pResource is not null)
+            {
+                PResource = pResource;
+            }
         }
+
+
+        [NativeName("Type", "ID3D12Resource *")]
+        [NativeName("Type.Name", "ID3D12Resource *")]
+        [NativeName("Name", "pResource")]
+        public ID3D12Resource* PResource;
     }
-
-
-    [NativeName("Type", "ID3D12Resource *")]
-    [NativeName("Type.Name", "ID3D12Resource *")]
-    [NativeName("Name", "pResource")]
-    public ID3D12Resource* PResource;
 }

@@ -12,57 +12,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
-
-public static class SgixListPriorityOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
-    public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+    public static class SgixListPriorityOverloads
     {
-        // SpanOverloader
-        thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetListParameter(list, pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void ListParameter(this SgixListPriority thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.ListParameter(list, pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

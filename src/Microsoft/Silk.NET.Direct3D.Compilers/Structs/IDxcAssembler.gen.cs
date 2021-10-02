@@ -14,145 +14,146 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D.Compilers;
-
-[Guid("091f7a26-1c1f-4948-904b-e6e3a8a771d5")]
-[NativeName("Name", "IDxcAssembler")]
-public unsafe partial struct IDxcAssembler
+namespace Silk.NET.Direct3D.Compilers
 {
-    public static readonly Guid Guid = new("091f7a26-1c1f-4948-904b-e6e3a8a771d5");
+    [Guid("091f7a26-1c1f-4948-904b-e6e3a8a771d5")]
+    [NativeName("Name", "IDxcAssembler")]
+    public unsafe partial struct IDxcAssembler
+    {
+        public static readonly Guid Guid = new("091f7a26-1c1f-4948-904b-e6e3a8a771d5");
 
-    public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcAssembler val)
-        => Unsafe.As<IDxcAssembler, Silk.NET.Core.Native.IUnknown>(ref val);
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcAssembler val)
+            => Unsafe.As<IDxcAssembler, Silk.NET.Core.Native.IUnknown>(ref val);
 
-    public IDxcAssembler
-    (
+        public IDxcAssembler
+        (
             void** lpVtbl = null
-    ) : this()
-    {
-        if (lpVtbl is not null)
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
-    }
 
 
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "lpVtbl")]
-    public void** LpVtbl;
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (void** ppvObjectPtr = &ppvObject)
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "lpVtbl")]
+        public void** LpVtbl;
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (Guid* riidPtr = &riid)
-        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly uint AddRef()
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[1])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly uint Release()
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        uint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[2])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, IDxcOperationResult** ppResult)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResult);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, ref IDxcOperationResult* ppResult)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResultPtr);
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, IDxcOperationResult** ppResult)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (IDxcBlob* pShaderPtr = &pShader)
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, ppResult);
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                fixed (void** ppvObjectPtr = &ppvObject)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                }
+            }
+            return ret;
         }
-        return ret;
-    }
 
-    /// <summary>To be documented.</summary>
-    public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, ref IDxcOperationResult* ppResult)
-    {
-        var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-        int ret = default;
-        fixed (IDxcBlob* pShaderPtr = &pShader)
+        /// <summary>To be documented.</summary>
+        public readonly uint AddRef()
         {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[1])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint Release()
+        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResult);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, ppResultPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResultPtr);
             }
+            return ret;
         }
-        return ret;
-    }
 
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, IDxcOperationResult** ppResult)
+        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDxcBlob* pShaderPtr = &pShader)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, ppResult);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, ref IDxcOperationResult* ppResult)
+        {
+            var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDxcBlob* pShaderPtr = &pShader)
+            {
+                fixed (IDxcOperationResult** ppResultPtr = &ppResult)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, ppResultPtr);
+                }
+            }
+            return ret;
+        }
+
+    }
 }

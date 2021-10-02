@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput;
-
-[NativeName("Name", "_XINPUT_KEYSTROKE")]
-public unsafe partial struct Keystroke
+namespace Silk.NET.XInput
 {
-    public Keystroke
-    (
+    [NativeName("Name", "_XINPUT_KEYSTROKE")]
+    public unsafe partial struct Keystroke
+    {
+        public Keystroke
+        (
             ushort? virtualKey = null,
             char? unicode = null,
             ushort? flags = null,
             byte? userIndex = null,
             byte? hidCode = null
-    ) : this()
-    {
-        if (virtualKey is not null)
+        ) : this()
         {
-            VirtualKey = virtualKey.Value;
+            if (virtualKey is not null)
+            {
+                VirtualKey = virtualKey.Value;
+            }
+
+            if (unicode is not null)
+            {
+                Unicode = unicode.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (userIndex is not null)
+            {
+                UserIndex = userIndex.Value;
+            }
+
+            if (hidCode is not null)
+            {
+                HidCode = hidCode.Value;
+            }
         }
 
-        if (unicode is not null)
-        {
-            Unicode = unicode.Value;
-        }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "VirtualKey")]
+        public ushort VirtualKey;
 
-        if (userIndex is not null)
-        {
-            UserIndex = userIndex.Value;
-        }
+        [NativeName("Type", "WCHAR")]
+        [NativeName("Type.Name", "WCHAR")]
+        [NativeName("Name", "Unicode")]
+        public char Unicode;
 
-        if (hidCode is not null)
-        {
-            HidCode = hidCode.Value;
-        }
+        [NativeName("Type", "WORD")]
+        [NativeName("Type.Name", "WORD")]
+        [NativeName("Name", "Flags")]
+        public ushort Flags;
+
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "UserIndex")]
+        public byte UserIndex;
+
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "HidCode")]
+        public byte HidCode;
     }
-
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "VirtualKey")]
-    public ushort VirtualKey;
-
-    [NativeName("Type", "WCHAR")]
-    [NativeName("Type.Name", "WCHAR")]
-    [NativeName("Name", "Unicode")]
-    public char Unicode;
-
-    [NativeName("Type", "WORD")]
-    [NativeName("Type.Name", "WORD")]
-    [NativeName("Name", "Flags")]
-    public ushort Flags;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "UserIndex")]
-    public byte UserIndex;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "HidCode")]
-    public byte HidCode;
 }

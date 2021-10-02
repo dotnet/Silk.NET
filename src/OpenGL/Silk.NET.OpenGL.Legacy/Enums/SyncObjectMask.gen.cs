@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy;
-
-[NativeName("Name", "SyncObjectMask")]
-public enum SyncObjectMask : int
+namespace Silk.NET.OpenGL.Legacy
 {
-    [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
-    SyncFlushCommandsBit = 0x1,
-    [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
-    SyncFlushCommandsBitApple = 0x1,
+    [NativeName("Name", "SyncObjectMask")]
+    public enum SyncObjectMask : int
+    {
+        [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
+        SyncFlushCommandsBit = 0x1,
+        [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
+        SyncFlushCommandsBitApple = 0x1,
+    }
 }

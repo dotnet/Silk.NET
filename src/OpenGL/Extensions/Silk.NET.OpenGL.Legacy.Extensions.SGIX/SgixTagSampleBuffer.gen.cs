@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
-
-[Extension("SGIX_tag_sample_buffer")]
-public unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
-    public const string ExtensionName = "SGIX_tag_sample_buffer";
-    [NativeApi(EntryPoint = "glTagSampleBufferSGIX")]
-    public partial void TagSampleBuffer();
-
-    public SgixTagSampleBuffer(INativeContext ctx)
-        : base(ctx)
+    [Extension("SGIX_tag_sample_buffer")]
+    public unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
     {
+        public const string ExtensionName = "SGIX_tag_sample_buffer";
+        [NativeApi(EntryPoint = "glTagSampleBufferSGIX")]
+        public partial void TagSampleBuffer();
+
+        public SgixTagSampleBuffer(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

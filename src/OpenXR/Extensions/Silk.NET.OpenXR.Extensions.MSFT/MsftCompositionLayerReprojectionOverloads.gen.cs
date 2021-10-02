@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.MSFT;
-
-public static class MsftCompositionLayerReprojectionOverloads
+namespace Silk.NET.OpenXR.Extensions.MSFT
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+    public static class MsftCompositionLayerReprojectionOverloads
     {
-        // SpanOverloader
-        return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, modeCountOutput, ref modes.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] uint* modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, modeCountOutput, ref modes.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] Span<uint> modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes)
-    {
-        // SpanOverloader
-        return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, ref modeCountOutput.GetPinnableReference(), modes);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] Span<uint> modeCountOutput, [Count(Parameter = "modeCapacityInput")] ReprojectionModeMSFT* modes)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, ref modeCountOutput.GetPinnableReference(), modes);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] Span<uint> modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
-    {
-        // SpanOverloader
-        return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, ref modeCountOutput.GetPinnableReference(), ref modes.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result EnumerateReprojectionModesMsft(this MsftCompositionLayerReprojection thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint modeCapacityInput, [Count(Count = 0)] Span<uint> modeCountOutput, [Count(Parameter = "modeCapacityInput")] Span<ReprojectionModeMSFT> modes)
+        {
+            // SpanOverloader
+            return thisApi.EnumerateReprojectionModesMsft(instance, systemId, viewConfigurationType, modeCapacityInput, ref modeCountOutput.GetPinnableReference(), ref modes.GetPinnableReference());
+        }
 
+    }
 }
 

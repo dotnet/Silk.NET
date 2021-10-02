@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT;
-
-[Extension("EXT_tessellation_shader")]
-public unsafe partial class ExtTessellationShader : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_tessellation_shader";
-    [NativeApi(EntryPoint = "glPatchParameteriEXT")]
-    public partial void PatchParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
-
-    [NativeApi(EntryPoint = "glPatchParameteriEXT")]
-    public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
-
-    public ExtTessellationShader(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_tessellation_shader")]
+    public unsafe partial class ExtTessellationShader : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_tessellation_shader";
+        [NativeApi(EntryPoint = "glPatchParameteriEXT")]
+        public partial void PatchParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
+
+        [NativeApi(EntryPoint = "glPatchParameteriEXT")]
+        public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+
+        public ExtTessellationShader(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

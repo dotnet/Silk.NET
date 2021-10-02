@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
-
-[Extension("ATI_map_object_buffer")]
-public unsafe partial class AtiMapObjectBuffer : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
-    public const string ExtensionName = "ATI_map_object_buffer";
-    [NativeApi(EntryPoint = "glMapObjectBufferATI")]
-    public unsafe partial void* MapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
-
-    [NativeApi(EntryPoint = "glUnmapObjectBufferATI")]
-    public partial void UnmapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
-
-    public AtiMapObjectBuffer(INativeContext ctx)
-        : base(ctx)
+    [Extension("ATI_map_object_buffer")]
+    public unsafe partial class AtiMapObjectBuffer : NativeExtension<GL>
     {
+        public const string ExtensionName = "ATI_map_object_buffer";
+        [NativeApi(EntryPoint = "glMapObjectBufferATI")]
+        public unsafe partial void* MapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+
+        [NativeApi(EntryPoint = "glUnmapObjectBufferATI")]
+        public partial void UnmapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+
+        public AtiMapObjectBuffer(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

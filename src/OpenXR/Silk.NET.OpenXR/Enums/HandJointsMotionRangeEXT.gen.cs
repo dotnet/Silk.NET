@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrHandJointsMotionRangeEXT")]
-public enum HandJointsMotionRangeEXT : int
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_HAND_JOINTS_MOTION_RANGE_UNOBSTRUCTED_EXT")]
-    HandJointsMotionRangeUnobstructedExt = 1,
-    [NativeName("Name", "XR_HAND_JOINTS_MOTION_RANGE_CONFORMING_TO_CONTROLLER_EXT")]
-    HandJointsMotionRangeConformingToControllerExt = 2,
+    [NativeName("Name", "XrHandJointsMotionRangeEXT")]
+    public enum HandJointsMotionRangeEXT : int
+    {
+        [NativeName("Name", "XR_HAND_JOINTS_MOTION_RANGE_UNOBSTRUCTED_EXT")]
+        HandJointsMotionRangeUnobstructedExt = 1,
+        [NativeName("Name", "XR_HAND_JOINTS_MOTION_RANGE_CONFORMING_TO_CONTROLLER_EXT")]
+        HandJointsMotionRangeConformingToControllerExt = 2,
+    }
 }

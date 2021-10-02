@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_D3DFORMAT_DATA")]
-public unsafe partial struct HDStreamStateD3DformatData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateD3DformatData
-    (
-            Silk.NET.Direct3D9.Format? format = null
-    ) : this()
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_D3DFORMAT_DATA")]
+    public unsafe partial struct HDStreamStateD3DformatData
     {
-        if (format is not null)
+        public HDStreamStateD3DformatData
+        (
+            Silk.NET.Direct3D9.Format? format = null
+        ) : this()
         {
-            Format = format.Value;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
+
+
+        [NativeName("Type", "D3DFORMAT")]
+        [NativeName("Type.Name", "D3DFORMAT")]
+        [NativeName("Name", "Format")]
+        public Silk.NET.Direct3D9.Format Format;
     }
-
-
-    [NativeName("Type", "D3DFORMAT")]
-    [NativeName("Type.Name", "D3DFORMAT")]
-    [NativeName("Name", "Format")]
-    public Silk.NET.Direct3D9.Format Format;
 }

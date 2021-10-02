@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBindImagePlaneMemoryInfoKHR")]
-public unsafe partial struct BindImagePlaneMemoryInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public BindImagePlaneMemoryInfoKHR
-    (
+    [NativeName("Name", "VkBindImagePlaneMemoryInfoKHR")]
+    public unsafe partial struct BindImagePlaneMemoryInfoKHR
+    {
+        public BindImagePlaneMemoryInfoKHR
+        (
             StructureType? sType = StructureType.BindImagePlaneMemoryInfo,
             void* pNext = null,
             ImageAspectFlags? planeAspect = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (planeAspect is not null)
+            {
+                PlaneAspect = planeAspect.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (planeAspect is not null)
-        {
-            PlaneAspect = planeAspect.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlagBits")]
+        [NativeName("Type.Name", "VkImageAspectFlagBits")]
+        [NativeName("Name", "planeAspect")]
+        public ImageAspectFlags PlaneAspect;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImageAspectFlagBits")]
-    [NativeName("Type.Name", "VkImageAspectFlagBits")]
-    [NativeName("Name", "planeAspect")]
-    public ImageAspectFlags PlaneAspect;
 }

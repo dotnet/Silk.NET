@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "_D3D12_LIBRARY_DESC")]
-public unsafe partial struct LibraryDesc
+namespace Silk.NET.Direct3D12
 {
-    public LibraryDesc
-    (
+    [NativeName("Name", "_D3D12_LIBRARY_DESC")]
+    public unsafe partial struct LibraryDesc
+    {
+        public LibraryDesc
+        (
             byte* creator = null,
             uint? flags = null,
             uint? functionCount = null
-    ) : this()
-    {
-        if (creator is not null)
+        ) : this()
         {
-            Creator = creator;
+            if (creator is not null)
+            {
+                Creator = creator;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (functionCount is not null)
+            {
+                FunctionCount = functionCount.Value;
+            }
         }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
 
-        if (functionCount is not null)
-        {
-            FunctionCount = functionCount.Value;
-        }
+        [NativeName("Type", "LPCSTR")]
+        [NativeName("Type.Name", "LPCSTR")]
+        [NativeName("Name", "Creator")]
+        public byte* Creator;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Flags")]
+        public uint Flags;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FunctionCount")]
+        public uint FunctionCount;
     }
-
-
-    [NativeName("Type", "LPCSTR")]
-    [NativeName("Type.Name", "LPCSTR")]
-    [NativeName("Name", "Creator")]
-    public byte* Creator;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Flags")]
-    public uint Flags;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FunctionCount")]
-    public uint FunctionCount;
 }

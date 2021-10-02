@@ -12,37 +12,38 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.KHR;
-
-public static class KhrConvertTimespecTimeOverloads
+namespace Silk.NET.OpenXR.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] Span<long> time)
+    public static class KhrConvertTimespecTimeOverloads
     {
-        // SpanOverloader
-        return thisApi.ConvertTimespecTimeToTime(instance, timespecTime, ref time.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Timespec* timespecTime, [Count(Count = 0)] Span<long> time)
+        {
+            // SpanOverloader
+            return thisApi.ConvertTimespecTimeToTime(instance, timespecTime, ref time.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Timespec> timespecTime, [Count(Count = 0)] long* time)
-    {
-        // SpanOverloader
-        return thisApi.ConvertTimespecTimeToTime(instance, in timespecTime.GetPinnableReference(), time);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Timespec> timespecTime, [Count(Count = 0)] long* time)
+        {
+            // SpanOverloader
+            return thisApi.ConvertTimespecTimeToTime(instance, in timespecTime.GetPinnableReference(), time);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Timespec> timespecTime, [Count(Count = 0)] Span<long> time)
-    {
-        // SpanOverloader
-        return thisApi.ConvertTimespecTimeToTime(instance, in timespecTime.GetPinnableReference(), ref time.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result ConvertTimespecTimeToTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Timespec> timespecTime, [Count(Count = 0)] Span<long> time)
+        {
+            // SpanOverloader
+            return thisApi.ConvertTimespecTimeToTime(instance, in timespecTime.GetPinnableReference(), ref time.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result ConvertTimeToTimespecTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] Span<Timespec> timespecTime)
-    {
-        // SpanOverloader
-        return thisApi.ConvertTimeToTimespecTime(instance, time, ref timespecTime.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result ConvertTimeToTimespecTime(this KhrConvertTimespecTime thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] Span<Timespec> timespecTime)
+        {
+            // SpanOverloader
+            return thisApi.ConvertTimeToTimespecTime(instance, time, ref timespecTime.GetPinnableReference());
+        }
 
+    }
 }
 

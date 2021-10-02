@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV;
-
-public static class NVExternalMemoryRdmaOverloads
+namespace Silk.NET.Vulkan.Extensions.NV
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetMemoryRemoteAddress<T0>(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<T0> pAddress) where T0 : unmanaged
+    public static class NVExternalMemoryRdmaOverloads
     {
-        // SpanOverloader
-        return thisApi.GetMemoryRemoteAddress(device, pMemoryGetRemoteAddressInfo, out pAddress.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetMemoryRemoteAddress<T0>(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<T0> pAddress) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetMemoryRemoteAddress(device, pMemoryGetRemoteAddressInfo, out pAddress.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetMemoryRemoteAddress(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress)
-    {
-        // SpanOverloader
-        return thisApi.GetMemoryRemoteAddress(device, in pMemoryGetRemoteAddressInfo.GetPinnableReference(), pAddress);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetMemoryRemoteAddress(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress)
+        {
+            // SpanOverloader
+            return thisApi.GetMemoryRemoteAddress(device, in pMemoryGetRemoteAddressInfo.GetPinnableReference(), pAddress);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetMemoryRemoteAddress<T0>(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<T0> pAddress) where T0 : unmanaged
-    {
-        // SpanOverloader
-        return thisApi.GetMemoryRemoteAddress(device, in pMemoryGetRemoteAddressInfo.GetPinnableReference(), out pAddress.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetMemoryRemoteAddress<T0>(this NVExternalMemoryRdma thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<T0> pAddress) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetMemoryRemoteAddress(device, in pMemoryGetRemoteAddressInfo.GetPinnableReference(), out pAddress.GetPinnableReference());
+        }
 
+    }
 }
 

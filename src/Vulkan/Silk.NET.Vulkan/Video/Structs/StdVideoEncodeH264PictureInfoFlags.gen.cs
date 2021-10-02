@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoEncodeH264PictureInfoFlags")]
-public unsafe partial struct StdVideoEncodeH264PictureInfoFlags
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoEncodeH264PictureInfoFlags
-    (
+    [NativeName("Name", "StdVideoEncodeH264PictureInfoFlags")]
+    public unsafe partial struct StdVideoEncodeH264PictureInfoFlags
+    {
+        public StdVideoEncodeH264PictureInfoFlags
+        (
             uint? idrFlag = null,
             uint? isReferenceFlag = null,
             uint? longTermReferenceFlag = null
-    ) : this()
-    {
-        if (idrFlag is not null)
+        ) : this()
         {
-            IdrFlag = idrFlag.Value;
+            if (idrFlag is not null)
+            {
+                IdrFlag = idrFlag.Value;
+            }
+
+            if (isReferenceFlag is not null)
+            {
+                IsReferenceFlag = isReferenceFlag.Value;
+            }
+
+            if (longTermReferenceFlag is not null)
+            {
+                LongTermReferenceFlag = longTermReferenceFlag.Value;
+            }
         }
 
-        if (isReferenceFlag is not null)
+
+        private uint _bitfield1;
+
+        public uint IdrFlag
         {
-            IsReferenceFlag = isReferenceFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        if (longTermReferenceFlag is not null)
+        public uint IsReferenceFlag
         {
-            LongTermReferenceFlag = longTermReferenceFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
-    }
 
-
-    private uint _bitfield1;
-
-    public uint IdrFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)(_bitfield1 & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
-    }
-
-    public uint IsReferenceFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 1) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
-    }
-
-    public uint LongTermReferenceFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 2) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        public uint LongTermReferenceFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
     }
 }

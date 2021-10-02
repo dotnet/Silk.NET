@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA")]
-public unsafe partial struct HDBltStateBackgroundColorData
+namespace Silk.NET.DXVA
 {
-    public HDBltStateBackgroundColorData
-    (
+    [NativeName("Name", "_DXVAHD_BLT_STATE_BACKGROUND_COLOR_DATA")]
+    public unsafe partial struct HDBltStateBackgroundColorData
+    {
+        public HDBltStateBackgroundColorData
+        (
             int? yCbCr = null,
             HDColor? backgroundColor = null
-    ) : this()
-    {
-        if (yCbCr is not null)
+        ) : this()
         {
-            YCbCr = yCbCr.Value;
+            if (yCbCr is not null)
+            {
+                YCbCr = yCbCr.Value;
+            }
+
+            if (backgroundColor is not null)
+            {
+                BackgroundColor = backgroundColor.Value;
+            }
         }
 
-        if (backgroundColor is not null)
-        {
-            BackgroundColor = backgroundColor.Value;
-        }
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "YCbCr")]
+        public int YCbCr;
+
+        [NativeName("Type", "DXVAHD_COLOR")]
+        [NativeName("Type.Name", "DXVAHD_COLOR")]
+        [NativeName("Name", "BackgroundColor")]
+        public HDColor BackgroundColor;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "YCbCr")]
-    public int YCbCr;
-
-    [NativeName("Type", "DXVAHD_COLOR")]
-    [NativeName("Type.Name", "DXVAHD_COLOR")]
-    [NativeName("Name", "BackgroundColor")]
-    public HDColor BackgroundColor;
 }

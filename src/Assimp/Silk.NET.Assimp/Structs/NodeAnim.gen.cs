@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiNodeAnim")]
-public unsafe partial struct NodeAnim
+namespace Silk.NET.Assimp
 {
-    public NodeAnim
-    (
+    [NativeName("Name", "aiNodeAnim")]
+    public unsafe partial struct NodeAnim
+    {
+        public NodeAnim
+        (
             AssimpString? mNodeName = null,
             uint? mNumPositionKeys = null,
             VectorKey* mPositionKeys = null,
@@ -30,97 +30,98 @@ public unsafe partial struct NodeAnim
             VectorKey* mScalingKeys = null,
             AnimBehaviour? mPreState = null,
             AnimBehaviour? mPostState = null
-    ) : this()
-    {
-        if (mNodeName is not null)
+        ) : this()
         {
-            MNodeName = mNodeName.Value;
+            if (mNodeName is not null)
+            {
+                MNodeName = mNodeName.Value;
+            }
+
+            if (mNumPositionKeys is not null)
+            {
+                MNumPositionKeys = mNumPositionKeys.Value;
+            }
+
+            if (mPositionKeys is not null)
+            {
+                MPositionKeys = mPositionKeys;
+            }
+
+            if (mNumRotationKeys is not null)
+            {
+                MNumRotationKeys = mNumRotationKeys.Value;
+            }
+
+            if (mRotationKeys is not null)
+            {
+                MRotationKeys = mRotationKeys;
+            }
+
+            if (mNumScalingKeys is not null)
+            {
+                MNumScalingKeys = mNumScalingKeys.Value;
+            }
+
+            if (mScalingKeys is not null)
+            {
+                MScalingKeys = mScalingKeys;
+            }
+
+            if (mPreState is not null)
+            {
+                MPreState = mPreState.Value;
+            }
+
+            if (mPostState is not null)
+            {
+                MPostState = mPostState.Value;
+            }
         }
 
-        if (mNumPositionKeys is not null)
-        {
-            MNumPositionKeys = mNumPositionKeys.Value;
-        }
 
-        if (mPositionKeys is not null)
-        {
-            MPositionKeys = mPositionKeys;
-        }
+        [NativeName("Type", "aiString")]
+        [NativeName("Type.Name", "aiString")]
+        [NativeName("Name", "mNodeName")]
+        public AssimpString MNodeName;
 
-        if (mNumRotationKeys is not null)
-        {
-            MNumRotationKeys = mNumRotationKeys.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mNumPositionKeys")]
+        public uint MNumPositionKeys;
 
-        if (mRotationKeys is not null)
-        {
-            MRotationKeys = mRotationKeys;
-        }
+        [NativeName("Type", "aiVectorKey *")]
+        [NativeName("Type.Name", "aiVectorKey *")]
+        [NativeName("Name", "mPositionKeys")]
+        public VectorKey* MPositionKeys;
 
-        if (mNumScalingKeys is not null)
-        {
-            MNumScalingKeys = mNumScalingKeys.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mNumRotationKeys")]
+        public uint MNumRotationKeys;
 
-        if (mScalingKeys is not null)
-        {
-            MScalingKeys = mScalingKeys;
-        }
+        [NativeName("Type", "aiQuatKey *")]
+        [NativeName("Type.Name", "aiQuatKey *")]
+        [NativeName("Name", "mRotationKeys")]
+        public QuatKey* MRotationKeys;
 
-        if (mPreState is not null)
-        {
-            MPreState = mPreState.Value;
-        }
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mNumScalingKeys")]
+        public uint MNumScalingKeys;
 
-        if (mPostState is not null)
-        {
-            MPostState = mPostState.Value;
-        }
+        [NativeName("Type", "aiVectorKey *")]
+        [NativeName("Type.Name", "aiVectorKey *")]
+        [NativeName("Name", "mScalingKeys")]
+        public VectorKey* MScalingKeys;
+
+        [NativeName("Type", "aiAnimBehaviour")]
+        [NativeName("Type.Name", "aiAnimBehaviour")]
+        [NativeName("Name", "mPreState")]
+        public AnimBehaviour MPreState;
+
+        [NativeName("Type", "aiAnimBehaviour")]
+        [NativeName("Type.Name", "aiAnimBehaviour")]
+        [NativeName("Name", "mPostState")]
+        public AnimBehaviour MPostState;
     }
-
-
-    [NativeName("Type", "aiString")]
-    [NativeName("Type.Name", "aiString")]
-    [NativeName("Name", "mNodeName")]
-    public AssimpString MNodeName;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mNumPositionKeys")]
-    public uint MNumPositionKeys;
-
-    [NativeName("Type", "aiVectorKey *")]
-    [NativeName("Type.Name", "aiVectorKey *")]
-    [NativeName("Name", "mPositionKeys")]
-    public VectorKey* MPositionKeys;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mNumRotationKeys")]
-    public uint MNumRotationKeys;
-
-    [NativeName("Type", "aiQuatKey *")]
-    [NativeName("Type.Name", "aiQuatKey *")]
-    [NativeName("Name", "mRotationKeys")]
-    public QuatKey* MRotationKeys;
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mNumScalingKeys")]
-    public uint MNumScalingKeys;
-
-    [NativeName("Type", "aiVectorKey *")]
-    [NativeName("Type.Name", "aiVectorKey *")]
-    [NativeName("Name", "mScalingKeys")]
-    public VectorKey* MScalingKeys;
-
-    [NativeName("Type", "aiAnimBehaviour")]
-    [NativeName("Type.Name", "aiAnimBehaviour")]
-    [NativeName("Name", "mPreState")]
-    public AnimBehaviour MPreState;
-
-    [NativeName("Type", "aiAnimBehaviour")]
-    [NativeName("Type.Name", "aiAnimBehaviour")]
-    [NativeName("Name", "mPostState")]
-    public AnimBehaviour MPostState;
 }

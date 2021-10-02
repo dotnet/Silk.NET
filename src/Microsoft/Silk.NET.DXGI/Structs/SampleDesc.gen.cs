@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_SAMPLE_DESC")]
-public unsafe partial struct SampleDesc
+namespace Silk.NET.DXGI
 {
-    public SampleDesc
-    (
+    [NativeName("Name", "DXGI_SAMPLE_DESC")]
+    public unsafe partial struct SampleDesc
+    {
+        public SampleDesc
+        (
             uint? count = null,
             uint? quality = null
-    ) : this()
-    {
-        if (count is not null)
+        ) : this()
         {
-            Count = count.Value;
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
+
+            if (quality is not null)
+            {
+                Quality = quality.Value;
+            }
         }
 
-        if (quality is not null)
-        {
-            Quality = quality.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Count")]
+        public uint Count;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Quality")]
+        public uint Quality;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Count")]
-    public uint Count;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Quality")]
-    public uint Quality;
 }

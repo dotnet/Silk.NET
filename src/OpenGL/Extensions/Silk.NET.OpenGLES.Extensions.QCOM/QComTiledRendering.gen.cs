@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.QCOM;
-
-[Extension("QCOM_tiled_rendering")]
-public unsafe partial class QComTiledRendering : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
-    public const string ExtensionName = "QCOM_tiled_rendering";
-    [NativeApi(EntryPoint = "glEndTilingQCOM")]
-    public partial void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
-
-    [NativeApi(EntryPoint = "glEndTilingQCOM")]
-    public partial void EndTiling([Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
-
-    [NativeApi(EntryPoint = "glStartTilingQCOM")]
-    public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
-
-    [NativeApi(EntryPoint = "glStartTilingQCOM")]
-    public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
-
-    public QComTiledRendering(INativeContext ctx)
-        : base(ctx)
+    [Extension("QCOM_tiled_rendering")]
+    public unsafe partial class QComTiledRendering : NativeExtension<GL>
     {
+        public const string ExtensionName = "QCOM_tiled_rendering";
+        [NativeApi(EntryPoint = "glEndTilingQCOM")]
+        public partial void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
+
+        [NativeApi(EntryPoint = "glEndTilingQCOM")]
+        public partial void EndTiling([Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
+
+        [NativeApi(EntryPoint = "glStartTilingQCOM")]
+        public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
+
+        [NativeApi(EntryPoint = "glStartTilingQCOM")]
+        public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] BufferBitQCOM preserveMask);
+
+        public QComTiledRendering(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput;
-
-[NativeName("Name", "_XINPUT_STATE")]
-public unsafe partial struct State
+namespace Silk.NET.XInput
 {
-    public State
-    (
+    [NativeName("Name", "_XINPUT_STATE")]
+    public unsafe partial struct State
+    {
+        public State
+        (
             uint? dwPacketNumber = null,
             Gamepad? gamepad = null
-    ) : this()
-    {
-        if (dwPacketNumber is not null)
+        ) : this()
         {
-            DwPacketNumber = dwPacketNumber.Value;
+            if (dwPacketNumber is not null)
+            {
+                DwPacketNumber = dwPacketNumber.Value;
+            }
+
+            if (gamepad is not null)
+            {
+                Gamepad = gamepad.Value;
+            }
         }
 
-        if (gamepad is not null)
-        {
-            Gamepad = gamepad.Value;
-        }
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "dwPacketNumber")]
+        public uint DwPacketNumber;
+
+        [NativeName("Type", "XINPUT_GAMEPAD")]
+        [NativeName("Type.Name", "XINPUT_GAMEPAD")]
+        [NativeName("Name", "Gamepad")]
+        public Gamepad Gamepad;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "dwPacketNumber")]
-    public uint DwPacketNumber;
-
-    [NativeName("Type", "XINPUT_GAMEPAD")]
-    [NativeName("Type.Name", "XINPUT_GAMEPAD")]
-    [NativeName("Name", "Gamepad")]
-    public Gamepad Gamepad;
 }

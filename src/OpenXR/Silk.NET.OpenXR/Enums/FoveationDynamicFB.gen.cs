@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrFoveationDynamicFB")]
-public enum FoveationDynamicFB : int
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_FOVEATION_DYNAMIC_DISABLED_FB")]
-    FoveationDynamicDisabledFB = 0,
-    [NativeName("Name", "XR_FOVEATION_DYNAMIC_LEVEL_ENABLED_FB")]
-    FoveationDynamicLevelEnabledFB = 1,
+    [NativeName("Name", "XrFoveationDynamicFB")]
+    public enum FoveationDynamicFB : int
+    {
+        [NativeName("Name", "XR_FOVEATION_DYNAMIC_DISABLED_FB")]
+        FoveationDynamicDisabledFB = 0,
+        [NativeName("Name", "XR_FOVEATION_DYNAMIC_LEVEL_ENABLED_FB")]
+        FoveationDynamicLevelEnabledFB = 1,
+    }
 }

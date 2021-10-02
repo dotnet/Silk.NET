@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "FenceParameterNameNV")]
-public enum FenceParameterNameNV : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_FENCE_STATUS_NV")]
-    FenceStatusNV = 0x84F3,
-    [NativeName("Name", "GL_FENCE_CONDITION_NV")]
-    FenceConditionNV = 0x84F4,
+    [NativeName("Name", "FenceParameterNameNV")]
+    public enum FenceParameterNameNV : int
+    {
+        [NativeName("Name", "GL_FENCE_STATUS_NV")]
+        FenceStatusNV = 0x84F3,
+        [NativeName("Name", "GL_FENCE_CONDITION_NV")]
+        FenceConditionNV = 0x84F4,
+    }
 }

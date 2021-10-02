@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_VIDEO_PROCESSOR_STREAM")]
-public unsafe partial struct VideoProcessorStream
+namespace Silk.NET.Direct3D11
 {
-    public VideoProcessorStream
-    (
+    [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STREAM")]
+    public unsafe partial struct VideoProcessorStream
+    {
+        public VideoProcessorStream
+        (
             int? enable = null,
             uint? outputIndex = null,
             uint? inputFrameOrField = null,
@@ -32,117 +32,118 @@ public unsafe partial struct VideoProcessorStream
             ID3D11VideoProcessorInputView** ppPastSurfacesRight = null,
             ID3D11VideoProcessorInputView* pInputSurfaceRight = null,
             ID3D11VideoProcessorInputView** ppFutureSurfacesRight = null
-    ) : this()
-    {
-        if (enable is not null)
+        ) : this()
         {
-            Enable = enable.Value;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (outputIndex is not null)
+            {
+                OutputIndex = outputIndex.Value;
+            }
+
+            if (inputFrameOrField is not null)
+            {
+                InputFrameOrField = inputFrameOrField.Value;
+            }
+
+            if (pastFrames is not null)
+            {
+                PastFrames = pastFrames.Value;
+            }
+
+            if (futureFrames is not null)
+            {
+                FutureFrames = futureFrames.Value;
+            }
+
+            if (ppPastSurfaces is not null)
+            {
+                PpPastSurfaces = ppPastSurfaces;
+            }
+
+            if (pInputSurface is not null)
+            {
+                PInputSurface = pInputSurface;
+            }
+
+            if (ppFutureSurfaces is not null)
+            {
+                PpFutureSurfaces = ppFutureSurfaces;
+            }
+
+            if (ppPastSurfacesRight is not null)
+            {
+                PpPastSurfacesRight = ppPastSurfacesRight;
+            }
+
+            if (pInputSurfaceRight is not null)
+            {
+                PInputSurfaceRight = pInputSurfaceRight;
+            }
+
+            if (ppFutureSurfacesRight is not null)
+            {
+                PpFutureSurfacesRight = ppFutureSurfacesRight;
+            }
         }
 
-        if (outputIndex is not null)
-        {
-            OutputIndex = outputIndex.Value;
-        }
 
-        if (inputFrameOrField is not null)
-        {
-            InputFrameOrField = inputFrameOrField.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enable")]
+        public int Enable;
 
-        if (pastFrames is not null)
-        {
-            PastFrames = pastFrames.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "OutputIndex")]
+        public uint OutputIndex;
 
-        if (futureFrames is not null)
-        {
-            FutureFrames = futureFrames.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InputFrameOrField")]
+        public uint InputFrameOrField;
 
-        if (ppPastSurfaces is not null)
-        {
-            PpPastSurfaces = ppPastSurfaces;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "PastFrames")]
+        public uint PastFrames;
 
-        if (pInputSurface is not null)
-        {
-            PInputSurface = pInputSurface;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FutureFrames")]
+        public uint FutureFrames;
 
-        if (ppFutureSurfaces is not null)
-        {
-            PpFutureSurfaces = ppFutureSurfaces;
-        }
+        [NativeName("Type", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Name", "ppPastSurfaces")]
+        public ID3D11VideoProcessorInputView** PpPastSurfaces;
 
-        if (ppPastSurfacesRight is not null)
-        {
-            PpPastSurfacesRight = ppPastSurfacesRight;
-        }
+        [NativeName("Type", "ID3D11VideoProcessorInputView *")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView *")]
+        [NativeName("Name", "pInputSurface")]
+        public ID3D11VideoProcessorInputView* PInputSurface;
 
-        if (pInputSurfaceRight is not null)
-        {
-            PInputSurfaceRight = pInputSurfaceRight;
-        }
+        [NativeName("Type", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Name", "ppFutureSurfaces")]
+        public ID3D11VideoProcessorInputView** PpFutureSurfaces;
 
-        if (ppFutureSurfacesRight is not null)
-        {
-            PpFutureSurfacesRight = ppFutureSurfacesRight;
-        }
+        [NativeName("Type", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Name", "ppPastSurfacesRight")]
+        public ID3D11VideoProcessorInputView** PpPastSurfacesRight;
+
+        [NativeName("Type", "ID3D11VideoProcessorInputView *")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView *")]
+        [NativeName("Name", "pInputSurfaceRight")]
+        public ID3D11VideoProcessorInputView* PInputSurfaceRight;
+
+        [NativeName("Type", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
+        [NativeName("Name", "ppFutureSurfacesRight")]
+        public ID3D11VideoProcessorInputView** PpFutureSurfacesRight;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enable")]
-    public int Enable;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "OutputIndex")]
-    public uint OutputIndex;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InputFrameOrField")]
-    public uint InputFrameOrField;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "PastFrames")]
-    public uint PastFrames;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FutureFrames")]
-    public uint FutureFrames;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Name", "ppPastSurfaces")]
-    public ID3D11VideoProcessorInputView** PpPastSurfaces;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView *")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView *")]
-    [NativeName("Name", "pInputSurface")]
-    public ID3D11VideoProcessorInputView* PInputSurface;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Name", "ppFutureSurfaces")]
-    public ID3D11VideoProcessorInputView** PpFutureSurfaces;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Name", "ppPastSurfacesRight")]
-    public ID3D11VideoProcessorInputView** PpPastSurfacesRight;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView *")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView *")]
-    [NativeName("Name", "pInputSurfaceRight")]
-    public ID3D11VideoProcessorInputView* PInputSurfaceRight;
-
-    [NativeName("Type", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Type.Name", "ID3D11VideoProcessorInputView **")]
-    [NativeName("Name", "ppFutureSurfacesRight")]
-    public ID3D11VideoProcessorInputView** PpFutureSurfacesRight;
 }

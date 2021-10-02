@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DLIGHT9")]
-public unsafe partial struct Light9
+namespace Silk.NET.Direct3D9
 {
-    public Light9
-    (
+    [NativeName("Name", "_D3DLIGHT9")]
+    public unsafe partial struct Light9
+    {
+        public Light9
+        (
             Lighttype? type = null,
             Colorvalue? diffuse = null,
             Colorvalue? specular = null,
@@ -34,137 +34,138 @@ public unsafe partial struct Light9
             float? attenuation2 = null,
             float? theta = null,
             float? phi = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (diffuse is not null)
+            {
+                Diffuse = diffuse.Value;
+            }
+
+            if (specular is not null)
+            {
+                Specular = specular.Value;
+            }
+
+            if (ambient is not null)
+            {
+                Ambient = ambient.Value;
+            }
+
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
+
+            if (falloff is not null)
+            {
+                Falloff = falloff.Value;
+            }
+
+            if (attenuation0 is not null)
+            {
+                Attenuation0 = attenuation0.Value;
+            }
+
+            if (attenuation1 is not null)
+            {
+                Attenuation1 = attenuation1.Value;
+            }
+
+            if (attenuation2 is not null)
+            {
+                Attenuation2 = attenuation2.Value;
+            }
+
+            if (theta is not null)
+            {
+                Theta = theta.Value;
+            }
+
+            if (phi is not null)
+            {
+                Phi = phi.Value;
+            }
         }
 
-        if (diffuse is not null)
-        {
-            Diffuse = diffuse.Value;
-        }
 
-        if (specular is not null)
-        {
-            Specular = specular.Value;
-        }
+        [NativeName("Type", "D3DLIGHTTYPE")]
+        [NativeName("Type.Name", "D3DLIGHTTYPE")]
+        [NativeName("Name", "Type")]
+        public Lighttype Type;
 
-        if (ambient is not null)
-        {
-            Ambient = ambient.Value;
-        }
+        [NativeName("Type", "D3DCOLORVALUE")]
+        [NativeName("Type.Name", "D3DCOLORVALUE")]
+        [NativeName("Name", "Diffuse")]
+        public Colorvalue Diffuse;
 
-        if (position is not null)
-        {
-            Position = position.Value;
-        }
+        [NativeName("Type", "D3DCOLORVALUE")]
+        [NativeName("Type.Name", "D3DCOLORVALUE")]
+        [NativeName("Name", "Specular")]
+        public Colorvalue Specular;
 
-        if (direction is not null)
-        {
-            Direction = direction.Value;
-        }
+        [NativeName("Type", "D3DCOLORVALUE")]
+        [NativeName("Type.Name", "D3DCOLORVALUE")]
+        [NativeName("Name", "Ambient")]
+        public Colorvalue Ambient;
 
-        if (range is not null)
-        {
-            Range = range.Value;
-        }
+        [NativeName("Type", "D3DVECTOR")]
+        [NativeName("Type.Name", "D3DVECTOR")]
+        [NativeName("Name", "Position")]
+        public Vector Position;
 
-        if (falloff is not null)
-        {
-            Falloff = falloff.Value;
-        }
+        [NativeName("Type", "D3DVECTOR")]
+        [NativeName("Type.Name", "D3DVECTOR")]
+        [NativeName("Name", "Direction")]
+        public Vector Direction;
 
-        if (attenuation0 is not null)
-        {
-            Attenuation0 = attenuation0.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Range")]
+        public float Range;
 
-        if (attenuation1 is not null)
-        {
-            Attenuation1 = attenuation1.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Falloff")]
+        public float Falloff;
 
-        if (attenuation2 is not null)
-        {
-            Attenuation2 = attenuation2.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Attenuation0")]
+        public float Attenuation0;
 
-        if (theta is not null)
-        {
-            Theta = theta.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Attenuation1")]
+        public float Attenuation1;
 
-        if (phi is not null)
-        {
-            Phi = phi.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Attenuation2")]
+        public float Attenuation2;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Theta")]
+        public float Theta;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Phi")]
+        public float Phi;
     }
-
-
-    [NativeName("Type", "D3DLIGHTTYPE")]
-    [NativeName("Type.Name", "D3DLIGHTTYPE")]
-    [NativeName("Name", "Type")]
-    public Lighttype Type;
-
-    [NativeName("Type", "D3DCOLORVALUE")]
-    [NativeName("Type.Name", "D3DCOLORVALUE")]
-    [NativeName("Name", "Diffuse")]
-    public Colorvalue Diffuse;
-
-    [NativeName("Type", "D3DCOLORVALUE")]
-    [NativeName("Type.Name", "D3DCOLORVALUE")]
-    [NativeName("Name", "Specular")]
-    public Colorvalue Specular;
-
-    [NativeName("Type", "D3DCOLORVALUE")]
-    [NativeName("Type.Name", "D3DCOLORVALUE")]
-    [NativeName("Name", "Ambient")]
-    public Colorvalue Ambient;
-
-    [NativeName("Type", "D3DVECTOR")]
-    [NativeName("Type.Name", "D3DVECTOR")]
-    [NativeName("Name", "Position")]
-    public Vector Position;
-
-    [NativeName("Type", "D3DVECTOR")]
-    [NativeName("Type.Name", "D3DVECTOR")]
-    [NativeName("Name", "Direction")]
-    public Vector Direction;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Range")]
-    public float Range;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Falloff")]
-    public float Falloff;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Attenuation0")]
-    public float Attenuation0;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Attenuation1")]
-    public float Attenuation1;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Attenuation2")]
-    public float Attenuation2;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Theta")]
-    public float Theta;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Phi")]
-    public float Phi;
 }

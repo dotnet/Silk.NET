@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_VIEW_INSTANCE_LOCATION")]
-public unsafe partial struct ViewInstanceLocation
+namespace Silk.NET.Direct3D12
 {
-    public ViewInstanceLocation
-    (
+    [NativeName("Name", "D3D12_VIEW_INSTANCE_LOCATION")]
+    public unsafe partial struct ViewInstanceLocation
+    {
+        public ViewInstanceLocation
+        (
             uint? viewportArrayIndex = null,
             uint? renderTargetArrayIndex = null
-    ) : this()
-    {
-        if (viewportArrayIndex is not null)
+        ) : this()
         {
-            ViewportArrayIndex = viewportArrayIndex.Value;
+            if (viewportArrayIndex is not null)
+            {
+                ViewportArrayIndex = viewportArrayIndex.Value;
+            }
+
+            if (renderTargetArrayIndex is not null)
+            {
+                RenderTargetArrayIndex = renderTargetArrayIndex.Value;
+            }
         }
 
-        if (renderTargetArrayIndex is not null)
-        {
-            RenderTargetArrayIndex = renderTargetArrayIndex.Value;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ViewportArrayIndex")]
+        public uint ViewportArrayIndex;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "RenderTargetArrayIndex")]
+        public uint RenderTargetArrayIndex;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ViewportArrayIndex")]
-    public uint ViewportArrayIndex;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "RenderTargetArrayIndex")]
-    public uint RenderTargetArrayIndex;
 }

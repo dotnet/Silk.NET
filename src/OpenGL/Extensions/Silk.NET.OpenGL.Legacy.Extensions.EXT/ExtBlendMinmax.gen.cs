@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_blend_minmax")]
-public unsafe partial class ExtBlendMinmax : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_blend_minmax";
-    [NativeApi(EntryPoint = "glBlendEquationEXT")]
-    public partial void BlendEquation([Flow(FlowDirection.In)] EXT mode);
-
-    [NativeApi(EntryPoint = "glBlendEquationEXT")]
-    public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
-
-    public ExtBlendMinmax(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_blend_minmax")]
+    public unsafe partial class ExtBlendMinmax : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_blend_minmax";
+        [NativeApi(EntryPoint = "glBlendEquationEXT")]
+        public partial void BlendEquation([Flow(FlowDirection.In)] EXT mode);
+
+        [NativeApi(EntryPoint = "glBlendEquationEXT")]
+        public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+
+        public ExtBlendMinmax(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

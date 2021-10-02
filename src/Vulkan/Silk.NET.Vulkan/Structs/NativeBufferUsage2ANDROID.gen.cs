@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkNativeBufferUsage2ANDROID")]
-public unsafe partial struct NativeBufferUsage2ANDROID
+namespace Silk.NET.Vulkan
 {
-    public NativeBufferUsage2ANDROID
-    (
+    [NativeName("Name", "VkNativeBufferUsage2ANDROID")]
+    public unsafe partial struct NativeBufferUsage2ANDROID
+    {
+        public NativeBufferUsage2ANDROID
+        (
             ulong? consumer = null,
             ulong? producer = null
-    ) : this()
-    {
-        if (consumer is not null)
+        ) : this()
         {
-            Consumer = consumer.Value;
+            if (consumer is not null)
+            {
+                Consumer = consumer.Value;
+            }
+
+            if (producer is not null)
+            {
+                Producer = producer.Value;
+            }
         }
 
-        if (producer is not null)
-        {
-            Producer = producer.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "consumer")]
+        public ulong Consumer;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "producer")]
+        public ulong Producer;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "consumer")]
-    public ulong Consumer;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "producer")]
-    public ulong Producer;
 }

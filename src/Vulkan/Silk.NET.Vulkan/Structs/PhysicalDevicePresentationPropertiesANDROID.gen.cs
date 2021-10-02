@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDevicePresentationPropertiesANDROID")]
-public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDevicePresentationPropertiesANDROID
-    (
+    [NativeName("Name", "VkPhysicalDevicePresentationPropertiesANDROID")]
+    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID
+    {
+        public PhysicalDevicePresentationPropertiesANDROID
+        (
             StructureType? sType = StructureType.PhysicalDevicePresentationPropertiesAndroid,
             void* pNext = null,
             Bool32? sharedImage = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sharedImage is not null)
+            {
+                SharedImage = sharedImage.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (sharedImage is not null)
-        {
-            SharedImage = sharedImage.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "sharedImage")]
+        public Bool32 SharedImage;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "sharedImage")]
-    public Bool32 SharedImage;
 }

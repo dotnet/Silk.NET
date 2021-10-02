@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "SpriteParameterNameSGIX")]
-public enum SpriteParameterNameSGIX : int
+namespace Silk.NET.OpenGL
 {
-    [NativeName("Name", "GL_SPRITE_MODE_SGIX")]
-    SpriteModeSgix = 0x8149,
+    [NativeName("Name", "SpriteParameterNameSGIX")]
+    public enum SpriteParameterNameSGIX : int
+    {
+        [NativeName("Name", "GL_SPRITE_MODE_SGIX")]
+        SpriteModeSgix = 0x8149,
+    }
 }

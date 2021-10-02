@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-[Extension("ARB_multisample")]
-public unsafe partial class ArbMultisample : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_multisample";
-    [NativeApi(EntryPoint = "glSampleCoverageARB")]
-    public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
-
-    [NativeApi(EntryPoint = "glSampleCoverageARB")]
-    public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
-
-    public ArbMultisample(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_multisample")]
+    public unsafe partial class ArbMultisample : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_multisample";
+        [NativeApi(EntryPoint = "glSampleCoverageARB")]
+        public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+
+        [NativeApi(EntryPoint = "glSampleCoverageARB")]
+        public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+
+        public ArbMultisample(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

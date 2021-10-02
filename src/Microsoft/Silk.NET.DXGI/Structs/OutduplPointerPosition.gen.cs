@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_OUTDUPL_POINTER_POSITION")]
-public unsafe partial struct OutduplPointerPosition
+namespace Silk.NET.DXGI
 {
-    public OutduplPointerPosition
-    (
+    [NativeName("Name", "DXGI_OUTDUPL_POINTER_POSITION")]
+    public unsafe partial struct OutduplPointerPosition
+    {
+        public OutduplPointerPosition
+        (
             Silk.NET.Maths.Vector2D<int>? position = null,
             int? visible = null
-    ) : this()
-    {
-        if (position is not null)
+        ) : this()
         {
-            Position = position.Value;
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
+
+            if (visible is not null)
+            {
+                Visible = visible.Value;
+            }
         }
 
-        if (visible is not null)
-        {
-            Visible = visible.Value;
-        }
+
+        [NativeName("Type", "POINT")]
+        [NativeName("Type.Name", "POINT")]
+        [NativeName("Name", "Position")]
+        public Silk.NET.Maths.Vector2D<int> Position;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Visible")]
+        public int Visible;
     }
-
-
-    [NativeName("Type", "POINT")]
-    [NativeName("Type.Name", "POINT")]
-    [NativeName("Name", "Position")]
-    public Silk.NET.Maths.Vector2D<int> Position;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Visible")]
-    public int Visible;
 }

@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBindBufferMemoryInfoKHR")]
-public unsafe partial struct BindBufferMemoryInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public BindBufferMemoryInfoKHR
-    (
+    [NativeName("Name", "VkBindBufferMemoryInfoKHR")]
+    public unsafe partial struct BindBufferMemoryInfoKHR
+    {
+        public BindBufferMemoryInfoKHR
+        (
             StructureType? sType = StructureType.BindBufferMemoryInfo,
             void* pNext = null,
             Buffer? buffer = null,
             DeviceMemory? memory = null,
             ulong? memoryOffset = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (buffer is not null)
-        {
-            Buffer = buffer.Value;
-        }
-
-        if (memory is not null)
-        {
-            Memory = memory.Value;
-        }
-
-        if (memoryOffset is not null)
-        {
-            MemoryOffset = memoryOffset.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
+        public Buffer Buffer;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceMemory")]
+        [NativeName("Type.Name", "VkDeviceMemory")]
+        [NativeName("Name", "memory")]
+        public DeviceMemory Memory;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "memoryOffset")]
+        public ulong MemoryOffset;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBuffer")]
-    [NativeName("Type.Name", "VkBuffer")]
-    [NativeName("Name", "buffer")]
-    public Buffer Buffer;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceMemory")]
-    [NativeName("Type.Name", "VkDeviceMemory")]
-    [NativeName("Name", "memory")]
-    public DeviceMemory Memory;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "memoryOffset")]
-    public ulong MemoryOffset;
 }

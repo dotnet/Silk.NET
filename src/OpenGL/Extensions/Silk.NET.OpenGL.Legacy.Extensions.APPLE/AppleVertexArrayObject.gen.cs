@@ -14,84 +14,85 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE;
-
-[Extension("APPLE_vertex_array_object")]
-public unsafe partial class AppleVertexArrayObject : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
-    public const string ExtensionName = "APPLE_vertex_array_object";
-    [NativeApi(EntryPoint = "glBindVertexArrayAPPLE")]
-    public partial void BindVertexArray([Flow(FlowDirection.In)] uint array);
-
-    [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-    public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
-
-    [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-    public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint arrays);
-
-    [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-    public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] VertexArray* arrays);
-
-    [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-    public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in VertexArray arrays);
-
-    [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-    public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
-
-    [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-    public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint arrays);
-
-    [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-    public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] VertexArray* arrays);
-
-    [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-    public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out VertexArray arrays);
-
-    [NativeApi(EntryPoint = "glIsVertexArrayAPPLE")]
-    public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
-
-    public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
+    [Extension("APPLE_vertex_array_object")]
+    public unsafe partial class AppleVertexArrayObject : NativeExtension<GL>
     {
-        // ArrayParameterOverloader
-        DeleteVertexArrays(1, &arrays);
-    }
+        public const string ExtensionName = "APPLE_vertex_array_object";
+        [NativeApi(EntryPoint = "glBindVertexArrayAPPLE")]
+        public partial void BindVertexArray([Flow(FlowDirection.In)] uint array);
 
-    public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
-    {
-        // ImplicitCountSpanOverloader
-        DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
+        public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
-    public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
-    {
-        // ImplicitCountSpanOverloader
-        DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
+        public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint arrays);
 
-    public unsafe uint GenVertexArray()
-    {
-        const uint n = 1;
-        // ReturnTypeOverloader
-        uint ret = default;
-        GenVertexArrays(n, &ret);
-        return ret;
-    }
+        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
+        public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] VertexArray* arrays);
 
-    public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
-    {
-        // ImplicitCountSpanOverloader
-        GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
+        public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in VertexArray arrays);
 
-    public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
-    {
-        // ImplicitCountSpanOverloader
-        GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
+        public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
-    public AppleVertexArrayObject(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
+        public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint arrays);
+
+        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
+        public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] VertexArray* arrays);
+
+        [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
+        public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out VertexArray arrays);
+
+        [NativeApi(EntryPoint = "glIsVertexArrayAPPLE")]
+        public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
+
+        public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
+        {
+            // ArrayParameterOverloader
+            DeleteVertexArrays(1, &arrays);
+        }
+
+        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
+        }
+
+        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
+        }
+
+        public unsafe uint GenVertexArray()
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GenVertexArrays(n, &ret);
+            return ret;
+        }
+
+        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
+        }
+
+        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
+        }
+
+        public AppleVertexArrayObject(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -7,18 +7,19 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkVideoCodecOperationFlagsKHR")]
-public enum VideoCodecOperationFlagsKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_INVALID_BIT_KHR")]
-    VideoCodecOperationInvalidBitKhr = 0,
-    [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_EXT")]
-    VideoCodecOperationEncodeH264BitExt = 65536,
-    [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_EXT")]
-    VideoCodecOperationDecodeH264BitExt = 1,
-    [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_EXT")]
-    VideoCodecOperationDecodeH265BitExt = 2,
+    [Flags()]
+    [NativeName("Name", "VkVideoCodecOperationFlagsKHR")]
+    public enum VideoCodecOperationFlagsKHR : int
+    {
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_INVALID_BIT_KHR")]
+        VideoCodecOperationInvalidBitKhr = 0,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_EXT")]
+        VideoCodecOperationEncodeH264BitExt = 65536,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_EXT")]
+        VideoCodecOperationDecodeH264BitExt = 1,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_EXT")]
+        VideoCodecOperationDecodeH265BitExt = 2,
+    }
 }

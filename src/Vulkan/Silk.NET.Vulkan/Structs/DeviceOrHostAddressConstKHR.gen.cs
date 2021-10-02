@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "VkDeviceOrHostAddressConstKHR")]
-public unsafe partial struct DeviceOrHostAddressConstKHR
+namespace Silk.NET.Vulkan
 {
-    public DeviceOrHostAddressConstKHR
-    (
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "VkDeviceOrHostAddressConstKHR")]
+    public unsafe partial struct DeviceOrHostAddressConstKHR
+    {
+        public DeviceOrHostAddressConstKHR
+        (
             ulong? deviceAddress = null,
             void* hostAddress = null
-    ) : this()
-    {
-        if (deviceAddress is not null)
+        ) : this()
         {
-            DeviceAddress = deviceAddress.Value;
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (hostAddress is not null)
+            {
+                HostAddress = hostAddress;
+            }
         }
 
-        if (hostAddress is not null)
-        {
-            HostAddress = hostAddress;
-        }
+/// <summary></summary>
+        [FieldOffset(0)]
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "deviceAddress")]
+        public ulong DeviceAddress;
+/// <summary></summary>
+        [FieldOffset(0)]
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "hostAddress")]
+        public void* HostAddress;
     }
-
-/// <summary></summary>
-        [FieldOffset(0)]
-    [NativeName("Type", "VkDeviceAddress")]
-    [NativeName("Type.Name", "VkDeviceAddress")]
-    [NativeName("Name", "deviceAddress")]
-    public ulong DeviceAddress;
-/// <summary></summary>
-        [FieldOffset(0)]
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "hostAddress")]
-    public void* HostAddress;
 }

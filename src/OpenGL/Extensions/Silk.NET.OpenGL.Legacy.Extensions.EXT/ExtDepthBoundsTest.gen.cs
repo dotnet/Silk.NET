@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_depth_bounds_test")]
-public unsafe partial class ExtDepthBoundsTest : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_depth_bounds_test";
-    [NativeApi(EntryPoint = "glDepthBoundsEXT")]
-    public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
-
-    public ExtDepthBoundsTest(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_depth_bounds_test")]
+    public unsafe partial class ExtDepthBoundsTest : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_depth_bounds_test";
+        [NativeApi(EntryPoint = "glDepthBoundsEXT")]
+        public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
+
+        public ExtDepthBoundsTest(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

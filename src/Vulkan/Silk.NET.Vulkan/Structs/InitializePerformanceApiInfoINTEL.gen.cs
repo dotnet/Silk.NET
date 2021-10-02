@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkInitializePerformanceApiInfoINTEL")]
-public unsafe partial struct InitializePerformanceApiInfoINTEL
+namespace Silk.NET.Vulkan
 {
-    public InitializePerformanceApiInfoINTEL
-    (
+    [NativeName("Name", "VkInitializePerformanceApiInfoINTEL")]
+    public unsafe partial struct InitializePerformanceApiInfoINTEL
+    {
+        public InitializePerformanceApiInfoINTEL
+        (
             StructureType? sType = StructureType.InitializePerformanceApiInfoIntel,
             void* pNext = null,
             void* pUserData = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pUserData is not null)
+            {
+                PUserData = pUserData;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (pUserData is not null)
-        {
-            PUserData = pUserData;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pUserData")]
+        public void* PUserData;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pUserData")]
-    public void* PUserData;
 }

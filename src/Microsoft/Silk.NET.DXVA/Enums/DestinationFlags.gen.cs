@@ -7,19 +7,20 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_DestinationFlags")]
-public enum DestinationFlags : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVA_DestinationFlagMask")]
-    DestinationFlagMask = 0xF,
-    [NativeName("Name", "DXVA_DestinationFlag_Background_Changed")]
-    DestinationFlagBackgroundChanged = 0x1,
-    [NativeName("Name", "DXVA_DestinationFlag_TargetRect_Changed")]
-    DestinationFlagTargetRectChanged = 0x2,
-    [NativeName("Name", "DXVA_DestinationFlag_ColorData_Changed")]
-    DestinationFlagColorDataChanged = 0x4,
-    [NativeName("Name", "DXVA_DestinationFlag_Alpha_Changed")]
-    DestinationFlagAlphaChanged = 0x8,
+    [NativeName("Name", "_DXVA_DestinationFlags")]
+    public enum DestinationFlags : int
+    {
+        [NativeName("Name", "DXVA_DestinationFlagMask")]
+        DestinationFlagMask = 0xF,
+        [NativeName("Name", "DXVA_DestinationFlag_Background_Changed")]
+        DestinationFlagBackgroundChanged = 0x1,
+        [NativeName("Name", "DXVA_DestinationFlag_TargetRect_Changed")]
+        DestinationFlagTargetRectChanged = 0x2,
+        [NativeName("Name", "DXVA_DestinationFlag_ColorData_Changed")]
+        DestinationFlagColorDataChanged = 0x4,
+        [NativeName("Name", "DXVA_DestinationFlag_Alpha_Changed")]
+        DestinationFlagAlphaChanged = 0x8,
+    }
 }

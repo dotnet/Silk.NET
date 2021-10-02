@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-public unsafe readonly struct PfnPdxva2SWVideoprocessblt : IDisposable
+namespace Silk.NET.DXVA
 {
-    private readonly void* _handle;
-    public delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> Handle => (delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>) _handle;
-    public PfnPdxva2SWVideoprocessblt
-    (
-        delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> ptr
-    ) => _handle = ptr;
+    public unsafe readonly struct PfnPdxva2SWVideoprocessblt : IDisposable
+    {
+        private readonly void* _handle;
+        public delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> Handle => (delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>) _handle;
+        public PfnPdxva2SWVideoprocessblt
+        (
+            delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> ptr
+        ) => _handle = ptr;
 
-    public PfnPdxva2SWVideoprocessblt
-    (
-         Pdxva2SWVideoprocessblt proc
-    ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
+        public PfnPdxva2SWVideoprocessblt
+        (
+             Pdxva2SWVideoprocessblt proc
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
-    public static PfnPdxva2SWVideoprocessblt From(Pdxva2SWVideoprocessblt proc) => new PfnPdxva2SWVideoprocessblt(proc);
-    public void Dispose() => SilkMarshal.Free((nint) _handle);
+        public static PfnPdxva2SWVideoprocessblt From(Pdxva2SWVideoprocessblt proc) => new PfnPdxva2SWVideoprocessblt(proc);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-    public static implicit operator nint(PfnPdxva2SWVideoprocessblt pfn) => (nint) pfn.Handle;
-    public static explicit operator PfnPdxva2SWVideoprocessblt(nint pfn)
-        => new PfnPdxva2SWVideoprocessblt((delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>) pfn);
+        public static implicit operator nint(PfnPdxva2SWVideoprocessblt pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnPdxva2SWVideoprocessblt(nint pfn)
+            => new PfnPdxva2SWVideoprocessblt((delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>) pfn);
 
-    public static implicit operator PfnPdxva2SWVideoprocessblt(Pdxva2SWVideoprocessblt proc)
-        => new PfnPdxva2SWVideoprocessblt(proc);
+        public static implicit operator PfnPdxva2SWVideoprocessblt(Pdxva2SWVideoprocessblt proc)
+            => new PfnPdxva2SWVideoprocessblt(proc);
 
-    public static explicit operator Pdxva2SWVideoprocessblt(PfnPdxva2SWVideoprocessblt pfn)
-        => SilkMarshal.PtrToDelegate<Pdxva2SWVideoprocessblt>(pfn);
+        public static explicit operator Pdxva2SWVideoprocessblt(PfnPdxva2SWVideoprocessblt pfn)
+            => SilkMarshal.PtrToDelegate<Pdxva2SWVideoprocessblt>(pfn);
 
-    public static implicit operator delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>(PfnPdxva2SWVideoprocessblt pfn) => pfn.Handle;
-    public static implicit operator PfnPdxva2SWVideoprocessblt(delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> ptr) => new PfnPdxva2SWVideoprocessblt(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int>(PfnPdxva2SWVideoprocessblt pfn) => pfn.Handle;
+        public static implicit operator PfnPdxva2SWVideoprocessblt(delegate* unmanaged[Cdecl]<void*, DXVA2Videoprocessblt*, int> ptr) => new PfnPdxva2SWVideoprocessblt(ptr);
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate int Pdxva2SWVideoprocessblt(void* arg0, DXVA2Videoprocessblt* arg1);
 }
-
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public unsafe delegate int Pdxva2SWVideoprocessblt(void* arg0, DXVA2Videoprocessblt* arg1);
 

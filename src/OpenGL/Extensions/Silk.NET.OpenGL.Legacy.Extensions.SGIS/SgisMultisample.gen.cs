@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
-
-[Extension("SGIS_multisample")]
-public unsafe partial class SgisMultisample : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
-    public const string ExtensionName = "SGIS_multisample";
-    [NativeApi(EntryPoint = "glSampleMaskSGIS")]
-    public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
-
-    [NativeApi(EntryPoint = "glSampleMaskSGIS")]
-    public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
-
-    [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-    public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
-
-    [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-    public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
-
-    public SgisMultisample(INativeContext ctx)
-        : base(ctx)
+    [Extension("SGIS_multisample")]
+    public unsafe partial class SgisMultisample : NativeExtension<GL>
     {
+        public const string ExtensionName = "SGIS_multisample";
+        [NativeApi(EntryPoint = "glSampleMaskSGIS")]
+        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+
+        [NativeApi(EntryPoint = "glSampleMaskSGIS")]
+        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+
+        [NativeApi(EntryPoint = "glSamplePatternSGIS")]
+        public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
+
+        [NativeApi(EntryPoint = "glSamplePatternSGIS")]
+        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
+
+        public SgisMultisample(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_Palette")]
-public unsafe partial struct Palette
+namespace Silk.NET.SDL
 {
-    public Palette
-    (
+    [NativeName("Name", "SDL_Palette")]
+    public unsafe partial struct Palette
+    {
+        public Palette
+        (
             int? ncolors = null,
             Color* colors = null,
             uint? version = null,
             int? refcount = null
-    ) : this()
-    {
-        if (ncolors is not null)
+        ) : this()
         {
-            Ncolors = ncolors.Value;
+            if (ncolors is not null)
+            {
+                Ncolors = ncolors.Value;
+            }
+
+            if (colors is not null)
+            {
+                Colors = colors;
+            }
+
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
         }
 
-        if (colors is not null)
-        {
-            Colors = colors;
-        }
 
-        if (version is not null)
-        {
-            Version = version.Value;
-        }
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "ncolors")]
+        public int Ncolors;
 
-        if (refcount is not null)
-        {
-            Refcount = refcount.Value;
-        }
+        [NativeName("Type", "SDL_Color *")]
+        [NativeName("Type.Name", "SDL_Color *")]
+        [NativeName("Name", "colors")]
+        public Color* Colors;
+
+        [NativeName("Type", "Uint32")]
+        [NativeName("Type.Name", "Uint32")]
+        [NativeName("Name", "version")]
+        public uint Version;
+
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
+        [NativeName("Name", "refcount")]
+        public int Refcount;
     }
-
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "ncolors")]
-    public int Ncolors;
-
-    [NativeName("Type", "SDL_Color *")]
-    [NativeName("Type.Name", "SDL_Color *")]
-    [NativeName("Name", "colors")]
-    public Color* Colors;
-
-    [NativeName("Type", "Uint32")]
-    [NativeName("Type.Name", "Uint32")]
-    [NativeName("Name", "version")]
-    public uint Version;
-
-    [NativeName("Type", "int")]
-    [NativeName("Type.Name", "int")]
-    [NativeName("Name", "refcount")]
-    public int Refcount;
 }

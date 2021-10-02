@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImageSparseMemoryRequirementsInfo2")]
-public unsafe partial struct ImageSparseMemoryRequirementsInfo2
+namespace Silk.NET.Vulkan
 {
-    public ImageSparseMemoryRequirementsInfo2
-    (
+    [NativeName("Name", "VkImageSparseMemoryRequirementsInfo2")]
+    public unsafe partial struct ImageSparseMemoryRequirementsInfo2
+    {
+        public ImageSparseMemoryRequirementsInfo2
+        (
             StructureType? sType = StructureType.ImageSparseMemoryRequirementsInfo2,
             void* pNext = null,
             Image? image = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (image is not null)
-        {
-            Image = image.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImage")]
+        [NativeName("Type.Name", "VkImage")]
+        [NativeName("Name", "image")]
+        public Image Image;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImage")]
-    [NativeName("Type.Name", "VkImage")]
-    [NativeName("Name", "image")]
-    public Image Image;
 }

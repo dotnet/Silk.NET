@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy;
-
-[NativeName("Name", "transform feedback")]
-public unsafe partial struct TransformFeedback
+namespace Silk.NET.OpenGL.Legacy
 {
-    public TransformFeedback
-    (
-            uint? handle = null
-    ) : this()
+    [NativeName("Name", "transform feedback")]
+    public unsafe partial struct TransformFeedback
     {
-        if (handle is not null)
+        public TransformFeedback
+        (
+            uint? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public uint Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public uint Handle;
 }

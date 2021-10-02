@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA2_AES_CTR_IV")]
-public unsafe partial struct DXVA2AesCtrIV
+namespace Silk.NET.DXVA
 {
-    public DXVA2AesCtrIV
-    (
+    [NativeName("Name", "_DXVA2_AES_CTR_IV")]
+    public unsafe partial struct DXVA2AesCtrIV
+    {
+        public DXVA2AesCtrIV
+        (
             ulong? iV = null,
             ulong? count = null
-    ) : this()
-    {
-        if (iV is not null)
+        ) : this()
         {
-            IV = iV.Value;
+            if (iV is not null)
+            {
+                IV = iV.Value;
+            }
+
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
         }
 
-        if (count is not null)
-        {
-            Count = count.Value;
-        }
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "IV")]
+        public ulong IV;
+
+        [NativeName("Type", "UINT64")]
+        [NativeName("Type.Name", "UINT64")]
+        [NativeName("Name", "Count")]
+        public ulong Count;
     }
-
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "IV")]
-    public ulong IV;
-
-    [NativeName("Type", "UINT64")]
-    [NativeName("Type.Name", "UINT64")]
-    [NativeName("Name", "Count")]
-    public ulong Count;
 }

@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_COMMAND_RECORDER_FLAGS")]
-public enum CommandRecorderFlags : int
+namespace Silk.NET.Direct3D12
 {
-    [NativeName("Name", "D3D12_COMMAND_RECORDER_FLAG_NONE")]
-    CommandRecorderFlagNone = 0x0,
+    [NativeName("Name", "D3D12_COMMAND_RECORDER_FLAGS")]
+    public enum CommandRecorderFlags : int
+    {
+        [NativeName("Name", "D3D12_COMMAND_RECORDER_FLAG_NONE")]
+        CommandRecorderFlagNone = 0x0,
+    }
 }

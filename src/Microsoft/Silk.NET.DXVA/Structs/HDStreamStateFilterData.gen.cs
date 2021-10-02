@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_FILTER_DATA")]
-public unsafe partial struct HDStreamStateFilterData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateFilterData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_FILTER_DATA")]
+    public unsafe partial struct HDStreamStateFilterData
+    {
+        public HDStreamStateFilterData
+        (
             int? enable = null,
             int? level = null
-    ) : this()
-    {
-        if (enable is not null)
+        ) : this()
         {
-            Enable = enable.Value;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (level is not null)
+            {
+                Level = level.Value;
+            }
         }
 
-        if (level is not null)
-        {
-            Level = level.Value;
-        }
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enable")]
+        public int Enable;
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "Level")]
+        public int Level;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enable")]
-    public int Enable;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "Level")]
-    public int Level;
 }

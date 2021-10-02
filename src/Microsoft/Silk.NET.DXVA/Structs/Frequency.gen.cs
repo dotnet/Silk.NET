@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_Frequency")]
-public unsafe partial struct Frequency
+namespace Silk.NET.DXVA
 {
-    public Frequency
-    (
+    [NativeName("Name", "_DXVA_Frequency")]
+    public unsafe partial struct Frequency
+    {
+        public Frequency
+        (
             uint? numerator = null,
             uint? denominator = null
-    ) : this()
-    {
-        if (numerator is not null)
+        ) : this()
         {
-            Numerator = numerator.Value;
+            if (numerator is not null)
+            {
+                Numerator = numerator.Value;
+            }
+
+            if (denominator is not null)
+            {
+                Denominator = denominator.Value;
+            }
         }
 
-        if (denominator is not null)
-        {
-            Denominator = denominator.Value;
-        }
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Numerator")]
+        public uint Numerator;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "Denominator")]
+        public uint Denominator;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Numerator")]
-    public uint Numerator;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "Denominator")]
-    public uint Denominator;
 }

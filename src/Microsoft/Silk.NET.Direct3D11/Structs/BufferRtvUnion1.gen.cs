@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_d3d11_L3745_C5")]
-public unsafe partial struct BufferRtvUnion1
+namespace Silk.NET.Direct3D11
 {
-    public BufferRtvUnion1
-    (
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_d3d11_L3745_C5")]
+    public unsafe partial struct BufferRtvUnion1
+    {
+        public BufferRtvUnion1
+        (
             uint? firstElement = null,
             uint? elementOffset = null
-    ) : this()
-    {
-        if (firstElement is not null)
+        ) : this()
         {
-            FirstElement = firstElement.Value;
+            if (firstElement is not null)
+            {
+                FirstElement = firstElement.Value;
+            }
+
+            if (elementOffset is not null)
+            {
+                ElementOffset = elementOffset.Value;
+            }
         }
 
-        if (elementOffset is not null)
-        {
-            ElementOffset = elementOffset.Value;
-        }
+
+        [FieldOffset(0)]
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FirstElement")]
+        public uint FirstElement;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ElementOffset")]
+        public uint ElementOffset;
     }
-
-
-        [FieldOffset(0)]
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FirstElement")]
-    public uint FirstElement;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ElementOffset")]
-    public uint ElementOffset;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DXIL_LIBRARY_DESC")]
-public unsafe partial struct DxilLibraryDesc
+namespace Silk.NET.Direct3D12
 {
-    public DxilLibraryDesc
-    (
+    [NativeName("Name", "D3D12_DXIL_LIBRARY_DESC")]
+    public unsafe partial struct DxilLibraryDesc
+    {
+        public DxilLibraryDesc
+        (
             ShaderBytecode? dXILLibrary = null,
             uint? numExports = null,
             ExportDesc* pExports = null
-    ) : this()
-    {
-        if (dXILLibrary is not null)
+        ) : this()
         {
-            DXILLibrary = dXILLibrary.Value;
+            if (dXILLibrary is not null)
+            {
+                DXILLibrary = dXILLibrary.Value;
+            }
+
+            if (numExports is not null)
+            {
+                NumExports = numExports.Value;
+            }
+
+            if (pExports is not null)
+            {
+                PExports = pExports;
+            }
         }
 
-        if (numExports is not null)
-        {
-            NumExports = numExports.Value;
-        }
 
-        if (pExports is not null)
-        {
-            PExports = pExports;
-        }
+        [NativeName("Type", "D3D12_SHADER_BYTECODE")]
+        [NativeName("Type.Name", "D3D12_SHADER_BYTECODE")]
+        [NativeName("Name", "DXILLibrary")]
+        public ShaderBytecode DXILLibrary;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumExports")]
+        public uint NumExports;
+
+        [NativeName("Type", "D3D12_EXPORT_DESC *")]
+        [NativeName("Type.Name", "D3D12_EXPORT_DESC *")]
+        [NativeName("Name", "pExports")]
+        public ExportDesc* PExports;
     }
-
-
-    [NativeName("Type", "D3D12_SHADER_BYTECODE")]
-    [NativeName("Type.Name", "D3D12_SHADER_BYTECODE")]
-    [NativeName("Name", "DXILLibrary")]
-    public ShaderBytecode DXILLibrary;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumExports")]
-    public uint NumExports;
-
-    [NativeName("Type", "D3D12_EXPORT_DESC *")]
-    [NativeName("Type.Name", "D3D12_EXPORT_DESC *")]
-    [NativeName("Name", "pExports")]
-    public ExportDesc* PExports;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkImportMemoryBufferCollectionFUCHSIA")]
-public unsafe partial struct ImportMemoryBufferCollectionFUCHSIA
+namespace Silk.NET.Vulkan
 {
-    public ImportMemoryBufferCollectionFUCHSIA
-    (
+    [NativeName("Name", "VkImportMemoryBufferCollectionFUCHSIA")]
+    public unsafe partial struct ImportMemoryBufferCollectionFUCHSIA
+    {
+        public ImportMemoryBufferCollectionFUCHSIA
+        (
             StructureType? sType = StructureType.ImportMemoryBufferCollectionFuchsia,
             void* pNext = null,
             BufferCollectionFUCHSIA? collection = null,
             uint? index = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (collection is not null)
+            {
+                Collection = collection.Value;
+            }
+
+            if (index is not null)
+            {
+                Index = index.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (collection is not null)
-        {
-            Collection = collection.Value;
-        }
-
-        if (index is not null)
-        {
-            Index = index.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBufferCollectionFUCHSIA")]
+        [NativeName("Type.Name", "VkBufferCollectionFUCHSIA")]
+        [NativeName("Name", "collection")]
+        public BufferCollectionFUCHSIA Collection;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "index")]
+        public uint Index;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBufferCollectionFUCHSIA")]
-    [NativeName("Type.Name", "VkBufferCollectionFUCHSIA")]
-    [NativeName("Name", "collection")]
-    public BufferCollectionFUCHSIA Collection;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "index")]
-    public uint Index;
 }

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiMetadataEntry")]
-public unsafe partial struct MetadataEntry
+namespace Silk.NET.Assimp
 {
-    public MetadataEntry
-    (
+    [NativeName("Name", "aiMetadataEntry")]
+    public unsafe partial struct MetadataEntry
+    {
+        public MetadataEntry
+        (
             MetadataType? mType = null,
             void* mData = null
-    ) : this()
-    {
-        if (mType is not null)
+        ) : this()
         {
-            MType = mType.Value;
+            if (mType is not null)
+            {
+                MType = mType.Value;
+            }
+
+            if (mData is not null)
+            {
+                MData = mData;
+            }
         }
 
-        if (mData is not null)
-        {
-            MData = mData;
-        }
+
+        [NativeName("Type", "aiMetadataType")]
+        [NativeName("Type.Name", "aiMetadataType")]
+        [NativeName("Name", "mType")]
+        public MetadataType MType;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "mData")]
+        public void* MData;
     }
-
-
-    [NativeName("Type", "aiMetadataType")]
-    [NativeName("Type.Name", "aiMetadataType")]
-    [NativeName("Name", "mType")]
-    public MetadataType MType;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "mData")]
-    public void* MData;
 }

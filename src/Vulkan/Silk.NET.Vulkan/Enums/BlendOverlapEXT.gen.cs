@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBlendOverlapEXT")]
-public enum BlendOverlapEXT : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
-    BlendOverlapUncorrelatedExt = 0,
-    [NativeName("Name", "VK_BLEND_OVERLAP_DISJOINT_EXT")]
-    BlendOverlapDisjointExt = 1,
-    [NativeName("Name", "VK_BLEND_OVERLAP_CONJOINT_EXT")]
-    BlendOverlapConjointExt = 2,
+    [NativeName("Name", "VkBlendOverlapEXT")]
+    public enum BlendOverlapEXT : int
+    {
+        [NativeName("Name", "VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
+        BlendOverlapUncorrelatedExt = 0,
+        [NativeName("Name", "VK_BLEND_OVERLAP_DISJOINT_EXT")]
+        BlendOverlapDisjointExt = 1,
+        [NativeName("Name", "VK_BLEND_OVERLAP_CONJOINT_EXT")]
+        BlendOverlapConjointExt = 2,
+    }
 }

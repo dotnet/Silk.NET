@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-public static class ArbTextureMultisampleOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
+    public static class ArbTextureMultisampleOverloads
     {
-        // SpanOverloader
-        thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
-    }
+        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
+        {
+            // SpanOverloader
+            thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
+        }
 
-    public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
-    {
-        // SpanOverloader
-        thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
-    }
+        public static unsafe void GetMultisample(this ArbTextureMultisample thisApi, [Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
+        {
+            // SpanOverloader
+            thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
+        }
 
+    }
 }
 

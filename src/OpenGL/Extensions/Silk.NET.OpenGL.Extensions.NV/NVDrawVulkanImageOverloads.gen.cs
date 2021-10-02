@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.NV;
-
-public static class NVDrawVulkanImageOverloads
+namespace Silk.NET.OpenGL.Extensions.NV
 {
-    public static unsafe nint GetVkProcAddr(this NVDrawVulkanImage thisApi, [Count(Computed = "name"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+    public static class NVDrawVulkanImageOverloads
     {
-        // SpanOverloader
-        return thisApi.GetVkProcAddr(in name.GetPinnableReference());
-    }
+        public static unsafe nint GetVkProcAddr(this NVDrawVulkanImage thisApi, [Count(Computed = "name"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+        {
+            // SpanOverloader
+            return thisApi.GetVkProcAddr(in name.GetPinnableReference());
+        }
 
+    }
 }
 

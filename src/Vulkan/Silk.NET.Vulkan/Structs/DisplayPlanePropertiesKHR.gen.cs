@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDisplayPlanePropertiesKHR")]
-public unsafe partial struct DisplayPlanePropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public DisplayPlanePropertiesKHR
-    (
+    [NativeName("Name", "VkDisplayPlanePropertiesKHR")]
+    public unsafe partial struct DisplayPlanePropertiesKHR
+    {
+        public DisplayPlanePropertiesKHR
+        (
             DisplayKHR? currentDisplay = null,
             uint? currentStackIndex = null
-    ) : this()
-    {
-        if (currentDisplay is not null)
+        ) : this()
         {
-            CurrentDisplay = currentDisplay.Value;
+            if (currentDisplay is not null)
+            {
+                CurrentDisplay = currentDisplay.Value;
+            }
+
+            if (currentStackIndex is not null)
+            {
+                CurrentStackIndex = currentStackIndex.Value;
+            }
         }
 
-        if (currentStackIndex is not null)
-        {
-            CurrentStackIndex = currentStackIndex.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkDisplayKHR")]
+        [NativeName("Type.Name", "VkDisplayKHR")]
+        [NativeName("Name", "currentDisplay")]
+        public DisplayKHR CurrentDisplay;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "currentStackIndex")]
+        public uint CurrentStackIndex;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkDisplayKHR")]
-    [NativeName("Type.Name", "VkDisplayKHR")]
-    [NativeName("Name", "currentDisplay")]
-    public DisplayKHR CurrentDisplay;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "currentStackIndex")]
-    public uint CurrentStackIndex;
 }

@@ -14,33 +14,34 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_point_parameters")]
-public unsafe partial class ExtPointParameters : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_point_parameters";
-    [NativeApi(EntryPoint = "glPointParameterfEXT")]
-    public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
-
-    [NativeApi(EntryPoint = "glPointParameterfEXT")]
-    public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
-
-    [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-    public unsafe partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-    [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-    public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
-
-    [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-    public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-    [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-    public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
-
-    public ExtPointParameters(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_point_parameters")]
+    public unsafe partial class ExtPointParameters : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_point_parameters";
+        [NativeApi(EntryPoint = "glPointParameterfEXT")]
+        public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPointParameterfEXT")]
+        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        public ExtPointParameters(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSystemSpaceWarpPropertiesFB")]
-public unsafe partial struct SystemSpaceWarpPropertiesFB
+namespace Silk.NET.OpenXR
 {
-    public SystemSpaceWarpPropertiesFB
-    (
+    [NativeName("Name", "XrSystemSpaceWarpPropertiesFB")]
+    public unsafe partial struct SystemSpaceWarpPropertiesFB
+    {
+        public SystemSpaceWarpPropertiesFB
+        (
             StructureType? type = StructureType.TypeSystemSpaceWarpPropertiesFB,
             void* next = null,
             uint? recommendedMotionVectorImageRectWidth = null,
             uint? recommendedMotionVectorImageRectHeight = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (recommendedMotionVectorImageRectWidth is not null)
+            {
+                RecommendedMotionVectorImageRectWidth = recommendedMotionVectorImageRectWidth.Value;
+            }
+
+            if (recommendedMotionVectorImageRectHeight is not null)
+            {
+                RecommendedMotionVectorImageRectHeight = recommendedMotionVectorImageRectHeight.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (recommendedMotionVectorImageRectWidth is not null)
-        {
-            RecommendedMotionVectorImageRectWidth = recommendedMotionVectorImageRectWidth.Value;
-        }
-
-        if (recommendedMotionVectorImageRectHeight is not null)
-        {
-            RecommendedMotionVectorImageRectHeight = recommendedMotionVectorImageRectHeight.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "recommendedMotionVectorImageRectWidth")]
+        public uint RecommendedMotionVectorImageRectWidth;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "recommendedMotionVectorImageRectHeight")]
+        public uint RecommendedMotionVectorImageRectHeight;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "recommendedMotionVectorImageRectWidth")]
-    public uint RecommendedMotionVectorImageRectWidth;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "recommendedMotionVectorImageRectHeight")]
-    public uint RecommendedMotionVectorImageRectHeight;
 }

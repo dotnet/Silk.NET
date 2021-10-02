@@ -14,81 +14,82 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio;
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-[NativeName("Name", "XAUDIO2_DEBUG_CONFIGURATION")]
-public unsafe partial struct DebugConfiguration
+namespace Silk.NET.XAudio
 {
-    public DebugConfiguration
-    (
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [NativeName("Name", "XAUDIO2_DEBUG_CONFIGURATION")]
+    public unsafe partial struct DebugConfiguration
+    {
+        public DebugConfiguration
+        (
             uint? traceMask = null,
             uint? breakMask = null,
             int? logThreadID = null,
             int? logFileline = null,
             int? logFunctionName = null,
             int? logTiming = null
-    ) : this()
-    {
-        if (traceMask is not null)
+        ) : this()
         {
-            TraceMask = traceMask.Value;
+            if (traceMask is not null)
+            {
+                TraceMask = traceMask.Value;
+            }
+
+            if (breakMask is not null)
+            {
+                BreakMask = breakMask.Value;
+            }
+
+            if (logThreadID is not null)
+            {
+                LogThreadID = logThreadID.Value;
+            }
+
+            if (logFileline is not null)
+            {
+                LogFileline = logFileline.Value;
+            }
+
+            if (logFunctionName is not null)
+            {
+                LogFunctionName = logFunctionName.Value;
+            }
+
+            if (logTiming is not null)
+            {
+                LogTiming = logTiming.Value;
+            }
         }
 
-        if (breakMask is not null)
-        {
-            BreakMask = breakMask.Value;
-        }
 
-        if (logThreadID is not null)
-        {
-            LogThreadID = logThreadID.Value;
-        }
+        [NativeName("Type", "UINT32")]
+        [NativeName("Type.Name", "UINT32")]
+        [NativeName("Name", "TraceMask")]
+        public uint TraceMask;
 
-        if (logFileline is not null)
-        {
-            LogFileline = logFileline.Value;
-        }
+        [NativeName("Type", "UINT32")]
+        [NativeName("Type.Name", "UINT32")]
+        [NativeName("Name", "BreakMask")]
+        public uint BreakMask;
 
-        if (logFunctionName is not null)
-        {
-            LogFunctionName = logFunctionName.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "LogThreadID")]
+        public int LogThreadID;
 
-        if (logTiming is not null)
-        {
-            LogTiming = logTiming.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "LogFileline")]
+        public int LogFileline;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "LogFunctionName")]
+        public int LogFunctionName;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "LogTiming")]
+        public int LogTiming;
     }
-
-
-    [NativeName("Type", "UINT32")]
-    [NativeName("Type.Name", "UINT32")]
-    [NativeName("Name", "TraceMask")]
-    public uint TraceMask;
-
-    [NativeName("Type", "UINT32")]
-    [NativeName("Type.Name", "UINT32")]
-    [NativeName("Name", "BreakMask")]
-    public uint BreakMask;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "LogThreadID")]
-    public int LogThreadID;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "LogFileline")]
-    public int LogFileline;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "LogFunctionName")]
-    public int LogFunctionName;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "LogTiming")]
-    public int LogTiming;
 }

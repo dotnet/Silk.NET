@@ -7,19 +7,20 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA2_VideoTransferMatrix")]
-public enum DXVA2VideoTransferMatrix : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
-    DXVA2VideoTransferMatrixMask = 0x7,
-    [NativeName("Name", "DXVA2_VideoTransferMatrix_Unknown")]
-    DXVA2VideoTransferMatrixUnknown = 0x0,
-    [NativeName("Name", "DXVA2_VideoTransferMatrix_BT709")]
-    DXVA2VideoTransferMatrixBT709 = 0x1,
-    [NativeName("Name", "DXVA2_VideoTransferMatrix_BT601")]
-    DXVA2VideoTransferMatrixBT601 = 0x2,
-    [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
-    DXVA2VideoTransferMatrixSmpte240M = 0x3,
+    [NativeName("Name", "_DXVA2_VideoTransferMatrix")]
+    public enum DXVA2VideoTransferMatrix : int
+    {
+        [NativeName("Name", "DXVA2_VideoTransferMatrixMask")]
+        DXVA2VideoTransferMatrixMask = 0x7,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_Unknown")]
+        DXVA2VideoTransferMatrixUnknown = 0x0,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT709")]
+        DXVA2VideoTransferMatrixBT709 = 0x1,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_BT601")]
+        DXVA2VideoTransferMatrixBT601 = 0x2,
+        [NativeName("Name", "DXVA2_VideoTransferMatrix_SMPTE240M")]
+        DXVA2VideoTransferMatrixSmpte240M = 0x3,
+    }
 }

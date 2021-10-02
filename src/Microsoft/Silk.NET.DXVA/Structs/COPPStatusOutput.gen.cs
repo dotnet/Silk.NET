@@ -14,40 +14,41 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPStatusOutput")]
-public unsafe partial struct COPPStatusOutput
+namespace Silk.NET.DXVA
 {
-    public COPPStatusOutput
-    (
+    [NativeName("Name", "_DXVA_COPPStatusOutput")]
+    public unsafe partial struct COPPStatusOutput
+    {
+        public COPPStatusOutput
+        (
             Guid? macKDI = null,
             uint? cbSizeData = null
-    ) : this()
-    {
-        if (macKDI is not null)
+        ) : this()
         {
-            MacKDI = macKDI.Value;
+            if (macKDI is not null)
+            {
+                MacKDI = macKDI.Value;
+            }
+
+            if (cbSizeData is not null)
+            {
+                CbSizeData = cbSizeData.Value;
+            }
         }
 
-        if (cbSizeData is not null)
-        {
-            CbSizeData = cbSizeData.Value;
-        }
+
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "macKDI")]
+        public Guid MacKDI;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "cbSizeData")]
+        public uint CbSizeData;
+        [NativeName("Type", "UCHAR [4076]")]
+        [NativeName("Type.Name", "UCHAR [4076]")]
+        [NativeName("Name", "COPPStatus")]
+        public fixed byte COPPStatus[4076];
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "macKDI")]
-    public Guid MacKDI;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "cbSizeData")]
-    public uint CbSizeData;
-    [NativeName("Type", "UCHAR [4076]")]
-    [NativeName("Type.Name", "UCHAR [4076]")]
-    [NativeName("Name", "COPPStatus")]
-    public fixed byte COPPStatus[4076];
 }

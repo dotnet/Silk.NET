@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoEncodeH264ProfileEXT")]
-public unsafe partial struct VideoEncodeH264ProfileEXT
+namespace Silk.NET.Vulkan
 {
-    public VideoEncodeH264ProfileEXT
-    (
+    [NativeName("Name", "VkVideoEncodeH264ProfileEXT")]
+    public unsafe partial struct VideoEncodeH264ProfileEXT
+    {
+        public VideoEncodeH264ProfileEXT
+        (
             StructureType? sType = StructureType.VideoEncodeH264ProfileExt,
             void* pNext = null,
             Video.StdVideoH264ProfileIdc? stdProfileIdc = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stdProfileIdc is not null)
+            {
+                StdProfileIdc = stdProfileIdc.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (stdProfileIdc is not null)
-        {
-            StdProfileIdc = stdProfileIdc.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "StdVideoH264ProfileIdc")]
+        [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
+        [NativeName("Name", "stdProfileIdc")]
+        public Video.StdVideoH264ProfileIdc StdProfileIdc;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "StdVideoH264ProfileIdc")]
-    [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
-    [NativeName("Name", "stdProfileIdc")]
-    public Video.StdVideoH264ProfileIdc StdProfileIdc;
 }

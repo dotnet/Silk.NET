@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiVertexWeight")]
-public unsafe partial struct VertexWeight
+namespace Silk.NET.Assimp
 {
-    public VertexWeight
-    (
+    [NativeName("Name", "aiVertexWeight")]
+    public unsafe partial struct VertexWeight
+    {
+        public VertexWeight
+        (
             uint? mVertexId = null,
             float? mWeight = null
-    ) : this()
-    {
-        if (mVertexId is not null)
+        ) : this()
         {
-            MVertexId = mVertexId.Value;
+            if (mVertexId is not null)
+            {
+                MVertexId = mVertexId.Value;
+            }
+
+            if (mWeight is not null)
+            {
+                MWeight = mWeight.Value;
+            }
         }
 
-        if (mWeight is not null)
-        {
-            MWeight = mWeight.Value;
-        }
+
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Type.Name", "unsigned int")]
+        [NativeName("Name", "mVertexId")]
+        public uint MVertexId;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mWeight")]
+        public float MWeight;
     }
-
-
-    [NativeName("Type", "unsigned int")]
-    [NativeName("Type.Name", "unsigned int")]
-    [NativeName("Name", "mVertexId")]
-    public uint MVertexId;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "mWeight")]
-    public float MWeight;
 }

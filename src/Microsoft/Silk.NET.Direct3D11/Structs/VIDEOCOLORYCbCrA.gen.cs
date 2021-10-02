@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_VIDEO_COLOR_YCbCrA")]
-public unsafe partial struct VIDEOCOLORYCbCrA
+namespace Silk.NET.Direct3D11
 {
-    public VIDEOCOLORYCbCrA
-    (
+    [NativeName("Name", "D3D11_VIDEO_COLOR_YCbCrA")]
+    public unsafe partial struct VIDEOCOLORYCbCrA
+    {
+        public VIDEOCOLORYCbCrA
+        (
             float? y = null,
             float? cb = null,
             float? cr = null,
             float? a = null
-    ) : this()
-    {
-        if (y is not null)
+        ) : this()
         {
-            Y = y.Value;
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (cb is not null)
+            {
+                Cb = cb.Value;
+            }
+
+            if (cr is not null)
+            {
+                Cr = cr.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
-        if (cb is not null)
-        {
-            Cb = cb.Value;
-        }
 
-        if (cr is not null)
-        {
-            Cr = cr.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Y")]
+        public float Y;
 
-        if (a is not null)
-        {
-            A = a.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Cb")]
+        public float Cb;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Cr")]
+        public float Cr;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "A")]
+        public float A;
     }
-
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Y")]
-    public float Y;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Cb")]
-    public float Cb;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Cr")]
-    public float Cr;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "A")]
-    public float A;
 }

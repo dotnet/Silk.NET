@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "renderbuffer")]
-public unsafe partial struct Renderbuffer
+namespace Silk.NET.OpenGL
 {
-    public Renderbuffer
-    (
-            uint? handle = null
-    ) : this()
+    [NativeName("Name", "renderbuffer")]
+    public unsafe partial struct Renderbuffer
     {
-        if (handle is not null)
+        public Renderbuffer
+        (
+            uint? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public uint Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public uint Handle;
 }

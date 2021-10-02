@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_version")]
-public unsafe partial struct Version
+namespace Silk.NET.SDL
 {
-    public Version
-    (
+    [NativeName("Name", "SDL_version")]
+    public unsafe partial struct Version
+    {
+        public Version
+        (
             byte? major = null,
             byte? minor = null,
             byte? patch = null
-    ) : this()
-    {
-        if (major is not null)
+        ) : this()
         {
-            Major = major.Value;
+            if (major is not null)
+            {
+                Major = major.Value;
+            }
+
+            if (minor is not null)
+            {
+                Minor = minor.Value;
+            }
+
+            if (patch is not null)
+            {
+                Patch = patch.Value;
+            }
         }
 
-        if (minor is not null)
-        {
-            Minor = minor.Value;
-        }
 
-        if (patch is not null)
-        {
-            Patch = patch.Value;
-        }
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "major")]
+        public byte Major;
+
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "minor")]
+        public byte Minor;
+
+        [NativeName("Type", "Uint8")]
+        [NativeName("Type.Name", "Uint8")]
+        [NativeName("Name", "patch")]
+        public byte Patch;
     }
-
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "major")]
-    public byte Major;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "minor")]
-    public byte Minor;
-
-    [NativeName("Type", "Uint8")]
-    [NativeName("Type.Name", "Uint8")]
-    [NativeName("Name", "patch")]
-    public byte Patch;
 }

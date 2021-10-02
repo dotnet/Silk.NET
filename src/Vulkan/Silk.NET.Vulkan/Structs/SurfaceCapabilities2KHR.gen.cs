@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSurfaceCapabilities2KHR")]
-public unsafe partial struct SurfaceCapabilities2KHR
+namespace Silk.NET.Vulkan
 {
-    public SurfaceCapabilities2KHR
-    (
+    [NativeName("Name", "VkSurfaceCapabilities2KHR")]
+    public unsafe partial struct SurfaceCapabilities2KHR
+    {
+        public SurfaceCapabilities2KHR
+        (
             StructureType? sType = StructureType.SurfaceCapabilities2Khr,
             void* pNext = null,
             SurfaceCapabilitiesKHR? surfaceCapabilities = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceCapabilities is not null)
+            {
+                SurfaceCapabilities = surfaceCapabilities.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (surfaceCapabilities is not null)
-        {
-            SurfaceCapabilities = surfaceCapabilities.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkSurfaceCapabilitiesKHR")]
+        [NativeName("Type.Name", "VkSurfaceCapabilitiesKHR")]
+        [NativeName("Name", "surfaceCapabilities")]
+        public SurfaceCapabilitiesKHR SurfaceCapabilities;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkSurfaceCapabilitiesKHR")]
-    [NativeName("Type.Name", "VkSurfaceCapabilitiesKHR")]
-    [NativeName("Name", "surfaceCapabilities")]
-    public SurfaceCapabilitiesKHR SurfaceCapabilities;
 }

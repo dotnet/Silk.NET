@@ -14,79 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineFragmentShadingRateStateCreateInfoKHR")]
-public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
+namespace Silk.NET.Vulkan
 {
-    public PipelineFragmentShadingRateStateCreateInfoKHR
-    (
+    [NativeName("Name", "VkPipelineFragmentShadingRateStateCreateInfoKHR")]
+    public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
+    {
+        public PipelineFragmentShadingRateStateCreateInfoKHR
+        (
             StructureType? sType = StructureType.PipelineFragmentShadingRateStateCreateInfoKhr,
             void* pNext = null,
             Extent2D? fragmentSize = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
-        }
-
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (fragmentSize is not null)
-        {
-            FragmentSize = fragmentSize.Value;
-        }
-    }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkExtent2D")]
-    [NativeName("Type.Name", "VkExtent2D")]
-    [NativeName("Name", "fragmentSize")]
-    public Extent2D FragmentSize;
-        /// <summary></summary>
-    [NativeName("Type", "VkFragmentShadingRateCombinerOpKHR")]
-    [NativeName("Type.Name", "VkFragmentShadingRateCombinerOpKHR")]
-    [NativeName("Name", "combinerOps")]
-    public CombinerOpsBuffer CombinerOps;
-
-    public struct CombinerOpsBuffer
-    {
-        public FragmentShadingRateCombinerOpKHR Element0;
-        public FragmentShadingRateCombinerOpKHR Element1;
-        public ref FragmentShadingRateCombinerOpKHR this[int index]
-        {
-            get
+            if (sType is not null)
             {
-                if (index > 1 || index < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(index));
-                }
+                SType = sType.Value;
+            }
 
-                fixed (FragmentShadingRateCombinerOpKHR* ptr = &Element0)
-                {
-                    return ref ptr[index];
-                }
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentSize is not null)
+            {
+                FragmentSize = fragmentSize.Value;
             }
         }
 
-#if NETSTANDARD2_1
-        public Span<FragmentShadingRateCombinerOpKHR> AsSpan()
-            => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
-    }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "fragmentSize")]
+        public Extent2D FragmentSize;
+        /// <summary></summary>
+        [NativeName("Type", "VkFragmentShadingRateCombinerOpKHR")]
+        [NativeName("Type.Name", "VkFragmentShadingRateCombinerOpKHR")]
+        [NativeName("Name", "combinerOps")]
+        public CombinerOpsBuffer CombinerOps;
 
+        public struct CombinerOpsBuffer
+        {
+            public FragmentShadingRateCombinerOpKHR Element0;
+            public FragmentShadingRateCombinerOpKHR Element1;
+            public ref FragmentShadingRateCombinerOpKHR this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (FragmentShadingRateCombinerOpKHR* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<FragmentShadingRateCombinerOpKHR> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
+    }
 }

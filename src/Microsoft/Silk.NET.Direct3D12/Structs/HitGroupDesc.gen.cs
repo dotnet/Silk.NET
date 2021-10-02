@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_HIT_GROUP_DESC")]
-public unsafe partial struct HitGroupDesc
+namespace Silk.NET.Direct3D12
 {
-    public HitGroupDesc
-    (
+    [NativeName("Name", "D3D12_HIT_GROUP_DESC")]
+    public unsafe partial struct HitGroupDesc
+    {
+        public HitGroupDesc
+        (
             char* hitGroupExport = null,
             HitGroupType? type = null,
             char* anyHitShaderImport = null,
             char* closestHitShaderImport = null,
             char* intersectionShaderImport = null
-    ) : this()
-    {
-        if (hitGroupExport is not null)
+        ) : this()
         {
-            HitGroupExport = hitGroupExport;
+            if (hitGroupExport is not null)
+            {
+                HitGroupExport = hitGroupExport;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (anyHitShaderImport is not null)
+            {
+                AnyHitShaderImport = anyHitShaderImport;
+            }
+
+            if (closestHitShaderImport is not null)
+            {
+                ClosestHitShaderImport = closestHitShaderImport;
+            }
+
+            if (intersectionShaderImport is not null)
+            {
+                IntersectionShaderImport = intersectionShaderImport;
+            }
         }
 
-        if (type is not null)
-        {
-            Type = type.Value;
-        }
 
-        if (anyHitShaderImport is not null)
-        {
-            AnyHitShaderImport = anyHitShaderImport;
-        }
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "HitGroupExport")]
+        public char* HitGroupExport;
 
-        if (closestHitShaderImport is not null)
-        {
-            ClosestHitShaderImport = closestHitShaderImport;
-        }
+        [NativeName("Type", "D3D12_HIT_GROUP_TYPE")]
+        [NativeName("Type.Name", "D3D12_HIT_GROUP_TYPE")]
+        [NativeName("Name", "Type")]
+        public HitGroupType Type;
 
-        if (intersectionShaderImport is not null)
-        {
-            IntersectionShaderImport = intersectionShaderImport;
-        }
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "AnyHitShaderImport")]
+        public char* AnyHitShaderImport;
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "ClosestHitShaderImport")]
+        public char* ClosestHitShaderImport;
+
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "IntersectionShaderImport")]
+        public char* IntersectionShaderImport;
     }
-
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "HitGroupExport")]
-    public char* HitGroupExport;
-
-    [NativeName("Type", "D3D12_HIT_GROUP_TYPE")]
-    [NativeName("Type.Name", "D3D12_HIT_GROUP_TYPE")]
-    [NativeName("Name", "Type")]
-    public HitGroupType Type;
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "AnyHitShaderImport")]
-    public char* AnyHitShaderImport;
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "ClosestHitShaderImport")]
-    public char* ClosestHitShaderImport;
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "IntersectionShaderImport")]
-    public char* IntersectionShaderImport;
 }

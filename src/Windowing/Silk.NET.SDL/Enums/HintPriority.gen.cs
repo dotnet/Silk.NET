@@ -7,16 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_hints_L1666_C9")]
-[NativeName("Name", "SDL_HintPriority")]
-public enum HintPriority : int
+namespace Silk.NET.SDL
 {
-    [NativeName("Name", "SDL_HINT_DEFAULT")]
-    HintDefault = 0x0,
-    [NativeName("Name", "SDL_HINT_NORMAL")]
-    HintNormal = 0x1,
-    [NativeName("Name", "SDL_HINT_OVERRIDE")]
-    HintOverride = 0x2,
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_hints_L1666_C9")]
+    [NativeName("Name", "SDL_HintPriority")]
+    public enum HintPriority : int
+    {
+        [NativeName("Name", "SDL_HINT_DEFAULT")]
+        HintDefault = 0x0,
+        [NativeName("Name", "SDL_HINT_NORMAL")]
+        HintNormal = 0x1,
+        [NativeName("Name", "SDL_HINT_OVERRIDE")]
+        HintOverride = 0x2,
+    }
 }

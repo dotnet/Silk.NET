@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSharedPresentSurfaceCapabilitiesKHR")]
-public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
+namespace Silk.NET.Vulkan
 {
-    public SharedPresentSurfaceCapabilitiesKHR
-    (
+    [NativeName("Name", "VkSharedPresentSurfaceCapabilitiesKHR")]
+    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
+    {
+        public SharedPresentSurfaceCapabilitiesKHR
+        (
             StructureType? sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
             void* pNext = null,
             ImageUsageFlags? sharedPresentSupportedUsageFlags = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sharedPresentSupportedUsageFlags is not null)
+            {
+                SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (sharedPresentSupportedUsageFlags is not null)
-        {
-            SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkImageUsageFlags")]
+        [NativeName("Type.Name", "VkImageUsageFlags")]
+        [NativeName("Name", "sharedPresentSupportedUsageFlags")]
+        public ImageUsageFlags SharedPresentSupportedUsageFlags;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkImageUsageFlags")]
-    [NativeName("Type.Name", "VkImageUsageFlags")]
-    [NativeName("Name", "sharedPresentSupportedUsageFlags")]
-    public ImageUsageFlags SharedPresentSupportedUsageFlags;
 }

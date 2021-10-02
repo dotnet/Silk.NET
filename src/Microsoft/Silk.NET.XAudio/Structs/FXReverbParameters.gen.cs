@@ -14,14 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio;
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-[NativeName("Name", "XAUDIO2FX_REVERB_PARAMETERS")]
-public unsafe partial struct FXReverbParameters
+namespace Silk.NET.XAudio
 {
-    public FXReverbParameters
-    (
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [NativeName("Name", "XAUDIO2FX_REVERB_PARAMETERS")]
+    public unsafe partial struct FXReverbParameters
+    {
+        public FXReverbParameters
+        (
             float? wetDryMix = null,
             uint? reflectionsDelay = null,
             byte? reverbDelay = null,
@@ -46,247 +46,248 @@ public unsafe partial struct FXReverbParameters
             float? density = null,
             float? roomSize = null,
             int? disableLateField = null
-    ) : this()
-    {
-        if (wetDryMix is not null)
+        ) : this()
         {
-            WetDryMix = wetDryMix.Value;
+            if (wetDryMix is not null)
+            {
+                WetDryMix = wetDryMix.Value;
+            }
+
+            if (reflectionsDelay is not null)
+            {
+                ReflectionsDelay = reflectionsDelay.Value;
+            }
+
+            if (reverbDelay is not null)
+            {
+                ReverbDelay = reverbDelay.Value;
+            }
+
+            if (rearDelay is not null)
+            {
+                RearDelay = rearDelay.Value;
+            }
+
+            if (sideDelay is not null)
+            {
+                SideDelay = sideDelay.Value;
+            }
+
+            if (positionLeft is not null)
+            {
+                PositionLeft = positionLeft.Value;
+            }
+
+            if (positionRight is not null)
+            {
+                PositionRight = positionRight.Value;
+            }
+
+            if (positionMatrixLeft is not null)
+            {
+                PositionMatrixLeft = positionMatrixLeft.Value;
+            }
+
+            if (positionMatrixRight is not null)
+            {
+                PositionMatrixRight = positionMatrixRight.Value;
+            }
+
+            if (earlyDiffusion is not null)
+            {
+                EarlyDiffusion = earlyDiffusion.Value;
+            }
+
+            if (lateDiffusion is not null)
+            {
+                LateDiffusion = lateDiffusion.Value;
+            }
+
+            if (lowEQGain is not null)
+            {
+                LowEQGain = lowEQGain.Value;
+            }
+
+            if (lowEQCutoff is not null)
+            {
+                LowEQCutoff = lowEQCutoff.Value;
+            }
+
+            if (highEQGain is not null)
+            {
+                HighEQGain = highEQGain.Value;
+            }
+
+            if (highEQCutoff is not null)
+            {
+                HighEQCutoff = highEQCutoff.Value;
+            }
+
+            if (roomFilterFreq is not null)
+            {
+                RoomFilterFreq = roomFilterFreq.Value;
+            }
+
+            if (roomFilterMain is not null)
+            {
+                RoomFilterMain = roomFilterMain.Value;
+            }
+
+            if (roomFilterHF is not null)
+            {
+                RoomFilterHF = roomFilterHF.Value;
+            }
+
+            if (reflectionsGain is not null)
+            {
+                ReflectionsGain = reflectionsGain.Value;
+            }
+
+            if (reverbGain is not null)
+            {
+                ReverbGain = reverbGain.Value;
+            }
+
+            if (decayTime is not null)
+            {
+                DecayTime = decayTime.Value;
+            }
+
+            if (density is not null)
+            {
+                Density = density.Value;
+            }
+
+            if (roomSize is not null)
+            {
+                RoomSize = roomSize.Value;
+            }
+
+            if (disableLateField is not null)
+            {
+                DisableLateField = disableLateField.Value;
+            }
         }
 
-        if (reflectionsDelay is not null)
-        {
-            ReflectionsDelay = reflectionsDelay.Value;
-        }
 
-        if (reverbDelay is not null)
-        {
-            ReverbDelay = reverbDelay.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "WetDryMix")]
+        public float WetDryMix;
 
-        if (rearDelay is not null)
-        {
-            RearDelay = rearDelay.Value;
-        }
+        [NativeName("Type", "UINT32")]
+        [NativeName("Type.Name", "UINT32")]
+        [NativeName("Name", "ReflectionsDelay")]
+        public uint ReflectionsDelay;
 
-        if (sideDelay is not null)
-        {
-            SideDelay = sideDelay.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "ReverbDelay")]
+        public byte ReverbDelay;
 
-        if (positionLeft is not null)
-        {
-            PositionLeft = positionLeft.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "RearDelay")]
+        public byte RearDelay;
 
-        if (positionRight is not null)
-        {
-            PositionRight = positionRight.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "SideDelay")]
+        public byte SideDelay;
 
-        if (positionMatrixLeft is not null)
-        {
-            PositionMatrixLeft = positionMatrixLeft.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "PositionLeft")]
+        public byte PositionLeft;
 
-        if (positionMatrixRight is not null)
-        {
-            PositionMatrixRight = positionMatrixRight.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "PositionRight")]
+        public byte PositionRight;
 
-        if (earlyDiffusion is not null)
-        {
-            EarlyDiffusion = earlyDiffusion.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "PositionMatrixLeft")]
+        public byte PositionMatrixLeft;
 
-        if (lateDiffusion is not null)
-        {
-            LateDiffusion = lateDiffusion.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "PositionMatrixRight")]
+        public byte PositionMatrixRight;
 
-        if (lowEQGain is not null)
-        {
-            LowEQGain = lowEQGain.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "EarlyDiffusion")]
+        public byte EarlyDiffusion;
 
-        if (lowEQCutoff is not null)
-        {
-            LowEQCutoff = lowEQCutoff.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "LateDiffusion")]
+        public byte LateDiffusion;
 
-        if (highEQGain is not null)
-        {
-            HighEQGain = highEQGain.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "LowEQGain")]
+        public byte LowEQGain;
 
-        if (highEQCutoff is not null)
-        {
-            HighEQCutoff = highEQCutoff.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "LowEQCutoff")]
+        public byte LowEQCutoff;
 
-        if (roomFilterFreq is not null)
-        {
-            RoomFilterFreq = roomFilterFreq.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "HighEQGain")]
+        public byte HighEQGain;
 
-        if (roomFilterMain is not null)
-        {
-            RoomFilterMain = roomFilterMain.Value;
-        }
+        [NativeName("Type", "BYTE")]
+        [NativeName("Type.Name", "BYTE")]
+        [NativeName("Name", "HighEQCutoff")]
+        public byte HighEQCutoff;
 
-        if (roomFilterHF is not null)
-        {
-            RoomFilterHF = roomFilterHF.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "RoomFilterFreq")]
+        public float RoomFilterFreq;
 
-        if (reflectionsGain is not null)
-        {
-            ReflectionsGain = reflectionsGain.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "RoomFilterMain")]
+        public float RoomFilterMain;
 
-        if (reverbGain is not null)
-        {
-            ReverbGain = reverbGain.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "RoomFilterHF")]
+        public float RoomFilterHF;
 
-        if (decayTime is not null)
-        {
-            DecayTime = decayTime.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "ReflectionsGain")]
+        public float ReflectionsGain;
 
-        if (density is not null)
-        {
-            Density = density.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "ReverbGain")]
+        public float ReverbGain;
 
-        if (roomSize is not null)
-        {
-            RoomSize = roomSize.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "DecayTime")]
+        public float DecayTime;
 
-        if (disableLateField is not null)
-        {
-            DisableLateField = disableLateField.Value;
-        }
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "Density")]
+        public float Density;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "RoomSize")]
+        public float RoomSize;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "DisableLateField")]
+        public int DisableLateField;
     }
-
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "WetDryMix")]
-    public float WetDryMix;
-
-    [NativeName("Type", "UINT32")]
-    [NativeName("Type.Name", "UINT32")]
-    [NativeName("Name", "ReflectionsDelay")]
-    public uint ReflectionsDelay;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "ReverbDelay")]
-    public byte ReverbDelay;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "RearDelay")]
-    public byte RearDelay;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "SideDelay")]
-    public byte SideDelay;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "PositionLeft")]
-    public byte PositionLeft;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "PositionRight")]
-    public byte PositionRight;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "PositionMatrixLeft")]
-    public byte PositionMatrixLeft;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "PositionMatrixRight")]
-    public byte PositionMatrixRight;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "EarlyDiffusion")]
-    public byte EarlyDiffusion;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "LateDiffusion")]
-    public byte LateDiffusion;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "LowEQGain")]
-    public byte LowEQGain;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "LowEQCutoff")]
-    public byte LowEQCutoff;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "HighEQGain")]
-    public byte HighEQGain;
-
-    [NativeName("Type", "BYTE")]
-    [NativeName("Type.Name", "BYTE")]
-    [NativeName("Name", "HighEQCutoff")]
-    public byte HighEQCutoff;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "RoomFilterFreq")]
-    public float RoomFilterFreq;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "RoomFilterMain")]
-    public float RoomFilterMain;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "RoomFilterHF")]
-    public float RoomFilterHF;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "ReflectionsGain")]
-    public float ReflectionsGain;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "ReverbGain")]
-    public float ReverbGain;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "DecayTime")]
-    public float DecayTime;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "Density")]
-    public float Density;
-
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "RoomSize")]
-    public float RoomSize;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "DisableLateField")]
-    public int DisableLateField;
 }

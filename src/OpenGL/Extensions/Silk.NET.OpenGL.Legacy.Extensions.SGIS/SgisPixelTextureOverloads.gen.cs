@@ -12,57 +12,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
-
-public static class SgisPixelTextureOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
-    public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    public static class SgisPixelTextureOverloads
     {
-        // SpanOverloader
-        thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-    {
-        // SpanOverloader
-        thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // SpanOverloader
+            thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
-    {
-        // SpanOverloader
-        thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
-    }
+        public static unsafe void GetPixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetPixelTexGenParameter(pname, out @params.GetPinnableReference());
+        }
 
-    public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-    {
-        // SpanOverloader
-        thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PixelTexGenParameter(this SgisPixelTexture thisApi, [Flow(FlowDirection.In)] PixelTexGenParameterNameSGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // SpanOverloader
+            thisApi.PixelTexGenParameter(pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

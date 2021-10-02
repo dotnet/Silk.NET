@@ -14,39 +14,40 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_cull_vertex")]
-public unsafe partial class ExtCullVertex : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_cull_vertex";
-    [NativeApi(EntryPoint = "glCullParameterdvEXT")]
-    public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
-
-    [NativeApi(EntryPoint = "glCullParameterdvEXT")]
-    public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
-
-    [NativeApi(EntryPoint = "glCullParameterdvEXT")]
-    public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
-
-    [NativeApi(EntryPoint = "glCullParameterdvEXT")]
-    public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
-
-    [NativeApi(EntryPoint = "glCullParameterfvEXT")]
-    public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
-
-    [NativeApi(EntryPoint = "glCullParameterfvEXT")]
-    public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
-
-    [NativeApi(EntryPoint = "glCullParameterfvEXT")]
-    public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
-
-    [NativeApi(EntryPoint = "glCullParameterfvEXT")]
-    public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
-
-    public ExtCullVertex(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_cull_vertex")]
+    public unsafe partial class ExtCullVertex : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_cull_vertex";
+        [NativeApi(EntryPoint = "glCullParameterdvEXT")]
+        public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+
+        [NativeApi(EntryPoint = "glCullParameterdvEXT")]
+        public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
+
+        [NativeApi(EntryPoint = "glCullParameterdvEXT")]
+        public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+
+        [NativeApi(EntryPoint = "glCullParameterdvEXT")]
+        public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
+
+        [NativeApi(EntryPoint = "glCullParameterfvEXT")]
+        public unsafe partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glCullParameterfvEXT")]
+        public partial void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
+
+        [NativeApi(EntryPoint = "glCullParameterfvEXT")]
+        public unsafe partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glCullParameterfvEXT")]
+        public partial void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
+
+        public ExtCullVertex(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiVectorKey")]
-public unsafe partial struct VectorKey
+namespace Silk.NET.Assimp
 {
-    public VectorKey
-    (
+    [NativeName("Name", "aiVectorKey")]
+    public unsafe partial struct VectorKey
+    {
+        public VectorKey
+        (
             double? mTime = null,
             System.Numerics.Vector3? mValue = null
-    ) : this()
-    {
-        if (mTime is not null)
+        ) : this()
         {
-            MTime = mTime.Value;
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValue is not null)
+            {
+                MValue = mValue.Value;
+            }
         }
 
-        if (mValue is not null)
-        {
-            MValue = mValue.Value;
-        }
+
+        [NativeName("Type", "double")]
+        [NativeName("Type.Name", "double")]
+        [NativeName("Name", "mTime")]
+        public double MTime;
+
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "mValue")]
+        public System.Numerics.Vector3 MValue;
     }
-
-
-    [NativeName("Type", "double")]
-    [NativeName("Type.Name", "double")]
-    [NativeName("Name", "mTime")]
-    public double MTime;
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "mValue")]
-    public System.Numerics.Vector3 MValue;
 }

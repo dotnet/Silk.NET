@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.APPLE;
-
-[Extension("APPLE_SetMemObjectDestructor")]
-public unsafe partial class AppleSetMemObjectDestructor : NativeExtension<CL>
+namespace Silk.NET.OpenCL.Extensions.APPLE
 {
-    public const string ExtensionName = "APPLE_SetMemObjectDestructor";
-    [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
-    public unsafe partial int SetMemObjectDestructor([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
-
-    [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
-    public partial int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
-
-    public AppleSetMemObjectDestructor(INativeContext ctx)
-        : base(ctx)
+    [Extension("APPLE_SetMemObjectDestructor")]
+    public unsafe partial class AppleSetMemObjectDestructor : NativeExtension<CL>
     {
+        public const string ExtensionName = "APPLE_SetMemObjectDestructor";
+        [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        public unsafe partial int SetMemObjectDestructor([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+
+        [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        public partial int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] nint memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+
+        public AppleSetMemObjectDestructor(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

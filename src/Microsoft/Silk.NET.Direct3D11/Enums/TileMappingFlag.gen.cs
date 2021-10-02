@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_TILE_MAPPING_FLAG")]
-public enum TileMappingFlag : int
+namespace Silk.NET.Direct3D11
 {
-    [NativeName("Name", "D3D11_TILE_MAPPING_NO_OVERWRITE")]
-    TileMappingNoOverwrite = 0x1,
+    [NativeName("Name", "D3D11_TILE_MAPPING_FLAG")]
+    public enum TileMappingFlag : int
+    {
+        [NativeName("Name", "D3D11_TILE_MAPPING_NO_OVERWRITE")]
+        TileMappingNoOverwrite = 0x1,
+    }
 }

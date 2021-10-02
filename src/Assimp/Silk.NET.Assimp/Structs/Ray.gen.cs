@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiRay")]
-public unsafe partial struct Ray
+namespace Silk.NET.Assimp
 {
-    public Ray
-    (
+    [NativeName("Name", "aiRay")]
+    public unsafe partial struct Ray
+    {
+        public Ray
+        (
             System.Numerics.Vector3? pos = null,
             System.Numerics.Vector3? dir = null
-    ) : this()
-    {
-        if (pos is not null)
+        ) : this()
         {
-            Pos = pos.Value;
+            if (pos is not null)
+            {
+                Pos = pos.Value;
+            }
+
+            if (dir is not null)
+            {
+                Dir = dir.Value;
+            }
         }
 
-        if (dir is not null)
-        {
-            Dir = dir.Value;
-        }
+
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "pos")]
+        public System.Numerics.Vector3 Pos;
+
+        [NativeName("Type", "aiVector3D")]
+        [NativeName("Type.Name", "aiVector3D")]
+        [NativeName("Name", "dir")]
+        public System.Numerics.Vector3 Dir;
     }
-
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "pos")]
-    public System.Numerics.Vector3 Pos;
-
-    [NativeName("Type", "aiVector3D")]
-    [NativeName("Type.Name", "aiVector3D")]
-    [NativeName("Name", "dir")]
-    public System.Numerics.Vector3 Dir;
 }

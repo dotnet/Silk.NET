@@ -14,86 +14,87 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "__AnonymousRecord_dxvahd_L394_C9")]
-public unsafe partial struct HDStreamStateInputColorSpaceDataUnionUnion
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateInputColorSpaceDataUnionUnion
-    (
+    [NativeName("Name", "__AnonymousRecord_dxvahd_L394_C9")]
+    public unsafe partial struct HDStreamStateInputColorSpaceDataUnionUnion
+    {
+        public HDStreamStateInputColorSpaceDataUnionUnion
+        (
             uint? type = null,
             uint? rGBRange = null,
             uint? yCbCrMatrix = null,
             uint? yCbCrXvYCC = null,
             uint? reserved = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (rGBRange is not null)
+            {
+                RGBRange = rGBRange.Value;
+            }
+
+            if (yCbCrMatrix is not null)
+            {
+                YCbCrMatrix = yCbCrMatrix.Value;
+            }
+
+            if (yCbCrXvYCC is not null)
+            {
+                YCbCrXvYCC = yCbCrXvYCC.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
+            }
         }
 
-        if (rGBRange is not null)
+
+        private uint _bitfield1;
+
+        public uint Type
         {
-            RGBRange = rGBRange.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        if (yCbCrMatrix is not null)
+        public uint RGBRange
         {
-            YCbCrMatrix = yCbCrMatrix.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        if (yCbCrXvYCC is not null)
+        public uint YCbCrMatrix
         {
-            YCbCrXvYCC = yCbCrXvYCC.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        if (reserved is not null)
+        public uint YCbCrXvYCC
         {
-            Reserved = reserved.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
-    }
 
-
-    private uint _bitfield1;
-
-    public uint Type
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)(_bitfield1 & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
-    }
-
-    public uint RGBRange
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 1) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
-    }
-
-    public uint YCbCrMatrix
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 2) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
-    }
-
-    public uint YCbCrXvYCC
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 3) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-    }
-
-    public uint Reserved
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 4) & 0xFFFFFFFu);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFFFFFFu << 4)) | (uint)(((uint)(value) & 0xFFFFFFFu) << 4));
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0xFFFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFFFFFFu << 4)) | (uint)(((uint)(value) & 0xFFFFFFFu) << 4));
+        }
     }
 }

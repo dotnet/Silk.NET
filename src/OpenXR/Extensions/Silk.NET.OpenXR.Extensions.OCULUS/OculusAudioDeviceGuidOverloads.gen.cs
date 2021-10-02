@@ -12,23 +12,24 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.OCULUS;
-
-public static class OculusAudioDeviceGuidOverloads
+namespace Silk.NET.OpenXR.Extensions.OCULUS
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetAudioInputDeviceGuidOcul(this OculusAudioDeviceGuid thisApi, [Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] Span<char> buffer)
+    public static class OculusAudioDeviceGuidOverloads
     {
-        // SpanOverloader
-        return thisApi.GetAudioInputDeviceGuidOcul(instance, ref buffer.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetAudioInputDeviceGuidOcul(this OculusAudioDeviceGuid thisApi, [Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] Span<char> buffer)
+        {
+            // SpanOverloader
+            return thisApi.GetAudioInputDeviceGuidOcul(instance, ref buffer.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetAudioOutputDeviceGuidOcul(this OculusAudioDeviceGuid thisApi, [Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] Span<char> buffer)
-    {
-        // SpanOverloader
-        return thisApi.GetAudioOutputDeviceGuidOcul(instance, ref buffer.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetAudioOutputDeviceGuidOcul(this OculusAudioDeviceGuid thisApi, [Count(Count = 0)] Instance instance, [Count(Computed = "XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")] Span<char> buffer)
+        {
+            // SpanOverloader
+            return thisApi.GetAudioOutputDeviceGuidOcul(instance, ref buffer.GetPinnableReference());
+        }
 
+    }
 }
 

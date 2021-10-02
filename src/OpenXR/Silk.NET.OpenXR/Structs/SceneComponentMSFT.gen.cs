@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneComponentMSFT")]
-public unsafe partial struct SceneComponentMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneComponentMSFT
-    (
+    [NativeName("Name", "XrSceneComponentMSFT")]
+    public unsafe partial struct SceneComponentMSFT
+    {
+        public SceneComponentMSFT
+        (
             SceneComponentTypeMSFT? componentType = null,
             Guid? id = null,
             Guid? parentId = null,
             long? updateTime = null
-    ) : this()
-    {
-        if (componentType is not null)
+        ) : this()
         {
-            ComponentType = componentType.Value;
+            if (componentType is not null)
+            {
+                ComponentType = componentType.Value;
+            }
+
+            if (id is not null)
+            {
+                Id = id.Value;
+            }
+
+            if (parentId is not null)
+            {
+                ParentId = parentId.Value;
+            }
+
+            if (updateTime is not null)
+            {
+                UpdateTime = updateTime.Value;
+            }
         }
 
-        if (id is not null)
-        {
-            Id = id.Value;
-        }
-
-        if (parentId is not null)
-        {
-            ParentId = parentId.Value;
-        }
-
-        if (updateTime is not null)
-        {
-            UpdateTime = updateTime.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrSceneComponentTypeMSFT")]
+        [NativeName("Type.Name", "XrSceneComponentTypeMSFT")]
+        [NativeName("Name", "componentType")]
+        public SceneComponentTypeMSFT ComponentType;
+/// <summary></summary>
+        [NativeName("Type", "XrUuidMSFT")]
+        [NativeName("Type.Name", "XrUuidMSFT")]
+        [NativeName("Name", "id")]
+        public Guid Id;
+/// <summary></summary>
+        [NativeName("Type", "XrUuidMSFT")]
+        [NativeName("Type.Name", "XrUuidMSFT")]
+        [NativeName("Name", "parentId")]
+        public Guid ParentId;
+/// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "updateTime")]
+        public long UpdateTime;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrSceneComponentTypeMSFT")]
-    [NativeName("Type.Name", "XrSceneComponentTypeMSFT")]
-    [NativeName("Name", "componentType")]
-    public SceneComponentTypeMSFT ComponentType;
-/// <summary></summary>
-    [NativeName("Type", "XrUuidMSFT")]
-    [NativeName("Type.Name", "XrUuidMSFT")]
-    [NativeName("Name", "id")]
-    public Guid Id;
-/// <summary></summary>
-    [NativeName("Type", "XrUuidMSFT")]
-    [NativeName("Type.Name", "XrUuidMSFT")]
-    [NativeName("Name", "parentId")]
-    public Guid ParentId;
-/// <summary></summary>
-    [NativeName("Type", "XrTime")]
-    [NativeName("Type.Name", "XrTime")]
-    [NativeName("Name", "updateTime")]
-    public long UpdateTime;
 }

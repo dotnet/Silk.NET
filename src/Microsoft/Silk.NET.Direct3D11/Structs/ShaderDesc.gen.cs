@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "_D3D11_SHADER_DESC")]
-public unsafe partial struct ShaderDesc
+namespace Silk.NET.Direct3D11
 {
-    public ShaderDesc
-    (
+    [NativeName("Name", "_D3D11_SHADER_DESC")]
+    public unsafe partial struct ShaderDesc
+    {
+        public ShaderDesc
+        (
             uint? version = null,
             byte* creator = null,
             uint? flags = null,
@@ -59,387 +59,388 @@ public unsafe partial struct ShaderDesc
             uint? cBarrierInstructions = null,
             uint? cInterlockedInstructions = null,
             uint? cTextureStoreInstructions = null
-    ) : this()
-    {
-        if (version is not null)
+        ) : this()
         {
-            Version = version.Value;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (creator is not null)
+            {
+                Creator = creator;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (constantBuffers is not null)
+            {
+                ConstantBuffers = constantBuffers.Value;
+            }
+
+            if (boundResources is not null)
+            {
+                BoundResources = boundResources.Value;
+            }
+
+            if (inputParameters is not null)
+            {
+                InputParameters = inputParameters.Value;
+            }
+
+            if (outputParameters is not null)
+            {
+                OutputParameters = outputParameters.Value;
+            }
+
+            if (instructionCount is not null)
+            {
+                InstructionCount = instructionCount.Value;
+            }
+
+            if (tempRegisterCount is not null)
+            {
+                TempRegisterCount = tempRegisterCount.Value;
+            }
+
+            if (tempArrayCount is not null)
+            {
+                TempArrayCount = tempArrayCount.Value;
+            }
+
+            if (defCount is not null)
+            {
+                DefCount = defCount.Value;
+            }
+
+            if (dclCount is not null)
+            {
+                DclCount = dclCount.Value;
+            }
+
+            if (textureNormalInstructions is not null)
+            {
+                TextureNormalInstructions = textureNormalInstructions.Value;
+            }
+
+            if (textureLoadInstructions is not null)
+            {
+                TextureLoadInstructions = textureLoadInstructions.Value;
+            }
+
+            if (textureCompInstructions is not null)
+            {
+                TextureCompInstructions = textureCompInstructions.Value;
+            }
+
+            if (textureBiasInstructions is not null)
+            {
+                TextureBiasInstructions = textureBiasInstructions.Value;
+            }
+
+            if (textureGradientInstructions is not null)
+            {
+                TextureGradientInstructions = textureGradientInstructions.Value;
+            }
+
+            if (floatInstructionCount is not null)
+            {
+                FloatInstructionCount = floatInstructionCount.Value;
+            }
+
+            if (intInstructionCount is not null)
+            {
+                IntInstructionCount = intInstructionCount.Value;
+            }
+
+            if (uintInstructionCount is not null)
+            {
+                UintInstructionCount = uintInstructionCount.Value;
+            }
+
+            if (staticFlowControlCount is not null)
+            {
+                StaticFlowControlCount = staticFlowControlCount.Value;
+            }
+
+            if (dynamicFlowControlCount is not null)
+            {
+                DynamicFlowControlCount = dynamicFlowControlCount.Value;
+            }
+
+            if (macroInstructionCount is not null)
+            {
+                MacroInstructionCount = macroInstructionCount.Value;
+            }
+
+            if (arrayInstructionCount is not null)
+            {
+                ArrayInstructionCount = arrayInstructionCount.Value;
+            }
+
+            if (cutInstructionCount is not null)
+            {
+                CutInstructionCount = cutInstructionCount.Value;
+            }
+
+            if (emitInstructionCount is not null)
+            {
+                EmitInstructionCount = emitInstructionCount.Value;
+            }
+
+            if (gSOutputTopology is not null)
+            {
+                GSOutputTopology = gSOutputTopology.Value;
+            }
+
+            if (gSMaxOutputVertexCount is not null)
+            {
+                GSMaxOutputVertexCount = gSMaxOutputVertexCount.Value;
+            }
+
+            if (inputPrimitive is not null)
+            {
+                InputPrimitive = inputPrimitive.Value;
+            }
+
+            if (patchConstantParameters is not null)
+            {
+                PatchConstantParameters = patchConstantParameters.Value;
+            }
+
+            if (cGSInstanceCount is not null)
+            {
+                CGSInstanceCount = cGSInstanceCount.Value;
+            }
+
+            if (cControlPoints is not null)
+            {
+                CControlPoints = cControlPoints.Value;
+            }
+
+            if (hSOutputPrimitive is not null)
+            {
+                HSOutputPrimitive = hSOutputPrimitive.Value;
+            }
+
+            if (hSPartitioning is not null)
+            {
+                HSPartitioning = hSPartitioning.Value;
+            }
+
+            if (tessellatorDomain is not null)
+            {
+                TessellatorDomain = tessellatorDomain.Value;
+            }
+
+            if (cBarrierInstructions is not null)
+            {
+                CBarrierInstructions = cBarrierInstructions.Value;
+            }
+
+            if (cInterlockedInstructions is not null)
+            {
+                CInterlockedInstructions = cInterlockedInstructions.Value;
+            }
+
+            if (cTextureStoreInstructions is not null)
+            {
+                CTextureStoreInstructions = cTextureStoreInstructions.Value;
+            }
         }
 
-        if (creator is not null)
-        {
-            Creator = creator;
-        }
 
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Version")]
+        public uint Version;
 
-        if (constantBuffers is not null)
-        {
-            ConstantBuffers = constantBuffers.Value;
-        }
+        [NativeName("Type", "LPCSTR")]
+        [NativeName("Type.Name", "LPCSTR")]
+        [NativeName("Name", "Creator")]
+        public byte* Creator;
 
-        if (boundResources is not null)
-        {
-            BoundResources = boundResources.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Flags")]
+        public uint Flags;
 
-        if (inputParameters is not null)
-        {
-            InputParameters = inputParameters.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ConstantBuffers")]
+        public uint ConstantBuffers;
 
-        if (outputParameters is not null)
-        {
-            OutputParameters = outputParameters.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "BoundResources")]
+        public uint BoundResources;
 
-        if (instructionCount is not null)
-        {
-            InstructionCount = instructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InputParameters")]
+        public uint InputParameters;
 
-        if (tempRegisterCount is not null)
-        {
-            TempRegisterCount = tempRegisterCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "OutputParameters")]
+        public uint OutputParameters;
 
-        if (tempArrayCount is not null)
-        {
-            TempArrayCount = tempArrayCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InstructionCount")]
+        public uint InstructionCount;
 
-        if (defCount is not null)
-        {
-            DefCount = defCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TempRegisterCount")]
+        public uint TempRegisterCount;
 
-        if (dclCount is not null)
-        {
-            DclCount = dclCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TempArrayCount")]
+        public uint TempArrayCount;
 
-        if (textureNormalInstructions is not null)
-        {
-            TextureNormalInstructions = textureNormalInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DefCount")]
+        public uint DefCount;
 
-        if (textureLoadInstructions is not null)
-        {
-            TextureLoadInstructions = textureLoadInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DclCount")]
+        public uint DclCount;
 
-        if (textureCompInstructions is not null)
-        {
-            TextureCompInstructions = textureCompInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TextureNormalInstructions")]
+        public uint TextureNormalInstructions;
 
-        if (textureBiasInstructions is not null)
-        {
-            TextureBiasInstructions = textureBiasInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TextureLoadInstructions")]
+        public uint TextureLoadInstructions;
 
-        if (textureGradientInstructions is not null)
-        {
-            TextureGradientInstructions = textureGradientInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TextureCompInstructions")]
+        public uint TextureCompInstructions;
 
-        if (floatInstructionCount is not null)
-        {
-            FloatInstructionCount = floatInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TextureBiasInstructions")]
+        public uint TextureBiasInstructions;
 
-        if (intInstructionCount is not null)
-        {
-            IntInstructionCount = intInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "TextureGradientInstructions")]
+        public uint TextureGradientInstructions;
 
-        if (uintInstructionCount is not null)
-        {
-            UintInstructionCount = uintInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "FloatInstructionCount")]
+        public uint FloatInstructionCount;
 
-        if (staticFlowControlCount is not null)
-        {
-            StaticFlowControlCount = staticFlowControlCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "IntInstructionCount")]
+        public uint IntInstructionCount;
 
-        if (dynamicFlowControlCount is not null)
-        {
-            DynamicFlowControlCount = dynamicFlowControlCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "UintInstructionCount")]
+        public uint UintInstructionCount;
 
-        if (macroInstructionCount is not null)
-        {
-            MacroInstructionCount = macroInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "StaticFlowControlCount")]
+        public uint StaticFlowControlCount;
 
-        if (arrayInstructionCount is not null)
-        {
-            ArrayInstructionCount = arrayInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DynamicFlowControlCount")]
+        public uint DynamicFlowControlCount;
 
-        if (cutInstructionCount is not null)
-        {
-            CutInstructionCount = cutInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MacroInstructionCount")]
+        public uint MacroInstructionCount;
 
-        if (emitInstructionCount is not null)
-        {
-            EmitInstructionCount = emitInstructionCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ArrayInstructionCount")]
+        public uint ArrayInstructionCount;
 
-        if (gSOutputTopology is not null)
-        {
-            GSOutputTopology = gSOutputTopology.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "CutInstructionCount")]
+        public uint CutInstructionCount;
 
-        if (gSMaxOutputVertexCount is not null)
-        {
-            GSMaxOutputVertexCount = gSMaxOutputVertexCount.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "EmitInstructionCount")]
+        public uint EmitInstructionCount;
 
-        if (inputPrimitive is not null)
-        {
-            InputPrimitive = inputPrimitive.Value;
-        }
+        [NativeName("Type", "D3D_PRIMITIVE_TOPOLOGY")]
+        [NativeName("Type.Name", "D3D_PRIMITIVE_TOPOLOGY")]
+        [NativeName("Name", "GSOutputTopology")]
+        public Silk.NET.Core.Native.D3DPrimitiveTopology GSOutputTopology;
 
-        if (patchConstantParameters is not null)
-        {
-            PatchConstantParameters = patchConstantParameters.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "GSMaxOutputVertexCount")]
+        public uint GSMaxOutputVertexCount;
 
-        if (cGSInstanceCount is not null)
-        {
-            CGSInstanceCount = cGSInstanceCount.Value;
-        }
+        [NativeName("Type", "D3D_PRIMITIVE")]
+        [NativeName("Type.Name", "D3D_PRIMITIVE")]
+        [NativeName("Name", "InputPrimitive")]
+        public Silk.NET.Core.Native.D3DPrimitive InputPrimitive;
 
-        if (cControlPoints is not null)
-        {
-            CControlPoints = cControlPoints.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "PatchConstantParameters")]
+        public uint PatchConstantParameters;
 
-        if (hSOutputPrimitive is not null)
-        {
-            HSOutputPrimitive = hSOutputPrimitive.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cGSInstanceCount")]
+        public uint CGSInstanceCount;
 
-        if (hSPartitioning is not null)
-        {
-            HSPartitioning = hSPartitioning.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cControlPoints")]
+        public uint CControlPoints;
 
-        if (tessellatorDomain is not null)
-        {
-            TessellatorDomain = tessellatorDomain.Value;
-        }
+        [NativeName("Type", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
+        [NativeName("Type.Name", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
+        [NativeName("Name", "HSOutputPrimitive")]
+        public Silk.NET.Core.Native.D3DTessellatorOutputPrimitive HSOutputPrimitive;
 
-        if (cBarrierInstructions is not null)
-        {
-            CBarrierInstructions = cBarrierInstructions.Value;
-        }
+        [NativeName("Type", "D3D_TESSELLATOR_PARTITIONING")]
+        [NativeName("Type.Name", "D3D_TESSELLATOR_PARTITIONING")]
+        [NativeName("Name", "HSPartitioning")]
+        public Silk.NET.Core.Native.D3DTessellatorPartitioning HSPartitioning;
 
-        if (cInterlockedInstructions is not null)
-        {
-            CInterlockedInstructions = cInterlockedInstructions.Value;
-        }
+        [NativeName("Type", "D3D_TESSELLATOR_DOMAIN")]
+        [NativeName("Type.Name", "D3D_TESSELLATOR_DOMAIN")]
+        [NativeName("Name", "TessellatorDomain")]
+        public Silk.NET.Core.Native.D3DTessellatorDomain TessellatorDomain;
 
-        if (cTextureStoreInstructions is not null)
-        {
-            CTextureStoreInstructions = cTextureStoreInstructions.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cBarrierInstructions")]
+        public uint CBarrierInstructions;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cInterlockedInstructions")]
+        public uint CInterlockedInstructions;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "cTextureStoreInstructions")]
+        public uint CTextureStoreInstructions;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Version")]
-    public uint Version;
-
-    [NativeName("Type", "LPCSTR")]
-    [NativeName("Type.Name", "LPCSTR")]
-    [NativeName("Name", "Creator")]
-    public byte* Creator;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Flags")]
-    public uint Flags;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ConstantBuffers")]
-    public uint ConstantBuffers;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "BoundResources")]
-    public uint BoundResources;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InputParameters")]
-    public uint InputParameters;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "OutputParameters")]
-    public uint OutputParameters;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InstructionCount")]
-    public uint InstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TempRegisterCount")]
-    public uint TempRegisterCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TempArrayCount")]
-    public uint TempArrayCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DefCount")]
-    public uint DefCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DclCount")]
-    public uint DclCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TextureNormalInstructions")]
-    public uint TextureNormalInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TextureLoadInstructions")]
-    public uint TextureLoadInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TextureCompInstructions")]
-    public uint TextureCompInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TextureBiasInstructions")]
-    public uint TextureBiasInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "TextureGradientInstructions")]
-    public uint TextureGradientInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "FloatInstructionCount")]
-    public uint FloatInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "IntInstructionCount")]
-    public uint IntInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "UintInstructionCount")]
-    public uint UintInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "StaticFlowControlCount")]
-    public uint StaticFlowControlCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DynamicFlowControlCount")]
-    public uint DynamicFlowControlCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MacroInstructionCount")]
-    public uint MacroInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ArrayInstructionCount")]
-    public uint ArrayInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "CutInstructionCount")]
-    public uint CutInstructionCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "EmitInstructionCount")]
-    public uint EmitInstructionCount;
-
-    [NativeName("Type", "D3D_PRIMITIVE_TOPOLOGY")]
-    [NativeName("Type.Name", "D3D_PRIMITIVE_TOPOLOGY")]
-    [NativeName("Name", "GSOutputTopology")]
-    public Silk.NET.Core.Native.D3DPrimitiveTopology GSOutputTopology;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "GSMaxOutputVertexCount")]
-    public uint GSMaxOutputVertexCount;
-
-    [NativeName("Type", "D3D_PRIMITIVE")]
-    [NativeName("Type.Name", "D3D_PRIMITIVE")]
-    [NativeName("Name", "InputPrimitive")]
-    public Silk.NET.Core.Native.D3DPrimitive InputPrimitive;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "PatchConstantParameters")]
-    public uint PatchConstantParameters;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cGSInstanceCount")]
-    public uint CGSInstanceCount;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cControlPoints")]
-    public uint CControlPoints;
-
-    [NativeName("Type", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
-    [NativeName("Type.Name", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
-    [NativeName("Name", "HSOutputPrimitive")]
-    public Silk.NET.Core.Native.D3DTessellatorOutputPrimitive HSOutputPrimitive;
-
-    [NativeName("Type", "D3D_TESSELLATOR_PARTITIONING")]
-    [NativeName("Type.Name", "D3D_TESSELLATOR_PARTITIONING")]
-    [NativeName("Name", "HSPartitioning")]
-    public Silk.NET.Core.Native.D3DTessellatorPartitioning HSPartitioning;
-
-    [NativeName("Type", "D3D_TESSELLATOR_DOMAIN")]
-    [NativeName("Type.Name", "D3D_TESSELLATOR_DOMAIN")]
-    [NativeName("Name", "TessellatorDomain")]
-    public Silk.NET.Core.Native.D3DTessellatorDomain TessellatorDomain;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cBarrierInstructions")]
-    public uint CBarrierInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cInterlockedInstructions")]
-    public uint CInterlockedInstructions;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "cTextureStoreInstructions")]
-    public uint CTextureStoreInstructions;
 }

@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-public static class NVQueryResourceOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public static unsafe int QueryResource(this NVQueryResource thisApi, [Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
+    public static class NVQueryResourceOverloads
     {
-        // SpanOverloader
-        return thisApi.QueryResource(queryType, tagId, count, out buffer.GetPinnableReference());
-    }
+        public static unsafe int QueryResource(this NVQueryResource thisApi, [Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
+        {
+            // SpanOverloader
+            return thisApi.QueryResource(queryType, tagId, count, out buffer.GetPinnableReference());
+        }
 
+    }
 }
 

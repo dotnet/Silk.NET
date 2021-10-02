@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OVR;
-
-[Extension("OVR_multiview_multisampled_render_to_texture")]
-public unsafe partial class OvrMultiviewMultisampledRenderToTexture : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.OVR
 {
-    public const string ExtensionName = "OVR_multiview_multisampled_render_to_texture";
-    [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
-    public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
-    public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
-    public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
-
-    [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
-    public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
-
-    public OvrMultiviewMultisampledRenderToTexture(INativeContext ctx)
-        : base(ctx)
+    [Extension("OVR_multiview_multisampled_render_to_texture")]
+    public unsafe partial class OvrMultiviewMultisampledRenderToTexture : NativeExtension<GL>
     {
+        public const string ExtensionName = "OVR_multiview_multisampled_render_to_texture";
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+
+        public OvrMultiviewMultisampledRenderToTexture(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

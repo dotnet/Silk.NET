@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION")]
-public unsafe partial struct DxilSubobjectToExportsAssociation
+namespace Silk.NET.Direct3D12
 {
-    public DxilSubobjectToExportsAssociation
-    (
+    [NativeName("Name", "D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION")]
+    public unsafe partial struct DxilSubobjectToExportsAssociation
+    {
+        public DxilSubobjectToExportsAssociation
+        (
             char* subobjectToAssociate = null,
             uint? numExports = null,
             char** pExports = null
-    ) : this()
-    {
-        if (subobjectToAssociate is not null)
+        ) : this()
         {
-            SubobjectToAssociate = subobjectToAssociate;
+            if (subobjectToAssociate is not null)
+            {
+                SubobjectToAssociate = subobjectToAssociate;
+            }
+
+            if (numExports is not null)
+            {
+                NumExports = numExports.Value;
+            }
+
+            if (pExports is not null)
+            {
+                PExports = pExports;
+            }
         }
 
-        if (numExports is not null)
-        {
-            NumExports = numExports.Value;
-        }
 
-        if (pExports is not null)
-        {
-            PExports = pExports;
-        }
+        [NativeName("Type", "LPCWSTR")]
+        [NativeName("Type.Name", "LPCWSTR")]
+        [NativeName("Name", "SubobjectToAssociate")]
+        public char* SubobjectToAssociate;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "NumExports")]
+        public uint NumExports;
+
+        [NativeName("Type", "LPCWSTR *")]
+        [NativeName("Type.Name", "LPCWSTR *")]
+        [NativeName("Name", "pExports")]
+        public char** PExports;
     }
-
-
-    [NativeName("Type", "LPCWSTR")]
-    [NativeName("Type.Name", "LPCWSTR")]
-    [NativeName("Name", "SubobjectToAssociate")]
-    public char* SubobjectToAssociate;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "NumExports")]
-    public uint NumExports;
-
-    [NativeName("Type", "LPCWSTR *")]
-    [NativeName("Type.Name", "LPCWSTR *")]
-    [NativeName("Name", "pExports")]
-    public char** PExports;
 }

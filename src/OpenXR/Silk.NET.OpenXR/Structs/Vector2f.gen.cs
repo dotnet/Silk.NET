@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrVector2f")]
-public unsafe partial struct Vector2f
+namespace Silk.NET.OpenXR
 {
-    public Vector2f
-    (
+    [NativeName("Name", "XrVector2f")]
+    public unsafe partial struct Vector2f
+    {
+        public Vector2f
+        (
             float? x = null,
             float? y = null
-    ) : this()
-    {
-        if (x is not null)
+        ) : this()
         {
-            X = x.Value;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
+        public float X;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
+        public float Y;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "x")]
-    public float X;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "y")]
-    public float Y;
 }

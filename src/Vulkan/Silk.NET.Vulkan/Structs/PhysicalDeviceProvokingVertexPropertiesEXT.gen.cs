@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceProvokingVertexPropertiesEXT")]
-public unsafe partial struct PhysicalDeviceProvokingVertexPropertiesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceProvokingVertexPropertiesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceProvokingVertexPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceProvokingVertexPropertiesEXT
+    {
+        public PhysicalDeviceProvokingVertexPropertiesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceProvokingVertexPropertiesExt,
             void* pNext = null,
             Bool32? provokingVertexModePerPipeline = null,
             Bool32? transformFeedbackPreservesTriangleFanProvokingVertex = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (provokingVertexModePerPipeline is not null)
+            {
+                ProvokingVertexModePerPipeline = provokingVertexModePerPipeline.Value;
+            }
+
+            if (transformFeedbackPreservesTriangleFanProvokingVertex is not null)
+            {
+                TransformFeedbackPreservesTriangleFanProvokingVertex = transformFeedbackPreservesTriangleFanProvokingVertex.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (provokingVertexModePerPipeline is not null)
-        {
-            ProvokingVertexModePerPipeline = provokingVertexModePerPipeline.Value;
-        }
-
-        if (transformFeedbackPreservesTriangleFanProvokingVertex is not null)
-        {
-            TransformFeedbackPreservesTriangleFanProvokingVertex = transformFeedbackPreservesTriangleFanProvokingVertex.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "provokingVertexModePerPipeline")]
+        public Bool32 ProvokingVertexModePerPipeline;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "transformFeedbackPreservesTriangleFanProvokingVertex")]
+        public Bool32 TransformFeedbackPreservesTriangleFanProvokingVertex;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "provokingVertexModePerPipeline")]
-    public Bool32 ProvokingVertexModePerPipeline;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "transformFeedbackPreservesTriangleFanProvokingVertex")]
-    public Bool32 TransformFeedbackPreservesTriangleFanProvokingVertex;
 }

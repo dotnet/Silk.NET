@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceMemoryProperties2KHR")]
-public unsafe partial struct PhysicalDeviceMemoryProperties2KHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceMemoryProperties2KHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceMemoryProperties2KHR")]
+    public unsafe partial struct PhysicalDeviceMemoryProperties2KHR
+    {
+        public PhysicalDeviceMemoryProperties2KHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceMemoryProperties2,
             void* pNext = null,
             PhysicalDeviceMemoryProperties? memoryProperties = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryProperties is not null)
+            {
+                MemoryProperties = memoryProperties.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (memoryProperties is not null)
-        {
-            MemoryProperties = memoryProperties.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPhysicalDeviceMemoryProperties")]
+        [NativeName("Type.Name", "VkPhysicalDeviceMemoryProperties")]
+        [NativeName("Name", "memoryProperties")]
+        public PhysicalDeviceMemoryProperties MemoryProperties;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPhysicalDeviceMemoryProperties")]
-    [NativeName("Type.Name", "VkPhysicalDeviceMemoryProperties")]
-    [NativeName("Name", "memoryProperties")]
-    public PhysicalDeviceMemoryProperties MemoryProperties;
 }

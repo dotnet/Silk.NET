@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_d3d12_L2788_C5")]
-public unsafe partial struct TextureCopyLocationUnion
+namespace Silk.NET.Direct3D12
 {
-    public TextureCopyLocationUnion
-    (
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L2788_C5")]
+    public unsafe partial struct TextureCopyLocationUnion
+    {
+        public TextureCopyLocationUnion
+        (
             PlacedSubresourceFootprint? placedFootprint = null,
             uint? subresourceIndex = null
-    ) : this()
-    {
-        if (placedFootprint is not null)
+        ) : this()
         {
-            PlacedFootprint = placedFootprint.Value;
+            if (placedFootprint is not null)
+            {
+                PlacedFootprint = placedFootprint.Value;
+            }
+
+            if (subresourceIndex is not null)
+            {
+                SubresourceIndex = subresourceIndex.Value;
+            }
         }
 
-        if (subresourceIndex is not null)
-        {
-            SubresourceIndex = subresourceIndex.Value;
-        }
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
+        [NativeName("Type.Name", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
+        [NativeName("Name", "PlacedFootprint")]
+        public PlacedSubresourceFootprint PlacedFootprint;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "SubresourceIndex")]
+        public uint SubresourceIndex;
     }
-
-
-        [FieldOffset(0)]
-    [NativeName("Type", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
-    [NativeName("Type.Name", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
-    [NativeName("Name", "PlacedFootprint")]
-    public PlacedSubresourceFootprint PlacedFootprint;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "SubresourceIndex")]
-    public uint SubresourceIndex;
 }

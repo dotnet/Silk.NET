@@ -7,12 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-    [Flags()]
-[NativeName("Name", "VkMemoryAllocateFlagsKHR")]
-public enum MemoryAllocateFlagsKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
-    MemoryAllocateDeviceMaskBit = 1,
+    [Flags()]
+    [NativeName("Name", "VkMemoryAllocateFlagsKHR")]
+    public enum MemoryAllocateFlagsKHR : int
+    {
+        [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
+        MemoryAllocateDeviceMaskBit = 1,
+    }
 }

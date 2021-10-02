@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA")]
-public unsafe partial struct HDStreamStatePrivateIvtcData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStatePrivateIvtcData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_PRIVATE_IVTC_DATA")]
+    public unsafe partial struct HDStreamStatePrivateIvtcData
+    {
+        public HDStreamStatePrivateIvtcData
+        (
             int? enable = null,
             uint? iTelecineFlags = null,
             uint? frames = null,
             uint? inputField = null
-    ) : this()
-    {
-        if (enable is not null)
+        ) : this()
         {
-            Enable = enable.Value;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (iTelecineFlags is not null)
+            {
+                ITelecineFlags = iTelecineFlags.Value;
+            }
+
+            if (frames is not null)
+            {
+                Frames = frames.Value;
+            }
+
+            if (inputField is not null)
+            {
+                InputField = inputField.Value;
+            }
         }
 
-        if (iTelecineFlags is not null)
-        {
-            ITelecineFlags = iTelecineFlags.Value;
-        }
 
-        if (frames is not null)
-        {
-            Frames = frames.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enable")]
+        public int Enable;
 
-        if (inputField is not null)
-        {
-            InputField = inputField.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "ITelecineFlags")]
+        public uint ITelecineFlags;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Frames")]
+        public uint Frames;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "InputField")]
+        public uint InputField;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enable")]
-    public int Enable;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "ITelecineFlags")]
-    public uint ITelecineFlags;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Frames")]
-    public uint Frames;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "InputField")]
-    public uint InputField;
 }

@@ -14,9 +14,10 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "IDirect3DDevice9")]
-public unsafe partial struct IDirect3DDevice9
+namespace Silk.NET.SDL
 {
+    [NativeName("Name", "IDirect3DDevice9")]
+    public unsafe partial struct IDirect3DDevice9
+    {
+    }
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI;
-
-[NativeName("Name", "DXGI_PRESENT_PARAMETERS")]
-public unsafe partial struct PresentParameters
+namespace Silk.NET.DXGI
 {
-    public PresentParameters
-    (
+    [NativeName("Name", "DXGI_PRESENT_PARAMETERS")]
+    public unsafe partial struct PresentParameters
+    {
+        public PresentParameters
+        (
             uint? dirtyRectsCount = null,
             Silk.NET.Maths.Rectangle<int>* pDirtyRects = null,
             Silk.NET.Maths.Rectangle<int>* pScrollRect = null,
             Silk.NET.Maths.Vector2D<int>* pScrollOffset = null
-    ) : this()
-    {
-        if (dirtyRectsCount is not null)
+        ) : this()
         {
-            DirtyRectsCount = dirtyRectsCount.Value;
+            if (dirtyRectsCount is not null)
+            {
+                DirtyRectsCount = dirtyRectsCount.Value;
+            }
+
+            if (pDirtyRects is not null)
+            {
+                PDirtyRects = pDirtyRects;
+            }
+
+            if (pScrollRect is not null)
+            {
+                PScrollRect = pScrollRect;
+            }
+
+            if (pScrollOffset is not null)
+            {
+                PScrollOffset = pScrollOffset;
+            }
         }
 
-        if (pDirtyRects is not null)
-        {
-            PDirtyRects = pDirtyRects;
-        }
 
-        if (pScrollRect is not null)
-        {
-            PScrollRect = pScrollRect;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "DirtyRectsCount")]
+        public uint DirtyRectsCount;
 
-        if (pScrollOffset is not null)
-        {
-            PScrollOffset = pScrollOffset;
-        }
+        [NativeName("Type", "RECT *")]
+        [NativeName("Type.Name", "RECT *")]
+        [NativeName("Name", "pDirtyRects")]
+        public Silk.NET.Maths.Rectangle<int>* PDirtyRects;
+
+        [NativeName("Type", "RECT *")]
+        [NativeName("Type.Name", "RECT *")]
+        [NativeName("Name", "pScrollRect")]
+        public Silk.NET.Maths.Rectangle<int>* PScrollRect;
+
+        [NativeName("Type", "POINT *")]
+        [NativeName("Type.Name", "POINT *")]
+        [NativeName("Name", "pScrollOffset")]
+        public Silk.NET.Maths.Vector2D<int>* PScrollOffset;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "DirtyRectsCount")]
-    public uint DirtyRectsCount;
-
-    [NativeName("Type", "RECT *")]
-    [NativeName("Type.Name", "RECT *")]
-    [NativeName("Name", "pDirtyRects")]
-    public Silk.NET.Maths.Rectangle<int>* PDirtyRects;
-
-    [NativeName("Type", "RECT *")]
-    [NativeName("Type.Name", "RECT *")]
-    [NativeName("Name", "pScrollRect")]
-    public Silk.NET.Maths.Rectangle<int>* PScrollRect;
-
-    [NativeName("Type", "POINT *")]
-    [NativeName("Type.Name", "POINT *")]
-    [NativeName("Name", "pScrollOffset")]
-    public Silk.NET.Maths.Vector2D<int>* PScrollOffset;
 }

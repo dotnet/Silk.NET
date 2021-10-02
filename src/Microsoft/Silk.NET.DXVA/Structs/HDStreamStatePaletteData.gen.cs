@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_PALETTE_DATA")]
-public unsafe partial struct HDStreamStatePaletteData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStatePaletteData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_PALETTE_DATA")]
+    public unsafe partial struct HDStreamStatePaletteData
+    {
+        public HDStreamStatePaletteData
+        (
             uint? count = null,
             uint* pEntries = null
-    ) : this()
-    {
-        if (count is not null)
+        ) : this()
         {
-            Count = count.Value;
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
+
+            if (pEntries is not null)
+            {
+                PEntries = pEntries;
+            }
         }
 
-        if (pEntries is not null)
-        {
-            PEntries = pEntries;
-        }
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Count")]
+        public uint Count;
+
+        [NativeName("Type", "D3DCOLOR *")]
+        [NativeName("Type.Name", "D3DCOLOR *")]
+        [NativeName("Name", "pEntries")]
+        public uint* PEntries;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Count")]
-    public uint Count;
-
-    [NativeName("Type", "D3DCOLOR *")]
-    [NativeName("Type.Name", "D3DCOLOR *")]
-    [NativeName("Name", "pEntries")]
-    public uint* PEntries;
 }

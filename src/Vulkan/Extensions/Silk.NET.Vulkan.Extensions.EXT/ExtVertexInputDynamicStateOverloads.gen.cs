@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-public static class ExtVertexInputDynamicStateOverloads
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] VertexInputBindingDescription2EXT* pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions)
+    public static class ExtVertexInputDynamicStateOverloads
     {
-        // SpanOverloader
-        thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, in pVertexAttributeDescriptions.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] VertexInputBindingDescription2EXT* pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions)
+        {
+            // SpanOverloader
+            thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, pVertexBindingDescriptions, vertexAttributeDescriptionCount, in pVertexAttributeDescriptions.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputBindingDescription2EXT> pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
-    {
-        // SpanOverloader
-        thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, in pVertexBindingDescriptions.GetPinnableReference(), vertexAttributeDescriptionCount, pVertexAttributeDescriptions);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputBindingDescription2EXT> pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions)
+        {
+            // SpanOverloader
+            thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, in pVertexBindingDescriptions.GetPinnableReference(), vertexAttributeDescriptionCount, pVertexAttributeDescriptions);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputBindingDescription2EXT> pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions)
-    {
-        // SpanOverloader
-        thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, in pVertexBindingDescriptions.GetPinnableReference(), vertexAttributeDescriptionCount, in pVertexAttributeDescriptions.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetVertexInput(this ExtVertexInputDynamicState thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexBindingDescriptionCount, [Count(Parameter = "vertexBindingDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputBindingDescription2EXT> pVertexBindingDescriptions, [Count(Count = 0)] uint vertexAttributeDescriptionCount, [Count(Parameter = "vertexAttributeDescriptionCount"), Flow(FlowDirection.In)] ReadOnlySpan<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions)
+        {
+            // SpanOverloader
+            thisApi.CmdSetVertexInput(commandBuffer, vertexBindingDescriptionCount, in pVertexBindingDescriptions.GetPinnableReference(), vertexAttributeDescriptionCount, in pVertexAttributeDescriptions.GetPinnableReference());
+        }
 
+    }
 }
 

@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
-
-[Extension("ARB_provoking_vertex")]
-public unsafe partial class ArbProvokingVertex : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_provoking_vertex";
-    [NativeApi(EntryPoint = "glProvokingVertex")]
-    public partial void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
-
-    [NativeApi(EntryPoint = "glProvokingVertex")]
-    public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
-
-    public ArbProvokingVertex(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_provoking_vertex")]
+    public unsafe partial class ArbProvokingVertex : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_provoking_vertex";
+        [NativeApi(EntryPoint = "glProvokingVertex")]
+        public partial void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
+
+        [NativeApi(EntryPoint = "glProvokingVertex")]
+        public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
+
+        public ArbProvokingVertex(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.POCL;
-
-[Extension("POCL_content_size")]
-public unsafe partial class PoclContentSize : NativeExtension<CL>
+namespace Silk.NET.OpenCL.Extensions.POCL
 {
-    public const string ExtensionName = "POCL_content_size";
-    [NativeApi(EntryPoint = "clSetContentSizeBufferPoCL")]
-    public partial int SetContentSizeBufferPoCL([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] nint content_size_buffer);
-
-    public PoclContentSize(INativeContext ctx)
-        : base(ctx)
+    [Extension("POCL_content_size")]
+    public unsafe partial class PoclContentSize : NativeExtension<CL>
     {
+        public const string ExtensionName = "POCL_content_size";
+        [NativeApi(EntryPoint = "clSetContentSizeBufferPoCL")]
+        public partial int SetContentSizeBufferPoCL([Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] nint content_size_buffer);
+
+        public PoclContentSize(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrCompositionLayerColorScaleBiasKHR")]
-public unsafe partial struct CompositionLayerColorScaleBiasKHR
+namespace Silk.NET.OpenXR
 {
-    public CompositionLayerColorScaleBiasKHR
-    (
+    [NativeName("Name", "XrCompositionLayerColorScaleBiasKHR")]
+    public unsafe partial struct CompositionLayerColorScaleBiasKHR
+    {
+        public CompositionLayerColorScaleBiasKHR
+        (
             StructureType? type = StructureType.TypeCompositionLayerColorScaleBiasKhr,
             void* next = null,
             Color4f? colorScale = null,
             Color4f? colorBias = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (colorScale is not null)
+            {
+                ColorScale = colorScale.Value;
+            }
+
+            if (colorBias is not null)
+            {
+                ColorBias = colorBias.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (colorScale is not null)
-        {
-            ColorScale = colorScale.Value;
-        }
-
-        if (colorBias is not null)
-        {
-            ColorBias = colorBias.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrColor4f")]
+        [NativeName("Type.Name", "XrColor4f")]
+        [NativeName("Name", "colorScale")]
+        public Color4f ColorScale;
+/// <summary></summary>
+        [NativeName("Type", "XrColor4f")]
+        [NativeName("Type.Name", "XrColor4f")]
+        [NativeName("Name", "colorBias")]
+        public Color4f ColorBias;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrColor4f")]
-    [NativeName("Type.Name", "XrColor4f")]
-    [NativeName("Name", "colorScale")]
-    public Color4f ColorScale;
-/// <summary></summary>
-    [NativeName("Type", "XrColor4f")]
-    [NativeName("Type.Name", "XrColor4f")]
-    [NativeName("Name", "colorBias")]
-    public Color4f ColorBias;
 }

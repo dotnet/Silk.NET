@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DLOCKED_BOX")]
-public unsafe partial struct LockedBox
+namespace Silk.NET.Direct3D9
 {
-    public LockedBox
-    (
+    [NativeName("Name", "_D3DLOCKED_BOX")]
+    public unsafe partial struct LockedBox
+    {
+        public LockedBox
+        (
             int? rowPitch = null,
             int? slicePitch = null,
             void* pBits = null
-    ) : this()
-    {
-        if (rowPitch is not null)
+        ) : this()
         {
-            RowPitch = rowPitch.Value;
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (slicePitch is not null)
+            {
+                SlicePitch = slicePitch.Value;
+            }
+
+            if (pBits is not null)
+            {
+                PBits = pBits;
+            }
         }
 
-        if (slicePitch is not null)
-        {
-            SlicePitch = slicePitch.Value;
-        }
 
-        if (pBits is not null)
-        {
-            PBits = pBits;
-        }
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "RowPitch")]
+        public int RowPitch;
+
+        [NativeName("Type", "INT")]
+        [NativeName("Type.Name", "INT")]
+        [NativeName("Name", "SlicePitch")]
+        public int SlicePitch;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "pBits")]
+        public void* PBits;
     }
-
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "RowPitch")]
-    public int RowPitch;
-
-    [NativeName("Type", "INT")]
-    [NativeName("Type.Name", "INT")]
-    [NativeName("Name", "SlicePitch")]
-    public int SlicePitch;
-
-    [NativeName("Type", "void *")]
-    [NativeName("Type.Name", "void *")]
-    [NativeName("Name", "pBits")]
-    public void* PBits;
 }

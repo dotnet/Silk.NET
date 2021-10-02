@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.FB;
-
-public static class FBHandTrackingMeshOverloads
+namespace Silk.NET.OpenXR.Extensions.FB
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe Result GetHandMeshFB(this FBHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] Span<HandTrackingMeshFB> mesh)
+    public static class FBHandTrackingMeshOverloads
     {
-        // SpanOverloader
-        return thisApi.GetHandMeshFB(handTracker, ref mesh.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetHandMeshFB(this FBHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] Span<HandTrackingMeshFB> mesh)
+        {
+            // SpanOverloader
+            return thisApi.GetHandMeshFB(handTracker, ref mesh.GetPinnableReference());
+        }
 
+    }
 }
 

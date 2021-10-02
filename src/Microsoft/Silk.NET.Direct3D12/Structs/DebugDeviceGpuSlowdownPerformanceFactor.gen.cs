@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR")]
-public unsafe partial struct DebugDeviceGpuSlowdownPerformanceFactor
+namespace Silk.NET.Direct3D12
 {
-    public DebugDeviceGpuSlowdownPerformanceFactor
-    (
-            float? slowdownFactor = null
-    ) : this()
+    [NativeName("Name", "D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR")]
+    public unsafe partial struct DebugDeviceGpuSlowdownPerformanceFactor
     {
-        if (slowdownFactor is not null)
+        public DebugDeviceGpuSlowdownPerformanceFactor
+        (
+            float? slowdownFactor = null
+        ) : this()
         {
-            SlowdownFactor = slowdownFactor.Value;
+            if (slowdownFactor is not null)
+            {
+                SlowdownFactor = slowdownFactor.Value;
+            }
         }
+
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "SlowdownFactor")]
+        public float SlowdownFactor;
     }
-
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "SlowdownFactor")]
-    public float SlowdownFactor;
 }

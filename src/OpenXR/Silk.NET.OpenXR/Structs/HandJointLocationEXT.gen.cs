@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrHandJointLocationEXT")]
-public unsafe partial struct HandJointLocationEXT
+namespace Silk.NET.OpenXR
 {
-    public HandJointLocationEXT
-    (
+    [NativeName("Name", "XrHandJointLocationEXT")]
+    public unsafe partial struct HandJointLocationEXT
+    {
+        public HandJointLocationEXT
+        (
             SpaceLocationFlags? locationFlags = null,
             Posef? pose = null,
             float? radius = null
-    ) : this()
-    {
-        if (locationFlags is not null)
+        ) : this()
         {
-            LocationFlags = locationFlags.Value;
+            if (locationFlags is not null)
+            {
+                LocationFlags = locationFlags.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (radius is not null)
+            {
+                Radius = radius.Value;
+            }
         }
 
-        if (pose is not null)
-        {
-            Pose = pose.Value;
-        }
-
-        if (radius is not null)
-        {
-            Radius = radius.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrSpaceLocationFlags")]
+        [NativeName("Type.Name", "XrSpaceLocationFlags")]
+        [NativeName("Name", "locationFlags")]
+        public SpaceLocationFlags LocationFlags;
+/// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "pose")]
+        public Posef Pose;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "radius")]
+        public float Radius;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrSpaceLocationFlags")]
-    [NativeName("Type.Name", "XrSpaceLocationFlags")]
-    [NativeName("Name", "locationFlags")]
-    public SpaceLocationFlags LocationFlags;
-/// <summary></summary>
-    [NativeName("Type", "XrPosef")]
-    [NativeName("Type.Name", "XrPosef")]
-    [NativeName("Name", "pose")]
-    public Posef Pose;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "radius")]
-    public float Radius;
 }

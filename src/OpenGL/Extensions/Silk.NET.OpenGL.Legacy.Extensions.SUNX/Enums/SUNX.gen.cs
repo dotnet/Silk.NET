@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX;
-
-[NativeName("Name", "GLenum")]
-public enum SUNX : int
+namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
 {
-    [NativeName("Name", "GL_UNPACK_CONSTANT_DATA_SUNX")]
-    UnpackConstantDataSunx = 0x81D5,
-    [NativeName("Name", "GL_TEXTURE_CONSTANT_DATA_SUNX")]
-    TextureConstantDataSunx = 0x81D6,
+    [NativeName("Name", "GLenum")]
+    public enum SUNX : int
+    {
+        [NativeName("Name", "GL_UNPACK_CONSTANT_DATA_SUNX")]
+        UnpackConstantDataSunx = 0x81D5,
+        [NativeName("Name", "GL_TEXTURE_CONSTANT_DATA_SUNX")]
+        TextureConstantDataSunx = 0x81D6,
+    }
 }

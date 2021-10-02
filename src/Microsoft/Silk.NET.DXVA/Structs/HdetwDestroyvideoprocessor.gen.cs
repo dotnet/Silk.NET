@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHDETW_DESTROYVIDEOPROCESSOR")]
-public unsafe partial struct HdetwDestroyvideoprocessor
+namespace Silk.NET.DXVA
 {
-    public HdetwDestroyvideoprocessor
-    (
-            ulong? pObject = null
-    ) : this()
+    [NativeName("Name", "_DXVAHDETW_DESTROYVIDEOPROCESSOR")]
+    public unsafe partial struct HdetwDestroyvideoprocessor
     {
-        if (pObject is not null)
+        public HdetwDestroyvideoprocessor
+        (
+            ulong? pObject = null
+        ) : this()
         {
-            PObject = pObject.Value;
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
         }
+
+
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
     }
-
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
 }

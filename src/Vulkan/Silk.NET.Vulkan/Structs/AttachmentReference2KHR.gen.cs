@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkAttachmentReference2KHR")]
-public unsafe partial struct AttachmentReference2KHR
+namespace Silk.NET.Vulkan
 {
-    public AttachmentReference2KHR
-    (
+    [NativeName("Name", "VkAttachmentReference2KHR")]
+    public unsafe partial struct AttachmentReference2KHR
+    {
+        public AttachmentReference2KHR
+        (
             StructureType? sType = StructureType.AttachmentReference2,
             void* pNext = null,
             uint? attachment = null,
             ImageLayout? layout = null,
             ImageAspectFlags? aspectMask = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (attachment is not null)
-        {
-            Attachment = attachment.Value;
-        }
-
-        if (layout is not null)
-        {
-            Layout = layout.Value;
-        }
-
-        if (aspectMask is not null)
-        {
-            AspectMask = aspectMask.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "attachment")]
+        public uint Attachment;
+/// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "layout")]
+        public ImageLayout Layout;
+/// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
+        public ImageAspectFlags AspectMask;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "attachment")]
-    public uint Attachment;
-/// <summary></summary>
-    [NativeName("Type", "VkImageLayout")]
-    [NativeName("Type.Name", "VkImageLayout")]
-    [NativeName("Name", "layout")]
-    public ImageLayout Layout;
-/// <summary></summary>
-    [NativeName("Type", "VkImageAspectFlags")]
-    [NativeName("Type.Name", "VkImageAspectFlags")]
-    [NativeName("Name", "aspectMask")]
-    public ImageAspectFlags AspectMask;
 }

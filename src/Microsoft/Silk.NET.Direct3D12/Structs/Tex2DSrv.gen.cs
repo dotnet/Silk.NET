@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_TEX2D_SRV")]
-public unsafe partial struct Tex2DSrv
+namespace Silk.NET.Direct3D12
 {
-    public Tex2DSrv
-    (
+    [NativeName("Name", "D3D12_TEX2D_SRV")]
+    public unsafe partial struct Tex2DSrv
+    {
+        public Tex2DSrv
+        (
             uint? mostDetailedMip = null,
             uint? mipLevels = null,
             uint? planeSlice = null,
             float? resourceMinLODClamp = null
-    ) : this()
-    {
-        if (mostDetailedMip is not null)
+        ) : this()
         {
-            MostDetailedMip = mostDetailedMip.Value;
+            if (mostDetailedMip is not null)
+            {
+                MostDetailedMip = mostDetailedMip.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (planeSlice is not null)
+            {
+                PlaneSlice = planeSlice.Value;
+            }
+
+            if (resourceMinLODClamp is not null)
+            {
+                ResourceMinLODClamp = resourceMinLODClamp.Value;
+            }
         }
 
-        if (mipLevels is not null)
-        {
-            MipLevels = mipLevels.Value;
-        }
 
-        if (planeSlice is not null)
-        {
-            PlaneSlice = planeSlice.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MostDetailedMip")]
+        public uint MostDetailedMip;
 
-        if (resourceMinLODClamp is not null)
-        {
-            ResourceMinLODClamp = resourceMinLODClamp.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MipLevels")]
+        public uint MipLevels;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "PlaneSlice")]
+        public uint PlaneSlice;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "ResourceMinLODClamp")]
+        public float ResourceMinLODClamp;
     }
-
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MostDetailedMip")]
-    public uint MostDetailedMip;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "MipLevels")]
-    public uint MipLevels;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "PlaneSlice")]
-    public uint PlaneSlice;
-
-    [NativeName("Type", "FLOAT")]
-    [NativeName("Type.Name", "FLOAT")]
-    [NativeName("Name", "ResourceMinLODClamp")]
-    public float ResourceMinLODClamp;
 }

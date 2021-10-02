@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkQueueFamilyCheckpointPropertiesNV")]
-public unsafe partial struct QueueFamilyCheckpointPropertiesNV
+namespace Silk.NET.Vulkan
 {
-    public QueueFamilyCheckpointPropertiesNV
-    (
+    [NativeName("Name", "VkQueueFamilyCheckpointPropertiesNV")]
+    public unsafe partial struct QueueFamilyCheckpointPropertiesNV
+    {
+        public QueueFamilyCheckpointPropertiesNV
+        (
             StructureType? sType = StructureType.QueueFamilyCheckpointPropertiesNV,
             void* pNext = null,
             PipelineStageFlags? checkpointExecutionStageMask = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (checkpointExecutionStageMask is not null)
+            {
+                CheckpointExecutionStageMask = checkpointExecutionStageMask.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (checkpointExecutionStageMask is not null)
-        {
-            CheckpointExecutionStageMask = checkpointExecutionStageMask.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkPipelineStageFlags")]
+        [NativeName("Type.Name", "VkPipelineStageFlags")]
+        [NativeName("Name", "checkpointExecutionStageMask")]
+        public PipelineStageFlags CheckpointExecutionStageMask;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkPipelineStageFlags")]
-    [NativeName("Type.Name", "VkPipelineStageFlags")]
-    [NativeName("Name", "checkpointExecutionStageMask")]
-    public PipelineStageFlags CheckpointExecutionStageMask;
 }

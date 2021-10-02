@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT;
-
-[Extension("EXT_memory_object_fd")]
-public unsafe partial class ExtMemoryObjectFd : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_memory_object_fd";
-    [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
-    public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
-
-    [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
-    public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
-
-    public ExtMemoryObjectFd(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_memory_object_fd")]
+    public unsafe partial class ExtMemoryObjectFd : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_memory_object_fd";
+        [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
+        public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
+
+        [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
+        public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
+
+        public ExtMemoryObjectFd(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

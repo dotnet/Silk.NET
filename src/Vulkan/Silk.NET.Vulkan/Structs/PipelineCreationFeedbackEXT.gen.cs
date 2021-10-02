@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineCreationFeedbackEXT")]
-public unsafe partial struct PipelineCreationFeedbackEXT
+namespace Silk.NET.Vulkan
 {
-    public PipelineCreationFeedbackEXT
-    (
+    [NativeName("Name", "VkPipelineCreationFeedbackEXT")]
+    public unsafe partial struct PipelineCreationFeedbackEXT
+    {
+        public PipelineCreationFeedbackEXT
+        (
             PipelineCreationFeedbackFlagsEXT? flags = null,
             ulong? duration = null
-    ) : this()
-    {
-        if (flags is not null)
+        ) : this()
         {
-            Flags = flags.Value;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (duration is not null)
+            {
+                Duration = duration.Value;
+            }
         }
 
-        if (duration is not null)
-        {
-            Duration = duration.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkPipelineCreationFeedbackFlagsEXT")]
+        [NativeName("Type.Name", "VkPipelineCreationFeedbackFlagsEXT")]
+        [NativeName("Name", "flags")]
+        public PipelineCreationFeedbackFlagsEXT Flags;
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "duration")]
+        public ulong Duration;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkPipelineCreationFeedbackFlagsEXT")]
-    [NativeName("Type.Name", "VkPipelineCreationFeedbackFlagsEXT")]
-    [NativeName("Name", "flags")]
-    public PipelineCreationFeedbackFlagsEXT Flags;
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "duration")]
-    public ulong Duration;
 }

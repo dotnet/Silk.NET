@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoH264SpsFlags")]
-public unsafe partial struct StdVideoH264SpsFlags
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoH264SpsFlags
-    (
+    [NativeName("Name", "StdVideoH264SpsFlags")]
+    public unsafe partial struct StdVideoH264SpsFlags
+    {
+        public StdVideoH264SpsFlags
+        (
             uint? constraintSet0Flag = null,
             uint? constraintSet1Flag = null,
             uint? constraintSet2Flag = null,
@@ -38,230 +38,231 @@ public unsafe partial struct StdVideoH264SpsFlags
             uint? frameCroppingFlag = null,
             uint? scalingMatrixPresentFlag = null,
             uint? vuiParametersPresentFlag = null
-    ) : this()
-    {
-        if (constraintSet0Flag is not null)
+        ) : this()
         {
-            ConstraintSet0Flag = constraintSet0Flag.Value;
+            if (constraintSet0Flag is not null)
+            {
+                ConstraintSet0Flag = constraintSet0Flag.Value;
+            }
+
+            if (constraintSet1Flag is not null)
+            {
+                ConstraintSet1Flag = constraintSet1Flag.Value;
+            }
+
+            if (constraintSet2Flag is not null)
+            {
+                ConstraintSet2Flag = constraintSet2Flag.Value;
+            }
+
+            if (constraintSet3Flag is not null)
+            {
+                ConstraintSet3Flag = constraintSet3Flag.Value;
+            }
+
+            if (constraintSet4Flag is not null)
+            {
+                ConstraintSet4Flag = constraintSet4Flag.Value;
+            }
+
+            if (constraintSet5Flag is not null)
+            {
+                ConstraintSet5Flag = constraintSet5Flag.Value;
+            }
+
+            if (direct8x8InferenceFlag is not null)
+            {
+                Direct8x8InferenceFlag = direct8x8InferenceFlag.Value;
+            }
+
+            if (mbAdaptiveFrameFieldFlag is not null)
+            {
+                MbAdaptiveFrameFieldFlag = mbAdaptiveFrameFieldFlag.Value;
+            }
+
+            if (frameMbsOnlyFlag is not null)
+            {
+                FrameMbsOnlyFlag = frameMbsOnlyFlag.Value;
+            }
+
+            if (deltaPicOrderAlwaysZeroFlag is not null)
+            {
+                DeltaPicOrderAlwaysZeroFlag = deltaPicOrderAlwaysZeroFlag.Value;
+            }
+
+            if (residualColourTransformFlag is not null)
+            {
+                ResidualColourTransformFlag = residualColourTransformFlag.Value;
+            }
+
+            if (gapsInFrameNumValueAllowedFlag is not null)
+            {
+                GapsInFrameNumValueAllowedFlag = gapsInFrameNumValueAllowedFlag.Value;
+            }
+
+            if (firstPictureAfterSeekFlag is not null)
+            {
+                FirstPictureAfterSeekFlag = firstPictureAfterSeekFlag.Value;
+            }
+
+            if (qpprimeYZeroTransformBypassFlag is not null)
+            {
+                QpprimeYZeroTransformBypassFlag = qpprimeYZeroTransformBypassFlag.Value;
+            }
+
+            if (frameCroppingFlag is not null)
+            {
+                FrameCroppingFlag = frameCroppingFlag.Value;
+            }
+
+            if (scalingMatrixPresentFlag is not null)
+            {
+                ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
+            }
+
+            if (vuiParametersPresentFlag is not null)
+            {
+                VuiParametersPresentFlag = vuiParametersPresentFlag.Value;
+            }
         }
 
-        if (constraintSet1Flag is not null)
+
+        private uint _bitfield1;
+
+        public uint ConstraintSet0Flag
         {
-            ConstraintSet1Flag = constraintSet1Flag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        if (constraintSet2Flag is not null)
+        public uint ConstraintSet1Flag
         {
-            ConstraintSet2Flag = constraintSet2Flag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        if (constraintSet3Flag is not null)
+        public uint ConstraintSet2Flag
         {
-            ConstraintSet3Flag = constraintSet3Flag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        if (constraintSet4Flag is not null)
+        public uint ConstraintSet3Flag
         {
-            ConstraintSet4Flag = constraintSet4Flag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        if (constraintSet5Flag is not null)
+        public uint ConstraintSet4Flag
         {
-            ConstraintSet5Flag = constraintSet5Flag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
         }
 
-        if (direct8x8InferenceFlag is not null)
+        public uint ConstraintSet5Flag
         {
-            Direct8x8InferenceFlag = direct8x8InferenceFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
         }
 
-        if (mbAdaptiveFrameFieldFlag is not null)
+        public uint Direct8x8InferenceFlag
         {
-            MbAdaptiveFrameFieldFlag = mbAdaptiveFrameFieldFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 6) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
         }
 
-        if (frameMbsOnlyFlag is not null)
+        public uint MbAdaptiveFrameFieldFlag
         {
-            FrameMbsOnlyFlag = frameMbsOnlyFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 7) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
         }
 
-        if (deltaPicOrderAlwaysZeroFlag is not null)
+        public uint FrameMbsOnlyFlag
         {
-            DeltaPicOrderAlwaysZeroFlag = deltaPicOrderAlwaysZeroFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 8) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
         }
 
-        if (residualColourTransformFlag is not null)
+        public uint DeltaPicOrderAlwaysZeroFlag
         {
-            ResidualColourTransformFlag = residualColourTransformFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 9) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
         }
 
-        if (gapsInFrameNumValueAllowedFlag is not null)
+        public uint ResidualColourTransformFlag
         {
-            GapsInFrameNumValueAllowedFlag = gapsInFrameNumValueAllowedFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 10) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
         }
 
-        if (firstPictureAfterSeekFlag is not null)
+        public uint GapsInFrameNumValueAllowedFlag
         {
-            FirstPictureAfterSeekFlag = firstPictureAfterSeekFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 11) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
         }
 
-        if (qpprimeYZeroTransformBypassFlag is not null)
+        public uint FirstPictureAfterSeekFlag
         {
-            QpprimeYZeroTransformBypassFlag = qpprimeYZeroTransformBypassFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 12) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
         }
 
-        if (frameCroppingFlag is not null)
+        public uint QpprimeYZeroTransformBypassFlag
         {
-            FrameCroppingFlag = frameCroppingFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 13) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
         }
 
-        if (scalingMatrixPresentFlag is not null)
+        public uint FrameCroppingFlag
         {
-            ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 14) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
         }
 
-        if (vuiParametersPresentFlag is not null)
+        public uint ScalingMatrixPresentFlag
         {
-            VuiParametersPresentFlag = vuiParametersPresentFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 15) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
         }
-    }
 
-
-    private uint _bitfield1;
-
-    public uint ConstraintSet0Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)(_bitfield1 & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
-    }
-
-    public uint ConstraintSet1Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 1) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
-    }
-
-    public uint ConstraintSet2Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 2) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
-    }
-
-    public uint ConstraintSet3Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 3) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-    }
-
-    public uint ConstraintSet4Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 4) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
-    }
-
-    public uint ConstraintSet5Flag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 5) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
-    }
-
-    public uint Direct8x8InferenceFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 6) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
-    }
-
-    public uint MbAdaptiveFrameFieldFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 7) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
-    }
-
-    public uint FrameMbsOnlyFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 8) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
-    }
-
-    public uint DeltaPicOrderAlwaysZeroFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 9) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
-    }
-
-    public uint ResidualColourTransformFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 10) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
-    }
-
-    public uint GapsInFrameNumValueAllowedFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 11) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
-    }
-
-    public uint FirstPictureAfterSeekFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 12) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
-    }
-
-    public uint QpprimeYZeroTransformBypassFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 13) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
-    }
-
-    public uint FrameCroppingFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 14) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
-    }
-
-    public uint ScalingMatrixPresentFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 15) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
-    }
-
-    public uint VuiParametersPresentFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 16) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
+        public uint VuiParametersPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 16) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
+        }
     }
 }

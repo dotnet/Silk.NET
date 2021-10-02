@@ -12,16 +12,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-public static class ExtBufferDeviceAddressOverloads
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe ulong GetBufferDeviceAddress(this ExtBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+    public static class ExtBufferDeviceAddressOverloads
     {
-        // SpanOverloader
-        return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe ulong GetBufferDeviceAddress(this ExtBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());
+        }
 
+    }
 }
 

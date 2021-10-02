@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.QCOM;
-
-[Extension("QCOM_frame_extrapolation")]
-public unsafe partial class QComFrameExtrapolation : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
-    public const string ExtensionName = "QCOM_frame_extrapolation";
-    [NativeApi(EntryPoint = "glExtrapolateTex2DQCOM")]
-    public partial void ExtrapolateTex2D([Flow(FlowDirection.In)] uint src1, [Flow(FlowDirection.In)] uint src2, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] float scaleFactor);
-
-    public QComFrameExtrapolation(INativeContext ctx)
-        : base(ctx)
+    [Extension("QCOM_frame_extrapolation")]
+    public unsafe partial class QComFrameExtrapolation : NativeExtension<GL>
     {
+        public const string ExtensionName = "QCOM_frame_extrapolation";
+        [NativeApi(EntryPoint = "glExtrapolateTex2DQCOM")]
+        public partial void ExtrapolateTex2D([Flow(FlowDirection.In)] uint src1, [Flow(FlowDirection.In)] uint src2, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] float scaleFactor);
+
+        public QComFrameExtrapolation(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

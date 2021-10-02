@@ -14,35 +14,36 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT;
-
-[Extension("VK_EXT_extended_dynamic_state2")]
-public unsafe partial class ExtExtendedDynamicState2 : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.EXT
 {
-    public const string ExtensionName = "VK_EXT_extended_dynamic_state2";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
-    public partial void CmdSetDepthBiasEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBiasEnable);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetLogicOpEXT")]
-    public partial void CmdSetLogicOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] LogicOp logicOp);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetPatchControlPointsEXT")]
-    public partial void CmdSetPatchControlPoints([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint patchControlPoints);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
-    public partial void CmdSetPrimitiveRestartEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 primitiveRestartEnable);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
-    public partial void CmdSetRasterizerDiscardEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 rasterizerDiscardEnable);
-
-    public ExtExtendedDynamicState2(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_EXT_extended_dynamic_state2")]
+    public unsafe partial class ExtExtendedDynamicState2 : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_EXT_extended_dynamic_state2";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
+        public partial void CmdSetDepthBiasEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBiasEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetLogicOpEXT")]
+        public partial void CmdSetLogicOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] LogicOp logicOp);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetPatchControlPointsEXT")]
+        public partial void CmdSetPatchControlPoints([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint patchControlPoints);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
+        public partial void CmdSetPrimitiveRestartEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 primitiveRestartEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
+        public partial void CmdSetRasterizerDiscardEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 rasterizerDiscardEnable);
+
+        public ExtExtendedDynamicState2(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

@@ -7,9 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL;
-
-[NativeName("Name", "FeedbackType")]
-public enum FeedbackType : int
+namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "FeedbackType")]
+    public enum FeedbackType : int
+    {
+    }
 }

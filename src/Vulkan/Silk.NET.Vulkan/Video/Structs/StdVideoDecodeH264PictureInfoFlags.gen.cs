@@ -14,86 +14,87 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video;
-
-[NativeName("Name", "StdVideoDecodeH264PictureInfoFlags")]
-public unsafe partial struct StdVideoDecodeH264PictureInfoFlags
+namespace Silk.NET.Vulkan.Video
 {
-    public StdVideoDecodeH264PictureInfoFlags
-    (
+    [NativeName("Name", "StdVideoDecodeH264PictureInfoFlags")]
+    public unsafe partial struct StdVideoDecodeH264PictureInfoFlags
+    {
+        public StdVideoDecodeH264PictureInfoFlags
+        (
             uint? fieldPicFlag = null,
             uint? isIntra = null,
             uint? bottomFieldFlag = null,
             uint? isReference = null,
             uint? complementaryFieldPair = null
-    ) : this()
-    {
-        if (fieldPicFlag is not null)
+        ) : this()
         {
-            FieldPicFlag = fieldPicFlag.Value;
+            if (fieldPicFlag is not null)
+            {
+                FieldPicFlag = fieldPicFlag.Value;
+            }
+
+            if (isIntra is not null)
+            {
+                IsIntra = isIntra.Value;
+            }
+
+            if (bottomFieldFlag is not null)
+            {
+                BottomFieldFlag = bottomFieldFlag.Value;
+            }
+
+            if (isReference is not null)
+            {
+                IsReference = isReference.Value;
+            }
+
+            if (complementaryFieldPair is not null)
+            {
+                ComplementaryFieldPair = complementaryFieldPair.Value;
+            }
         }
 
-        if (isIntra is not null)
+
+        private uint _bitfield1;
+
+        public uint FieldPicFlag
         {
-            IsIntra = isIntra.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        if (bottomFieldFlag is not null)
+        public uint IsIntra
         {
-            BottomFieldFlag = bottomFieldFlag.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        if (isReference is not null)
+        public uint BottomFieldFlag
         {
-            IsReference = isReference.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        if (complementaryFieldPair is not null)
+        public uint IsReference
         {
-            ComplementaryFieldPair = complementaryFieldPair.Value;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
-    }
 
-
-    private uint _bitfield1;
-
-    public uint FieldPicFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)(_bitfield1 & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
-    }
-
-    public uint IsIntra
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 1) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
-    }
-
-    public uint BottomFieldFlag
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 2) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
-    }
-
-    public uint IsReference
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 3) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-    }
-
-    public uint ComplementaryFieldPair
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => (uint)((_bitfield1 >> 4) & 0x1u);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        public uint ComplementaryFieldPair
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
     }
 }

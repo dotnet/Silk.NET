@@ -14,79 +14,28 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[StructLayout(LayoutKind.Explicit)]
-[NativeName("Name", "__AnonymousRecord_dxva2api_L458_C5")]
-public unsafe partial struct DXVA2Fixed32Union
+namespace Silk.NET.DXVA
 {
-    public DXVA2Fixed32Union
-    (
-            DXVA2Fixed32UnionUnion? anonymous = null,
-            int? ll = null,
-            ushort? fraction = null,
-            short? value = null
-    ) : this()
+    [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "__AnonymousRecord_dxva2api_L458_C5")]
+    public unsafe partial struct DXVA2Fixed32Union
     {
-        if (anonymous is not null)
+        public DXVA2Fixed32Union
+        (
+            int? ll = null
+        ) : this()
         {
-            Anonymous = anonymous.Value;
+            if (ll is not null)
+            {
+                Ll = ll.Value;
+            }
         }
-
-        if (ll is not null)
-        {
-            Ll = ll.Value;
-        }
-
-        if (fraction is not null)
-        {
-            Fraction = fraction.Value;
-        }
-
-        if (value is not null)
-        {
-            Value = value.Value;
-        }
-    }
 
 
         [FieldOffset(0)]
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "__AnonymousRecord_dxva2api_L459_C9")]
-    [NativeName("Name", "anonymous1")]
-    public DXVA2Fixed32UnionUnion Anonymous;
-
-        [FieldOffset(0)]
-    [NativeName("Type", "LONG")]
-    [NativeName("Type.Name", "LONG")]
-    [NativeName("Name", "ll")]
-    public int Ll;
-#if NETSTANDARD2_1
-    public ref ushort Fraction
-    {
-        [MethodImpl((MethodImplOptions) 768)]
-        get => ref Anonymous.Fraction;
+        [NativeName("Type", "LONG")]
+        [NativeName("Type.Name", "LONG")]
+        [NativeName("Name", "ll")]
+        public int Ll;
     }
-#else
-    public ushort Fraction
-    {
-        get => Anonymous.Fraction;
-        set => Anonymous.Fraction = value;
-    }
-#endif
-
-#if NETSTANDARD2_1
-    public ref short Value
-    {
-        [MethodImpl((MethodImplOptions) 768)]
-        get => ref Anonymous.Value;
-    }
-#else
-    public short Value
-    {
-        get => Anonymous.Value;
-        set => Anonymous.Value = value;
-    }
-#endif
-
 }

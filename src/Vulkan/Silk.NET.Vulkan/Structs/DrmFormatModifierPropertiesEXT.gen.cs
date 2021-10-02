@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDrmFormatModifierPropertiesEXT")]
-public unsafe partial struct DrmFormatModifierPropertiesEXT
+namespace Silk.NET.Vulkan
 {
-    public DrmFormatModifierPropertiesEXT
-    (
+    [NativeName("Name", "VkDrmFormatModifierPropertiesEXT")]
+    public unsafe partial struct DrmFormatModifierPropertiesEXT
+    {
+        public DrmFormatModifierPropertiesEXT
+        (
             ulong? drmFormatModifier = null,
             uint? drmFormatModifierPlaneCount = null,
             FormatFeatureFlags? drmFormatModifierTilingFeatures = null
-    ) : this()
-    {
-        if (drmFormatModifier is not null)
+        ) : this()
         {
-            DrmFormatModifier = drmFormatModifier.Value;
+            if (drmFormatModifier is not null)
+            {
+                DrmFormatModifier = drmFormatModifier.Value;
+            }
+
+            if (drmFormatModifierPlaneCount is not null)
+            {
+                DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
+            }
+
+            if (drmFormatModifierTilingFeatures is not null)
+            {
+                DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures.Value;
+            }
         }
 
-        if (drmFormatModifierPlaneCount is not null)
-        {
-            DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
-        }
-
-        if (drmFormatModifierTilingFeatures is not null)
-        {
-            DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "drmFormatModifier")]
+        public ulong DrmFormatModifier;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "drmFormatModifierPlaneCount")]
+        public uint DrmFormatModifierPlaneCount;
+/// <summary></summary>
+        [NativeName("Type", "VkFormatFeatureFlags")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags")]
+        [NativeName("Name", "drmFormatModifierTilingFeatures")]
+        public FormatFeatureFlags DrmFormatModifierTilingFeatures;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint64_t")]
-    [NativeName("Type.Name", "uint64_t")]
-    [NativeName("Name", "drmFormatModifier")]
-    public ulong DrmFormatModifier;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "drmFormatModifierPlaneCount")]
-    public uint DrmFormatModifierPlaneCount;
-/// <summary></summary>
-    [NativeName("Type", "VkFormatFeatureFlags")]
-    [NativeName("Type.Name", "VkFormatFeatureFlags")]
-    [NativeName("Name", "drmFormatModifierTilingFeatures")]
-    public FormatFeatureFlags DrmFormatModifierTilingFeatures;
 }

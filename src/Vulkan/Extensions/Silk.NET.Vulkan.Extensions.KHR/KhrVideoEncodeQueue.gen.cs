@@ -14,23 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-[Extension("VK_KHR_video_encode_queue")]
-public unsafe partial class KhrVideoEncodeQueue : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    public const string ExtensionName = "VK_KHR_video_encode_queue";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
-    public unsafe partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] VideoEncodeInfoKHR* pEncodeInfo);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
-    public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in VideoEncodeInfoKHR pEncodeInfo);
-
-    public KhrVideoEncodeQueue(INativeContext ctx)
-        : base(ctx)
+    [Extension("VK_KHR_video_encode_queue")]
+    public unsafe partial class KhrVideoEncodeQueue : NativeExtension<Vk>
     {
+        public const string ExtensionName = "VK_KHR_video_encode_queue";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
+        public unsafe partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] VideoEncodeInfoKHR* pEncodeInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR")]
+        public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in VideoEncodeInfoKHR pEncodeInfo);
+
+        public KhrVideoEncodeQueue(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

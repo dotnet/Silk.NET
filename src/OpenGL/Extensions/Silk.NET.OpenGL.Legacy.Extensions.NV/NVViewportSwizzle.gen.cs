@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-[Extension("NV_viewport_swizzle")]
-public unsafe partial class NVViewportSwizzle : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public const string ExtensionName = "NV_viewport_swizzle";
-    [NativeApi(EntryPoint = "glViewportSwizzleNV")]
-    public partial void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
-
-    public NVViewportSwizzle(INativeContext ctx)
-        : base(ctx)
+    [Extension("NV_viewport_swizzle")]
+    public unsafe partial class NVViewportSwizzle : NativeExtension<GL>
     {
+        public const string ExtensionName = "NV_viewport_swizzle";
+        [NativeApi(EntryPoint = "glViewportSwizzleNV")]
+        public partial void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
+
+        public NVViewportSwizzle(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

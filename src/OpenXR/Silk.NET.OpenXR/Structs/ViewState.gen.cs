@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrViewState")]
-public unsafe partial struct ViewState
+namespace Silk.NET.OpenXR
 {
-    public ViewState
-    (
+    [NativeName("Name", "XrViewState")]
+    public unsafe partial struct ViewState
+    {
+        public ViewState
+        (
             StructureType? type = StructureType.TypeViewState,
             void* next = null,
             ViewStateFlags? viewStateFlags = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewStateFlags is not null)
+            {
+                ViewStateFlags = viewStateFlags.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (viewStateFlags is not null)
-        {
-            ViewStateFlags = viewStateFlags.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrViewStateFlags")]
+        [NativeName("Type.Name", "XrViewStateFlags")]
+        [NativeName("Name", "viewStateFlags")]
+        public ViewStateFlags ViewStateFlags;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrViewStateFlags")]
-    [NativeName("Type.Name", "XrViewStateFlags")]
-    [NativeName("Name", "viewStateFlags")]
-    public ViewStateFlags ViewStateFlags;
 }

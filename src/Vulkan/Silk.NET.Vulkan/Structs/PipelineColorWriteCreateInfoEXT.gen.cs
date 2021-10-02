@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPipelineColorWriteCreateInfoEXT")]
-public unsafe partial struct PipelineColorWriteCreateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public PipelineColorWriteCreateInfoEXT
-    (
+    [NativeName("Name", "VkPipelineColorWriteCreateInfoEXT")]
+    public unsafe partial struct PipelineColorWriteCreateInfoEXT
+    {
+        public PipelineColorWriteCreateInfoEXT
+        (
             StructureType? sType = StructureType.PipelineColorWriteCreateInfoExt,
             void* pNext = null,
             uint? attachmentCount = null,
             Bool32* pColorWriteEnables = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pColorWriteEnables is not null)
+            {
+                PColorWriteEnables = pColorWriteEnables;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (attachmentCount is not null)
-        {
-            AttachmentCount = attachmentCount.Value;
-        }
-
-        if (pColorWriteEnables is not null)
-        {
-            PColorWriteEnables = pColorWriteEnables;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "attachmentCount")]
+        public uint AttachmentCount;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32*")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "pColorWriteEnables")]
+        public Bool32* PColorWriteEnables;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "attachmentCount")]
-    public uint AttachmentCount;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32*")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "pColorWriteEnables")]
-    public Bool32* PColorWriteEnables;
 }

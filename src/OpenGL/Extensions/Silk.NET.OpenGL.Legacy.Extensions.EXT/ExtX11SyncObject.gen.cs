@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
-
-[Extension("EXT_x11_sync_object")]
-public unsafe partial class ExtX11SyncObject : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_x11_sync_object";
-    [NativeApi(EntryPoint = "glImportSyncEXT")]
-    public partial nint ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] nint external_sync, [Flow(FlowDirection.In)] uint flags);
-
-    public ExtX11SyncObject(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_x11_sync_object")]
+    public unsafe partial class ExtX11SyncObject : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_x11_sync_object";
+        [NativeApi(EntryPoint = "glImportSyncEXT")]
+        public partial nint ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] nint external_sync, [Flow(FlowDirection.In)] uint flags);
+
+        public ExtX11SyncObject(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

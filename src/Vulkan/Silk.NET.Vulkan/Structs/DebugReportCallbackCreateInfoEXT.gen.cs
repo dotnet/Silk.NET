@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDebugReportCallbackCreateInfoEXT")]
-public unsafe partial struct DebugReportCallbackCreateInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public DebugReportCallbackCreateInfoEXT
-    (
+    [NativeName("Name", "VkDebugReportCallbackCreateInfoEXT")]
+    public unsafe partial struct DebugReportCallbackCreateInfoEXT
+    {
+        public DebugReportCallbackCreateInfoEXT
+        (
             StructureType? sType = StructureType.DebugReportCallbackCreateInfoExt,
             void* pNext = null,
             DebugReportFlagsEXT? flags = null,
             PfnDebugReportCallbackEXT? pfnCallback = null,
             void* pUserData = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pfnCallback is not null)
+            {
+                PfnCallback = pfnCallback.Value;
+            }
+
+            if (pUserData is not null)
+            {
+                PUserData = pUserData;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (flags is not null)
-        {
-            Flags = flags.Value;
-        }
-
-        if (pfnCallback is not null)
-        {
-            PfnCallback = pfnCallback.Value;
-        }
-
-        if (pUserData is not null)
-        {
-            PUserData = pUserData;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDebugReportFlagsEXT")]
+        [NativeName("Type.Name", "VkDebugReportFlagsEXT")]
+        [NativeName("Name", "flags")]
+        public DebugReportFlagsEXT Flags;
+/// <summary></summary>
+        [NativeName("Type", "PFN_vkDebugReportCallbackEXT")]
+        [NativeName("Type.Name", "PFN_vkDebugReportCallbackEXT")]
+        [NativeName("Name", "pfnCallback")]
+        public PfnDebugReportCallbackEXT PfnCallback;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pUserData")]
+        public void* PUserData;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDebugReportFlagsEXT")]
-    [NativeName("Type.Name", "VkDebugReportFlagsEXT")]
-    [NativeName("Name", "flags")]
-    public DebugReportFlagsEXT Flags;
-/// <summary></summary>
-    [NativeName("Type", "PFN_vkDebugReportCallbackEXT")]
-    [NativeName("Type.Name", "PFN_vkDebugReportCallbackEXT")]
-    [NativeName("Name", "pfnCallback")]
-    public PfnDebugReportCallbackEXT PfnCallback;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pUserData")]
-    public void* PUserData;
 }

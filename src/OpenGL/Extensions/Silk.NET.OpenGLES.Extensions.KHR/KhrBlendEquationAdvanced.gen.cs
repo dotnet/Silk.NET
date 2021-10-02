@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.KHR;
-
-[Extension("KHR_blend_equation_advanced")]
-public unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.KHR
 {
-    public const string ExtensionName = "KHR_blend_equation_advanced";
-    [NativeApi(EntryPoint = "glBlendBarrierKHR")]
-    public partial void BlendBarrier();
-
-    public KhrBlendEquationAdvanced(INativeContext ctx)
-        : base(ctx)
+    [Extension("KHR_blend_equation_advanced")]
+    public unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
     {
+        public const string ExtensionName = "KHR_blend_equation_advanced";
+        [NativeApi(EntryPoint = "glBlendBarrierKHR")]
+        public partial void BlendBarrier();
+
+        public KhrBlendEquationAdvanced(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

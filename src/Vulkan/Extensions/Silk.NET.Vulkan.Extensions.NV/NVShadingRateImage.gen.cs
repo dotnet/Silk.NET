@@ -14,49 +14,50 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV;
-
-[Extension("VK_NV_shading_rate_image")]
-public unsafe partial class NVShadingRateImage : NativeExtension<Vk>
+namespace Silk.NET.Vulkan.Extensions.NV
 {
-    public const string ExtensionName = "VK_NV_shading_rate_image";
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdBindShadingRateImageNV")]
-    public partial void CmdBindShadingRateImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ImageView imageView, [Count(Count = 0)] ImageLayout imageLayout);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
-    public unsafe partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
-    public partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] in CoarseSampleOrderCustomNV pCustomSampleOrders);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
-    public unsafe partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes);
-
-    /// <summary>To be documented.</summary>
-    [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
-    public partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in ShadingRatePaletteNV pShadingRatePalettes);
-
-    /// <summary>To be documented.</summary>
-    public unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)
+    [Extension("VK_NV_shading_rate_image")]
+    public unsafe partial class NVShadingRateImage : NativeExtension<Vk>
     {
-        // ImplicitCountSpanOverloader
-        CmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, (uint) pCustomSampleOrders.Length, in pCustomSampleOrders.GetPinnableReference());
-    }
+        public const string ExtensionName = "VK_NV_shading_rate_image";
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindShadingRateImageNV")]
+        public partial void CmdBindShadingRateImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ImageView imageView, [Count(Count = 0)] ImageLayout imageLayout);
 
-    /// <summary>To be documented.</summary>
-    public unsafe void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ShadingRatePaletteNV> pShadingRatePalettes)
-    {
-        // ImplicitCountSpanOverloader
-        CmdSetViewportShadingRatePalette(commandBuffer, firstViewport, (uint) pShadingRatePalettes.Length, in pShadingRatePalettes.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
+        public unsafe partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders);
 
-    public NVShadingRateImage(INativeContext ctx)
-        : base(ctx)
-    {
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
+        public partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] in CoarseSampleOrderCustomNV pCustomSampleOrders);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
+        public unsafe partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
+        public partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in ShadingRatePaletteNV pShadingRatePalettes);
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Parameter = "customSampleOrderCount"), Flow(FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, (uint) pCustomSampleOrders.Length, in pCustomSampleOrders.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ShadingRatePaletteNV> pShadingRatePalettes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetViewportShadingRatePalette(commandBuffer, firstViewport, (uint) pShadingRatePalettes.Length, in pShadingRatePalettes.GetPinnableReference());
+        }
+
+        public NVShadingRateImage(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

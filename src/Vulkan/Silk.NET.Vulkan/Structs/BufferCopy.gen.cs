@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBufferCopy")]
-public unsafe partial struct BufferCopy
+namespace Silk.NET.Vulkan
 {
-    public BufferCopy
-    (
+    [NativeName("Name", "VkBufferCopy")]
+    public unsafe partial struct BufferCopy
+    {
+        public BufferCopy
+        (
             ulong? srcOffset = null,
             ulong? dstOffset = null,
             ulong? size = null
-    ) : this()
-    {
-        if (srcOffset is not null)
+        ) : this()
         {
-            SrcOffset = srcOffset.Value;
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
-        if (dstOffset is not null)
-        {
-            DstOffset = dstOffset.Value;
-        }
-
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "srcOffset")]
+        public ulong SrcOffset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "dstOffset")]
+        public ulong DstOffset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "srcOffset")]
-    public ulong SrcOffset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "dstOffset")]
-    public ulong DstOffset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "size")]
-    public ulong Size;
 }

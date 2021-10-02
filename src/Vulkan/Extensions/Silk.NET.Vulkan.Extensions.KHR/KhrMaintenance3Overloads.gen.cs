@@ -12,30 +12,31 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR;
-
-public static class KhrMaintenance3Overloads
+namespace Silk.NET.Vulkan.Extensions.KHR
 {
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
+    public static class KhrMaintenance3Overloads
     {
-        // SpanOverloader
-        thisApi.GetDescriptorSetLayoutSupport(device, pCreateInfo, out pSupport.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, pCreateInfo, out pSupport.GetPinnableReference());
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport)
-    {
-        // SpanOverloader
-        thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), pSupport);
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), pSupport);
+        }
 
-    /// <summary>To be documented.</summary>
-    public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
-    {
-        // SpanOverloader
-        thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), out pSupport.GetPinnableReference());
-    }
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), out pSupport.GetPinnableReference());
+        }
 
+    }
 }
 

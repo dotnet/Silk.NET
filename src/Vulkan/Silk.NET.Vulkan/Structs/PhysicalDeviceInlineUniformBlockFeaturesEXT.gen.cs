@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceInlineUniformBlockFeaturesEXT")]
-public unsafe partial struct PhysicalDeviceInlineUniformBlockFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceInlineUniformBlockFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceInlineUniformBlockFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceInlineUniformBlockFeaturesEXT
+    {
+        public PhysicalDeviceInlineUniformBlockFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceInlineUniformBlockFeaturesExt,
             void* pNext = null,
             Bool32? inlineUniformBlock = null,
             Bool32? descriptorBindingInlineUniformBlockUpdateAfterBind = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (inlineUniformBlock is not null)
+            {
+                InlineUniformBlock = inlineUniformBlock.Value;
+            }
+
+            if (descriptorBindingInlineUniformBlockUpdateAfterBind is not null)
+            {
+                DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (inlineUniformBlock is not null)
-        {
-            InlineUniformBlock = inlineUniformBlock.Value;
-        }
-
-        if (descriptorBindingInlineUniformBlockUpdateAfterBind is not null)
-        {
-            DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "inlineUniformBlock")]
+        public Bool32 InlineUniformBlock;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingInlineUniformBlockUpdateAfterBind")]
+        public Bool32 DescriptorBindingInlineUniformBlockUpdateAfterBind;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "inlineUniformBlock")]
-    public Bool32 InlineUniformBlock;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "descriptorBindingInlineUniformBlockUpdateAfterBind")]
-    public Bool32 DescriptorBindingInlineUniformBlockUpdateAfterBind;
 }

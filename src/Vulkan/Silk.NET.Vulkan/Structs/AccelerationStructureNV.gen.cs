@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkAccelerationStructureNV")]
-public unsafe partial struct AccelerationStructureNV
+namespace Silk.NET.Vulkan
 {
-    public AccelerationStructureNV
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkAccelerationStructureNV")]
+    public unsafe partial struct AccelerationStructureNV
     {
-        if (handle is not null)
+        public AccelerationStructureNV
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkVideoFormatPropertiesKHR")]
-public unsafe partial struct VideoFormatPropertiesKHR
+namespace Silk.NET.Vulkan
 {
-    public VideoFormatPropertiesKHR
-    (
+    [NativeName("Name", "VkVideoFormatPropertiesKHR")]
+    public unsafe partial struct VideoFormatPropertiesKHR
+    {
+        public VideoFormatPropertiesKHR
+        (
             StructureType? sType = StructureType.VideoFormatPropertiesKhr,
             void* pNext = null,
             Format? format = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (format is not null)
-        {
-            Format = format.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
+        public Format Format;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkFormat")]
-    [NativeName("Type.Name", "VkFormat")]
-    [NativeName("Name", "format")]
-    public Format Format;
 }

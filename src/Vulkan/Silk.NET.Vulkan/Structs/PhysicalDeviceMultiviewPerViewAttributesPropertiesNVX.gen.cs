@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX")]
-public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
-    (
+    [NativeName("Name", "VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX")]
+    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+    {
+        public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+        (
             StructureType? sType = StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx,
             void* pNext = null,
             Bool32? perViewPositionAllComponents = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (perViewPositionAllComponents is not null)
+            {
+                PerViewPositionAllComponents = perViewPositionAllComponents.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (perViewPositionAllComponents is not null)
-        {
-            PerViewPositionAllComponents = perViewPositionAllComponents.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "perViewPositionAllComponents")]
+        public Bool32 PerViewPositionAllComponents;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "perViewPositionAllComponents")]
-    public Bool32 PerViewPositionAllComponents;
 }

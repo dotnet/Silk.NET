@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceMultiviewProperties")]
-public unsafe partial struct PhysicalDeviceMultiviewProperties
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceMultiviewProperties
-    (
+    [NativeName("Name", "VkPhysicalDeviceMultiviewProperties")]
+    public unsafe partial struct PhysicalDeviceMultiviewProperties
+    {
+        public PhysicalDeviceMultiviewProperties
+        (
             StructureType? sType = StructureType.PhysicalDeviceMultiviewProperties,
             void* pNext = null,
             uint? maxMultiviewViewCount = null,
             uint? maxMultiviewInstanceIndex = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxMultiviewViewCount is not null)
+            {
+                MaxMultiviewViewCount = maxMultiviewViewCount.Value;
+            }
+
+            if (maxMultiviewInstanceIndex is not null)
+            {
+                MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (maxMultiviewViewCount is not null)
-        {
-            MaxMultiviewViewCount = maxMultiviewViewCount.Value;
-        }
-
-        if (maxMultiviewInstanceIndex is not null)
-        {
-            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMultiviewViewCount")]
+        public uint MaxMultiviewViewCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMultiviewInstanceIndex")]
+        public uint MaxMultiviewInstanceIndex;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxMultiviewViewCount")]
-    public uint MaxMultiviewViewCount;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "maxMultiviewInstanceIndex")]
-    public uint MaxMultiviewInstanceIndex;
 }

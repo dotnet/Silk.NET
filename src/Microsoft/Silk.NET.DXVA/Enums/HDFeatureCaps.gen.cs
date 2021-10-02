@@ -7,17 +7,18 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_FEATURE_CAPS")]
-public enum HDFeatureCaps : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVAHD_FEATURE_CAPS_ALPHA_FILL")]
-    HDFeatureCapsAlphaFill = 0x1,
-    [NativeName("Name", "DXVAHD_FEATURE_CAPS_CONSTRICTION")]
-    HDFeatureCapsConstriction = 0x2,
-    [NativeName("Name", "DXVAHD_FEATURE_CAPS_LUMA_KEY")]
-    HDFeatureCapsLumaKey = 0x4,
-    [NativeName("Name", "DXVAHD_FEATURE_CAPS_ALPHA_PALETTE")]
-    HDFeatureCapsAlphaPalette = 0x8,
+    [NativeName("Name", "_DXVAHD_FEATURE_CAPS")]
+    public enum HDFeatureCaps : int
+    {
+        [NativeName("Name", "DXVAHD_FEATURE_CAPS_ALPHA_FILL")]
+        HDFeatureCapsAlphaFill = 0x1,
+        [NativeName("Name", "DXVAHD_FEATURE_CAPS_CONSTRICTION")]
+        HDFeatureCapsConstriction = 0x2,
+        [NativeName("Name", "DXVAHD_FEATURE_CAPS_LUMA_KEY")]
+        HDFeatureCapsLumaKey = 0x4,
+        [NativeName("Name", "DXVAHD_FEATURE_CAPS_ALPHA_PALETTE")]
+        HDFeatureCapsAlphaPalette = 0x8,
+    }
 }

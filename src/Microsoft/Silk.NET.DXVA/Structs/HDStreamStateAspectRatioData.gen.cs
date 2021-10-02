@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA")]
-public unsafe partial struct HDStreamStateAspectRatioData
+namespace Silk.NET.DXVA
 {
-    public HDStreamStateAspectRatioData
-    (
+    [NativeName("Name", "_DXVAHD_STREAM_STATE_ASPECT_RATIO_DATA")]
+    public unsafe partial struct HDStreamStateAspectRatioData
+    {
+        public HDStreamStateAspectRatioData
+        (
             int? enable = null,
             HDRational? sourceAspectRatio = null,
             HDRational? destinationAspectRatio = null
-    ) : this()
-    {
-        if (enable is not null)
+        ) : this()
         {
-            Enable = enable.Value;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (sourceAspectRatio is not null)
+            {
+                SourceAspectRatio = sourceAspectRatio.Value;
+            }
+
+            if (destinationAspectRatio is not null)
+            {
+                DestinationAspectRatio = destinationAspectRatio.Value;
+            }
         }
 
-        if (sourceAspectRatio is not null)
-        {
-            SourceAspectRatio = sourceAspectRatio.Value;
-        }
 
-        if (destinationAspectRatio is not null)
-        {
-            DestinationAspectRatio = destinationAspectRatio.Value;
-        }
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enable")]
+        public int Enable;
+
+        [NativeName("Type", "DXVAHD_RATIONAL")]
+        [NativeName("Type.Name", "DXVAHD_RATIONAL")]
+        [NativeName("Name", "SourceAspectRatio")]
+        public HDRational SourceAspectRatio;
+
+        [NativeName("Type", "DXVAHD_RATIONAL")]
+        [NativeName("Type.Name", "DXVAHD_RATIONAL")]
+        [NativeName("Name", "DestinationAspectRatio")]
+        public HDRational DestinationAspectRatio;
     }
-
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enable")]
-    public int Enable;
-
-    [NativeName("Type", "DXVAHD_RATIONAL")]
-    [NativeName("Type.Name", "DXVAHD_RATIONAL")]
-    [NativeName("Name", "SourceAspectRatio")]
-    public HDRational SourceAspectRatio;
-
-    [NativeName("Type", "DXVAHD_RATIONAL")]
-    [NativeName("Type.Name", "DXVAHD_RATIONAL")]
-    [NativeName("Name", "DestinationAspectRatio")]
-    public HDRational DestinationAspectRatio;
 }

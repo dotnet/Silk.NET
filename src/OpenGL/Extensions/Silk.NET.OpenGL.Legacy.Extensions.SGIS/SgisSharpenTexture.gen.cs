@@ -14,59 +14,60 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
-
-[Extension("SGIS_sharpen_texture")]
-public unsafe partial class SgisSharpenTexture : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
-    public const string ExtensionName = "SGIS_sharpen_texture";
-    [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-    public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
-
-    [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-    public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
-
-    [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-    public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
-
-    [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-    public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
-
-    [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-    public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
-
-    [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-    public partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
-
-    [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-    public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
-
-    [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-    public partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
-
-    public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target)
+    [Extension("SGIS_sharpen_texture")]
+    public unsafe partial class SgisSharpenTexture : NativeExtension<GL>
     {
-        // ReturnTypeOverloader
-        float ret = default;
-        GetSharpenTexFunc(target, &ret);
-        return ret;
-    }
+        public const string ExtensionName = "SGIS_sharpen_texture";
+        [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
+        public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
-    public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
-    {
-        // ImplicitCountSpanOverloader
-        SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
+        public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
-    public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
-    {
-        // ImplicitCountSpanOverloader
-        SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
-    }
+        [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
+        public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
-    public SgisSharpenTexture(INativeContext ctx)
-        : base(ctx)
-    {
+        [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
+        public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
+
+        [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
+        public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+
+        [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
+        public partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
+
+        [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
+        public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+
+        [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
+        public partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
+
+        public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target)
+        {
+            // ReturnTypeOverloader
+            float ret = default;
+            GetSharpenTexFunc(target, &ret);
+            return ret;
+        }
+
+        public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        {
+            // ImplicitCountSpanOverloader
+            SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
+        }
+
+        public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        {
+            // ImplicitCountSpanOverloader
+            SharpenTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
+        }
+
+        public SgisSharpenTexture(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

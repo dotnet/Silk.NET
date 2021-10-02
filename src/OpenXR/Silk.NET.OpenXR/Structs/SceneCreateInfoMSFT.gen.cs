@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneCreateInfoMSFT")]
-public unsafe partial struct SceneCreateInfoMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneCreateInfoMSFT
-    (
+    [NativeName("Name", "XrSceneCreateInfoMSFT")]
+    public unsafe partial struct SceneCreateInfoMSFT
+    {
+        public SceneCreateInfoMSFT
+        (
             StructureType? type = StructureType.TypeSceneCreateInfoMsft,
             void* next = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
 }

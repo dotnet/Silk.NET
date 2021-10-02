@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceSynchronization2FeaturesKHR")]
-public unsafe partial struct PhysicalDeviceSynchronization2FeaturesKHR
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceSynchronization2FeaturesKHR
-    (
+    [NativeName("Name", "VkPhysicalDeviceSynchronization2FeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceSynchronization2FeaturesKHR
+    {
+        public PhysicalDeviceSynchronization2FeaturesKHR
+        (
             StructureType? sType = StructureType.PhysicalDeviceSynchronization2FeaturesKhr,
             void* pNext = null,
             Bool32? synchronization2 = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (synchronization2 is not null)
+            {
+                Synchronization2 = synchronization2.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (synchronization2 is not null)
-        {
-            Synchronization2 = synchronization2.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "synchronization2")]
+        public Bool32 Synchronization2;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "synchronization2")]
-    public Bool32 Synchronization2;
 }

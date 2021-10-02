@@ -14,13 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL;
-
-[NativeName("Name", "SDL_JoystickGUID")]
-public unsafe partial struct JoystickGUID
+namespace Silk.NET.SDL
 {
-    [NativeName("Type", "Uint8 [16]")]
-    [NativeName("Type.Name", "Uint8 [16]")]
-    [NativeName("Name", "data")]
-    public fixed byte Data[16];
+    [NativeName("Name", "SDL_JoystickGUID")]
+    public unsafe partial struct JoystickGUID
+    {
+        [NativeName("Type", "Uint8 [16]")]
+        [NativeName("Type.Name", "Uint8 [16]")]
+        [NativeName("Name", "data")]
+        public fixed byte Data[16];
+    }
 }

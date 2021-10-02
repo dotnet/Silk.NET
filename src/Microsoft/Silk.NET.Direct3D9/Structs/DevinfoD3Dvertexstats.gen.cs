@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
-
-[NativeName("Name", "_D3DDEVINFO_D3DVERTEXSTATS")]
-public unsafe partial struct DevinfoD3Dvertexstats
+namespace Silk.NET.Direct3D9
 {
-    public DevinfoD3Dvertexstats
-    (
+    [NativeName("Name", "_D3DDEVINFO_D3DVERTEXSTATS")]
+    public unsafe partial struct DevinfoD3Dvertexstats
+    {
+        public DevinfoD3Dvertexstats
+        (
             uint? numRenderedTriangles = null,
             uint? numExtraClippingTriangles = null
-    ) : this()
-    {
-        if (numRenderedTriangles is not null)
+        ) : this()
         {
-            NumRenderedTriangles = numRenderedTriangles.Value;
+            if (numRenderedTriangles is not null)
+            {
+                NumRenderedTriangles = numRenderedTriangles.Value;
+            }
+
+            if (numExtraClippingTriangles is not null)
+            {
+                NumExtraClippingTriangles = numExtraClippingTriangles.Value;
+            }
         }
 
-        if (numExtraClippingTriangles is not null)
-        {
-            NumExtraClippingTriangles = numExtraClippingTriangles.Value;
-        }
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "NumRenderedTriangles")]
+        public uint NumRenderedTriangles;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "NumExtraClippingTriangles")]
+        public uint NumExtraClippingTriangles;
     }
-
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "NumRenderedTriangles")]
-    public uint NumRenderedTriangles;
-
-    [NativeName("Type", "DWORD")]
-    [NativeName("Type.Name", "DWORD")]
-    [NativeName("Name", "NumExtraClippingTriangles")]
-    public uint NumExtraClippingTriangles;
 }

@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDrmFormatModifierPropertiesListEXT")]
-public unsafe partial struct DrmFormatModifierPropertiesListEXT
+namespace Silk.NET.Vulkan
 {
-    public DrmFormatModifierPropertiesListEXT
-    (
+    [NativeName("Name", "VkDrmFormatModifierPropertiesListEXT")]
+    public unsafe partial struct DrmFormatModifierPropertiesListEXT
+    {
+        public DrmFormatModifierPropertiesListEXT
+        (
             StructureType? sType = StructureType.DrmFormatModifierPropertiesListExt,
             void* pNext = null,
             uint? drmFormatModifierCount = null,
             DrmFormatModifierPropertiesEXT* pDrmFormatModifierProperties = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (drmFormatModifierCount is not null)
+            {
+                DrmFormatModifierCount = drmFormatModifierCount.Value;
+            }
+
+            if (pDrmFormatModifierProperties is not null)
+            {
+                PDrmFormatModifierProperties = pDrmFormatModifierProperties;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (drmFormatModifierCount is not null)
-        {
-            DrmFormatModifierCount = drmFormatModifierCount.Value;
-        }
-
-        if (pDrmFormatModifierProperties is not null)
-        {
-            PDrmFormatModifierProperties = pDrmFormatModifierProperties;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "drmFormatModifierCount")]
+        public uint DrmFormatModifierCount;
+/// <summary></summary>
+        [NativeName("Type", "VkDrmFormatModifierPropertiesEXT*")]
+        [NativeName("Type.Name", "VkDrmFormatModifierPropertiesEXT")]
+        [NativeName("Name", "pDrmFormatModifierProperties")]
+        public DrmFormatModifierPropertiesEXT* PDrmFormatModifierProperties;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "drmFormatModifierCount")]
-    public uint DrmFormatModifierCount;
-/// <summary></summary>
-    [NativeName("Type", "VkDrmFormatModifierPropertiesEXT*")]
-    [NativeName("Type.Name", "VkDrmFormatModifierPropertiesEXT")]
-    [NativeName("Name", "pDrmFormatModifierProperties")]
-    public DrmFormatModifierPropertiesEXT* PDrmFormatModifierProperties;
 }

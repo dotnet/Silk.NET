@@ -7,11 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_FEATURE_VIDEO")]
-public enum FeatureVideo : int
+namespace Silk.NET.Direct3D11
 {
-    [NativeName("Name", "D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM")]
-    FeatureVideoDecoderHistogram = 0x0,
+    [NativeName("Name", "D3D11_FEATURE_VIDEO")]
+    public enum FeatureVideo : int
+    {
+        [NativeName("Name", "D3D11_FEATURE_VIDEO_DECODER_HISTOGRAM")]
+        FeatureVideoDecoderHistogram = 0x0,
+    }
 }

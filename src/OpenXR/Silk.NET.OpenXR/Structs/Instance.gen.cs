@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrInstance")]
-public unsafe partial struct Instance
+namespace Silk.NET.OpenXR
 {
-    public Instance
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "XrInstance")]
+    public unsafe partial struct Instance
     {
-        if (handle is not null)
+        public Instance
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

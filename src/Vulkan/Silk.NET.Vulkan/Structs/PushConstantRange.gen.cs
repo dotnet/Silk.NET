@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPushConstantRange")]
-public unsafe partial struct PushConstantRange
+namespace Silk.NET.Vulkan
 {
-    public PushConstantRange
-    (
+    [NativeName("Name", "VkPushConstantRange")]
+    public unsafe partial struct PushConstantRange
+    {
+        public PushConstantRange
+        (
             ShaderStageFlags? stageFlags = null,
             uint? offset = null,
             uint? size = null
-    ) : this()
-    {
-        if (stageFlags is not null)
+        ) : this()
         {
-            StageFlags = stageFlags.Value;
+            if (stageFlags is not null)
+            {
+                StageFlags = stageFlags.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
-        if (offset is not null)
-        {
-            Offset = offset.Value;
-        }
-
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkShaderStageFlags")]
+        [NativeName("Type.Name", "VkShaderStageFlags")]
+        [NativeName("Name", "stageFlags")]
+        public ShaderStageFlags StageFlags;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "offset")]
+        public uint Offset;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "size")]
+        public uint Size;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkShaderStageFlags")]
-    [NativeName("Type.Name", "VkShaderStageFlags")]
-    [NativeName("Name", "stageFlags")]
-    public ShaderStageFlags StageFlags;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "offset")]
-    public uint Offset;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "size")]
-    public uint Size;
 }

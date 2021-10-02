@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPStatusDisplayData")]
-public unsafe partial struct COPPStatusDisplayData
+namespace Silk.NET.DXVA
 {
-    public COPPStatusDisplayData
-    (
+    [NativeName("Name", "_DXVA_COPPStatusDisplayData")]
+    public unsafe partial struct COPPStatusDisplayData
+    {
+        public COPPStatusDisplayData
+        (
             Guid? rApp = null,
             uint? dwFlags = null,
             uint? displayWidth = null,
@@ -29,87 +29,88 @@ public unsafe partial struct COPPStatusDisplayData
             uint? d3dFormat = null,
             uint? freqNumerator = null,
             uint? freqDenominator = null
-    ) : this()
-    {
-        if (rApp is not null)
+        ) : this()
         {
-            RApp = rApp.Value;
+            if (rApp is not null)
+            {
+                RApp = rApp.Value;
+            }
+
+            if (dwFlags is not null)
+            {
+                DwFlags = dwFlags.Value;
+            }
+
+            if (displayWidth is not null)
+            {
+                DisplayWidth = displayWidth.Value;
+            }
+
+            if (displayHeight is not null)
+            {
+                DisplayHeight = displayHeight.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (d3dFormat is not null)
+            {
+                D3dFormat = d3dFormat.Value;
+            }
+
+            if (freqNumerator is not null)
+            {
+                FreqNumerator = freqNumerator.Value;
+            }
+
+            if (freqDenominator is not null)
+            {
+                FreqDenominator = freqDenominator.Value;
+            }
         }
 
-        if (dwFlags is not null)
-        {
-            DwFlags = dwFlags.Value;
-        }
 
-        if (displayWidth is not null)
-        {
-            DisplayWidth = displayWidth.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "rApp")]
+        public Guid RApp;
 
-        if (displayHeight is not null)
-        {
-            DisplayHeight = displayHeight.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "dwFlags")]
+        public uint DwFlags;
 
-        if (format is not null)
-        {
-            Format = format.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "DisplayWidth")]
+        public uint DisplayWidth;
 
-        if (d3dFormat is not null)
-        {
-            D3dFormat = d3dFormat.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "DisplayHeight")]
+        public uint DisplayHeight;
 
-        if (freqNumerator is not null)
-        {
-            FreqNumerator = freqNumerator.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "Format")]
+        public uint Format;
 
-        if (freqDenominator is not null)
-        {
-            FreqDenominator = freqDenominator.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "d3dFormat")]
+        public uint D3dFormat;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "FreqNumerator")]
+        public uint FreqNumerator;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "FreqDenominator")]
+        public uint FreqDenominator;
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "rApp")]
-    public Guid RApp;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "dwFlags")]
-    public uint DwFlags;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "DisplayWidth")]
-    public uint DisplayWidth;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "DisplayHeight")]
-    public uint DisplayHeight;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "Format")]
-    public uint Format;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "d3dFormat")]
-    public uint D3dFormat;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "FreqNumerator")]
-    public uint FreqNumerator;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "FreqDenominator")]
-    public uint FreqDenominator;
 }

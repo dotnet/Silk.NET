@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-[Extension("ARB_texture_barrier")]
-public unsafe partial class ArbTextureBarrier : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public const string ExtensionName = "ARB_texture_barrier";
-    [NativeApi(EntryPoint = "glTextureBarrier")]
-    public partial void TextureBarrier();
-
-    public ArbTextureBarrier(INativeContext ctx)
-        : base(ctx)
+    [Extension("ARB_texture_barrier")]
+    public unsafe partial class ArbTextureBarrier : NativeExtension<GL>
     {
+        public const string ExtensionName = "ARB_texture_barrier";
+        [NativeApi(EntryPoint = "glTextureBarrier")]
+        public partial void TextureBarrier();
+
+        public ArbTextureBarrier(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

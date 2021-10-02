@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSurfaceFormat2KHR")]
-public unsafe partial struct SurfaceFormat2KHR
+namespace Silk.NET.Vulkan
 {
-    public SurfaceFormat2KHR
-    (
+    [NativeName("Name", "VkSurfaceFormat2KHR")]
+    public unsafe partial struct SurfaceFormat2KHR
+    {
+        public SurfaceFormat2KHR
+        (
             StructureType? sType = StructureType.SurfaceFormat2Khr,
             void* pNext = null,
             SurfaceFormatKHR? surfaceFormat = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceFormat is not null)
+            {
+                SurfaceFormat = surfaceFormat.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (surfaceFormat is not null)
-        {
-            SurfaceFormat = surfaceFormat.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkSurfaceFormatKHR")]
+        [NativeName("Type.Name", "VkSurfaceFormatKHR")]
+        [NativeName("Name", "surfaceFormat")]
+        public SurfaceFormatKHR SurfaceFormat;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkSurfaceFormatKHR")]
-    [NativeName("Type.Name", "VkSurfaceFormatKHR")]
-    [NativeName("Name", "surfaceFormat")]
-    public SurfaceFormatKHR SurfaceFormat;
 }

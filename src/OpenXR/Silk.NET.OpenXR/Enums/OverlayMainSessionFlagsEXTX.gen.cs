@@ -7,12 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-    [Flags()]
-[NativeName("Name", "XrOverlayMainSessionFlagsEXTX")]
-public enum OverlayMainSessionFlagsEXTX : long
+namespace Silk.NET.OpenXR
 {
-    [NativeName("Name", "XR_OVERLAY_MAIN_SESSION_ENABLED_COMPOSITION_LAYER_INFO_DEPTH_BIT_EXTX")]
-    OverlayMainSessionEnabledCompositionLayerInfoDepthBitExtx = 1,
+    [Flags()]
+    [NativeName("Name", "XrOverlayMainSessionFlagsEXTX")]
+    public enum OverlayMainSessionFlagsEXTX : long
+    {
+        [NativeName("Name", "XR_OVERLAY_MAIN_SESSION_ENABLED_COMPOSITION_LAYER_INFO_DEPTH_BIT_EXTX")]
+        OverlayMainSessionEnabledCompositionLayerInfoDepthBitExtx = 1,
+    }
 }

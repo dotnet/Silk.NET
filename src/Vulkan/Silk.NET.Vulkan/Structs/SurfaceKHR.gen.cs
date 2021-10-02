@@ -14,25 +14,26 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSurfaceKHR")]
-public unsafe partial struct SurfaceKHR
+namespace Silk.NET.Vulkan
 {
-    public SurfaceKHR
-    (
-            ulong? handle = null
-    ) : this()
+    [NativeName("Name", "VkSurfaceKHR")]
+    public unsafe partial struct SurfaceKHR
     {
-        if (handle is not null)
+        public SurfaceKHR
+        (
+            ulong? handle = null
+        ) : this()
         {
-            Handle = handle.Value;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
+
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
+        public ulong Handle;
     }
-
-
-    [NativeName("Type", "")]
-    [NativeName("Type.Name", "")]
-    [NativeName("Name", "")]
-    public ulong Handle;
 }

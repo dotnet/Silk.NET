@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVA_COPPStatusData")]
-public unsafe partial struct COPPStatusData
+namespace Silk.NET.DXVA
 {
-    public COPPStatusData
-    (
+    [NativeName("Name", "_DXVA_COPPStatusData")]
+    public unsafe partial struct COPPStatusData
+    {
+        public COPPStatusData
+        (
             Guid? rApp = null,
             uint? dwFlags = null,
             uint? dwData = null,
             uint? extendedInfoValidMask = null,
             uint? extendedInfoData = null
-    ) : this()
-    {
-        if (rApp is not null)
+        ) : this()
         {
-            RApp = rApp.Value;
+            if (rApp is not null)
+            {
+                RApp = rApp.Value;
+            }
+
+            if (dwFlags is not null)
+            {
+                DwFlags = dwFlags.Value;
+            }
+
+            if (dwData is not null)
+            {
+                DwData = dwData.Value;
+            }
+
+            if (extendedInfoValidMask is not null)
+            {
+                ExtendedInfoValidMask = extendedInfoValidMask.Value;
+            }
+
+            if (extendedInfoData is not null)
+            {
+                ExtendedInfoData = extendedInfoData.Value;
+            }
         }
 
-        if (dwFlags is not null)
-        {
-            DwFlags = dwFlags.Value;
-        }
 
-        if (dwData is not null)
-        {
-            DwData = dwData.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "rApp")]
+        public Guid RApp;
 
-        if (extendedInfoValidMask is not null)
-        {
-            ExtendedInfoValidMask = extendedInfoValidMask.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "dwFlags")]
+        public uint DwFlags;
 
-        if (extendedInfoData is not null)
-        {
-            ExtendedInfoData = extendedInfoData.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "dwData")]
+        public uint DwData;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ExtendedInfoValidMask")]
+        public uint ExtendedInfoValidMask;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "ExtendedInfoData")]
+        public uint ExtendedInfoData;
     }
-
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "rApp")]
-    public Guid RApp;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "dwFlags")]
-    public uint DwFlags;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "dwData")]
-    public uint DwData;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ExtendedInfoValidMask")]
-    public uint ExtendedInfoValidMask;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "ExtendedInfoData")]
-    public uint ExtendedInfoData;
 }

@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp;
-
-[NativeName("Name", "aiBlendMode")]
-public enum BlendMode : int
+namespace Silk.NET.Assimp
 {
-    [NativeName("Name", "aiBlendMode_Default")]
-    BlendModeDefault = 0x0,
-    [NativeName("Name", "aiBlendMode_Additive")]
-    BlendModeAdditive = 0x1,
+    [NativeName("Name", "aiBlendMode")]
+    public enum BlendMode : int
+    {
+        [NativeName("Name", "aiBlendMode_Default")]
+        BlendModeDefault = 0x0,
+        [NativeName("Name", "aiBlendMode_Additive")]
+        BlendModeAdditive = 0x1,
+    }
 }

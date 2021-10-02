@@ -7,13 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkSemaphoreTypeKHR")]
-public enum SemaphoreTypeKHR : int
+namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
-    SemaphoreTypeBinary = 0,
-    [NativeName("Name", "VK_SEMAPHORE_TYPE_TIMELINE")]
-    SemaphoreTypeTimeline = 1,
+    [NativeName("Name", "VkSemaphoreTypeKHR")]
+    public enum SemaphoreTypeKHR : int
+    {
+        [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
+        SemaphoreTypeBinary = 0,
+        [NativeName("Name", "VK_SEMAPHORE_TYPE_TIMELINE")]
+        SemaphoreTypeTimeline = 1,
+    }
 }

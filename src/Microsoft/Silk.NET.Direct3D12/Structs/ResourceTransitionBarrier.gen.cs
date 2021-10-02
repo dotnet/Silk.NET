@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12;
-
-[NativeName("Name", "D3D12_RESOURCE_TRANSITION_BARRIER")]
-public unsafe partial struct ResourceTransitionBarrier
+namespace Silk.NET.Direct3D12
 {
-    public ResourceTransitionBarrier
-    (
+    [NativeName("Name", "D3D12_RESOURCE_TRANSITION_BARRIER")]
+    public unsafe partial struct ResourceTransitionBarrier
+    {
+        public ResourceTransitionBarrier
+        (
             ID3D12Resource* pResource = null,
             uint? subresource = null,
             ResourceStates? stateBefore = null,
             ResourceStates? stateAfter = null
-    ) : this()
-    {
-        if (pResource is not null)
+        ) : this()
         {
-            PResource = pResource;
+            if (pResource is not null)
+            {
+                PResource = pResource;
+            }
+
+            if (subresource is not null)
+            {
+                Subresource = subresource.Value;
+            }
+
+            if (stateBefore is not null)
+            {
+                StateBefore = stateBefore.Value;
+            }
+
+            if (stateAfter is not null)
+            {
+                StateAfter = stateAfter.Value;
+            }
         }
 
-        if (subresource is not null)
-        {
-            Subresource = subresource.Value;
-        }
 
-        if (stateBefore is not null)
-        {
-            StateBefore = stateBefore.Value;
-        }
+        [NativeName("Type", "ID3D12Resource *")]
+        [NativeName("Type.Name", "ID3D12Resource *")]
+        [NativeName("Name", "pResource")]
+        public ID3D12Resource* PResource;
 
-        if (stateAfter is not null)
-        {
-            StateAfter = stateAfter.Value;
-        }
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "Subresource")]
+        public uint Subresource;
+
+        [NativeName("Type", "D3D12_RESOURCE_STATES")]
+        [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
+        [NativeName("Name", "StateBefore")]
+        public ResourceStates StateBefore;
+
+        [NativeName("Type", "D3D12_RESOURCE_STATES")]
+        [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
+        [NativeName("Name", "StateAfter")]
+        public ResourceStates StateAfter;
     }
-
-
-    [NativeName("Type", "ID3D12Resource *")]
-    [NativeName("Type.Name", "ID3D12Resource *")]
-    [NativeName("Name", "pResource")]
-    public ID3D12Resource* PResource;
-
-    [NativeName("Type", "UINT")]
-    [NativeName("Type.Name", "UINT")]
-    [NativeName("Name", "Subresource")]
-    public uint Subresource;
-
-    [NativeName("Type", "D3D12_RESOURCE_STATES")]
-    [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
-    [NativeName("Name", "StateBefore")]
-    public ResourceStates StateBefore;
-
-    [NativeName("Type", "D3D12_RESOURCE_STATES")]
-    [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
-    [NativeName("Name", "StateAfter")]
-    public ResourceStates StateAfter;
 }

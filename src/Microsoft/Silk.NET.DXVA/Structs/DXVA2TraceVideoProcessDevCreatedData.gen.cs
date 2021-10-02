@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "DXVA2Trace_VideoProcessDevCreatedData")]
-public unsafe partial struct DXVA2TraceVideoProcessDevCreatedData
+namespace Silk.NET.DXVA
 {
-    public DXVA2TraceVideoProcessDevCreatedData
-    (
+    [NativeName("Name", "DXVA2Trace_VideoProcessDevCreatedData")]
+    public unsafe partial struct DXVA2TraceVideoProcessDevCreatedData
+    {
+        public DXVA2TraceVideoProcessDevCreatedData
+        (
             _EVENT_TRACE_HEADER? wmiHeader = null,
             ulong? pObject = null,
             ulong? pD3DDevice = null,
@@ -29,87 +29,88 @@ public unsafe partial struct DXVA2TraceVideoProcessDevCreatedData
             uint? width = null,
             uint? height = null,
             int? enter = null
-    ) : this()
-    {
-        if (wmiHeader is not null)
+        ) : this()
         {
-            WmiHeader = wmiHeader.Value;
+            if (wmiHeader is not null)
+            {
+                WmiHeader = wmiHeader.Value;
+            }
+
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
+
+            if (pD3DDevice is not null)
+            {
+                PD3DDevice = pD3DDevice.Value;
+            }
+
+            if (deviceGuid is not null)
+            {
+                DeviceGuid = deviceGuid.Value;
+            }
+
+            if (rTFourCC is not null)
+            {
+                RTFourCC = rTFourCC.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (enter is not null)
+            {
+                Enter = enter.Value;
+            }
         }
 
-        if (pObject is not null)
-        {
-            PObject = pObject.Value;
-        }
 
-        if (pD3DDevice is not null)
-        {
-            PD3DDevice = pD3DDevice.Value;
-        }
+        [NativeName("Type", "EVENT_TRACE_HEADER")]
+        [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
+        [NativeName("Name", "wmiHeader")]
+        public _EVENT_TRACE_HEADER WmiHeader;
 
-        if (deviceGuid is not null)
-        {
-            DeviceGuid = deviceGuid.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
 
-        if (rTFourCC is not null)
-        {
-            RTFourCC = rTFourCC.Value;
-        }
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pD3DDevice")]
+        public ulong PD3DDevice;
 
-        if (width is not null)
-        {
-            Width = width.Value;
-        }
+        [NativeName("Type", "GUID")]
+        [NativeName("Type.Name", "GUID")]
+        [NativeName("Name", "DeviceGuid")]
+        public Guid DeviceGuid;
 
-        if (height is not null)
-        {
-            Height = height.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "RTFourCC")]
+        public uint RTFourCC;
 
-        if (enter is not null)
-        {
-            Enter = enter.Value;
-        }
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "Width")]
+        public uint Width;
+
+        [NativeName("Type", "ULONG")]
+        [NativeName("Type.Name", "ULONG")]
+        [NativeName("Name", "Height")]
+        public uint Height;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enter")]
+        public int Enter;
     }
-
-
-    [NativeName("Type", "EVENT_TRACE_HEADER")]
-    [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
-    [NativeName("Name", "wmiHeader")]
-    public _EVENT_TRACE_HEADER WmiHeader;
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pD3DDevice")]
-    public ulong PD3DDevice;
-
-    [NativeName("Type", "GUID")]
-    [NativeName("Type.Name", "GUID")]
-    [NativeName("Name", "DeviceGuid")]
-    public Guid DeviceGuid;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "RTFourCC")]
-    public uint RTFourCC;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "Width")]
-    public uint Width;
-
-    [NativeName("Type", "ULONG")]
-    [NativeName("Type.Name", "ULONG")]
-    [NativeName("Name", "Height")]
-    public uint Height;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enter")]
-    public int Enter;
 }

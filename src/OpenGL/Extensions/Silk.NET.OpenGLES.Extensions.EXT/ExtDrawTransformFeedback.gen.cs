@@ -14,27 +14,28 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT;
-
-[Extension("EXT_draw_transform_feedback")]
-public unsafe partial class ExtDrawTransformFeedback : NativeExtension<GL>
+namespace Silk.NET.OpenGLES.Extensions.EXT
 {
-    public const string ExtensionName = "EXT_draw_transform_feedback";
-    [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
-    public partial void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
-
-    [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
-    public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
-
-    [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
-    public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
-
-    [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
-    public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
-
-    public ExtDrawTransformFeedback(INativeContext ctx)
-        : base(ctx)
+    [Extension("EXT_draw_transform_feedback")]
+    public unsafe partial class ExtDrawTransformFeedback : NativeExtension<GL>
     {
+        public const string ExtensionName = "EXT_draw_transform_feedback";
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
+        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
+
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
+        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
+
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
+        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
+        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+
+        public ExtDrawTransformFeedback(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

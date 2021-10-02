@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11;
-
-[NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT")]
-public unsafe partial struct AuthenticatedConfigureProtectionInput
+namespace Silk.NET.Direct3D11
 {
-    public AuthenticatedConfigureProtectionInput
-    (
+    [NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT")]
+    public unsafe partial struct AuthenticatedConfigureProtectionInput
+    {
+        public AuthenticatedConfigureProtectionInput
+        (
             AuthenticatedConfigureInput? parameters = null,
             AuthenticatedProtectionFlags? protections = null
-    ) : this()
-    {
-        if (parameters is not null)
+        ) : this()
         {
-            Parameters = parameters.Value;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (protections is not null)
+            {
+                Protections = protections.Value;
+            }
         }
 
-        if (protections is not null)
-        {
-            Protections = protections.Value;
-        }
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+        [NativeName("Name", "Parameters")]
+        public AuthenticatedConfigureInput Parameters;
+
+        [NativeName("Type", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
+        [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
+        [NativeName("Name", "Protections")]
+        public AuthenticatedProtectionFlags Protections;
     }
-
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-    [NativeName("Name", "Parameters")]
-    public AuthenticatedConfigureInput Parameters;
-
-    [NativeName("Type", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
-    [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROTECTION_FLAGS")]
-    [NativeName("Name", "Protections")]
-    public AuthenticatedProtectionFlags Protections;
 }

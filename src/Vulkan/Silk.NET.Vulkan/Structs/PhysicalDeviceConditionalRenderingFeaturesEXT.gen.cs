@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkPhysicalDeviceConditionalRenderingFeaturesEXT")]
-public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
+namespace Silk.NET.Vulkan
 {
-    public PhysicalDeviceConditionalRenderingFeaturesEXT
-    (
+    [NativeName("Name", "VkPhysicalDeviceConditionalRenderingFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
+    {
+        public PhysicalDeviceConditionalRenderingFeaturesEXT
+        (
             StructureType? sType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt,
             void* pNext = null,
             Bool32? conditionalRendering = null,
             Bool32? inheritedConditionalRendering = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conditionalRendering is not null)
+            {
+                ConditionalRendering = conditionalRendering.Value;
+            }
+
+            if (inheritedConditionalRendering is not null)
+            {
+                InheritedConditionalRendering = inheritedConditionalRendering.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (conditionalRendering is not null)
-        {
-            ConditionalRendering = conditionalRendering.Value;
-        }
-
-        if (inheritedConditionalRendering is not null)
-        {
-            InheritedConditionalRendering = inheritedConditionalRendering.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "conditionalRendering")]
+        public Bool32 ConditionalRendering;
+/// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "inheritedConditionalRendering")]
+        public Bool32 InheritedConditionalRendering;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "conditionalRendering")]
-    public Bool32 ConditionalRendering;
-/// <summary></summary>
-    [NativeName("Type", "VkBool32")]
-    [NativeName("Type.Name", "VkBool32")]
-    [NativeName("Name", "inheritedConditionalRendering")]
-    public Bool32 InheritedConditionalRendering;
 }

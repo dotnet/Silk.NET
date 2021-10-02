@@ -14,21 +14,22 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.PGI;
-
-[Extension("PGI_misc_hints")]
-public unsafe partial class PgiMiscHints : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
 {
-    public const string ExtensionName = "PGI_misc_hints";
-    [NativeApi(EntryPoint = "glHintPGI")]
-    public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
-
-    [NativeApi(EntryPoint = "glHintPGI")]
-    public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
-
-    public PgiMiscHints(INativeContext ctx)
-        : base(ctx)
+    [Extension("PGI_misc_hints")]
+    public unsafe partial class PgiMiscHints : NativeExtension<GL>
     {
+        public const string ExtensionName = "PGI_misc_hints";
+        [NativeApi(EntryPoint = "glHintPGI")]
+        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
+
+        [NativeApi(EntryPoint = "glHintPGI")]
+        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+
+        public PgiMiscHints(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

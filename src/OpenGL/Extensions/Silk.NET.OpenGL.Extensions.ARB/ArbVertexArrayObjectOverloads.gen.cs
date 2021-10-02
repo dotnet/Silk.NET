@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB;
-
-public static class ArbVertexArrayObjectOverloads
+namespace Silk.NET.OpenGL.Extensions.ARB
 {
-    public static unsafe void DeleteVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+    public static class ArbVertexArrayObjectOverloads
     {
-        // SpanOverloader
-        thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
-    }
+        public static unsafe void DeleteVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
 
-    public static unsafe void DeleteVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
-    {
-        // SpanOverloader
-        thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
-    }
+        public static unsafe void DeleteVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
 
-    public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
-    {
-        // SpanOverloader
-        thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
-    }
+        public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
 
-    public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
-    {
-        // SpanOverloader
-        thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
-    }
+        public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
 
+    }
 }
 

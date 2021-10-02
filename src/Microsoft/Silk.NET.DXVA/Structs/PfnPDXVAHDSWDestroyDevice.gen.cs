@@ -14,39 +14,40 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-public unsafe readonly struct PfnPDXVAHDSWDestroyDevice : IDisposable
+namespace Silk.NET.DXVA
 {
-    private readonly void* _handle;
-    public delegate* unmanaged[Cdecl]<void*, int> Handle => (delegate* unmanaged[Cdecl]<void*, int>) _handle;
-    public PfnPDXVAHDSWDestroyDevice
-    (
-        delegate* unmanaged[Cdecl]<void*, int> ptr
-    ) => _handle = ptr;
+    public unsafe readonly struct PfnPDXVAHDSWDestroyDevice : IDisposable
+    {
+        private readonly void* _handle;
+        public delegate* unmanaged[Cdecl]<void*, int> Handle => (delegate* unmanaged[Cdecl]<void*, int>) _handle;
+        public PfnPDXVAHDSWDestroyDevice
+        (
+            delegate* unmanaged[Cdecl]<void*, int> ptr
+        ) => _handle = ptr;
 
-    public PfnPDXVAHDSWDestroyDevice
-    (
-         PDXVAHDSWDestroyDevice proc
-    ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
+        public PfnPDXVAHDSWDestroyDevice
+        (
+             PDXVAHDSWDestroyDevice proc
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
-    public static PfnPDXVAHDSWDestroyDevice From(PDXVAHDSWDestroyDevice proc) => new PfnPDXVAHDSWDestroyDevice(proc);
-    public void Dispose() => SilkMarshal.Free((nint) _handle);
+        public static PfnPDXVAHDSWDestroyDevice From(PDXVAHDSWDestroyDevice proc) => new PfnPDXVAHDSWDestroyDevice(proc);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-    public static implicit operator nint(PfnPDXVAHDSWDestroyDevice pfn) => (nint) pfn.Handle;
-    public static explicit operator PfnPDXVAHDSWDestroyDevice(nint pfn)
-        => new PfnPDXVAHDSWDestroyDevice((delegate* unmanaged[Cdecl]<void*, int>) pfn);
+        public static implicit operator nint(PfnPDXVAHDSWDestroyDevice pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnPDXVAHDSWDestroyDevice(nint pfn)
+            => new PfnPDXVAHDSWDestroyDevice((delegate* unmanaged[Cdecl]<void*, int>) pfn);
 
-    public static implicit operator PfnPDXVAHDSWDestroyDevice(PDXVAHDSWDestroyDevice proc)
-        => new PfnPDXVAHDSWDestroyDevice(proc);
+        public static implicit operator PfnPDXVAHDSWDestroyDevice(PDXVAHDSWDestroyDevice proc)
+            => new PfnPDXVAHDSWDestroyDevice(proc);
 
-    public static explicit operator PDXVAHDSWDestroyDevice(PfnPDXVAHDSWDestroyDevice pfn)
-        => SilkMarshal.PtrToDelegate<PDXVAHDSWDestroyDevice>(pfn);
+        public static explicit operator PDXVAHDSWDestroyDevice(PfnPDXVAHDSWDestroyDevice pfn)
+            => SilkMarshal.PtrToDelegate<PDXVAHDSWDestroyDevice>(pfn);
 
-    public static implicit operator delegate* unmanaged[Cdecl]<void*, int>(PfnPDXVAHDSWDestroyDevice pfn) => pfn.Handle;
-    public static implicit operator PfnPDXVAHDSWDestroyDevice(delegate* unmanaged[Cdecl]<void*, int> ptr) => new PfnPDXVAHDSWDestroyDevice(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, int>(PfnPDXVAHDSWDestroyDevice pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWDestroyDevice(delegate* unmanaged[Cdecl]<void*, int> ptr) => new PfnPDXVAHDSWDestroyDevice(ptr);
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate int PDXVAHDSWDestroyDevice(void* arg0);
 }
-
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public unsafe delegate int PDXVAHDSWDestroyDevice(void* arg0);
 

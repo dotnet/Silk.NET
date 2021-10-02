@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.EXT;
-
-public static class ExtDebugMarkerOverloads
+namespace Silk.NET.OpenGL.Extensions.EXT
 {
-    public static unsafe void InsertEventMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
+    public static class ExtDebugMarkerOverloads
     {
-        // SpanOverloader
-        thisApi.InsertEventMarker(length, in marker.GetPinnableReference());
-    }
+        public static unsafe void InsertEventMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
+        {
+            // SpanOverloader
+            thisApi.InsertEventMarker(length, in marker.GetPinnableReference());
+        }
 
-    public static unsafe void PushGroupMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
-    {
-        // SpanOverloader
-        thisApi.PushGroupMarker(length, in marker.GetPinnableReference());
-    }
+        public static unsafe void PushGroupMarker(this ExtDebugMarker thisApi, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> marker)
+        {
+            // SpanOverloader
+            thisApi.PushGroupMarker(length, in marker.GetPinnableReference());
+        }
 
+    }
 }
 

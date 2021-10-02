@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "DXVA2Trace_VideoProcessDeviceData")]
-public unsafe partial struct DXVA2TraceVideoProcessDeviceData
+namespace Silk.NET.DXVA
 {
-    public DXVA2TraceVideoProcessDeviceData
-    (
+    [NativeName("Name", "DXVA2Trace_VideoProcessDeviceData")]
+    public unsafe partial struct DXVA2TraceVideoProcessDeviceData
+    {
+        public DXVA2TraceVideoProcessDeviceData
+        (
             _EVENT_TRACE_HEADER? wmiHeader = null,
             ulong? pObject = null,
             int? enter = null
-    ) : this()
-    {
-        if (wmiHeader is not null)
+        ) : this()
         {
-            WmiHeader = wmiHeader.Value;
+            if (wmiHeader is not null)
+            {
+                WmiHeader = wmiHeader.Value;
+            }
+
+            if (pObject is not null)
+            {
+                PObject = pObject.Value;
+            }
+
+            if (enter is not null)
+            {
+                Enter = enter.Value;
+            }
         }
 
-        if (pObject is not null)
-        {
-            PObject = pObject.Value;
-        }
 
-        if (enter is not null)
-        {
-            Enter = enter.Value;
-        }
+        [NativeName("Type", "EVENT_TRACE_HEADER")]
+        [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
+        [NativeName("Name", "wmiHeader")]
+        public _EVENT_TRACE_HEADER WmiHeader;
+
+        [NativeName("Type", "ULONGLONG")]
+        [NativeName("Type.Name", "ULONGLONG")]
+        [NativeName("Name", "pObject")]
+        public ulong PObject;
+
+        [NativeName("Type", "BOOL")]
+        [NativeName("Type.Name", "BOOL")]
+        [NativeName("Name", "Enter")]
+        public int Enter;
     }
-
-
-    [NativeName("Type", "EVENT_TRACE_HEADER")]
-    [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
-    [NativeName("Name", "wmiHeader")]
-    public _EVENT_TRACE_HEADER WmiHeader;
-
-    [NativeName("Type", "ULONGLONG")]
-    [NativeName("Type.Name", "ULONGLONG")]
-    [NativeName("Name", "pObject")]
-    public ulong PObject;
-
-    [NativeName("Type", "BOOL")]
-    [NativeName("Type.Name", "BOOL")]
-    [NativeName("Name", "Enter")]
-    public int Enter;
 }

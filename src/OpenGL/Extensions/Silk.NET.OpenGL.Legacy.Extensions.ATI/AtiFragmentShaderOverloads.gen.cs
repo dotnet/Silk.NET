@@ -12,15 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
-
-public static class AtiFragmentShaderOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
-    public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    public static class AtiFragmentShaderOverloads
     {
-        // SpanOverloader
-        thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());
-    }
+        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());
+        }
 
+    }
 }
 

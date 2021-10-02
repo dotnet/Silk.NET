@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkClearDepthStencilValue")]
-public unsafe partial struct ClearDepthStencilValue
+namespace Silk.NET.Vulkan
 {
-    public ClearDepthStencilValue
-    (
+    [NativeName("Name", "VkClearDepthStencilValue")]
+    public unsafe partial struct ClearDepthStencilValue
+    {
+        public ClearDepthStencilValue
+        (
             float? depth = null,
             uint? stencil = null
-    ) : this()
-    {
-        if (depth is not null)
+        ) : this()
         {
-            Depth = depth.Value;
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (stencil is not null)
+            {
+                Stencil = stencil.Value;
+            }
         }
 
-        if (stencil is not null)
-        {
-            Stencil = stencil.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "depth")]
+        public float Depth;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "stencil")]
+        public uint Stencil;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "depth")]
-    public float Depth;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "stencil")]
-    public uint Stencil;
 }

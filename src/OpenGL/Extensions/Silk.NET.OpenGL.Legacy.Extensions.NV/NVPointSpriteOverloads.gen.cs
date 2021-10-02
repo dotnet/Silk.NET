@@ -12,21 +12,22 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
-
-public static class NVPointSpriteOverloads
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
-    public static unsafe void PointParameter(this NVPointSprite thisApi, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+    public static class NVPointSpriteOverloads
     {
-        // SpanOverloader
-        thisApi.PointParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PointParameter(this NVPointSprite thisApi, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.PointParameter(pname, in @params.GetPinnableReference());
+        }
 
-    public static unsafe void PointParameter(this NVPointSprite thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-    {
-        // SpanOverloader
-        thisApi.PointParameter(pname, in @params.GetPinnableReference());
-    }
+        public static unsafe void PointParameter(this NVPointSprite thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.PointParameter(pname, in @params.GetPinnableReference());
+        }
 
+    }
 }
 

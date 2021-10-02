@@ -12,33 +12,34 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OES;
-
-public static class OesVertexArrayObjectOverloads
+namespace Silk.NET.OpenGLES.Extensions.OES
 {
-    public static unsafe void DeleteVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+    public static class OesVertexArrayObjectOverloads
     {
-        // SpanOverloader
-        thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
-    }
+        public static unsafe void DeleteVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
 
-    public static unsafe void DeleteVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
-    {
-        // SpanOverloader
-        thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
-    }
+        public static unsafe void DeleteVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
 
-    public static unsafe void GenVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
-    {
-        // SpanOverloader
-        thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
-    }
+        public static unsafe void GenVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
 
-    public static unsafe void GenVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
-    {
-        // SpanOverloader
-        thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
-    }
+        public static unsafe void GenVertexArrays(this OesVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
 
+    }
 }
 

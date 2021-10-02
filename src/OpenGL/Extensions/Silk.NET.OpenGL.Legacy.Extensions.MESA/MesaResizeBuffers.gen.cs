@@ -14,18 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.MESA;
-
-[Extension("MESA_resize_buffers")]
-public unsafe partial class MesaResizeBuffers : NativeExtension<GL>
+namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
-    public const string ExtensionName = "MESA_resize_buffers";
-    [NativeApi(EntryPoint = "glResizeBuffersMESA")]
-    public partial void ResizeBuffers();
-
-    public MesaResizeBuffers(INativeContext ctx)
-        : base(ctx)
+    [Extension("MESA_resize_buffers")]
+    public unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
+        public const string ExtensionName = "MESA_resize_buffers";
+        [NativeApi(EntryPoint = "glResizeBuffersMESA")]
+        public partial void ResizeBuffers();
+
+        public MesaResizeBuffers(INativeContext ctx)
+            : base(ctx)
+        {
+        }
     }
 }
 

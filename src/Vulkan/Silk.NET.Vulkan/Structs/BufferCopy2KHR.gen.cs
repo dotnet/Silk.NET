@@ -14,69 +14,70 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkBufferCopy2KHR")]
-public unsafe partial struct BufferCopy2KHR
+namespace Silk.NET.Vulkan
 {
-    public BufferCopy2KHR
-    (
+    [NativeName("Name", "VkBufferCopy2KHR")]
+    public unsafe partial struct BufferCopy2KHR
+    {
+        public BufferCopy2KHR
+        (
             StructureType? sType = StructureType.BufferCopy2Khr,
             void* pNext = null,
             ulong? srcOffset = null,
             ulong? dstOffset = null,
             ulong? size = null
-    ) : this()
-    {
-        if (sType is not null)
+        ) : this()
         {
-            SType = sType.Value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
-        if (pNext is not null)
-        {
-            PNext = pNext;
-        }
-
-        if (srcOffset is not null)
-        {
-            SrcOffset = srcOffset.Value;
-        }
-
-        if (dstOffset is not null)
-        {
-            DstOffset = dstOffset.Value;
-        }
-
-        if (size is not null)
-        {
-            Size = size.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
+        public StructureType SType;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
+        public void* PNext;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "srcOffset")]
+        public ulong SrcOffset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "dstOffset")]
+        public ulong DstOffset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "VkStructureType")]
-    [NativeName("Type.Name", "VkStructureType")]
-    [NativeName("Name", "sType")]
-    public StructureType SType;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "pNext")]
-    public void* PNext;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "srcOffset")]
-    public ulong SrcOffset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "dstOffset")]
-    public ulong DstOffset;
-/// <summary></summary>
-    [NativeName("Type", "VkDeviceSize")]
-    [NativeName("Type.Name", "VkDeviceSize")]
-    [NativeName("Name", "size")]
-    public ulong Size;
 }

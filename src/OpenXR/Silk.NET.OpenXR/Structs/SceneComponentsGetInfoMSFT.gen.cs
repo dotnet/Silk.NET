@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrSceneComponentsGetInfoMSFT")]
-public unsafe partial struct SceneComponentsGetInfoMSFT
+namespace Silk.NET.OpenXR
 {
-    public SceneComponentsGetInfoMSFT
-    (
+    [NativeName("Name", "XrSceneComponentsGetInfoMSFT")]
+    public unsafe partial struct SceneComponentsGetInfoMSFT
+    {
+        public SceneComponentsGetInfoMSFT
+        (
             StructureType? type = StructureType.TypeSceneComponentsGetInfoMsft,
             void* next = null,
             SceneComponentTypeMSFT? componentType = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (componentType is not null)
+            {
+                ComponentType = componentType.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (componentType is not null)
-        {
-            ComponentType = componentType.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrSceneComponentTypeMSFT")]
+        [NativeName("Type.Name", "XrSceneComponentTypeMSFT")]
+        [NativeName("Name", "componentType")]
+        public SceneComponentTypeMSFT ComponentType;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrSceneComponentTypeMSFT")]
-    [NativeName("Type.Name", "XrSceneComponentTypeMSFT")]
-    [NativeName("Name", "componentType")]
-    public SceneComponentTypeMSFT ComponentType;
 }

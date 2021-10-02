@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrQuaternionf")]
-public unsafe partial struct Quaternionf
+namespace Silk.NET.OpenXR
 {
-    public Quaternionf
-    (
+    [NativeName("Name", "XrQuaternionf")]
+    public unsafe partial struct Quaternionf
+    {
+        public Quaternionf
+        (
             float? x = null,
             float? y = null,
             float? z = null,
             float? w = null
-    ) : this()
-    {
-        if (x is not null)
+        ) : this()
         {
-            X = x.Value;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
         }
 
-        if (y is not null)
-        {
-            Y = y.Value;
-        }
-
-        if (z is not null)
-        {
-            Z = z.Value;
-        }
-
-        if (w is not null)
-        {
-            W = w.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
+        public float X;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
+        public float Y;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "z")]
+        public float Z;
+/// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "w")]
+        public float W;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "x")]
-    public float X;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "y")]
-    public float Y;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "z")]
-    public float Z;
-/// <summary></summary>
-    [NativeName("Type", "float")]
-    [NativeName("Type.Name", "float")]
-    [NativeName("Name", "w")]
-    public float W;
 }

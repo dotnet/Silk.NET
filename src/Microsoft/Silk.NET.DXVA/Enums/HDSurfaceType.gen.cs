@@ -7,15 +7,16 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_SURFACE_TYPE")]
-public enum HDSurfaceType : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_INPUT")]
-    HDSurfaceTypeVideoInput = 0x0,
-    [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_INPUT_PRIVATE")]
-    HDSurfaceTypeVideoInputPrivate = 0x1,
-    [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_OUTPUT")]
-    HDSurfaceTypeVideoOutput = 0x2,
+    [NativeName("Name", "_DXVAHD_SURFACE_TYPE")]
+    public enum HDSurfaceType : int
+    {
+        [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_INPUT")]
+        HDSurfaceTypeVideoInput = 0x0,
+        [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_INPUT_PRIVATE")]
+        HDSurfaceTypeVideoInputPrivate = 0x1,
+        [NativeName("Name", "DXVAHD_SURFACE_TYPE_VIDEO_OUTPUT")]
+        HDSurfaceTypeVideoOutput = 0x2,
+    }
 }

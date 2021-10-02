@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrInteractionProfileState")]
-public unsafe partial struct InteractionProfileState
+namespace Silk.NET.OpenXR
 {
-    public InteractionProfileState
-    (
+    [NativeName("Name", "XrInteractionProfileState")]
+    public unsafe partial struct InteractionProfileState
+    {
+        public InteractionProfileState
+        (
             StructureType? type = StructureType.TypeInteractionProfileState,
             void* next = null,
             ulong? interactionProfile = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (interactionProfile is not null)
+            {
+                InteractionProfile = interactionProfile.Value;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
-
-        if (interactionProfile is not null)
-        {
-            InteractionProfile = interactionProfile.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrPath")]
+        [NativeName("Type.Name", "XrPath")]
+        [NativeName("Name", "interactionProfile")]
+        public ulong InteractionProfile;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "void*")]
-    [NativeName("Type.Name", "void")]
-    [NativeName("Name", "next")]
-    public void* Next;
-/// <summary></summary>
-    [NativeName("Type", "XrPath")]
-    [NativeName("Type.Name", "XrPath")]
-    [NativeName("Name", "interactionProfile")]
-    public ulong InteractionProfile;
 }

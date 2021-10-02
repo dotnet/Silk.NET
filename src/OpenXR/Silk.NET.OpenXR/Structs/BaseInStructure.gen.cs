@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR;
-
-[NativeName("Name", "XrBaseInStructure")]
-public unsafe partial struct BaseInStructure
+namespace Silk.NET.OpenXR
 {
-    public BaseInStructure
-    (
+    [NativeName("Name", "XrBaseInStructure")]
+    public unsafe partial struct BaseInStructure
+    {
+        public BaseInStructure
+        (
             StructureType? type = null,
             BaseInStructure* next = null
-    ) : this()
-    {
-        if (type is not null)
+        ) : this()
         {
-            Type = type.Value;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
-        if (next is not null)
-        {
-            Next = next;
-        }
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "XrBaseInStructure*")]
+        [NativeName("Type.Name", "XrBaseInStructure")]
+        [NativeName("Name", "next")]
+        public BaseInStructure* Next;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "XrStructureType")]
-    [NativeName("Type.Name", "XrStructureType")]
-    [NativeName("Name", "type")]
-    public StructureType Type;
-/// <summary></summary>
-    [NativeName("Type", "XrBaseInStructure*")]
-    [NativeName("Type.Name", "XrBaseInStructure")]
-    [NativeName("Name", "next")]
-    public BaseInStructure* Next;
 }

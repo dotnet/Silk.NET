@@ -14,58 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkConformanceVersionKHR")]
-public unsafe partial struct ConformanceVersionKHR
+namespace Silk.NET.Vulkan
 {
-    public ConformanceVersionKHR
-    (
+    [NativeName("Name", "VkConformanceVersionKHR")]
+    public unsafe partial struct ConformanceVersionKHR
+    {
+        public ConformanceVersionKHR
+        (
             byte? major = null,
             byte? minor = null,
             byte? subminor = null,
             byte? patch = null
-    ) : this()
-    {
-        if (major is not null)
+        ) : this()
         {
-            Major = major.Value;
+            if (major is not null)
+            {
+                Major = major.Value;
+            }
+
+            if (minor is not null)
+            {
+                Minor = minor.Value;
+            }
+
+            if (subminor is not null)
+            {
+                Subminor = subminor.Value;
+            }
+
+            if (patch is not null)
+            {
+                Patch = patch.Value;
+            }
         }
 
-        if (minor is not null)
-        {
-            Minor = minor.Value;
-        }
-
-        if (subminor is not null)
-        {
-            Subminor = subminor.Value;
-        }
-
-        if (patch is not null)
-        {
-            Patch = patch.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "major")]
+        public byte Major;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minor")]
+        public byte Minor;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "subminor")]
+        public byte Subminor;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "patch")]
+        public byte Patch;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "major")]
-    public byte Major;
-/// <summary></summary>
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "minor")]
-    public byte Minor;
-/// <summary></summary>
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "subminor")]
-    public byte Subminor;
-/// <summary></summary>
-    [NativeName("Type", "uint8_t")]
-    [NativeName("Type.Name", "uint8_t")]
-    [NativeName("Name", "patch")]
-    public byte Patch;
 }

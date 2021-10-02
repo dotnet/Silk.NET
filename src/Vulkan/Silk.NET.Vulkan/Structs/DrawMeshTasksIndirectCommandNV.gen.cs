@@ -14,36 +14,37 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkDrawMeshTasksIndirectCommandNV")]
-public unsafe partial struct DrawMeshTasksIndirectCommandNV
+namespace Silk.NET.Vulkan
 {
-    public DrawMeshTasksIndirectCommandNV
-    (
+    [NativeName("Name", "VkDrawMeshTasksIndirectCommandNV")]
+    public unsafe partial struct DrawMeshTasksIndirectCommandNV
+    {
+        public DrawMeshTasksIndirectCommandNV
+        (
             uint? taskCount = null,
             uint? firstTask = null
-    ) : this()
-    {
-        if (taskCount is not null)
+        ) : this()
         {
-            TaskCount = taskCount.Value;
+            if (taskCount is not null)
+            {
+                TaskCount = taskCount.Value;
+            }
+
+            if (firstTask is not null)
+            {
+                FirstTask = firstTask.Value;
+            }
         }
 
-        if (firstTask is not null)
-        {
-            FirstTask = firstTask.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "taskCount")]
+        public uint TaskCount;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstTask")]
+        public uint FirstTask;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "taskCount")]
-    public uint TaskCount;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "firstTask")]
-    public uint FirstTask;
 }

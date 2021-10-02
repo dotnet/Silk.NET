@@ -14,47 +14,48 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan;
-
-[NativeName("Name", "VkMultiDrawIndexedInfoEXT")]
-public unsafe partial struct MultiDrawIndexedInfoEXT
+namespace Silk.NET.Vulkan
 {
-    public MultiDrawIndexedInfoEXT
-    (
+    [NativeName("Name", "VkMultiDrawIndexedInfoEXT")]
+    public unsafe partial struct MultiDrawIndexedInfoEXT
+    {
+        public MultiDrawIndexedInfoEXT
+        (
             uint? firstIndex = null,
             uint? indexCount = null,
             int? vertexOffset = null
-    ) : this()
-    {
-        if (firstIndex is not null)
+        ) : this()
         {
-            FirstIndex = firstIndex.Value;
+            if (firstIndex is not null)
+            {
+                FirstIndex = firstIndex.Value;
+            }
+
+            if (indexCount is not null)
+            {
+                IndexCount = indexCount.Value;
+            }
+
+            if (vertexOffset is not null)
+            {
+                VertexOffset = vertexOffset.Value;
+            }
         }
 
-        if (indexCount is not null)
-        {
-            IndexCount = indexCount.Value;
-        }
-
-        if (vertexOffset is not null)
-        {
-            VertexOffset = vertexOffset.Value;
-        }
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstIndex")]
+        public uint FirstIndex;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indexCount")]
+        public uint IndexCount;
+/// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "vertexOffset")]
+        public int VertexOffset;
     }
-
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "firstIndex")]
-    public uint FirstIndex;
-/// <summary></summary>
-    [NativeName("Type", "uint32_t")]
-    [NativeName("Type.Name", "uint32_t")]
-    [NativeName("Name", "indexCount")]
-    public uint IndexCount;
-/// <summary></summary>
-    [NativeName("Type", "int32_t")]
-    [NativeName("Type.Name", "int32_t")]
-    [NativeName("Name", "vertexOffset")]
-    public int VertexOffset;
 }

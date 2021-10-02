@@ -7,17 +7,18 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXVA;
-
-[NativeName("Name", "_DXVAHD_DEVICE_TYPE")]
-public enum HDDeviceType : int
+namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "DXVAHD_DEVICE_TYPE_HARDWARE")]
-    HDDeviceTypeHardware = 0x0,
-    [NativeName("Name", "DXVAHD_DEVICE_TYPE_SOFTWARE")]
-    HDDeviceTypeSoftware = 0x1,
-    [NativeName("Name", "DXVAHD_DEVICE_TYPE_REFERENCE")]
-    HDDeviceTypeReference = 0x2,
-    [NativeName("Name", "DXVAHD_DEVICE_TYPE_OTHER")]
-    HDDeviceTypeOther = 0x3,
+    [NativeName("Name", "_DXVAHD_DEVICE_TYPE")]
+    public enum HDDeviceType : int
+    {
+        [NativeName("Name", "DXVAHD_DEVICE_TYPE_HARDWARE")]
+        HDDeviceTypeHardware = 0x0,
+        [NativeName("Name", "DXVAHD_DEVICE_TYPE_SOFTWARE")]
+        HDDeviceTypeSoftware = 0x1,
+        [NativeName("Name", "DXVAHD_DEVICE_TYPE_REFERENCE")]
+        HDDeviceTypeReference = 0x2,
+        [NativeName("Name", "DXVAHD_DEVICE_TYPE_OTHER")]
+        HDDeviceTypeOther = 0x3,
+    }
 }
