@@ -204,7 +204,7 @@ namespace Silk.NET.BuildTools.Cpp
             var pfns = new Dictionary<string, Struct>();
 
             Console.WriteLine("Visting declarations...");
-            VisitDecls(translationUnitDecl.Decls);
+            VisitDecls(DeclsOf(translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
 
             Console.WriteLine("Creating finished profile...");
@@ -1598,7 +1598,22 @@ namespace Silk.NET.BuildTools.Cpp
 
                 if (decl is IDeclContext declContext)
                 {
-                    VisitDecls(declContext.Decls);
+                    VisitDecls(DeclsOf(decl));
+                }
+            }
+
+            static IEnumerable<Decl> DeclsOf(Decl parent)
+            {
+                var i = -1;
+                foreach (var child in parent.Decls)
+                {
+                    i++;
+                    if (i == 0 && child.SourceRange.Start == parent.SourceRange.Start)
+                    {
+                        continue;
+                    }
+
+                    yield return child;
                 }
             }
 
