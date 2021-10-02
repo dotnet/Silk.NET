@@ -242,11 +242,6 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Applying postprocessing...");
             FusionReactor.ReactStructs(structs);
 
-            if (profile.Name == "evntrace")
-            {
-                Debugger.Break();
-            }
-
             return profile;
 
             Type GetOrAddPfnWrapper(Type type)
@@ -897,15 +892,17 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         case FieldDecl field:
                         {
+                            if (string.IsNullOrWhiteSpace(field.Name))
+                            {
+                                // anonymous, we will have handled the RecordDecl already
+                                continue;
+                            }
+
                             yield return new Field
                             {
                                 Name = Naming.TranslateLite
                                 (
-                                    Naming.TrimName
-                                    (
-                                        // TODO the fusion reactor won't see this - add an intrinsic
-                                        string.IsNullOrWhiteSpace(field.Name) ? $"Anonymous{i}" : field.Name, task
-                                    ),
+                                    Naming.TrimName(field.Name, task),
                                     task.FunctionPrefix
                                 ),
                                 NativeName = field.Name,
