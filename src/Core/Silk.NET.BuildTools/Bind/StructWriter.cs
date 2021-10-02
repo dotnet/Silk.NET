@@ -44,8 +44,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
-            sw.WriteLine($"namespace {ns}{project.Namespace};");
-            sw.WriteLine();
+            sw.WriteLine($"namespace {ns}{project.Namespace}");
+            sw.WriteLine("{");
             string guid = null;
             foreach (var attr in @struct.Attributes)
             {
@@ -59,15 +59,15 @@ namespace Silk.NET.BuildTools.Bind
                     guid = string.Join(", ", attr.Arguments);
                 }
 
-                sw.WriteLine($"{attr}");
+                sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"[NativeName(\"Name\", \"{@struct.NativeName}\")]");
-            sw.WriteLine($"public unsafe partial struct {@struct.Name}");
-            sw.WriteLine("{");
+            sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
+            sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
+            sw.WriteLine("    {");
             if (guid is not null)
             {
-                sw.WriteLine($"    public static readonly Guid Guid = new({guid});");
+                sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
                 sw.WriteLine();
             }
 
@@ -83,60 +83,60 @@ namespace Silk.NET.BuildTools.Bind
                 fromSuffix = fromSuffix.StartsWith(task.Task.FunctionPrefix)
                     ? fromSuffix.Substring(task.Task.FunctionPrefix.Length)
                     : fromSuffix;
-                sw.WriteLine($"    public static implicit operator {comBase}({@struct.Name} val)");
-                sw.WriteLine($"        => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
+                sw.WriteLine($"        public static implicit operator {comBase}({@struct.Name} val)");
+                sw.WriteLine($"            => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
                 sw.WriteLine();
                 if (@struct.Functions.Any(x => x.Signature.Name.Equals("QueryInterface")))
                 {
-                    sw.WriteLine($"    public static explicit operator {@struct.Name}({comBase} val)");
-                    sw.WriteLine($"        => From{fromSuffix}(in val);");
+                    sw.WriteLine($"        public static explicit operator {@struct.Name}({comBase} val)");
+                    sw.WriteLine($"            => From{fromSuffix}(in val);");
                     sw.WriteLine();
-                    sw.WriteLine($"    public readonly ref {comBase} As{asSuffix}()");
-                    sw.WriteLine("    {");
+                    sw.WriteLine($"        public readonly ref {comBase} As{asSuffix}()");
+                    sw.WriteLine("        {");
                     // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
                     // by reference, but this should work well enough.
                     sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
-                    sw.WriteLine($"        return ref Unsafe.As<{@struct.Name}, {comBase}>");
-                    sw.WriteLine($"        (");
-                    sw.WriteLine($"            ref MemoryMarshal.GetReference");
+                    sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
                     sw.WriteLine($"            (");
-                    sw.WriteLine($"                MemoryMarshal.CreateSpan");
+                    sw.WriteLine($"                ref MemoryMarshal.GetReference");
                     sw.WriteLine($"                (");
-                    sw.WriteLine($"                    ref Unsafe.AsRef(in this),");
-                    sw.WriteLine($"                    1");
+                    sw.WriteLine($"                    MemoryMarshal.CreateSpan");
+                    sw.WriteLine($"                    (");
+                    sw.WriteLine($"                        ref Unsafe.AsRef(in this),");
+                    sw.WriteLine($"                        1");
+                    sw.WriteLine($"                    )");
                     sw.WriteLine($"                )");
-                    sw.WriteLine($"            )");
-                    sw.WriteLine($"        );");
+                    sw.WriteLine($"            );");
                     sw.WriteLine("#else");
-                    sw.WriteLine($"        fixed ({@struct.Name}* @this = &this)");
-                    sw.WriteLine($"        {{");
-                    sw.WriteLine($"            return ref *({comBase}*) @this;");
-                    sw.WriteLine($"        }}");
+                    sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
+                    sw.WriteLine($"            {{");
+                    sw.WriteLine($"                return ref *({comBase}*) @this;");
+                    sw.WriteLine($"            }}");
                     sw.WriteLine("#endif");
-                    sw.WriteLine("    }");
+                    sw.WriteLine("        }");
                     sw.WriteLine();
-                    sw.WriteLine($"    public static ref {@struct.Name} From{fromSuffix}(in {comBase} @this)");
-                    sw.WriteLine("    {");
-                    sw.WriteLine($"        {@struct.Name}* ret = default;");
-                    sw.WriteLine($"        SilkMarshal.ThrowHResult");
-                    sw.WriteLine($"        (");
-                    sw.WriteLine($"            @this.QueryInterface");
+                    sw.WriteLine($"        public static ref {@struct.Name} From{fromSuffix}(in {comBase} @this)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine($"            {@struct.Name}* ret = default;");
+                    sw.WriteLine($"            SilkMarshal.ThrowHResult");
                     sw.WriteLine($"            (");
-                    sw.WriteLine($"                ref SilkMarshal.GuidOf<{@struct.Name}>(),");
-                    sw.WriteLine($"                (void**) &ret");
-                    sw.WriteLine($"            )");
-                    sw.WriteLine($"        );");
+                    sw.WriteLine($"                @this.QueryInterface");
+                    sw.WriteLine($"                (");
+                    sw.WriteLine($"                    ref SilkMarshal.GuidOf<{@struct.Name}>(),");
+                    sw.WriteLine($"                    (void**) &ret");
+                    sw.WriteLine($"                )");
+                    sw.WriteLine($"            );");
                     sw.WriteLine();
-                    sw.WriteLine($"        return ref *ret;");
-                    sw.WriteLine("    }");
+                    sw.WriteLine($"            return ref *ret;");
+                    sw.WriteLine("        }");
                     sw.WriteLine();
                 }
             }
 
             if (@struct.Fields.Any(x => x.Count is null))
             {
-                sw.WriteLine($"    public {@struct.Name}");
-                sw.WriteLine("    (");
+                sw.WriteLine($"        public {@struct.Name}");
+                sw.WriteLine("        (");
                 var first = true;
                 foreach (var field in @struct.Fields)
                 {
@@ -158,8 +158,8 @@ namespace Silk.NET.BuildTools.Bind
                 }
 
                 sw.WriteLine();
-                sw.WriteLine("    ) : this()");
-                sw.WriteLine("    {");
+                sw.WriteLine("        ) : this()");
+                sw.WriteLine("        {");
                 first = true;
                 foreach (var field in @struct.Fields)
                 {
@@ -176,15 +176,15 @@ namespace Silk.NET.BuildTools.Bind
                         first = false;
                     }
 
-                    sw.WriteLine($"        if ({argName} is not null)");
-                    sw.WriteLine("        {");
+                    sw.WriteLine($"            if ({argName} is not null)");
+                    sw.WriteLine("            {");
 
                     var value = field.Type.ToString().Contains('*') ? null : ".Value";
-                    sw.WriteLine($"            {field.Name} = {argName}{value};");
-                    sw.WriteLine("        }");
+                    sw.WriteLine($"                {field.Name} = {argName}{value};");
+                    sw.WriteLine("            }");
                 }
 
-                sw.WriteLine("    }");
+                sw.WriteLine("        }");
                 sw.WriteLine();
             }
 
@@ -225,50 +225,50 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine($"        {attr}");
                         }
 
-                        sw.WriteLine($"    [NativeName(\"Type\", \"{structField.NativeType}\")]");
-                        sw.WriteLine($"    [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
-                        sw.WriteLine($"    [NativeName(\"Name\", \"{structField.NativeName}\")]");
-                        sw.WriteLine($"    public {structField.Name}Buffer {structField.Name};");
+                        sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                        sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                        sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
+                        sw.WriteLine($"        public {structField.Name}Buffer {structField.Name};");
                         sw.WriteLine();
-                        sw.WriteLine($"    public struct {structField.Name}Buffer");
-                        sw.WriteLine("    {");
+                        sw.WriteLine($"        public struct {structField.Name}Buffer");
+                        sw.WriteLine("        {");
                         for (var i = 0; i < count; i++)
                         {
-                            sw.WriteLine($"        public {typeFixup09072020} Element{i};");
+                            sw.WriteLine($"            public {typeFixup09072020} Element{i};");
                         }
 
-                        sw.WriteLine($"        public ref {typeFixup09072020} this[int index]");
-                        sw.WriteLine("        {");
-                        sw.WriteLine("            get");
+                        sw.WriteLine($"            public ref {typeFixup09072020} this[int index]");
                         sw.WriteLine("            {");
-                        sw.WriteLine($"                if (index > {count - 1} || index < 0)");
+                        sw.WriteLine("                get");
                         sw.WriteLine("                {");
-                        sw.WriteLine("                    throw new ArgumentOutOfRangeException(nameof(index));");
-                        sw.WriteLine("                }");
+                        sw.WriteLine($"                    if (index > {count - 1} || index < 0)");
+                        sw.WriteLine("                    {");
+                        sw.WriteLine("                        throw new ArgumentOutOfRangeException(nameof(index));");
+                        sw.WriteLine("                    }");
                         sw.WriteLine();
-                        sw.WriteLine($"                fixed ({typeFixup09072020}* ptr = &Element0)");
-                        sw.WriteLine("                {");
-                        sw.WriteLine("                    return ref ptr[index];");
+                        sw.WriteLine($"                    fixed ({typeFixup09072020}* ptr = &Element0)");
+                        sw.WriteLine("                    {");
+                        sw.WriteLine("                        return ref ptr[index];");
+                        sw.WriteLine("                    }");
                         sw.WriteLine("                }");
                         sw.WriteLine("            }");
-                        sw.WriteLine("        }");
                         if (!typeFixup09072020.IsPointer)
                         {
                             sw.WriteLine();
                             sw.WriteLine("#if NETSTANDARD2_1");
-                            sw.WriteLine($"        public Span<{typeFixup09072020}> AsSpan()");
-                            sw.WriteLine($"            => MemoryMarshal.CreateSpan(ref Element0, {count});");
+                            sw.WriteLine($"            public Span<{typeFixup09072020}> AsSpan()");
+                            sw.WriteLine($"                => MemoryMarshal.CreateSpan(ref Element0, {count});");
                             sw.WriteLine("#endif");
                         }
 
-                        sw.WriteLine("    }");
+                        sw.WriteLine("        }");
                         sw.WriteLine();
                     }
                     else
                     {
                         if (!string.IsNullOrEmpty(structField.Doc))
                         {
-                            sw.WriteLine($"    {structField.Doc}");
+                            sw.WriteLine($"        {structField.Doc}");
                         }
 
                         var count = structField.Count.IsConstant
@@ -296,10 +296,10 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine($"        {attr}");
                         }
 
-                        sw.WriteLine($"    [NativeName(\"Type\", \"{structField.NativeType}\")]");
-                        sw.WriteLine($"    [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
-                        sw.WriteLine($"    [NativeName(\"Name\", \"{structField.NativeName}\")]");
-                        sw.WriteLine($"    public fixed {typeFixup09072020} {structField.Name}[{count}];");
+                        sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                        sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                        sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
+                        sw.WriteLine($"        public fixed {typeFixup09072020} {structField.Name}[{count}];");
                     }
                 }
                 else
@@ -310,23 +310,23 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        {attr}");
                     }
 
-                    sw.WriteLine($"    [NativeName(\"Type\", \"{structField.NativeType}\")]");
-                    sw.WriteLine($"    [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
-                    sw.WriteLine($"    [NativeName(\"Name\", \"{structField.NativeName}\")]");
+                    sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                    sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                    sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                     if (structField.Type.IsFunctionPointer)
                     {
                         var camel = structField.Name.Camelize();
-                        sw.WriteLine($"    public {structField.Type} {structField.Name}");
-                        sw.WriteLine($"    {{");
-                        sw.WriteLine($"        get => ({structField.Type}) _{camel};");
-                        sw.WriteLine($"        set => _{camel} = value;");
-                        sw.WriteLine($"    }}");
+                        sw.WriteLine($"        public {structField.Type} {structField.Name}");
+                        sw.WriteLine($"        {{");
+                        sw.WriteLine($"            get => ({structField.Type}) _{camel};");
+                        sw.WriteLine($"            set => _{camel} = value;");
+                        sw.WriteLine($"        }}");
                         sw.WriteLine();
-                        sw.WriteLine($"    private void* _{camel};");
+                        sw.WriteLine($"        private void* _{camel};");
                     }
                     else
                     {
-                        sw.WriteLine($"    public {structField.Type} {structField.Name};");
+                        sw.WriteLine($"        public {structField.Type} {structField.Name};");
                     }
                 }
             }
@@ -339,13 +339,13 @@ namespace Silk.NET.BuildTools.Bind
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        sw.WriteLine($"    {line}");
+                        sw.WriteLine($"        {line}");
                     }
                 }
 
                 foreach (var attr in function.Signature.Attributes)
                 {
-                    sw.WriteLine($"    [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                    sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
 
                 using (var sr = new StringReader
@@ -354,20 +354,21 @@ namespace Silk.NET.BuildTools.Bind
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        sw.WriteLine($"    {line}");
+                        sw.WriteLine($"        {line}");
                     }
                 }
 
-                sw.WriteLine("    {");
+                sw.WriteLine("        {");
                 foreach (var line in function.Body)
                 {
-                    sw.WriteLine($"        {line}");
+                    sw.WriteLine($"            {line}");
                 }
 
-                sw.WriteLine("    }");
+                sw.WriteLine("        }");
                 sw.WriteLine();
             }
 
+            sw.WriteLine("    }");
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();
@@ -422,38 +423,38 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace};");
-            sw.WriteLine();
-            sw.WriteLine($"public unsafe readonly struct {pfnName} : IDisposable");
+            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
             sw.WriteLine("{");
-            sw.WriteLine("    private readonly void* _handle;");
-            sw.WriteLine($"    public {fnPtrSig} Handle => ({fnPtrSig}) _handle;");
-            sw.WriteLine($"    public {pfnName}");
-            sw.WriteLine($"    (");
-            sw.WriteLine($"        {fnPtrSig} ptr");
-            sw.WriteLine($"    ) => _handle = ptr;");
+            sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
+            sw.WriteLine("    {");
+            sw.WriteLine("        private readonly void* _handle;");
+            sw.WriteLine($"        public {fnPtrSig} Handle => ({fnPtrSig}) _handle;");
+            sw.WriteLine($"        public {pfnName}");
+            sw.WriteLine($"        (");
+            sw.WriteLine($"            {fnPtrSig} ptr");
+            sw.WriteLine($"        ) => _handle = ptr;");
             sw.WriteLine();
-            sw.WriteLine($"    public {pfnName}");
-            sw.WriteLine($"    (");
-            sw.WriteLine($"         {delegateName} proc");
-            sw.WriteLine($"    ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);");
+            sw.WriteLine($"        public {pfnName}");
+            sw.WriteLine($"        (");
+            sw.WriteLine($"             {delegateName} proc");
+            sw.WriteLine($"        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);");
             sw.WriteLine();
-            sw.WriteLine($"    public static {pfnName} From({delegateName} proc) => new {pfnName}(proc);");
-            sw.WriteLine($"    public void Dispose() => SilkMarshal.Free((nint) _handle);");
+            sw.WriteLine($"        public static {pfnName} From({delegateName} proc) => new {pfnName}(proc);");
+            sw.WriteLine($"        public void Dispose() => SilkMarshal.Free((nint) _handle);");
             sw.WriteLine();
-            sw.WriteLine($"    public static implicit operator nint({pfnName} pfn) => (nint) pfn.Handle;");
-            sw.WriteLine($"    public static explicit operator {pfnName}(nint pfn)");
-            sw.WriteLine($"        => new {pfnName}(({fnPtrSig}) pfn);");
+            sw.WriteLine($"        public static implicit operator nint({pfnName} pfn) => (nint) pfn.Handle;");
+            sw.WriteLine($"        public static explicit operator {pfnName}(nint pfn)");
+            sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) pfn);");
             sw.WriteLine();
-            sw.WriteLine($"    public static implicit operator {pfnName}({delegateName} proc)");
-            sw.WriteLine($"        => new {pfnName}(proc);");
+            sw.WriteLine($"        public static implicit operator {pfnName}({delegateName} proc)");
+            sw.WriteLine($"            => new {pfnName}(proc);");
             sw.WriteLine();
-            sw.WriteLine($"    public static explicit operator {delegateName}({pfnName} pfn)");
-            sw.WriteLine($"        => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");
+            sw.WriteLine($"        public static explicit operator {delegateName}({pfnName} pfn)");
+            sw.WriteLine($"            => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");
             sw.WriteLine();
-            sw.WriteLine($"    public static implicit operator {fnPtrSig}({pfnName} pfn) => pfn.Handle;");
-            sw.WriteLine($"    public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
-            sw.WriteLine("}");
+            sw.WriteLine($"        public static implicit operator {fnPtrSig}({pfnName} pfn) => pfn.Handle;");
+            sw.WriteLine($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
+            sw.WriteLine("    }");
             sw.WriteLine();
             // type.FunctionPointerSignature.Name = delegateName;
             // type.FunctionPointerSignature.NativeName = $"{pfnName}";
@@ -465,10 +466,11 @@ namespace Silk.NET.BuildTools.Bind
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    sw.WriteLine($"{line}");
+                    sw.WriteLine($"    {line}");
                 }
             }
 
+            sw.WriteLine("}");
             sw.WriteLine();
             sw.Flush();
         }
@@ -476,17 +478,17 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
         {
             sw.WriteLine("#if NETSTANDARD2_1");
-            sw.WriteLine($"    public ref {field.Type} {field.Name}");
-            sw.WriteLine("    {");
-            sw.WriteLine("        [MethodImpl((MethodImplOptions) 768)]");
-            sw.WriteLine($"        get => ref {args[1]}.{args[2]};");
-            sw.WriteLine("    }");
+            sw.WriteLine($"        public ref {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
+            sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
+            sw.WriteLine("        }");
             sw.WriteLine("#else");
-            sw.WriteLine($"    public {field.Type} {field.Name}");
-            sw.WriteLine("    {");
-            sw.WriteLine($"        get => {args[1]}.{args[2]};");
-            sw.WriteLine($"        set => {args[1]}.{args[2]} = value;");
-            sw.WriteLine("    }");
+            sw.WriteLine($"        public {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine($"            get => {args[1]}.{args[2]};");
+            sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
+            sw.WriteLine("        }");
             sw.WriteLine("#endif");
             sw.WriteLine();
         }
@@ -543,7 +545,7 @@ namespace Silk.NET.BuildTools.Bind
 
                 remainingBits = currentSize * 8;
                 previousSize = 0;
-                sw.Write("    private ");
+                sw.Write("        private ");
                 sw.Write(currentBitfieldType = typeNameBacking);
                 sw.Write(' ');
                 sw.Write(bitfieldName);
@@ -574,14 +576,14 @@ namespace Silk.NET.BuildTools.Bind
                 _ => throw new ArgumentException("Unsupported bitfield type.")
             };
             var bitwidthHexString = bitwidthHexStringBacking;
-            sw.Write("    public");
+            sw.Write("        public");
             sw.Write(' ');
             sw.Write(typeName);
             sw.Write(' ');
             sw.WriteLine(fieldDecl.Name);
-            sw.WriteLine("    {");
-            sw.WriteLine("        [MethodImpl(MethodImplOptions.AggressiveInlining)]");
-            sw.Write("        get => ");
+            sw.WriteLine("        {");
+            sw.WriteLine("            [MethodImpl(MethodImplOptions.AggressiveInlining)]");
+            sw.Write("            get => ");
             sw.Write('(');
             sw.Write(typeName);
             sw.Write(")(");
@@ -602,8 +604,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.Write(bitwidthHexStringBacking);
             sw.Write(')');
             sw.WriteLine(';');
-            sw.WriteLine("        [MethodImpl(MethodImplOptions.AggressiveInlining)]");
-            sw.Write("        set => ");
+            sw.WriteLine("            [MethodImpl(MethodImplOptions.AggressiveInlining)]");
+            sw.Write("            set => ");
             sw.Write(bitfieldName);
             sw.Write(" = ");
             sw.Write('(');
@@ -651,7 +653,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.Write(')');
             sw.Write(')');
             sw.WriteLine(";");
-            sw.WriteLine("    }");
+            sw.WriteLine("        }");
             remainingBits -= fieldDecl.NumBits.Value;
             previousSize = Math.Max(previousSize, currentSize);
         }
