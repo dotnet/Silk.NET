@@ -26,7 +26,10 @@ namespace Silk.NET.Core.Native
             uint? parentInstanceId = null,
             Guid? parentGuid = null,
             void* mofData = null,
-            uint? mofLength = null
+            uint? mofLength = null,
+            EventTraceUnion? anonymous = null,
+            uint? clientContext = null,
+            EtwBufferContext? bufferContext = null
         ) : this()
         {
             if (header is not null)
@@ -57,6 +60,21 @@ namespace Silk.NET.Core.Native
             if (mofLength is not null)
             {
                 MofLength = mofLength.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (clientContext is not null)
+            {
+                ClientContext = clientContext.Value;
+            }
+
+            if (bufferContext is not null)
+            {
+                BufferContext = bufferContext.Value;
             }
         }
 
@@ -90,5 +108,38 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "MofLength")]
         public uint MofLength;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1058_C5")]
+        [NativeName("Name", "anonymous1")]
+        public EventTraceUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref uint ClientContext
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.ClientContext;
+        }
+#else
+        public uint ClientContext
+        {
+            get => Anonymous.ClientContext;
+            set => Anonymous.ClientContext = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref EtwBufferContext BufferContext
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.BufferContext;
+        }
+#else
+        public EtwBufferContext BufferContext
+        {
+            get => Anonymous.BufferContext;
+            set => Anonymous.BufferContext = value;
+        }
+#endif
+
     }
 }

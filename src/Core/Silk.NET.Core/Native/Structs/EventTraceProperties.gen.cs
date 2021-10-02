@@ -29,6 +29,7 @@ namespace Silk.NET.Core.Native
             uint? logFileMode = null,
             uint? flushTimer = null,
             uint? enableFlags = null,
+            EventTracePropertiesUnion? anonymous = null,
             uint? numberOfBuffers = null,
             uint? freeBuffers = null,
             uint? eventsLost = null,
@@ -37,7 +38,9 @@ namespace Silk.NET.Core.Native
             uint? realTimeBuffersLost = null,
             void* loggerThreadId = null,
             uint? logFileNameOffset = null,
-            uint? loggerNameOffset = null
+            uint? loggerNameOffset = null,
+            int? ageLimit = null,
+            int? flushThreshold = null
         ) : this()
         {
             if (wnode is not null)
@@ -78,6 +81,11 @@ namespace Silk.NET.Core.Native
             if (enableFlags is not null)
             {
                 EnableFlags = enableFlags.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
             }
 
             if (numberOfBuffers is not null)
@@ -124,6 +132,16 @@ namespace Silk.NET.Core.Native
             {
                 LoggerNameOffset = loggerNameOffset.Value;
             }
+
+            if (ageLimit is not null)
+            {
+                AgeLimit = ageLimit.Value;
+            }
+
+            if (flushThreshold is not null)
+            {
+                FlushThreshold = flushThreshold.Value;
+            }
         }
 
 
@@ -166,6 +184,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "EnableFlags")]
         public uint EnableFlags;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L873_C5")]
+        [NativeName("Name", "anonymous1")]
+        public EventTracePropertiesUnion Anonymous;
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
@@ -211,5 +234,33 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "LoggerNameOffset")]
         public uint LoggerNameOffset;
+#if NETSTANDARD2_1
+        public ref int AgeLimit
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.AgeLimit;
+        }
+#else
+        public int AgeLimit
+        {
+            get => Anonymous.AgeLimit;
+            set => Anonymous.AgeLimit = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref int FlushThreshold
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.FlushThreshold;
+        }
+#else
+        public int FlushThreshold
+        {
+            get => Anonymous.FlushThreshold;
+            set => Anonymous.FlushThreshold = value;
+        }
+#endif
+
     }
 }

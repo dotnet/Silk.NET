@@ -22,20 +22,52 @@ namespace Silk.NET.Core.Native
     {
         public EventTracePropertiesV2Union2
         (
-            uint? v2Control = null
+            EventTracePropertiesV2Union2Union? anonymous = null,
+            uint? v2Control = null,
+            uint? versionNumber = null
         ) : this()
         {
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
             if (v2Control is not null)
             {
                 V2Control = v2Control.Value;
             }
+
+            if (versionNumber is not null)
+            {
+                VersionNumber = versionNumber.Value;
+            }
         }
 
+
+        [FieldOffset(0)]
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L919_C9")]
+        [NativeName("Name", "anonymous1")]
+        public EventTracePropertiesV2Union2Union Anonymous;
 
         [FieldOffset(0)]
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "V2Control")]
         public uint V2Control;
+#if NETSTANDARD2_1
+        public ref uint VersionNumber
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.VersionNumber;
+        }
+#else
+        public uint VersionNumber
+        {
+            get => Anonymous.VersionNumber;
+            set => Anonymous.VersionNumber = value;
+        }
+#endif
+
     }
 }

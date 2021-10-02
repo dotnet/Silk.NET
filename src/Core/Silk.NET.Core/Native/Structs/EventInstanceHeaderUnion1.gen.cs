@@ -22,12 +22,30 @@ namespace Silk.NET.Core.Native
     {
         public EventInstanceHeaderUnion1
         (
-            ushort? fieldTypeFlags = null
+            ushort? fieldTypeFlags = null,
+            EventInstanceHeaderUnion1Union? anonymous = null,
+            byte? headerType = null,
+            byte? markerFlags = null
         ) : this()
         {
             if (fieldTypeFlags is not null)
             {
                 FieldTypeFlags = fieldTypeFlags.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (headerType is not null)
+            {
+                HeaderType = headerType.Value;
+            }
+
+            if (markerFlags is not null)
+            {
+                MarkerFlags = markerFlags.Value;
             }
         }
 
@@ -37,5 +55,39 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "USHORT")]
         [NativeName("Name", "FieldTypeFlags")]
         public ushort FieldTypeFlags;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L588_C9")]
+        [NativeName("Name", "anonymous1")]
+        public EventInstanceHeaderUnion1Union Anonymous;
+#if NETSTANDARD2_1
+        public ref byte HeaderType
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.HeaderType;
+        }
+#else
+        public byte HeaderType
+        {
+            get => Anonymous.HeaderType;
+            set => Anonymous.HeaderType = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref byte MarkerFlags
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.MarkerFlags;
+        }
+#else
+        public byte MarkerFlags
+        {
+            get => Anonymous.MarkerFlags;
+            set => Anonymous.MarkerFlags = value;
+        }
+#endif
+
     }
 }

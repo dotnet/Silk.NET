@@ -22,20 +22,124 @@ namespace Silk.NET.Core.Native
     {
         public EventTraceHeaderUnion4
         (
-            ulong? processorTime = null
+            EventTraceHeaderUnion4Union1? anonymous1 = null,
+            ulong? processorTime = null,
+            EventTraceHeaderUnion4Union2? anonymous2 = null,
+            uint? kernelTime = null,
+            uint? userTime = null,
+            uint? clientContext = null,
+            uint? flags = null
         ) : this()
         {
+            if (anonymous1 is not null)
+            {
+                Anonymous1 = anonymous1.Value;
+            }
+
             if (processorTime is not null)
             {
                 ProcessorTime = processorTime.Value;
             }
+
+            if (anonymous2 is not null)
+            {
+                Anonymous2 = anonymous2.Value;
+            }
+
+            if (kernelTime is not null)
+            {
+                KernelTime = kernelTime.Value;
+            }
+
+            if (userTime is not null)
+            {
+                UserTime = userTime.Value;
+            }
+
+            if (clientContext is not null)
+            {
+                ClientContext = clientContext.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
+
+        [FieldOffset(0)]
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L569_C9")]
+        [NativeName("Name", "anonymous1")]
+        public EventTraceHeaderUnion4Union1 Anonymous1;
 
         [FieldOffset(0)]
         [NativeName("Type", "ULONG64")]
         [NativeName("Type.Name", "ULONG64")]
         [NativeName("Name", "ProcessorTime")]
         public ulong ProcessorTime;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L574_C9")]
+        [NativeName("Name", "anonymous2")]
+        public EventTraceHeaderUnion4Union2 Anonymous2;
+#if NETSTANDARD2_1
+        public ref uint KernelTime
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.KernelTime;
+        }
+#else
+        public uint KernelTime
+        {
+            get => Anonymous1.KernelTime;
+            set => Anonymous1.KernelTime = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint UserTime
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.UserTime;
+        }
+#else
+        public uint UserTime
+        {
+            get => Anonymous1.UserTime;
+            set => Anonymous1.UserTime = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint ClientContext
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.ClientContext;
+        }
+#else
+        public uint ClientContext
+        {
+            get => Anonymous2.ClientContext;
+            set => Anonymous2.ClientContext = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint Flags
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.Flags;
+        }
+#else
+        public uint Flags
+        {
+            get => Anonymous2.Flags;
+            set => Anonymous2.Flags = value;
+        }
+#endif
+
     }
 }

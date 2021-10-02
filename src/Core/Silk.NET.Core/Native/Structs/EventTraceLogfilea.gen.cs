@@ -25,14 +25,20 @@ namespace Silk.NET.Core.Native
             byte* loggerName = null,
             long? currentTime = null,
             uint? buffersRead = null,
+            EventTraceLogfileaUnion1? anonymous1 = null,
             EventTrace? currentEvent = null,
             TraceLogfileHeader? logfileHeader = null,
             PfnPeventTraceBufferCallbacka? bufferCallback = null,
             uint? bufferSize = null,
             uint? filled = null,
             uint? eventsLost = null,
+            EventTraceLogfileaUnion2? anonymous2 = null,
             uint? isKernelTrace = null,
-            void* context = null
+            void* context = null,
+            uint? logFileMode = null,
+            uint? processTraceMode = null,
+            PfnPeventCallback? eventCallback = null,
+            PfnPeventRecordCallback? eventRecordCallback = null
         ) : this()
         {
             if (logFileName is not null)
@@ -53,6 +59,11 @@ namespace Silk.NET.Core.Native
             if (buffersRead is not null)
             {
                 BuffersRead = buffersRead.Value;
+            }
+
+            if (anonymous1 is not null)
+            {
+                Anonymous1 = anonymous1.Value;
             }
 
             if (currentEvent is not null)
@@ -85,6 +96,11 @@ namespace Silk.NET.Core.Native
                 EventsLost = eventsLost.Value;
             }
 
+            if (anonymous2 is not null)
+            {
+                Anonymous2 = anonymous2.Value;
+            }
+
             if (isKernelTrace is not null)
             {
                 IsKernelTrace = isKernelTrace.Value;
@@ -93,6 +109,26 @@ namespace Silk.NET.Core.Native
             if (context is not null)
             {
                 Context = context;
+            }
+
+            if (logFileMode is not null)
+            {
+                LogFileMode = logFileMode.Value;
+            }
+
+            if (processTraceMode is not null)
+            {
+                ProcessTraceMode = processTraceMode.Value;
+            }
+
+            if (eventCallback is not null)
+            {
+                EventCallback = eventCallback.Value;
+            }
+
+            if (eventRecordCallback is not null)
+            {
+                EventRecordCallback = eventRecordCallback.Value;
             }
         }
 
@@ -116,6 +152,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "BuffersRead")]
         public uint BuffersRead;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1172_C5")]
+        [NativeName("Name", "anonymous1")]
+        public EventTraceLogfileaUnion1 Anonymous1;
 
         [NativeName("Type", "EVENT_TRACE")]
         [NativeName("Type.Name", "EVENT_TRACE")]
@@ -147,6 +188,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "EventsLost")]
         public uint EventsLost;
 
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L1190_C5")]
+        [NativeName("Name", "anonymous2")]
+        public EventTraceLogfileaUnion2 Anonymous2;
+
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "IsKernelTrace")]
@@ -156,5 +202,61 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "PVOID")]
         [NativeName("Name", "Context")]
         public void* Context;
+#if NETSTANDARD2_1
+        public ref uint LogFileMode
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.LogFileMode;
+        }
+#else
+        public uint LogFileMode
+        {
+            get => Anonymous1.LogFileMode;
+            set => Anonymous1.LogFileMode = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint ProcessTraceMode
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.ProcessTraceMode;
+        }
+#else
+        public uint ProcessTraceMode
+        {
+            get => Anonymous1.ProcessTraceMode;
+            set => Anonymous1.ProcessTraceMode = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref PfnPeventCallback EventCallback
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.EventCallback;
+        }
+#else
+        public PfnPeventCallback EventCallback
+        {
+            get => Anonymous2.EventCallback;
+            set => Anonymous2.EventCallback = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref PfnPeventRecordCallback EventRecordCallback
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.EventRecordCallback;
+        }
+#else
+        public PfnPeventRecordCallback EventRecordCallback
+        {
+            get => Anonymous2.EventRecordCallback;
+            set => Anonymous2.EventRecordCallback = value;
+        }
+#endif
+
     }
 }

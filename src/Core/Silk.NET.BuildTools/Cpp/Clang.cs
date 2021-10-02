@@ -996,10 +996,13 @@ namespace Silk.NET.BuildTools.Cpp
                             {
                                 if (recordDecl.Decls[j] is FieldDecl nestedFieldDecl)
                                 {
-                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
+                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name &&
+                                        !string.IsNullOrWhiteSpace(nestedFieldDecl.Name))
                                     {
+                                        // if there's field decl (with a name!) for this nested structure, don't make a
+                                        // field automatically as we'll do that next when we visit the FieldDecl
                                         skip = true;
-                                        if (renameNestedName && !string.IsNullOrWhiteSpace(nestedFieldDecl.Name))
+                                        if (renameNestedName)
                                         {
                                             task.RenamedNativeNames[nestedName] =
                                                 nestedNameMapped + nestedFieldDecl.Name.Pascalize();

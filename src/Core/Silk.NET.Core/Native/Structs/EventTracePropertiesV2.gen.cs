@@ -29,6 +29,7 @@ namespace Silk.NET.Core.Native
             uint? logFileMode = null,
             uint? flushTimer = null,
             uint? enableFlags = null,
+            EventTracePropertiesV2Union1? anonymous1 = null,
             uint? numberOfBuffers = null,
             uint? freeBuffers = null,
             uint? eventsLost = null,
@@ -38,8 +39,20 @@ namespace Silk.NET.Core.Native
             void* loggerThreadId = null,
             uint? logFileNameOffset = null,
             uint? loggerNameOffset = null,
+            EventTracePropertiesV2Union2? anonymous2 = null,
             uint? filterDescCount = null,
-            EventFilterDescriptor* filterDesc = null
+            EventFilterDescriptor* filterDesc = null,
+            EventTracePropertiesV2Union3? anonymous3 = null,
+            int? ageLimit = null,
+            int? flushThreshold = null,
+            EventTracePropertiesV2Union2Union? anonymous = null,
+            uint? v2Control = null,
+            uint? versionNumber = null,
+            ulong? v2Options = null,
+            uint? wow = null,
+            uint? qpcDeltaTracking = null,
+            uint? largeMdlPages = null,
+            uint? excludeKernelStack = null
         ) : this()
         {
             if (wnode is not null)
@@ -80,6 +93,11 @@ namespace Silk.NET.Core.Native
             if (enableFlags is not null)
             {
                 EnableFlags = enableFlags.Value;
+            }
+
+            if (anonymous1 is not null)
+            {
+                Anonymous1 = anonymous1.Value;
             }
 
             if (numberOfBuffers is not null)
@@ -127,6 +145,11 @@ namespace Silk.NET.Core.Native
                 LoggerNameOffset = loggerNameOffset.Value;
             }
 
+            if (anonymous2 is not null)
+            {
+                Anonymous2 = anonymous2.Value;
+            }
+
             if (filterDescCount is not null)
             {
                 FilterDescCount = filterDescCount.Value;
@@ -135,6 +158,61 @@ namespace Silk.NET.Core.Native
             if (filterDesc is not null)
             {
                 FilterDesc = filterDesc;
+            }
+
+            if (anonymous3 is not null)
+            {
+                Anonymous3 = anonymous3.Value;
+            }
+
+            if (ageLimit is not null)
+            {
+                AgeLimit = ageLimit.Value;
+            }
+
+            if (flushThreshold is not null)
+            {
+                FlushThreshold = flushThreshold.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (v2Control is not null)
+            {
+                V2Control = v2Control.Value;
+            }
+
+            if (versionNumber is not null)
+            {
+                VersionNumber = versionNumber.Value;
+            }
+
+            if (v2Options is not null)
+            {
+                V2Options = v2Options.Value;
+            }
+
+            if (wow is not null)
+            {
+                Wow = wow.Value;
+            }
+
+            if (qpcDeltaTracking is not null)
+            {
+                QpcDeltaTracking = qpcDeltaTracking.Value;
+            }
+
+            if (largeMdlPages is not null)
+            {
+                LargeMdlPages = largeMdlPages.Value;
+            }
+
+            if (excludeKernelStack is not null)
+            {
+                ExcludeKernelStack = excludeKernelStack.Value;
             }
         }
 
@@ -178,6 +256,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "EnableFlags")]
         public uint EnableFlags;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L901_C5")]
+        [NativeName("Name", "anonymous1")]
+        public EventTracePropertiesV2Union1 Anonymous1;
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
@@ -224,6 +307,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "LoggerNameOffset")]
         public uint LoggerNameOffset;
 
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L918_C5")]
+        [NativeName("Name", "anonymous2")]
+        public EventTracePropertiesV2Union2 Anonymous2;
+
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "FilterDescCount")]
@@ -233,5 +321,150 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "PEVENT_FILTER_DESCRIPTOR")]
         [NativeName("Name", "FilterDesc")]
         public EventFilterDescriptor* FilterDesc;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L926_C5")]
+        [NativeName("Name", "anonymous3")]
+        public EventTracePropertiesV2Union3 Anonymous3;
+#if NETSTANDARD2_1
+        public ref int AgeLimit
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.AgeLimit;
+        }
+#else
+        public int AgeLimit
+        {
+            get => Anonymous1.AgeLimit;
+            set => Anonymous1.AgeLimit = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref int FlushThreshold
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.FlushThreshold;
+        }
+#else
+        public int FlushThreshold
+        {
+            get => Anonymous1.FlushThreshold;
+            set => Anonymous1.FlushThreshold = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref EventTracePropertiesV2Union2Union Anonymous
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.Anonymous;
+        }
+#else
+        public EventTracePropertiesV2Union2Union Anonymous
+        {
+            get => Anonymous2.Anonymous;
+            set => Anonymous2.Anonymous = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint V2Control
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.V2Control;
+        }
+#else
+        public uint V2Control
+        {
+            get => Anonymous2.V2Control;
+            set => Anonymous2.V2Control = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint VersionNumber
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.VersionNumber;
+        }
+#else
+        public uint VersionNumber
+        {
+            get => Anonymous2.VersionNumber;
+            set => Anonymous2.VersionNumber = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref ulong V2Options
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous3.V2Options;
+        }
+#else
+        public ulong V2Options
+        {
+            get => Anonymous3.V2Options;
+            set => Anonymous3.V2Options = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint Wow
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous3.Wow;
+        }
+#else
+        public uint Wow
+        {
+            get => Anonymous3.Wow;
+            set => Anonymous3.Wow = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint QpcDeltaTracking
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous3.QpcDeltaTracking;
+        }
+#else
+        public uint QpcDeltaTracking
+        {
+            get => Anonymous3.QpcDeltaTracking;
+            set => Anonymous3.QpcDeltaTracking = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint LargeMdlPages
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous3.LargeMdlPages;
+        }
+#else
+        public uint LargeMdlPages
+        {
+            get => Anonymous3.LargeMdlPages;
+            set => Anonymous3.LargeMdlPages = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint ExcludeKernelStack
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous3.ExcludeKernelStack;
+        }
+#else
+        public uint ExcludeKernelStack
+        {
+            get => Anonymous3.ExcludeKernelStack;
+            set => Anonymous3.ExcludeKernelStack = value;
+        }
+#endif
+
     }
 }

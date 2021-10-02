@@ -22,6 +22,7 @@ namespace Silk.NET.Core.Native
         public TraceLogfileHeader
         (
             uint? bufferSize = null,
+            TraceLogfileHeaderUnion1? anonymous1 = null,
             uint? providerVersion = null,
             uint? numberOfProcessors = null,
             long? endTime = null,
@@ -29,6 +30,7 @@ namespace Silk.NET.Core.Native
             uint? maximumFileSize = null,
             uint? logFileMode = null,
             uint? buffersWritten = null,
+            TraceLogfileHeaderUnion2? anonymous2 = null,
             char* loggerName = null,
             char* logFileName = null,
             _TIME_ZONE_INFORMATION? timeZone = null,
@@ -36,12 +38,25 @@ namespace Silk.NET.Core.Native
             long? perfFreq = null,
             long? startTime = null,
             uint? reservedFlags = null,
-            uint? buffersLost = null
+            uint? buffersLost = null,
+            uint? version = null,
+            TraceLogfileHeaderUnion1VersionDetail? versionDetail = null,
+            Guid? logInstanceGuid = null,
+            TraceLogfileHeaderUnion2Union? anonymous = null,
+            uint? startBuffers = null,
+            uint? pointerSize = null,
+            uint? eventsLost = null,
+            uint? cpuSpeedInMHz = null
         ) : this()
         {
             if (bufferSize is not null)
             {
                 BufferSize = bufferSize.Value;
+            }
+
+            if (anonymous1 is not null)
+            {
+                Anonymous1 = anonymous1.Value;
             }
 
             if (providerVersion is not null)
@@ -77,6 +92,11 @@ namespace Silk.NET.Core.Native
             if (buffersWritten is not null)
             {
                 BuffersWritten = buffersWritten.Value;
+            }
+
+            if (anonymous2 is not null)
+            {
+                Anonymous2 = anonymous2.Value;
             }
 
             if (loggerName is not null)
@@ -118,6 +138,46 @@ namespace Silk.NET.Core.Native
             {
                 BuffersLost = buffersLost.Value;
             }
+
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (versionDetail is not null)
+            {
+                VersionDetail = versionDetail.Value;
+            }
+
+            if (logInstanceGuid is not null)
+            {
+                LogInstanceGuid = logInstanceGuid.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (startBuffers is not null)
+            {
+                StartBuffers = startBuffers.Value;
+            }
+
+            if (pointerSize is not null)
+            {
+                PointerSize = pointerSize.Value;
+            }
+
+            if (eventsLost is not null)
+            {
+                EventsLost = eventsLost.Value;
+            }
+
+            if (cpuSpeedInMHz is not null)
+            {
+                CpuSpeedInMHz = cpuSpeedInMHz.Value;
+            }
         }
 
 
@@ -125,6 +185,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "BufferSize")]
         public uint BufferSize;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L699_C5")]
+        [NativeName("Name", "anonymous1")]
+        public TraceLogfileHeaderUnion1 Anonymous1;
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]
@@ -160,6 +225,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "BuffersWritten")]
         public uint BuffersWritten;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L715_C5")]
+        [NativeName("Name", "anonymous2")]
+        public TraceLogfileHeaderUnion2 Anonymous2;
 
         [NativeName("Type", "LPWSTR")]
         [NativeName("Type.Name", "LPWSTR")]
@@ -200,5 +270,117 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "BuffersLost")]
         public uint BuffersLost;
+#if NETSTANDARD2_1
+        public ref uint Version
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.Version;
+        }
+#else
+        public uint Version
+        {
+            get => Anonymous1.Version;
+            set => Anonymous1.Version = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref TraceLogfileHeaderUnion1VersionDetail VersionDetail
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.VersionDetail;
+        }
+#else
+        public TraceLogfileHeaderUnion1VersionDetail VersionDetail
+        {
+            get => Anonymous1.VersionDetail;
+            set => Anonymous1.VersionDetail = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref Guid LogInstanceGuid
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.LogInstanceGuid;
+        }
+#else
+        public Guid LogInstanceGuid
+        {
+            get => Anonymous2.LogInstanceGuid;
+            set => Anonymous2.LogInstanceGuid = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref TraceLogfileHeaderUnion2Union Anonymous
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.Anonymous;
+        }
+#else
+        public TraceLogfileHeaderUnion2Union Anonymous
+        {
+            get => Anonymous2.Anonymous;
+            set => Anonymous2.Anonymous = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint StartBuffers
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.StartBuffers;
+        }
+#else
+        public uint StartBuffers
+        {
+            get => Anonymous2.StartBuffers;
+            set => Anonymous2.StartBuffers = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint PointerSize
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.PointerSize;
+        }
+#else
+        public uint PointerSize
+        {
+            get => Anonymous2.PointerSize;
+            set => Anonymous2.PointerSize = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint EventsLost
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.EventsLost;
+        }
+#else
+        public uint EventsLost
+        {
+            get => Anonymous2.EventsLost;
+            set => Anonymous2.EventsLost = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint CpuSpeedInMHz
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.CpuSpeedInMHz;
+        }
+#else
+        public uint CpuSpeedInMHz
+        {
+            get => Anonymous2.CpuSpeedInMHz;
+            set => Anonymous2.CpuSpeedInMHz = value;
+        }
+#endif
+
     }
 }

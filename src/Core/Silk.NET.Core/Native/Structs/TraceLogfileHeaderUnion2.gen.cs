@@ -22,12 +22,42 @@ namespace Silk.NET.Core.Native
     {
         public TraceLogfileHeaderUnion2
         (
-            Guid? logInstanceGuid = null
+            Guid? logInstanceGuid = null,
+            TraceLogfileHeaderUnion2Union? anonymous = null,
+            uint? startBuffers = null,
+            uint? pointerSize = null,
+            uint? eventsLost = null,
+            uint? cpuSpeedInMHz = null
         ) : this()
         {
             if (logInstanceGuid is not null)
             {
                 LogInstanceGuid = logInstanceGuid.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (startBuffers is not null)
+            {
+                StartBuffers = startBuffers.Value;
+            }
+
+            if (pointerSize is not null)
+            {
+                PointerSize = pointerSize.Value;
+            }
+
+            if (eventsLost is not null)
+            {
+                EventsLost = eventsLost.Value;
+            }
+
+            if (cpuSpeedInMHz is not null)
+            {
+                CpuSpeedInMHz = cpuSpeedInMHz.Value;
             }
         }
 
@@ -37,5 +67,67 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "LogInstanceGuid")]
         public Guid LogInstanceGuid;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_evntrace_L717_C9")]
+        [NativeName("Name", "anonymous1")]
+        public TraceLogfileHeaderUnion2Union Anonymous;
+#if NETSTANDARD2_1
+        public ref uint StartBuffers
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.StartBuffers;
+        }
+#else
+        public uint StartBuffers
+        {
+            get => Anonymous.StartBuffers;
+            set => Anonymous.StartBuffers = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint PointerSize
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.PointerSize;
+        }
+#else
+        public uint PointerSize
+        {
+            get => Anonymous.PointerSize;
+            set => Anonymous.PointerSize = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint EventsLost
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.EventsLost;
+        }
+#else
+        public uint EventsLost
+        {
+            get => Anonymous.EventsLost;
+            set => Anonymous.EventsLost = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint CpuSpeedInMHz
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.CpuSpeedInMHz;
+        }
+#else
+        public uint CpuSpeedInMHz
+        {
+            get => Anonymous.CpuSpeedInMHz;
+            set => Anonymous.CpuSpeedInMHz = value;
+        }
+#endif
+
     }
 }
