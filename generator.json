@@ -793,7 +793,7 @@
             "profileName": "Core",
             "sources": [
                 "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h"
+                "src/Core/Silk.NET.Core/Native.EventTrace.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -823,10 +823,11 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h"
                 ],
                 "classes": {
                     "d3dcommon.h": "[Core]D3DCommon",
-                    "evntrace.h": "[Core]EventTrace"
+                    "Native.EventTrace.h": "[Core]EventTrace"
                 }
             },
             "exclude": [
@@ -838,7 +839,7 @@
             "bakery": {
                 "profileNames": [
                     "d3dcommon",
-                    "evntrace"
+                    "Native.EventTrace"
                 ]
             },
             "output": {
