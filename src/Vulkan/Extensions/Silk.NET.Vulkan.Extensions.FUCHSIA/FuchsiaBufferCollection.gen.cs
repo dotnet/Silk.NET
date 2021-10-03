@@ -65,6 +65,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
         public unsafe partial Result GetBufferCollectionPropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.Out)] BufferCollectionPropertiesFUCHSIA* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.BufferCollectionPropertiesFuchsia);")]
         [NativeApi(EntryPoint = "vkGetBufferCollectionPropertiesFUCHSIA")]
         public partial Result GetBufferCollectionPropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.Out)] out BufferCollectionPropertiesFUCHSIA pProperties);
 

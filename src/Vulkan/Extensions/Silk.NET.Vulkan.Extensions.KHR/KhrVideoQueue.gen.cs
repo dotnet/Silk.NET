@@ -137,6 +137,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
 
@@ -145,6 +146,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         public partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in VideoProfileKHR pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
 
@@ -153,6 +155,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
@@ -161,6 +164,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
@@ -169,6 +173,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
@@ -177,6 +182,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         public partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
@@ -185,6 +191,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoGetMemoryPropertiesKHR* pVideoSessionMemoryRequirements);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
         public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoGetMemoryPropertiesKHR pVideoSessionMemoryRequirements);
 
@@ -193,6 +200,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] VideoGetMemoryPropertiesKHR* pVideoSessionMemoryRequirements);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
         public partial Result GetVideoSessionMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] ref uint pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] out VideoGetMemoryPropertiesKHR pVideoSessionMemoryRequirements);
 

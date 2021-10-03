@@ -25,6 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilities2KHR pSurfaceCapabilities);
 
@@ -33,6 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceCapabilities2KHR* pSurfaceCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceCapabilities = new(StructureType.SurfaceCapabilities2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         public partial Result GetPhysicalDeviceSurfaceCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceCapabilities2KHR pSurfaceCapabilities);
 
@@ -41,6 +43,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
@@ -49,6 +52,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
@@ -57,6 +61,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 
@@ -65,6 +70,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormat2KHR* pSurfaceFormats);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSurfaceFormats = new(StructureType.SurfaceFormat2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         public partial Result GetPhysicalDeviceSurfaceFormats2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] out SurfaceFormat2KHR pSurfaceFormats);
 

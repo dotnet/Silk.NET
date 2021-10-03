@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtToolingInfoOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolPropertiesExt);")]
         public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolPropertiesEXT> pToolProperties)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolPropertiesExt);")]
         public static unsafe Result GetPhysicalDeviceToolProperties(this ExtToolingInfo thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolPropertiesEXT> pToolProperties)
         {
             // SpanOverloader

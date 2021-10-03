@@ -73,6 +73,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.BufferCollectionPropertiesFuchsia);")]
         public static unsafe Result GetBufferCollectionPropertiesFuchsia(this FuchsiaBufferCollection thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] BufferCollectionFUCHSIA collection, [Count(Count = 0), Flow(FlowDirection.Out)] Span<BufferCollectionPropertiesFUCHSIA> pProperties)
         {
             // SpanOverloader

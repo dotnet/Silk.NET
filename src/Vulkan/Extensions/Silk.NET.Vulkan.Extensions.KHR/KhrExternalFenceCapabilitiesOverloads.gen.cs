@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrExternalFenceCapabilitiesOverloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader

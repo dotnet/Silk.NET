@@ -217,6 +217,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
@@ -225,6 +226,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
@@ -233,6 +235,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
@@ -241,6 +244,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureBuildSizesInfoKHR* pSizeInfo);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         [NativeApi(EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         public partial void GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] out AccelerationStructureBuildSizesInfoKHR pSizeInfo);
 
