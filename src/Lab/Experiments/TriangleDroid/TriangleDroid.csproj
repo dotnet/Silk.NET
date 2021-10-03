@@ -125,8 +125,8 @@
       <Project>{ff526329-094a-4b25-abc5-750d62e48101}</Project>
       <Name>Silk.NET.Windowing.Sdl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Triangle\Triangle.csproj">
-      <Project>{3478F392-7055-4ECC-B388-7F115AA7EA5A}</Project>
+    <ProjectReference Include="..\Triangle\Triangle.csproj">
+      <Project>{6e61c442-66b0-429e-be5d-4acd0045f0a5}</Project>
       <Name>Triangle</Name>
     </ProjectReference>
   </ItemGroup>

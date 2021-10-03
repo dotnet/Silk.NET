@@ -23,7 +23,7 @@ namespace TriangleIOS
         static void Run(string[] args)
         {
             Program.API = new GraphicsAPI(ContextAPI.OpenGLES, ContextProfile.Core, ContextFlags.Default, new APIVersion(3, 0));
-            Program.Main(null!);
+            Program.Main();
         }
     }
 }
