@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -40,6 +41,17 @@ namespace Silk.NET.Core.Loader
             {
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
+            }
+            
+            var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+            if (AppContext.BaseDirectory != Process.GetCurrentProcess().MainModule?.FileName &&
+                mainModFname is not null)
+            {
+                mainModFname = Path.GetDirectoryName(mainModFname);
+                if (mainModFname is not null)
+                {
+                    yield return Path.Combine(mainModFname, name);
+                }
             }
 
             if (!noLinuxTraverse)
