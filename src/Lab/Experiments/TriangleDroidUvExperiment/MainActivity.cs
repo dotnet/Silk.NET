@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
@@ -17,7 +17,7 @@ namespace TriangleDroidUvExperiment
             //var aaaa = SDL.Context;
             //var oooo = MSingleton;
             //SDL.SetupJNI();
-            Program.Main(null!);
+            Program.Main();
         }
     }
 }

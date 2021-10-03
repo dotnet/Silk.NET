@@ -59,9 +59,9 @@ public static class Projects
                 originalSolution.RemoveProject(proj);
             }
 
-            if (!featureSet.GenerateExclusiveSln)
+            if (!featureSet.GenerateExclusiveSln || !featureSetUsed)
             {
-                break;
+                continue;
             }
             
             var sln = ParseSolution(originalSolutionPath);
