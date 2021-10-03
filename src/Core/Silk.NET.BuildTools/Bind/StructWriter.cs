@@ -47,6 +47,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             string guid = null;
+            
+            static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
+            var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
+            
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
@@ -59,7 +63,18 @@ namespace Silk.NET.BuildTools.Bind
                     guid = string.Join(", ", attr.Arguments);
                 }
 
+                if (attr.Name == "StructLayout" && needsCharSetFixup)
+                {
+                    attr.Arguments.Add("CharSet = CharSet.Unicode");
+                    needsCharSetFixup = false;
+                }
+
                 sw.WriteLine($"    {attr}");
+            }
+
+            if (needsCharSetFixup)
+            {
+                sw.WriteLine("    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]");
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");

@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "_ETW_TRACE_PARTITION_INFORMATION_V2")]
     public unsafe partial struct EtwTracePartitionInformationV2
     {

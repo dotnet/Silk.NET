@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [StructLayout(LayoutKind.Explicit)]
+    [StructLayout(LayoutKind.Explicit, CharSet = CharSet.Unicode)]
     [NativeName("Name", "__AnonymousRecord_minwinbase_L268_C5")]
     public unsafe partial struct ReasonContextReason
     {
