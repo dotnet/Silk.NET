@@ -27,26 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DVertexShader9
         (
-            uint? version = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (version is not null)
-            {
-                Version = version.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Version")]
-        public uint Version;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]

@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public DXVA2TraceDecodeDevBeginFrameData
         (
-            _EVENT_TRACE_HEADER? wmiHeader = null,
+            Silk.NET.Core.Win32Extras.EventTraceHeader? wmiHeader = null,
             ulong? pObject = null,
             ulong? pRenderTarget = null,
             int? enter = null
@@ -52,7 +52,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "EVENT_TRACE_HEADER")]
         [NativeName("Type.Name", "EVENT_TRACE_HEADER")]
         [NativeName("Name", "wmiHeader")]
-        public _EVENT_TRACE_HEADER WmiHeader;
+        public Silk.NET.Core.Win32Extras.EventTraceHeader WmiHeader;
 
         [NativeName("Type", "ULONGLONG")]
         [NativeName("Type.Name", "ULONGLONG")]

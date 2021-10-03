@@ -91,103 +91,47 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "value")]
         public uint Value;
-#if NETSTANDARD2_1
-        public ref uint SampleFormat
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.SampleFormat;
-        }
-#else
         public uint SampleFormat
         {
             get => Anonymous.SampleFormat;
             set => Anonymous.SampleFormat = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint VideoChromaSubsampling
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VideoChromaSubsampling;
-        }
-#else
         public uint VideoChromaSubsampling
         {
             get => Anonymous.VideoChromaSubsampling;
             set => Anonymous.VideoChromaSubsampling = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint NominalRange
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.NominalRange;
-        }
-#else
         public uint NominalRange
         {
             get => Anonymous.NominalRange;
             set => Anonymous.NominalRange = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint VideoTransferMatrix
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VideoTransferMatrix;
-        }
-#else
         public uint VideoTransferMatrix
         {
             get => Anonymous.VideoTransferMatrix;
             set => Anonymous.VideoTransferMatrix = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint VideoLighting
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VideoLighting;
-        }
-#else
         public uint VideoLighting
         {
             get => Anonymous.VideoLighting;
             set => Anonymous.VideoLighting = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint VideoPrimaries
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VideoPrimaries;
-        }
-#else
         public uint VideoPrimaries
         {
             get => Anonymous.VideoPrimaries;
             set => Anonymous.VideoPrimaries = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint VideoTransferFunction
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VideoTransferFunction;
-        }
-#else
         public uint VideoTransferFunction
         {
             get => Anonymous.VideoTransferFunction;
             set => Anonymous.VideoTransferFunction = value;
         }
-#endif
 
     }
 }

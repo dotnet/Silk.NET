@@ -64,11 +64,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13459_C5")]
         [NativeName("Name", "anonymous1")]
         public VersionedDeviceRemovedExtendedDataUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData Dred10
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred10;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred10;
         }
 #else
         public DeviceRemovedExtendedData Dred10
@@ -78,11 +78,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData1 Dred11
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred11;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred11;
         }
 #else
         public DeviceRemovedExtendedData1 Dred11
@@ -92,11 +92,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref DeviceRemovedExtendedData2 Dred12
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Dred12;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Dred12;
         }
 #else
         public DeviceRemovedExtendedData2 Dred12

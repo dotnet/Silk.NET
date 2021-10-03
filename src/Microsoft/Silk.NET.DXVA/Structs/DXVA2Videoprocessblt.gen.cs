@@ -34,7 +34,7 @@ namespace Silk.NET.DXVA
             DXVA2FilterValues? noiseFilterChroma = null,
             DXVA2FilterValues? detailFilterLuma = null,
             DXVA2FilterValues? detailFilterChroma = null,
-            DXVA2Videosample* pSrcSurfaces = null,
+            DXVA2VideoSample* pSrcSurfaces = null,
             uint? numSrcSurfaces = null
         ) : this()
         {
@@ -183,7 +183,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DXVA2_VIDEOSAMPLE *")]
         [NativeName("Type.Name", "DXVA2_VIDEOSAMPLE *")]
         [NativeName("Name", "pSrcSurfaces")]
-        public DXVA2Videosample* PSrcSurfaces;
+        public DXVA2VideoSample* PSrcSurfaces;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

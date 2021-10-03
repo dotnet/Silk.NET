@@ -27,26 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3D9
         (
-            char* version = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (version is not null)
-            {
-                Version = version;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "Version")]
-        public char* Version;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -221,11 +210,11 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckDeviceType(uint iAdapter, Devtype DevType, Format DisplayFormat, Format BackBufferFormat, int bWindowed)
+        public readonly int CheckDeviceType(uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, int bWindowed)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, iAdapter, DevType, DisplayFormat, BackBufferFormat, bWindowed);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
             return ret;
         }
 

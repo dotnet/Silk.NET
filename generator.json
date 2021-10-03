@@ -792,8 +792,7 @@
         {
             "profileName": "Core",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h",
-                "src/Core/Silk.NET.Core/Native.EventTrace.h"
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -823,11 +822,9 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h"
                 ],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon",
-                    "Native.EventTrace.h": "[Core]EventTrace"
+                    "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
             "exclude": [
@@ -838,8 +835,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "d3dcommon",
-                    "Native.EventTrace"
+                    "d3dcommon"
                 ]
             },
             "output": {
@@ -849,8 +845,81 @@
                 "props": "build/props/bindings.props"
             },
             "namespace": "Silk.NET.Core.Native",
-            "extensionsNamespace": "Silk.NET.Core.Native.Extensions",
+            "extensionsNamespace": "Silk.NET.Core.Native",
             "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "Win32Extras",
+            "sources": [
+                "src/Core/Silk.NET.Core/win32extras.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "win32extras",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-name-container"
+            ],
+            "prefix": "",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/timezoneapi.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h"
+                ],
+                "classes": {
+                    "win32extras.h": "[Core]Windows"
+                }
+            },
+            "exclude": [
+                "_SECURITY_ATTRIBUTES"
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "win32extras"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Core",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Core.Win32Extras",
+            "extensionsNamespace": "Silk.NET.Core.Win32Extras",
+            "typeMaps": [
+                {
+                    "WMIDPREQUESTCODE": "Wmidprequestcode",
+                    "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes",
+                    "_FILETIME": "Filetime",
+                    "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
+                    "_WNODE_HEADER": "WnodeHeader",
+                    "_EXCEPTION_RECORD": "ExceptionRecord"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -999,6 +1068,7 @@
             "exclude": [
             ],
             "rename": {
+                "_DXVA2_VIDEOSAMPLE": "DXVA2VideoSample"
             },
             "bakery": {
                 "profileNames": [
@@ -1033,7 +1103,8 @@
                     "IDirect3DDevice9": "Silk.NET.Direct3D9.IDirect3DDevice9",
                     "IDirect3DSurface9": "Silk.NET.Direct3D9.IDirect3DSurface9",
                     "_D3DFORMAT": "Silk.NET.Direct3D9.Format",
-                    "_D3DPOOL": "Silk.NET.Direct3D9.Pool"
+                    "_D3DPOOL": "Silk.NET.Direct3D9.Pool",
+                    "_EVENT_TRACE_HEADER": "Silk.NET.Core.Win32Extras.EventTraceHeader"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

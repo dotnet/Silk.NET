@@ -79,75 +79,35 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "Value")]
         public uint Value;
-#if NETSTANDARD2_1
-        public ref uint Type
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Type;
-        }
-#else
         public uint Type
         {
             get => Anonymous.Type;
             set => Anonymous.Type = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint RGBRange
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.RGBRange;
-        }
-#else
         public uint RGBRange
         {
             get => Anonymous.RGBRange;
             set => Anonymous.RGBRange = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint YCbCrMatrix
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.YCbCrMatrix;
-        }
-#else
         public uint YCbCrMatrix
         {
             get => Anonymous.YCbCrMatrix;
             set => Anonymous.YCbCrMatrix = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint YCbCrXvYCC
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.YCbCrXvYCC;
-        }
-#else
         public uint YCbCrXvYCC
         {
             get => Anonymous.YCbCrXvYCC;
             set => Anonymous.YCbCrXvYCC = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint Reserved
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Reserved;
-        }
-#else
         public uint Reserved
         {
             get => Anonymous.Reserved;
             set => Anonymous.Reserved = value;
         }
-#endif
 
     }
 }

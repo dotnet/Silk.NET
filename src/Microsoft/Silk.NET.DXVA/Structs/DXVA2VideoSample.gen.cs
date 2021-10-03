@@ -16,19 +16,19 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "_DXVA2_VIDEOSAMPLE")]
-    public unsafe partial struct DXVA2Videosample
+    [NativeName("Name", "_DXVA2_VideoSample")]
+    public unsafe partial struct DXVA2VideoSample
     {
-        public DXVA2Videosample
+        public DXVA2VideoSample
         (
             long? start = null,
             long? end = null,
             DXVA2ExtendedFormat? sampleFormat = null,
-            uint? sampleFlags = null,
-            void* srcResource = null,
+            Silk.NET.Direct3D9.IDirect3DSurface9* srcSurface = null,
             Silk.NET.Maths.Rectangle<int>? srcRect = null,
             Silk.NET.Maths.Rectangle<int>? dstRect = null,
-            DXVA2Fixed32? planarAlpha = null
+            DXVA2Fixed32? planarAlpha = null,
+            uint? sampleData = null
         ) : this()
         {
             if (start is not null)
@@ -46,14 +46,9 @@ namespace Silk.NET.DXVA
                 SampleFormat = sampleFormat.Value;
             }
 
-            if (sampleFlags is not null)
+            if (srcSurface is not null)
             {
-                SampleFlags = sampleFlags.Value;
-            }
-
-            if (srcResource is not null)
-            {
-                SrcResource = srcResource;
+                SrcSurface = srcSurface;
             }
 
             if (srcRect is not null)
@@ -69,6 +64,11 @@ namespace Silk.NET.DXVA
             if (planarAlpha is not null)
             {
                 PlanarAlpha = planarAlpha.Value;
+            }
+
+            if (sampleData is not null)
+            {
+                SampleData = sampleData.Value;
             }
         }
 
@@ -88,15 +88,10 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "SampleFormat")]
         public DXVA2ExtendedFormat SampleFormat;
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SampleFlags")]
-        public uint SampleFlags;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "SrcResource")]
-        public void* SrcResource;
+        [NativeName("Type", "IDirect3DSurface9 *")]
+        [NativeName("Type.Name", "IDirect3DSurface9 *")]
+        [NativeName("Name", "SrcSurface")]
+        public Silk.NET.Direct3D9.IDirect3DSurface9* SrcSurface;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
@@ -147,7 +142,7 @@ namespace Silk.NET.DXVA
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<DXVA2AYUVSample8> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 16);
 #endif
@@ -158,5 +153,10 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "DXVA2_Fixed32")]
         [NativeName("Name", "PlanarAlpha")]
         public DXVA2Fixed32 PlanarAlpha;
+
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "SampleData")]
+        public uint SampleData;
     }
 }

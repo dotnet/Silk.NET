@@ -27,37 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DQuery9
         (
-            Querytype? type = null,
-            uint? dataSize = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (dataSize is not null)
-            {
-                DataSize = dataSize.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "D3DQUERYTYPE")]
-        [NativeName("Type.Name", "D3DQUERYTYPE")]
-        [NativeName("Name", "Type")]
-        public Querytype Type;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "DataSize")]
-        public uint DataSize;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]

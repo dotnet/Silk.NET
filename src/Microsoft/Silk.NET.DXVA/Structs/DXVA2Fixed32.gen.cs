@@ -53,11 +53,11 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "__AnonymousRecord_dxva2api_L458_C5")]
         [NativeName("Name", "anonymous1")]
         public DXVA2Fixed32Union Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref int Ll
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Ll;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Ll;
         }
 #else
         public int Ll
@@ -67,11 +67,11 @@ namespace Silk.NET.DXVA
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ushort Fraction
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Fraction;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Fraction;
         }
 #else
         public ushort Fraction
@@ -81,11 +81,11 @@ namespace Silk.NET.DXVA
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref short Value
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Value;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Value;
         }
 #else
         public short Value
