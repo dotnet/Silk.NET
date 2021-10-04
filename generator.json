@@ -897,6 +897,7 @@
                 "_SECURITY_ATTRIBUTES"
             ],
             "rename": {
+                "__AnonymousEnum_evntrace_L529_C9": "EtwCompressionResumptionMode"
             },
             "bakery": {
                 "profileNames": [
