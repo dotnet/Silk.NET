@@ -186,7 +186,8 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <returns>A map mapping those two things I just said.</returns>
         public static Dictionary<string, string> CreateVariedNameMap(Project project)
-            => project.Structs.ToDictionary(x => x.NativeName, x => x.Name)
+            => project.Structs.DistinctBy(x => x.NativeName)
+                .ToDictionary(x => x.NativeName, x => x.Name)
                 .Concat(project.Enums.ToDictionary(x => x.NativeName, x => x.Name))
                 .ToDictionary();
 

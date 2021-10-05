@@ -23,7 +23,7 @@ namespace Silk.NET.BuildTools.Common
         /// Gets a list of keywords in the C# language.
         /// </summary>
         [NotNull]
-        public static List<string> CSharpKeywords => new List<string>
+        public static readonly HashSet<string> CSharpKeywords = new HashSet<string>
         {
             "abstract",
             "event",
@@ -419,5 +419,9 @@ namespace Silk.NET.BuildTools.Common
             Accessibility.Private => "private" + (s ? " " : string.Empty),
             _ => string.Empty
         };
+
+        public static bool ConstitutesVulkanOutOverload(this string name) => name.StartsWith
+            ("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
+            ("vkGet");
     }
 }

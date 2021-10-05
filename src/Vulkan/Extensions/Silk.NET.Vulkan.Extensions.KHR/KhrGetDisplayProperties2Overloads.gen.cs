@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrGetDisplayProperties2Overloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
         public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
         public static unsafe Result GetDisplayModeProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModeProperties2KHR> pProperties)
         {
             // SpanOverloader
@@ -38,6 +40,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
         public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
         {
             // SpanOverloader
@@ -52,6 +55,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
         public static unsafe Result GetDisplayPlaneCapabilities2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DisplayPlaneInfo2KHR> pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DisplayPlaneCapabilities2KHR> pCapabilities)
         {
             // SpanOverloader
@@ -59,6 +63,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
         public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
         {
             // SpanOverloader
@@ -73,6 +78,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
         public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlaneProperties2KHR> pProperties)
         {
             // SpanOverloader
@@ -80,6 +86,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
         public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
         {
             // SpanOverloader
@@ -94,6 +101,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
         public static unsafe Result GetPhysicalDeviceDisplayProperties2(this KhrGetDisplayProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayProperties2KHR> pProperties)
         {
             // SpanOverloader

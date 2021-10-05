@@ -146,6 +146,24 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         QueueCapabilityBarrierIntel = 0x2000000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_KERNEL_INTEL")]
         QueueCapabilityKernelIntel = 0x4000000,
+        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DP4A_INTEL")]
+        DeviceFeatureFlagDP4AIntel = 0x1,
+        [NativeName("Name", "CL_DEVICE_FEATURE_FLAG_DPAS_INTEL")]
+        DeviceFeatureFlagDpasIntel = 0x2,
+        [NativeName("Name", "CL_DEVICE_IP_VERSION_INTEL")]
+        DeviceIPVersionIntel = 0x4250,
+        [NativeName("Name", "CL_DEVICE_ID_INTEL")]
+        DeviceIDIntel = 0x4251,
+        [NativeName("Name", "CL_DEVICE_NUM_SLICES_INTEL")]
+        DeviceNumSlicesIntel = 0x4252,
+        [NativeName("Name", "CL_DEVICE_NUM_SUB_SLICES_PER_SLICE_INTEL")]
+        DeviceNumSubSlicesPerSliceIntel = 0x4253,
+        [NativeName("Name", "CL_DEVICE_NUM_EUS_PER_SUB_SLICE_INTEL")]
+        DeviceNumEusPerSubSliceIntel = 0x4254,
+        [NativeName("Name", "CL_DEVICE_NUM_THREADS_PER_EU_INTEL")]
+        DeviceNumThreadsPerEUIntel = 0x4255,
+        [NativeName("Name", "CL_DEVICE_FEATURE_CAPABILITIES_INTEL")]
+        DeviceFeatureCapabilitiesIntel = 0x4256,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
         DevicePartitionByNamesIntel = 0x4052,
         [NativeName("Name", "CL_DEVICE_AVC_ME_VERSION_INTEL")]

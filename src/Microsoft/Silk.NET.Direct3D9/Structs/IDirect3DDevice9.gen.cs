@@ -27,367 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DDevice9
         (
-            DeviceCreationParameters? creationParameters = null,
-            PresentParameters? presentParameters = null,
-            Displaymode? displayMode = null,
-            Caps9? caps = null,
-            uint? availableTextureMem = null,
-            uint? swapChains = null,
-            uint? textures = null,
-            uint? vertexBuffers = null,
-            uint? indexBuffers = null,
-            uint? vertexShaders = null,
-            uint? pixelShaders = null,
-            Viewport9? viewport = null,
-            System.Numerics.Matrix4x4? projectionMatrix = null,
-            System.Numerics.Matrix4x4? viewMatrix = null,
-            System.Numerics.Matrix4x4? worldMatrix = null,
-            uint? fVF = null,
-            uint? vertexSize = null,
-            uint? vertexShaderVersion = null,
-            uint? pixelShaderVersion = null,
-            int? softwareVertexProcessing = null,
-            Material9? material = null,
-            Gammaramp? gammaRamp = null,
-            Silk.NET.Maths.Rectangle<int>? scissorRect = null,
-            int? dialogBoxMode = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (creationParameters is not null)
-            {
-                CreationParameters = creationParameters.Value;
-            }
-
-            if (presentParameters is not null)
-            {
-                PresentParameters = presentParameters.Value;
-            }
-
-            if (displayMode is not null)
-            {
-                DisplayMode = displayMode.Value;
-            }
-
-            if (caps is not null)
-            {
-                Caps = caps.Value;
-            }
-
-            if (availableTextureMem is not null)
-            {
-                AvailableTextureMem = availableTextureMem.Value;
-            }
-
-            if (swapChains is not null)
-            {
-                SwapChains = swapChains.Value;
-            }
-
-            if (textures is not null)
-            {
-                Textures = textures.Value;
-            }
-
-            if (vertexBuffers is not null)
-            {
-                VertexBuffers = vertexBuffers.Value;
-            }
-
-            if (indexBuffers is not null)
-            {
-                IndexBuffers = indexBuffers.Value;
-            }
-
-            if (vertexShaders is not null)
-            {
-                VertexShaders = vertexShaders.Value;
-            }
-
-            if (pixelShaders is not null)
-            {
-                PixelShaders = pixelShaders.Value;
-            }
-
-            if (viewport is not null)
-            {
-                Viewport = viewport.Value;
-            }
-
-            if (projectionMatrix is not null)
-            {
-                ProjectionMatrix = projectionMatrix.Value;
-            }
-
-            if (viewMatrix is not null)
-            {
-                ViewMatrix = viewMatrix.Value;
-            }
-
-            if (worldMatrix is not null)
-            {
-                WorldMatrix = worldMatrix.Value;
-            }
-
-            if (fVF is not null)
-            {
-                FVF = fVF.Value;
-            }
-
-            if (vertexSize is not null)
-            {
-                VertexSize = vertexSize.Value;
-            }
-
-            if (vertexShaderVersion is not null)
-            {
-                VertexShaderVersion = vertexShaderVersion.Value;
-            }
-
-            if (pixelShaderVersion is not null)
-            {
-                PixelShaderVersion = pixelShaderVersion.Value;
-            }
-
-            if (softwareVertexProcessing is not null)
-            {
-                SoftwareVertexProcessing = softwareVertexProcessing.Value;
-            }
-
-            if (material is not null)
-            {
-                Material = material.Value;
-            }
-
-            if (gammaRamp is not null)
-            {
-                GammaRamp = gammaRamp.Value;
-            }
-
-            if (scissorRect is not null)
-            {
-                ScissorRect = scissorRect.Value;
-            }
-
-            if (dialogBoxMode is not null)
-            {
-                DialogBoxMode = dialogBoxMode.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "D3DDEVICE_CREATION_PARAMETERS")]
-        [NativeName("Type.Name", "D3DDEVICE_CREATION_PARAMETERS")]
-        [NativeName("Name", "CreationParameters")]
-        public DeviceCreationParameters CreationParameters;
-
-        [NativeName("Type", "D3DPRESENT_PARAMETERS")]
-        [NativeName("Type.Name", "D3DPRESENT_PARAMETERS")]
-        [NativeName("Name", "PresentParameters")]
-        public PresentParameters PresentParameters;
-
-        [NativeName("Type", "D3DDISPLAYMODE")]
-        [NativeName("Type.Name", "D3DDISPLAYMODE")]
-        [NativeName("Name", "DisplayMode")]
-        public Displaymode DisplayMode;
-
-        [NativeName("Type", "D3DCAPS9")]
-        [NativeName("Type.Name", "D3DCAPS9")]
-        [NativeName("Name", "Caps")]
-        public Caps9 Caps;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "AvailableTextureMem")]
-        public uint AvailableTextureMem;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SwapChains")]
-        public uint SwapChains;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Textures")]
-        public uint Textures;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "VertexBuffers")]
-        public uint VertexBuffers;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "IndexBuffers")]
-        public uint IndexBuffers;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "VertexShaders")]
-        public uint VertexShaders;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "PixelShaders")]
-        public uint PixelShaders;
-
-        [NativeName("Type", "D3DVIEWPORT9")]
-        [NativeName("Type.Name", "D3DVIEWPORT9")]
-        [NativeName("Name", "Viewport")]
-        public Viewport9 Viewport;
-
-        [NativeName("Type", "D3DMATRIX")]
-        [NativeName("Type.Name", "D3DMATRIX")]
-        [NativeName("Name", "ProjectionMatrix")]
-        public System.Numerics.Matrix4x4 ProjectionMatrix;
-
-        [NativeName("Type", "D3DMATRIX")]
-        [NativeName("Type.Name", "D3DMATRIX")]
-        [NativeName("Name", "ViewMatrix")]
-        public System.Numerics.Matrix4x4 ViewMatrix;
-
-        [NativeName("Type", "D3DMATRIX")]
-        [NativeName("Type.Name", "D3DMATRIX")]
-        [NativeName("Name", "WorldMatrix")]
-        public System.Numerics.Matrix4x4 WorldMatrix;
-        
-        [NativeName("Type", "D3DMATRIX [8]")]
-        [NativeName("Type.Name", "D3DMATRIX [8]")]
-        [NativeName("Name", "TextureMatrices")]
-        public TextureMatricesBuffer TextureMatrices;
-
-        public struct TextureMatricesBuffer
-        {
-            public System.Numerics.Matrix4x4 Element0;
-            public System.Numerics.Matrix4x4 Element1;
-            public System.Numerics.Matrix4x4 Element2;
-            public System.Numerics.Matrix4x4 Element3;
-            public System.Numerics.Matrix4x4 Element4;
-            public System.Numerics.Matrix4x4 Element5;
-            public System.Numerics.Matrix4x4 Element6;
-            public System.Numerics.Matrix4x4 Element7;
-            public ref System.Numerics.Matrix4x4 this[int index]
-            {
-                get
-                {
-                    if (index > 7 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (System.Numerics.Matrix4x4* ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
-
-#if NETSTANDARD2_1
-            public Span<System.Numerics.Matrix4x4> AsSpan()
-                => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
-        }
-
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "FVF")]
-        public uint FVF;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "VertexSize")]
-        public uint VertexSize;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "VertexShaderVersion")]
-        public uint VertexShaderVersion;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "PixelShaderVersion")]
-        public uint PixelShaderVersion;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "SoftwareVertexProcessing")]
-        public int SoftwareVertexProcessing;
-
-        [NativeName("Type", "D3DMATERIAL9")]
-        [NativeName("Type.Name", "D3DMATERIAL9")]
-        [NativeName("Name", "Material")]
-        public Material9 Material;
-        
-        [NativeName("Type", "D3DLIGHT9 [16]")]
-        [NativeName("Type.Name", "D3DLIGHT9 [16]")]
-        [NativeName("Name", "Lights")]
-        public LightsBuffer Lights;
-
-        public struct LightsBuffer
-        {
-            public Light9 Element0;
-            public Light9 Element1;
-            public Light9 Element2;
-            public Light9 Element3;
-            public Light9 Element4;
-            public Light9 Element5;
-            public Light9 Element6;
-            public Light9 Element7;
-            public Light9 Element8;
-            public Light9 Element9;
-            public Light9 Element10;
-            public Light9 Element11;
-            public Light9 Element12;
-            public Light9 Element13;
-            public Light9 Element14;
-            public Light9 Element15;
-            public ref Light9 this[int index]
-            {
-                get
-                {
-                    if (index > 15 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (Light9* ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
-
-#if NETSTANDARD2_1
-            public Span<Light9> AsSpan()
-                => MemoryMarshal.CreateSpan(ref Element0, 16);
-#endif
-        }
-
-        [NativeName("Type", "BOOL [16]")]
-        [NativeName("Type.Name", "BOOL [16]")]
-        [NativeName("Name", "LightsEnabled")]
-        public fixed int LightsEnabled[16];
-
-        [NativeName("Type", "D3DGAMMARAMP")]
-        [NativeName("Type.Name", "D3DGAMMARAMP")]
-        [NativeName("Name", "GammaRamp")]
-        public Gammaramp GammaRamp;
-
-        [NativeName("Type", "RECT")]
-        [NativeName("Type.Name", "RECT")]
-        [NativeName("Name", "ScissorRect")]
-        public Silk.NET.Maths.Rectangle<int> ScissorRect;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "DialogBoxMode")]
-        public int DialogBoxMode;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -3201,107 +2849,107 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* OffsetInBytes, uint* pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* pOffsetInBytes, uint* pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, OffsetInBytes, pStride);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, pOffsetInBytes, pStride);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* OffsetInBytes, ref uint pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, uint* pOffsetInBytes, ref uint pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pStridePtr = &pStride)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, OffsetInBytes, pStridePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, pOffsetInBytes, pStridePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, ref uint OffsetInBytes, uint* pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, ref uint pOffsetInBytes, uint* pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (uint* OffsetInBytesPtr = &OffsetInBytes)
+            fixed (uint* pOffsetInBytesPtr = &pOffsetInBytes)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, OffsetInBytesPtr, pStride);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, pOffsetInBytesPtr, pStride);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, ref uint OffsetInBytes, ref uint pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9** ppStreamData, ref uint pOffsetInBytes, ref uint pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (uint* OffsetInBytesPtr = &OffsetInBytes)
-            {
-                fixed (uint* pStridePtr = &pStride)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, OffsetInBytesPtr, pStridePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, uint* OffsetInBytes, uint* pStride)
-        {
-            var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, OffsetInBytes, pStride);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, uint* OffsetInBytes, ref uint pStride)
-        {
-            var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
+            fixed (uint* pOffsetInBytesPtr = &pOffsetInBytes)
             {
                 fixed (uint* pStridePtr = &pStride)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, OffsetInBytes, pStridePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamData, pOffsetInBytesPtr, pStridePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, ref uint OffsetInBytes, uint* pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, uint* pOffsetInBytes, uint* pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
             {
-                fixed (uint* OffsetInBytesPtr = &OffsetInBytes)
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, pOffsetInBytes, pStride);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, uint* pOffsetInBytes, ref uint pStride)
+        {
+            var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
+            {
+                fixed (uint* pStridePtr = &pStride)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, OffsetInBytesPtr, pStride);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, pOffsetInBytes, pStridePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, ref uint OffsetInBytes, ref uint pStride)
+        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, ref uint pOffsetInBytes, uint* pStride)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
             {
-                fixed (uint* OffsetInBytesPtr = &OffsetInBytes)
+                fixed (uint* pOffsetInBytesPtr = &pOffsetInBytes)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, pOffsetInBytesPtr, pStride);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetStreamSource(uint StreamNumber, ref IDirect3DVertexBuffer9* ppStreamData, ref uint pOffsetInBytes, ref uint pStride)
+        {
+            var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (IDirect3DVertexBuffer9** ppStreamDataPtr = &ppStreamData)
+            {
+                fixed (uint* pOffsetInBytesPtr = &pOffsetInBytes)
                 {
                     fixed (uint* pStridePtr = &pStride)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, OffsetInBytesPtr, pStridePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, IDirect3DVertexBuffer9**, uint*, uint*, int>)LpVtbl[101])(@this, StreamNumber, ppStreamDataPtr, pOffsetInBytesPtr, pStridePtr);
                     }
                 }
             }
@@ -3309,31 +2957,31 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetStreamSourceFreq(uint StreamNumber, uint Divider)
+        public readonly int SetStreamSourceFreq(uint StreamNumber, uint Setting)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint, int>)LpVtbl[102])(@this, StreamNumber, Divider);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint, int>)LpVtbl[102])(@this, StreamNumber, Setting);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStreamSourceFreq(uint StreamNumber, uint* Divider)
+        public readonly unsafe int GetStreamSourceFreq(uint StreamNumber, uint* pSetting)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint*, int>)LpVtbl[103])(@this, StreamNumber, Divider);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint*, int>)LpVtbl[103])(@this, StreamNumber, pSetting);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetStreamSourceFreq(uint StreamNumber, ref uint Divider)
+        public readonly int GetStreamSourceFreq(uint StreamNumber, ref uint pSetting)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (uint* DividerPtr = &Divider)
+            fixed (uint* pSettingPtr = &pSetting)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint*, int>)LpVtbl[103])(@this, StreamNumber, DividerPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, uint*, int>)LpVtbl[103])(@this, StreamNumber, pSettingPtr);
             }
             return ret;
         }

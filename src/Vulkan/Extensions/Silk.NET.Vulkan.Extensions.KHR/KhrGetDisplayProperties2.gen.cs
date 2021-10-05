@@ -25,6 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
@@ -33,6 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayModeProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
         public partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
@@ -41,6 +43,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
         [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPlaneInfo2KHR* pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
 
@@ -49,6 +52,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
         [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
         public partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
 
@@ -57,6 +61,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
@@ -65,6 +70,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayPlaneProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
         public partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
@@ -73,6 +79,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 
@@ -81,6 +88,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.DisplayProperties2Khr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
         public partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 

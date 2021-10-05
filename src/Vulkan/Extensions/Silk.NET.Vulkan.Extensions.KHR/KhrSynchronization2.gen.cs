@@ -69,6 +69,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointData2NV* pCheckpointData);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
         [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV")]
         public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointData2NV pCheckpointData);
 
@@ -77,6 +78,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointData2NV* pCheckpointData);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCheckpointData = new(StructureType.CheckpointData2NV);")]
         [NativeApi(EntryPoint = "vkGetQueueCheckpointData2NV")]
         public partial void GetQueueCheckpointData2([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointData2NV pCheckpointData);
 

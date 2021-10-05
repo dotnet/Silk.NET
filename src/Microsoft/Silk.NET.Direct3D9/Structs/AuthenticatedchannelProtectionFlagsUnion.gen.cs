@@ -67,47 +67,23 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "Value")]
         public uint Value;
-#if NETSTANDARD2_1
-        public ref uint ProtectionEnabled
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.ProtectionEnabled;
-        }
-#else
         public uint ProtectionEnabled
         {
             get => Anonymous.ProtectionEnabled;
             set => Anonymous.ProtectionEnabled = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint OverlayOrFullscreenRequired
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.OverlayOrFullscreenRequired;
-        }
-#else
         public uint OverlayOrFullscreenRequired
         {
             get => Anonymous.OverlayOrFullscreenRequired;
             set => Anonymous.OverlayOrFullscreenRequired = value;
         }
-#endif
 
-#if NETSTANDARD2_1
-        public ref uint Reserved
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Reserved;
-        }
-#else
         public uint Reserved
         {
             get => Anonymous.Reserved;
             set => Anonymous.Reserved = value;
         }
-#endif
 
     }
 }

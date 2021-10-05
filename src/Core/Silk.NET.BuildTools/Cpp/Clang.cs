@@ -104,6 +104,7 @@ namespace Silk.NET.BuildTools.Cpp
 
         public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
         {
+            Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} for {clang.getClangVersion()}");
             var profile = new Profile
             {
                 Name = Path.GetFileNameWithoutExtension(fileName)
@@ -203,7 +204,7 @@ namespace Silk.NET.BuildTools.Cpp
             var pfns = new Dictionary<string, Struct>();
 
             Console.WriteLine("Visting declarations...");
-            VisitDecls(translationUnitDecl.Decls);
+            VisitDecls(DeclsOf(translationUnitDecl, translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
 
             Console.WriteLine("Creating finished profile...");
@@ -214,7 +215,17 @@ namespace Silk.NET.BuildTools.Cpp
                 (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
             var className = destInfo.Substring(indexOfCloseSqBracket + 1);
             var project = profile.Projects[projectName] = new Project
-                {IsRoot = projectName == "Core", Namespace = task.Namespace};
+            {
+                IsRoot = projectName == "Core",
+                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}"
+            };
+
+            if (projectName != "Core")
+            {
+                // we need a core project even if we're not using it
+                profile.Projects["Core"] = new() { IsRoot = true, Namespace = task.Namespace };
+            }
+            
             var @class = new Class
             {
                 ClassName = className,
@@ -371,6 +382,11 @@ namespace Silk.NET.BuildTools.Cpp
                     else
                     {
                         decl.Location.GetFileLocation(out CXFile file, out _, out _, out _);
+                        if (string.IsNullOrWhiteSpace(file.Name.ToString()))
+                        {
+                            continue;
+                        }
+
                         if (!traversals.Contains(Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                         {
                             // It is not uncommon for some declarations to be done using macros, which are themselves
@@ -879,14 +895,28 @@ namespace Silk.NET.BuildTools.Cpp
                 for (var i = 0; i < recordDecl.Decls.Count; i++)
                 {
                     var decl = recordDecl.Decls[i];
+                    if (i == 0 && recordDecl.SourceRange.Start == decl.SourceRange.Start)
+                    {
+                        continue; // why is this even a thing oml
+                    }
+                    
                     switch (decl)
                     {
                         case FieldDecl field:
                         {
+                            if (string.IsNullOrWhiteSpace(field.Name))
+                            {
+                                // anonymous, we will have handled the RecordDecl already
+                                continue;
+                            }
+
                             yield return new Field
                             {
                                 Name = Naming.TranslateLite
-                                    (Naming.TrimName(field.Name, task), task.FunctionPrefix),
+                                (
+                                    Naming.TrimName(field.Name, task),
+                                    task.FunctionPrefix
+                                ),
                                 NativeName = field.Name,
                                 Type = GetType(field.Type, out var count, ref _f, out _),
                                 NativeType = field.Type.AsString.Replace("\\", "\\\\"), Count = count,
@@ -973,8 +1003,11 @@ namespace Silk.NET.BuildTools.Cpp
                             {
                                 if (recordDecl.Decls[j] is FieldDecl nestedFieldDecl)
                                 {
-                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
+                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name &&
+                                        !string.IsNullOrWhiteSpace(nestedFieldDecl.Name))
                                     {
+                                        // if there's field decl (with a name!) for this nested structure, don't make a
+                                        // field automatically as we'll do that next when we visit the FieldDecl
                                         skip = true;
                                         if (renameNestedName)
                                         {
@@ -1136,9 +1169,14 @@ namespace Silk.NET.BuildTools.Cpp
                                 Console.WriteLine("Preferring new definition as the existing one is opaque.");
                                 structs.Remove(existing);
                             }
+                            else if (existing.Fields.FirstOrDefault()?.Name == "LpVtbl" && !existing.Functions.Any())
+                            {
+                                Console.WriteLine("Preferring new definition as the existing one has no functions.");
+                                structs.Remove(existing);
+                            }
                             else
                             {
-                                Console.WriteLine("Skipping...");
+                                Console.WriteLine("Preferring existing definition.");
                                 break;
                             }
                         }
@@ -1382,7 +1420,7 @@ namespace Silk.NET.BuildTools.Cpp
                                     {
                                         Name = name, Type = new() {Name = "string"}, ExtensionName = "Core",
                                         NativeName = nativeName,
-                                        Value = $"\"{stringLiteral.String}\""
+                                        Value = $"\"{stringLiteral.String.Replace("\\", "\\\\").Replace("\n", "\\n")}\""
                                     }
                                 );
                                 break;
@@ -1428,7 +1466,7 @@ namespace Silk.NET.BuildTools.Cpp
                         {
                             var previousContext = context.Last.Previous;
 
-                            while ((previousContext.Value is ParenExpr) || (previousContext.Value is ImplicitCastExpr))
+                            while (previousContext.Value is ParenExpr or ImplicitCastExpr)
                             {
                                 previousContext = previousContext.Previous;
                             }
@@ -1575,7 +1613,22 @@ namespace Silk.NET.BuildTools.Cpp
 
                 if (decl is IDeclContext declContext)
                 {
-                    VisitDecls(declContext.Decls);
+                    VisitDecls(DeclsOf(decl, declContext));
+                }
+            }
+
+            static IEnumerable<Decl> DeclsOf(Decl parent, IDeclContext ctx)
+            {
+                var i = -1;
+                foreach (var child in ctx.Decls)
+                {
+                    i++;
+                    if (i == 0 && child.SourceRange.Start == parent.SourceRange.Start)
+                    {
+                        continue;
+                    }
+
+                    yield return child;
                 }
             }
 

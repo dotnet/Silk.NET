@@ -27,37 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DSwapChain9
         (
-            PresentParameters? presentParameters = null,
-            Displaymode? displayMode = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (presentParameters is not null)
-            {
-                PresentParameters = presentParameters.Value;
-            }
-
-            if (displayMode is not null)
-            {
-                DisplayMode = displayMode.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "D3DPRESENT_PARAMETERS")]
-        [NativeName("Type.Name", "D3DPRESENT_PARAMETERS")]
-        [NativeName("Name", "PresentParameters")]
-        public PresentParameters PresentParameters;
-
-        [NativeName("Type", "D3DDISPLAYMODE")]
-        [NativeName("Type.Name", "D3DDISPLAYMODE")]
-        [NativeName("Name", "DisplayMode")]
-        public Displaymode DisplayMode;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]

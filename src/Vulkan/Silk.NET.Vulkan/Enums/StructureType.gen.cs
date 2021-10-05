@@ -1126,6 +1126,26 @@ namespace Silk.NET.Vulkan
         ImportSemaphoreZirconHandleInfoFuchsia = 1000365000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
         SemaphoreGetZirconHandleInfoFuchsia = 1000365001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COLLECTION_CREATE_INFO_FUCHSIA")]
+        BufferCollectionCreateInfoFuchsia = 1000366000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_MEMORY_BUFFER_COLLECTION_FUCHSIA")]
+        ImportMemoryBufferCollectionFuchsia = 1000366001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COLLECTION_IMAGE_CREATE_INFO_FUCHSIA")]
+        BufferCollectionImageCreateInfoFuchsia = 1000366002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COLLECTION_PROPERTIES_FUCHSIA")]
+        BufferCollectionPropertiesFuchsia = 1000366003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_CONSTRAINTS_INFO_FUCHSIA")]
+        BufferConstraintsInfoFuchsia = 1000366004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COLLECTION_BUFFER_CREATE_INFO_FUCHSIA")]
+        BufferCollectionBufferCreateInfoFuchsia = 1000366005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_CONSTRAINTS_INFO_FUCHSIA")]
+        ImageConstraintsInfoFuchsia = 1000366006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_FORMAT_CONSTRAINTS_INFO_FUCHSIA")]
+        ImageFormatConstraintsInfoFuchsia = 1000366007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SYSMEM_COLOR_SPACE_FUCHSIA")]
+        SysmemColorSpaceFuchsia = 1000366008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COLLECTION_CONSTRAINTS_INFO_FUCHSIA")]
+        BufferCollectionConstraintsInfoFuchsia = 1000366009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI")]
         SubpassShadingPipelineCreateInfoHuawei = 1000369000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_FEATURES_HUAWEI")]
@@ -1154,6 +1174,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMultiDrawFeaturesExt = 1000392000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_PROPERTIES_EXT")]
         PhysicalDeviceMultiDrawPropertiesExt = 1000392001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PAGEABLE_DEVICE_LOCAL_MEMORY_FEATURES_EXT")]
+        PhysicalDevicePageableDeviceLocalMemoryFeaturesExt = 1000412000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

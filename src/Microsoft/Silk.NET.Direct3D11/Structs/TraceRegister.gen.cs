@@ -74,11 +74,11 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT8")]
         [NativeName("Name", "Flags")]
         public byte Flags;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref ushort Index1D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Index1D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Index1D;
         }
 #else
         public ushort Index1D

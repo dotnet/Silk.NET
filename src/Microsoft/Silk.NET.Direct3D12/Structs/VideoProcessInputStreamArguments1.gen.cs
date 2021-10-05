@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<VideoProcessInputStream> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif

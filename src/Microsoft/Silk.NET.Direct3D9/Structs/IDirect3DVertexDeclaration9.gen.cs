@@ -129,48 +129,48 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(Vertexelement9* arg0, uint* pNumElements)
+        public readonly unsafe int GetDeclaration(Vertexelement9* pElement, uint* pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElements);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, pElement, pNumElements);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(Vertexelement9* arg0, ref uint pNumElements)
+        public readonly unsafe int GetDeclaration(Vertexelement9* pElement, ref uint pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pNumElementsPtr = &pNumElements)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElementsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, pElement, pNumElementsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(ref Vertexelement9 arg0, uint* pNumElements)
+        public readonly unsafe int GetDeclaration(ref Vertexelement9 pElement, uint* pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Vertexelement9* arg0Ptr = &arg0)
+            fixed (Vertexelement9* pElementPtr = &pElement)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElements);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, pElementPtr, pNumElements);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDeclaration(ref Vertexelement9 arg0, ref uint pNumElements)
+        public readonly int GetDeclaration(ref Vertexelement9 pElement, ref uint pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Vertexelement9* arg0Ptr = &arg0)
+            fixed (Vertexelement9* pElementPtr = &pElement)
             {
                 fixed (uint* pNumElementsPtr = &pNumElements)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElementsPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, pElementPtr, pNumElementsPtr);
                 }
             }
             return ret;

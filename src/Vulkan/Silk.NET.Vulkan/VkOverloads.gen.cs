@@ -311,6 +311,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -325,6 +326,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -332,6 +334,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader
@@ -346,6 +349,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader
@@ -381,6 +385,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -395,6 +400,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -402,6 +408,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -416,6 +423,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -430,6 +438,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -444,6 +453,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -451,6 +461,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
@@ -465,6 +476,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
@@ -472,6 +484,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
@@ -486,6 +499,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
@@ -493,6 +507,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
         public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
         {
             // SpanOverloader
@@ -507,6 +522,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
         public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
         {
             // SpanOverloader
@@ -514,6 +530,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFeatures = new(StructureType.PhysicalDeviceFeatures2);")]
         public static unsafe void GetPhysicalDeviceFeatures2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceFeatures2> pFeatures)
         {
             // SpanOverloader
@@ -521,6 +538,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
         public static unsafe void GetPhysicalDeviceFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] Span<FormatProperties2> pFormatProperties)
         {
             // SpanOverloader
@@ -528,6 +546,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -542,6 +561,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceImageFormatInfo2> pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -549,6 +569,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryProperties = new(StructureType.PhysicalDeviceMemoryProperties2);")]
         public static unsafe void GetPhysicalDeviceMemoryProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceMemoryProperties2> pMemoryProperties)
         {
             // SpanOverloader
@@ -556,6 +577,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PhysicalDeviceProperties2);")]
         public static unsafe void GetPhysicalDeviceProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceProperties2> pProperties)
         {
             // SpanOverloader
@@ -563,6 +585,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -577,6 +600,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -584,6 +608,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -598,6 +623,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -612,6 +638,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -626,6 +653,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader

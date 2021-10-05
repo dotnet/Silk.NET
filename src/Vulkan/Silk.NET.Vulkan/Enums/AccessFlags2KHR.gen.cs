@@ -93,5 +93,7 @@ namespace Silk.NET.Vulkan
         Access2ColorAttachmentReadNoncoherentBitExt = 524288,
         [NativeName("Name", "VK_ACCESS_2_INVOCATION_MASK_READ_BIT_HUAWEI")]
         Access2InvocationMaskReadBitHuawei = 549755813888,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_387_BIT_KHR")]
+        Access2Reserved387BitKhr = 1099511627776,
     }
 }

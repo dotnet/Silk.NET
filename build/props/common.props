@@ -6,31 +6,26 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET September 2021 Update
+            Silk.NET October 2021 Update
 
-            - Add TryGetExtension methods to AL &amp; ALContext
-            - Add support for .NET 6 Android
-            - Update to Vulkan 1.2.190
-            - Update to OpenXR 1.0.19
-            - Update to latest OpenGL specifications
+            - Add bindings for DirectX Video Acceleration (DXVA)
+            - Add bindings for D3D9Ex
+            - Add bindings for extra core Win32 APIs (as required by DXVA)
+            - Add a .NET 6 code path for GlobalMemory using NativeMemory
+            - Add more TFMs in addition to .NET Standard 2.0 for DirectX bindings 
+            - Add enhanced anonymous struct support with ref-returning properties on .NET Standard 2.1 and up
+            - Update to Vulkan 1.2.194
             - Update to latest OpenCL specifications
-            - Fix calling CreateInput on an uninitialized IView resulting in a AccessViolationException
-            - Fix calling Close on an uninitialized IView resulting in an AccessViolationException
-            - Fix Silk.NET (and by extension SDL) taking full control of orientation on Android
-            - Fix DoRender being called if Window.Close was called during DoUpdate
-            - Fix Scalar.Abs for double values
-            - Fix "Pfn" function pointer structures being marshalled with the incorrect calling convention 
-            - Fix Scalar.IsNaN and Scalar.IsInfinity returning true for non floating point types
-            - Fix Box2D.Center returning bogus values
-            - Fix incorrect documentation in Thumbstick.Direction
-            - Fix incorrect documentation in WindowOptions
+            - Fix MarshalDirectiveException when a struct containing a char passes across a native boundary
+            - Fix Vulkan out parameters not having their structure type set before passing across the native boundary
+            - Fix native libraries not being found in some cases for self-contained executables
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.8.0</VersionPrefix>
+        <VersionPrefix>2.9.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
@@ -42,6 +37,8 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
+        <Deterministic>true</Deterministic>
     </PropertyGroup>
     <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkSourceLinkExempt)' == ''">
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>

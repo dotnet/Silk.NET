@@ -792,7 +792,7 @@
         {
             "profileName": "Core",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -824,7 +824,7 @@
                 "traverse": [
                 ],
                 "classes": {
-                    "D3DCommon.h": "[Core]D3DCommon"
+                    "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
             "exclude": [
@@ -835,7 +835,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "D3DCommon"
+                    "d3dcommon"
                 ]
             },
             "output": {
@@ -845,8 +845,82 @@
                 "props": "build/props/bindings.props"
             },
             "namespace": "Silk.NET.Core.Native",
-            "extensionsNamespace": "Silk.NET.Core.Native.Extensions",
+            "extensionsNamespace": "Silk.NET.Core.Native",
             "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "Win32Extras",
+            "sources": [
+                "src/Core/Silk.NET.Core/win32extras.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "win32extras",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-name-container"
+            ],
+            "prefix": "",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/timezoneapi.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h"
+                ],
+                "classes": {
+                    "win32extras.h": "[Core]Windows"
+                }
+            },
+            "exclude": [
+                "_SECURITY_ATTRIBUTES"
+            ],
+            "rename": {
+                "__AnonymousEnum_evntrace_L529_C9": "EtwCompressionResumptionMode"
+            },
+            "bakery": {
+                "profileNames": [
+                    "win32extras"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Core",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Core.Win32Extras",
+            "extensionsNamespace": "Silk.NET.Core.Win32Extras",
+            "typeMaps": [
+                {
+                    "WMIDPREQUESTCODE": "Wmidprequestcode",
+                    "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes",
+                    "_FILETIME": "Filetime",
+                    "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
+                    "_WNODE_HEADER": "WnodeHeader",
+                    "_EXCEPTION_RECORD": "ExceptionRecord"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -939,6 +1013,100 @@
                 "className": "DXGILibraryNameContainer"
             },
             "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "DXVA",
+            "sources": [
+                "src/Microsoft/dxva.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dxva",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "DXVA",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2api.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2swdev.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2trace.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva9typ.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxvahd.h"
+                ],
+                "classes": {
+                    "dxva.h": "[Core]DXVA",
+                    "dxva2api.h": "[Core]DXVA",
+                    "dxva2swdev.h": "[Core]DXVA",
+                    "dxva2trace.h": "[Core]DXVA",
+                    "dxva9typ.h": "[Core]DXVA",
+                    "dxvahd.h": "[Core]DXVA"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "_DXVA2_VIDEOSAMPLE": "DXVA2VideoSample"
+            },
+            "bakery": {
+                "profileNames": [
+                    "dxva",
+                    "dxva2api",
+                    "dxva2swdev",
+                    "dxva2trace",
+                    "dxva2typ",
+                    "dxvahd"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DXVA",
+            "extensionsNamespace": "Silk.NET.DXVA.Extensions",
+            "nameContainer": {
+                "linux-x64": "libdxva2.so",
+                "win-x64": "dxva2.dll",
+                "win-x86": "dxva2.dll",
+                "osx-x64": "libdxva2.dylib",
+                "android": "libdxva2.so",
+                "iOS": "__Internal",
+                "className": "DXVA2LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "IDirect3DDevice9Ex": "Silk.NET.Direct3D9.IDirect3DDevice9Ex",
+                    "IDirect3DDevice9": "Silk.NET.Direct3D9.IDirect3DDevice9",
+                    "IDirect3DSurface9": "Silk.NET.Direct3D9.IDirect3DSurface9",
+                    "_D3DFORMAT": "Silk.NET.Direct3D9.Format",
+                    "_D3DPOOL": "Silk.NET.Direct3D9.Pool",
+                    "_EVENT_TRACE_HEADER": "Silk.NET.Core.Win32Extras.EventTraceHeader"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"

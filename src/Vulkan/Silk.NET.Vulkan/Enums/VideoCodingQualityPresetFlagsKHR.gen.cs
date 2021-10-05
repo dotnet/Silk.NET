@@ -13,8 +13,6 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkVideoCodingQualityPresetFlagsKHR")]
     public enum VideoCodingQualityPresetFlagsKHR : int
     {
-        [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_DEFAULT_BIT_KHR")]
-        VideoCodingQualityPresetDefaultBitKhr = 0,
         [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_NORMAL_BIT_KHR")]
         VideoCodingQualityPresetNormalBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_CODING_QUALITY_PRESET_POWER_BIT_KHR")]

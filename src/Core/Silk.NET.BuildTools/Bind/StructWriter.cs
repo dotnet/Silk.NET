@@ -47,6 +47,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             string guid = null;
+            
+            static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
+            var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
+            
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
@@ -59,7 +63,18 @@ namespace Silk.NET.BuildTools.Bind
                     guid = string.Join(", ", attr.Arguments);
                 }
 
+                if (attr.Name == "StructLayout" && needsCharSetFixup)
+                {
+                    attr.Arguments.Add("CharSet = CharSet.Unicode");
+                    needsCharSetFixup = false;
+                }
+
                 sw.WriteLine($"    {attr}");
+            }
+
+            if (needsCharSetFixup)
+            {
+                sw.WriteLine("    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]");
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
@@ -95,7 +110,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        {");
                     // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
                     // by reference, but this should work well enough.
-                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
+                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1 || NET5_0_OR_GREATER");
                     sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
                     sw.WriteLine($"            (");
                     sw.WriteLine($"                ref MemoryMarshal.GetReference");
@@ -195,7 +210,7 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
                 {
-                    WriteFusedField(structField, intrinsic, sw);
+                    WriteFusedField(@struct, project, structField, intrinsic, sw);
                 }
                 else if (structField.NumBits is not null)
                 {
@@ -255,7 +270,7 @@ namespace Silk.NET.BuildTools.Bind
                         if (!typeFixup09072020.IsPointer)
                         {
                             sw.WriteLine();
-                            sw.WriteLine("#if NETSTANDARD2_1");
+                            sw.WriteLine("#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER");
                             sw.WriteLine($"            public Span<{typeFixup09072020}> AsSpan()");
                             sw.WriteLine($"                => MemoryMarshal.CreateSpan(ref Element0, {count});");
                             sw.WriteLine("#endif");
@@ -475,22 +490,53 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
         }
 
-        public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
+        public static void WriteFusedField(Struct @struct, Project p, Field field, List<string> args, StreamWriter sw)
         {
-            sw.WriteLine("#if NETSTANDARD2_1");
-            sw.WriteLine($"        public ref {field.Type} {field.Name}");
-            sw.WriteLine("        {");
-            sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
-            sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
-            sw.WriteLine("        }");
-            sw.WriteLine("#else");
+            var temporaryValue = IsTemporaryValue(p, @struct, args);
+            if (!temporaryValue)
+            {
+                sw.WriteLine("#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER");
+                sw.WriteLine($"        public ref {field.Type} {field.Name}");
+                sw.WriteLine("        {");
+                sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
+                sw.WriteLine($"            get => ref MemoryMarshal.CreateSpan(ref {args[1]}, 1)[0].{args[2]};");
+                sw.WriteLine("        }");
+                sw.WriteLine("#else");
+            }
+
             sw.WriteLine($"        public {field.Type} {field.Name}");
             sw.WriteLine("        {");
             sw.WriteLine($"            get => {args[1]}.{args[2]};");
             sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
             sw.WriteLine("        }");
-            sw.WriteLine("#endif");
+            if (!temporaryValue)
+            {
+                sw.WriteLine("#endif");
+            }
+
             sw.WriteLine();
+
+            static bool IsTemporaryValue(Project p, Struct @struct, List<string> args)
+            {
+                // ReSharper disable AccessToModifiedClosure
+                var fusingStruct = p.Structs.First(x => x.Name == @struct.Fields.First(y => y.Name == args[1]).Type.Name);
+                var fusingFieldInst = fusingStruct.Fields.First(x => x.Name == args[2]);
+                if (fusingFieldInst.NumBits is not null)
+                {
+                    return true;
+                }
+
+                // ReSharper restore AccessToModifiedClosure
+                if (fusingFieldInst.Attributes.IsBuildToolsIntrinsic(out args))
+                {
+                    if (args[0] == "$FUSEFLD")
+                    {
+                        return IsTemporaryValue(p, fusingStruct, args);
+                    }
+                }
+
+                return false;
+            }
         }
 
         public static void WriteBitfield

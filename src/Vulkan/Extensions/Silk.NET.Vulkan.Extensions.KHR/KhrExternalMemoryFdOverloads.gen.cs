@@ -38,6 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryFdProperties = new(StructureType.MemoryFDPropertiesKhr);")]
         public static unsafe Result GetMemoryFdProperties(this KhrExternalMemoryFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] int fd, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryFdPropertiesKHR> pMemoryFdProperties)
         {
             // SpanOverloader
