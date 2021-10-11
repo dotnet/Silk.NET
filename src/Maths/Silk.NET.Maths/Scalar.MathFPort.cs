@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 #if SSE || AdvSIMD
 using System.Runtime.Intrinsics;
@@ -262,6 +263,15 @@ namespace Silk.NET.Maths
                     return x;
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                        return (T)(object) new Complex(System.Numerics.Complex.Abs((Complex)(object)x), 0);
+                
                 return Decimal(x);
             }
 
