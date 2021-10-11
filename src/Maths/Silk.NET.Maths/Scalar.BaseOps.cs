@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
                     return System.Numerics.Complex.IsFinite((Complex)(object)f);
 #else
 // https://source.dot.net/#System.Runtime.Numerics/System/Numerics/Complex.cs,6b0a0cd37123d4d3
-                    return double.IsFinite(((Complex)(object)f).Real) &&double.IsFinite(((Complex)(object)f).Imaginary); 
+                    return IsFinite(((Complex)(object)f).Real) && IsFinite(((Complex)(object)f).Imaginary); 
 #endif
                 }
                 
