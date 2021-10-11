@@ -353,7 +353,7 @@ namespace Silk.NET.Maths
                 Epsilon = (T) (object) (Complex)double.Epsilon;
                 MaxValue = default!;
                 MinValue = default!;
-#if NETCOREAPP3_0_OR_GREATERs
+#if NETCOREAPP3_0_OR_GREATER
                 NaN = (T) (object) Complex.NaN;
 #else
 // https://source.dot.net/#System.Runtime.Numerics/System/Numerics/Complex.cs,d2c68d149ad2b6de
