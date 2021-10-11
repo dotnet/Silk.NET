@@ -215,7 +215,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised just before the Update event is raised.
         /// </summary>
-        event DeltaAction? PreUpdate;
+        event Action? PreUpdate;
 
         /// <summary>
         /// Raised when an update should be run.
