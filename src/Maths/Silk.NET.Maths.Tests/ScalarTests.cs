@@ -21,13 +21,13 @@ namespace Silk.NET.Maths.Tests
             => Assert.True(Scalar.LessThan(new BigInteger(10), 99));
         
         [Fact] public void GreaterThanBigInteger()
-            => Assert.False(Scalar.LessThan(new BigInteger(10), 99));
+            => Assert.False(Scalar.GreaterThan(new BigInteger(10), 99));
         
         [Fact] public void LessThanOrEqualBigInteger()
             => Assert.True(Scalar.LessThanOrEqual(new BigInteger(10), 99));
         
         [Fact] public void GreaterThanOrEqualBigInteger()
-            => Assert.False(Scalar.LessThanOrEqual(new BigInteger(10), 99));
+            => Assert.False(Scalar.GreaterThanOrEqual(new BigInteger(10), 99));
         
         [Fact] public void EqualBigInteger1()
             => Assert.False(Scalar.Equal(new BigInteger(10), 99));
@@ -43,19 +43,19 @@ namespace Silk.NET.Maths.Tests
             => Assert.Equal(new Complex(109, 5), Scalar.Add(new Complex(10, 5), 99));
         
         [Fact] public void SubtractComplex()
-            => Assert.Equal(new Complex(-89, -94), Scalar.Subtract(new Complex(10, 5), 99));
+            => Assert.Equal(new Complex(-89, 5), Scalar.Subtract(new Complex(10, 5), 99));
         
         [Fact] public void MultiplyComplex()
             => Assert.Equal(new Complex(990, 495), Scalar.Multiply(new Complex(10, 5), 99));
         
         [Fact] public void DivideComplex()
-            => Assert.Equal(new Complex(10 / 99d, 5 / 99d), Scalar.Multiply(new Complex(10, 5), 99));
+            => Assert.Equal(new Complex(10 / 99d, 5 / 99d), Scalar.Divide(new Complex(10, 5), 99));
         
         [Fact] public void EqualComplex1()
             => Assert.True(Scalar.Equal(new Complex(10, 5), new Complex(10, 5)));
         
         [Fact] public void EqualComplex2()
-            => Assert.True(Scalar.Equal(new Complex(10, 5), new Complex(10, 6)));
+            => Assert.False(Scalar.Equal(new Complex(10, 5), new Complex(10, 6)));
         
         [Fact] public void IsFiniteComplex1()
             => Assert.True(Scalar.IsFinite(new Complex(10, 5)));
@@ -64,10 +64,10 @@ namespace Silk.NET.Maths.Tests
             => Assert.False(Scalar.IsFinite(new Complex(double.NaN, 5)));
         
         [Fact] public void IsFiniteComplex3()
-            => Assert.True(Scalar.IsFinite(new Complex(10, double.NaN)));
+            => Assert.False(Scalar.IsFinite(new Complex(10, double.NaN)));
         
         [Fact] public void IsFiniteComplex4()
-            => Assert.True(Scalar.IsFinite(new Complex(10, double.NegativeInfinity)));
+            => Assert.False(Scalar.IsFinite(new Complex(10, double.NegativeInfinity)));
         
         [Fact] public void IsInfinityComplex1()
             => Assert.True(Scalar.IsInfinity(new Complex(double.NegativeInfinity, 5)));
