@@ -4,6 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
+
 namespace Silk.NET.Maths
 {
     public static partial class Scalar
@@ -15,8 +19,6 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The reciprocal of the given number.</returns>
         [MethodImpl(MaxOpt)]
-#pragma warning disable 8600
-#pragma warning disable 8605
         public static T Reciprocal<T>(T x)
         {
             if (typeof(T) == typeof(Half))
@@ -150,7 +152,5 @@ namespace Silk.NET.Maths
                 return default!;
             }
         }
-#pragma warning restore 8605
-#pragma warning restore 8600
     }
 }

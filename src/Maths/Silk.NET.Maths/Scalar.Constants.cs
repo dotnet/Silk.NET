@@ -4,6 +4,11 @@
 using System;
 using System.Runtime.CompilerServices;
 
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
+
+
 namespace Silk.NET.Maths
 {
     /// <summary>

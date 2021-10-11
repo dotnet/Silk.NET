@@ -1,6 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
+
 namespace Silk.NET.Maths
 {
     public partial class Scalar

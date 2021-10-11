@@ -10,6 +10,10 @@ using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
 #endif
 
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
+
 namespace Silk.NET.Maths
 {
     public static partial class Scalar
