@@ -2,12 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 #if AdvSIMD
 using System.Runtime.Intrinsics.Arm;
 #endif
 #if SSE
 using System.Runtime.Intrinsics.X86;
+// ReSharper disable CompareOfFloatsByEqualityOperator
 #endif
 
 // casting into non-nullable, unboxing from nullable  
@@ -84,7 +86,18 @@ namespace Silk.NET.Maths
                     return (bits & 0x7FFFFFFFFFFFFFFF) < 0x7FF0000000000000;
                 }
 
-                return Other(f);
+                return Complex(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Complex(T f)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return System.Numerics.Complex.IsFinite((Complex)(object)f);
+                }
+                
+                return Other(f); 
             }
 
             [MethodImpl(MaxOpt)]
@@ -99,6 +112,7 @@ namespace Silk.NET.Maths
                 || typeof(T) == typeof(ulong)
                 || typeof(T) == typeof(long)
                 || typeof(T) == typeof(decimal)
+                || typeof(T) == typeof(BigInteger)
                 )
                     return true;
 
@@ -142,9 +156,20 @@ namespace Silk.NET.Maths
                     return double.IsInfinity((double) (object) f);
                 }
 
-                return Other(f);
+                return Complex(f);
             }
 
+            [MethodImpl(MaxOpt)]
+            static bool Complex(T f)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return System.Numerics.Complex.IsInfinity((Complex)(object)f);
+                }
+                
+                return Other(f); 
+            }
+            
             [MethodImpl(MaxOpt)]
             static bool Other(T f)
             {
@@ -157,6 +182,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ulong)
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
+                    || typeof(T) == typeof(BigInteger)
                 )
                     return false;
 
@@ -200,7 +226,18 @@ namespace Silk.NET.Maths
                     return double.IsNaN((double) (object) f);
                 }
 
-                return Other(f);
+                return Complex(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Complex(T f)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return System.Numerics.Complex.IsNaN((Complex)(object)f);
+                }
+                
+                return Other(f); 
             }
 
             [MethodImpl(MaxOpt)]
@@ -215,6 +252,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ulong)
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
+                    || typeof(T) == typeof(BigInteger)
                 )
                     return false;
 
@@ -313,6 +351,17 @@ namespace Silk.NET.Maths
                     return (int) (object) f < 0;
                 }
 
+                return BigInteger(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T f)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) f < 0;
+                }
+
                 return Other(f);
             }
 
@@ -323,9 +372,11 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ushort)
                     || typeof(T) == typeof(uint)
                     || typeof(T) == typeof(ulong)
+                    
                 )
                     return false;
 
+                /* Complex is unsupported for negativity */
                 ThrowOpUnsupportedType();
                 return false;
             }
@@ -381,6 +432,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ulong)
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
+                    || typeof(T) == typeof(BigInteger)
                 )
                     return false;
 
@@ -439,6 +491,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ulong)
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
+                    || typeof(T) == typeof(BigInteger)
                 )
                     return true;
 
@@ -497,6 +550,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(ulong)
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
+                    || typeof(T) == typeof(BigInteger)
                 )
                     return false;
 
@@ -681,6 +735,34 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left == (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left == (BigInteger) (object) right;
+                }
+
+                return Complex(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (Complex) (object) left == (Complex) (object) right;
+                }
+
+                return Other(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
@@ -821,6 +903,34 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left != (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left != (BigInteger) (object) right;
+                }
+
+                return Complex(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (Complex) (object) left != (Complex) (object) right;
+                }
+
+                return Other(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
@@ -961,6 +1071,23 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left > (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left > (BigInteger) (object) right;
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
@@ -1101,6 +1228,23 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left >= (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left >= (BigInteger) (object) right;
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
@@ -1241,6 +1385,23 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left < (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left < (BigInteger) (object) right;
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
@@ -1381,6 +1542,23 @@ namespace Silk.NET.Maths
                     return (ushort) (object) left <= (ushort) (object) right;
                 }
 
+                return BigInteger(left, right);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (BigInteger) (object) left <= (BigInteger) (object) right;
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static bool Other(T _, T __)
+            {
                 ThrowUnsupportedType();
                 return default;
             }
