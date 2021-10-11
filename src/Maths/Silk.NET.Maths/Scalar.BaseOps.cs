@@ -94,7 +94,12 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(Complex))
                 {
+#if NETCOREAPP3_0_OR_GREATER
                     return System.Numerics.Complex.IsFinite((Complex)(object)f);
+#else
+// https://source.dot.net/#System.Runtime.Numerics/System/Numerics/Complex.cs,6b0a0cd37123d4d3
+                    return double.IsFinite(((Complex)(object)f).Real) &&double.IsFinite(((Complex)(object)f).Imaginary); 
+#endif
                 }
                 
                 return Other(f); 
@@ -164,7 +169,12 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(Complex))
                 {
+#if NETCOREAPP3_0_OR_GREATER
                     return System.Numerics.Complex.IsInfinity((Complex)(object)f);
+#else
+// https://source.dot.net/#System.Runtime.Numerics/System/Numerics/Complex.cs,fbf803cb00899f67,references
+                    return double.IsInfinity(((Complex)(object)f).Real) || double.IsInfinity(((Complex)(object)f).Imaginary);
+#endif
                 }
                 
                 return Other(f); 
@@ -234,7 +244,11 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(Complex))
                 {
+#if NETCOREAPP3_0_OR_GREATER
                     return System.Numerics.Complex.IsNaN((Complex)(object)f);
+#else
+                    return !IsInfinity((Complex)(object)f) && !IsFinite((Complex)(object)f);
+#endif
                 }
                 
                 return Other(f); 
