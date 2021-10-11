@@ -211,6 +211,11 @@ namespace Silk.NET.Windowing
         /// Raised when the surface is initialized for the first time.
         /// </summary>
         event Action? Created;
+        
+        /// <summary>
+        /// Raised just before the Update event is raised.
+        /// </summary>
+        event Action? PreUpdate;
 
         /// <summary>
         /// Raised when an update should be run.
