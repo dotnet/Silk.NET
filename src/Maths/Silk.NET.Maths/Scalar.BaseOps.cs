@@ -1699,8 +1699,36 @@ namespace Silk.NET.Maths
                     return (T) (object) ((ulong) (object) left + (ulong) (object) right);
                 }
 
+                return BigInteger(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)((BigInteger) (object) left + (BigInteger) (object) right);
+                }
+
+                return Complex(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)((Complex) (object) left + (Complex) (object) right);
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _, T __)
+            {
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
 
@@ -1839,8 +1867,36 @@ namespace Silk.NET.Maths
                     return (T) (object) ((ulong) (object) left - (ulong) (object) right);
                 }
 
+                return BigInteger(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)((BigInteger) (object) left - (BigInteger) (object) right);
+                }
+
+                return Complex(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)((Complex) (object) left - (Complex) (object) right);
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _, T __)
+            {
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
 
@@ -1979,8 +2035,36 @@ namespace Silk.NET.Maths
                     return (T) (object) ((ulong) (object) left * (ulong) (object) right);
                 }
 
+                return BigInteger(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)((BigInteger) (object) left * (BigInteger) (object) right);
+                }
+
+                return Complex(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)((Complex) (object) left * (Complex) (object) right);
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _, T __)
+            {
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
 
@@ -2119,8 +2203,36 @@ namespace Silk.NET.Maths
                     return (T) (object) ((ulong) (object) left / (ulong) (object) right);
                 }
 
+                return BigInteger(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T left, T right)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)((BigInteger) (object) left / (BigInteger) (object) right);
+                }
+
+                return Complex(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T left, T right)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)((Complex) (object) left / (Complex) (object) right);
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _, T __)
+            {
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
 

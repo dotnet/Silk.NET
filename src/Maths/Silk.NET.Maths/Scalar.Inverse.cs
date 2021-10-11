@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 // casting into non-nullable, unboxing from nullable  
@@ -148,6 +149,34 @@ namespace Silk.NET.Maths
                     return (T) (object) (((long) 1) / (long) (object) x);
                 }
 
+                return BigInteger(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T x)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)(1 / (BigInteger)(object)x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)(1 / (Complex)(object)x);
+                }
+
+                return Other(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _)
+            {
                 ThrowUnsupportedType();
                 return default!;
             }

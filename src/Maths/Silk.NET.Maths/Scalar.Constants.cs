@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 // casting into non-nullable, unboxing from nullable  
@@ -330,6 +331,42 @@ namespace Silk.NET.Maths
                 E = (T) (object) (ulong) FloatE;
                 Pi = (T) (object) (ulong) FloatPi;
                 Tau = (T) (object) (ulong) FloatTau;
+            }
+            else if (typeof(T) == typeof(BigInteger))
+            {
+                Epsilon = default!;
+                MaxValue = default!;
+                MinValue = default!;
+                NaN = default!;
+                NegativeInfinity = default!;
+                PositiveInfinity = default!;
+                One = (T) (object) BigInteger.One;
+                Two = (T) (object) (BigInteger) 2;
+                MinusOne = default!;
+                MinusTwo = default!;
+                E = (T) (object) (BigInteger) FloatE;
+                Pi = (T) (object) (BigInteger) FloatPi;
+                Tau = (T) (object) (BigInteger) FloatTau;
+            }
+            else if (typeof(T) == typeof(Complex))
+            {
+                Epsilon = (T) (object) (Complex)double.Epsilon;
+                MaxValue = default!;
+                MinValue = default!;
+                NaN = (T) (object) Complex.NaN;
+                NegativeInfinity = default!;
+                PositiveInfinity = default!;
+                One = (T) (object) (Complex) 1;
+                Two = (T) (object) (Complex) 2;
+                MinusOne = (T) (object) (Complex) (-1d);
+                MinusTwo = (T) (object) (Complex) (-2d);
+                E = (T) (object) (Complex) Math.E;
+                Pi = (T) (object) (Complex) Math.PI;
+#if !NET5_0
+                Tau = Scalar.Multiply(Pi, Two);
+#else
+                Tau = (T) (object) (Complex) Math.Tau;
+#endif
             }
             else
             {
