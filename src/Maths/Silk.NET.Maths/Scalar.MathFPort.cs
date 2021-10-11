@@ -33,7 +33,7 @@ namespace Silk.NET.Maths
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
-        /// Returns the absolute value of a single-precision floating-point number.
+        /// Returns the absolute value of a number.
         /// </summary>
         /// <param name="x">The value to get the absolute of</param>
         /// <typeparam name="T">The type of <paramref name="x"/> </typeparam>

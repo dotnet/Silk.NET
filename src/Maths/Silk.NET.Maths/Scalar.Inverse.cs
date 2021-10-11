@@ -15,7 +15,9 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The reciprocal of the given number.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Reciprocal<T>(T x) where T : unmanaged
+#pragma warning disable 8600
+#pragma warning disable 8605
+        public static T Reciprocal<T>(T x)
         {
             if (typeof(T) == typeof(Half))
             {
@@ -128,7 +130,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
+
                     return (T) (object) (((ulong) 1) / (ulong) (object) x);
+
                 }
 
                 return Long(x);
@@ -143,8 +147,10 @@ namespace Silk.NET.Maths
                 }
 
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
+#pragma warning restore 8605
+#pragma warning restore 8600
     }
 }
