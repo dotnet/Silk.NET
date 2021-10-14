@@ -66,8 +66,7 @@ namespace Silk.NET.Input.Sdl
                     // run the KeyChar event until we get a null terminator
                     while (chars[i] != default)
                     {
-                        KeyChar?.Invoke(this, chars[i]);
-                        i++;
+                        KeyChar?.Invoke(this, chars[i++]);
                     }
 
                     break;
