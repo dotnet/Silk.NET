@@ -60,16 +60,15 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Textinput:
                 {
-                    fixed (char* chars = stackalloc char[32])
+                    var chars = stackalloc char[32];
+                    Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
+                    int i = 0;
+                    while (chars[i] != char.MinValue)
                     {
-                        Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
-                        int i = 0;
-                        while (chars[i] != char.MinValue)
-                        {
-                            KeyChar?.Invoke(this, chars[i]);
-                            i++;
-                        }
+                        KeyChar?.Invoke(this, chars[i]);
+                        i++;
                     }
+
                     break;
                 }
                 case EventType.Keymapchanged:
