@@ -62,7 +62,7 @@ namespace Silk.NET.Input.Sdl
                 {
                     fixed (char* chars = stackalloc char[32])
                     {
-                        var numChars = Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
+                        Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
                         int i = 0;
                         while (chars[i] != char.MinValue)
                         {
