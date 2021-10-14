@@ -1,22 +1,22 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
 using Android.App;
-using Android.Content;
-using Android.Content.Res;
-using Android.Views.InputMethods;
 using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl.Android;
 
-/// <summary>
-/// Simple demo on how to use Silk on Android.
-/// The code used is mostly identical to the one on OpenGL Tutorial 1.4 - Textures.
-/// </summary>
+
 namespace AndroidInputDemo
 {
+    /// <summary>
+    /// Simple demo on how to use Silk on Android.
+    /// The code used is mostly identical to the one on OpenGL Tutorial 1.4 - Textures.
+    /// </summary>
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : SilkActivity
     {
@@ -78,14 +78,15 @@ namespace AndroidInputDemo
             projection = Matrix4x4.CreateOrthographic(
                 view.Size.X,
                 -view.Size.Y,
-                1.0f, 2.0f
-                );
+                1.0f, 2.0f);
         }
 
         private static void KeyChar(IKeyboard arg1, char arg2)
         {
             if (arg2 == 'c')
                 Array.Clear(Vertices);
+            if (arg2 == 'k')
+                input.Keyboards[0].EndInput();
         }
 
         private static void MouseDown(IMouse arg1, MouseButton arg2)

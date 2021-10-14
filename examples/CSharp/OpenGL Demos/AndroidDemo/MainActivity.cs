@@ -1,20 +1,18 @@
-using System;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System.Diagnostics;
 using Android.App;
-using Android.Content;
-using Android.Content.Res;
-using Android.Views.InputMethods;
-using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl.Android;
 
-/// <summary>
-/// Simple demo on how to use Silk on Android.
-/// The code used is mostly identical to the one on OpenGL Tutorial 1.4 - Textures.
-/// </summary>
 namespace AndroidDemo
 {
+    /// <summary>
+    /// Simple demo on how to use Silk on Android.
+    /// The code used is mostly identical to the one on OpenGL Tutorial 1.4 - Textures.
+    /// </summary>
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : SilkActivity
     {
@@ -69,7 +67,7 @@ namespace AndroidDemo
             view.Run();
         }
 
-        private unsafe static void OnLoad()
+        private static unsafe void OnLoad()
         {
             Gl = GL.GetApi(view);
 
