@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
@@ -59,17 +60,16 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Textinput:
                 {
-                    for (int i = 0; i < 32; i++)
+                    fixed (char* chars = stackalloc char[32])
                     {
-                        var @char = @event.Text.Text[i];
-                        if (@char == 0)
+                        var numChars = Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
+                        int i = 0;
+                        while (chars[i] != char.MinValue)
                         {
-                            break;
+                            KeyChar?.Invoke(this, chars[i]);
+                            i++;
                         }
-
-                        KeyChar?.Invoke(this, (char) @char);
                     }
-
                     break;
                 }
                 case EventType.Keymapchanged:
