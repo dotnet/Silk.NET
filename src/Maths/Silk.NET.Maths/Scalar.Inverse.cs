@@ -20,7 +20,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The reciprocal of the given number.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Reciprocal<T>(T x)
+        public static T Reciprocal<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {

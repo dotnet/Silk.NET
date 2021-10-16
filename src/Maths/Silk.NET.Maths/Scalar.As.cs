@@ -26,7 +26,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="TTo">The type converted into</typeparam>
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
-        public static TTo As<TFrom, TTo>(TFrom val)
+        public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
         {
             if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(Half))
             {

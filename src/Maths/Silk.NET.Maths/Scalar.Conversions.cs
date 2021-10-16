@@ -14,13 +14,13 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="degrees">An angle in degrees.</param>
         /// <returns>The angle expressed in radians.</returns>
-        public static T DegreesToRadians<T>(T degrees) => Multiply(degrees, Scalar<T>.RadiansPerDegree);
+        public static T DegreesToRadians<T>(T degrees) where T : notnull => Multiply(degrees, Scalar<T>.RadiansPerDegree);
 
         /// <summary>
         /// Convert radians to degrees.
         /// </summary>
         /// <param name="radians">An angle in radians.</param>
         /// <returns>The angle expressed in degrees.</returns>
-        public static T RadiansToDegrees<T>(T radians) => Multiply(radians, Scalar<T>.DegreesPerRadian);
+        public static T RadiansToDegrees<T>(T radians) where T : notnull => Multiply(radians, Scalar<T>.DegreesPerRadian);
     }
 }

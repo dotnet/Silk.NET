@@ -56,7 +56,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if the value is finite (zero, subnormal or normal); <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsFinite<T>(T f)
+        public static bool IsFinite<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -133,7 +133,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsInfinity<T>(T f)
+        public static bool IsInfinity<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -208,7 +208,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.NaN"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsNaN<T>(T f)
+        public static bool IsNaN<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -282,7 +282,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if the value is negative; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsNegative<T>(T f)
+        public static bool IsNegative<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -403,7 +403,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsNegativeInfinity<T>(T f)
+        public static bool IsNegativeInfinity<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -462,7 +462,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if the value is normal; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsNormal<T>(T f)
+        public static bool IsNormal<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -521,7 +521,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of the specified number.</typeparam>
         /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.PositiveInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool IsPositiveInfinity<T>(T f)
+        public static bool IsPositiveInfinity<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -581,7 +581,7 @@ namespace Silk.NET.Maths
         /// <returns><code>true</code> if the value is subnormal; <code>false</code> otherwise.</returns>
         /// <remarks>This function will throw for types other then <see cref="Half"/>, <see cref="float"/>, <see cref="double"/>, because subnormality cannot be determined for other types.</remarks>
         [MethodImpl(MaxOpt)]
-        public static bool IsSubnormal<T>(T f)
+        public static bool IsSubnormal<T>(T f) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -622,7 +622,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool Equal<T>(T left, T right)
+        public static bool Equal<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -790,7 +790,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool NotEqual<T>(T left, T right)
+        public static bool NotEqual<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -958,7 +958,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> is greater than <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool GreaterThan<T>(T left, T right)
+        public static bool GreaterThan<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1115,7 +1115,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> is greater than or equal to <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool GreaterThanOrEqual<T>(T left, T right)
+        public static bool GreaterThanOrEqual<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1272,7 +1272,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> is less than <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool LessThan<T>(T left, T right)
+        public static bool LessThan<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1429,7 +1429,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns><code>true</code> if <paramref name="left"/> is less than or equal to <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool LessThanOrEqual<T>(T left, T right)
+        public static bool LessThanOrEqual<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1586,7 +1586,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns>The result of adding <paramref name="left"/> and <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Add<T>(T left, T right)
+        public static T Add<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1754,7 +1754,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns>The result of subtracting <paramref name="left"/> from <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Subtract<T>(T left, T right)
+        public static T Subtract<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1922,7 +1922,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns>The result of multiplying <paramref name="left"/> and <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Multiply<T>(T left, T right)
+        public static T Multiply<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2090,7 +2090,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of both values.</typeparam>
         /// <returns>The result of dividing <paramref name="left"/> by <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Divide<T>(T left, T right)
+        public static T Divide<T>(T left, T right) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2261,6 +2261,6 @@ namespace Silk.NET.Maths
         /// Zero, if <paramref name="x"/> is zero.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Negate<T>(T x) => Multiply(x, Scalar<T>.MinusOne);
+        public static T Negate<T>(T x) where T : notnull => Multiply(x, Scalar<T>.MinusOne);
     }
 }

@@ -16,7 +16,7 @@ namespace Silk.NET.Maths
     /// To be added.
     /// </summary>
     /// <typeparam name="T">To be added.</typeparam>
-    public static partial class Scalar<T>
+    public static partial class Scalar<T> where T : notnull
     {
         /// <summary>
         /// Represents the smallest positive value that is greater than zero. Zero for non-floating point numbers.
