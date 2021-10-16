@@ -9,8 +9,8 @@ using System.Runtime.Intrinsics.Arm;
 #endif
 #if SSE
 using System.Runtime.Intrinsics.X86;
-// ReSharper disable CompareOfFloatsByEqualityOperator
 #endif
+// ReSharper disable CompareOfFloatsByEqualityOperator
 
 // casting into non-nullable, unboxing from nullable  
 #pragma warning disable 8600
