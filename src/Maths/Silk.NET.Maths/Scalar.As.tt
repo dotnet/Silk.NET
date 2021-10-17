@@ -51,6 +51,10 @@ using System.Runtime.CompilerServices;
             "System.Numerics.BigInteger"
         };
     
+    var intermediateCasts = new System.Collections.Generic.Dictionary<string, string>();
+    // for some reason rider also complains about inline initialization
+    intermediateCasts["decimalHalf"] = "float";
+    
     var len = types.Length;
 #>
 
@@ -91,7 +95,13 @@ if (i == 0 && j == 0) continue; // the first case with Half and Half is written 
             {
                 if (typeof(TFrom) == typeof(<#= types[i] #>) && typeof(TTo) == typeof(<#= types[j] #>))
                 {
-                    return (TTo) (object) (<#= types[j] #>) (<#= types[i] #>) (object) val;
+<# 
+var intermediateType = "";
+if (intermediateCasts.TryGetValue(types[i] + types[j], out var res))
+    intermediateType = $" ({res})";
+
+#>
+                    return (TTo) (object) (<#= types[j] #>)<#= intermediateType #> (<#= types[i] #>) (object) val;
                 }
                 
 <# 
@@ -100,7 +110,7 @@ if (i == 0 && j == 0) continue; // the first case with Half and Half is written 
             if (iNext == len) {
             #>
                 ThrowUnsupportedType();
-                return default;
+                return default!;
 <# } else { #>
                 return From<#= typesFullNames[iNext] #>To<#= typesFullNames[jNext] #>(val);
 <# } #>

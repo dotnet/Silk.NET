@@ -499,7 +499,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo) (object) (Half) (decimal) (object) val;
+                    return (TTo) (object) (Half) (float) (decimal) (object) val;
                 }
                 
                 return FromDecimalToFloat(val);
@@ -2186,7 +2186,7 @@ namespace Silk.NET.Maths
                 }
                 
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }    
         }
     }
