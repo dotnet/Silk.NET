@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 #if SSE || AdvSIMD
 using System.Runtime.Intrinsics;
@@ -12,6 +13,9 @@ using System.Runtime.Intrinsics.X86;
 #if AdvSIMD
 using System.Runtime.Intrinsics.Arm;
 #endif
+
+// it doesn't like default because it may be null
+#pragma warning disable 8603
 
 namespace Silk.NET.Maths
 {
@@ -33,7 +37,7 @@ namespace Silk.NET.Maths
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
-        /// Returns the absolute value of a single-precision floating-point number.
+        /// Returns the absolute value of a number.
         /// </summary>
         /// <param name="x">The value to get the absolute of</param>
         /// <typeparam name="T">The type of <paramref name="x"/> </typeparam>
@@ -262,6 +266,15 @@ namespace Silk.NET.Maths
                     return x;
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                        return (T)(object) new Complex(System.Numerics.Complex.Abs((Complex)(object)x), 0);
+                
                 return Decimal(x);
             }
 
@@ -291,7 +304,7 @@ namespace Silk.NET.Maths
         /// NaN if x &lt; -1 or x &gt; 1 or x equals NaN.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Acos<T>(T x) where T : unmanaged
+        public static T Acos<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -445,7 +458,7 @@ namespace Silk.NET.Maths
         /// NaN if x &lt; 1 or x equals NaN.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Acosh<T>(T x) where T : unmanaged
+        public static T Acosh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -590,7 +603,7 @@ namespace Silk.NET.Maths
         /// NaN if x &lt; -1 or x &gt; 1 or x equals NaN.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Asin<T>(T x) where T : unmanaged
+        public static T Asin<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -738,7 +751,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         [MethodImpl(MaxOpt)]
-        public static T Asinh<T>(T x) where T : unmanaged
+        public static T Asinh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -884,7 +897,7 @@ namespace Silk.NET.Maths
         /// NaN if <paramref name="x"/> equals <see cref="Scalar{T}.NaN"/>, -π/2 rounded to double precision (-1.5707963267949) if <paramref name="x"/> equals <see cref="Scalar{T}.NegativeInfinity"/>, or π/2 rounded to double precision (1.5707963267949) if <paramref name="x"/> equals <see cref="Scalar{T}.PositiveInfinity"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Atan<T>(T x) where T : unmanaged
+        public static T Atan<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1038,7 +1051,7 @@ namespace Silk.NET.Maths
         /// <see cref="Scalar{T}.NaN"/> if x &lt; -1 or x &gt; 1 or x equals <see cref="Scalar{T}.NaN"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Atanh<T>(T x) where T : unmanaged
+        public static T Atanh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1184,7 +1197,7 @@ namespace Silk.NET.Maths
         /// <see cref="Scalar{T}.NaN"/> if <paramref name="x"/> is equals <see cref="Scalar{T}.NaN"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Cbrt<T>(T x) where T : unmanaged
+        public static T Cbrt<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1324,7 +1337,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The smallest integral value that is greater than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Ceiling<T>(T x) where T : unmanaged
+        public static T Ceiling<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1471,7 +1484,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The cosine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Cos<T>(T x) where T : unmanaged
+        public static T Cos<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1619,7 +1632,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The hyperbolic cosine of <paramref name="x"/>. If <paramref name="x"/> equal to <see cref="Scalar{T}.NegativeInfinity"/> or <see cref="Scalar{T}.PositiveInfinity"/>, <see cref="Scalar{T}.PositiveInfinity"/> is returned. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Cosh<T>(T x) where T : unmanaged
+        public static T Cosh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1767,7 +1780,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The number <c>e</c> raised to the power <paramref name="x"/>. If <paramref name="x"/> equals <see cref="Scalar{T}.NaN"/> or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned. If <paramref name="x"/> equals <see cref="Scalar{T}.NegativeInfinity"/>, 0 is returned.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Exp<T>(T x) where T : unmanaged
+        public static T Exp<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -1907,7 +1920,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The largest integral value less than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Floor<T>(T x) where T : unmanaged
+        public static T Floor<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2126,7 +2139,7 @@ namespace Silk.NET.Maths
         /// </remarks>
         /// <exception cref="ArithmeticException"><paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/></exception>
         [MethodImpl(MaxOpt)]
-        public static int Sign<T>(T x) where T : unmanaged
+        public static int Sign<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2273,7 +2286,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Sin<T>(T x) where T : unmanaged
+        public static T Sin<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2413,7 +2426,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">Type of <paramref name="x"/>.</typeparam>
         /// <returns>The hyperbolic sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NegativeInfinity"/>, <see cref="Scalar{T}.PositiveInfinity"/>, or <see cref="Scalar{T}.NaN"/> this method returns <paramref name="x"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Sinh<T>(T x) where T : unmanaged
+        public static T Sinh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2585,7 +2598,7 @@ namespace Silk.NET.Maths
         /// </list>
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Sqrt<T>(T x) where T : unmanaged
+        public static T Sqrt<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -2897,7 +2910,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Tan<T>(T x) where T : unmanaged
+        public static T Tan<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3045,7 +3058,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The hyperbolic tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NegativeInfinity"/>, this method returns -1. If <paramref name="x"/> is equal to <see cref="Scalar{T}.PositiveInfinity"/>, this method returns 1. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Tanh<T>(T x) where T : unmanaged
+        public static T Tanh<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3213,7 +3226,7 @@ namespace Silk.NET.Maths
         /// </list>
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Truncate<T>(T x) where T : unmanaged
+        public static T Truncate<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3388,7 +3401,7 @@ namespace Silk.NET.Maths
         /// </list>
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Log<T>(T x) where T : unmanaged
+        public static T Log<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3556,7 +3569,7 @@ namespace Silk.NET.Maths
         /// </list>
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Log10<T>(T x) where T : unmanaged
+        public static T Log10<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3709,7 +3722,7 @@ namespace Silk.NET.Maths
         /// This method uses the default rounding convention of <see cref="MidpointRounding.ToEven"/>.
         /// </remarks>
         [MethodImpl(MaxOpt)]
-        public static T Round<T>(T x) where T : unmanaged
+        public static T Round<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -3887,7 +3900,7 @@ namespace Silk.NET.Maths
         /// If <paramref name="y"/> = 0, NaN is returned.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T IEEERemainder<T>(T x, T y) where T : unmanaged
+        public static T IEEERemainder<T>(T x, T y) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -4116,7 +4129,7 @@ namespace Silk.NET.Maths
         /// </list>
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Log<T>(T x, T y) where T : unmanaged
+        public static T Log<T>(T x, T y) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -4265,7 +4278,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
         /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is larger. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Max<T>(T x, T y) where T : unmanaged
+        public static T Max<T>(T x, T y) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -4413,7 +4426,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
         /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is smaller. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Min<T>(T x, T y) where T : unmanaged
+        public static T Min<T>(T x, T y) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -4588,7 +4601,7 @@ namespace Silk.NET.Maths
         ///         ]]></format>
         ///         </remarks>
         [MethodImpl(MaxOpt)]
-        public static T Pow<T>(T x, T y) where T : unmanaged
+        public static T Pow<T>(T x, T y) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -4939,7 +4952,7 @@ namespace Silk.NET.Maths
         /// The return value is the angle in the Cartesian plane formed by the x-axis, and a vector starting from the origin, (0,0), and terminating at the point, (x,y).
         /// </remarks>
         [MethodImpl(MaxOpt)]
-        public static T Atan2<T>(T y, T x) where T : unmanaged
+        public static T Atan2<T>(T y, T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -5094,7 +5107,7 @@ namespace Silk.NET.Maths
         /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// </remarks>
         [MethodImpl(MaxOpt)]
-        public static T Round<T>(T x, int digits) where T : unmanaged
+        public static T Round<T>(T x, int digits) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -5175,7 +5188,7 @@ namespace Silk.NET.Maths
         /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// </remarks>
         [MethodImpl(MaxOpt)]
-        public static T Round<T>(T x, int digits, System.MidpointRounding mode) where T : unmanaged
+        public static T Round<T>(T x, int digits, System.MidpointRounding mode) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -5256,7 +5269,7 @@ namespace Silk.NET.Maths
         /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// \</remarks>
         [MethodImpl(MaxOpt)]
-        public static T Round<T>(T x, System.MidpointRounding mode) where T : unmanaged
+        public static T Round<T>(T x, System.MidpointRounding mode) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {

@@ -4,6 +4,10 @@
 using System;
 using System.Runtime.CompilerServices;
 
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
+
 namespace Silk.NET.Maths
 {
     /// <summary>
@@ -22,7 +26,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="TTo">The type converted into</typeparam>
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
-        public static TTo As<TFrom, TTo>(TFrom val) where TTo : unmanaged where TFrom : unmanaged
+        public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
         {
             if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(Half))
             {
