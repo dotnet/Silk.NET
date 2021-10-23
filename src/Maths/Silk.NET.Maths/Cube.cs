@@ -28,7 +28,7 @@ namespace Silk.NET.Maths
         public Vector3D<T> Size;
 
         /// <summary>
-        /// Constructs a Cube from an origin and it's size
+        /// Constructs a Cube from an origin and its size
         /// </summary>
         /// <param name="origin">The origin of the cube.</param>
         /// <param name="size">The size of the cube.</param>
