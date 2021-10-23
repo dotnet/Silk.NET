@@ -36,7 +36,8 @@ namespace Silk.NET.Maths
         /// <remark>
         /// While in most cases the types can be just explicitly casted,
         /// sometimes there is an intermediate cast to float or double.
-        ///
+        /// </remark>
+        /// <remark>
         /// In case of <see cref="Complex" /> we only consider the real part.
         /// </remark>
         /// <returns>The converted value</returns>
