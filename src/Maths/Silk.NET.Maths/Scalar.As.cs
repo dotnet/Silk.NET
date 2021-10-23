@@ -23,8 +23,6 @@ namespace Silk.NET.Maths
     /// A collection of operations for working with scalar numeric values.
     /// Includes methods like the ones found in <see cref="Math"/> and more.
     /// Supports <see cref="Half" />, <see cref="float" />, <see cref="double" />, <see cref="decimal" />, <see cref="sbyte" />, <see cref="byte" />, <see cref="short" />, <see cref="ushort" />, <see cref="int" />, <see cref="uint" />, <see cref="long" />, <see cref="ulong" />, <see cref="Complex" />, <see cref="BigInteger" />
-    /// While in most cases the types can be just explicitly casted,
-    /// sometimes there is an intermediate cast to float or double.
     /// </summary>
     /// <seealso cref="Scalar{T}"/>
     public partial class Scalar
@@ -35,6 +33,12 @@ namespace Silk.NET.Maths
         /// <param name="val">The value to convert</param>
         /// <typeparam name="TFrom">The type converted from</typeparam>
         /// <typeparam name="TTo">The type converted into</typeparam>
+        /// <remark>
+        /// While in most cases the types can be just explicitly casted,
+        /// sometimes there is an intermediate cast to float or double.
+        ///
+        /// In case of <see cref="Complex" /> we only consider the real part.
+        /// </remark>
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
         public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
