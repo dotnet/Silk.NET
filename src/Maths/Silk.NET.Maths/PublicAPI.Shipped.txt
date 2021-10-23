@@ -60,6 +60,9 @@ override Silk.NET.Maths.Vector4D<T>.ToString() -> string!
 Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.Box2D() -> void
 Silk.NET.Maths.Box2D<T>.Box2D(Silk.NET.Maths.Vector2D<T> min, Silk.NET.Maths.Vector2D<T> max) -> void
+Silk.NET.Maths.Box2D<T>.Box2D(Silk.NET.Maths.Vector2D<T> min, T maxX, T maxY) -> void
+Silk.NET.Maths.Box2D<T>.Box2D(T minX, T minY, Silk.NET.Maths.Vector2D<T> max) -> void
+Silk.NET.Maths.Box2D<T>.Box2D(T minX, T minY, T maxX, T maxY) -> void
 Silk.NET.Maths.Box2D<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box2D<T>.Contains(Silk.NET.Maths.Box2D<T> other) -> bool
 Silk.NET.Maths.Box2D<T>.Contains(Silk.NET.Maths.Vector2D<T> point) -> bool
@@ -74,6 +77,9 @@ Silk.NET.Maths.Box2D<T>.Size.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.Box3D() -> void
 Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, Silk.NET.Maths.Vector3D<T> max) -> void
+Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, T maxX, T maxY, T maxZ) -> void
+Silk.NET.Maths.Box3D<T>.Box3D(T minX, T minY, T minZ, Silk.NET.Maths.Vector3D<T> max) -> void
+Silk.NET.Maths.Box3D<T>.Box3D(T minX, T minY, T minZ, T maxX, T maxY, T maxZ) -> void
 Silk.NET.Maths.Box3D<T>.Center.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Box3D<T>.Contains(Silk.NET.Maths.Box3D<T> other) -> bool
 Silk.NET.Maths.Box3D<T>.Contains(Silk.NET.Maths.Vector3D<T> point) -> bool
@@ -89,6 +95,7 @@ Silk.NET.Maths.Circle<T>
 Silk.NET.Maths.Circle<T>.Center -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Circle<T>.Circle() -> void
 Silk.NET.Maths.Circle<T>.Circle(Silk.NET.Maths.Vector2D<T> center, T radius) -> void
+Silk.NET.Maths.Circle<T>.Circle(T centerX, T centerY, T radius) -> void
 Silk.NET.Maths.Circle<T>.Circumference.get -> T
 Silk.NET.Maths.Circle<T>.Contains(Silk.NET.Maths.Circle<T> other) -> bool
 Silk.NET.Maths.Circle<T>.Contains(Silk.NET.Maths.Vector2D<T> point) -> bool
@@ -106,6 +113,9 @@ Silk.NET.Maths.Cube<T>.Contains(Silk.NET.Maths.Cube<T> other) -> bool
 Silk.NET.Maths.Cube<T>.Contains(Silk.NET.Maths.Vector3D<T> point) -> bool
 Silk.NET.Maths.Cube<T>.Cube() -> void
 Silk.NET.Maths.Cube<T>.Cube(Silk.NET.Maths.Vector3D<T> origin, Silk.NET.Maths.Vector3D<T> size) -> void
+Silk.NET.Maths.Cube<T>.Cube(Silk.NET.Maths.Vector3D<T> origin, T sizeX, T sizeY, T sizeZ) -> void
+Silk.NET.Maths.Cube<T>.Cube(T originX, T originY, T originZ, Silk.NET.Maths.Vector3D<T> size) -> void
+Silk.NET.Maths.Cube<T>.Cube(T originX, T originY, T originZ, T sizeX, T sizeY, T sizeZ) -> void
 Silk.NET.Maths.Cube<T>.Equals(Silk.NET.Maths.Cube<T> other) -> bool
 Silk.NET.Maths.Cube<T>.GetDistanceToNearestEdge(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Cube<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.NET.Maths.Cube<T>
@@ -495,6 +505,9 @@ Silk.NET.Maths.Ray2D<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Ray2D<T>.Origin -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Ray2D<T>.Ray2D() -> void
 Silk.NET.Maths.Ray2D<T>.Ray2D(Silk.NET.Maths.Vector2D<T> origin, Silk.NET.Maths.Vector2D<T> direction) -> void
+Silk.NET.Maths.Ray2D<T>.Ray2D(Silk.NET.Maths.Vector2D<T> origin, T directionX, T directionY) -> void
+Silk.NET.Maths.Ray2D<T>.Ray2D(T originX, T originY, Silk.NET.Maths.Vector2D<T> direction) -> void
+Silk.NET.Maths.Ray2D<T>.Ray2D(T originX, T originY, T directionX, T directionY) -> void
 Silk.NET.Maths.Ray3D<T>
 Silk.NET.Maths.Ray3D<T>.Direction -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Equals(Silk.NET.Maths.Ray3D<T> other) -> bool
@@ -502,6 +515,9 @@ Silk.NET.Maths.Ray3D<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Origin -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Ray3D() -> void
 Silk.NET.Maths.Ray3D<T>.Ray3D(Silk.NET.Maths.Vector3D<T> origin, Silk.NET.Maths.Vector3D<T> direction) -> void
+Silk.NET.Maths.Ray3D<T>.Ray3D(Silk.NET.Maths.Vector3D<T> origin, T directionX, T directionY, T directionZ) -> void
+Silk.NET.Maths.Ray3D<T>.Ray3D(T originX, T originY, T originZ, Silk.NET.Maths.Vector3D<T> direction) -> void
+Silk.NET.Maths.Ray3D<T>.Ray3D(T originX, T originY, T originZ, T directionX, T directionY, T directionZ) -> void
 Silk.NET.Maths.Rectangle
 Silk.NET.Maths.Rectangle<T>
 Silk.NET.Maths.Rectangle<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
@@ -517,6 +533,9 @@ Silk.NET.Maths.Rectangle<T>.Max.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rectangle<T>.Origin -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rectangle<T>.Rectangle() -> void
 Silk.NET.Maths.Rectangle<T>.Rectangle(Silk.NET.Maths.Vector2D<T> origin, Silk.NET.Maths.Vector2D<T> size) -> void
+Silk.NET.Maths.Rectangle<T>.Rectangle(Silk.NET.Maths.Vector2D<T> origin, T sizeX, T sizeY) -> void
+Silk.NET.Maths.Rectangle<T>.Rectangle(T originX, T originY, Silk.NET.Maths.Vector2D<T> size) -> void
+Silk.NET.Maths.Rectangle<T>.Rectangle(T originX, T originY, T sizeX, T sizeY) -> void
 Silk.NET.Maths.Rectangle<T>.Size -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Scalar
 Silk.NET.Maths.Scalar<T>
@@ -533,6 +552,7 @@ Silk.NET.Maths.Sphere<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> S
 Silk.NET.Maths.Sphere<T>.Radius -> T
 Silk.NET.Maths.Sphere<T>.Sphere() -> void
 Silk.NET.Maths.Sphere<T>.Sphere(Silk.NET.Maths.Vector3D<T> center, T radius) -> void
+Silk.NET.Maths.Sphere<T>.Sphere(T centerX, T centerY, T centerZ, T radius) -> void
 Silk.NET.Maths.Sphere<T>.SquaredRadius.get -> T
 Silk.NET.Maths.SystemNumericsExtensions
 Silk.NET.Maths.Vector2D
