@@ -8,10 +8,10 @@
     
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>Silk.NET.Input.Glfw</_Parameter1>
+            <_Parameter1>Silk.NET.Input.Glfw, PublicKey=00240000048000009400000006020000002400005253413100040000010001003978b9c8ce5c08d54ff797be6fdcb734bb8f8fd47082de8d4311a2b85f89e9d27720824c2ca9b19bd6bdf54c583d297cf346d204b2d70826627789e6f536a7aa4f3e40f37f92ebeef91b820f1a61f15e9c0dccf3c2d372b5b4fa0c630f7cb6f18ea6aca8d04a4104d762f36f9b57ecbdde1055a16f5f088262b2df54c128debf</_Parameter1>
         </AssemblyAttribute>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>Silk.NET.Input.Sdl</_Parameter1>
+            <_Parameter1>Silk.NET.Input.Sdl, PublicKey=00240000048000009400000006020000002400005253413100040000010001003978b9c8ce5c08d54ff797be6fdcb734bb8f8fd47082de8d4311a2b85f89e9d27720824c2ca9b19bd6bdf54c583d297cf346d204b2d70826627789e6f536a7aa4f3e40f37f92ebeef91b820f1a61f15e9c0dccf3c2d372b5b4fa0c630f7cb6f18ea6aca8d04a4104d762f36f9b57ecbdde1055a16f5f088262b2df54c128debf</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
 
