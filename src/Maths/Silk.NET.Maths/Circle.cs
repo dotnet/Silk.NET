@@ -37,6 +37,17 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
+        /// Constructs a circle from components of a center and a <paramref name="radius"/>
+        /// </summary>
+        /// <param name="centerX">The X component of the center.</param>
+        /// <param name="centerY">The Y component of the center.</param>
+        /// <param name="radius">The radius.</param>
+        public Circle(T centerX, T centerY, T radius)
+            : this(new Vector2D<T>(centerX, centerY), radius)
+        {
+        }
+
+        /// <summary>
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]

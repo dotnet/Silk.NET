@@ -40,6 +40,40 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
+        /// Constructs a Ray using an origin and components of a direction.
+        /// </summary>
+        /// <param name="origin">The origin of the ray.</param>
+        /// <param name="directionX">The X component of the direction of the ray.</param>
+        /// <param name="directionY">The Y component of the direction of the ray.</param>
+        public Ray2D(Vector2D<T> origin, T directionX, T directionY)
+            : this(origin, new Vector2D<T>(directionX, directionY))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Ray using components of an origin and a direction.
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the ray.</param>
+        /// <param name="originY">The Y component of the origin of the ray.</param>
+        /// <param name="direction">The direction of the ray.</param>
+        public Ray2D(T originX, T originY, Vector2D<T> direction)
+            : this(new Vector2D<T>(originX, originY), direction)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Ray using components of an origin and components of a direction.
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the ray.</param>
+        /// <param name="originY">The Y component of the origin of the ray.</param>
+        /// <param name="directionX">The X component of the direction of the ray.</param>
+        /// <param name="directionY">The Y component of the direction of the ray.</param>
+        public Ray2D(T originX, T originY, T directionX, T directionY)
+            : this(new Vector2D<T>(originX, originY), new Vector2D<T>(directionX, directionY))
+        {
+        }
+
+        /// <summary>
         /// Calculates a point at a distance along the ray.
         /// </summary>
         /// <param name="distance">The distance along the ray.</param>
