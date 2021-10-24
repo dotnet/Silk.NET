@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
@@ -217,7 +217,9 @@ namespace Silk.NET.Windowing.Sdl
                         ? 8
                         : opts.PreferredBitDepth.Value.W
                 ),
-                (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1)
+                (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1),
+                (GLattr.GLMultisamplebuffers, (opts.Samples == null || opts.Samples == -1) ? 0 : 1),
+                (GLattr.GLMultisamplesamples, (opts.Samples == null || opts.Samples == -1) ? 0 : opts.Samples.Value)
             );
             if (SdlWindow == null)
             {
