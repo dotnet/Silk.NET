@@ -90,7 +90,7 @@ namespace Silk.NET.Direct3D11
         public UavDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_3_L1627_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_3_L1689_C5")]
         [NativeName("Name", "anonymous1")]
         public UnorderedAccessViewDesc1Union Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

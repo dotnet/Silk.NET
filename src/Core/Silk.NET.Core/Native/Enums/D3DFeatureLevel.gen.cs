@@ -32,5 +32,7 @@ namespace Silk.NET.Core.Native
         D3DFeatureLevel120 = 0xC000,
         [NativeName("Name", "D3D_FEATURE_LEVEL_12_1")]
         D3DFeatureLevel121 = 0xC100,
+        [NativeName("Name", "D3D_FEATURE_LEVEL_12_2")]
+        D3DFeatureLevel122 = 0xC200,
     }
 }

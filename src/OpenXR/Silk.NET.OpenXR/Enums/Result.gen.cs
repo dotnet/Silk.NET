@@ -150,6 +150,22 @@ namespace Silk.NET.OpenXR
         ErrorDisplayRefreshRateUnsupportedFB = -1000101000,
         [NativeName("Name", "XR_ERROR_COLOR_SPACE_UNSUPPORTED_FB")]
         ErrorColorSpaceUnsupportedFB = -1000108000,
+        [NativeName("Name", "XR_ERROR_UNEXPECTED_STATE_PASSTHROUGH_FB")]
+        ErrorUnexpectedStatePassthroughFB = -1000118000,
+        [NativeName("Name", "XR_ERROR_FEATURE_ALREADY_CREATED_PASSTHROUGH_FB")]
+        ErrorFeatureAlreadyCreatedPassthroughFB = -1000118001,
+        [NativeName("Name", "XR_ERROR_FEATURE_REQUIRED_PASSTHROUGH_FB")]
+        ErrorFeatureRequiredPassthroughFB = -1000118002,
+        [NativeName("Name", "XR_ERROR_NOT_PERMITTED_PASSTHROUGH_FB")]
+        ErrorNotPermittedPassthroughFB = -1000118003,
+        [NativeName("Name", "XR_ERROR_INSUFFICIENT_RESOURCES_PASSTHROUGH_FB")]
+        ErrorInsufficientResourcesPassthroughFB = -1000118004,
+        [NativeName("Name", "XR_ERROR_UNKNOWN_PASSTHROUGH_FB")]
+        ErrorUnknownPassthroughFB = -1000118050,
+        [NativeName("Name", "XR_ERROR_MARKER_NOT_TRACKED_VARJO")]
+        ErrorMarkerNotTrackedVarjo = -1000124000,
+        [NativeName("Name", "XR_ERROR_MARKER_ID_INVALID_VARJO")]
+        ErrorMarkerIDInvalidVarjo = -1000124001,
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_NOT_FOUND_MSFT")]
         ErrorSpatialAnchorNameNotFoundMsft = -1000142001,
         [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]

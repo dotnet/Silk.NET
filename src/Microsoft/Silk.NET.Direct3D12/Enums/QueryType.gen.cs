@@ -30,5 +30,7 @@ namespace Silk.NET.Direct3D12
         QueryTypeSOStatisticsStream3 = 0x7,
         [NativeName("Name", "D3D12_QUERY_TYPE_VIDEO_DECODE_STATISTICS")]
         QueryTypeVideoDecodeStatistics = 0x8,
+        [NativeName("Name", "D3D12_QUERY_TYPE_PIPELINE_STATISTICS1")]
+        QueryTypePipelineStatistics1 = 0xA,
     }
 }

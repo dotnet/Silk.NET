@@ -38,6 +38,14 @@ namespace Silk.NET.OpenXR
         SceneMsft = 1000097001,
         [NativeName("Name", "XR_OBJECT_TYPE_FOVEATION_PROFILE_FB")]
         FoveationProfileFB = 1000114000,
+        [NativeName("Name", "XR_OBJECT_TYPE_TRIANGLE_MESH_FB")]
+        TriangleMeshFB = 1000117000,
+        [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_FB")]
+        PassthroughFB = 1000118000,
+        [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_LAYER_FB")]
+        PassthroughLayerFB = 1000118002,
+        [NativeName("Name", "XR_OBJECT_TYPE_GEOMETRY_INSTANCE_FB")]
+        GeometryInstanceFB = 1000118004,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
     }

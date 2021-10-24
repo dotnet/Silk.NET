@@ -62,12 +62,12 @@ namespace Silk.NET.Direct3D11
 
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3293_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3396_C5")]
         [NativeName("Name", "anonymous1")]
         public BufferSrvUnion1 Anonymous1;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3298_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3401_C5")]
         [NativeName("Name", "anonymous2")]
         public BufferSrvUnion2 Anonymous2;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

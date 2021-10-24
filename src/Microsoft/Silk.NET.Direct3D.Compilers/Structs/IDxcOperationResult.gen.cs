@@ -129,43 +129,43 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(IDxcBlob** pResult)
+        public readonly unsafe int GetResult(IDxcBlob** ppResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResult);
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResult);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetResult(ref IDxcBlob* pResult)
+        public readonly unsafe int GetResult(ref IDxcBlob* ppResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlob** pResultPtr = &pResult)
+            fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResultPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, ppResultPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** pErrors)
+        public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** ppErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrors);
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrors);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* pErrors)
+        public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* ppErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDxcBlobEncoding** pErrorsPtr = &pErrors)
+            fixed (IDxcBlobEncoding** ppErrorsPtr = &ppErrors)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrorsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, ppErrorsPtr);
             }
             return ret;
         }

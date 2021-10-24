@@ -205,6 +205,7 @@ namespace Silk.NET.BuildTools
                 }
                 else if (task.Mode == ConverterMode.Clang)
                 {
+                    ClangConfig.SubstituteWindowsSdkPath(ref task);
                     foreach (var src in task.Sources)
                     {
                         profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
