@@ -84,7 +84,7 @@ namespace Silk.NET.Maths
 
         /// <summary>
         /// The size of this box.
-        /// When setting the box is scaled about it's center.
+        /// When setting the box is scaled about its center.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Size => Max - Min;
