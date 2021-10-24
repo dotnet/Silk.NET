@@ -428,6 +428,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (ushort) Math.Acos((ushort) (object) x); // KIPLING
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Acos((Complex) (object) x);
+                }
+
                 return Decimal(x);
             }
 
@@ -576,7 +587,7 @@ namespace Silk.NET.Maths
 
                 return Decimal(x);
             }
-
+            
             [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
@@ -725,6 +736,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(ushort))
                 {
                     return (T) (object) (ushort) Math.Asin((ushort) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Asin((Complex) (object) x);
                 }
 
                 return Decimal(x);
@@ -1021,6 +1043,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (ushort) Math.Atan((ushort) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Atan((Complex) (object) x);
+                }
+
                 return Decimal(x);
             }
 
@@ -1312,6 +1345,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) CoreCbrt((long) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Pow((Complex) (object) x, 1.0/3); // TODO: find a more efficient impl?
                 }
 
                 return ULong(x);
@@ -1609,6 +1653,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (long) Math.Cos((long) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Cos((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -1757,6 +1812,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (long) Math.Cosh((long) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Cosh((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -1895,6 +1961,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) (long) Math.Exp((long) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Exp((Complex) (object) x);
                 }
 
                 return ULong(x);
@@ -2403,6 +2480,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (long) Math.Sin((long) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Sin((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -2549,6 +2637,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) (long) Math.Sinh((long) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Sinh((Complex) (object) x);
                 }
 
                 return ULong(x);
@@ -2871,6 +2970,18 @@ namespace Silk.NET.Maths
 #endif
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                // TODO: vectorized implementation?
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Sqrt((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -3035,6 +3146,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (long) Math.Tan((long) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Tan((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -3181,6 +3303,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) (long) Math.Tanh((long) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Tanh((Complex) (object) x);
                 }
 
                 return ULong(x);
@@ -3518,6 +3651,17 @@ namespace Silk.NET.Maths
                     return (T) (object) (long) Math.Log((long) (object) x);
                 }
 
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Log((Complex) (object) x);
+                }
+
                 return ULong(x);
             }
 
@@ -3692,6 +3836,17 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) (long) Math.Log10((long) (object) x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Log10((Complex) (object) x);
                 }
 
                 return ULong(x);
@@ -4252,6 +4407,22 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(long))
                 {
                     return (T) (object) (long) Math.Log((long) (object) x, (long) (object) y);
+                }
+
+                return Complex(x, y);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x, T y)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    // Complex.Log is not defined on two complex numbers
+                    var baseValue = (Complex) (object) y;
+                    if (baseValue.Imaginary is 0)
+                        return (T) (object) (Complex) System.Numerics.Complex.Log((Complex) (object) x, baseValue.Real);
+                    // log(x, y) = log(x) / log(y)
+                    return (T) (object) (System.Numerics.Complex.Log((Complex) (object) x) / System.Numerics.Complex.Log(baseValue));
                 }
 
                 return ULong(x, y);
@@ -4885,6 +5056,17 @@ namespace Silk.NET.Maths
                         if (px != 0) return (T) (object) (long) 1;
                         else return (T) (object) (long) 0;
                     }
+                }
+
+                return Complex(x, y);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x, T y)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T) (object) (Complex) System.Numerics.Complex.Pow((Complex) (object) x, (Complex) (object) y);
                 }
 
                 return ULong(x, y);
