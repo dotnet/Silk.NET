@@ -548,6 +548,8 @@ class Build : NukeBuild
             {
                 outputs = outputs.Concat(DotNetNuGetPush(pushSettings));
             }
+
+            outputs = outputs.Concat(DotNet($"dotnet nuget remove source \"Silk-PushPackages\""));
         }
 
         return outputs;
