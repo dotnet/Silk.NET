@@ -157,7 +157,7 @@ class Build : NukeBuild
                             "extension) to the AllowedExclusions array in the NUKE Build.cs file."
                         );
 
-                        missedOut.Add(file);
+                        missedOut.Add(Path.GetRelativePath(RootDirectory, file));
                     }
                 }
 
