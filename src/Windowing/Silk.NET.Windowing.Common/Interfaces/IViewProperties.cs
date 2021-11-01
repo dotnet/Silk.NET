@@ -74,7 +74,7 @@ namespace Silk.NET.Windowing
         /// Pass <c>null</c> or <c>-1</c> to use the system default. 
         /// </remarks>
         int? PreferredStencilBufferBits { get; }
-        
+
         /// <summary>
         /// Preferred red, green, blue, and alpha bits of the window's framebuffer.
         /// </summary>
@@ -82,5 +82,13 @@ namespace Silk.NET.Windowing
         /// Pass <c>null</c> or <c>-1</c> for any of the axes to use the system default. 
         /// </remarks>
         Vector4D<int>? PreferredBitDepth { get; }
+
+        /// <summary>
+        /// The number of samples per pixel to use for multisampling on the window's framebuffer.
+        /// </summary>
+        /// <remarks>
+        /// Pass <c>null</c> or <c>-1</c> to use the system default.
+        /// </remarks>
+        int? Samples { get; }
     }
 }

@@ -340,6 +340,9 @@ namespace Silk.NET.Windowing.Glfw
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
 
+            // Set multisample samples
+            _glfw.WindowHint(WindowHintInt.Samples, opts.Samples ?? GLFW.Glfw.DontCare);
+
             var share = SharedContext;
 
             // Create window
