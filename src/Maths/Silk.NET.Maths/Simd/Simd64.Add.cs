@@ -1,8 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
-// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
 #if INTRINSICS
 using System;
 using System.Runtime.CompilerServices;
@@ -21,8 +19,9 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Add<T>(Vector64<T> left, Vector64<T> right) where T : unmanaged
         {
-            return Byte(left, right);
 
+            return Byte(left, right);
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Byte(Vector64<T> left, Vector64<T> right)
             {
@@ -37,9 +36,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return SByte(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> SByte(Vector64<T> left, Vector64<T> right)
             {
@@ -54,9 +55,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return UInt16(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt16(Vector64<T> left, Vector64<T> right)
             {
@@ -71,9 +74,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Int16(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int16(Vector64<T> left, Vector64<T> right)
             {
@@ -88,9 +93,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return UInt32(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt32(Vector64<T> left, Vector64<T> right)
             {
@@ -105,9 +112,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Int32(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int32(Vector64<T> left, Vector64<T> right)
             {
@@ -122,9 +131,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return UInt64(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt64(Vector64<T> left, Vector64<T> right)
             {
@@ -139,9 +150,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Int64(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int64(Vector64<T> left, Vector64<T> right)
             {
@@ -156,9 +169,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Single(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Single(Vector64<T> left, Vector64<T> right)
             {
@@ -173,9 +188,11 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Double(left, right);
             }
-        
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Double(Vector64<T> left, Vector64<T> right)
             {
@@ -190,10 +207,30 @@ namespace Silk.NET.Maths
 #endif
 
                 }
+                
+        
                 return Other(left, right);
             }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
+            {
+                if (typeof(T) == typeof())
+                {
+
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsOther(), right.AsOther()).As<, T>();
+                    }
+#endif
+
+                }
+                
         
-    
+                return Other(left, right);
+            }
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
             {
