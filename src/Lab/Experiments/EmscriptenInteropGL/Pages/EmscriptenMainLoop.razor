@@ -1,0 +1,21 @@
+﻿@page "/EmscriptenMainLoop"
+@using System.Runtime.InteropServices
+@inject IJSInProcessRuntime _runtime
+<h3>EmscriptenMainLoop</h3>
+
+@code {
+
+    [DllImport("emscripten", EntryPoint = "emscripten_set_main_loop")]
+    private static extern unsafe void EmscriptenSetMainLoop(void* func, int fps, int simulateInfiniteLoop);
+
+    protected override unsafe void OnInitialized()
+    {
+        EmscriptenSetMainLoop((delegate*<void>)&Loop, 0, 0);
+    }
+
+    private static void Loop()
+    {
+        Console.WriteLine("Test");
+    }
+
+}
