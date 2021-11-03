@@ -21,7 +21,7 @@ namespace Silk.NET.Maths
         {
 
                 return Other(left, right);
-            }
+            
             
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)

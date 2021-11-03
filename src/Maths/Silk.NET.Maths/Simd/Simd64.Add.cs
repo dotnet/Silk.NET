@@ -115,38 +115,6 @@ namespace Silk.NET.Maths
                 }
                 
         
-                return UInt64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> UInt64(Vector64<T> left, Vector64<T> right)
-            {
-                if (typeof(T) == typeof(ulong))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
-                }
-                
-        
-                return Int64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Int64(Vector64<T> left, Vector64<T> right)
-            {
-                if (typeof(T) == typeof(long))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
-                }
-                
-        
                 return Single(left, right);
             }            
             [MethodImpl(Scalar.MaxOpt)]
@@ -158,22 +126,6 @@ namespace Silk.NET.Maths
                     if (AdvSimd.IsSupported)
                     {
                         return AdvSimd.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
-                    }
-#endif
-                }
-                
-        
-                return Double(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Double(Vector64<T> left, Vector64<T> right)
-            {
-                if (typeof(T) == typeof(Double))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsDouble(), right.AsDouble()).As<Double, T>();
                     }
 #endif
                 }

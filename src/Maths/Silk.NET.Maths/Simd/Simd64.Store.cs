@@ -168,12 +168,12 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static void Double(T* destination, Vector64<T> source)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((Double*) destination, (Vector64<Double>) (object) source);
+                        AdvSimd.Store((double*) destination, (Vector64<double>) (object) source);
                     }
 #endif
                 }

@@ -35,6 +35,22 @@ namespace Silk.NET.Maths
                 }
                 
         
+                return Double(left, right);
+            }            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector256<T> Double(Vector256<T> left, Vector256<T> right)
+            {
+                if (typeof(T) == typeof(double))
+                {
+#if AVX
+                    if (Avx2.IsSupported)
+                    {
+                        return Avx2.Divide(left.AsDouble(), right.AsDouble()).As<double, T>();
+                    }
+#endif
+                }
+                
+        
                 return Other(left, right);
             }
             

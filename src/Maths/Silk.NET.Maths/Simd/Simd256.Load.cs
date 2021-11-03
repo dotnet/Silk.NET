@@ -168,12 +168,12 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Double(T* ptr)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return (Vector256<T>) (object) Avx2.LoadVector256((Double*) ptr);
+                        return (Vector256<T>) (object) Avx2.LoadVector256((double*) ptr);
                     }
 #endif
                 }

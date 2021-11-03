@@ -168,12 +168,12 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static void Double(T* destination, Vector256<T> source)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        Avx2.Store((Double*) destination, (Vector256<Double>) (object) source);
+                        Avx2.Store((double*) destination, (Vector256<double>) (object) source);
                     }
 #endif
                 }

@@ -33,7 +33,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsByte(), right.AsByte()).As<byte, T>();
                     }
@@ -61,7 +61,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
                     }
@@ -89,7 +89,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
                     }
@@ -117,7 +117,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsInt16(), right.AsInt16()).As<short, T>();
                     }
@@ -145,7 +145,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
                     }
@@ -173,7 +173,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsInt32(), right.AsInt32()).As<int, T>();
                     }
@@ -194,14 +194,8 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
                     }
@@ -222,14 +216,8 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(long))
                 {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
                     }
@@ -257,7 +245,7 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
                         return Sse2.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
@@ -276,24 +264,18 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(Vector128<T> left, Vector128<T> right)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Add(left.AsDouble(), right.AsDouble()).As<Double, T>();
-                    }
-#endif
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Add(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        return Sse2.Add(left.AsDouble(), right.AsDouble()).As<double, T>();
                     }
 #endif
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Add(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        return Avx2.Add(left.AsDouble(), right.AsDouble()).As<double, T>();
                     }
 #endif
                 }

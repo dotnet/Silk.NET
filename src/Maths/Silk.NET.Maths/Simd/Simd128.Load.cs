@@ -276,24 +276,24 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(T* ptr)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return (Vector128<T>) (object) AdvSimd.LoadVector128((Double*) ptr);
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((double*) ptr);
                     }
 #endif
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return (Vector128<T>) (object) Sse2.LoadVector128((Double*) ptr);
+                        return (Vector128<T>) (object) Sse2.LoadVector128((double*) ptr);
                     }
 #endif
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((Double*) ptr);
+                        return (Vector128<T>) (object) Avx2.LoadVector128((double*) ptr);
                     }
 #endif
                 }

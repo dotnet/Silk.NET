@@ -132,9 +132,14 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(Vector128<T> vector)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
-                    return vector;
+#if AdvSIMD
+                    return AdvSimd.And(vector.AsDouble(), Vector128.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
+#endif
+#if SSE
+                    return Ssse3.And(vector.AsDouble(), Vector128.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
+#endif
                 }
                 
         

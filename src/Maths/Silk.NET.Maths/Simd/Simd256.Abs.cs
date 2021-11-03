@@ -120,9 +120,11 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Double(Vector256<T> vector)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
-                    return vector;
+#if AVX
+                    return Avx2.And(vector.AsDouble(), Vector256.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
+#endif
                 }
                 
         

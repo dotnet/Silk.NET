@@ -123,9 +123,9 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Double(T value)
             {
-                if (typeof(T) == typeof(Double))
+                if (typeof(T) == typeof(double))
                 {
-                    return (Vector256<T>) (object) Vector256.Create((Double) (object) value);
+                    return (Vector256<T>) (object) Vector256.Create((double) (object) value);
                 }
                 
         
