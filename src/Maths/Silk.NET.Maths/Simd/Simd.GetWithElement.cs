@@ -13,6 +13,10 @@ using System.Runtime.Intrinsics.Arm;
 
 namespace Silk.NET.Maths
 {
+    /// <summary>
+    /// Provides several hardware-accelerated methods
+    /// for 128-bit vectors
+    /// </summary>
     public static unsafe partial class Simd128
     {
         // these two should ONLY be used in the constant-sized unrolled loops.
@@ -34,6 +38,10 @@ namespace Silk.NET.Maths
         }
     }
     
+    /// <summary>
+    /// Provides several hardware-accelerated methods
+    /// for 256-bit vectors
+    /// </summary>
     public static unsafe partial class Simd256
     {
         // these two should ONLY be used in the constant-sized unrolled loops.
@@ -55,6 +63,10 @@ namespace Silk.NET.Maths
         }
     }
     
+    /// <summary>
+    /// Provides several hardware-accelerated methods
+    /// for 64-bit vectors
+    /// </summary>
     public static unsafe partial class Simd64
     {
         // these two should ONLY be used in the constant-sized unrolled loops.
