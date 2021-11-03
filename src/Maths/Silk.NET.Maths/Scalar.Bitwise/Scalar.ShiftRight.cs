@@ -119,8 +119,8 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    var res = Unsafe.As<T, int>(ref value) >> offset;
-                    return Unsafe.As<int, T>(ref res);
+                    var res = Unsafe.As<T, ulong>(ref value) >> offset;
+                    return Unsafe.As<ulong, T>(ref res);
                 }
 
                 return Other(value, offset);
