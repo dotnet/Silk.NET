@@ -215,25 +215,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
             {
-                if (typeof(T) == typeof())
-                {
-
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Subtract(left.AsOther(), right.AsOther()).As<, T>();
-                    }
-#endif
-
-                }
-                
-        
-                return Other(left, right);
-            }
-
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
-            {
+            
                 var vec = Vector64<T>.Zero;
                 for (int i = 0; i < Vector64<T>.Count; i++)
                 {
@@ -246,3 +228,4 @@ namespace Silk.NET.Maths
         }
     }
 }
+#endif

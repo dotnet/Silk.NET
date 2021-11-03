@@ -40,10 +40,11 @@ namespace Silk.NET.Maths
         
                 return Other(left, right);
             }
-
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(Vector256<T> left, Vector256<T> right)
             {
+            
                 var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
@@ -56,3 +57,4 @@ namespace Silk.NET.Maths
         }
     }
 }
+#endif

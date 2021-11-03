@@ -17,13 +17,13 @@ namespace Silk.NET.Maths
     public static unsafe partial class Simd64
     {
         [MethodImpl(Scalar.MaxOpt)]
-        public static Vector64<T> Multiply<T>(Vector64<T> left, Vector64<T> right) where T : unmanaged
+        public static void Store<T>(T* destination, Vector64<T> source) where T : unmanaged
         {
 
-            return Byte(left, right);
+            Byte(destination, source);
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Byte(Vector64<T> left, Vector64<T> right)
+            static void Byte(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(byte))
                 {
@@ -31,18 +31,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsByte(), right.AsByte()).As<byte, T>();
+                        AdvSimd.Store((byte*) destination, (Vector64<byte>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return SByte(left, right);
+                SByte(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> SByte(Vector64<T> left, Vector64<T> right)
+            static void SByte(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
@@ -50,18 +50,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        AdvSimd.Store((sbyte*) destination, (Vector64<sbyte>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt16(left, right);
+                UInt16(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> UInt16(Vector64<T> left, Vector64<T> right)
+            static void UInt16(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(ushort))
                 {
@@ -69,18 +69,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        AdvSimd.Store((ushort*) destination, (Vector64<ushort>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int16(left, right);
+                Int16(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Int16(Vector64<T> left, Vector64<T> right)
+            static void Int16(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(short))
                 {
@@ -88,18 +88,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt16(), right.AsInt16()).As<short, T>();
+                        AdvSimd.Store((short*) destination, (Vector64<short>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt32(left, right);
+                UInt32(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> UInt32(Vector64<T> left, Vector64<T> right)
+            static void UInt32(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(uint))
                 {
@@ -107,18 +107,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        AdvSimd.Store((uint*) destination, (Vector64<uint>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int32(left, right);
+                Int32(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Int32(Vector64<T> left, Vector64<T> right)
+            static void Int32(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(int))
                 {
@@ -126,18 +126,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt32(), right.AsInt32()).As<int, T>();
+                        AdvSimd.Store((int*) destination, (Vector64<int>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt64(left, right);
+                UInt64(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> UInt64(Vector64<T> left, Vector64<T> right)
+            static void UInt64(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(ulong))
                 {
@@ -145,18 +145,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        AdvSimd.Store((ulong*) destination, (Vector64<ulong>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int64(left, right);
+                Int64(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Int64(Vector64<T> left, Vector64<T> right)
+            static void Int64(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(long))
                 {
@@ -164,18 +164,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt64(), right.AsInt64()).As<long, T>();
+                        AdvSimd.Store((long*) destination, (Vector64<long>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Single(left, right);
+                Single(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Single(Vector64<T> left, Vector64<T> right)
+            static void Single(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(float))
                 {
@@ -183,18 +183,18 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
+                        AdvSimd.Store((float*) destination, (Vector64<float>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Double(left, right);
+                Double(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Double(Vector64<T> left, Vector64<T> right)
+            static void Double(T* destination, Vector64<T> source)
             {
                 if (typeof(T) == typeof(Double))
                 {
@@ -202,27 +202,22 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        AdvSimd.Store((Double*) destination, (Vector64<Double>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Other(left, right);
+                Other(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
+            static void Other(T* destination, Vector64<T> source)
             {
             
-                var vec = Vector64<T>.Zero;
-                for (int i = 0; i < Vector64<T>.Count; i++)
-                {
-                    WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));
-                }
+                Unsafe.WriteUnaligned<Vector64<T>>(destination, source);
 
-                return vec;
             }
 
         }

@@ -17,13 +17,13 @@ namespace Silk.NET.Maths
     public static unsafe partial class Simd128
     {
         [MethodImpl(Scalar.MaxOpt)]
-        public static Vector128<T> Multiply<T>(Vector128<T> left, Vector128<T> right) where T : unmanaged
+        public static Vector128<T> Load<T>(T* ptr) where T : unmanaged
         {
 
-            return Byte(left, right);
+            return Byte(ptr);
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Byte(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Byte(T* ptr)
             {
                 if (typeof(T) == typeof(byte))
                 {
@@ -31,32 +31,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsByte(), right.AsByte()).As<byte, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((byte*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsByte(), right.AsByte()).As<byte, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((byte*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsByte(), right.AsByte()).As<byte, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((byte*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return SByte(left, right);
+                return SByte(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> SByte(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> SByte(T* ptr)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
@@ -64,32 +64,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((sbyte*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((sbyte*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((sbyte*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return UInt16(left, right);
+                return UInt16(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> UInt16(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> UInt16(T* ptr)
             {
                 if (typeof(T) == typeof(ushort))
                 {
@@ -97,32 +97,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((ushort*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((ushort*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((ushort*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Int16(left, right);
+                return Int16(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Int16(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Int16(T* ptr)
             {
                 if (typeof(T) == typeof(short))
                 {
@@ -130,32 +130,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt16(), right.AsInt16()).As<short, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((short*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsInt16(), right.AsInt16()).As<short, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((short*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsInt16(), right.AsInt16()).As<short, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((short*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return UInt32(left, right);
+                return UInt32(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> UInt32(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> UInt32(T* ptr)
             {
                 if (typeof(T) == typeof(uint))
                 {
@@ -163,32 +163,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((uint*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((uint*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((uint*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Int32(left, right);
+                return Int32(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Int32(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Int32(T* ptr)
             {
                 if (typeof(T) == typeof(int))
                 {
@@ -196,32 +196,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt32(), right.AsInt32()).As<int, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((int*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsInt32(), right.AsInt32()).As<int, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((int*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsInt32(), right.AsInt32()).As<int, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((int*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return UInt64(left, right);
+                return UInt64(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> UInt64(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> UInt64(T* ptr)
             {
                 if (typeof(T) == typeof(ulong))
                 {
@@ -229,32 +229,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((ulong*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((ulong*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((ulong*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Int64(left, right);
+                return Int64(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Int64(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Int64(T* ptr)
             {
                 if (typeof(T) == typeof(long))
                 {
@@ -262,32 +262,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsInt64(), right.AsInt64()).As<long, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((long*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsInt64(), right.AsInt64()).As<long, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((long*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsInt64(), right.AsInt64()).As<long, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((long*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Single(left, right);
+                return Single(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Single(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Single(T* ptr)
             {
                 if (typeof(T) == typeof(float))
                 {
@@ -295,32 +295,32 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((float*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((float*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((float*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Double(left, right);
+                return Double(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Double(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Double(T* ptr)
             {
                 if (typeof(T) == typeof(Double))
                 {
@@ -328,41 +328,36 @@ namespace Silk.NET.Maths
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.Multiply(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        return (Vector128<T>) (object) AdvSimd.LoadVector128((Double*) ptr);
                     }
 #endif
 
 #if SSE
-                    if (Sse.IsSupported)
+                    if (Sse2.IsSupported)
                     {
-                        return Sse2.Multiply(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        return (Vector128<T>) (object) Sse2.LoadVector128((Double*) ptr);
                     }
 #endif
 
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Multiply(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        return (Vector128<T>) (object) Avx2.LoadVector128((Double*) ptr);
                     }
 #endif
 
                 }
                 
         
-                return Other(left, right);
+                return Other(ptr);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
+            static Vector128<T> Other(T* ptr)
             {
             
-                var vec = Vector128<T>.Zero;
-                for (int i = 0; i < Vector128<T>.Count; i++)
-                {
-                    WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));
-                }
+                return Unsafe.ReadUnaligned<Vector128<T>>(ptr);
 
-                return vec;
             }
 
         }

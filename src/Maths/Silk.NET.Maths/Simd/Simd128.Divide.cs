@@ -47,10 +47,11 @@ namespace Silk.NET.Maths
         
                 return Other(left, right);
             }
-
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
             {
+            
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
@@ -63,3 +64,4 @@ namespace Silk.NET.Maths
         }
     }
 }
+#endif

@@ -17,13 +17,13 @@ namespace Silk.NET.Maths
     public static unsafe partial class Simd256
     {
         [MethodImpl(Scalar.MaxOpt)]
-        public static Vector256<T> Subtract<T>(Vector256<T> left, Vector256<T> right) where T : unmanaged
+        public static void Store<T>(T* destination, Vector256<T> source) where T : unmanaged
         {
 
-            return Byte(left, right);
+            Byte(destination, source);
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Byte(Vector256<T> left, Vector256<T> right)
+            static void Byte(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(byte))
                 {
@@ -31,18 +31,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsByte(), right.AsByte()).As<byte, T>();
+                        Avx2.Store((byte*) destination, (Vector256<byte>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return SByte(left, right);
+                SByte(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> SByte(Vector256<T> left, Vector256<T> right)
+            static void SByte(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
@@ -50,18 +50,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        Avx2.Store((sbyte*) destination, (Vector256<sbyte>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt16(left, right);
+                UInt16(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt16(Vector256<T> left, Vector256<T> right)
+            static void UInt16(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(ushort))
                 {
@@ -69,18 +69,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        Avx2.Store((ushort*) destination, (Vector256<ushort>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int16(left, right);
+                Int16(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int16(Vector256<T> left, Vector256<T> right)
+            static void Int16(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(short))
                 {
@@ -88,18 +88,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsInt16(), right.AsInt16()).As<short, T>();
+                        Avx2.Store((short*) destination, (Vector256<short>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt32(left, right);
+                UInt32(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt32(Vector256<T> left, Vector256<T> right)
+            static void UInt32(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(uint))
                 {
@@ -107,18 +107,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        Avx2.Store((uint*) destination, (Vector256<uint>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int32(left, right);
+                Int32(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int32(Vector256<T> left, Vector256<T> right)
+            static void Int32(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(int))
                 {
@@ -126,18 +126,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsInt32(), right.AsInt32()).As<int, T>();
+                        Avx2.Store((int*) destination, (Vector256<int>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return UInt64(left, right);
+                UInt64(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt64(Vector256<T> left, Vector256<T> right)
+            static void UInt64(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(ulong))
                 {
@@ -145,18 +145,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        Avx2.Store((ulong*) destination, (Vector256<ulong>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Int64(left, right);
+                Int64(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int64(Vector256<T> left, Vector256<T> right)
+            static void Int64(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(long))
                 {
@@ -164,18 +164,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsInt64(), right.AsInt64()).As<long, T>();
+                        Avx2.Store((long*) destination, (Vector256<long>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Single(left, right);
+                Single(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Single(Vector256<T> left, Vector256<T> right)
+            static void Single(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(float))
                 {
@@ -183,18 +183,18 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsSingle(), right.AsSingle()).As<float, T>();
+                        Avx2.Store((float*) destination, (Vector256<float>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Double(left, right);
+                Double(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Double(Vector256<T> left, Vector256<T> right)
+            static void Double(T* destination, Vector256<T> source)
             {
                 if (typeof(T) == typeof(Double))
                 {
@@ -202,27 +202,22 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        return Avx2.Subtract(left.AsDouble(), right.AsDouble()).As<Double, T>();
+                        Avx2.Store((Double*) destination, (Vector256<Double>) (object) source);
                     }
 #endif
 
                 }
                 
         
-                return Other(left, right);
+                Other(destination, source);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Other(Vector256<T> left, Vector256<T> right)
+            static void Other(T* destination, Vector256<T> source)
             {
             
-                var vec = Vector256<T>.Zero;
-                for (int i = 0; i < Vector256<T>.Count; i++)
-                {
-                    WithElement(vec, i, Scalar.Subtract(GetElement(left, i), GetElement(right, i)));
-                }
+                Unsafe.WriteUnaligned<Vector256<T>>(destination, source);
 
-                return vec;
             }
 
         }
