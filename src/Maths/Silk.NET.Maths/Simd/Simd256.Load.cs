@@ -20,192 +20,162 @@ namespace Silk.NET.Maths
         public static Vector256<T> Load<T>(T* ptr) where T : unmanaged
         {
 
-            return Byte(ptr);
-            
+            return Byte(ptr);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Byte(T* ptr)
             {
                 if (typeof(T) == typeof(byte))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((byte*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return SByte(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> SByte(T* ptr)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((sbyte*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt16(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> UInt16(T* ptr)
             {
                 if (typeof(T) == typeof(ushort))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((ushort*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int16(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Int16(T* ptr)
             {
                 if (typeof(T) == typeof(short))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((short*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt32(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> UInt32(T* ptr)
             {
                 if (typeof(T) == typeof(uint))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((uint*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int32(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Int32(T* ptr)
             {
                 if (typeof(T) == typeof(int))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((int*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt64(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> UInt64(T* ptr)
             {
                 if (typeof(T) == typeof(ulong))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((ulong*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int64(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Int64(T* ptr)
             {
                 if (typeof(T) == typeof(long))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((long*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Single(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Single(T* ptr)
             {
                 if (typeof(T) == typeof(float))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((float*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Double(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Double(T* ptr)
             {
                 if (typeof(T) == typeof(Double))
                 {
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return (Vector256<T>) (object) Avx2.LoadVector256((Double*) ptr);
                     }
 #endif
-
                 }
                 
         
@@ -215,8 +185,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(T* ptr)
             {
-            
-                return Unsafe.ReadUnaligned<Vector256<T>>(ptr);
+                            return Unsafe.ReadUnaligned<Vector256<T>>(ptr);
 
             }
 

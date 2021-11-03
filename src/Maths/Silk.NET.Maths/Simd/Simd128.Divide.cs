@@ -20,28 +20,24 @@ namespace Silk.NET.Maths
         public static Vector128<T> Divide<T>(Vector128<T> left, Vector128<T> right) where T : unmanaged
         {
 
-            return Single(left, right);
-            
+            return Single(left, right);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Single(Vector128<T> left, Vector128<T> right)
             {
                 if (typeof(T) == typeof(float))
                 {
-
 #if SSE
                     if (Sse.IsSupported)
                     {
                         return Sse2.Divide(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
 #endif
-
 #if AVX
                     if (Avx2.IsSupported)
                     {
                         return Avx2.Divide(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
 #endif
-
                 }
                 
         
@@ -51,8 +47,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
             {
-            
-                var vec = Vector128<T>.Zero;
+                            var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Divide(GetElement(left, i), GetElement(right, i)));

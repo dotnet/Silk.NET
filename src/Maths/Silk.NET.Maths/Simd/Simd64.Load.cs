@@ -20,192 +20,162 @@ namespace Silk.NET.Maths
         public static Vector64<T> Load<T>(T* ptr) where T : unmanaged
         {
 
-            return Byte(ptr);
-            
+            return Byte(ptr);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Byte(T* ptr)
             {
                 if (typeof(T) == typeof(byte))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((byte*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return SByte(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> SByte(T* ptr)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((sbyte*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt16(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt16(T* ptr)
             {
                 if (typeof(T) == typeof(ushort))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((ushort*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int16(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int16(T* ptr)
             {
                 if (typeof(T) == typeof(short))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((short*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt32(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt32(T* ptr)
             {
                 if (typeof(T) == typeof(uint))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((uint*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int32(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int32(T* ptr)
             {
                 if (typeof(T) == typeof(int))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((int*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return UInt64(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> UInt64(T* ptr)
             {
                 if (typeof(T) == typeof(ulong))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((ulong*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Int64(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Int64(T* ptr)
             {
                 if (typeof(T) == typeof(long))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((long*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Single(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Single(T* ptr)
             {
                 if (typeof(T) == typeof(float))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((float*) ptr);
                     }
 #endif
-
                 }
                 
         
                 return Double(ptr);
-            }
-            
+            }            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Double(T* ptr)
             {
                 if (typeof(T) == typeof(Double))
                 {
-
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (Vector64<T>) (object) AdvSimd.LoadVector64((Double*) ptr);
                     }
 #endif
-
                 }
                 
         
@@ -215,8 +185,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(T* ptr)
             {
-            
-                return Unsafe.ReadUnaligned<Vector64<T>>(ptr);
+                            return Unsafe.ReadUnaligned<Vector64<T>>(ptr);
 
             }
 
