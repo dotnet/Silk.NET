@@ -185,7 +185,8 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(Vector256<T> left, Vector256<T> right)
             {
-                            var vec = Vector256<T>.Zero;
+            
+                var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));

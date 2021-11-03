@@ -305,7 +305,8 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
             {
-                            var vec = Vector128<T>.Zero;
+            
+                var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Add(GetElement(left, i), GetElement(right, i)));
