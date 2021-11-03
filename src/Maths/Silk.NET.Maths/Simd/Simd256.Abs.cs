@@ -104,9 +104,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if AVX
-                    return Avx2.And(vector.AsSingle(), Vector256.Create(0x7FFF_FFFFu).AsSingle()).As<float, T>();
-#endif
+                    return Simd256.And(vector.AsSingle(), Vector256.Create(0x7FFF_FFFFu).AsSingle()).As<float, T>();
                 }
         
                 return Double(vector);
@@ -116,9 +114,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-#if AVX
-                    return Avx2.And(vector.AsDouble(), Vector256.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
-#endif
+                    return Simd256.And(vector.AsDouble(), Vector256.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
                 }
         
                 return Other(vector);

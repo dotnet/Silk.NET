@@ -17,10 +17,10 @@ namespace Silk.NET.Maths
     public static unsafe partial class Simd64
     {
         /// <summary>
-        /// Performs hardware-accelerated Abs on 64-bit vectors.
+        /// Performs hardware-accelerated Not on 64-bit vectors.
         /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
-        public static Vector64<T> Abs<T>(Vector64<T> vector) where T : unmanaged
+        public static Vector64<T> Not<T>(Vector64<T> vector) where T : unmanaged
         {
             return Byte(vector);            
             [MethodImpl(Scalar.MaxOpt)]
@@ -28,7 +28,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return vector;
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return SByte(vector);
@@ -38,9 +38,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-#if AdvSIMD
-                    return AdvSimd.Abs(vector.AsSByte()).As<byte, T>();
-#endif
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return UInt16(vector);
@@ -50,7 +48,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return vector;
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return Int16(vector);
@@ -60,9 +58,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-#if AdvSIMD
-                    return AdvSimd.Abs(vector.AsInt16()).As<ushort, T>();
-#endif
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return UInt32(vector);
@@ -72,7 +68,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return vector;
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return Int32(vector);
@@ -82,9 +78,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(int))
                 {
-#if AdvSIMD
-                    return AdvSimd.Abs(vector.AsInt32()).As<uint, T>();
-#endif
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return UInt64(vector);
@@ -94,7 +88,17 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return vector;
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
+                }
+        
+                return Int64(vector);
+            }            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector64<T> Int64(Vector64<T> vector)
+            {
+                if (typeof(T) == typeof(long))
+                {
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return Single(vector);
@@ -104,7 +108,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return Simd64.And(vector.AsSingle(), Vector64.Create(0x7FFF_FFFFu).AsSingle()).As<float, T>();
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return Double(vector);
@@ -114,7 +118,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return Simd64.And(vector.AsDouble(), Vector64.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
+                    return Simd64.Xor(vector, Vector64<T>.AllBitsSet);
                 }
         
                 return Other(vector);
@@ -125,7 +129,7 @@ namespace Silk.NET.Maths
                 var vec = Vector64<T>.Zero;
                 for (int i = 0; i < Vector64<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Abs(GetElement(vector, i)));
+                    WithElement(vec, i, Scalar.Not(GetElement(vector, i)));
                 }
                 return vec;
             }
