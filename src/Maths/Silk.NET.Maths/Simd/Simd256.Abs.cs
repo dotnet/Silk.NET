@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd256
     {
+        /// <summary>
+        /// Performs hardware-accelerated Abs on 256-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> Abs<T>(Vector256<T> vector) where T : unmanaged
         {

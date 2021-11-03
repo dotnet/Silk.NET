@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd64
     {
+        /// <summary>
+        /// Performs hardware-accelerated Load on 64-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Load<T>(T* ptr) where T : unmanaged
         {

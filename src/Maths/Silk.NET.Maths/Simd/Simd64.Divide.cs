@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd64
     {
+        /// <summary>
+        /// Performs hardware-accelerated Divide on 64-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Divide<T>(Vector64<T> left, Vector64<T> right) where T : unmanaged
         {

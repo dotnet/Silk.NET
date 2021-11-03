@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd128
     {
+        /// <summary>
+        /// Performs hardware-accelerated Store on 128-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static void Store<T>(T* destination, Vector128<T> source) where T : unmanaged
         {

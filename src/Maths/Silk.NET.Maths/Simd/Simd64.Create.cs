@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd64
     {
+        /// <summary>
+        /// Performs hardware-accelerated Create on 64-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Create<T>(T value) where T : unmanaged
         {

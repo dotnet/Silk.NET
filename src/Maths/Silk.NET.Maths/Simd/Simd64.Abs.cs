@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd64
     {
+        /// <summary>
+        /// Performs hardware-accelerated Abs on 64-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Abs<T>(Vector64<T> vector) where T : unmanaged
         {

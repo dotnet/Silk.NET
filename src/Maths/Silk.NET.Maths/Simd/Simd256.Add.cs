@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd256
     {
+        /// <summary>
+        /// Performs hardware-accelerated Add on 256-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> Add<T>(Vector256<T> left, Vector256<T> right) where T : unmanaged
         {

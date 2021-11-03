@@ -16,6 +16,9 @@ namespace Silk.NET.Maths
 {
     public static unsafe partial class Simd128
     {
+        /// <summary>
+        /// Performs hardware-accelerated Load on 128-bit vectors.
+        /// </summary>
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Load<T>(T* ptr) where T : unmanaged
         {
