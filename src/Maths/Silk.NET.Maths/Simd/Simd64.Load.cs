@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Load<T>(T* ptr) where T : unmanaged
         {
-
             return Byte(ptr);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Byte(T* ptr)
@@ -36,7 +35,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return SByte(ptr);
             }            
@@ -52,7 +50,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt16(ptr);
             }            
@@ -68,7 +65,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int16(ptr);
             }            
@@ -84,7 +80,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt32(ptr);
             }            
@@ -100,7 +95,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int32(ptr);
             }            
@@ -116,7 +110,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt64(ptr);
             }            
@@ -132,7 +125,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int64(ptr);
             }            
@@ -148,7 +140,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Single(ptr);
             }            
@@ -164,7 +155,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Double(ptr);
             }            
@@ -180,18 +170,14 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Other(ptr);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(T* ptr)
             {
-                            return Unsafe.ReadUnaligned<Vector64<T>>(ptr);
-
+                return Unsafe.ReadUnaligned<Vector64<T>>(ptr);
             }
-
         }
     }
 }

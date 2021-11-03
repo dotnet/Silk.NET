@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Add<T>(Vector128<T> left, Vector128<T> right) where T : unmanaged
         {
-
             return Byte(left, right);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Byte(Vector128<T> left, Vector128<T> right)
@@ -41,14 +40,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsByte(), right.AsByte()).As<byte, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsByte(), right.AsByte()).As<byte, T>();
-                    }
-#endif
                 }
-                
         
                 return SByte(left, right);
             }            
@@ -69,14 +61,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
-                    }
-#endif
                 }
-                
         
                 return UInt16(left, right);
             }            
@@ -97,14 +82,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
-                    }
-#endif
                 }
-                
         
                 return Int16(left, right);
             }            
@@ -125,14 +103,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsInt16(), right.AsInt16()).As<short, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsInt16(), right.AsInt16()).As<short, T>();
-                    }
-#endif
                 }
-                
         
                 return UInt32(left, right);
             }            
@@ -153,14 +124,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
-                    }
-#endif
                 }
-                
         
                 return Int32(left, right);
             }            
@@ -181,14 +145,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsInt32(), right.AsInt32()).As<int, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsInt32(), right.AsInt32()).As<int, T>();
-                    }
-#endif
                 }
-                
         
                 return UInt64(left, right);
             }            
@@ -203,14 +160,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
                 }
-                
         
                 return Int64(left, right);
             }            
@@ -225,14 +175,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
                 }
-                
         
                 return Single(left, right);
             }            
@@ -253,14 +196,7 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
-                    }
-#endif
                 }
-                
         
                 return Double(left, right);
             }            
@@ -275,31 +211,20 @@ namespace Silk.NET.Maths
                         return Sse2.Add(left.AsDouble(), right.AsDouble()).As<double, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Add(left.AsDouble(), right.AsDouble()).As<double, T>();
-                    }
-#endif
                 }
-                
         
                 return Other(left, right);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
             {
-            
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Add(GetElement(left, i), GetElement(right, i)));
                 }
-
                 return vec;
             }
-
         }
     }
 }

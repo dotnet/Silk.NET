@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> Multiply<T>(Vector256<T> left, Vector256<T> right) where T : unmanaged
         {
-
             return Single(left, right);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Single(Vector256<T> left, Vector256<T> right)
@@ -36,7 +35,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Double(left, right);
             }            
@@ -52,24 +50,19 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Other(left, right);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(Vector256<T> left, Vector256<T> right)
             {
-            
                 var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));
                 }
-
                 return vec;
             }
-
         }
     }
 }

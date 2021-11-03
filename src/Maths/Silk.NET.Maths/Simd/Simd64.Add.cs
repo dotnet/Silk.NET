@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Add<T>(Vector64<T> left, Vector64<T> right) where T : unmanaged
         {
-
             return Byte(left, right);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Byte(Vector64<T> left, Vector64<T> right)
@@ -36,7 +35,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return SByte(left, right);
             }            
@@ -52,7 +50,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt16(left, right);
             }            
@@ -68,7 +65,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int16(left, right);
             }            
@@ -84,7 +80,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt32(left, right);
             }            
@@ -100,7 +95,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int32(left, right);
             }            
@@ -116,7 +110,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Single(left, right);
             }            
@@ -132,24 +125,19 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Other(left, right);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
             {
-            
                 var vec = Vector64<T>.Zero;
                 for (int i = 0; i < Vector64<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Add(GetElement(left, i), GetElement(right, i)));
                 }
-
                 return vec;
             }
-
         }
     }
 }

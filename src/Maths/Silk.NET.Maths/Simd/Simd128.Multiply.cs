@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Multiply<T>(Vector128<T> left, Vector128<T> right) where T : unmanaged
         {
-
             return Byte(left, right);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Byte(Vector128<T> left, Vector128<T> right)
@@ -36,7 +35,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return SByte(left, right);
             }            
@@ -52,7 +50,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt16(left, right);
             }            
@@ -68,7 +65,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int16(left, right);
             }            
@@ -84,7 +80,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return UInt32(left, right);
             }            
@@ -100,7 +95,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Int32(left, right);
             }            
@@ -116,7 +110,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 return Single(left, right);
             }            
@@ -137,14 +130,7 @@ namespace Silk.NET.Maths
                         return Sse2.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Multiply(left.AsSingle(), right.AsSingle()).As<float, T>();
-                    }
-#endif
                 }
-                
         
                 return Double(left, right);
             }            
@@ -159,31 +145,20 @@ namespace Silk.NET.Maths
                         return Sse2.Multiply(left.AsDouble(), right.AsDouble()).As<double, T>();
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Multiply(left.AsDouble(), right.AsDouble()).As<double, T>();
-                    }
-#endif
                 }
-                
         
                 return Other(left, right);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
             {
-            
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));
                 }
-
                 return vec;
             }
-
         }
     }
 }

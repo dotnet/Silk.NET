@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Abs<T>(Vector128<T> vector) where T : unmanaged
         {
-
             return Byte(vector);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Byte(Vector128<T> vector)
@@ -31,7 +30,6 @@ namespace Silk.NET.Maths
                 {
                     return vector;
                 }
-                
         
                 return SByte(vector);
             }            
@@ -47,7 +45,6 @@ namespace Silk.NET.Maths
                     return Ssse3.Abs(vector.AsSByte()).As<byte, T>();
 #endif
                 }
-                
         
                 return UInt16(vector);
             }            
@@ -58,7 +55,6 @@ namespace Silk.NET.Maths
                 {
                     return vector;
                 }
-                
         
                 return Int16(vector);
             }            
@@ -74,7 +70,6 @@ namespace Silk.NET.Maths
                     return Ssse3.Abs(vector.AsInt16()).As<ushort, T>();
 #endif
                 }
-                
         
                 return UInt32(vector);
             }            
@@ -85,7 +80,6 @@ namespace Silk.NET.Maths
                 {
                     return vector;
                 }
-                
         
                 return Int32(vector);
             }            
@@ -101,7 +95,6 @@ namespace Silk.NET.Maths
                     return Ssse3.Abs(vector.AsInt32()).As<uint, T>();
 #endif
                 }
-                
         
                 return UInt64(vector);
             }            
@@ -112,7 +105,6 @@ namespace Silk.NET.Maths
                 {
                     return vector;
                 }
-                
         
                 return Single(vector);
             }            
@@ -128,7 +120,6 @@ namespace Silk.NET.Maths
                     return Ssse3.And(vector.AsSingle(), Vector128.Create(0x7FFF_FFFFu).AsSingle()).As<float, T>();
 #endif
                 }
-                
         
                 return Double(vector);
             }            
@@ -144,24 +135,19 @@ namespace Silk.NET.Maths
                     return Ssse3.And(vector.AsDouble(), Vector128.Create(0x7FFF_FFFF_FFFF_FFFFul).AsDouble()).As<double, T>();
 #endif
                 }
-                
         
                 return Other(vector);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(Vector128<T> vector)
             {
-            
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
                     WithElement(vec, i, Scalar.Abs(GetElement(vector, i)));
                 }
-
                 return vec;
             }
-
         }
     }
 }

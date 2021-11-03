@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector64<T> Create<T>(T value) where T : unmanaged
         {
-
             return Byte(value);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Byte(T value)
@@ -31,7 +30,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((byte) (object) value);
                 }
-                
         
                 return SByte(value);
             }            
@@ -42,7 +40,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((sbyte) (object) value);
                 }
-                
         
                 return UInt16(value);
             }            
@@ -53,7 +50,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((ushort) (object) value);
                 }
-                
         
                 return Int16(value);
             }            
@@ -64,7 +60,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((short) (object) value);
                 }
-                
         
                 return UInt32(value);
             }            
@@ -75,7 +70,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((uint) (object) value);
                 }
-                
         
                 return Int32(value);
             }            
@@ -86,7 +80,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((int) (object) value);
                 }
-                
         
                 return UInt64(value);
             }            
@@ -97,7 +90,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((ulong) (object) value);
                 }
-                
         
                 return Int64(value);
             }            
@@ -108,7 +100,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((long) (object) value);
                 }
-                
         
                 return Single(value);
             }            
@@ -119,7 +110,6 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((float) (object) value);
                 }
-                
         
                 return Double(value);
             }            
@@ -130,19 +120,16 @@ namespace Silk.NET.Maths
                 {
                     return (Vector64<T>) (object) Vector64.Create((double) (object) value);
                 }
-                
         
                 return Other(value);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(T value)
             {
-                            Scalar.ThrowUnsupportedType();
+                Scalar.ThrowUnsupportedType();
                 return default;
 
             }
-
         }
     }
 }

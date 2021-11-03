@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static void Store<T>(T* destination, Vector64<T> source) where T : unmanaged
         {
-
             Byte(destination, source);            
             [MethodImpl(Scalar.MaxOpt)]
             static void Byte(T* destination, Vector64<T> source)
@@ -36,7 +35,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 SByte(destination, source);
             }            
@@ -52,7 +50,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 UInt16(destination, source);
             }            
@@ -68,7 +65,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Int16(destination, source);
             }            
@@ -84,7 +80,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 UInt32(destination, source);
             }            
@@ -100,7 +95,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Int32(destination, source);
             }            
@@ -116,7 +110,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 UInt64(destination, source);
             }            
@@ -132,7 +125,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Int64(destination, source);
             }            
@@ -148,7 +140,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Single(destination, source);
             }            
@@ -164,7 +155,6 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Double(destination, source);
             }            
@@ -180,18 +170,15 @@ namespace Silk.NET.Maths
                     }
 #endif
                 }
-                
         
                 Other(destination, source);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static void Other(T* destination, Vector64<T> source)
             {
-                            Unsafe.WriteUnaligned<Vector64<T>>(destination, source);
+                Unsafe.WriteUnaligned<Vector64<T>>(destination, source);
 
             }
-
         }
     }
 }

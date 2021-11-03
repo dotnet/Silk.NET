@@ -22,7 +22,6 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Load<T>(T* ptr) where T : unmanaged
         {
-
             return Byte(ptr);            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Byte(T* ptr)
@@ -41,14 +40,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((byte*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((byte*) ptr);
-                    }
-#endif
                 }
-                
         
                 return SByte(ptr);
             }            
@@ -69,14 +61,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((sbyte*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((sbyte*) ptr);
-                    }
-#endif
                 }
-                
         
                 return UInt16(ptr);
             }            
@@ -97,14 +82,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((ushort*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((ushort*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Int16(ptr);
             }            
@@ -125,14 +103,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((short*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((short*) ptr);
-                    }
-#endif
                 }
-                
         
                 return UInt32(ptr);
             }            
@@ -153,14 +124,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((uint*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((uint*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Int32(ptr);
             }            
@@ -181,14 +145,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((int*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((int*) ptr);
-                    }
-#endif
                 }
-                
         
                 return UInt64(ptr);
             }            
@@ -209,14 +166,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((ulong*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((ulong*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Int64(ptr);
             }            
@@ -237,14 +187,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((long*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((long*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Single(ptr);
             }            
@@ -265,14 +208,7 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((float*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((float*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Double(ptr);
             }            
@@ -293,25 +229,15 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) Sse2.LoadVector128((double*) ptr);
                     }
 #endif
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return (Vector128<T>) (object) Avx2.LoadVector128((double*) ptr);
-                    }
-#endif
                 }
-                
         
                 return Other(ptr);
             }
-            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(T* ptr)
             {
-                            return Unsafe.ReadUnaligned<Vector128<T>>(ptr);
-
+                return Unsafe.ReadUnaligned<Vector128<T>>(ptr);
             }
-
         }
     }
 }
