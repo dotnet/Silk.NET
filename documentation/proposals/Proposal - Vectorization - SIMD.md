@@ -108,6 +108,15 @@ static Silk.NET.Maths.Simd128.Tan<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Tanh<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Truncate<T>(Vector128<T> x) -> Vector128<T>
 
+static Silk.NET.Maths.Simd128.And<T>(Vector128<T> left, Vector128<T> right) -> Vector128<T>
+static Silk.NET.Maths.Simd128.Or<T>(Vector128<T> left, Vector128<T> right) -> Vector128<T>
+static Silk.NET.Maths.Simd128.Xor<T>(Vector128<T> left, Vector128<T> right) -> Vector128<T>
+static Silk.NET.Maths.Simd128.Not<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.Simd128.ShiftLeft<T>(Vector128<T> x, int amount) -> Vector128<T>
+static Silk.NET.Maths.Simd128.ShiftRight<T>(Vector128<T> x, int amount) -> Vector128<T>
+static Silk.NET.Maths.Simd128.RotateLeft<T>(Vector128<T> x, int amount) -> Vector128<T>
+static Silk.NET.Maths.Simd128.RotateRight<T>(Vector128<T> x, int amount) -> Vector128<T>
+
 Silk.NET.Maths.Simd64
 Silk.NET.Maths.Simd64<T>
 
@@ -185,6 +194,15 @@ static Silk.NET.Maths.Simd64.Tan<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Tanh<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Truncate<T>(Vector64<T> x) -> Vector64<T>
 
+static Silk.NET.Maths.Simd64.And<T>(Vector64<T> left, Vector64<T> right) -> Vector64<T>
+static Silk.NET.Maths.Simd64.Or<T>(Vector64<T> left, Vector64<T> right) -> Vector64<T>
+static Silk.NET.Maths.Simd64.Xor<T>(Vector64<T> left, Vector64<T> right) -> Vector64<T>
+static Silk.NET.Maths.Simd64.Not<T>(Vector64<T> x) -> Vector64<T>
+static Silk.NET.Maths.Simd64.ShiftLeft<T>(Vector64<T> x, int amount) -> Vector64<T>
+static Silk.NET.Maths.Simd64.ShiftRight<T>(Vector64<T> x, int amount) -> Vector64<T>
+static Silk.NET.Maths.Simd64.RotateLeft<T>(Vector64<T> x, int amount) -> Vector64<T>
+static Silk.NET.Maths.Simd64.RotateRight<T>(Vector64<T> x, int amount) -> Vector64<T>
+
 Silk.NET.Maths.Simd256
 Silk.NET.Maths.Simd256<T>
 
@@ -261,5 +279,14 @@ static Silk.NET.Maths.Simd256.Subtract<T>(Vector256<T> left, Vector256<T> right)
 static Silk.NET.Maths.Simd256.Tan<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Tanh<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Truncate<T>(Vector256<T> x) -> Vector256<T>
+
+static Silk.NET.Maths.Simd256.And<T>(Vector256<T> left, Vector256<T> right) -> Vector256<T>
+static Silk.NET.Maths.Simd256.Or<T>(Vector256<T> left, Vector256<T> right) -> Vector256<T>
+static Silk.NET.Maths.Simd256.Xor<T>(Vector256<T> left, Vector256<T> right) -> Vector256<T>
+static Silk.NET.Maths.Simd256.Not<T>(Vector256<T> x) -> Vector256<T>
+static Silk.NET.Maths.Simd256.ShiftLeft<T>(Vector256<T> x, int amount) -> Vector256<T>
+static Silk.NET.Maths.Simd256.ShiftRight<T>(Vector256<T> x, int amount) -> Vector256<T>
+static Silk.NET.Maths.Simd256.RotateLeft<T>(Vector256<T> x, int amount) -> Vector256<T>
+static Silk.NET.Maths.Simd256.RotateRight<T>(Vector256<T> x, int amount) -> Vector256<T>
 
 ```
