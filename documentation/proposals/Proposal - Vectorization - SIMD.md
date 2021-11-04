@@ -49,6 +49,7 @@ static readonly Silk.NET.Maths.Simd128<T>.PositiveInfinity -> Vector128<T>
 static readonly Silk.NET.Maths.Simd128<T>.Tau -> Vector128<T>
 static readonly Silk.NET.Maths.Simd128<T>.Two -> Vector128<T>
 static readonly Silk.NET.Maths.Simd128<T>.Zero -> Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.AllBitsSet -> Vector128<T>
 
 static Silk.NET.Maths.Simd128.Load<T>(T* ptr) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Store<T>(Vector128<T> source, T* destination)
@@ -135,6 +136,7 @@ static readonly Silk.NET.Maths.Simd64<T>.PositiveInfinity -> Vector64<T>
 static readonly Silk.NET.Maths.Simd64<T>.Tau -> Vector64<T>
 static readonly Silk.NET.Maths.Simd64<T>.Two -> Vector64<T>
 static readonly Silk.NET.Maths.Simd64<T>.Zero -> Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.AllBitsSet -> Vector64<T>
 
 static Silk.NET.Maths.Simd64.Load<T>(T* ptr) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Store<T>(Vector64<T> source, T* destination)
@@ -221,6 +223,7 @@ static readonly Silk.NET.Maths.Simd256<T>.PositiveInfinity -> Vector256<T>
 static readonly Silk.NET.Maths.Simd256<T>.Tau -> Vector256<T>
 static readonly Silk.NET.Maths.Simd256<T>.Two -> Vector256<T>
 static readonly Silk.NET.Maths.Simd256<T>.Zero -> Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.AllBitsSet -> Vector256<T>
 
 static Silk.NET.Maths.Simd256.Load<T>(T* ptr) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Store<T>(Vector256<T> source, T* destination)
