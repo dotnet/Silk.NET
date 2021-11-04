@@ -125,7 +125,7 @@ namespace Silk.NET.Maths
                 var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Abs(GetElement(vector, i)));
+                    vec.WithElement(i, Scalar.Abs(vector.GetElement(i)));
                 }
                 return vec;
             }

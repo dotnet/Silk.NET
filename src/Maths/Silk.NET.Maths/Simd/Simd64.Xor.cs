@@ -134,7 +134,7 @@ namespace Silk.NET.Maths
                 var vec = Vector64<T>.Zero;
                 for (int i = 0; i < Vector64<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Xor(GetElement(left, i), GetElement(right, i)));
+                    vec.WithElement(i, Scalar.Xor(left.GetElement(i), right.GetElement(i)));
                 }
                 return vec;
             }

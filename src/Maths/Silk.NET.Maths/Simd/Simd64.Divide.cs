@@ -31,7 +31,7 @@ namespace Silk.NET.Maths
                 var vec = Vector64<T>.Zero;
                 for (int i = 0; i < Vector64<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Divide(GetElement(left, i), GetElement(right, i)));
+                    vec.WithElement(i, Scalar.Divide(left.GetElement(i), right.GetElement(i)));
                 }
                 return vec;
             }

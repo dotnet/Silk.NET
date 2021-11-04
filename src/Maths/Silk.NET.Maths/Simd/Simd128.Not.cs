@@ -33,7 +33,7 @@ namespace Silk.NET.Maths
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Not(GetElement(vector, i)));
+                    vec.WithElement(i, Scalar.Not(vector.GetElement(i)));
                 }
                 return vec;
             }

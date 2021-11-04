@@ -59,7 +59,7 @@ namespace Silk.NET.Maths
                 var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
-                    WithElement(vec, i, Scalar.Multiply(GetElement(left, i), GetElement(right, i)));
+                    vec.WithElement(i, Scalar.Multiply(left.GetElement(i), right.GetElement(i)));
                 }
                 return vec;
             }
