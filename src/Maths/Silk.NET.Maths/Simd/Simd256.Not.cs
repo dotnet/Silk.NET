@@ -22,107 +22,11 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> Not<T>(Vector256<T> vector) where T : unmanaged
         {
-            return Byte(vector);            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Byte(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(byte))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return SByte(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> SByte(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(sbyte))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return UInt16(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt16(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(ushort))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Int16(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int16(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(short))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return UInt32(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt32(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(uint))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Int32(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int32(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(int))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return UInt64(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt64(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(ulong))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Int64(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int64(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(long))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Single(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Single(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(float))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Double(vector);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Double(Vector256<T> vector)
-            {
-                if (typeof(T) == typeof(double))
-                {
-                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
-                }
-        
-                return Other(vector);
-            }
+            if (Simd256<T>.IsHardwareAccelerated)
+                return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
+                
+            return Other(vector);
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(Vector256<T> vector)
             {

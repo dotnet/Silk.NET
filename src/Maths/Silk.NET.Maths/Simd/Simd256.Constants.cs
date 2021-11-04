@@ -5,11 +5,19 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.Arm;
+using System.Runtime.Intrinsics.X86;
 
 namespace Silk.NET.Maths
 {
+    /// <summary>
+    /// Exposes bunch of methods for working with hardware accelerated operations.
+    /// </summary>
     public static class Simd256<T> where T : unmanaged
     {
+        /// <summary>
+        /// Indicates if the type is supported.
+        /// </summary>
         public static bool IsSupported => typeof(T) == typeof(sbyte)
                                           || typeof(T) == typeof(byte)
                                           || typeof(T) == typeof(ushort)
@@ -100,6 +108,12 @@ namespace Silk.NET.Maths
         /// Gets a new <see cref="Vector256{T}" /> with all bits set to 1.
         /// </summary>
         public static readonly Vector256<T> AllBitsSet;
+
+        /// <summary>
+        /// Indicates if there exists SIMD hardware acceleration
+        /// for the type <typeparamref name="T"/>.
+        /// </summary>
+        public static bool IsHardwareAccelerated => Avx2.IsSupported;
 
         [MethodImpl(Scalar.MaxOpt)]
         static Simd256()

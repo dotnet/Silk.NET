@@ -5,11 +5,18 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Silk.NET.Maths
 {
+    /// <summary>
+    /// Exposes bunch of methods for working with hardware accelerated operations.
+    /// </summary>
     public static class Simd64<T> where T : unmanaged
     {
+        /// <summary>
+        /// Indicates if the type is supported.
+        /// </summary>
         public static bool IsSupported => typeof(T) == typeof(sbyte)
                                           || typeof(T) == typeof(byte)
                                           || typeof(T) == typeof(ushort)
@@ -100,6 +107,12 @@ namespace Silk.NET.Maths
         /// Gets a new <see cref="Vector64{T}" /> with all bits set to 1.
         /// </summary>
         public static readonly Vector64<T> AllBitsSet;
+
+        /// <summary>
+        /// Indicates if there exists SIMD hardware acceleration
+        /// for the type <typeparamref name="T"/>.
+        /// </summary>
+        public static bool IsHardwareAccelerated => AdvSimd.IsSupported;
 
         [MethodImpl(Scalar.MaxOpt)]
         static Simd64()
