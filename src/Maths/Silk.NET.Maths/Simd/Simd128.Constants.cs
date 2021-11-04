@@ -5,8 +5,6 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.Arm;
-using System.Runtime.Intrinsics.X86;
 
 namespace Silk.NET.Maths
 {
@@ -113,7 +111,18 @@ namespace Silk.NET.Maths
         /// Indicates if there exists SIMD hardware acceleration
         /// for the type <typeparamref name="T"/>.
         /// </summary>
-        public static bool IsHardwareAccelerated => Sse2.IsSupported || AdvSimd.IsSupported;
+        public static bool IsHardwareAccelerated =>
+#if SSE
+            System.Runtime.Intrinsics.X86.Sse2.IsSupported
+#else
+            false
+#endif
+             ||
+#if AdvSIMD
+            System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported;
+#else
+            false;
+#endif
 
         [MethodImpl(Scalar.MaxOpt)]
         static Simd128()
