@@ -62,8 +62,11 @@ public class TestChains
     [Fact]
     public unsafe void TestWithoutChain()
     {
-        // We don't have to use the Chain() pattern, as we can pass start with an existing struct
-        var createInfo = new DeviceCreateInfo();
+        // We don't have to use the Chain() pattern, as we can start with an existing struct
+        var createInfo = new DeviceCreateInfo
+        {
+            Flags = 1U
+        };
         // However, note that CreateNext will still coerce the SType of createInfo.
         createInfo.CreateNext(out PhysicalDeviceFeatures2 features2);
         Assert.Equal((nint) (&features2), (nint) createInfo.PNext);
@@ -72,5 +75,7 @@ public class TestChains
         // Note, even though we didn't use chain, we have still coerced the SType
         Assert.Equal(StructureType.DeviceCreateInfo, createInfo.SType);
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
+        
+        Assert.Equal(1U, createInfo.Flags);
     }
 }
