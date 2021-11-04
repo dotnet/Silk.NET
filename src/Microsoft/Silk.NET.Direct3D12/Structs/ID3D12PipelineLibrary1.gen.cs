@@ -342,13 +342,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName(string Name)
+        public readonly int SetName([UnmanagedType(UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
+            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            Marshal.FreeHGlobal((nint)NamePtr);
+            SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
 
@@ -449,27 +449,27 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline(string pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline(string pName, ref ID3D12PipelineState pPipeline)
+        public readonly int StorePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -714,50 +714,50 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -765,30 +765,30 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -796,16 +796,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -813,16 +813,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -833,7 +833,7 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -1078,50 +1078,50 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -1129,30 +1129,30 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -1160,16 +1160,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1177,16 +1177,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1197,7 +1197,7 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -1472,50 +1472,50 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -1523,30 +1523,30 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, ref PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, ref PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -1554,16 +1554,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, ref PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1571,16 +1571,16 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary1*, byte*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[13])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadPipeline(string pName, ref PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadPipeline([UnmanagedType(UnmanagedType.LPWStr)] string pName, ref PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1591,7 +1591,7 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 

@@ -150,13 +150,13 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCertificate(uint CertifacteSize, string ppCertificate)
+        public readonly int GetCertificate(uint CertifacteSize, [UnmanagedType(UnmanagedType.LPUTF8Str)] string ppCertificate)
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var ppCertificatePtr = (byte*) Marshal.StringToHGlobalAnsi(ppCertificate);
+            var ppCertificatePtr = (byte*) SilkMarshal.StringToPtr(ppCertificate, NativeStringEncoding.UTF8);
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DAuthenticatedChannel9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            Marshal.FreeHGlobal((nint)ppCertificatePtr);
+            SilkMarshal.Free((nint)ppCertificatePtr);
             return ret;
         }
 

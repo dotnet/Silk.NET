@@ -276,50 +276,50 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, void** ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, void* pParentData, void** ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppData, pBytes);
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, void** ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, void* pParentData, void** ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (uint* pBytesPtr = &pBytes)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppData, pBytesPtr);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, ref void* ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, void* pParentData, ref void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void** ppDataPtr = &ppData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppDataPtr, pBytes);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void** ppDataPtr = &ppData)
             {
                 fixed (uint* pBytesPtr = &pBytes)
@@ -327,30 +327,30 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppDataPtr, pBytesPtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void* pParentDataPtr = &pParentData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (uint* pBytesPtr = &pBytes)
@@ -358,16 +358,16 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
@@ -375,16 +375,16 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [UnmanagedType(UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPStr);
             fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
@@ -395,7 +395,7 @@ namespace Silk.NET.Core.Native
                     }
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 

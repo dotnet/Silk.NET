@@ -342,13 +342,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName(string Name)
+        public readonly int SetName([UnmanagedType(UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12VideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
+            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDecoder*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            Marshal.FreeHGlobal((nint)NamePtr);
+            SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
 

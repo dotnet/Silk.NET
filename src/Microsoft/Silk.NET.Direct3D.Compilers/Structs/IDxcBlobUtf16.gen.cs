@@ -189,6 +189,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
+        [return: UnmanagedType(UnmanagedType.LPWStr)]
         public readonly string GetStringPointerS()
         {
             var @this = (IDxcBlobUtf16*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

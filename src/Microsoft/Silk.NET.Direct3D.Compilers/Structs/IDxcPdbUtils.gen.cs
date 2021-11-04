@@ -627,13 +627,13 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OverrideRootSignature(string pRootSignature)
+        public readonly int OverrideRootSignature([UnmanagedType(UnmanagedType.LPUTF8Str)] string pRootSignature)
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pRootSignaturePtr = (byte*) Marshal.StringToHGlobalAnsi(pRootSignature);
+            var pRootSignaturePtr = (byte*) SilkMarshal.StringToPtr(pRootSignature, NativeStringEncoding.UTF8);
             ret = ((delegate* unmanaged[Cdecl]<IDxcPdbUtils*, byte*, int>)LpVtbl[26])(@this, pRootSignaturePtr);
-            Marshal.FreeHGlobal((nint)pRootSignaturePtr);
+            SilkMarshal.Free((nint)pRootSignaturePtr);
             return ret;
         }
 

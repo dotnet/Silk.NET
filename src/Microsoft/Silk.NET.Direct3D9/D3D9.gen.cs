@@ -1379,7 +1379,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 12 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
-        public partial int PERFBeginEvent(uint col, string wszName);
+        public partial int PERFBeginEvent(uint col, [UnmanagedType(UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 316, Column 12 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]
@@ -1399,7 +1399,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 13 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
-        public partial void PERFSetMarker(uint col, string wszName);
+        public partial void PERFSetMarker(uint col, [UnmanagedType(UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]
@@ -1414,7 +1414,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
-        public partial void PERFSetRegion(uint col, string wszName);
+        public partial void PERFSetRegion(uint col, [UnmanagedType(UnmanagedType.LPWStr)] string wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 319, Column 13 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\d3d9.h")]

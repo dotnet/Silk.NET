@@ -423,5 +423,25 @@ namespace Silk.NET.BuildTools.Common
         public static bool ConstitutesVulkanOutOverload(this string name) => name.StartsWith
             ("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
             ("vkGet");
+
+        public static string MapNativeString(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "NativeStringEncoding.BStr",
+            "LPSTR" or "LPCSTR" => "NativeStringEncoding.LPStr",
+            "LPTSTR" or "LPCTSTR" => "NativeStringEncoding.LPTStr",
+            "LPUTF8STR" => "NativeStringEncoding.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "NativeStringEncoding.LPWStr",
+            _ => "NativeStringEncoding.UTF8"
+        };
+
+        public static string MapUnmanagedType(this Functions.Type type) => type.OriginalName?.ToUpper() switch
+        {
+            "BSTR" => "UnmanagedType.BStr",
+            "LPSTR" or "LPCSTR" => "UnmanagedType.LPStr",
+            "LPTSTR" or "LPCTSTR" => "UnmanagedType.LPTStr",
+            "LPUTF8STR" => "UnmanagedType.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "UnmanagedType.LPWStr",
+            _ => "UnmanagedType.LPUTF8Str"
+        };
     }
 }

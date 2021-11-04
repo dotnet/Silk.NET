@@ -380,27 +380,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance(string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int GetClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pClassInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassInstanceName);
+            var pClassInstanceNamePtr = (byte*) SilkMarshal.StringToPtr(pClassInstanceName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstance);
-            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
+            SilkMarshal.Free((nint)pClassInstanceNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance(string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int GetClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pClassInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassInstanceName);
+            var pClassInstanceNamePtr = (byte*) SilkMarshal.StringToPtr(pClassInstanceName, NativeStringEncoding.LPStr);
             fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstancePtr);
             }
-            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
+            SilkMarshal.Free((nint)pClassInstanceNamePtr);
             return ret;
         }
 
@@ -453,27 +453,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance(string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int CreateClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pClassTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassTypeName);
+            var pClassTypeNamePtr = (byte*) SilkMarshal.StringToPtr(pClassTypeName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstance);
-            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
+            SilkMarshal.Free((nint)pClassTypeNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance(string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int CreateClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pClassTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassTypeName);
+            var pClassTypeNamePtr = (byte*) SilkMarshal.StringToPtr(pClassTypeName, NativeStringEncoding.LPStr);
             fixed (ID3D11ClassInstance** ppInstancePtr = &ppInstance)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstancePtr);
             }
-            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
+            SilkMarshal.Free((nint)pClassTypeNamePtr);
             return ret;
         }
 

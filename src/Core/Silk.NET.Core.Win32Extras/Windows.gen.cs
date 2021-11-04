@@ -9850,12 +9850,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceW")]
-        public unsafe partial uint StartTraceW(ulong* TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StartTraceW(ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceW")]
-        public unsafe partial uint StartTraceW(ulong* TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public unsafe partial uint StartTraceW(ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -9880,12 +9880,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceW")]
-        public unsafe partial uint StartTraceW(ref ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StartTraceW(ref ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceW")]
-        public partial uint StartTraceW(ref ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint StartTraceW(ref ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -9910,12 +9910,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceA")]
-        public unsafe partial uint StartTraceA(ulong* TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StartTraceA(ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceA")]
-        public unsafe partial uint StartTraceA(ulong* TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public unsafe partial uint StartTraceA(ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -9940,12 +9940,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceA")]
-        public unsafe partial uint StartTraceA(ref ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StartTraceA(ref ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StartTraceA")]
-        public partial uint StartTraceA(ref ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint StartTraceA(ref ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1654, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -9970,12 +9970,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1654, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StopTraceW")]
-        public unsafe partial uint StopTraceW(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StopTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1654, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StopTraceW")]
-        public partial uint StopTraceW(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint StopTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1669, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10000,12 +10000,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1669, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StopTraceA")]
-        public unsafe partial uint StopTraceA(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint StopTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1669, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "StopTraceA")]
-        public partial uint StopTraceA(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint StopTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1695, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10030,12 +10030,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1695, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "QueryTraceW")]
-        public unsafe partial uint QueryTraceW(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint QueryTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1695, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "QueryTraceW")]
-        public partial uint QueryTraceW(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint QueryTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1710, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10060,12 +10060,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1710, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "QueryTraceA")]
-        public unsafe partial uint QueryTraceA(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint QueryTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1710, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "QueryTraceA")]
-        public partial uint QueryTraceA(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint QueryTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1730, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10090,12 +10090,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1730, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "UpdateTraceW")]
-        public unsafe partial uint UpdateTraceW(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint UpdateTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1730, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "UpdateTraceW")]
-        public partial uint UpdateTraceW(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint UpdateTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1739, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10120,12 +10120,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1739, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "UpdateTraceA")]
-        public unsafe partial uint UpdateTraceA(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint UpdateTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1739, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "UpdateTraceA")]
-        public partial uint UpdateTraceA(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint UpdateTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1767, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10150,12 +10150,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1767, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "FlushTraceW")]
-        public unsafe partial uint FlushTraceW(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint FlushTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1767, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "FlushTraceW")]
-        public partial uint FlushTraceW(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint FlushTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1784, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10180,12 +10180,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1784, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "FlushTraceA")]
-        public unsafe partial uint FlushTraceA(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties);
+        public unsafe partial uint FlushTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1784, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "FlushTraceA")]
-        public partial uint FlushTraceA(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties);
+        public partial uint FlushTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1803, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10210,12 +10210,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1803, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "ControlTraceW")]
-        public unsafe partial uint ControlTraceW(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties, uint ControlCode);
+        public unsafe partial uint ControlTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties, uint ControlCode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1803, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "ControlTraceW")]
-        public partial uint ControlTraceW(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties, uint ControlCode);
+        public partial uint ControlTraceW(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, ref EventTraceProperties Properties, uint ControlCode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1819, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10240,12 +10240,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1819, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "ControlTraceA")]
-        public unsafe partial uint ControlTraceA(ulong TraceHandle, string InstanceName, EventTraceProperties* Properties, uint ControlCode);
+        public unsafe partial uint ControlTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties, uint ControlCode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1819, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "ControlTraceA")]
-        public partial uint ControlTraceA(ulong TraceHandle, string InstanceName, ref EventTraceProperties Properties, uint ControlCode);
+        public partial uint ControlTraceA(ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, ref EventTraceProperties Properties, uint ControlCode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1837, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10520,12 +10520,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10550,42 +10550,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10610,12 +10610,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10640,42 +10640,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10700,12 +10700,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10730,42 +10730,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10790,12 +10790,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10820,42 +10820,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsW(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10880,12 +10880,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10910,42 +10910,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -10970,12 +10970,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11000,42 +11000,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11060,12 +11060,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11090,42 +11090,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11150,12 +11150,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11180,42 +11180,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref char MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, ref char MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsW")]
-        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsW<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11240,12 +11240,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11270,42 +11270,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11330,12 +11330,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11360,42 +11360,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11420,12 +11420,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11450,42 +11450,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11510,12 +11510,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11540,42 +11540,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle);
+        public unsafe partial uint RegisterTraceGuidsA(PfnWmidprequest RequestAddress, void* RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11600,12 +11600,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11630,42 +11630,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11690,12 +11690,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11720,42 +11720,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, Guid* ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11780,12 +11780,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11810,42 +11810,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11870,12 +11870,12 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -11900,42 +11900,42 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, ref byte MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, ref byte MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
+        public unsafe partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "RegisterTraceGuidsA")]
-        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, string MofImagePath, string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
+        public partial uint RegisterTraceGuidsA<T0>(PfnWmidprequest RequestAddress, ref T0 RequestContext, ref Guid ControlGuid, uint GuidCount, ref TraceGuidRegistration TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ref ulong RegistrationHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2485, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -12130,7 +12130,7 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2678, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "TraceMessageVa")]
-        public unsafe partial uint TraceMessageVa(ulong LoggerHandle, uint MessageFlags, Guid* MessageGuid, ushort MessageNumber, string MessageArgList);
+        public unsafe partial uint TraceMessageVa(ulong LoggerHandle, uint MessageFlags, Guid* MessageGuid, ushort MessageNumber, [UnmanagedType(UnmanagedType.LPUTF8Str)] string MessageArgList);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2678, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
@@ -12145,7 +12145,7 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2678, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
         [NativeApi(EntryPoint = "TraceMessageVa")]
-        public partial uint TraceMessageVa(ulong LoggerHandle, uint MessageFlags, ref Guid MessageGuid, ushort MessageNumber, string MessageArgList);
+        public partial uint TraceMessageVa(ulong LoggerHandle, uint MessageFlags, ref Guid MessageGuid, ushort MessageNumber, [UnmanagedType(UnmanagedType.LPUTF8Str)] string MessageArgList);
 
 
         public Windows(INativeContext ctx)

@@ -380,27 +380,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(UnmanagedType.LPWStr)] string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((nint)lpNamePtr);
+            SilkMarshal.Free((nint)lpNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
             fixed (void** pHandlePtr = &pHandle)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
             }
-            Marshal.FreeHGlobal((nint)lpNamePtr);
+            SilkMarshal.Free((nint)lpNamePtr);
             return ret;
         }
 
@@ -465,32 +465,32 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(UnmanagedType.LPWStr)] string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((nint)lpNamePtr);
+            SilkMarshal.Free((nint)lpNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-            var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
+            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
                 fixed (void** pHandlePtr = &pHandle)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                 }
-            Marshal.FreeHGlobal((nint)lpNamePtr);
+            SilkMarshal.Free((nint)lpNamePtr);
             }
             return ret;
         }

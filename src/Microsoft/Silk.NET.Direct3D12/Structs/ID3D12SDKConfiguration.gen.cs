@@ -129,13 +129,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSDKVersion(uint SDKVersion, string SDKPath)
+        public readonly int SetSDKVersion(uint SDKVersion, [UnmanagedType(UnmanagedType.LPStr)] string SDKPath)
         {
             var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var SDKPathPtr = (byte*) Marshal.StringToHGlobalAnsi(SDKPath);
+            var SDKPathPtr = (byte*) SilkMarshal.StringToPtr(SDKPath, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12SDKConfiguration*, uint, byte*, int>)LpVtbl[3])(@this, SDKVersion, SDKPathPtr);
-            Marshal.FreeHGlobal((nint)SDKPathPtr);
+            SilkMarshal.Free((nint)SDKPathPtr);
             return ret;
         }
 

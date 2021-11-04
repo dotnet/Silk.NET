@@ -8808,12 +8808,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarkerInt(string pLabel, int Data)
+        public readonly void SetMarkerInt([UnmanagedType(UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            var pLabelPtr = (byte*) Marshal.StringToHGlobalAnsi(pLabel);
+            var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, byte*, int, void>)LpVtbl[141])(@this, pLabelPtr, Data);
-            Marshal.FreeHGlobal((nint)pLabelPtr);
+            SilkMarshal.Free((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -8834,12 +8834,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEventInt(string pLabel, int Data)
+        public readonly void BeginEventInt([UnmanagedType(UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            var pLabelPtr = (byte*) Marshal.StringToHGlobalAnsi(pLabel);
+            var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, byte*, int, void>)LpVtbl[142])(@this, pLabelPtr, Data);
-            Marshal.FreeHGlobal((nint)pLabelPtr);
+            SilkMarshal.Free((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>

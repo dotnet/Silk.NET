@@ -285,50 +285,50 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([UnmanagedType(UnmanagedType.LPWStr)] string pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([UnmanagedType(UnmanagedType.LPWStr)] string pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([UnmanagedType(UnmanagedType.LPWStr)] string pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (uint* codePagePtr = &codePage)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([UnmanagedType(UnmanagedType.LPWStr)] string pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
+            var pFileNamePtr = (byte*) SilkMarshal.StringToPtr(pFileName, NativeStringEncoding.LPWStr);
             fixed (uint* codePagePtr = &codePage)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                 }
             }
-            Marshal.FreeHGlobal((nint)pFileNamePtr);
+            SilkMarshal.Free((nint)pFileNamePtr);
             return ret;
         }
 
