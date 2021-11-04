@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.Net.Vulkan;
 
 public static class ChainExtensions
@@ -35,7 +37,7 @@ public static class ChainExtensions
         where TNext : struct, IChainable
     {
         capture.SetNext();
-        var reference = __makeref(capture);
+        var reference = Unsafe.AsPointer(ref capture);
         chain.SetNext((void*) *(IntPtr*) &reference);
         return ref capture;
     }
@@ -64,7 +66,7 @@ public static class ChainExtensions
     {
         capture = default;
         capture.SetNext();
-        var reference = __makeref(capture);
+        var reference = Unsafe.AsPointer(ref capture);
         chain.SetNext((void*) *(IntPtr*) &reference);
         return ref capture;
     }
