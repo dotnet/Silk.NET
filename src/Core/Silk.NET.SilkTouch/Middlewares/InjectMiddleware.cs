@@ -16,13 +16,27 @@ namespace Silk.NET.SilkTouch {
         private static readonly Regex _substitutionRegex = new Regex(@"%\$((?<result>RESULT)|PARAM\((?<pname>[a-zA-Z_]{1}[a-zA-Z0-9_]*)\))\$%", RegexOptions.Compiled);
         public static void InjectMiddleware(ref IMarshalContext ctx, Action next) {
             var context = ctx;
-            var injectDatas = ctx.MethodSymbol.GetAttributes().Where(
-                x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, context.Compilation.GetTypeByMetadataName(typeof (InjectAttribute).FullName))
-            );
+            var injectDatas = ctx.MethodSymbol.GetAttributes()
+                .Where
+                (
+                    x => SymbolEqualityComparer.Default.Equals
+                        (x.AttributeClass, context.Compilation.GetTypeByMetadataName(typeof(InjectAttribute).FullName))
+                )
+                .Select
+                (
+                    x => (((SilkTouchStage) x.ConstructorArguments[0].Value!),
+                        (string) x.ConstructorArguments[1].Value!)
+                )
+                .Append((SilkTouchStage.Begin, $"Console.WriteLine(\"Begin {ctx.MethodSymbol.Name}\");"))
+                .Append((SilkTouchStage.PostInit, $"Console.WriteLine(\"PostInit {ctx.MethodSymbol.Name}\");"))
+                .Append((SilkTouchStage.PostLoad, $"Console.WriteLine(\"PostLoad {ctx.MethodSymbol.Name}\");"))
+                .Append((SilkTouchStage.PostPin, $"Console.WriteLine(\"PostPin {ctx.MethodSymbol.Name}\");"))
+                .Append((SilkTouchStage.End, $"Console.WriteLine(\"End {ctx.MethodSymbol.Name}\");"))
+                .Append((SilkTouchStage.PreLoad, $"Console.WriteLine(\"PreLoad {ctx.MethodSymbol.Name}\");"));
 
-            foreach(var injectData in injectDatas) {
-                var injectPoint = (SilkTouchStage) injectData.ConstructorArguments[0].Value!;
-                var code = (string) injectData.ConstructorArguments[1].Value!;
+            foreach(var tuple in injectDatas)
+            {
+                var (injectPoint, code) = tuple;
                 ctx.AddSideEffectToStage(injectPoint, ctx => {
                     if (injectPoint == SilkTouchStage.End) {
                         var substitutions = _substitutionRegex.Match(code);

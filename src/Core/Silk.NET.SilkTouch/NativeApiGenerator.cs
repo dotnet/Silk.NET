@@ -75,6 +75,9 @@ namespace Silk.NET.SilkTouch
             // post pin
             marshalBuilder.Use(Middlewares.DelegateMarshaller);
             marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
+            marshalBuilder.Use(Middlewares.NoEnumMiddleware);
+            marshalBuilder.Use(Middlewares.NoGenericPointersMiddleware);
+            marshalBuilder.Use(Middlewares.NoFunctionPointersMiddleware);
             // pre load         |           post load
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
@@ -111,7 +114,7 @@ namespace Silk.NET.SilkTouch
             hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
             var name = $"{hintName}.{Guid.NewGuid()}.gen";
             context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-            // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+            File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
         }
 
         private string ProcessClassDeclaration

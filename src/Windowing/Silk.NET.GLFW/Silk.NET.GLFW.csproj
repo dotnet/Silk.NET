@@ -7,6 +7,7 @@
     </PropertyGroup>
     
     <ItemGroup>
+      <NativeFileReference Include="native/glfw3.c" />
       <PackageReference Include="Ultz.Native.GLFW" Version="3.3.2.1" />
     </ItemGroup>
 

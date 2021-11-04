@@ -54,7 +54,6 @@ namespace Silk.NET.SilkTouch
             var oldVariables = ctx.ParameterVariables.ToArray();
             bool[] b = new bool[ctx.ParameterVariables.Length];
             int[] bufferVars = new int[ctx.ParameterVariables.Length];
-            Dictionary<int, ExpressionSyntax> readback = new Dictionary<int, ExpressionSyntax>();
             
             for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {

@@ -17,6 +17,7 @@ namespace Silk.NET.GLFW
     /// </summary>
     //public partial class Glfw : NativeAPI, IGlfw
     [NativeApi(Prefix = "glfw")]
+    [PInvokeOverride(0, "glfw3")] // browser override
     public partial class Glfw : NativeAPI
     {
         /// <summary>
@@ -2749,6 +2750,37 @@ namespace Silk.NET.GLFW
         /// </remarks>
         public partial GlfwCallbacks.ErrorCallback SetErrorCallback
             ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ErrorCallback callback);
+        
+        /// <summary>
+        /// <para>
+        /// This function sets the error callback, which is called with an error code
+        /// and a human-readable description each time a GLFW error occurs.
+        /// </para>
+        /// <para>
+        /// The error callback is called on the thread where the error occurred.
+        /// If you are using GLFW from multiple threads, your error callback needs to be written accordingly.
+        /// </para>
+        /// <para>
+        /// Because the description string may have been generated specifically for that error,
+        /// it is not guaranteed to be valid after the callback has returned.
+        /// If you wish to use it after the callback returns, you need to make a deep copy.
+        /// </para>
+        /// <para>
+        /// Once set, the error callback remains set even after the library has been terminated.
+        /// </para>
+        /// </summary>
+        /// <param name="callback">The new callback, or <c>null</c> to remove the currently set callback.</param>
+        /// <returns>The previously set callback, or <c>null</c> if no callback was set.</returns>
+        /// <remarks>
+        /// <para>
+        /// This function may be called before <see cref="Init" />.
+        /// </para>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// </remarks>
+        public unsafe partial delegate* unmanaged<int, void*, void> SetErrorCallback
+            (delegate* unmanaged<int, void*, void> errorCallback);
 
         /// <summary>
         /// <para>
@@ -3914,7 +3946,14 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return new Glfw(CreateDefaultContext(new GlfwLibraryNameContainer().GetLibraryName()));
+            Console.WriteLine("Creating GLFW Api");
+            var name = new GlfwLibraryNameContainer().GetLibraryName();
+            Console.WriteLine($"Creating context with lib {name}");
+            var context = CreateDefaultContext(name);
+            Console.WriteLine("creating instance");
+            var v = new Glfw(context);
+            Console.WriteLine("done creating GLFW");
+            return v;
         }
 
         /// <inheritdoc />

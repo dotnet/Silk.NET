@@ -12,7 +12,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// Used to specify whether to also expose joystick hats as buttons,
         /// for compatibility with earlier versions of GLFW that did not have
-        /// <see cref="IGlfw.GetJoystickHats" />.
+        /// <see cref="Glfw.GetJoystickHats" />.
         /// Set this with <see cref="InitHint" />.
         /// </summary>
         JoystickHatButtons = 0x00050001,

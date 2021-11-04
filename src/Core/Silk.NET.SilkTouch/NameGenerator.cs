@@ -40,12 +40,12 @@ namespace Silk.NET.SilkTouch
             return result.Slice(offset, MaxLength - offset).ToString();
         }
 
-#if DEBUG
+//#if DEBUG
         public static string Name(string suggestion) => suggestion;
-#else
+/*#else
         public static string Name(string suggestion)
             => _names.GetOrAdd(suggestion, static _ => ToAlphabetString(Interlocked.Increment(ref _c)));
-#endif
+#endif*/
 
         public static IdentifierNameSyntax IdentifierSilk(string hint) => IdentifierName(Name(hint));
     }

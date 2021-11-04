@@ -270,7 +270,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
             var v = ctx.EntryPoints.Distinct(new NameComparer()).ToArray();
             var members = new List<MemberDeclarationSyntax>();
             members.AddRange(v.Select(x => GetMethodFromEntrypoint(x)));
-            if (canUseCorrectCallConv)
+            if (!canUseCorrectCallConv)
             {
                 members.AddRange(v.Select(x => GetMethodFromEntrypoint(x, true)));
             }
@@ -308,7 +308,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                             )
                         )
                     )
-                    .WithBody(GetSlotSwitch(v, members, canUseCorrectCallConv))
+                    .WithBody(GetSlotSwitch(v, members, !canUseCorrectCallConv))
             );
             members.Add
             (

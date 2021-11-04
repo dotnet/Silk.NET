@@ -557,7 +557,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
         {
-            var errorCallback = _glfw.SetErrorCallback(null);
+            var errorCallback = _glfw.SetErrorCallback((GlfwCallbacks.ErrorCallback)null);
             var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
             _glfw.SetErrorCallback(errorCallback);
             return ret;
