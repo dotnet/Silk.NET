@@ -3,12 +3,12 @@
 public struct PhysicalDeviceFeatures
 {
     /// <summary></summary>
-    public Bool32 RobustBufferAccess;
+    public bool RobustBufferAccess;
 
     // NOTE Truncated for example
 
     public PhysicalDeviceFeatures(
-        Bool32? robustBufferAccess = null)
+        bool? robustBufferAccess = null)
         : this()
     {
         if (robustBufferAccess.HasValue)

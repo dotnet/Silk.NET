@@ -1,13 +1,18 @@
 namespace Silk.Net.Vulkan;
 
+/// <summary>
+/// Base interface for any struct that has can set the next value.
+/// </summary>
 public interface IChainable
 {
+    unsafe void SetNext(void* next = default);
 }
 
-public interface IExtendsDeviceCreateInfoChain : IChainable
-{
-}
-
-public interface IExtendsPhysicalDeviceFeatures2Chain : IChainable
+/// <summary>
+/// Generic interface indicating which structs can be set in the `PNext` value.
+/// </summary>
+/// <typeparam name="TNext">A valid next structure</typeparam>
+public interface IChainable<in TNext> : IChainable
+    where TNext : IChainable
 {
 }

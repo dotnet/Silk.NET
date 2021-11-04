@@ -2,7 +2,9 @@
 
 namespace Silk.Net.Vulkan;
 
-public struct PhysicalDeviceFeatures2 : IExtendsDeviceCreateInfoChain
+public struct PhysicalDeviceFeatures2 :
+    IChainable<PhysicalDeviceDescriptorIndexingFeatures>,
+    IChainable<PhysicalDeviceAccelerationStructureFeaturesKHR>
 {
     public StructureType SType;
     public unsafe void* PNext;
@@ -24,29 +26,17 @@ public struct PhysicalDeviceFeatures2 : IExtendsDeviceCreateInfoChain
     }
 
     #region Chaining Support
+
     public static unsafe ref PhysicalDeviceFeatures2 Chain(out PhysicalDeviceFeatures2 capture)
     {
         capture = new PhysicalDeviceFeatures2(StructureType.PhysicalDeviceFeatures2);
         return ref capture;
     }
 
-    public void End() => SType = StructureType.PhysicalDeviceFeatures2;
-
-    public unsafe ref T SetNext<T>(ref T capture) where T : struct, IExtendsPhysicalDeviceFeatures2Chain
+    public unsafe void SetNext(void* next = default)
     {
         SType = StructureType.PhysicalDeviceFeatures2;
-        var reference = __makeref(capture);
-        PNext = (void*) *(IntPtr*) &reference;
-        return ref capture;
-    }
-
-    public unsafe ref T CreateNext<T>(out T capture) where T : struct, IExtendsPhysicalDeviceFeatures2Chain
-    {
-        SType = StructureType.PhysicalDeviceFeatures2;
-        capture = default;
-        var reference = __makeref(capture);
-        PNext = (void*) *(IntPtr*) &reference;
-        return ref capture;
+        PNext = next;
     }
 
     #endregion

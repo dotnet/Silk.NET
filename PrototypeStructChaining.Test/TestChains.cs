@@ -3,21 +3,25 @@ using Xunit;
 
 namespace PrototypeStructChaining.Test;
 
-public class UnitTestChains
+public class TestChains
 {
     [Fact]
     public unsafe void TestCreateNext()
     {
         PhysicalDeviceFeatures2
+            // The Chain method, is a convenient static, to provide a consistent syntax.
             .Chain(out var features2)
-            .CreateNext<PhysicalDeviceDescriptorIndexingFeatures>(out var indexingFeatures)
-            .CreateNext<PhysicalDeviceAccelerationStructureFeaturesKHR>(out var accelerationStructureFeaturesKhr)
-            .End();
+            // CreateNext will create an empty struct, with the correct SType (as well as ensuring the
+            // caller SType is coerced correctly.
+            .CreateNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
+            .CreateNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
+        // Ensure all pointers set correctly
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
         Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
         Assert.Equal((nint) 0, (nint) accelerationStructureFeaturesKhr.PNext);
 
+        // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
         Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
@@ -35,12 +39,12 @@ public class UnitTestChains
         {
             AccelerationStructure = true
         };
-        
+
         PhysicalDeviceFeatures2
             .Chain(out var features2)
-            .SetNext<PhysicalDeviceDescriptorIndexingFeatures>(ref indexingFeatures)
-            .SetNext<PhysicalDeviceAccelerationStructureFeaturesKHR>(ref accelerationStructureFeaturesKhr)
-            .End();
+            // SetNext accepts an existing struct, note, it will coerce the SType and blank the PNext
+            .SetNext(ref indexingFeatures)
+            .SetNext(ref accelerationStructureFeaturesKhr);
 
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
         Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
@@ -50,8 +54,23 @@ public class UnitTestChains
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
         Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
             accelerationStructureFeaturesKhr.SType);
-        
+
         Assert.True(indexingFeatures.ShaderInputAttachmentArrayDynamicIndexing);
         Assert.True(accelerationStructureFeaturesKhr.AccelerationStructure);
+    }
+
+    [Fact]
+    public unsafe void TestWithoutChain()
+    {
+        // We don't have to use the Chain() pattern, as we can pass start with an existing struct
+        var createInfo = new DeviceCreateInfo();
+        // However, note that CreateNext will still coerce the SType of createInfo.
+        createInfo.CreateNext(out PhysicalDeviceFeatures2 features2);
+        Assert.Equal((nint) (&features2), (nint) createInfo.PNext);
+        Assert.Equal((nint) 0, (nint) features2.PNext);
+
+        // Note, even though we didn't use chain, we have still coerced the SType
+        Assert.Equal(StructureType.DeviceCreateInfo, createInfo.SType);
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
     }
 }

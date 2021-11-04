@@ -1,7 +1,7 @@
 namespace Silk.Net.Vulkan;
 
-public struct PhysicalDeviceDescriptorIndexingFeatures : IExtendsDeviceCreateInfoChain,
-    IExtendsPhysicalDeviceFeatures2Chain
+public struct PhysicalDeviceDescriptorIndexingFeatures :
+    IChainable<PhysicalDeviceAccelerationStructureFeaturesKHR>
 {
     /// <summary></summary>
     public StructureType SType;
@@ -10,14 +10,14 @@ public struct PhysicalDeviceDescriptorIndexingFeatures : IExtendsDeviceCreateInf
     public unsafe void* PNext;
 
     /// <summary></summary>
-    public Bool32 ShaderInputAttachmentArrayDynamicIndexing;
+    public bool ShaderInputAttachmentArrayDynamicIndexing;
 
     // NOTE Truncated for example
 
     public unsafe PhysicalDeviceDescriptorIndexingFeatures(
         StructureType? sType = StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt,
         void* pNext = null,
-        Bool32? shaderInputAttachmentArrayDynamicIndexing = null)
+        bool? shaderInputAttachmentArrayDynamicIndexing = null)
         : this()
     {
         if (sType.HasValue)
@@ -31,29 +31,19 @@ public struct PhysicalDeviceDescriptorIndexingFeatures : IExtendsDeviceCreateInf
     }
 
     #region Chaining Support
-    public static unsafe ref PhysicalDeviceDescriptorIndexingFeatures Chain(out PhysicalDeviceDescriptorIndexingFeatures capture)
+
+    public static unsafe ref PhysicalDeviceDescriptorIndexingFeatures Chain(
+        out PhysicalDeviceDescriptorIndexingFeatures capture)
     {
-        capture = new PhysicalDeviceDescriptorIndexingFeatures(StructureType.PhysicalDeviceDescriptorIndexingFeatures);
+        capture = new PhysicalDeviceDescriptorIndexingFeatures(
+            StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt);
         return ref capture;
     }
 
-    public void End() => SType = StructureType.PhysicalDeviceDescriptorIndexingFeatures;
-
-    public unsafe ref T SetNext<T>(ref T capture) where T : struct, IExtendsPhysicalDeviceFeatures2Chain
+    public unsafe void SetNext(void* next = default)
     {
-        SType = StructureType.PhysicalDeviceDescriptorIndexingFeatures;
-        var reference = __makeref(capture);
-        PNext = (void*) *(IntPtr*) &reference;
-        return ref capture;
-    }
-
-    public unsafe ref T CreateNext<T>(out T capture) where T : struct, IExtendsPhysicalDeviceFeatures2Chain
-    {
-        SType = StructureType.PhysicalDeviceDescriptorIndexingFeatures;
-        capture = default;
-        var reference = __makeref(capture);
-        PNext = (void*) *(IntPtr*) &reference;
-        return ref capture;
+        SType = StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt;
+        PNext = next;
     }
 
     #endregion
