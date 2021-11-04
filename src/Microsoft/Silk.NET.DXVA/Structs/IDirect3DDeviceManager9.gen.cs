@@ -163,9 +163,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, int>)LpVtbl[5])(@this, hDevicePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[5])(@this, hDevicePtr);
             }
             return ret;
         }
@@ -184,9 +184,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, int>)LpVtbl[6])(@this, hDevicePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int>)LpVtbl[6])(@this, hDevicePtr);
             }
             return ret;
         }
@@ -217,9 +217,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
             }
             return ret;
         }
@@ -229,11 +229,11 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
                 }
             }
             return ret;
@@ -253,9 +253,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, int, int>)LpVtbl[8])(@this, hDevicePtr, fSaveState);
             }
             return ret;
         }
@@ -313,9 +313,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppService);
             }
             return ret;
         }
@@ -325,11 +325,11 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
                 fixed (void** ppServicePtr = &ppService)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
                 }
             }
             return ret;
@@ -340,11 +340,11 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
                 }
             }
             return ret;
@@ -355,13 +355,13 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hDevicePtr = &hDevice)
+            fixed (void* hDevicePtr = &hDevice)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppServicePtr = &ppService)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, T0*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
                     }
                 }
             }

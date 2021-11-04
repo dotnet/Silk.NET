@@ -127,9 +127,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -153,9 +153,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -180,9 +180,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -212,9 +212,9 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -235,9 +235,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -261,9 +261,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -423,9 +423,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pValuePtr = &pValue)
+            fixed (void* pValuePtr = &pValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, T0*, uint*, int>)LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSize);
             }
             return ret;
         }
@@ -435,11 +435,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pValuePtr = &pValue)
+            fixed (void* pValuePtr = &pValue)
             {
                 fixed (uint* pValueSizePtr = &pValueSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, T0*, uint*, int>)LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSizePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKey, KeySize, pValuePtr, pValueSizePtr);
                 }
             }
             return ret;
@@ -450,9 +450,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSize);
             }
             return ret;
         }
@@ -462,11 +462,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
                 fixed (uint* pValueSizePtr = &pValueSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSizePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValue, pValueSizePtr);
                 }
             }
             return ret;
@@ -477,11 +477,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
-                fixed (T1* pValuePtr = &pValue)
+                fixed (void* pValuePtr = &pValue)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, T1*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSize);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSize);
                 }
             }
             return ret;
@@ -492,13 +492,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
-                fixed (T1* pValuePtr = &pValue)
+                fixed (void* pValuePtr = &pValue)
                 {
                     fixed (uint* pValueSizePtr = &pValueSize)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, T1*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSizePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint*, int>)LpVtbl[8])(@this, pKeyPtr, KeySize, pValuePtr, pValueSizePtr);
                     }
                 }
             }
@@ -519,9 +519,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pValuePtr = &pValue)
+            fixed (void* pValuePtr = &pValue)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, T0*, uint, int>)LpVtbl[9])(@this, pKey, KeySize, pValuePtr, ValueSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)LpVtbl[9])(@this, pKey, KeySize, pValuePtr, ValueSize);
             }
             return ret;
         }
@@ -531,9 +531,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, void*, uint, int>)LpVtbl[9])(@this, pKeyPtr, KeySize, pValue, ValueSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)LpVtbl[9])(@this, pKeyPtr, KeySize, pValue, ValueSize);
             }
             return ret;
         }
@@ -543,11 +543,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderCacheSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pKeyPtr = &pKey)
+            fixed (void* pKeyPtr = &pKey)
             {
-                fixed (T1* pValuePtr = &pValue)
+                fixed (void* pValuePtr = &pValue)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, T0*, uint, T1*, uint, int>)LpVtbl[9])(@this, pKeyPtr, KeySize, pValuePtr, ValueSize);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderCacheSession*, void*, uint, void*, uint, int>)LpVtbl[9])(@this, pKeyPtr, KeySize, pValuePtr, ValueSize);
                 }
             }
             return ret;

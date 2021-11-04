@@ -181,9 +181,9 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -193,11 +193,11 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[4])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -256,9 +256,9 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -268,11 +268,11 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMalloc, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;
@@ -283,11 +283,11 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (IMalloc* pIMallocPtr = &pIMalloc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncoding);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncoding);
                 }
             }
             return ret;
@@ -298,13 +298,13 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (IMalloc* pIMallocPtr = &pIMalloc)
                 {
                     fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pDataPtr, pIMallocPtr, size, codePage, pBlobEncodingPtr);
                     }
                 }
             }
@@ -337,9 +337,9 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncoding);
+                ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncoding);
             }
             return ret;
         }
@@ -349,11 +349,11 @@ namespace Silk.NET.Direct3D.Compilers
         {
             var @this = (IDxcUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (IDxcBlobEncoding** pBlobEncodingPtr = &pBlobEncoding)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, T0*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcUtils*, void*, uint, uint, IDxcBlobEncoding**, int>)LpVtbl[6])(@this, pDataPtr, size, codePage, pBlobEncodingPtr);
                 }
             }
             return ret;

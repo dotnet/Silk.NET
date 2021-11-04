@@ -998,9 +998,9 @@ namespace Silk.NET.XAudio
         public readonly unsafe void SetDebugConfiguration<T0>(DebugConfiguration* pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pReservedPtr = &pReserved)
+            fixed (void* pReservedPtr = &pReserved)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, T0*, void>)LpVtbl[12])(@this, pDebugConfiguration, pReservedPtr);
+                ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, void*, void>)LpVtbl[12])(@this, pDebugConfiguration, pReservedPtr);
             }
         }
 
@@ -1020,9 +1020,9 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
             {
-                fixed (T0* pReservedPtr = &pReserved)
+                fixed (void* pReservedPtr = &pReserved)
                 {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, T0*, void>)LpVtbl[12])(@this, pDebugConfigurationPtr, pReservedPtr);
+                    ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, void*, void>)LpVtbl[12])(@this, pDebugConfigurationPtr, pReservedPtr);
                 }
             }
         }

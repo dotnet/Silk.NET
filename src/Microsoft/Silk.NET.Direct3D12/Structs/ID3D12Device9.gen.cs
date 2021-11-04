@@ -151,9 +151,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -177,9 +177,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -204,9 +204,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -236,9 +236,9 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -259,9 +259,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -285,9 +285,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -1008,9 +1008,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Feature, T0*, uint, int>)LpVtbl[13])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Feature, void*, uint, int>)LpVtbl[13])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
             return ret;
         }
@@ -1185,9 +1185,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
             }
             return ret;
         }
@@ -1197,11 +1197,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
                 }
             }
             return ret;
@@ -1212,11 +1212,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
                 }
             }
             return ret;
@@ -1227,13 +1227,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
+            fixed (void* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
                     }
                 }
             }
@@ -3558,9 +3558,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* NTHandlePtr = &NTHandle)
+            fixed (void* NTHandlePtr = &NTHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
             }
             return ret;
         }
@@ -3570,11 +3570,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* NTHandlePtr = &NTHandle)
+            fixed (void* NTHandlePtr = &NTHandle)
             {
                 fixed (void** ppvObjPtr = &ppvObj)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riid, ppvObjPtr);
                 }
             }
             return ret;
@@ -3585,11 +3585,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* NTHandlePtr = &NTHandle)
+            fixed (void* NTHandlePtr = &NTHandle)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObj);
                 }
             }
             return ret;
@@ -3600,13 +3600,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* NTHandlePtr = &NTHandle)
+            fixed (void* NTHandlePtr = &NTHandle)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvObjPtr = &ppvObj)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riidPtr, ppvObjPtr);
                     }
                 }
             }
@@ -5694,9 +5694,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
             }
             return ret;
         }
@@ -5706,11 +5706,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
                 }
             }
             return ret;
@@ -5721,11 +5721,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
                 }
             }
             return ret;
@@ -5736,13 +5736,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
+            fixed (void* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
                     }
                 }
             }
@@ -5763,9 +5763,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hEventPtr = &hEvent)
+            fixed (void* hEventPtr = &hEvent)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
             }
             return ret;
         }
@@ -5789,9 +5789,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
-                fixed (T0* hEventPtr = &hEvent)
+                fixed (void* hEventPtr = &hEvent)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEventPtr);
                 }
             }
             return ret;
@@ -5816,9 +5816,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12Fence** ppFencesPtr = &ppFences)
             {
-                fixed (T0* hEventPtr = &hEvent)
+                fixed (void* hEventPtr = &hEvent)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEventPtr);
                 }
             }
             return ret;
@@ -5848,9 +5848,9 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ulong* pFenceValuesPtr = &pFenceValues)
                 {
-                    fixed (T0* hEventPtr = &hEvent)
+                    fixed (void* hEventPtr = &hEvent)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValuesPtr, NumFences, Flags, hEventPtr);
                     }
                 }
             }
@@ -6066,9 +6066,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pAddressPtr = &pAddress)
+            fixed (void* pAddressPtr = &pAddress)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeap);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeap);
             }
             return ret;
         }
@@ -6078,11 +6078,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pAddressPtr = &pAddress)
+            fixed (void* pAddressPtr = &pAddress)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riid, ppvHeapPtr);
                 }
             }
             return ret;
@@ -6093,11 +6093,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pAddressPtr = &pAddress)
+            fixed (void* pAddressPtr = &pAddress)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeap);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeap);
                 }
             }
             return ret;
@@ -6108,13 +6108,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pAddressPtr = &pAddress)
+            fixed (void* pAddressPtr = &pAddress)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvHeapPtr = &ppvHeap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[48])(@this, pAddressPtr, riidPtr, ppvHeapPtr);
                     }
                 }
             }
@@ -6174,9 +6174,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hFileMappingPtr = &hFileMapping)
+            fixed (void* hFileMappingPtr = &hFileMapping)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeap);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeap);
             }
             return ret;
         }
@@ -6186,11 +6186,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hFileMappingPtr = &hFileMapping)
+            fixed (void* hFileMappingPtr = &hFileMapping)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeapPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riid, ppvHeapPtr);
                 }
             }
             return ret;
@@ -6201,11 +6201,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hFileMappingPtr = &hFileMapping)
+            fixed (void* hFileMappingPtr = &hFileMapping)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeap);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeap);
                 }
             }
             return ret;
@@ -6216,13 +6216,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hFileMappingPtr = &hFileMapping)
+            fixed (void* hFileMappingPtr = &hFileMapping)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvHeapPtr = &ppvHeap)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, T0*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeapPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, void*, Guid*, void**, int>)LpVtbl[49])(@this, hFileMappingPtr, riidPtr, ppvHeapPtr);
                     }
                 }
             }
@@ -8865,9 +8865,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
             }
             return ret;
         }
@@ -8877,11 +8877,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
             {
                 fixed (void** ppMetaCommandPtr = &ppMetaCommand)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
                 }
             }
             return ret;
@@ -8892,11 +8892,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
                 }
             }
             return ret;
@@ -8907,13 +8907,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+            fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppMetaCommandPtr = &ppMetaCommand)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandId, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
                     }
                 }
             }
@@ -8987,9 +8987,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* CommandIdPtr = &CommandId)
             {
-                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommand);
                 }
             }
             return ret;
@@ -9002,11 +9002,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* CommandIdPtr = &CommandId)
             {
-                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
                 {
                     fixed (void** ppMetaCommandPtr = &ppMetaCommand)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riid, ppMetaCommandPtr);
                     }
                 }
             }
@@ -9020,11 +9020,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* CommandIdPtr = &CommandId)
             {
-                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommand);
                     }
                 }
             }
@@ -9038,13 +9038,13 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* CommandIdPtr = &CommandId)
             {
-                fixed (T0* pCreationParametersDataPtr = &pCreationParametersData)
+                fixed (void* pCreationParametersDataPtr = &pCreationParametersData)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
                         fixed (void** ppMetaCommandPtr = &ppMetaCommand)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, Guid*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[61])(@this, CommandIdPtr, NodeMask, pCreationParametersDataPtr, CreationParametersDataSizeInBytes, riidPtr, ppMetaCommandPtr);
                         }
                     }
                 }
@@ -9247,9 +9247,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+            fixed (void* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, BackgroundProcessingMode, MeasurementsAction, T0*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesired);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesired);
             }
             return ret;
         }
@@ -9259,11 +9259,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12Device9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
+            fixed (void* hEventToSignalUponCompletionPtr = &hEventToSignalUponCompletion)
             {
                 fixed (int* pbFurtherMeasurementsDesiredPtr = &pbFurtherMeasurementsDesired)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, BackgroundProcessingMode, MeasurementsAction, T0*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device9*, BackgroundProcessingMode, MeasurementsAction, void*, int*, int>)LpVtbl[65])(@this, Mode, MeasurementsAction, hEventToSignalUponCompletionPtr, pbFurtherMeasurementsDesiredPtr);
                 }
             }
             return ret;

@@ -67,9 +67,9 @@ namespace Silk.NET.XAudio
         public readonly void OnBufferStart<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[3])(@this, pBufferContextPtr);
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContextPtr);
             }
         }
 
@@ -84,9 +84,9 @@ namespace Silk.NET.XAudio
         public readonly void OnBufferEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[4])(@this, pBufferContextPtr);
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContextPtr);
             }
         }
 
@@ -101,9 +101,9 @@ namespace Silk.NET.XAudio
         public readonly void OnLoopEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, void>)LpVtbl[5])(@this, pBufferContextPtr);
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContextPtr);
             }
         }
 
@@ -118,9 +118,9 @@ namespace Silk.NET.XAudio
         public readonly void OnVoiceError<T0>(ref T0 pBufferContext, int Error) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pBufferContextPtr = &pBufferContext)
+            fixed (void* pBufferContextPtr = &pBufferContext)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, T0*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
+                ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContextPtr, Error);
             }
         }
 

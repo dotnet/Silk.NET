@@ -121,9 +121,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice1*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[3])(@this, Type, pDataPtr, DataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice1*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[3])(@this, Type, pDataPtr, DataSize);
             }
             return ret;
         }
@@ -142,9 +142,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12DebugDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice1*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[4])(@this, Type, pDataPtr, DataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice1*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[4])(@this, Type, pDataPtr, DataSize);
             }
             return ret;
         }

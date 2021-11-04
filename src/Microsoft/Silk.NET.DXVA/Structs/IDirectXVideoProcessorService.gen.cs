@@ -172,9 +172,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCallbacksPtr = &pCallbacks)
+            fixed (void* pCallbacksPtr = &pCallbacks)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoProcessorService*, T0*, int>)LpVtbl[4])(@this, pCallbacksPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoProcessorService*, void*, int>)LpVtbl[4])(@this, pCallbacksPtr);
             }
             return ret;
         }

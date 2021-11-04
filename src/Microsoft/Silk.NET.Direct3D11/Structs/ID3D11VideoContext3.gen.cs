@@ -150,9 +150,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -176,9 +176,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -203,9 +203,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -235,9 +235,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -258,9 +258,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -284,9 +284,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -483,9 +483,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr);
             }
             return ret;
         }
@@ -509,9 +509,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr);
                 }
             }
             return ret;
@@ -536,9 +536,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr);
                 }
             }
             return ret;
@@ -568,9 +568,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int>)LpVtbl[9])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr);
                     }
                 }
             }
@@ -879,9 +879,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -905,9 +905,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -932,9 +932,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -964,9 +964,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[19])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
                     }
                 }
             }
@@ -1435,9 +1435,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -1461,9 +1461,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessor, pExtensionGuidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -1488,9 +1488,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuid, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -1520,9 +1520,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, T0*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int>)LpVtbl[26])(@this, pVideoProcessorPtr, pExtensionGuidPtr, DataSize, pDataPtr);
                     }
                 }
             }
@@ -1937,9 +1937,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -1963,9 +1963,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -1990,9 +1990,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -2022,9 +2022,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[39])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
                     }
                 }
             }
@@ -5437,9 +5437,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -5463,9 +5463,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessor, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -5490,9 +5490,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuid, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -5522,9 +5522,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pExtensionGuidPtr = &pExtensionGuid)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, T0*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int>)LpVtbl[52])(@this, pVideoProcessorPtr, StreamIndex, pExtensionGuidPtr, DataSize, pDataPtr);
                     }
                 }
             }
@@ -5653,9 +5653,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSession, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -5679,9 +5679,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[54])(@this, pCryptoSessionPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -5698,9 +5698,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void EncryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pIVPtr = &pIV)
+            fixed (void* pIVPtr = &pIV)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurface, IVSize, pIVPtr);
             }
         }
 
@@ -5720,9 +5720,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
                 }
             }
         }
@@ -5743,9 +5743,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
                 }
             }
         }
@@ -5771,9 +5771,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -5795,9 +5795,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, IVSize, pIVPtr);
                 }
             }
         }
@@ -5823,9 +5823,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -5852,9 +5852,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, IVSize, pIVPtr);
                     }
                 }
             }
@@ -5886,9 +5886,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        fixed (T0* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, T0*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void>)LpVtbl[55])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -5906,9 +5906,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pIVPtr = &pIV)
+            fixed (void* pIVPtr = &pIV)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
             }
         }
 
@@ -5916,9 +5916,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
             }
         }
 
@@ -5926,11 +5926,11 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
-                fixed (T1* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                 }
             }
         }
@@ -5951,9 +5951,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                 }
             }
         }
@@ -5964,9 +5964,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                 }
             }
         }
@@ -5977,11 +5977,11 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    fixed (T1* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6003,9 +6003,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                 }
             }
         }
@@ -6016,9 +6016,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                 }
             }
         }
@@ -6029,11 +6029,11 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    fixed (T1* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6060,9 +6060,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6076,9 +6076,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6092,11 +6092,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6119,9 +6119,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                 }
             }
         }
@@ -6132,9 +6132,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                 }
             }
         }
@@ -6145,11 +6145,11 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    fixed (T1* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6176,9 +6176,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6192,9 +6192,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6208,11 +6208,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6240,9 +6240,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6256,9 +6256,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6272,11 +6272,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6309,9 +6309,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6328,9 +6328,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                         }
                     }
                 }
@@ -6347,11 +6347,11 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            fixed (T1* pIVPtr = &pIV)
+                            fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSession, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                             }
                         }
                     }
@@ -6375,9 +6375,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pIVPtr = &pIV)
+                fixed (void* pIVPtr = &pIV)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                 }
             }
         }
@@ -6388,9 +6388,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                 }
             }
         }
@@ -6401,11 +6401,11 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    fixed (T1* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6432,9 +6432,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6448,9 +6448,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6464,11 +6464,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6496,9 +6496,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6512,9 +6512,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6528,11 +6528,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6565,9 +6565,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6584,9 +6584,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                         }
                     }
                 }
@@ -6603,11 +6603,11 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            fixed (T1* pIVPtr = &pIV)
+                            fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurface, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                             }
                         }
                     }
@@ -6636,9 +6636,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    fixed (T0* pIVPtr = &pIV)
+                    fixed (void* pIVPtr = &pIV)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                     }
                 }
             }
@@ -6652,9 +6652,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                     }
                 }
             }
@@ -6668,11 +6668,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        fixed (T1* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6705,9 +6705,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6724,9 +6724,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                         }
                     }
                 }
@@ -6743,11 +6743,11 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            fixed (T1* pIVPtr = &pIV)
+                            fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurface, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                             }
                         }
                     }
@@ -6781,9 +6781,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        fixed (T0* pIVPtr = &pIV)
+                        fixed (void* pIVPtr = &pIV)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIVPtr);
                         }
                     }
                 }
@@ -6800,9 +6800,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                         }
                     }
                 }
@@ -6819,11 +6819,11 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
                     {
-                        fixed (T0* pContentKeyPtr = &pContentKey)
+                        fixed (void* pContentKeyPtr = &pContentKey)
                         {
-                            fixed (T1* pIVPtr = &pIV)
+                            fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfo, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                             }
                         }
                     }
@@ -6862,9 +6862,9 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                         {
-                            fixed (T0* pIVPtr = &pIV)
+                            fixed (void* pIVPtr = &pIV)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, T0*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKey, IVSize, pIVPtr);
                             }
                         }
                     }
@@ -6884,9 +6884,9 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                         {
-                            fixed (T0* pContentKeyPtr = &pContentKey)
+                            fixed (void* pContentKeyPtr = &pContentKey)
                             {
-                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
+                                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIV);
                             }
                         }
                     }
@@ -6906,11 +6906,11 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                         {
-                            fixed (T0* pContentKeyPtr = &pContentKey)
+                            fixed (void* pContentKeyPtr = &pContentKey)
                             {
-                                fixed (T1* pIVPtr = &pIV)
+                                fixed (void* pIVPtr = &pIV)
                                 {
-                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, T0*, uint, T1*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
+                                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)LpVtbl[56])(@this, pCryptoSessionPtr, pSrcSurfacePtr, pDstSurfacePtr, pEncryptedBlockInfoPtr, ContentKeySize, pContentKeyPtr, IVSize, pIVPtr);
                                 }
                             }
                         }
@@ -6930,9 +6930,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void StartSessionKeyRefresh<T0>(ID3D11CryptoSession* pCryptoSession, uint RandomNumberSize, ref T0 pRandomNumber) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pRandomNumberPtr = &pRandomNumber)
+            fixed (void* pRandomNumberPtr = &pRandomNumber)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSession, RandomNumberSize, pRandomNumberPtr);
             }
         }
 
@@ -6952,9 +6952,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pRandomNumberPtr = &pRandomNumber)
+                fixed (void* pRandomNumberPtr = &pRandomNumber)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, void>)LpVtbl[57])(@this, pCryptoSessionPtr, RandomNumberSize, pRandomNumberPtr);
                 }
             }
         }
@@ -6990,9 +6990,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pReadbackKeyPtr = &pReadbackKey)
+            fixed (void* pReadbackKeyPtr = &pReadbackKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSession, KeySize, pReadbackKeyPtr);
             }
             return ret;
         }
@@ -7016,9 +7016,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pReadbackKeyPtr = &pReadbackKey)
+                fixed (void* pReadbackKeyPtr = &pReadbackKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int>)LpVtbl[59])(@this, pCryptoSessionPtr, KeySize, pReadbackKeyPtr);
                 }
             }
             return ret;
@@ -7038,9 +7038,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannel, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -7064,9 +7064,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, int>)LpVtbl[60])(@this, pChannelPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -7086,9 +7086,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pOutputPtr = &pOutput)
+            fixed (void* pOutputPtr = &pOutput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, T0*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInput, OutputSize, pOutputPtr);
             }
             return ret;
         }
@@ -7098,9 +7098,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pInputPtr = &pInput)
+            fixed (void* pInputPtr = &pInput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutput);
             }
             return ret;
         }
@@ -7110,11 +7110,11 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pInputPtr = &pInput)
+            fixed (void* pInputPtr = &pInput)
             {
-                fixed (T1* pOutputPtr = &pOutput)
+                fixed (void* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, uint, T1*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannel, InputSize, pInputPtr, OutputSize, pOutputPtr);
                 }
             }
             return ret;
@@ -7139,9 +7139,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pOutputPtr = &pOutput)
+                fixed (void* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, T0*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInput, OutputSize, pOutputPtr);
                 }
             }
             return ret;
@@ -7154,9 +7154,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pInputPtr = &pInput)
+                fixed (void* pInputPtr = &pInput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutput);
                 }
             }
             return ret;
@@ -7169,11 +7169,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pInputPtr = &pInput)
+                fixed (void* pInputPtr = &pInput)
                 {
-                    fixed (T1* pOutputPtr = &pOutput)
+                    fixed (void* pOutputPtr = &pOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, uint, T1*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int>)LpVtbl[61])(@this, pChannelPtr, InputSize, pInputPtr, OutputSize, pOutputPtr);
                     }
                 }
             }
@@ -7206,9 +7206,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pInputPtr = &pInput)
+            fixed (void* pInputPtr = &pInput)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutput);
             }
             return ret;
         }
@@ -7218,11 +7218,11 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pInputPtr = &pInput)
+            fixed (void* pInputPtr = &pInput)
             {
                 fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannel, InputSize, pInputPtr, pOutputPtr);
                 }
             }
             return ret;
@@ -7262,9 +7262,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pInputPtr = &pInput)
+                fixed (void* pInputPtr = &pInput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutput);
                 }
             }
             return ret;
@@ -7277,11 +7277,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel* pChannelPtr = &pChannel)
             {
-                fixed (T0* pInputPtr = &pInput)
+                fixed (void* pInputPtr = &pInput)
                 {
                     fixed (AuthenticatedConfigureOutput* pOutputPtr = &pOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, T0*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, AuthenticatedConfigureOutput*, int>)LpVtbl[62])(@this, pChannelPtr, InputSize, pInputPtr, pOutputPtr);
                     }
                 }
             }
@@ -7471,9 +7471,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+            fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
             }
             return ret;
         }
@@ -7483,11 +7483,11 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+            fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
             {
                 fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSession, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
                 }
             }
             return ret;
@@ -7527,9 +7527,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+                fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputData);
                 }
             }
             return ret;
@@ -7542,11 +7542,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pPrivatInputDataPtr = &pPrivatInputData)
+                fixed (void* pPrivatInputDataPtr = &pPrivatInputData)
                 {
                     fixed (ulong* pPrivateOutputDataPtr = &pPrivateOutputData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, T0*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, ulong*, int>)LpVtbl[66])(@this, pCryptoSessionPtr, PrivateInputSize, pPrivatInputDataPtr, pPrivateOutputDataPtr);
                     }
                 }
             }
@@ -8212,9 +8212,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+            fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[79])(@this, pVideoProcessor, Type, Size, pHDRMetaDataPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[79])(@this, pVideoProcessor, Type, Size, pHDRMetaDataPtr);
             }
         }
 
@@ -8234,9 +8234,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+                fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[79])(@this, pVideoProcessorPtr, Type, Size, pHDRMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[79])(@this, pVideoProcessorPtr, Type, Size, pHDRMetaDataPtr);
                 }
             }
         }
@@ -8252,9 +8252,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pMetaDataPtr = &pMetaData)
+            fixed (void* pMetaDataPtr = &pMetaData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessor, pType, Size, pMetaDataPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessor, pType, Size, pMetaDataPtr);
             }
         }
 
@@ -8274,9 +8274,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
             {
-                fixed (T0* pMetaDataPtr = &pMetaData)
+                fixed (void* pMetaDataPtr = &pMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessor, pTypePtr, Size, pMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessor, pTypePtr, Size, pMetaDataPtr);
                 }
             }
         }
@@ -8297,9 +8297,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pMetaDataPtr = &pMetaData)
+                fixed (void* pMetaDataPtr = &pMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pType, Size, pMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pType, Size, pMetaDataPtr);
                 }
             }
         }
@@ -8325,9 +8325,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
                 {
-                    fixed (T0* pMetaDataPtr = &pMetaData)
+                    fixed (void* pMetaDataPtr = &pMetaData)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pTypePtr, Size, pMetaDataPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[80])(@this, pVideoProcessorPtr, pTypePtr, Size, pMetaDataPtr);
                     }
                 }
             }
@@ -8344,9 +8344,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorSetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+            fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[81])(@this, pVideoProcessor, StreamIndex, Type, Size, pHDRMetaDataPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[81])(@this, pVideoProcessor, StreamIndex, Type, Size, pHDRMetaDataPtr);
             }
         }
 
@@ -8366,9 +8366,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pHDRMetaDataPtr = &pHDRMetaData)
+                fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, T0*, void>)LpVtbl[81])(@this, pVideoProcessorPtr, StreamIndex, Type, Size, pHDRMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)LpVtbl[81])(@this, pVideoProcessorPtr, StreamIndex, Type, Size, pHDRMetaDataPtr);
                 }
             }
         }
@@ -8384,9 +8384,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void VideoProcessorGetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType* pType, uint Size, ref T0 pMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pMetaDataPtr = &pMetaData)
+            fixed (void* pMetaDataPtr = &pMetaData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pType, Size, pMetaDataPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pType, Size, pMetaDataPtr);
             }
         }
 
@@ -8406,9 +8406,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
             {
-                fixed (T0* pMetaDataPtr = &pMetaData)
+                fixed (void* pMetaDataPtr = &pMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pTypePtr, Size, pMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessor, StreamIndex, pTypePtr, Size, pMetaDataPtr);
                 }
             }
         }
@@ -8429,9 +8429,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (T0* pMetaDataPtr = &pMetaData)
+                fixed (void* pMetaDataPtr = &pMetaData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pType, Size, pMetaDataPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pType, Size, pMetaDataPtr);
                 }
             }
         }
@@ -8457,9 +8457,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.HdrMetadataType* pTypePtr = &pType)
                 {
-                    fixed (T0* pMetaDataPtr = &pMetaData)
+                    fixed (void* pMetaDataPtr = &pMetaData)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, T0*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pTypePtr, Size, pMetaDataPtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType*, uint, void*, void>)LpVtbl[82])(@this, pVideoProcessorPtr, StreamIndex, pTypePtr, Size, pMetaDataPtr);
                     }
                 }
             }
@@ -8518,9 +8518,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
             }
             return ret;
         }
@@ -8530,11 +8530,11 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
                 fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
                 }
             }
             return ret;
@@ -8545,11 +8545,11 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
                 fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
                 }
             }
             return ret;
@@ -8560,13 +8560,13 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContentKeyPtr = &pContentKey)
+            fixed (void* pContentKeyPtr = &pContentKey)
             {
                 fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                 {
                     fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
                     }
                 }
             }
@@ -8640,9 +8640,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
                 }
             }
             return ret;
@@ -8655,11 +8655,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
                     }
                 }
             }
@@ -8673,11 +8673,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
                     }
                 }
             }
@@ -8691,13 +8691,13 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                     {
                         fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoder, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
                         }
                     }
                 }
@@ -8772,9 +8772,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
                 }
             }
             return ret;
@@ -8787,11 +8787,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
                     }
                 }
             }
@@ -8805,11 +8805,11 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
                     }
                 }
             }
@@ -8823,13 +8823,13 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoDecoder* pDecoderPtr = &pDecoder)
             {
-                fixed (T0* pContentKeyPtr = &pContentKey)
+                fixed (void* pContentKeyPtr = &pContentKey)
                 {
                     fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                     {
                         fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pView, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
                         }
                     }
                 }
@@ -8918,9 +8918,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffers);
                     }
                 }
             }
@@ -8936,11 +8936,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
                         fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsets, ppHistogramBuffersPtr);
                         }
                     }
                 }
@@ -8957,11 +8957,11 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
                         fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffers);
                         }
                     }
                 }
@@ -8978,13 +8978,13 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView* pViewPtr = &pView)
                 {
-                    fixed (T0* pContentKeyPtr = &pContentKey)
+                    fixed (void* pContentKeyPtr = &pContentKey)
                     {
                         fixed (uint* pHistogramOffsetsPtr = &pHistogramOffsets)
                         {
                             fixed (ID3D11Buffer** ppHistogramBuffersPtr = &ppHistogramBuffers)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, T0*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int>)LpVtbl[83])(@this, pDecoderPtr, pViewPtr, ContentKeySize, pContentKeyPtr, NumComponentHistograms, pHistogramOffsetsPtr, ppHistogramBuffersPtr);
                             }
                         }
                     }

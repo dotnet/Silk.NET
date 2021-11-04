@@ -171,6 +171,7 @@ namespace Silk.NET.BuildTools.Cpp
                         .WithIsIn(false)
                         .WithIsOut(false)
                         .WithIndirectionLevel(parameter.Type.IndirectionLevels + 1)
+                        .WithName(parameter.Type.IsGenericTypeParameterReference ? "void" : parameter.Type.Name)
                         .Build();
                     sb.AppendLine
                     (

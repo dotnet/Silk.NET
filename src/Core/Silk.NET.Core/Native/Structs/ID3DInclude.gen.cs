@@ -88,9 +88,9 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppData, pBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppData, pBytes);
             }
             return ret;
         }
@@ -100,11 +100,11 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (uint* pBytesPtr = &pBytes)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppData, pBytesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppData, pBytesPtr);
                 }
             }
             return ret;
@@ -115,11 +115,11 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppDataPtr, pBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppDataPtr, pBytes);
                 }
             }
             return ret;
@@ -130,13 +130,13 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
                 {
                     fixed (uint* pBytesPtr = &pBytes)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppDataPtr, pBytesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileName, pParentDataPtr, ppDataPtr, pBytesPtr);
                     }
                 }
             }
@@ -210,9 +210,9 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (byte* pFileNamePtr = &pFileName)
             {
-                fixed (T0* pParentDataPtr = &pParentData)
+                fixed (void* pParentDataPtr = &pParentData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
                 }
             }
             return ret;
@@ -225,11 +225,11 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (byte* pFileNamePtr = &pFileName)
             {
-                fixed (T0* pParentDataPtr = &pParentData)
+                fixed (void* pParentDataPtr = &pParentData)
                 {
                     fixed (uint* pBytesPtr = &pBytes)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
                     }
                 }
             }
@@ -243,11 +243,11 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (byte* pFileNamePtr = &pFileName)
             {
-                fixed (T0* pParentDataPtr = &pParentData)
+                fixed (void* pParentDataPtr = &pParentData)
                 {
                     fixed (void** ppDataPtr = &ppData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
                     }
                 }
             }
@@ -261,13 +261,13 @@ namespace Silk.NET.Core.Native
             int ret = default;
             fixed (byte* pFileNamePtr = &pFileName)
             {
-                fixed (T0* pParentDataPtr = &pParentData)
+                fixed (void* pParentDataPtr = &pParentData)
                 {
                     fixed (void** ppDataPtr = &ppData)
                     {
                         fixed (uint* pBytesPtr = &pBytes)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytesPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytesPtr);
                         }
                     }
                 }
@@ -337,9 +337,9 @@ namespace Silk.NET.Core.Native
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
             }
             Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
@@ -351,11 +351,11 @@ namespace Silk.NET.Core.Native
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (uint* pBytesPtr = &pBytes)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
                 }
             }
             Marshal.FreeHGlobal((nint)pFileNamePtr);
@@ -368,11 +368,11 @@ namespace Silk.NET.Core.Native
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
                 }
             }
             Marshal.FreeHGlobal((nint)pFileNamePtr);
@@ -385,13 +385,13 @@ namespace Silk.NET.Core.Native
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
-            fixed (T0* pParentDataPtr = &pParentData)
+            fixed (void* pParentDataPtr = &pParentData)
             {
                 fixed (void** ppDataPtr = &ppData)
                 {
                     fixed (uint* pBytesPtr = &pBytes)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytesPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytesPtr);
                     }
                 }
             }
@@ -413,9 +413,9 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, T0*, int>)LpVtbl[1])(@this, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, void*, int>)LpVtbl[1])(@this, pDataPtr);
             }
             return ret;
         }

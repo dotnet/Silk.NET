@@ -130,9 +130,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, FeatureVideo, T0*, uint, int>)LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, FeatureVideo, void*, uint, int>)LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
             return ret;
         }
@@ -2194,9 +2194,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
             }
             return ret;
         }
@@ -2206,11 +2206,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
                 }
             }
             return ret;
@@ -2221,11 +2221,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
                 }
             }
             return ret;
@@ -2236,13 +2236,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
                     }
                 }
             }
@@ -2254,11 +2254,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
                 }
             }
             return ret;
@@ -2269,13 +2269,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                 {
                     fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
                     }
                 }
             }
@@ -2287,13 +2287,13 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
                     }
                 }
             }
@@ -2305,7 +2305,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pCreationParametersPtr = &pCreationParameters)
+            fixed (void* pCreationParametersPtr = &pCreationParameters)
             {
                 fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                 {
@@ -2313,7 +2313,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDesc, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
                         }
                     }
                 }
@@ -2460,9 +2460,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommand);
                 }
             }
             return ret;
@@ -2475,11 +2475,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riid, ppVideoExtensionCommandPtr);
                     }
                 }
             }
@@ -2493,11 +2493,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommand);
                     }
                 }
             }
@@ -2511,13 +2511,13 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
                         fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSession, riidPtr, ppVideoExtensionCommandPtr);
                         }
                     }
                 }
@@ -2532,11 +2532,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommand);
                     }
                 }
             }
@@ -2550,13 +2550,13 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                     {
                         fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riid, ppVideoExtensionCommandPtr);
                         }
                     }
                 }
@@ -2571,13 +2571,13 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                     {
                         fixed (Guid* riidPtr = &riid)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommand);
                         }
                     }
                 }
@@ -2592,7 +2592,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (VideoExtensionCommandDesc* pDescPtr = &pDesc)
             {
-                fixed (T0* pCreationParametersPtr = &pCreationParameters)
+                fixed (void* pCreationParametersPtr = &pCreationParameters)
                 {
                     fixed (ID3D12ProtectedResourceSession* pProtectedResourceSessionPtr = &pProtectedResourceSession)
                     {
@@ -2600,7 +2600,7 @@ namespace Silk.NET.Direct3D12
                         {
                             fixed (void** ppVideoExtensionCommandPtr = &ppVideoExtensionCommand)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, T0*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, VideoExtensionCommandDesc*, void*, nuint, ID3D12ProtectedResourceSession*, Guid*, void**, int>)LpVtbl[12])(@this, pDescPtr, pCreationParametersPtr, CreationParametersDataSizeInBytes, pProtectedResourceSessionPtr, riidPtr, ppVideoExtensionCommandPtr);
                             }
                         }
                     }
@@ -2623,9 +2623,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pOutputDataPtr = &pOutputData)
+            fixed (void* pOutputDataPtr = &pOutputData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, T0*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
             }
             return ret;
         }
@@ -2635,9 +2635,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, T0*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
             }
             return ret;
         }
@@ -2647,11 +2647,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+            fixed (void* pExecutionParametersPtr = &pExecutionParameters)
             {
-                fixed (T1* pOutputDataPtr = &pOutputData)
+                fixed (void* pOutputDataPtr = &pOutputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, T0*, nuint, T1*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommand, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
                 }
             }
             return ret;
@@ -2676,9 +2676,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
-                fixed (T0* pOutputDataPtr = &pOutputData)
+                fixed (void* pOutputDataPtr = &pOutputData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, T0*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParameters, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
                 }
             }
             return ret;
@@ -2691,9 +2691,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
-                fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+                fixed (void* pExecutionParametersPtr = &pExecutionParameters)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, T0*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputData, OutputDataSizeInBytes);
                 }
             }
             return ret;
@@ -2706,11 +2706,11 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12VideoExtensionCommand* pExtensionCommandPtr = &pExtensionCommand)
             {
-                fixed (T0* pExecutionParametersPtr = &pExecutionParameters)
+                fixed (void* pExecutionParametersPtr = &pExecutionParameters)
                 {
-                    fixed (T1* pOutputDataPtr = &pOutputData)
+                    fixed (void* pOutputDataPtr = &pOutputData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, T0*, nuint, T1*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice3*, ID3D12VideoExtensionCommand*, void*, nuint, void*, nuint, int>)LpVtbl[13])(@this, pExtensionCommandPtr, pExecutionParametersPtr, ExecutionParametersSizeInBytes, pOutputDataPtr, OutputDataSizeInBytes);
                     }
                 }
             }

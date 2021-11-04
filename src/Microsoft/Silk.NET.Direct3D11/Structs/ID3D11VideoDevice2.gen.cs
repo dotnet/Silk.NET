@@ -1570,9 +1570,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, Guid*, uint, T0*, int>)LpVtbl[18])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -1596,9 +1596,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, Guid*, uint, T0*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -3826,9 +3826,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, FeatureVideo, T0*, uint, int>)LpVtbl[24])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, FeatureVideo, void*, uint, int>)LpVtbl[24])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
             return ret;
         }
@@ -3847,9 +3847,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, T0*, int>)LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)LpVtbl[25])(@this, pCryptoSession, flags, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -3873,9 +3873,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, T0*, int>)LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice2*, ID3D11CryptoSession*, CryptoSessionKeyExchangeFlags, uint, void*, int>)LpVtbl[25])(@this, pCryptoSessionPtr, flags, DataSize, pDataPtr);
                 }
             }
             return ret;

@@ -650,9 +650,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContextPtr = &pContext)
+            fixed (void* pContextPtr = &pContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, T0*, uint*, int>)LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookie);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookie);
             }
             return ret;
         }
@@ -662,11 +662,11 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pContextPtr = &pContext)
+            fixed (void* pContextPtr = &pContext)
             {
                 fixed (uint* pCallbackCookiePtr = &pCallbackCookie)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, T0*, uint*, int>)LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue1*, PfnMessageFunc, MessageCallbackFlags, void*, uint*, int>)LpVtbl[38])(@this, CallbackFunc, CallbackFilterFlags, pContextPtr, pCallbackCookiePtr);
                 }
             }
             return ret;
