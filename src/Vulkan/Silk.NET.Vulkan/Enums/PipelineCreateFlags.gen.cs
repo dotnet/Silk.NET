@@ -19,10 +19,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateAllowDerivativesBit = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_DERIVATIVE_BIT")]
         PipelineCreateDerivativeBit = 4,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_21_BIT_AMD")]
-        PipelineCreateReserved21BitAmd = 2097152,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_22_BIT_AMD")]
-        PipelineCreateReserved22BitAmd = 4194304,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineRasterizationStateCreateFragmentShadingRateAttachmentBitKhr = 2097152,
+        [NativeName("Name", "VK_PIPELINE_RASTERIZATION_STATE_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
+        PipelineRasterizationStateCreateFragmentDensityMapAttachmentBitExt = 4194304,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreateViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_KHR")]

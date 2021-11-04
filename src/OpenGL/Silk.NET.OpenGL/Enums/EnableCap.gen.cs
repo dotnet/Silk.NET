@@ -154,6 +154,20 @@ namespace Silk.NET.OpenGL
         FragmentLight6Sgix = 0x8412,
         [NativeName("Name", "GL_FRAGMENT_LIGHT7_SGIX")]
         FragmentLight7Sgix = 0x8413,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE")]
+        TextureRectangle = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_ARB")]
+        TextureRectangleArb = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_NV")]
+        TextureRectangleNV = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP")]
+        TextureCubeMap = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARB")]
+        TextureCubeMapArb = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_EXT")]
+        TextureCubeMapExt = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_OES")]
+        TextureCubeMapOes = 0x8513,
         [NativeName("Name", "GL_PROGRAM_POINT_SIZE")]
         ProgramPointSize = 0x8642,
         [NativeName("Name", "GL_DEPTH_CLAMP")]

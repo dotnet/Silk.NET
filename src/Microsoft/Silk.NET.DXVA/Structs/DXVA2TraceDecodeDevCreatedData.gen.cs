@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXVA
 {
+    [NativeName("AnonymousName", "__AnonymousRecord_dxva2trace_L38_C9")]
     [NativeName("Name", "DXVA2Trace_DecodeDevCreatedData")]
     public unsafe partial struct DXVA2TraceDecodeDevCreatedData
     {

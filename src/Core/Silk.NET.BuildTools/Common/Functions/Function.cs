@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// <summary>
     /// Represents a C# function.
     /// </summary>
-    public class Function : IEquatable<Function>
+    public class Function : IEquatable<Function>, IProfileConstituent
     {
         /// <summary>
         /// Gets or sets the name of this function.

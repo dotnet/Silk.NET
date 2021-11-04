@@ -42,6 +42,10 @@ namespace Silk.NET.OpenGLES
         ProxyTexture4DSgis = 0x8135,
         [NativeName("Name", "GL_TEXTURE_RECTANGLE")]
         TextureRectangle = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_ARB")]
+        TextureRectangleArb = 0x84F5,
+        [NativeName("Name", "GL_TEXTURE_RECTANGLE_NV")]
+        TextureRectangleNV = 0x84F5,
         [NativeName("Name", "GL_PROXY_TEXTURE_RECTANGLE")]
         ProxyTextureRectangle = 0x84F7,
         [NativeName("Name", "GL_PROXY_TEXTURE_RECTANGLE_ARB")]
@@ -50,6 +54,12 @@ namespace Silk.NET.OpenGLES
         ProxyTextureRectangleNV = 0x84F7,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP")]
         TextureCubeMap = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARB")]
+        TextureCubeMapArb = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_EXT")]
+        TextureCubeMapExt = 0x8513,
+        [NativeName("Name", "GL_TEXTURE_CUBE_MAP_OES")]
+        TextureCubeMapOes = 0x8513,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_POSITIVE_X")]
         TextureCubeMapPositiveX = 0x8515,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_NEGATIVE_X")]

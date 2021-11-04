@@ -272,6 +272,26 @@ namespace Silk.NET.Vulkan
         VideoDecodeH264DpbSlotInfoExt = 1000040007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_TEXTURE_LOD_GATHER_FORMAT_PROPERTIES_AMD")]
         TextureLodGatherFormatPropertiesAmd = 1000041000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDERING_INFO_KHR")]
+        RenderingInfoKhr = 1000044000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO_KHR")]
+        RenderingAttachmentInfoKhr = 1000044001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO_KHR")]
+        PipelineRenderingCreateInfoKhr = 1000044002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR")]
+        PhysicalDeviceDynamicRenderingFeaturesKhr = 1000044003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO_KHR")]
+        CommandBufferInheritanceRenderingInfoKhr = 1000044004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
+        RenderingFragmentShadingRateAttachmentInfoKhr = 1000044006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_INFO_EXT")]
+        RenderingFragmentDensityMapAttachmentInfoExt = 1000044007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
+        AttachmentSampleCountInfoAmd = 1000044008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_NV")]
+        AttachmentSampleCountInfoNV = 1000044008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_ATTRIBUTES_INFO_NVX")]
+        MultiviewPerViewAttributesInfoNvx = 1000044009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_STREAM_DESCRIPTOR_SURFACE_CREATE_INFO_GGP")]
         StreamDescriptorSurfaceCreateInfoGgp = 1000049000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CORNER_SAMPLED_IMAGE_FEATURES_NV")]
