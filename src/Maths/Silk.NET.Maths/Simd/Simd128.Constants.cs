@@ -96,6 +96,11 @@ namespace Silk.NET.Maths
         /// </summary>
         public static readonly Vector128<T> Tau;
 
+        /// <summary>
+        /// Gets a new <see cref="Vector128{T}" /> with all bits set to 1.
+        /// </summary>
+        public static readonly Vector128<T> AllBitsSet;
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd128()
         {
@@ -113,6 +118,15 @@ namespace Silk.NET.Maths
             Pi = Simd128.Create(Scalar<T>.Pi);
             PiOver2 = Simd128.Create(Scalar<T>.PiOver2);
             Tau = Simd128.Create(Scalar<T>.Tau);
+#if NET5_0_OR_GREATER
+            AllBitsSet = Vector128<T>.AllBitsSet;
+#else
+            AllBitsSet = Vector128<T>.Zero;
+            for (int i = 0; i < Vector128<T>.Count; i++)
+            {
+                Simd128.WithElement(AllBitsSet, i, Scalar.Not(default(T)));
+            }
+#endif
         }
     }
 }

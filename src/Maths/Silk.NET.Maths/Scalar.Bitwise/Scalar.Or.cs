@@ -2,6 +2,10 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.CompilerServices;
+// nullability-related things
+#pragma warning disable 8603
+#pragma warning disable 8605
+#pragma warning disable 8600
 
 namespace Silk.NET.Maths
 {
@@ -10,7 +14,7 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Performs Or on supported types
         /// </summary>
-        public static T Or<T>(T left, T right) where T : unmanaged
+        public static T Or<T>(T left, T right)
         {
             return Byte(left, right);
 

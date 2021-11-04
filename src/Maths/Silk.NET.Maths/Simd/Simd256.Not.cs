@@ -28,7 +28,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return SByte(vector);
@@ -38,7 +38,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return UInt16(vector);
@@ -48,7 +48,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Int16(vector);
@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return UInt32(vector);
@@ -68,7 +68,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Int32(vector);
@@ -78,7 +78,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(int))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return UInt64(vector);
@@ -88,7 +88,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Int64(vector);
@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(long))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Single(vector);
@@ -108,7 +108,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Double(vector);
@@ -118,7 +118,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return Simd256.Xor(vector, Vector256<T>.AllBitsSet);
+                    return Simd256.Xor(vector, Simd256<T>.AllBitsSet);
                 }
         
                 return Other(vector);

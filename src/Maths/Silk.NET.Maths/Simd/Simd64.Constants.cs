@@ -95,6 +95,11 @@ namespace Silk.NET.Maths
         /// Represents the number of radians in one turn, specified by the constant, <code>τ</code>.
         /// </summary>
         public static readonly Vector64<T> Tau;
+        
+        /// <summary>
+        /// Gets a new <see cref="Vector64{T}" /> with all bits set to 1.
+        /// </summary>
+        public static readonly Vector64<T> AllBitsSet;
 
         [MethodImpl(Scalar.MaxOpt)]
         static Simd64()
@@ -113,6 +118,15 @@ namespace Silk.NET.Maths
             Pi = Simd64.Create(Scalar<T>.Pi);
             PiOver2 = Simd64.Create(Scalar<T>.PiOver2);
             Tau = Simd64.Create(Scalar<T>.Tau);
+#if NET5_0_OR_GREATER
+            AllBitsSet = Vector64<T>.AllBitsSet;
+#else
+            AllBitsSet = Vector64<T>.Zero;
+            for (int i = 0; i < Vector64<T>.Count; i++)
+            {
+                Simd64.WithElement(AllBitsSet, i, Scalar.Not(default(T)));
+            }
+#endif
         }
     }
 }
