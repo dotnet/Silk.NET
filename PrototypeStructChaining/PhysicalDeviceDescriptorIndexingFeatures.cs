@@ -1,7 +1,8 @@
 namespace Silk.Net.Vulkan;
 
 public struct PhysicalDeviceDescriptorIndexingFeatures :
-    IChainable<PhysicalDeviceAccelerationStructureFeaturesKHR>
+    IExtendsChain<PhysicalDeviceFeatures2>,
+    IExtendsChain<DeviceCreateInfo>
 {
     /// <summary></summary>
     public StructureType SType;
@@ -32,18 +33,10 @@ public struct PhysicalDeviceDescriptorIndexingFeatures :
 
     #region Chaining Support
 
-    public static unsafe ref PhysicalDeviceDescriptorIndexingFeatures Chain(
-        out PhysicalDeviceDescriptorIndexingFeatures capture)
+    /// <inheritdoc />
+    StructureType IStructuredType.StructureType()
     {
-        capture = new PhysicalDeviceDescriptorIndexingFeatures(
-            StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt);
-        return ref capture;
-    }
-
-    public unsafe void SetNext(void* next = default)
-    {
-        SType = StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt;
-        PNext = next;
+        return SType = StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt;
     }
 
     #endregion

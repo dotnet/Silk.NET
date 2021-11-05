@@ -1,9 +1,6 @@
 namespace Silk.Net.Vulkan;
 
-public struct DeviceCreateInfo :
-    IChainable<PhysicalDeviceFeatures2>,
-    IChainable<PhysicalDeviceDescriptorIndexingFeatures>,
-    IChainable<PhysicalDeviceAccelerationStructureFeaturesKHR>
+public struct DeviceCreateInfo : IChainStart
 {
     /// <summary></summary>
     public StructureType SType;
@@ -32,19 +29,25 @@ public struct DeviceCreateInfo :
         // NOTE Truncated for example
     }
 
-
     #region Chaining Support
 
-    public static unsafe ref DeviceCreateInfo Chain(out DeviceCreateInfo capture)
+    /// <summary>
+    /// Convenience method to start a chain.
+    /// </summary>
+    /// <param name="capture">The newly created chain root</param>
+    /// <returns>A reference to the newly created chain.</returns>
+    public static unsafe ref DeviceCreateInfo Chain(
+        out DeviceCreateInfo capture)
     {
-        capture = new DeviceCreateInfo(StructureType.DeviceCreateInfo);
+        capture = new DeviceCreateInfo(
+            StructureType.DeviceCreateInfo);
         return ref capture;
     }
 
-    public unsafe void SetNext(void* next = default)
+    /// <inheritdoc />
+    StructureType IStructuredType.StructureType()
     {
-        SType = StructureType.DeviceCreateInfo;
-        PNext = next;
+        return SType = StructureType.DeviceCreateInfo;
     }
 
     #endregion
