@@ -181,7 +181,9 @@ Sometimes it is desirable to keep the structures around on the heap. To facilita
 the `ManagedChain<TChain, T1, ...>`
 types. Like `Tuple` et al, these support up to chain size 16. They should be disposed when finished with.
 
-Example:
+### Creation
+
+For example:
 
 ```csharp
 using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
@@ -199,6 +201,10 @@ Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
 ```
 
 The structures are held in unmanaged memory, preventing movement by the GC, and ensuring that the ptrs remain fixed.
+
+You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s.
+
+### Modifying values
 
 We can easily modify any value in the `ManagedChain`, and it will maintain the ptrs automatically, e.g.:
 
@@ -248,10 +254,10 @@ Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1
 **Note** When we update any item in the chain it overwrites the existing memory, so the ptrs remain fixed. It also
 ensures the PNext value is maintained.
 
-You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s.
+### Appending to a chain
 
-Finally, you can call append on a `ManagedChain` to create a new, larger, `ManagedChain` with a new item appended to the
-end, e.g:
+You can call `Append` on a `ManagedChain` to efficiently create a new, larger, `ManagedChain` with a new item appended
+to the end, e.g:
 
 ```csharp
 using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>(
@@ -263,4 +269,70 @@ using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR
 
 // Check the flag from the first chain is still set in the new chain.
 Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);        
+```
+
+### Loading from an unmanaged chain
+
+If you have created an unmanaged chain and would like to load that into a `ManagedChain` you can supply it to a
+constructor:
+
+```csharp
+// Load an unmanaged chain
+var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+{
+    ShaderInputAttachmentArrayDynamicIndexing = true
+};
+PhysicalDeviceFeatures2
+.Chain(out var unmanagedChain)
+.SetNext(ref indexingFeatures)
+.AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+
+// Loads a new managed chain from an unmanaged chain
+using var managedChain =
+    new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+        PhysicalDeviceAccelerationStructureFeaturesKHR>(unmanagedChain, out var errors);
+
+// Check we had no loading errors
+Assert.Equal("", errors);
+
+// Check the flag still set
+Assert.True(managedChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+```
+
+Notice that this special form of the constructor returns an output parameter `errors`. It does this to prevent any
+possible confusion with the normal constructor which also can accept a single parameter of type `TChain` (which will
+only load the head of the chain). Secondly, it also allows the constructor to indicate any failures that occurred whilst
+loading from the unmanaged type, for example:
+
+```csharp
+var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+{
+    ShaderInputAttachmentArrayDynamicIndexing = true
+};
+// Load an unmanaged chain
+DeviceCreateInfo
+    .Chain(out var unmanagedChain)
+    .AddNext(out PhysicalDeviceFeatures2 features2)
+    .SetNext(ref indexingFeatures)
+    .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+
+// Loads a new managed chain from an unmanaged chain
+using var managedChain =
+    new ManagedChain<
+        DeviceCreateInfo,
+        // Note we are supplied a PhysicalDeviceFeatures2 here from the unmanaged chain
+        PhysicalDeviceAccelerationStructureFeaturesKHR,
+        PhysicalDeviceDescriptorIndexingFeatures,
+        PhysicalDeviceAccelerationStructureFeaturesKHR,
+        // Note that the unmanaged chain did not supply a 5th entry
+        PhysicalDeviceFeatures2>(unmanagedChain, out var errors);
+
+// Check for errors
+Assert.Equal(
+@"The unmanaged chain has a structure type PhysicalDeviceFeatures2Khr at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr
+The unmanaged chain was length 4, expected length 5",
+        errors);
+        
+// Despite the errors indexing features was at the right location so was loaded
+Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
 ```

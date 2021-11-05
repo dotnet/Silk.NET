@@ -97,6 +97,7 @@
 #>
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Silk.Net.Vulkan;
 
@@ -231,6 +232,71 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
         } // for (int j = 1; j < i; j++) {
 #>
     }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <param name="errors">Any errors loading the chain.</param>
+    public ManagedChain(TChain chain, out string errors)
+    {
+        // Load existing chain first, so any errors occur before we allocate memory
+        var head = chain;
+        var headSize = Marshal.SizeOf<TChain>();
+        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        StructureType expectedStructureType;
+        StringBuilder errorBuilder = new StringBuilder();
+
+<#
+        for (var j = 1; j < i; j++)
+        {
+#>
+        currentPtr = currentPtr->PNext;
+        T<#= j #> item<#= j #> = default;
+        if (currentPtr is null)
+            errorBuilder.AppendLine("The unmanaged chain was length <#= j #>, expected length <#= i #>");
+        else {
+            expectedStructureType = item<#= j #>.StructureType();
+            if (currentPtr->SType != expectedStructureType)
+                errorBuilder.Append("The unmanaged chain has a structure type ")
+                    .Append(currentPtr->SType)
+                    .Append(" at position <#= j + 1 #>; expected ")
+                    .Append(expectedStructureType)
+                    .AppendLine();
+            else
+                item<#= j #> = Unsafe.AsRef<T<#= j #>>(currentPtr);
+        }
+        var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
+
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+
+        // Create string of errors
+        errors = errorBuilder.ToString().Trim();
+
+        _headPtr = Marshal.AllocHGlobal(headSize<#
+        for (var j = 1; j < i; j++)
+        {
+#> + item<#= j #>Size<#
+        } // for (int j = 1; j < i; j++) {
+#>);
+        Marshal.StructureToPtr(head, _headPtr, false);
+<#
+        for (var j = 1; j < i; j++)
+        {
+            var prevItem = j > 1
+                ? $"item{j - 1}"
+                : "head";
+#>
+
+        _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
+        Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
+        ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+    }
 <#
         if (i > 2)
         {
@@ -279,13 +345,14 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
         _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
 <#
                 if (j == i - 1)
-                {#>
+                {
+#>
         // Append the last structure
         item<#= j #>.StructureType();
         Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
 <#
                 } // if (j == i - 1)
-                #>
+#>
         ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
 <#
             } // for (int j = 1; j < i; j++) {
