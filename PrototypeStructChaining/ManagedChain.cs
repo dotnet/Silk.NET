@@ -105,16 +105,21 @@ where T2 : struct, IExtendsChain<TChain>
     /// <param name="item2">The third item.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default)
     {
-        _headPtr = Marshal.AllocHGlobal(Marshal.SizeOf<TChain>());
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+
+        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        
-        _item1Ptr = Marshal.AllocHGlobal(Marshal.SizeOf<T1>());
+
+        _item1Ptr = _headPtr + headSize;
         item1.StructureType();
         Marshal.StructureToPtr(item1, _item1Ptr, false);
         ((Chain*)_headPtr)->PNext = (Chain*) _item1Ptr;
         
-        _item2Ptr = Marshal.AllocHGlobal(Marshal.SizeOf<T1>());
+        _item2Ptr = _item1Ptr + item1Size;
         item2.StructureType();
         Marshal.StructureToPtr(item2, _item2Ptr, false);
         ((Chain*)_item1Ptr)->PNext = (Chain*) _item2Ptr;
@@ -126,14 +131,10 @@ where T2 : struct, IExtendsChain<TChain>
         var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
         if (headPtr == IntPtr.Zero) return;
         Marshal.DestroyStructure<TChain>((IntPtr)headPtr);
-        Marshal.FreeHGlobal(headPtr);
-        
         var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
         Marshal.DestroyStructure<TChain>((IntPtr)item1Ptr);
-        Marshal.FreeHGlobal(item1Ptr);
-        
         var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
         Marshal.DestroyStructure<TChain>((IntPtr)item2Ptr);
-        Marshal.FreeHGlobal(item2Ptr);
+        Marshal.FreeHGlobal(headPtr);
     }
 }
