@@ -12,7 +12,7 @@ public interface IChainable
 /// Generic interface indicating which structs can be set in the `PNext` value.
 /// </summary>
 /// <typeparam name="TNext">A valid next structure</typeparam>
-public interface IChainable<in TNext> : IChainable
+public interface IChainable<out TNext> : IChainable
     where TNext : IChainable
 {
 }
