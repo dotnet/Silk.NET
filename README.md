@@ -27,7 +27,6 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, 
 </div>
 <br />
 <div>
-
 <!-- Begin exclude from NuGet readme. -->
 <a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
 <!-- End exclude from NuGet readme. -->
@@ -36,8 +35,6 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, 
 End include in NuGet readme. -->
 <a><br/>Proud to be an official project under the benevolent [.NET Foundation](https://dotnetfoundation.org) umbrella. </a>
 </div>
-
-<br />
 
 <!-- Package description inserted here automatically. -->
 
