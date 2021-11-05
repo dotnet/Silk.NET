@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-
 using Nuke.Common;
 using Nuke.Common.Execution;
 using Nuke.Common.IO;
@@ -378,7 +377,7 @@ class Build : NukeBuild
                     Logger.Warn("Skipping gradlew build as the \"native\" feature-set has not been specified.");
                     return Enumerable.Empty<Output>();
                 }
-                
+
                 var sdl = RootDirectory / "build" / "submodules" / "SDL";
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 var xcopy = new (string, string)[]
@@ -525,31 +524,51 @@ class Build : NukeBuild
                 await Task.Delay(TimeSpan.FromHours(1));
             }
 
-            var srcSettings = new DotNetNuGetAddSourceSettings().SetName("Silk-PushPackages").SetSource(NugetFeed);
-            if (NugetUsername is not null || NugetPassword is not null)
+            if (!NugetFeed.Contains("nuget.org"))
             {
-                if (NugetUsername is null || NugetPassword is null)
+                var srcSettings = new DotNetNuGetAddSourceSettings().SetName("Silk-PushPackages").SetSource(NugetFeed);
+
+                if (NugetUsername is not null || NugetPassword is not null)
                 {
-                    ControlFlow.Fail
-                    (
-                        "Both \"NugetUsername\" and \"NugetPassword\" must be specified if either are used."
-                    );
+                    if (NugetUsername is null || NugetPassword is null)
+                    {
+                        ControlFlow.Fail
+                        (
+                            "Both \"NugetUsername\" and \"NugetPassword\" must be specified if either are used."
+                        );
+                    }
+
+                    srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword);
                 }
 
-                srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword);
+                outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));
             }
-            
-            outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));
 
-            foreach (var pushSettings in files.Select(file => new DotNetNuGetPushSettings()
-                .SetNoServiceEndpoint(NugetNoServiceEndpoint)
-                .EnableSkipDuplicate()
-                .SetTargetPath(file)))
+            foreach (var pushSettings in files.Select
+            (
+                file =>
+                {
+                    var x = new DotNetNuGetPushSettings()
+                        .SetNoServiceEndpoint(NugetNoServiceEndpoint)
+                        .EnableSkipDuplicate()
+                        .SetSource(NugetFeed.Contains("nuget.org") ? "nuget.org" : "Silk-PushPackages")
+                        .SetTargetPath(file);
+                    if (NugetApiKey is not null)
+                    {
+                        x = x.SetApiKey(NugetApiKey);
+                    }
+
+                    return x;
+                }
+            ))
             {
                 outputs = outputs.Concat(DotNetNuGetPush(pushSettings));
             }
 
-            outputs = outputs.Concat(DotNet($"dotnet nuget remove source \"Silk-PushPackages\""));
+            if (!NugetFeed.Contains("nuget.org"))
+            {
+                outputs = outputs.Concat(DotNet($"dotnet nuget remove source \"Silk-PushPackages\""));
+            }
         }
 
         return outputs;
