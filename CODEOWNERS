@@ -17,4 +17,4 @@
 /src/OpenGL/**/!*.gen.cs            @ThomasMiz
 
 # Input
-/src/Vulkan/**/!*.gen.cs            @ThomasMiz
+/src/Input/**/!*.gen.cs            @ThomasMiz
