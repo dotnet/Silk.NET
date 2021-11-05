@@ -172,3 +172,78 @@ Although it is possible to not use a design that does not make use of `IChainSta
 * Indexing, adding, etc. can't be guaranteed to be scanning from the start of the chain.
 
 As adding `IChainStart` requires relatively simple logic I believe it's worth including.
+
+# Extension
+
+## ManagedChain
+
+Sometimes it is desirable to keep the structures around on the heap. To facilitate that you can use
+the `ManagedChain<TChain, T1, ...>`
+types. Like `Tuple` et al, these support up to chain size 16. They should be disposed when finished with.
+
+Example:
+
+```csharp
+using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+    PhysicalDeviceAccelerationStructureFeaturesKHR>();
+
+// Ensure all STypes set correctly
+Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+
+// Ensure pointers set correctly
+Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+```
+
+The structures are held in unmanaged memory, preventing movement by the GC, and ensuring that the ptrs remain fixed.
+
+We can easily modify any value in the `ManagedChain`, and it will maintain the ptrs automatically, e.g.:
+
+```csharp
+using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+    PhysicalDeviceAccelerationStructureFeaturesKHR>(item1: new PhysicalDeviceDescriptorIndexingFeatures
+{
+    // We can set any non-default values, note we do not need to set SType or PNext
+    // indeed they will be overwritten.
+    ShaderInputAttachmentArrayDynamicIndexing = true
+});
+
+// Ensure all STypes set correctly
+Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+
+// Ensure pointers set correctly
+Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+
+// Check our value was set
+Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+var item1Ptr = chain.Item1Ptr;
+
+// Overwrite Item1
+chain.Item1 = new PhysicalDeviceDescriptorIndexingFeatures
+{
+    // Again we do not need to set SType or PNext, which will be set to the correct values
+    ShaderInputAttachmentArrayDynamicIndexing = false
+};
+
+// Check our value was cleared
+Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+// Note all the pointers are still correct (and have not changed)
+Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+
+// As is the SType
+Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+```
+
+**Note** When we update any item in the chain it overwrites the existing memory, so the ptrs remain fixed. It also
+ensures the PNext value is maintained.
