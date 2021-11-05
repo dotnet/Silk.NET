@@ -7,16 +7,17 @@
         <PackageReleaseNotes>
             Silk.NET November 2021 Update
             
-            - Added support for BigInteger and Complex in the Silk.NET.Maths.Scalar APIs.
-            - Added helper constructors for maths types (Rectangle, Box2D, Box3D, etc).
-            - Added bitwise APIs to Silk.NET.Maths.Scalar.
+            - Added support for BigInteger and Complex in the Silk.NET.Maths.Scalar APIs. (thanks @WhiteBlackGoose)
+            - Added helper constructors for maths types (Rectangle, Box2D, Box3D, etc). (thanks @nathan-alden-sr)
+            - Added bitwise APIs to Silk.NET.Maths.Scalar. (thanks @WhiteBlackGoose)
             - Added support for configuring OpenGL multisamping.
             - Updated to Vulkan 1.2.197.
             - Updated to latest OpenCL specifications.
             - Updated to latest OpenGL specifications.
             - Updated DirectX and Win32 bindings to Windows 11 SDK.
-            - Removed redundant references with no DLLs (i.e. BCL/legacy packages not needed on newer platforms)
-            - Fixed incorrect character encoding of keyboard (text) input on the SDL backend.
+            - Removed redundant references with no DLLs (i.e. BCL/legacy packages not needed on newer platforms, thanks @nathan-alden-sr @WhiteBlackGoose)
+            - Removed problematic implicit-in OpenGL overloads (fixes the infamous VertexAttribPointer bug)
+            - Fixed incorrect character encoding of keyboard (text) input on the SDL backend. (thanks @roeyskoe)
             - Fixed native libraries not being resolved despite being present in the "runtimes" folder.
             - Miscellaneous documentation fixes and improvements.
         </PackageReleaseNotes>
