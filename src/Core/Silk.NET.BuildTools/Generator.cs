@@ -213,7 +213,7 @@ namespace Silk.NET.BuildTools
                 }
 
                 profile = ProfileBakery.Bake
-                    (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
+                    (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList(), in task);
                 
                 PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 

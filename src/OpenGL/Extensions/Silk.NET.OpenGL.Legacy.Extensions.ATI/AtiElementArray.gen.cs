@@ -36,13 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerATI")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glElementPointerATI")]
         public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glElementPointerATI")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public AtiElementArray(INativeContext ctx)
             : base(ctx)

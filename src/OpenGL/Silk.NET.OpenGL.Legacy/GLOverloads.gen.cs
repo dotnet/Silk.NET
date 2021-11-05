@@ -8476,18 +8476,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.VertexAttribL4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribLPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribLPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribLPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void ViewportArray(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -10618,18 +10606,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribIPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribIPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void UniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
@@ -11716,30 +11692,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.VertexAttrib4N(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11922,20 +11874,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.FogCoord(in coord.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void FogCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void FogCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void MultiDrawArrays(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "drawcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint drawcount)
         {
             // SpanOverloader
@@ -12098,20 +12036,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.SecondaryColor3(in v.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void SecondaryColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.4")]
-        public static unsafe void SecondaryColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.4")]
@@ -12830,20 +12754,6 @@ namespace Silk.NET.OpenGL.Legacy
             return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void ColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void ColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void DeleteTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
         {
             // SpanOverloader
@@ -12880,13 +12790,6 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DrawElements(mode, count, type, in indices.GetPinnableReference());
         }
 
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void EdgeFlagPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.EdgeFlagPointer(stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
         {
             // SpanOverloader
@@ -12904,48 +12807,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.Index(in c.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void IndexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.IndexPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void IndexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.IndexPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void InterleavedArrays<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.InterleavedArrays(format, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void InterleavedArrays<T0>(this GL thisApi, [Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.InterleavedArrays(format, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void NormalPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.NormalPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void NormalPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.NormalPointer(type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.1")]
@@ -12988,20 +12849,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.PrioritizeTextures(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void TexCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TexCoordPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void TexCoordPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TexCoordPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         public static unsafe void TexSubImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
@@ -13098,20 +12945,6 @@ namespace Silk.NET.OpenGL.Legacy
         {
             // SpanOverloader
             thisApi.TexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, in pixels.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void VertexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        [System.Obsolete("Deprecated in version 1.1")]
-        public static unsafe void VertexPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexPointer(size, type, stride, in pointer.GetPinnableReference());
         }
 
         [System.Obsolete("Deprecated in version 1.0")]

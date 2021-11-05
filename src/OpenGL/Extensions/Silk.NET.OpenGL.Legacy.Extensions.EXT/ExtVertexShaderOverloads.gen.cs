@@ -232,18 +232,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.Variant(id, in addr.GetPinnableReference());
         }
 
-        public static unsafe void VariantPointer<T0>(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> addr) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VariantPointer(id, type, stride, in addr.GetPinnableReference());
-        }
-
-        public static unsafe void VariantPointer<T0>(this ExtVertexShader thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> addr) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VariantPointer(id, type, stride, in addr.GetPinnableReference());
-        }
-
     }
 }
 
