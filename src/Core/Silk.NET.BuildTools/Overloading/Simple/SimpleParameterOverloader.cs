@@ -36,7 +36,7 @@ namespace Silk.NET.BuildTools.Overloading
         (
             Function original,
             Project core,
-            params ISimpleParameterOverloader[] overloaders
+            IEnumerable<ISimpleParameterOverloader> overloaders
         )
         {
             if (original.Parameters.Count == 0)

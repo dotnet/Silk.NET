@@ -29,7 +29,7 @@ namespace Silk.NET.BuildTools.Overloading
         /// <returns>An enumerable containing the original function signature and all overloads.</returns>
         public static IEnumerable<Function> GetWithOverloads(Function original,
             Project core,
-            params ISimpleReturnOverloader[] overloaders)
+            IEnumerable<ISimpleReturnOverloader> overloaders)
         {
             yield return original;
             foreach (var overloader in overloaders)
