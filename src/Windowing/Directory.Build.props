@@ -1,0 +1,5 @@
+<Project>
+    <PropertyGroup>
+        <SilkDescription>This package contains Silk.NET's high-level, cross-platform windowing abstractions.</SilkDescription>
+    </PropertyGroup>
+</Project>
