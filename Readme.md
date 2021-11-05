@@ -21,7 +21,9 @@ The proposal provides for the following usage patterns:
 
 ### Chain Building
 
-You can happily create the start of a chain as usual, and it's `SType` will be coerced when you start using it as a chain:
+You can happily create the start of a chain as usual, and it's `SType` will be coerced when you start using it as a
+chain:
+
 ```csharp
 var createInfo = new DeviceCreateInfo
 {
@@ -31,13 +33,16 @@ var createInfo = new DeviceCreateInfo
 createinfo.AddNext...
 ```
 
--in many cases, we only want to create a default structure for population by the API.  To do so, we use the static `Chain` 
+-in many cases, we only want to create a default structure for population by the API. To do so, we use the
+static `Chain`
 method like so:
+
 ```csharp
 PhysicalDeviceFeatures2.Chain(out var features2)
 ```
 
 This has several advantages:
+
 - The method is only available for structures that are valid at the start of a chain; providing compile-time validation.
 - The structure's `SType` will be correctly set immediately.
 - The syntax is fluent, and creates more readable code when used with the other chaining methods (see below).
@@ -95,7 +100,8 @@ PhysicalDeviceFeatures2
 
 *NOTE* you can mix and match `AddNext` and `SetNext` (and any chaining method) in the same method chain.
 
-By default, `SetNext` will replace any item in the chain with a matching `SType`, this behaviour can be changed by setting the optional
+By default, `SetNext` will replace any item in the chain with a matching `SType`, this behaviour can be changed by
+setting the optional
 `alwaysAdd` parameter to `true`;
 
 ```csharp
@@ -121,8 +127,8 @@ PhysicalDeviceFeatures2
 
 ### IndexOf
 
-Sometimes it's useful to know if a structure you previously supplied is still in a chain, this can be done with `IndexOf`,
-which returns a non-negative index (zero-indexed) if the structure is found, eg.:
+Sometimes it's useful to know if a structure you previously supplied is still in a chain, this can be done
+with `IndexOf`, which returns a non-negative index (zero-indexed) if the structure is found, eg.:
 
 ```csharp
 PhysicalDeviceFeatures2
@@ -137,26 +143,32 @@ Assert.Equal(2, features2.IndexOf(ref accelerationStructureFeaturesKhr));
 
 ## Features
 
-* All the chaining methods are only available on the structures that implement `IChainStart`, i.e. the structures that the
-Vulkan specification says can start a chain.
+* All the chaining methods are only available on the structures that implement `IChainStart`, i.e. the structures that
+  the Vulkan specification says can start a chain.
 * All the chaining methods ensure the chain, and any supplied structures, have their `SType` correctly set.
-* All the chaining methods will only accept a structure that is valid in the chain being extended, as per the Vulkan specification.
+* All the chaining methods will only accept a structure that is valid in the chain being extended, as per the Vulkan
+  specification.
 * The chaining methods do not box structures, or add anything to the heap.
 
 ## Changes required
 
-* Add the `IChainable` and `IChainable<TNext>` interfaces.
-* Add the `ChainExtensions` extension methods `SetNext` and `CreateNext`.
-* Add the small instance `void SetNext(void*)` method to each structure (this is required).
-* Add the small static `Chain` method to each structure (note, this is optional sugar, allowing for 'single statement'
-  building).
-* Add `IChainable<StructType>` interfaces to every chainable struct to indicate each valid structure accepted by `PNext`
-  , eg.:
+* Add the new `IStructureType`, `IChainable`, `IChainStart`, `IExtendChain<TChain>` interfaces.
+* Add the new `Chain` structure.
+* Add the `ChainExtensions` extension methods `SetNext`, `AddNew`, `IndexOf`, `AddNext` and `TryAddNext`.
+* Add the small instance `StructureType IStructuredType.StructureType()` method to `IChainable` structure.
+* Add the `IChainStart` interface and the small static `Chain` method to any structure that can be used as the start of
+  a chain.
+* Add `IExtendsChain<ChainStart>` interfaces to any structures that can extend a chain.
 
-```csharp
-public struct DeviceCreateInfo :
-    IChainable<PhysicalDeviceFeatures2>,
-    IChainable<PhysicalDeviceDescriptorIndexingFeatures>,
-    IChainable<PhysicalDeviceAccelerationStructureFeaturesKHR> ...
-```
+Note that the [Vulkan XML](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Headers/master/registry/vk.xml) does
+include the `structextends` attribute on each structure that directly maps to the `IExtendsChain<T>` interfaces that
+need to be added. However, to add the `IChainStart` interface (and it's associated method), these structures have to be
+marked as a chain start whenever we see a structure extending them.
 
+Although it is possible to not use a design that does not make use of `IChainStart` the following functionality is lost:
+
+* The `Chain` method will appear on all chainable structures, even when they don't represent the start of a chain.
+* All extension methods will appear on all chainable structures, even when they are not the start.
+* Indexing, adding, etc. can't be guaranteed to be scanning from the start of the chain.
+
+As adding `IChainStart` requires relatively simple logic I believe it's worth including.
