@@ -60,7 +60,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in byte weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public partial void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string weights);
 
         [NativeApi(EntryPoint = "glWeightusvARB")]
         public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);

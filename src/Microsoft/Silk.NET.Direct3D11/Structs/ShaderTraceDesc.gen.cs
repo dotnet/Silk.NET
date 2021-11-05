@@ -90,7 +90,7 @@ namespace Silk.NET.Direct3D11
         public uint Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L126_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L134_C5")]
         [NativeName("Name", "anonymous1")]
         public ShaderTraceDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

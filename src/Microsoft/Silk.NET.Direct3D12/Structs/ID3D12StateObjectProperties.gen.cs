@@ -129,13 +129,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier(string pExportName)
+        public readonly unsafe void* GetShaderIdentifier([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
-            var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
+            var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, void*>)LpVtbl[3])(@this, pExportNamePtr);
-            Marshal.FreeHGlobal((nint)pExportNamePtr);
+            SilkMarshal.Free((nint)pExportNamePtr);
             return ret;
         }
 
@@ -161,13 +161,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ulong GetShaderStackSize(string pExportName)
+        public readonly ulong GetShaderStackSize([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
+            var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
-            Marshal.FreeHGlobal((nint)pExportNamePtr);
+            SilkMarshal.Free((nint)pExportNamePtr);
             return ret;
         }
 

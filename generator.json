@@ -286,7 +286,14 @@
                     "cl_mipmap_filter_mode_img": "CLenum",
                     "cl_command_queue_capabilities_intel": "CLenum",
                     "cl_icd_dispatch": "void",
-                    "cl_layer_info": "uint"
+                    "cl_layer_info": "uint",
+                    "cl_semaphore_khr": "intptr_t",
+                    "cl_semaphore_properties_khr": "cl_ulong",
+                    "cl_semaphore_info_khr": "CLenum",
+                    "cl_semaphore_type_khr": "CLenum",
+                    "cl_semaphore_payload_khr": "cl_ulong",
+                    "cl_external_semaphore_handle_type_khr": "cl_uint",
+                    "cl_external_memory_handle_type_khr": "cl_uint",
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -380,8 +387,12 @@
                     "StdVideoDecodeH265PictureInfo": "Video.StdVideoDecodeH265PictureInfo",
                     "StdVideoH265ProfileIdc": "Video.StdVideoH265ProfileIdc",
                     "StdVideoH265SequenceParameterSet": "Video.StdVideoH265SequenceParameterSet",
-                    "StdVideoH265PictureParameterSet": "Video.StdVideoH265PictureParameterSet"
-                    
+                    "StdVideoH265PictureParameterSet": "Video.StdVideoH265PictureParameterSet",
+                    "StdVideoEncodeH265ReferenceInfo": "Video.StdVideoEncodeH265ReferenceInfo",
+                    "StdVideoEncodeH265SliceHeader": "Video.StdVideoEncodeH265SliceHeader",
+                    "StdVideoEncodeH265ReferenceModifications": "Video.StdVideoEncodeH265ReferenceModifications",
+                    "StdVideoH265VideoParameterSet": "Video.StdVideoH265VideoParameterSet",
+                    "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -413,11 +424,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/submodules/Vulkan-Headers/include"
                 ],
                 "traverse": [
@@ -476,10 +483,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/include",
+                    "-I$windowsSdkIncludes",
                     "-Isrc/Assimp/Include"
                 ],
                 "traverse": [
@@ -690,11 +694,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/submodules/SDL/include",
                     "-D__IPHONEOS__",
                     "-D__ANDROID__",
@@ -792,7 +792,7 @@
         {
             "profileName": "Core",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -814,11 +814,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -876,18 +872,14 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/minwinbase.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/timezoneapi.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/winnt.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntrace.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/minwinbase.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/timezoneapi.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -897,7 +889,7 @@
                 "_SECURITY_ATTRIBUTES"
             ],
             "rename": {
-                "__AnonymousEnum_evntrace_L529_C9": "EtwCompressionResumptionMode"
+                "ETW_COMPRESSION_RESUMPTION_MODE": "EtwCompressionResumptionMode"
             },
             "bakery": {
                 "profileNames": [
@@ -930,14 +922,14 @@
         {
             "profileName": "DXGI",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_2.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_3.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_4.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_5.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_6.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxgidebug.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgiformat.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_2.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_3.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_4.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_5.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_6.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/dxgidebug.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -957,16 +949,12 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgicommon.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgitype.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgicommon.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgitype.h"
                 ],
                 "classes": {
                     "dxgi.h": "[Core]DXGI",
@@ -1042,20 +1030,16 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2api.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2swdev.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva2trace.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxva9typ.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxvahd.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxva.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxva2api.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxva2swdev.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxva2trace.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxva9typ.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxvahd.h"
                 ],
                 "classes": {
                     "dxva.h": "[Core]DXVA",
@@ -1116,14 +1100,14 @@
         {
             "profileName": "D3D11",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_1.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_2.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_4.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shader.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11sdklayers.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_2.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_3.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_4.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1143,11 +1127,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1210,10 +1190,10 @@
         {
             "profileName": "D3D12",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12shader.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12video.h",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12sdklayers.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12shader.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12video.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12sdklayers.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1233,11 +1213,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1310,19 +1286,15 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d9helper.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9caps.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9types.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d9helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/d3d9.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/d3d9caps.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/d3d9types.h"
                 ],
                 "classes": {
                     "D3D9.h": "[Core]D3D9"
@@ -1392,15 +1364,11 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcapi.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/dxcapi.h"
                 ],
                 "classes": {
                     "DXC.h": "[Core]DXC"
@@ -1445,7 +1413,7 @@
         {
             "profileName": "D3DCompiler",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcompiler.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcompiler.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1464,11 +1432,7 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1546,18 +1510,14 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2fx.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/xaudio2.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/x3daudio2.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/AudioSessionTypes.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/xaudio2fx.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/xaudio2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/x3daudio2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/AudioSessionTypes.h"
                 ],
                 "classes": {
                     "silk.net.xaudio.xaudio2.h": "[Core]XAudio",
@@ -1616,15 +1576,11 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Xinput.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/Xinput.h"
                 ],
                 "classes": {
                     "silk.net.xinput.xinput.h": "[Core]XInput"
@@ -1682,31 +1638,27 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
-                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor_1.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effecthelpers.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_1.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_2.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1helper.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1svg.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_1.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_1helper.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2helper.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3helper.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2dbasetypes.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D2DErr.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
                 ],
                 "classes": {
                     "D2D1.h": "[Core]D2D1"

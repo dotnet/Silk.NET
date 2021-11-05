@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using JetBrains.Annotations;
+
 using Nuke.Common;
 using Nuke.Common.Execution;
 using Nuke.Common.IO;
@@ -92,7 +92,7 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
 
-    [CanBeNull] Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> SolutionsValue;
+    Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)>? SolutionsValue;
 
     Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> Solutions
         => SolutionsValue ??= Projects.ProcessSolution(Solution, FeatureSets, HasDesktopMsBuild);
@@ -157,7 +157,7 @@ class Build : NukeBuild
                             "extension) to the AllowedExclusions array in the NUKE Build.cs file."
                         );
 
-                        missedOut.Add(file);
+                        missedOut.Add(Path.GetRelativePath(RootDirectory, file));
                     }
                 }
 
@@ -180,6 +180,7 @@ class Build : NukeBuild
         (
             () =>
             {
+                var outputs = Enumerable.Empty<Output>();
                 if (!HasProcessedSolutions)
                 {
                     var slnDir = Path.Combine(Solution.Directory!, "build", "sln");
@@ -202,21 +203,27 @@ class Build : NukeBuild
                     Logger.Info($"Cleaning feature set \"{key}\" ({sln})");
                     if (useDesktopMsBuild)
                     {
-                        MSBuild
+                        outputs = outputs.Concat
                         (
-                            s => s.SetTargets("Clean")
-                                .SetMaxCpuCount(Environment.ProcessorCount)
-                                .SetProperties(ProcessedMsbuildProperties)
-                                .SetTargetPath(sln)
+                            MSBuild
+                            (
+                                s => s.SetTargets("Clean")
+                                    .SetMaxCpuCount(Environment.ProcessorCount)
+                                    .SetProperties(ProcessedMsbuildProperties)
+                                    .SetTargetPath(sln)
+                            )
                         );
                     }
                     else
                     {
-                        DotNetClean
+                        outputs = outputs.Concat
                         (
-                            s => s.SetProject(sln)
-                                .SetConfiguration(Configuration)
-                                .SetProperties(ProcessedMsbuildProperties)
+                            DotNetClean
+                            (
+                                s => s.SetProject(sln)
+                                    .SetConfiguration(Configuration)
+                                    .SetProperties(ProcessedMsbuildProperties)
+                            )
                         );
                     }
                 }
@@ -228,12 +235,21 @@ class Build : NukeBuild
 
                 Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
 
-                var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
-                using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
-                    : StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
-                process.AssertZeroExitCode();
-                return process.Output;
+                if (FeatureSets.Any(x => x.Equals("native", StringComparison.OrdinalIgnoreCase)))
+                {
+                    var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
+                    using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+                        ? StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
+                        : StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
+                    process.AssertZeroExitCode();
+                    outputs = outputs.Concat(process.Output);
+                }
+                else
+                {
+                    Logger.Warn("Skipping gradlew clean as the \"native\" feature-set has not been specified.");
+                }
+
+                return outputs;
             }
         );
 
@@ -300,7 +316,7 @@ class Build : NukeBuild
                             s => s
                                 .SetProjectFile(sln)
                                 .SetConfiguration(Configuration)
-                                .SetNoRestore(true)
+                                .EnableNoRestore()
                                 .SetProperties(ProcessedMsbuildProperties)
                         );
                     }
@@ -357,6 +373,12 @@ class Build : NukeBuild
         (
             () =>
             {
+                if (!FeatureSets.Any(x => x.Equals("native", StringComparison.OrdinalIgnoreCase)))
+                {
+                    Logger.Warn("Skipping gradlew build as the \"native\" feature-set has not been specified.");
+                    return Enumerable.Empty<Output>();
+                }
+                
                 var sdl = RootDirectory / "build" / "submodules" / "SDL";
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 var xcopy = new (string, string)[]
@@ -425,7 +447,7 @@ class Build : NukeBuild
                             s => s
                                 .SetProject(sln)
                                 .SetConfiguration(Configuration)
-                                .SetNoRestore(true)
+                                .EnableNoRestore()
                                 .SetProperties(ProcessedMsbuildProperties)
                         );
                     }
@@ -448,8 +470,9 @@ class Build : NukeBuild
     static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
         .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
 
-    async Task PushPackages()
+    async Task<IEnumerable<Output>> PushPackages()
     {
+        var outputs = Enumerable.Empty<Output>();
         const int rateLimit = 300;
         if (!string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword))
         {
@@ -457,12 +480,15 @@ class Build : NukeBuild
             var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
             if (!File.Exists(execPath))
             {
-                DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"));
+                outputs = outputs.Concat
+                (
+                    DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"))
+                );
             }
 
             foreach (var pkg in Packages)
             {
-                StartProcess
+                var proc = StartProcess
                 (
                     execPath,
                     "sign " +
@@ -475,7 +501,10 @@ class Build : NukeBuild
                     "--name \"Silk.NET\" " +
                     "--description \"Silk.NET\" " +
                     "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
-                ).AssertZeroExitCode();
+                );
+
+                proc.AssertZeroExitCode();
+                outputs = outputs.Concat(proc.Output);
             }
         }
 
@@ -484,11 +513,6 @@ class Build : NukeBuild
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
         var first = true;
-        var pushed = 0;
-        var feed = NuGetInterface.OpenNuGetFeed(NugetFeed, NugetUsername, NugetPassword);
-        var uploadResource = await NuGetInterface.GetUploadResourceAsync(feed);
-        var symbolsResource = await NuGetInterface.GetSymbolsUploadResourceAsync(feed);
-        var exceptions = new List<Exception>();
         Logger.Info($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
         foreach (var files in allFiles)
         {
@@ -501,33 +525,33 @@ class Build : NukeBuild
                 await Task.Delay(TimeSpan.FromHours(1));
             }
 
-            foreach (var file in files)
+            var srcSettings = new DotNetNuGetAddSourceSettings().SetName("Silk-PushPackages").SetSource(NugetFeed);
+            if (NugetUsername is not null || NugetPassword is not null)
             {
-                try
+                if (NugetUsername is null || NugetPassword is null)
                 {
-                    await NuGetInterface.UploadPackageAsync
-                        (uploadResource, NugetNoServiceEndpoint, file, NugetApiKey, symbolsResource);
-                    pushed++;
+                    ControlFlow.Fail
+                    (
+                        "Both \"NugetUsername\" and \"NugetPassword\" must be specified if either are used."
+                    );
                 }
-                catch (Exception ex)
-                {
-                    if (file.Contains(".Native.")) // native packages have their own update cycle
-                    {
-                        Logger.Warn(ex);
-                    }
-                    else
-                    {
-                        exceptions.Add(new Exception($"Failed to push package \"{file}\"", ex));
-                    }
-                }
+
+                srcSettings = srcSettings.SetUsername(NugetUsername).SetPassword(NugetPassword);
             }
+            
+            outputs = outputs.Concat(DotNetNuGetAddSource(srcSettings));
+
+            foreach (var pushSettings in files.Select(file => new DotNetNuGetPushSettings()
+                .SetNoServiceEndpoint(NugetNoServiceEndpoint)
+                .EnableSkipDuplicate()
+                .SetTargetPath(file)))
+            {
+                outputs = outputs.Concat(DotNetNuGetPush(pushSettings));
+            }
+
+            outputs = outputs.Concat(DotNet($"dotnet nuget remove source \"Silk-PushPackages\""));
         }
 
-        Logger.Success($"Successfully pushed {pushed} packages.");
-
-        if (exceptions.Count > 0)
-        {
-            throw new AggregateException(exceptions);
-        }
+        return outputs;
     }
 }

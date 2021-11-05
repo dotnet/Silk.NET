@@ -154,9 +154,9 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
             }
             return ret;
         }
@@ -166,11 +166,11 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
                 }
             }
             return ret;

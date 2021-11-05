@@ -426,7 +426,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in byte addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public partial void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] string addr);
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string addr);
 
         [NativeApi(EntryPoint = "glVariantusvEXT")]
         public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ushort* addr);

@@ -75,7 +75,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] in byte v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ubvEXT")]
-        public partial void SecondaryColor3([Flow(FlowDirection.In)] string v);
+        public partial void SecondaryColor3([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3uiEXT")]
         public partial void SecondaryColor3([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue);

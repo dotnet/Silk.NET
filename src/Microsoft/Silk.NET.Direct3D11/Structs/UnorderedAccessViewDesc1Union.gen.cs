@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_3_L1627_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d11_3_L1689_C5")]
     public unsafe partial struct UnorderedAccessViewDesc1Union
     {
         public UnorderedAccessViewDesc1Union

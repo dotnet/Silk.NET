@@ -12,7 +12,7 @@ namespace Silk.NET.BuildTools.Common
     /// <summary>
     /// A struct from a native library.
     /// </summary>
-    public class Struct
+    public class Struct : IProfileConstituent
     {
         /// <summary>
         /// The name of the struct.

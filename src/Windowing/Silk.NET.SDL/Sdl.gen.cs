@@ -51,6 +51,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 202, Column 38 in build/submodules/SDL/include/SDL_platform.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPlatform")]
         public partial string GetPlatformS();
 
@@ -181,6 +182,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 431, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_getenv")]
         public unsafe partial string GetenvS(byte* name);
 
@@ -191,18 +193,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 431, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_getenv")]
         public partial string GetenvS(ref byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 431, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_getenv")]
-        public unsafe partial byte* Getenv(string name);
+        public unsafe partial byte* Getenv([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 431, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_getenv")]
-        public partial string GetenvS(string name);
+        public partial string GetenvS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -217,7 +221,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public unsafe partial int Setenv(byte* name, string value, int overwrite);
+        public unsafe partial int Setenv(byte* name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -232,22 +236,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv(ref byte name, string value, int overwrite);
+        public partial int Setenv(ref byte name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public unsafe partial int Setenv(string name, byte* value, int overwrite);
+        public unsafe partial int Setenv([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, byte* value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv(string name, ref byte value, int overwrite);
+        public partial int Setenv([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref byte value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv(string name, string value, int overwrite);
+        public partial int Setenv([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 434, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -427,7 +431,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 502, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslen")]
-        public partial nuint Wcslen(string wstr);
+        public partial nuint Wcslen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -442,7 +446,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public unsafe partial nuint Wcslcpy(char* dst, string src, nuint maxlen);
+        public unsafe partial nuint Wcslcpy(char* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -457,22 +461,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial nuint Wcslcpy(ref char dst, string src, nuint maxlen);
+        public partial nuint Wcslcpy(ref char dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public unsafe partial nuint Wcslcpy(string dst, char* src, nuint maxlen);
+        public unsafe partial nuint Wcslcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, char* src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial nuint Wcslcpy(string dst, ref char src, nuint maxlen);
+        public partial nuint Wcslcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial nuint Wcslcpy(string dst, string src, nuint maxlen);
+        public partial nuint Wcslcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -487,7 +491,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public unsafe partial nuint Wcslcat(char* dst, string src, nuint maxlen);
+        public unsafe partial nuint Wcslcat(char* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -502,22 +506,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial nuint Wcslcat(ref char dst, string src, nuint maxlen);
+        public partial nuint Wcslcat(ref char dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public unsafe partial nuint Wcslcat(string dst, char* src, nuint maxlen);
+        public unsafe partial nuint Wcslcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, char* src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial nuint Wcslcat(string dst, ref char src, nuint maxlen);
+        public partial nuint Wcslcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref char src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial nuint Wcslcat(string dst, string src, nuint maxlen);
+        public partial nuint Wcslcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 505, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -526,6 +530,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 505, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
         public unsafe partial string WcsdupS(char* wstr);
 
@@ -536,18 +541,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 505, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
         public partial string WcsdupS(ref char wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 505, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
-        public unsafe partial char* Wcsdup(string wstr);
+        public unsafe partial char* Wcsdup([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 505, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
-        public partial string WcsdupS(string wstr);
+        public partial string WcsdupS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string wstr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -556,6 +563,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public unsafe partial string WcsstrS(char* haystack, char* needle);
 
@@ -566,18 +574,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public unsafe partial string WcsstrS(char* haystack, ref char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr(char* haystack, string needle);
+        public unsafe partial char* Wcsstr(char* haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial string WcsstrS(char* haystack, string needle);
+        public unsafe partial string WcsstrS(char* haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -586,6 +596,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public unsafe partial string WcsstrS(ref char haystack, char* needle);
 
@@ -596,48 +607,53 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public partial string WcsstrS(ref char haystack, ref char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr(ref char haystack, string needle);
+        public unsafe partial char* Wcsstr(ref char haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public partial string WcsstrS(ref char haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS(ref char haystack, string needle);
+        public unsafe partial char* Wcsstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, char* needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public unsafe partial string WcsstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, char* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr(string haystack, char* needle);
+        public unsafe partial char* Wcsstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, ref char needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public partial string WcsstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, ref char needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial string WcsstrS(string haystack, char* needle);
+        public unsafe partial char* Wcsstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr(string haystack, ref char needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS(string haystack, ref char needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public unsafe partial char* Wcsstr(string haystack, string needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string WcsstrS(string haystack, string needle);
+        public partial string WcsstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -652,7 +668,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public unsafe partial int Wcscmp(char* str1, string str2);
+        public unsafe partial int Wcscmp(char* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -667,22 +683,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp(ref char str1, string str2);
+        public partial int Wcscmp(ref char str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public unsafe partial int Wcscmp(string str1, char* str2);
+        public unsafe partial int Wcscmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, char* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp(string str1, ref char str2);
+        public partial int Wcscmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp(string str1, string str2);
+        public partial int Wcscmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -697,7 +713,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public unsafe partial int Wcsncmp(char* str1, string str2, nuint maxlen);
+        public unsafe partial int Wcsncmp(char* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -712,22 +728,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp(ref char str1, string str2, nuint maxlen);
+        public partial int Wcsncmp(ref char str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public unsafe partial int Wcsncmp(string str1, char* str2, nuint maxlen);
+        public unsafe partial int Wcsncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, char* str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp(string str1, ref char str2, nuint maxlen);
+        public partial int Wcsncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref char str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp(string str1, string str2, nuint maxlen);
+        public partial int Wcsncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -742,7 +758,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public unsafe partial int Wcscasecmp(char* str1, string str2);
+        public unsafe partial int Wcscasecmp(char* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -757,22 +773,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp(ref char str1, string str2);
+        public partial int Wcscasecmp(ref char str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public unsafe partial int Wcscasecmp(string str1, char* str2);
+        public unsafe partial int Wcscasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, char* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp(string str1, ref char str2);
+        public partial int Wcscasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref char str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscasecmp")]
-        public partial int Wcscasecmp(string str1, string str2);
+        public partial int Wcscasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -787,7 +803,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public unsafe partial int Wcsncasecmp(char* str1, string str2, nuint len);
+        public unsafe partial int Wcsncasecmp(char* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -802,22 +818,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp(ref char str1, string str2, nuint len);
+        public partial int Wcsncasecmp(ref char str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public unsafe partial int Wcsncasecmp(string str1, char* str2, nuint len);
+        public unsafe partial int Wcsncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, char* str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp(string str1, ref char str2, nuint len);
+        public partial int Wcsncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref char str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncasecmp")]
-        public partial int Wcsncasecmp(string str1, string str2, nuint len);
+        public partial int Wcsncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 513, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -832,7 +848,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 513, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlen")]
-        public partial nuint Strlen(string str);
+        public partial nuint Strlen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -847,7 +863,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public unsafe partial nuint Strlcpy(byte* dst, string src, nuint maxlen);
+        public unsafe partial nuint Strlcpy(byte* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -862,22 +878,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial nuint Strlcpy(ref byte dst, string src, nuint maxlen);
+        public partial nuint Strlcpy(ref byte dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public unsafe partial nuint Strlcpy(string dst, byte* src, nuint maxlen);
+        public unsafe partial nuint Strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, byte* src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial nuint Strlcpy(string dst, ref byte src, nuint maxlen);
+        public partial nuint Strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial nuint Strlcpy(string dst, string src, nuint maxlen);
+        public partial nuint Strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -892,7 +908,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public unsafe partial nuint Utf8strlcpy(byte* dst, string src, nuint dst_bytes);
+        public unsafe partial nuint Utf8strlcpy(byte* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -907,22 +923,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial nuint Utf8strlcpy(ref byte dst, string src, nuint dst_bytes);
+        public partial nuint Utf8strlcpy(ref byte dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public unsafe partial nuint Utf8strlcpy(string dst, byte* src, nuint dst_bytes);
+        public unsafe partial nuint Utf8strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, byte* src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial nuint Utf8strlcpy(string dst, ref byte src, nuint dst_bytes);
+        public partial nuint Utf8strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref byte src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial nuint Utf8strlcpy(string dst, string src, nuint dst_bytes);
+        public partial nuint Utf8strlcpy([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint dst_bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -937,7 +953,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public unsafe partial nuint Strlcat(byte* dst, string src, nuint maxlen);
+        public unsafe partial nuint Strlcat(byte* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -952,22 +968,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial nuint Strlcat(ref byte dst, string src, nuint maxlen);
+        public partial nuint Strlcat(ref byte dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public unsafe partial nuint Strlcat(string dst, byte* src, nuint maxlen);
+        public unsafe partial nuint Strlcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, byte* src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial nuint Strlcat(string dst, ref byte src, nuint maxlen);
+        public partial nuint Strlcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref byte src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial nuint Strlcat(string dst, string src, nuint maxlen);
+        public partial nuint Strlcat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -976,6 +992,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strdup")]
         public unsafe partial string StrdupS(byte* str);
 
@@ -986,18 +1003,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strdup")]
         public partial string StrdupS(ref byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strdup")]
-        public unsafe partial byte* Strdup(string str);
+        public unsafe partial byte* Strdup([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strdup")]
-        public partial string StrdupS(string str);
+        public partial string StrdupS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 518, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1006,6 +1025,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 518, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrev")]
         public unsafe partial string StrrevS(byte* str);
 
@@ -1016,18 +1036,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 518, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrev")]
         public partial string StrrevS(ref byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 518, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrev")]
-        public unsafe partial byte* Strrev(string str);
+        public unsafe partial byte* Strrev([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 518, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrev")]
-        public partial string StrrevS(string str);
+        public partial string StrrevS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1036,6 +1058,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strupr")]
         public unsafe partial string StruprS(byte* str);
 
@@ -1046,18 +1069,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strupr")]
         public partial string StruprS(ref byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strupr")]
-        public unsafe partial byte* Strupr(string str);
+        public unsafe partial byte* Strupr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strupr")]
-        public partial string StruprS(string str);
+        public partial string StruprS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1066,6 +1091,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strlwr")]
         public unsafe partial string StrlwrS(byte* str);
 
@@ -1076,18 +1102,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strlwr")]
         public partial string StrlwrS(ref byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlwr")]
-        public unsafe partial byte* Strlwr(string str);
+        public unsafe partial byte* Strlwr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strlwr")]
-        public partial string StrlwrS(string str);
+        public partial string StrlwrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1096,6 +1124,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strchr")]
         public unsafe partial string StrchrS(byte* str, int c);
 
@@ -1106,18 +1135,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strchr")]
         public partial string StrchrS(ref byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strchr")]
-        public unsafe partial byte* Strchr(string str, int c);
+        public unsafe partial byte* Strchr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strchr")]
-        public partial string StrchrS(string str, int c);
+        public partial string StrchrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 522, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1126,6 +1157,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 522, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrchr")]
         public unsafe partial string StrrchrS(byte* str, int c);
 
@@ -1136,18 +1168,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 522, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrchr")]
         public partial string StrrchrS(ref byte str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 522, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrchr")]
-        public unsafe partial byte* Strrchr(string str, int c);
+        public unsafe partial byte* Strrchr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 522, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strrchr")]
-        public partial string StrrchrS(string str, int c);
+        public partial string StrrchrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int c);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1156,6 +1190,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public unsafe partial string StrstrS(byte* haystack, byte* needle);
 
@@ -1166,18 +1201,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public unsafe partial string StrstrS(byte* haystack, ref byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr(byte* haystack, string needle);
+        public unsafe partial byte* Strstr(byte* haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial string StrstrS(byte* haystack, string needle);
+        public unsafe partial string StrstrS(byte* haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1186,6 +1223,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public unsafe partial string StrstrS(ref byte haystack, byte* needle);
 
@@ -1196,48 +1234,53 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public partial string StrstrS(ref byte haystack, ref byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr(ref byte haystack, string needle);
+        public unsafe partial byte* Strstr(ref byte haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public partial string StrstrS(ref byte haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS(ref byte haystack, string needle);
+        public unsafe partial byte* Strstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, byte* needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public unsafe partial string StrstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr(string haystack, byte* needle);
+        public unsafe partial byte* Strstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, ref byte needle);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public partial string StrstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, ref byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial string StrstrS(string haystack, byte* needle);
+        public unsafe partial byte* Strstr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr(string haystack, ref byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS(string haystack, ref byte needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public unsafe partial byte* Strstr(string haystack, string needle);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string StrstrS(string haystack, string needle);
+        public partial string StrstrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1246,6 +1289,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(byte* s1, byte* s2, byte** saveptr);
 
@@ -1256,6 +1300,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(byte* s1, byte* s2, ref byte* saveptr);
 
@@ -1266,6 +1311,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(byte* s1, ref byte s2, byte** saveptr);
 
@@ -1276,28 +1322,31 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(byte* s1, ref byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(byte* s1, string s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(byte* s1, string s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(byte* s1, string s2, ref byte* saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(byte* s1, string s2, ref byte* saveptr);
+        public unsafe partial string StrtokrS(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1306,6 +1355,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(ref byte s1, byte* s2, byte** saveptr);
 
@@ -1316,6 +1366,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(ref byte s1, byte* s2, ref byte* saveptr);
 
@@ -1326,6 +1377,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(ref byte s1, ref byte s2, byte** saveptr);
 
@@ -1336,88 +1388,97 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial string StrtokrS(ref byte s1, ref byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(ref byte s1, string s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(ref byte s1, string s2, byte** saveptr);
+        public unsafe partial byte* Strtokr(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(ref byte s1, string s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, byte** saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(ref byte s1, string s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, ref byte* saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, byte* s2, byte** saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, byte** saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, byte* s2, byte** saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, ref byte* saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, byte* s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, byte* s2, ref byte* saveptr);
+        public unsafe partial byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, ref byte s2, byte** saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, ref byte s2, byte** saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, ref byte s2, ref byte* saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, ref byte s2, ref byte* saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, string s2, byte** saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, string s2, byte** saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial byte* Strtokr(string s1, string s2, ref byte* saveptr);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string StrtokrS(string s1, string s2, ref byte* saveptr);
+        public unsafe partial string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 525, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1432,7 +1493,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 525, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlen")]
-        public partial nuint Utf8strlen(string str);
+        public partial nuint Utf8strlen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1441,6 +1502,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_itoa")]
         public unsafe partial string ItoaS(int value, byte* str, int radix);
 
@@ -1451,18 +1513,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_itoa")]
         public partial string ItoaS(int value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_itoa")]
-        public unsafe partial byte* Itoa(int value, string str, int radix);
+        public unsafe partial byte* Itoa(int value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_itoa")]
-        public partial string ItoaS(int value, string str, int radix);
+        public partial string ItoaS(int value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1471,6 +1535,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_uitoa")]
         public unsafe partial string UitoaS(uint value, byte* str, int radix);
 
@@ -1481,18 +1546,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_uitoa")]
         public partial string UitoaS(uint value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_uitoa")]
-        public unsafe partial byte* Uitoa(uint value, string str, int radix);
+        public unsafe partial byte* Uitoa(uint value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 528, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_uitoa")]
-        public partial string UitoaS(uint value, string str, int radix);
+        public partial string UitoaS(uint value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1501,6 +1568,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ltoa")]
         public unsafe partial string LtoaS(int value, byte* str, int radix);
 
@@ -1511,18 +1579,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ltoa")]
         public partial string LtoaS(int value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ltoa")]
-        public unsafe partial byte* Ltoa(int value, string str, int radix);
+        public unsafe partial byte* Ltoa(int value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ltoa")]
-        public partial string LtoaS(int value, string str, int radix);
+        public partial string LtoaS(int value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1531,6 +1601,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ultoa")]
         public unsafe partial string UltoaS(uint value, byte* str, int radix);
 
@@ -1541,18 +1612,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ultoa")]
         public partial string UltoaS(uint value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ultoa")]
-        public unsafe partial byte* Ultoa(uint value, string str, int radix);
+        public unsafe partial byte* Ultoa(uint value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ultoa")]
-        public partial string UltoaS(uint value, string str, int radix);
+        public partial string UltoaS(uint value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1561,6 +1634,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_lltoa")]
         public unsafe partial string LltoaS(long value, byte* str, int radix);
 
@@ -1571,18 +1645,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_lltoa")]
         public partial string LltoaS(long value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_lltoa")]
-        public unsafe partial byte* Lltoa(long value, string str, int radix);
+        public unsafe partial byte* Lltoa(long value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_lltoa")]
-        public partial string LltoaS(long value, string str, int radix);
+        public partial string LltoaS(long value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 532, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1591,6 +1667,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 532, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
         public unsafe partial string UlltoaS(ulong value, byte* str, int radix);
 
@@ -1601,18 +1678,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 532, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
         public partial string UlltoaS(ulong value, ref byte str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 532, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
-        public unsafe partial byte* Ulltoa(ulong value, string str, int radix);
+        public unsafe partial byte* Ulltoa(ulong value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 532, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
-        public partial string UlltoaS(ulong value, string str, int radix);
+        public partial string UlltoaS(ulong value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, int radix);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 534, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1627,7 +1706,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 534, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atoi")]
-        public partial int Atoi(string str);
+        public partial int Atoi([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 535, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1642,7 +1721,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 535, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atof")]
-        public partial double Atof(string str);
+        public partial double Atof([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 536, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1667,12 +1746,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 536, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
-        public unsafe partial int Strtol(string str, byte** endp, int @base);
+        public unsafe partial int Strtol([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 536, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
-        public unsafe partial int Strtol(string str, ref byte* endp, int @base);
+        public unsafe partial int Strtol([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 537, Column 39 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1697,12 +1776,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 537, Column 39 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
-        public unsafe partial uint Strtoul(string str, byte** endp, int @base);
+        public unsafe partial uint Strtoul([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 537, Column 39 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
-        public unsafe partial uint Strtoul(string str, ref byte* endp, int @base);
+        public unsafe partial uint Strtoul([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1727,12 +1806,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
-        public unsafe partial long Strtoll(string str, byte** endp, int @base);
+        public unsafe partial long Strtoll([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
-        public unsafe partial long Strtoll(string str, ref byte* endp, int @base);
+        public unsafe partial long Strtoll([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1757,12 +1836,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
-        public unsafe partial ulong Strtoull(string str, byte** endp, int @base);
+        public unsafe partial ulong Strtoull([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, byte** endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
-        public unsafe partial ulong Strtoull(string str, ref byte* endp, int @base);
+        public unsafe partial ulong Strtoull([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref byte* endp, int @base);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1787,12 +1866,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
-        public unsafe partial double Strtod(string str, byte** endp);
+        public unsafe partial double Strtod([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, byte** endp);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
-        public unsafe partial double Strtod(string str, ref byte* endp);
+        public unsafe partial double Strtod([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, ref byte* endp);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1807,7 +1886,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public unsafe partial int Strcmp(byte* str1, string str2);
+        public unsafe partial int Strcmp(byte* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1822,22 +1901,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp(ref byte str1, string str2);
+        public partial int Strcmp(ref byte str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public unsafe partial int Strcmp(string str1, byte* str2);
+        public unsafe partial int Strcmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, byte* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp(string str1, ref byte str2);
+        public partial int Strcmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp(string str1, string str2);
+        public partial int Strcmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1852,7 +1931,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public unsafe partial int Strncmp(byte* str1, string str2, nuint maxlen);
+        public unsafe partial int Strncmp(byte* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1867,22 +1946,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp(ref byte str1, string str2, nuint maxlen);
+        public partial int Strncmp(ref byte str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public unsafe partial int Strncmp(string str1, byte* str2, nuint maxlen);
+        public unsafe partial int Strncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, byte* str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp(string str1, ref byte str2, nuint maxlen);
+        public partial int Strncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref byte str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp(string str1, string str2, nuint maxlen);
+        public partial int Strncmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1897,7 +1976,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public unsafe partial int Strcasecmp(byte* str1, string str2);
+        public unsafe partial int Strcasecmp(byte* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1912,22 +1991,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp(ref byte str1, string str2);
+        public partial int Strcasecmp(ref byte str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public unsafe partial int Strcasecmp(string str1, byte* str2);
+        public unsafe partial int Strcasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, byte* str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp(string str1, ref byte str2);
+        public partial int Strcasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref byte str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp(string str1, string str2);
+        public partial int Strcasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1942,7 +2021,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public unsafe partial int Strncasecmp(byte* str1, string str2, nuint len);
+        public unsafe partial int Strncasecmp(byte* str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1957,22 +2036,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp(ref byte str1, string str2, nuint len);
+        public partial int Strncasecmp(ref byte str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public unsafe partial int Strncasecmp(string str1, byte* str2, nuint len);
+        public unsafe partial int Strncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, byte* str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp(string str1, ref byte str2, nuint len);
+        public partial int Strncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, ref byte str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp(string str1, string str2, nuint len);
+        public partial int Strncasecmp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -1987,7 +2066,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public unsafe partial int Sscanf(byte* text, string fmt);
+        public unsafe partial int Sscanf(byte* text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2002,22 +2081,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf(ref byte text, string fmt);
+        public partial int Sscanf(ref byte text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public unsafe partial int Sscanf(string text, byte* fmt);
+        public unsafe partial int Sscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, byte* fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf(string text, ref byte fmt);
+        public partial int Sscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, ref byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf(string text, string fmt);
+        public partial int Sscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2032,7 +2111,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(byte* text, byte* fmt, string ap);
+        public unsafe partial int Vsscanf(byte* text, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2047,22 +2126,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(byte* text, ref byte fmt, string ap);
+        public unsafe partial int Vsscanf(byte* text, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(byte* text, string fmt, byte* ap);
+        public unsafe partial int Vsscanf(byte* text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(byte* text, string fmt, ref byte ap);
+        public unsafe partial int Vsscanf(byte* text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(byte* text, string fmt, string ap);
+        public unsafe partial int Vsscanf(byte* text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2077,7 +2156,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(ref byte text, byte* fmt, string ap);
+        public unsafe partial int Vsscanf(ref byte text, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2092,67 +2171,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(ref byte text, ref byte fmt, string ap);
+        public partial int Vsscanf(ref byte text, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(ref byte text, string fmt, byte* ap);
+        public unsafe partial int Vsscanf(ref byte text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(ref byte text, string fmt, ref byte ap);
+        public partial int Vsscanf(ref byte text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(ref byte text, string fmt, string ap);
+        public partial int Vsscanf(ref byte text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(string text, byte* fmt, byte* ap);
+        public unsafe partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, byte* fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(string text, byte* fmt, ref byte ap);
+        public unsafe partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, byte* fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(string text, byte* fmt, string ap);
+        public unsafe partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(string text, ref byte fmt, byte* ap);
+        public unsafe partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, ref byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(string text, ref byte fmt, ref byte ap);
+        public partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, ref byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(string text, ref byte fmt, string ap);
+        public partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public unsafe partial int Vsscanf(string text, string fmt, byte* ap);
+        public unsafe partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(string text, string fmt, ref byte ap);
+        public partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(string text, string fmt, string ap);
+        public partial int Vsscanf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2167,7 +2246,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public unsafe partial int Snprintf(byte* text, nuint maxlen, string fmt);
+        public unsafe partial int Snprintf(byte* text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2182,22 +2261,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf(ref byte text, nuint maxlen, string fmt);
+        public partial int Snprintf(ref byte text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public unsafe partial int Snprintf(string text, nuint maxlen, byte* fmt);
+        public unsafe partial int Snprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, byte* fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf(string text, nuint maxlen, ref byte fmt);
+        public partial int Snprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, ref byte fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf(string text, nuint maxlen, string fmt);
+        public partial int Snprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2212,7 +2291,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, byte* fmt, string ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2227,22 +2306,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, ref byte fmt, string ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, string fmt, byte* ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, string fmt, ref byte ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, string fmt, string ap);
+        public unsafe partial int Vsnprintf(byte* text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2257,7 +2336,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, byte* fmt, string ap);
+        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2272,67 +2351,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(ref byte text, nuint maxlen, ref byte fmt, string ap);
+        public partial int Vsnprintf(ref byte text, nuint maxlen, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, string fmt, byte* ap);
+        public unsafe partial int Vsnprintf(ref byte text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(ref byte text, nuint maxlen, string fmt, ref byte ap);
+        public partial int Vsnprintf(ref byte text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(ref byte text, nuint maxlen, string fmt, string ap);
+        public partial int Vsnprintf(ref byte text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(string text, nuint maxlen, byte* fmt, byte* ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, byte* fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(string text, nuint maxlen, byte* fmt, ref byte ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, byte* fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(string text, nuint maxlen, byte* fmt, string ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(string text, nuint maxlen, ref byte fmt, byte* ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, ref byte fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(string text, nuint maxlen, ref byte fmt, ref byte ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, ref byte fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(string text, nuint maxlen, ref byte fmt, string ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public unsafe partial int Vsnprintf(string text, nuint maxlen, string fmt, byte* ap);
+        public unsafe partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(string text, nuint maxlen, string fmt, ref byte ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(string text, nuint maxlen, string fmt, string ap);
+        public partial int Vsnprintf([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 558, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2557,7 +2636,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(byte* tocode, string fromcode);
+        public unsafe partial Icon* IconvOpen(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2572,22 +2651,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(ref byte tocode, string fromcode);
+        public unsafe partial Icon* IconvOpen(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(string tocode, byte* fromcode);
+        public unsafe partial Icon* IconvOpen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(string tocode, ref byte fromcode);
+        public unsafe partial Icon* IconvOpen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(string tocode, string fromcode);
+        public unsafe partial Icon* IconvOpen([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 611, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2766,6 +2845,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(byte* tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
 
@@ -2776,18 +2856,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(byte* tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(byte* tocode, byte* fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(byte* tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(byte* tocode, byte* fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS(byte* tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2796,6 +2878,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(byte* tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
 
@@ -2806,48 +2889,53 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(byte* tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(byte* tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(byte* tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS(byte* tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(byte* tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(byte* tocode, string fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(byte* tocode, string fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(byte* tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(byte* tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(byte* tocode, string fromcode, string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(byte* tocode, string fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS(byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2856,6 +2944,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(ref byte tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
 
@@ -2866,18 +2955,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(ref byte tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(ref byte tocode, byte* fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(ref byte tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(ref byte tocode, byte* fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial string IconvStringS(ref byte tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
@@ -2886,6 +2977,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial string IconvStringS(ref byte tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
 
@@ -2896,138 +2988,152 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public partial string IconvStringS(ref byte tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(ref byte tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(ref byte tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS(ref byte tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(ref byte tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(ref byte tocode, string fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(ref byte tocode, string fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS(ref byte tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(ref byte tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(ref byte tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(ref byte tocode, string fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(ref byte tocode, string fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(string tocode, byte* fromcode, byte* inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, ref byte fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public unsafe partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(string tocode, byte* fromcode, ref byte inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, ref byte inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, byte* fromcode, string inbuf, nuint inbytesleft);
+        public unsafe partial byte* IconvString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(string tocode, byte* fromcode, string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(string tocode, ref byte fromcode, byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(string tocode, ref byte fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(string tocode, ref byte fromcode, string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, string fromcode, byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial string IconvStringS(string tocode, string fromcode, byte* inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(string tocode, string fromcode, ref byte inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public unsafe partial byte* IconvString(string tocode, string fromcode, string inbuf, nuint inbytesleft);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvStringS(string tocode, string fromcode, string inbuf, nuint inbytesleft);
+        public partial string IconvStringS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 356, Column 37 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3036,6 +3142,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 356, Column 37 in build/submodules/SDL/include/SDL_pixels.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPixelFormatName")]
         public partial string GetPixelFormatNameS(uint format);
 
@@ -3307,7 +3414,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3322,22 +3429,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, ref byte g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, string g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, string g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3352,7 +3459,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3367,67 +3474,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, ref byte g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, string g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, string g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, byte* g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, byte* g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, ref byte g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, ref byte g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, ref byte g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, string g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, string g, string b);
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3442,7 +3549,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3457,22 +3564,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, ref byte g, string b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, string g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, string g, string b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3487,7 +3594,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3502,67 +3609,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, ref byte g, string b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, string g, ref byte b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, string g, string b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, string r, byte* g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, string r, byte* g, ref byte b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, string r, byte* g, string b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, string r, ref byte g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, string r, ref byte g, ref byte b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, string r, ref byte g, string b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, string r, string g, byte* b);
+        public unsafe partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, string r, string g, ref byte b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, ref PixelFormat format, string r, string g, string b);
+        public partial void GetRGB(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3577,7 +3684,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3592,22 +3699,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3622,7 +3729,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3637,67 +3744,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, string g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3712,7 +3819,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3727,22 +3834,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3757,7 +3864,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3772,202 +3879,202 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, string g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, ref byte g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3982,7 +4089,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -3997,22 +4104,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4027,7 +4134,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4042,67 +4149,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, string g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4117,7 +4224,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4132,22 +4239,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4162,7 +4269,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4177,202 +4284,202 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, ref byte b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, string b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, string b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, ref byte b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, string b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, string g, string b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, ref byte b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, ref byte b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, string b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, byte* g, string b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, ref byte b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, string b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, ref byte g, string b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, byte* b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, byte* b, ref byte a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, byte* b, string a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, ref byte b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, ref byte b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, ref byte b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, string b, byte* a);
+        public unsafe partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, string b, ref byte a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, ref PixelFormat format, string r, string g, string b, string a);
+        public partial void GetRGBA(uint pixel, ref PixelFormat format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 602, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4397,7 +4504,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 64, Column 29 in build/submodules/SDL/include/SDL_error.h")]
         [NativeApi(EntryPoint = "SDL_SetError")]
-        public partial int SetError(string fmt);
+        public partial int SetError([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 98, Column 37 in build/submodules/SDL/include/SDL_error.h")]
@@ -4406,6 +4513,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 98, Column 37 in build/submodules/SDL/include/SDL_error.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetError")]
         public partial string GetErrorS();
 
@@ -4416,6 +4524,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 113, Column 32 in build/submodules/SDL/include/SDL_error.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetErrorMsg")]
         public unsafe partial string GetErrorMsgS(byte* errstr, int maxlen);
 
@@ -4426,18 +4535,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 113, Column 32 in build/submodules/SDL/include/SDL_error.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetErrorMsg")]
         public partial string GetErrorMsgS(ref byte errstr, int maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 113, Column 32 in build/submodules/SDL/include/SDL_error.h")]
         [NativeApi(EntryPoint = "SDL_GetErrorMsg")]
-        public unsafe partial byte* GetErrorMsg(string errstr, int maxlen);
+        public unsafe partial byte* GetErrorMsg([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, int maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 113, Column 32 in build/submodules/SDL/include/SDL_error.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetErrorMsg")]
-        public partial string GetErrorMsgS(string errstr, int maxlen);
+        public partial string GetErrorMsgS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, int maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 121, Column 30 in build/submodules/SDL/include/SDL_error.h")]
@@ -4947,7 +5058,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -4962,22 +5073,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, ref byte g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, string g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, string g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -4992,7 +5103,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5007,67 +5118,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, ref byte g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, string g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, string g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, byte* g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, byte* g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, ref byte g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, ref byte g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, ref byte g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, string g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, string g, string b);
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5082,7 +5193,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5097,22 +5208,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, ref byte g, string b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, string g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, string g, string b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5127,7 +5238,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, ref byte r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5142,67 +5253,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, ref byte g, string b);
+        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, ref byte r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, string g, ref byte b);
+        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, string g, string b);
+        public partial int GetSurfaceColorMod(ref Surface surface, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, string r, byte* g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, string r, byte* g, ref byte b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, string r, byte* g, string b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, string r, ref byte g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, string r, ref byte g, ref byte b);
+        public partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, string r, ref byte g, string b);
+        public partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(ref Surface surface, string r, string g, byte* b);
+        public unsafe partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, string r, string g, ref byte b);
+        public partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(ref Surface surface, string r, string g, string b);
+        public partial int GetSurfaceColorMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5227,7 +5338,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        public unsafe partial int GetSurfaceAlphaMod(Surface* surface, string alpha);
+        public unsafe partial int GetSurfaceAlphaMod(Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5242,7 +5353,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        public partial int GetSurfaceAlphaMod(ref Surface surface, string alpha);
+        public partial int GetSurfaceAlphaMod(ref Surface surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 529, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5921,6 +6032,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 37 in build/submodules/SDL/include\\SDL_video.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetVideoDriver")]
         public partial string GetVideoDriverS(int index);
 
@@ -5937,7 +6049,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_VideoInit")]
-        public partial int VideoInit(string driver_name);
+        public partial int VideoInit([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string driver_name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 326, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -5951,6 +6063,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 339, Column 37 in build/submodules/SDL/include\\SDL_video.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetCurrentVideoDriver")]
         public partial string GetCurrentVideoDriverS();
 
@@ -5966,6 +6079,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 365, Column 38 in build/submodules/SDL/include\\SDL_video.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetDisplayName")]
         public partial string GetDisplayNameS(int displayIndex);
 
@@ -6162,7 +6276,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 680, Column 38 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_CreateWindow")]
-        public unsafe partial Window* CreateWindow(string title, int x, int y, int w, int h, uint flags);
+        public unsafe partial Window* CreateWindow([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, int x, int y, int w, int h, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 38 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6212,7 +6326,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 757, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
-        public unsafe partial void SetWindowTitle(Window* window, string title);
+        public unsafe partial void SetWindowTitle(Window* window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 757, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6227,7 +6341,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 757, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
-        public partial void SetWindowTitle(ref Window window, string title);
+        public partial void SetWindowTitle(ref Window window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 769, Column 37 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6236,6 +6350,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 769, Column 37 in build/submodules/SDL/include\\SDL_video.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
         public unsafe partial string GetWindowTitleS(Window* window);
 
@@ -6246,6 +6361,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 769, Column 37 in build/submodules/SDL/include\\SDL_video.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
         public partial string GetWindowTitleS(ref Window window);
 
@@ -6292,12 +6408,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData(Window* window, string name, void* userdata);
+        public unsafe partial void* SetWindowData(Window* window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData<T0>(Window* window, string name, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void* SetWindowData<T0>(Window* window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6322,12 +6438,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData(ref Window window, string name, void* userdata);
+        public unsafe partial void* SetWindowData(ref Window window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData<T0>(ref Window window, string name, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void* SetWindowData<T0>(ref Window window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 805, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6342,7 +6458,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 805, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowData")]
-        public unsafe partial void* GetWindowData(Window* window, string name);
+        public unsafe partial void* GetWindowData(Window* window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 805, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6357,7 +6473,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 805, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowData")]
-        public unsafe partial void* GetWindowData(ref Window window, string name);
+        public unsafe partial void* GetWindowData(ref Window window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 821, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7212,7 +7328,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1570, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_LoadLibrary")]
-        public partial int GLLoadLibrary(string path);
+        public partial int GLLoadLibrary([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1621, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7227,7 +7343,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1621, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_GetProcAddress")]
-        public unsafe partial void* GLGetProcAddress(string proc);
+        public unsafe partial void* GLGetProcAddress([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string proc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1628, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7247,7 +7363,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1649, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public partial SdlBool GLExtensionSupported(string extension);
+        public partial SdlBool GLExtensionSupported([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1661, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7392,7 +7508,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 109, Column 29 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_LoadLibrary")]
-        public partial int VulkanLoadLibrary(string path);
+        public partial int VulkanLoadLibrary([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 31 in SDL_vulkan.h")]
@@ -7537,13 +7653,13 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 141, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public unsafe partial int RegisterApp(string name, uint style, void* hInst);
+        public unsafe partial int RegisterApp([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, void* hInst);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 141, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public partial int RegisterApp<T0>(string name, uint style, ref T0 hInst) where T0 : unmanaged;
+        public partial int RegisterApp<T0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL/include\\SDL_main.h")]
@@ -7592,7 +7708,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, byte* arg1, string arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, byte* arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
@@ -7607,22 +7723,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, ref byte arg1, string arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, ref byte arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, string arg1, byte* arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, string arg1, ref byte arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, string arg1, string arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
@@ -7637,7 +7753,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, byte* arg1, string arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, byte* arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
@@ -7652,22 +7768,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, ref byte arg1, string arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, ref byte arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, string arg1, byte* arg2, int arg3);
+        public unsafe partial AssertState ReportAssertion(ref AssertData arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte* arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, string arg1, ref byte arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, ref byte arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(ref AssertData arg0, string arg1, string arg2, int arg3);
+        public partial AssertState ReportAssertion(ref AssertData arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 222, Column 30 in build/submodules/SDL/include\\SDL_assert.h")]
@@ -8062,12 +8178,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 120, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, string name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 120, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, string name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 125, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
@@ -8092,12 +8208,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 125, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, string name, nuint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
+        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, nuint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 125, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, string name, nuint stacksize, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, nuint stacksize, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 37 in build/submodules/SDL/include\\SDL_thread.h")]
@@ -8106,6 +8222,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 37 in build/submodules/SDL/include\\SDL_thread.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetThreadName")]
         public unsafe partial string GetThreadNameS(Thread* thread);
 
@@ -8116,6 +8233,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 37 in build/submodules/SDL/include\\SDL_thread.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetThreadName")]
         public partial string GetThreadNameS(ref Thread thread);
 
@@ -8201,6 +8319,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 37 in build/submodules/SDL/include\\SDL_audio.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetAudioDriver")]
         public partial string GetAudioDriverS(int index);
 
@@ -8217,7 +8336,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 265, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioInit")]
-        public partial int AudioInit(string driver_name);
+        public partial int AudioInit([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string driver_name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8231,6 +8350,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 37 in build/submodules/SDL/include\\SDL_audio.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetCurrentAudioDriver")]
         public partial string GetCurrentAudioDriverS();
 
@@ -8266,6 +8386,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 415, Column 37 in build/submodules/SDL/include\\SDL_audio.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetAudioDeviceName")]
         public partial string GetAudioDeviceNameS(int index, int iscapture);
 
@@ -8322,22 +8443,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice(string device, int iscapture, AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice(string device, int iscapture, AudioSpec* desired, ref AudioSpec obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, AudioSpec* desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice(string device, int iscapture, ref AudioSpec desired, AudioSpec* obtained, int allowed_changes);
+        public unsafe partial uint OpenAudioDevice([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, ref AudioSpec desired, AudioSpec* obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public partial uint OpenAudioDevice(string device, int iscapture, ref AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
+        public partial uint OpenAudioDevice([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, ref AudioSpec desired, ref AudioSpec obtained, int allowed_changes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 576, Column 41 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8452,7 +8573,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 696, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_FreeWAV")]
-        public partial void FreeWAV(string audio_buf);
+        public partial void FreeWAV([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string audio_buf);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 729, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8572,7 +8693,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public unsafe partial void MixAudio(byte* dst, string src, uint len, int volume);
+        public unsafe partial void MixAudio(byte* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8587,22 +8708,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio(ref byte dst, string src, uint len, int volume);
+        public partial void MixAudio(ref byte dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public unsafe partial void MixAudio(string dst, byte* src, uint len, int volume);
+        public unsafe partial void MixAudio([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, byte* src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio(string dst, ref byte src, uint len, int volume);
+        public partial void MixAudio([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref byte src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio(string dst, string src, uint len, int volume);
+        public partial void MixAudio([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8617,7 +8738,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public unsafe partial void MixAudioFormat(byte* dst, string src, ushort format, uint len, int volume);
+        public unsafe partial void MixAudioFormat(byte* dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8632,22 +8753,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat(ref byte dst, string src, ushort format, uint len, int volume);
+        public partial void MixAudioFormat(ref byte dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public unsafe partial void MixAudioFormat(string dst, byte* src, ushort format, uint len, int volume);
+        public unsafe partial void MixAudioFormat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, byte* src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat(string dst, ref byte src, ushort format, uint len, int volume);
+        public partial void MixAudioFormat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, ref byte src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat(string dst, string src, ushort format, uint len, int volume);
+        public partial void MixAudioFormat([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, ushort format, uint len, int volume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1000, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
@@ -8722,7 +8843,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 51, Column 29 in build/submodules/SDL/include\\SDL_clipboard.h")]
         [NativeApi(EntryPoint = "SDL_SetClipboardText")]
-        public partial int SetClipboardText(string text);
+        public partial int SetClipboardText([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 32 in build/submodules/SDL/include\\SDL_clipboard.h")]
@@ -8731,6 +8852,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 32 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetClipboardText")]
         public partial string GetClipboardTextS();
 
@@ -8866,6 +8988,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 38 in build/submodules/SDL/include/SDL_keyboard.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetKeyboardState")]
         public unsafe partial string GetKeyboardStateS(int* numkeys);
 
@@ -8876,6 +8999,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 38 in build/submodules/SDL/include/SDL_keyboard.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetKeyboardState")]
         public partial string GetKeyboardStateS(ref int numkeys);
 
@@ -8906,6 +9030,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 171, Column 37 in build/submodules/SDL/include/SDL_keyboard.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetScancodeName")]
         public partial string GetScancodeNameS(Scancode scancode);
 
@@ -8922,7 +9047,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 186, Column 38 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_GetScancodeFromName")]
-        public partial Scancode GetScancodeFromName(string name);
+        public partial Scancode GetScancodeFromName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 37 in build/submodules/SDL/include/SDL_keyboard.h")]
@@ -8931,6 +9056,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 37 in build/submodules/SDL/include/SDL_keyboard.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetKeyName")]
         public partial string GetKeyNameS(int key);
 
@@ -8947,7 +9073,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 216, Column 37 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_GetKeyFromName")]
-        public partial int GetKeyFromName(string name);
+        public partial int GetKeyFromName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 30 in build/submodules/SDL/include/SDL_keyboard.h")]
@@ -9097,7 +9223,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor(byte* data, string mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor(byte* data, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
@@ -9112,22 +9238,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor(ref byte data, string mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor(ref byte data, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor(string data, byte* mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, byte* mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor(string data, ref byte mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref byte mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CreateCursor")]
-        public unsafe partial Cursor* CreateCursor(string data, string mask, int w, int h, int hot_x, int hot_y);
+        public unsafe partial Cursor* CreateCursor([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 306, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
@@ -9201,6 +9327,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 167, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_JoystickNameForIndex")]
         public partial string JoystickNameForIndexS(int device_index);
 
@@ -9306,6 +9433,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 382, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public unsafe partial string JoystickNameS(Joystick* joystick);
 
@@ -9316,6 +9444,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 382, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public partial string JoystickNameS(ref Joystick joystick);
 
@@ -9386,6 +9515,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 455, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public unsafe partial string JoystickGetSerialS(Joystick* joystick);
 
@@ -9396,6 +9526,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 455, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public partial string JoystickGetSerialS(ref Joystick joystick);
 
@@ -9422,7 +9553,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDString")]
-        public partial void JoystickGetGUIDString(JoystickGUID guid, string pszGUID, int cbGUID);
+        public partial void JoystickGetGUIDString(JoystickGUID guid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 492, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9437,7 +9568,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 492, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDFromString")]
-        public partial JoystickGUID JoystickGetGUIDFromString(string pchGUID);
+        public partial JoystickGUID JoystickGetGUIDFromString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9681,6 +9812,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 37 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_SensorGetDeviceName")]
         public partial string SensorGetDeviceNameS(int device_index);
 
@@ -9716,6 +9848,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 37 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
         public unsafe partial string SensorGetNameS(Sensor* sensor);
 
@@ -9726,6 +9859,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 37 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
         public partial string SensorGetNameS(ref Sensor sensor);
 
@@ -9817,7 +9951,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 188, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMapping")]
-        public partial int GameControllerAddMapping(string mappingString);
+        public partial int GameControllerAddMapping([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mappingString);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 195, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -9831,6 +9965,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 203, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForIndex")]
         public partial string GameControllerMappingForIndexS(int mapping_index);
 
@@ -9841,6 +9976,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 217, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForGUID")]
         public partial string GameControllerMappingForGUIDS(JoystickGUID guid);
 
@@ -9851,6 +9987,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public unsafe partial string GameControllerMappingS(GameController* gamecontroller);
 
@@ -9861,6 +9998,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public partial string GameControllerMappingS(ref GameController gamecontroller);
 
@@ -9876,6 +10014,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 276, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerNameForIndex")]
         public partial string GameControllerNameForIndexS(int joystick_index);
 
@@ -9891,6 +10030,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 299, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForDeviceIndex")]
         public partial string GameControllerMappingForDeviceIndexS(int joystick_index);
 
@@ -9916,6 +10056,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 367, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public unsafe partial string GameControllerNameS(GameController* gamecontroller);
 
@@ -9926,6 +10067,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 367, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public partial string GameControllerNameS(ref GameController gamecontroller);
 
@@ -9996,6 +10138,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public unsafe partial string GameControllerGetSerialS(GameController* gamecontroller);
 
@@ -10006,6 +10149,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public partial string GameControllerGetSerialS(ref GameController gamecontroller);
 
@@ -10052,7 +10196,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 535, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxisFromString")]
-        public partial GameControllerAxis GameControllerGetAxisFromString(string str);
+        public partial GameControllerAxis GameControllerGetAxisFromString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10061,6 +10205,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForAxis")]
         public partial string GameControllerGetStringForAxisS(GameControllerAxis axis);
 
@@ -10107,7 +10252,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 50 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButtonFromString")]
-        public partial GameControllerButton GameControllerGetButtonFromString(string str);
+        public partial GameControllerButton GameControllerGetButtonFromString([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 660, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10116,6 +10261,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 660, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForButton")]
         public partial string GameControllerGetStringForButtonS(GameControllerButton button);
 
@@ -10252,42 +10398,42 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, float* x, float* y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, float* x, float* y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, float* x, ref float y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, float* x, ref float y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, ref float x, float* y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, ref float x, float* y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, ref float x, ref float y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, string state, ref float x, ref float y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10372,42 +10518,42 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, float* x, float* y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, float* x, float* y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, float* x, ref float y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, float* x, ref float y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, ref float x, float* y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, ref float x, float* y, ref float pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, ref float x, ref float y, float* pressure);
+        public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
-        public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, string state, ref float x, ref float y, ref float pressure);
+        public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 730, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10721,6 +10867,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 78, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetBasePath")]
         public partial string GetBasePathS();
 
@@ -10731,6 +10878,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS(byte* org, byte* app);
 
@@ -10741,18 +10889,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS(byte* org, ref byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath(byte* org, string app);
+        public unsafe partial byte* GetPrefPath(byte* org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial string GetPrefPathS(byte* org, string app);
+        public unsafe partial string GetPrefPathS(byte* org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
@@ -10761,6 +10911,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public unsafe partial string GetPrefPathS(ref byte org, byte* app);
 
@@ -10771,48 +10922,53 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
         public partial string GetPrefPathS(ref byte org, ref byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath(ref byte org, string app);
+        public unsafe partial byte* GetPrefPath(ref byte org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
+        public partial string GetPrefPathS(ref byte org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS(ref byte org, string app);
+        public unsafe partial byte* GetPrefPath([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, byte* app);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
+        public unsafe partial string GetPrefPathS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, byte* app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath(string org, byte* app);
+        public unsafe partial byte* GetPrefPath([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, ref byte app);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
+        public partial string GetPrefPathS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, ref byte app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial string GetPrefPathS(string org, byte* app);
+        public unsafe partial byte* GetPrefPath([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath(string org, ref byte app);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
-        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS(string org, ref byte app);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
-        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public unsafe partial byte* GetPrefPath(string org, string app);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
-        [NativeApi(EntryPoint = "SDL_GetPrefPath")]
-        public partial string GetPrefPathS(string org, string app);
+        public partial string GetPrefPathS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 833, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
@@ -10826,6 +10982,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 849, Column 37 in build/submodules/SDL/include\\SDL_haptic.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_HapticName")]
         public partial string HapticNameS(int device_index);
 
@@ -11132,7 +11289,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial SdlBool SetHintWithPriority(byte* name, string value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(byte* name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11147,22 +11304,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority(ref byte name, string value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority(ref byte name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial SdlBool SetHintWithPriority(string name, byte* value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority(string name, ref byte value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial SdlBool SetHintWithPriority(string name, string value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11177,7 +11334,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial SdlBool SetHint(byte* name, string value);
+        public unsafe partial SdlBool SetHint(byte* name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11192,22 +11349,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint(ref byte name, string value);
+        public partial SdlBool SetHint(ref byte name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial SdlBool SetHint(string name, byte* value);
+        public unsafe partial SdlBool SetHint([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, byte* value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint(string name, ref byte value);
+        public partial SdlBool SetHint([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial SdlBool SetHint(string name, string value);
+        public partial SdlBool SetHint([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11216,6 +11373,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public unsafe partial string GetHintS(byte* name);
 
@@ -11226,18 +11384,20 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
         public partial string GetHintS(ref byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHint")]
-        public unsafe partial byte* GetHint(string name);
+        public unsafe partial byte* GetHint([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetHint")]
-        public partial string GetHintS(string name);
+        public partial string GetHintS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11252,7 +11412,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
-        public partial SdlBool GetHintBoolean(string name, SdlBool default_value);
+        public partial SdlBool GetHintBoolean([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1758, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11277,12 +11437,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1758, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(string name, PfnHintCallback callback, void* userdata);
+        public unsafe partial void AddHintCallback([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1758, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0>(string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void AddHintCallback<T0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1774, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11307,12 +11467,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1774, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback(string name, PfnHintCallback callback, void* userdata);
+        public unsafe partial void DelHintCallback([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1774, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public partial void DelHintCallback<T0>(string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void DelHintCallback<T0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1783, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11332,7 +11492,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 63, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadObject")]
-        public unsafe partial void* LoadObject(string sofile);
+        public unsafe partial void* LoadObject([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string sofile);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 88, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
@@ -11347,7 +11507,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 88, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadFunction")]
-        public unsafe partial void* LoadFunction(void* handle, string name);
+        public unsafe partial void* LoadFunction(void* handle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 88, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
@@ -11362,7 +11522,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 88, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
         [NativeApi(EntryPoint = "SDL_LoadFunction")]
-        public unsafe partial void* LoadFunction<T0>(ref T0 handle, string name) where T0 : unmanaged;
+        public unsafe partial void* LoadFunction<T0>(ref T0 handle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 99, Column 30 in build/submodules/SDL/include\\SDL_loadso.h")]
@@ -11407,7 +11567,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 171, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_Log")]
-        public partial void Log(string fmt);
+        public partial void Log([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 190, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11422,7 +11582,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 190, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogVerbose")]
-        public partial void LogVerbose(int category, string fmt);
+        public partial void LogVerbose(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 209, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11437,7 +11597,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 209, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogDebug")]
-        public partial void LogDebug(int category, string fmt);
+        public partial void LogDebug(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 228, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11452,7 +11612,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 228, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogInfo")]
-        public partial void LogInfo(int category, string fmt);
+        public partial void LogInfo(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 247, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11467,7 +11627,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 247, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogWarn")]
-        public partial void LogWarn(int category, string fmt);
+        public partial void LogWarn(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11482,7 +11642,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogError")]
-        public partial void LogError(int category, string fmt);
+        public partial void LogError(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11497,7 +11657,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 285, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogCritical")]
-        public partial void LogCritical(int category, string fmt);
+        public partial void LogCritical(int category, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 305, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11512,7 +11672,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 305, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessage")]
-        public partial void LogMessage(int category, LogPriority priority, string fmt);
+        public partial void LogMessage(int category, LogPriority priority, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11527,7 +11687,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public unsafe partial void LogMessageV(int category, LogPriority priority, byte* fmt, string ap);
+        public unsafe partial void LogMessageV(int category, LogPriority priority, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11542,22 +11702,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public partial void LogMessageV(int category, LogPriority priority, ref byte fmt, string ap);
+        public partial void LogMessageV(int category, LogPriority priority, ref byte fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public unsafe partial void LogMessageV(int category, LogPriority priority, string fmt, byte* ap);
+        public unsafe partial void LogMessageV(int category, LogPriority priority, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public partial void LogMessageV(int category, LogPriority priority, string fmt, ref byte ap);
+        public partial void LogMessageV(int category, LogPriority priority, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, ref byte ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogMessageV")]
-        public partial void LogMessageV(int category, LogPriority priority, string fmt, string ap);
+        public partial void LogMessageV(int category, LogPriority priority, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 354, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
@@ -11632,12 +11792,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, byte* title, string message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, byte* title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, byte* title, string message, ref Window window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, byte* title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
@@ -11662,42 +11822,42 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, ref byte title, string message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, ref byte title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public partial int ShowSimpleMessageBox(uint flags, ref byte title, string message, ref Window window);
+        public partial int ShowSimpleMessageBox(uint flags, ref byte title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, string title, byte* message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, byte* message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, string title, byte* message, ref Window window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, byte* message, ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, string title, ref byte message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, ref byte message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public partial int ShowSimpleMessageBox(uint flags, string title, ref byte message, ref Window window);
+        public partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, ref byte message, ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public unsafe partial int ShowSimpleMessageBox(uint flags, string title, string message, Window* window);
+        public unsafe partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
         [NativeApi(EntryPoint = "SDL_ShowSimpleMessageBox")]
-        public partial int ShowSimpleMessageBox(uint flags, string title, string message, ref Window window);
+        public partial int ShowSimpleMessageBox(uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 39 in build/submodules/SDL/include\\SDL_metal.h")]
@@ -12127,7 +12287,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12142,22 +12302,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, ref byte g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, string g, ref byte b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, string g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12172,7 +12332,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12187,67 +12347,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, ref byte g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, string g, ref byte b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, string g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, byte* g, byte* b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, byte* g, ref byte b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, ref byte g, byte* b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, ref byte g, ref byte b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, ref byte g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, string g, ref byte b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(Texture* texture, string r, string g, string b);
+        public unsafe partial int GetTextureColorMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12262,7 +12422,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12277,22 +12437,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, ref byte g, string b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, string g, ref byte b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, string g, string b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12307,7 +12467,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12322,67 +12482,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, ref byte g, string b);
+        public partial int GetTextureColorMod(ref Texture texture, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, string g, ref byte b);
+        public partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, ref byte r, string g, string b);
+        public partial int GetTextureColorMod(ref Texture texture, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, string r, byte* g, byte* b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, string r, byte* g, ref byte b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, string r, byte* g, string b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, string r, ref byte g, byte* b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, string r, ref byte g, ref byte b);
+        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, string r, ref byte g, string b);
+        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public unsafe partial int GetTextureColorMod(ref Texture texture, string r, string g, byte* b);
+        public unsafe partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, string r, string g, ref byte b);
+        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureColorMod")]
-        public partial int GetTextureColorMod(ref Texture texture, string r, string g, string b);
+        public partial int GetTextureColorMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 410, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12407,7 +12567,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 425, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureAlphaMod")]
-        public unsafe partial int GetTextureAlphaMod(Texture* texture, string alpha);
+        public unsafe partial int GetTextureAlphaMod(Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 425, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12422,7 +12582,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 425, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetTextureAlphaMod")]
-        public partial int GetTextureAlphaMod(ref Texture texture, string alpha);
+        public partial int GetTextureAlphaMod(ref Texture texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 443, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12537,7 +12697,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12552,22 +12712,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12582,7 +12742,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12597,67 +12757,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12672,7 +12832,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12687,22 +12847,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12717,7 +12877,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12732,67 +12892,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12807,7 +12967,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12822,22 +12982,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12852,7 +13012,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12867,67 +13027,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12942,7 +13102,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12957,22 +13117,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -12987,7 +13147,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13002,67 +13162,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13077,7 +13237,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13092,22 +13252,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13122,7 +13282,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13137,22 +13297,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13167,7 +13327,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13182,22 +13342,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13212,7 +13372,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13227,22 +13387,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string UVplane, int UVpitch);
+        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public unsafe partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch);
+        public unsafe partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
+        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, ref byte UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateNVTexture")]
-        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string UVplane, int UVpitch);
+        public partial int UpdateNVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 595, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13647,7 +13807,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13662,22 +13822,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13692,7 +13852,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13707,67 +13867,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, string g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13782,7 +13942,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13797,22 +13957,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13827,7 +13987,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13842,202 +14002,202 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, string g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, ref byte g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(Renderer* renderer, string r, string g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14052,7 +14212,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14067,22 +14227,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14097,7 +14257,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14112,67 +14272,67 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, string g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14187,7 +14347,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14202,22 +14362,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14232,7 +14392,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -14247,202 +14407,202 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, ref byte b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, string b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, string b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, ref byte b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, ref byte b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, string b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, string g, string b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, ref byte r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, ref byte b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, ref byte b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, string b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, byte* g, string b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, ref byte b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, ref byte b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, string b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, ref byte g, string b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, ref byte g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, byte* b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, byte* b, ref byte a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, byte* b, string a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, ref byte b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, ref byte b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, ref byte b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, ref byte b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, string b, byte* a);
+        public unsafe partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, string b, ref byte a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, ref byte a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_GetRenderDrawColor")]
-        public partial int GetRenderDrawColor(ref Renderer renderer, string r, string g, string b, string a);
+        public partial int GetRenderDrawColor(ref Renderer renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 963, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -15407,7 +15567,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 66, Column 38 in build/submodules/SDL/include\\SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_CreateShapedWindow")]
-        public unsafe partial Window* CreateShapedWindow(string title, uint x, uint y, uint w, uint h, uint flags);
+        public unsafe partial Window* CreateShapedWindow([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, uint x, uint y, uint w, uint h, uint flags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 77, Column 34 in build/submodules/SDL/include\\SDL_shape.h")]
@@ -15618,6 +15778,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 274, Column 38 in build/submodules/SDL/include\\SDL_system.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
         public partial string AndroidGetInternalStoragePathS();
@@ -15636,6 +15797,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 309, Column 38 in build/submodules/SDL/include\\SDL_system.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
         public partial string AndroidGetExternalStoragePathS();
@@ -15656,7 +15818,7 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
-        public partial SdlBool AndroidRequestPermission(string permission);
+        public partial SdlBool AndroidRequestPermission([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 343, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15674,7 +15836,7 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 343, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidShowToast")]
-        public partial int AndroidShowToast(string message, int duration, int gravity, int xoffset, int yoffset);
+        public partial int AndroidShowToast([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, int duration, int gravity, int xoffset, int yoffset);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 414, Column 41 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15684,6 +15846,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 414, Column 41 in build/submodules/SDL/include\\SDL_system.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
         public partial string WinRTGetFSPathUNICODES(WinRTPath pathType);
@@ -15696,6 +15859,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 437, Column 38 in build/submodules/SDL/include\\SDL_system.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
         public partial string WinRTGetFSPathUTF8S(WinRTPath pathType);
@@ -15798,6 +15962,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 150, Column 37 in build/submodules/SDL/include\\SDL_version.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "SDL_GetRevision")]
         public partial string GetRevisionS();
 
@@ -15824,7 +15989,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 69, Column 29 in build/submodules/SDL/include\\SDL_misc.h")]
         [NativeApi(EntryPoint = "SDL_OpenURL")]
-        public partial int OpenURL(string url);
+        public partial int OpenURL([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string url);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 140, Column 29 in SDL.h")]
@@ -15865,6 +16030,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         public unsafe string StrtokrS(byte* s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -15889,6 +16055,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         public unsafe string StrtokrS(byte* s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -15901,7 +16068,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe byte* Strtokr(byte* s1, string s2, string[] saveptrSa)
+        public unsafe byte* Strtokr(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15913,7 +16080,8 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe string StrtokrS(byte* s1, string s2, string[] saveptrSa)
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string StrtokrS(byte* s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15937,6 +16105,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         public unsafe string StrtokrS(ref byte s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -15961,6 +16130,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         public unsafe string StrtokrS(ref byte s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -15973,7 +16143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe byte* Strtokr(ref byte s1, string s2, string[] saveptrSa)
+        public unsafe byte* Strtokr(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15985,7 +16155,8 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe string StrtokrS(ref byte s1, string s2, string[] saveptrSa)
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string StrtokrS(ref byte s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -15997,7 +16168,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe byte* Strtokr(string s1, byte* s2, string[] saveptrSa)
+        public unsafe byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16009,7 +16180,8 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe string StrtokrS(string s1, byte* s2, string[] saveptrSa)
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16021,7 +16193,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe byte* Strtokr(string s1, ref byte s2, string[] saveptrSa)
+        public unsafe byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16033,7 +16205,8 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe string StrtokrS(string s1, ref byte s2, string[] saveptrSa)
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16045,7 +16218,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe byte* Strtokr(string s1, string s2, string[] saveptrSa)
+        public unsafe byte* Strtokr([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16057,7 +16230,8 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe string StrtokrS(string s1, string s2, string[] saveptrSa)
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        public unsafe string StrtokrS([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
             var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
@@ -16093,7 +16267,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 536, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe int Strtol(string str, string[] endpSa, int @base)
+        public unsafe int Strtol([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -16129,7 +16303,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 537, Column 39 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe uint Strtoul(string str, string[] endpSa, int @base)
+        public unsafe uint Strtoul([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -16165,7 +16339,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe long Strtoll(string str, string[] endpSa, int @base)
+        public unsafe long Strtoll([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -16201,7 +16375,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe ulong Strtoull(string str, string[] endpSa, int @base)
+        public unsafe ulong Strtoull([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
@@ -16237,7 +16411,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public unsafe double Strtod(string str, string[] endpSa)
+        public unsafe double Strtod([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, string[] endpSa)
         {
             // StringArrayOverloader
             var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);

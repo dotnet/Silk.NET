@@ -186,7 +186,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Setenv(this Sdl thisApi, Span<byte> name, string value, int overwrite)
+        public static unsafe int Setenv(this Sdl thisApi, Span<byte> name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, int overwrite)
         {
             // SpanOverloader
             return thisApi.Setenv(ref name.GetPinnableReference(), value, overwrite);
@@ -194,7 +194,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Setenv(this Sdl thisApi, string name, Span<byte> value, int overwrite)
+        public static unsafe int Setenv(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<byte> value, int overwrite)
         {
             // SpanOverloader
             return thisApi.Setenv(name, ref value.GetPinnableReference(), overwrite);
@@ -330,7 +330,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Wcslcpy(this Sdl thisApi, Span<char> dst, string src, nuint maxlen)
+        public static unsafe nuint Wcslcpy(this Sdl thisApi, Span<char> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcslcpy(ref dst.GetPinnableReference(), src, maxlen);
@@ -338,7 +338,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Wcslcpy(this Sdl thisApi, string dst, Span<char> src, nuint maxlen)
+        public static unsafe nuint Wcslcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<char> src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcslcpy(dst, ref src.GetPinnableReference(), maxlen);
@@ -370,7 +370,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Wcslcat(this Sdl thisApi, Span<char> dst, string src, nuint maxlen)
+        public static unsafe nuint Wcslcat(this Sdl thisApi, Span<char> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcslcat(ref dst.GetPinnableReference(), src, maxlen);
@@ -378,7 +378,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Wcslcat(this Sdl thisApi, string dst, Span<char> src, nuint maxlen)
+        public static unsafe nuint Wcslcat(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<char> src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcslcat(dst, ref src.GetPinnableReference(), maxlen);
@@ -418,7 +418,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe char* Wcsstr(this Sdl thisApi, Span<char> haystack, string needle)
+        public static unsafe char* Wcsstr(this Sdl thisApi, Span<char> haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
             return thisApi.Wcsstr(ref haystack.GetPinnableReference(), needle);
@@ -426,7 +426,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 506, Column 34 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe char* Wcsstr(this Sdl thisApi, string haystack, Span<char> needle)
+        public static unsafe char* Wcsstr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, Span<char> needle)
         {
             // SpanOverloader
             return thisApi.Wcsstr(haystack, ref needle.GetPinnableReference());
@@ -458,7 +458,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcscmp(this Sdl thisApi, Span<char> str1, string str2)
+        public static unsafe int Wcscmp(this Sdl thisApi, Span<char> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
             return thisApi.Wcscmp(ref str1.GetPinnableReference(), str2);
@@ -466,7 +466,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcscmp(this Sdl thisApi, string str1, Span<char> str2)
+        public static unsafe int Wcscmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<char> str2)
         {
             // SpanOverloader
             return thisApi.Wcscmp(str1, ref str2.GetPinnableReference());
@@ -498,7 +498,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcsncmp(this Sdl thisApi, Span<char> str1, string str2, nuint maxlen)
+        public static unsafe int Wcsncmp(this Sdl thisApi, Span<char> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcsncmp(ref str1.GetPinnableReference(), str2, maxlen);
@@ -506,7 +506,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 509, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcsncmp(this Sdl thisApi, string str1, Span<char> str2, nuint maxlen)
+        public static unsafe int Wcsncmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<char> str2, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Wcsncmp(str1, ref str2.GetPinnableReference(), maxlen);
@@ -538,7 +538,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcscasecmp(this Sdl thisApi, Span<char> str1, string str2)
+        public static unsafe int Wcscasecmp(this Sdl thisApi, Span<char> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
             return thisApi.Wcscasecmp(ref str1.GetPinnableReference(), str2);
@@ -546,7 +546,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 510, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcscasecmp(this Sdl thisApi, string str1, Span<char> str2)
+        public static unsafe int Wcscasecmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<char> str2)
         {
             // SpanOverloader
             return thisApi.Wcscasecmp(str1, ref str2.GetPinnableReference());
@@ -578,7 +578,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcsncasecmp(this Sdl thisApi, Span<char> str1, string str2, nuint len)
+        public static unsafe int Wcsncasecmp(this Sdl thisApi, Span<char> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len)
         {
             // SpanOverloader
             return thisApi.Wcsncasecmp(ref str1.GetPinnableReference(), str2, len);
@@ -586,7 +586,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Wcsncasecmp(this Sdl thisApi, string str1, Span<char> str2, nuint len)
+        public static unsafe int Wcsncasecmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<char> str2, nuint len)
         {
             // SpanOverloader
             return thisApi.Wcsncasecmp(str1, ref str2.GetPinnableReference(), len);
@@ -626,7 +626,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Strlcpy(this Sdl thisApi, Span<byte> dst, string src, nuint maxlen)
+        public static unsafe nuint Strlcpy(this Sdl thisApi, Span<byte> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strlcpy(ref dst.GetPinnableReference(), src, maxlen);
@@ -634,7 +634,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Strlcpy(this Sdl thisApi, string dst, Span<byte> src, nuint maxlen)
+        public static unsafe nuint Strlcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<byte> src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strlcpy(dst, ref src.GetPinnableReference(), maxlen);
@@ -666,7 +666,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Utf8strlcpy(this Sdl thisApi, Span<byte> dst, string src, nuint dst_bytes)
+        public static unsafe nuint Utf8strlcpy(this Sdl thisApi, Span<byte> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint dst_bytes)
         {
             // SpanOverloader
             return thisApi.Utf8strlcpy(ref dst.GetPinnableReference(), src, dst_bytes);
@@ -674,7 +674,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Utf8strlcpy(this Sdl thisApi, string dst, Span<byte> src, nuint dst_bytes)
+        public static unsafe nuint Utf8strlcpy(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<byte> src, nuint dst_bytes)
         {
             // SpanOverloader
             return thisApi.Utf8strlcpy(dst, ref src.GetPinnableReference(), dst_bytes);
@@ -706,7 +706,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Strlcat(this Sdl thisApi, Span<byte> dst, string src, nuint maxlen)
+        public static unsafe nuint Strlcat(this Sdl thisApi, Span<byte> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strlcat(ref dst.GetPinnableReference(), src, maxlen);
@@ -714,7 +714,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe nuint Strlcat(this Sdl thisApi, string dst, Span<byte> src, nuint maxlen)
+        public static unsafe nuint Strlcat(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<byte> src, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strlcat(dst, ref src.GetPinnableReference(), maxlen);
@@ -794,7 +794,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strstr(this Sdl thisApi, Span<byte> haystack, string needle)
+        public static unsafe byte* Strstr(this Sdl thisApi, Span<byte> haystack, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
             return thisApi.Strstr(ref haystack.GetPinnableReference(), needle);
@@ -802,7 +802,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strstr(this Sdl thisApi, string haystack, Span<byte> needle)
+        public static unsafe byte* Strstr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, Span<byte> needle)
         {
             // SpanOverloader
             return thisApi.Strstr(haystack, ref needle.GetPinnableReference());
@@ -858,7 +858,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, string s2, byte** saveptr)
+        public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, byte** saveptr)
         {
             // SpanOverloader
             return thisApi.Strtokr(ref s1.GetPinnableReference(), s2, saveptr);
@@ -866,7 +866,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, string s2, ref byte* saveptr)
+        public static unsafe byte* Strtokr(this Sdl thisApi, Span<byte> s1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s2, ref byte* saveptr)
         {
             // SpanOverloader
             return thisApi.Strtokr(ref s1.GetPinnableReference(), s2, ref saveptr);
@@ -874,7 +874,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strtokr(this Sdl thisApi, string s1, Span<byte> s2, byte** saveptr)
+        public static unsafe byte* Strtokr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, Span<byte> s2, byte** saveptr)
         {
             // SpanOverloader
             return thisApi.Strtokr(s1, ref s2.GetPinnableReference(), saveptr);
@@ -882,7 +882,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* Strtokr(this Sdl thisApi, string s1, Span<byte> s2, ref byte* saveptr)
+        public static unsafe byte* Strtokr(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string s1, Span<byte> s2, ref byte* saveptr)
         {
             // SpanOverloader
             return thisApi.Strtokr(s1, ref s2.GetPinnableReference(), ref saveptr);
@@ -1066,7 +1066,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strcmp(this Sdl thisApi, Span<byte> str1, string str2)
+        public static unsafe int Strcmp(this Sdl thisApi, Span<byte> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
             return thisApi.Strcmp(ref str1.GetPinnableReference(), str2);
@@ -1074,7 +1074,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 542, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strcmp(this Sdl thisApi, string str1, Span<byte> str2)
+        public static unsafe int Strcmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<byte> str2)
         {
             // SpanOverloader
             return thisApi.Strcmp(str1, ref str2.GetPinnableReference());
@@ -1106,7 +1106,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strncmp(this Sdl thisApi, Span<byte> str1, string str2, nuint maxlen)
+        public static unsafe int Strncmp(this Sdl thisApi, Span<byte> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strncmp(ref str1.GetPinnableReference(), str2, maxlen);
@@ -1114,7 +1114,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strncmp(this Sdl thisApi, string str1, Span<byte> str2, nuint maxlen)
+        public static unsafe int Strncmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<byte> str2, nuint maxlen)
         {
             // SpanOverloader
             return thisApi.Strncmp(str1, ref str2.GetPinnableReference(), maxlen);
@@ -1146,7 +1146,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strcasecmp(this Sdl thisApi, Span<byte> str1, string str2)
+        public static unsafe int Strcasecmp(this Sdl thisApi, Span<byte> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2)
         {
             // SpanOverloader
             return thisApi.Strcasecmp(ref str1.GetPinnableReference(), str2);
@@ -1154,7 +1154,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 544, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strcasecmp(this Sdl thisApi, string str1, Span<byte> str2)
+        public static unsafe int Strcasecmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<byte> str2)
         {
             // SpanOverloader
             return thisApi.Strcasecmp(str1, ref str2.GetPinnableReference());
@@ -1186,7 +1186,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strncasecmp(this Sdl thisApi, Span<byte> str1, string str2, nuint len)
+        public static unsafe int Strncasecmp(this Sdl thisApi, Span<byte> str1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str2, nuint len)
         {
             // SpanOverloader
             return thisApi.Strncasecmp(ref str1.GetPinnableReference(), str2, len);
@@ -1194,7 +1194,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 545, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Strncasecmp(this Sdl thisApi, string str1, Span<byte> str2, nuint len)
+        public static unsafe int Strncasecmp(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str1, Span<byte> str2, nuint len)
         {
             // SpanOverloader
             return thisApi.Strncasecmp(str1, ref str2.GetPinnableReference(), len);
@@ -1226,7 +1226,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Sscanf(this Sdl thisApi, Span<byte> text, string fmt)
+        public static unsafe int Sscanf(this Sdl thisApi, Span<byte> text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt)
         {
             // SpanOverloader
             return thisApi.Sscanf(ref text.GetPinnableReference(), fmt);
@@ -1234,7 +1234,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 547, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Sscanf(this Sdl thisApi, string text, Span<byte> fmt)
+        public static unsafe int Sscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, Span<byte> fmt)
         {
             // SpanOverloader
             return thisApi.Sscanf(text, ref fmt.GetPinnableReference());
@@ -1266,7 +1266,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, byte* text, Span<byte> fmt, string ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, byte* text, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, ref fmt.GetPinnableReference(), ap);
@@ -1274,7 +1274,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, byte* text, string fmt, Span<byte> ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, byte* text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, fmt, ref ap.GetPinnableReference());
@@ -1298,7 +1298,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, byte* fmt, string ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(ref text.GetPinnableReference(), fmt, ap);
@@ -1322,7 +1322,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, Span<byte> fmt, string ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(ref text.GetPinnableReference(), ref fmt.GetPinnableReference(), ap);
@@ -1330,7 +1330,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, string fmt, byte* ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(ref text.GetPinnableReference(), fmt, ap);
@@ -1338,7 +1338,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, string fmt, Span<byte> ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(ref text.GetPinnableReference(), fmt, ref ap.GetPinnableReference());
@@ -1346,7 +1346,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, string fmt, string ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, Span<byte> text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(ref text.GetPinnableReference(), fmt, ap);
@@ -1354,7 +1354,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, string text, byte* fmt, Span<byte> ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, fmt, ref ap.GetPinnableReference());
@@ -1362,7 +1362,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, string text, Span<byte> fmt, byte* ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, Span<byte> fmt, byte* ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, ref fmt.GetPinnableReference(), ap);
@@ -1370,7 +1370,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, string text, Span<byte> fmt, Span<byte> ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, Span<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, ref fmt.GetPinnableReference(), ref ap.GetPinnableReference());
@@ -1378,7 +1378,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, string text, Span<byte> fmt, string ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, ref fmt.GetPinnableReference(), ap);
@@ -1386,7 +1386,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsscanf(this Sdl thisApi, string text, string fmt, Span<byte> ap)
+        public static unsafe int Vsscanf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsscanf(text, fmt, ref ap.GetPinnableReference());
@@ -1418,7 +1418,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Snprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, string fmt)
+        public static unsafe int Snprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt)
         {
             // SpanOverloader
             return thisApi.Snprintf(ref text.GetPinnableReference(), maxlen, fmt);
@@ -1426,7 +1426,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 549, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Snprintf(this Sdl thisApi, string text, nuint maxlen, Span<byte> fmt)
+        public static unsafe int Snprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, Span<byte> fmt)
         {
             // SpanOverloader
             return thisApi.Snprintf(text, maxlen, ref fmt.GetPinnableReference());
@@ -1458,7 +1458,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, Span<byte> fmt, string ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, ref fmt.GetPinnableReference(), ap);
@@ -1466,7 +1466,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, string fmt, Span<byte> ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, byte* text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, fmt, ref ap.GetPinnableReference());
@@ -1490,7 +1490,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, byte* fmt, string ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, byte* fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(ref text.GetPinnableReference(), maxlen, fmt, ap);
@@ -1514,7 +1514,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, Span<byte> fmt, string ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(ref text.GetPinnableReference(), maxlen, ref fmt.GetPinnableReference(), ap);
@@ -1522,7 +1522,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, string fmt, byte* ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, byte* ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(ref text.GetPinnableReference(), maxlen, fmt, ap);
@@ -1530,7 +1530,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, string fmt, Span<byte> ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(ref text.GetPinnableReference(), maxlen, fmt, ref ap.GetPinnableReference());
@@ -1538,7 +1538,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, string fmt, string ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, Span<byte> text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(ref text.GetPinnableReference(), maxlen, fmt, ap);
@@ -1546,7 +1546,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, string text, nuint maxlen, byte* fmt, Span<byte> ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, byte* fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, fmt, ref ap.GetPinnableReference());
@@ -1554,7 +1554,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, string text, nuint maxlen, Span<byte> fmt, byte* ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, Span<byte> fmt, byte* ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, ref fmt.GetPinnableReference(), ap);
@@ -1562,7 +1562,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, string text, nuint maxlen, Span<byte> fmt, Span<byte> ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, Span<byte> fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, ref fmt.GetPinnableReference(), ref ap.GetPinnableReference());
@@ -1570,7 +1570,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, string text, nuint maxlen, Span<byte> fmt, string ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, ref fmt.GetPinnableReference(), ap);
@@ -1578,7 +1578,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 550, Column 29 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe int Vsnprintf(this Sdl thisApi, string text, nuint maxlen, string fmt, Span<byte> ap)
+        public static unsafe int Vsnprintf(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text, nuint maxlen, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             return thisApi.Vsnprintf(text, maxlen, fmt, ref ap.GetPinnableReference());
@@ -1610,7 +1610,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe Icon* IconvOpen(this Sdl thisApi, Span<byte> tocode, string fromcode)
+        public static unsafe Icon* IconvOpen(this Sdl thisApi, Span<byte> tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode)
         {
             // SpanOverloader
             return thisApi.IconvOpen(ref tocode.GetPinnableReference(), fromcode);
@@ -1618,7 +1618,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 609, Column 37 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe Icon* IconvOpen(this Sdl thisApi, string tocode, Span<byte> fromcode)
+        public static unsafe Icon* IconvOpen(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, Span<byte> fromcode)
         {
             // SpanOverloader
             return thisApi.IconvOpen(tocode, ref fromcode.GetPinnableReference());
@@ -1882,7 +1882,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, byte* tocode, Span<byte> fromcode, string inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, byte* tocode, Span<byte> fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, ref fromcode.GetPinnableReference(), inbuf, inbytesleft);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, byte* tocode, string fromcode, Span<byte> inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, byte* tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, Span<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, fromcode, ref inbuf.GetPinnableReference(), inbytesleft);
@@ -1914,7 +1914,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, byte* fromcode, string inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, byte* fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(ref tocode.GetPinnableReference(), fromcode, inbuf, inbytesleft);
@@ -1938,7 +1938,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, Span<byte> fromcode, string inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, Span<byte> fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(ref tocode.GetPinnableReference(), ref fromcode.GetPinnableReference(), inbuf, inbytesleft);
@@ -1946,7 +1946,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, string fromcode, byte* inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(ref tocode.GetPinnableReference(), fromcode, inbuf, inbytesleft);
@@ -1954,7 +1954,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, string fromcode, Span<byte> inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, Span<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(ref tocode.GetPinnableReference(), fromcode, ref inbuf.GetPinnableReference(), inbytesleft);
@@ -1962,7 +1962,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, string fromcode, string inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, Span<byte> tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(ref tocode.GetPinnableReference(), fromcode, inbuf, inbytesleft);
@@ -1970,7 +1970,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, string tocode, byte* fromcode, Span<byte> inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, byte* fromcode, Span<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, fromcode, ref inbuf.GetPinnableReference(), inbytesleft);
@@ -1978,7 +1978,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, string tocode, Span<byte> fromcode, byte* inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, Span<byte> fromcode, byte* inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, ref fromcode.GetPinnableReference(), inbuf, inbytesleft);
@@ -1986,7 +1986,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, string tocode, Span<byte> fromcode, Span<byte> inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, Span<byte> fromcode, Span<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, ref fromcode.GetPinnableReference(), ref inbuf.GetPinnableReference(), inbytesleft);
@@ -1994,7 +1994,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, string tocode, Span<byte> fromcode, string inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, Span<byte> fromcode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, ref fromcode.GetPinnableReference(), inbuf, inbytesleft);
@@ -2002,7 +2002,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 619, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
-        public static unsafe byte* IconvString(this Sdl thisApi, string tocode, string fromcode, Span<byte> inbuf, nuint inbytesleft)
+        public static unsafe byte* IconvString(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tocode, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fromcode, Span<byte> inbuf, nuint inbytesleft)
         {
             // SpanOverloader
             return thisApi.IconvString(tocode, fromcode, ref inbuf.GetPinnableReference(), inbytesleft);
@@ -2362,7 +2362,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, ref g.GetPinnableReference(), b);
@@ -2370,7 +2370,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, g, ref b.GetPinnableReference());
@@ -2394,7 +2394,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, ref r.GetPinnableReference(), g, b);
@@ -2418,7 +2418,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -2426,7 +2426,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, ref r.GetPinnableReference(), g, b);
@@ -2434,7 +2434,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -2442,7 +2442,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, ref r.GetPinnableReference(), g, b);
@@ -2450,7 +2450,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, g, ref b.GetPinnableReference());
@@ -2458,7 +2458,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, ref g.GetPinnableReference(), b);
@@ -2466,7 +2466,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -2474,7 +2474,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, ref g.GetPinnableReference(), b);
@@ -2482,7 +2482,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, format, r, g, ref b.GetPinnableReference());
@@ -2506,7 +2506,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2530,7 +2530,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -2538,7 +2538,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2546,7 +2546,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -2554,7 +2554,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2578,7 +2578,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -2602,7 +2602,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -2610,7 +2610,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -2618,7 +2618,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -2626,7 +2626,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -2634,7 +2634,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2642,7 +2642,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -2650,7 +2650,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2658,7 +2658,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -2666,7 +2666,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -2674,7 +2674,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -2682,7 +2682,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, byte* b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2690,7 +2690,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, Span<byte> b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -2698,7 +2698,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 562, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, string b)
+        public static unsafe void GetRGB(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             thisApi.GetRGB(pixel, ref format.GetPinnableReference(), r, g, b);
@@ -2730,7 +2730,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -2738,7 +2738,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -2762,7 +2762,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -2786,7 +2786,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -2794,7 +2794,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -2802,7 +2802,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -2810,7 +2810,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -2818,7 +2818,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -2826,7 +2826,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -2834,7 +2834,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -2842,7 +2842,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -2850,7 +2850,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -2874,7 +2874,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -2898,7 +2898,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -2906,7 +2906,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -2914,7 +2914,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -2922,7 +2922,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -2946,7 +2946,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -2970,7 +2970,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -2978,7 +2978,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -2986,7 +2986,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -2994,7 +2994,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -3002,7 +3002,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -3010,7 +3010,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -3018,7 +3018,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -3026,7 +3026,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -3034,7 +3034,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3042,7 +3042,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -3050,7 +3050,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -3058,7 +3058,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -3066,7 +3066,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, string g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, ref r.GetPinnableReference(), g, b, a);
@@ -3074,7 +3074,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -3082,7 +3082,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -3090,7 +3090,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3098,7 +3098,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -3106,7 +3106,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -3114,7 +3114,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -3122,7 +3122,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3130,7 +3130,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -3138,7 +3138,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3146,7 +3146,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3154,7 +3154,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3162,7 +3162,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -3170,7 +3170,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3178,7 +3178,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, ref g.GetPinnableReference(), b, a);
@@ -3186,7 +3186,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -3194,7 +3194,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -3202,7 +3202,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3210,7 +3210,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, ref b.GetPinnableReference(), a);
@@ -3218,7 +3218,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, string r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, PixelFormat* format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, format, r, g, b, ref a.GetPinnableReference());
@@ -3242,7 +3242,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3266,7 +3266,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3274,7 +3274,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3282,7 +3282,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3290,7 +3290,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3314,7 +3314,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3338,7 +3338,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3346,7 +3346,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3354,7 +3354,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3362,7 +3362,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3370,7 +3370,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3378,7 +3378,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3386,7 +3386,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3394,7 +3394,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3402,7 +3402,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3410,7 +3410,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3418,7 +3418,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3426,7 +3426,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3434,7 +3434,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, string g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3458,7 +3458,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3482,7 +3482,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -3490,7 +3490,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3498,7 +3498,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -3506,7 +3506,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3530,7 +3530,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -3554,7 +3554,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3562,7 +3562,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -3570,7 +3570,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3578,7 +3578,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -3586,7 +3586,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3594,7 +3594,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -3602,7 +3602,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3610,7 +3610,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -3618,7 +3618,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3626,7 +3626,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -3634,7 +3634,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3642,7 +3642,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -3650,7 +3650,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, string g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -3658,7 +3658,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3666,7 +3666,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3674,7 +3674,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3682,7 +3682,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3690,7 +3690,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3698,7 +3698,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3706,7 +3706,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3714,7 +3714,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3722,7 +3722,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, byte* g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3730,7 +3730,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3738,7 +3738,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3746,7 +3746,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3754,7 +3754,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3762,7 +3762,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3770,7 +3770,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -3778,7 +3778,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3786,7 +3786,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -3794,7 +3794,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, Span<byte> g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -3802,7 +3802,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, byte* b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3810,7 +3810,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, byte* b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3818,7 +3818,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, byte* b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3826,7 +3826,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, Span<byte> b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3834,7 +3834,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -3842,7 +3842,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, Span<byte> b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -3850,7 +3850,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, string b, byte* a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -3858,7 +3858,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, string b, Span<byte> a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -3866,7 +3866,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 30 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, string r, string g, string b, string a)
+        public static unsafe void GetRGBA(this Sdl thisApi, uint pixel, Span<PixelFormat> format, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             thisApi.GetRGBA(pixel, ref format.GetPinnableReference(), r, g, b, a);
@@ -4522,7 +4522,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, byte* r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, ref g.GetPinnableReference(), b);
@@ -4530,7 +4530,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, byte* r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, g, ref b.GetPinnableReference());
@@ -4554,7 +4554,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, byte* g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, ref r.GetPinnableReference(), g, b);
@@ -4578,7 +4578,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -4586,7 +4586,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, string g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, ref r.GetPinnableReference(), g, b);
@@ -4594,7 +4594,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -4602,7 +4602,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, string g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, ref r.GetPinnableReference(), g, b);
@@ -4610,7 +4610,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, string r, byte* g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, g, ref b.GetPinnableReference());
@@ -4618,7 +4618,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, string r, Span<byte> g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, ref g.GetPinnableReference(), b);
@@ -4626,7 +4626,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, string r, Span<byte> g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -4634,7 +4634,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, string r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, ref g.GetPinnableReference(), b);
@@ -4642,7 +4642,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, string r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Surface* surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(surface, r, g, ref b.GetPinnableReference());
@@ -4666,7 +4666,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, byte* g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4690,7 +4690,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -4698,7 +4698,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, string g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4706,7 +4706,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -4714,7 +4714,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, string g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4738,7 +4738,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, byte* g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -4762,7 +4762,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -4770,7 +4770,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, string g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -4778,7 +4778,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -4786,7 +4786,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, string g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -4794,7 +4794,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, byte* g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4802,7 +4802,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, byte* g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -4810,7 +4810,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, byte* g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4818,7 +4818,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, Span<byte> g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -4826,7 +4826,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, Span<byte> g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -4834,7 +4834,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, Span<byte> g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -4842,7 +4842,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, string g, byte* b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4850,7 +4850,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, string g, Span<byte> b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -4858,7 +4858,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, string r, string g, string b)
+        public static unsafe int GetSurfaceColorMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetSurfaceColorMod(ref surface.GetPinnableReference(), r, g, b);
@@ -4898,7 +4898,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe int GetSurfaceAlphaMod(this Sdl thisApi, Span<Surface> surface, string alpha)
+        public static unsafe int GetSurfaceAlphaMod(this Sdl thisApi, Span<Surface> surface, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha)
         {
             // SpanOverloader
             return thisApi.GetSurfaceAlphaMod(ref surface.GetPinnableReference(), alpha);
@@ -6066,7 +6066,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 757, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowTitle(this Sdl thisApi, Span<Window> window, string title)
+        public static unsafe void SetWindowTitle(this Sdl thisApi, Span<Window> window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title)
         {
             // SpanOverloader
             thisApi.SetWindowTitle(ref window.GetPinnableReference(), title);
@@ -6130,7 +6130,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, string name, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Window* window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowData(window, name, ref userdata.GetPinnableReference());
@@ -6170,7 +6170,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void* SetWindowData(this Sdl thisApi, Span<Window> window, string name, void* userdata)
+        public static unsafe void* SetWindowData(this Sdl thisApi, Span<Window> window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, void* userdata)
         {
             // SpanOverloader
             return thisApi.SetWindowData(ref window.GetPinnableReference(), name, userdata);
@@ -6178,7 +6178,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 792, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, string name, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void* SetWindowData<T0>(this Sdl thisApi, Span<Window> window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowData(ref window.GetPinnableReference(), name, ref userdata.GetPinnableReference());
@@ -6210,7 +6210,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 805, Column 31 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void* GetWindowData(this Sdl thisApi, Span<Window> window, string name)
+        public static unsafe void* GetWindowData(this Sdl thisApi, Span<Window> window, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
         {
             // SpanOverloader
             return thisApi.GetWindowData(ref window.GetPinnableReference(), name);
@@ -7534,7 +7534,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 141, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, string name, uint style, Span<T0> hInst) where T0 : unmanaged
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, Span<T0> hInst) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
@@ -7575,7 +7575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, AssertData* arg0, Span<byte> arg1, string arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, AssertData* arg0, Span<byte> arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(arg0, ref arg1.GetPinnableReference(), arg2, arg3);
@@ -7583,7 +7583,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, AssertData* arg0, string arg1, Span<byte> arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, AssertData* arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<byte> arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(arg0, arg1, ref arg2.GetPinnableReference(), arg3);
@@ -7607,7 +7607,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, byte* arg1, string arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, byte* arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(ref arg0.GetPinnableReference(), arg1, arg2, arg3);
@@ -7631,7 +7631,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, Span<byte> arg1, string arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, Span<byte> arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(ref arg0.GetPinnableReference(), ref arg1.GetPinnableReference(), arg2, arg3);
@@ -7639,7 +7639,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, string arg1, byte* arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, byte* arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(ref arg0.GetPinnableReference(), arg1, arg2, arg3);
@@ -7647,7 +7647,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, string arg1, Span<byte> arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, Span<byte> arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(ref arg0.GetPinnableReference(), arg1, ref arg2.GetPinnableReference(), arg3);
@@ -7655,7 +7655,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 129, Column 41 in build/submodules/SDL/include\\SDL_assert.h")]
-        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, string arg1, string arg2, int arg3)
+        public static unsafe AssertState ReportAssertion(this Sdl thisApi, Span<AssertData> arg0, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg1, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string arg2, int arg3)
         {
             // SpanOverloader
             return thisApi.ReportAssertion(ref arg0.GetPinnableReference(), arg1, arg2, arg3);
@@ -7967,7 +7967,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 120, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -7999,7 +7999,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 125, Column 1 in build/submodules/SDL/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, string name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, nuint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -8159,7 +8159,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe uint OpenAudioDevice(this Sdl thisApi, string device, int iscapture, AudioSpec* desired, Span<AudioSpec> obtained, int allowed_changes)
+        public static unsafe uint OpenAudioDevice(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, AudioSpec* desired, Span<AudioSpec> obtained, int allowed_changes)
         {
             // SpanOverloader
             return thisApi.OpenAudioDevice(device, iscapture, desired, ref obtained.GetPinnableReference(), allowed_changes);
@@ -8167,7 +8167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe uint OpenAudioDevice(this Sdl thisApi, string device, int iscapture, Span<AudioSpec> desired, AudioSpec* obtained, int allowed_changes)
+        public static unsafe uint OpenAudioDevice(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, Span<AudioSpec> desired, AudioSpec* obtained, int allowed_changes)
         {
             // SpanOverloader
             return thisApi.OpenAudioDevice(device, iscapture, ref desired.GetPinnableReference(), obtained, allowed_changes);
@@ -8175,7 +8175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 43 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe uint OpenAudioDevice(this Sdl thisApi, string device, int iscapture, Span<AudioSpec> desired, Span<AudioSpec> obtained, int allowed_changes)
+        public static unsafe uint OpenAudioDevice(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string device, int iscapture, Span<AudioSpec> desired, Span<AudioSpec> obtained, int allowed_changes)
         {
             // SpanOverloader
             return thisApi.OpenAudioDevice(device, iscapture, ref desired.GetPinnableReference(), ref obtained.GetPinnableReference(), allowed_changes);
@@ -8423,7 +8423,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe void MixAudio(this Sdl thisApi, Span<byte> dst, string src, uint len, int volume)
+        public static unsafe void MixAudio(this Sdl thisApi, Span<byte> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, uint len, int volume)
         {
             // SpanOverloader
             thisApi.MixAudio(ref dst.GetPinnableReference(), src, len, volume);
@@ -8431,7 +8431,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe void MixAudio(this Sdl thisApi, string dst, Span<byte> src, uint len, int volume)
+        public static unsafe void MixAudio(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<byte> src, uint len, int volume)
         {
             // SpanOverloader
             thisApi.MixAudio(dst, ref src.GetPinnableReference(), len, volume);
@@ -8463,7 +8463,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe void MixAudioFormat(this Sdl thisApi, Span<byte> dst, string src, ushort format, uint len, int volume)
+        public static unsafe void MixAudioFormat(this Sdl thisApi, Span<byte> dst, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string src, ushort format, uint len, int volume)
         {
             // SpanOverloader
             thisApi.MixAudioFormat(ref dst.GetPinnableReference(), src, format, len, volume);
@@ -8471,7 +8471,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 953, Column 30 in build/submodules/SDL/include\\SDL_audio.h")]
-        public static unsafe void MixAudioFormat(this Sdl thisApi, string dst, Span<byte> src, ushort format, uint len, int volume)
+        public static unsafe void MixAudioFormat(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string dst, Span<byte> src, ushort format, uint len, int volume)
         {
             // SpanOverloader
             thisApi.MixAudioFormat(dst, ref src.GetPinnableReference(), format, len, volume);
@@ -8663,7 +8663,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
-        public static unsafe Cursor* CreateCursor(this Sdl thisApi, Span<byte> data, string mask, int w, int h, int hot_x, int hot_y)
+        public static unsafe Cursor* CreateCursor(this Sdl thisApi, Span<byte> data, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mask, int w, int h, int hot_x, int hot_y)
         {
             // SpanOverloader
             return thisApi.CreateCursor(ref data.GetPinnableReference(), mask, w, h, hot_x, hot_y);
@@ -8671,7 +8671,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
-        public static unsafe Cursor* CreateCursor(this Sdl thisApi, string data, Span<byte> mask, int w, int h, int hot_x, int hot_y)
+        public static unsafe Cursor* CreateCursor(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<byte> mask, int w, int h, int hot_x, int hot_y)
         {
             // SpanOverloader
             return thisApi.CreateCursor(data, ref mask.GetPinnableReference(), w, h, hot_x, hot_y);
@@ -9383,7 +9383,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, float* x, float* y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, x, y, ref pressure.GetPinnableReference());
@@ -9391,7 +9391,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, float* x, Span<float> y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, x, ref y.GetPinnableReference(), pressure);
@@ -9399,7 +9399,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, float* x, Span<float> y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, x, ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
@@ -9407,7 +9407,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, Span<float> x, float* y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, ref x.GetPinnableReference(), y, pressure);
@@ -9415,7 +9415,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, Span<float> x, float* y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, ref x.GetPinnableReference(), y, ref pressure.GetPinnableReference());
@@ -9423,7 +9423,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, Span<float> x, Span<float> y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), pressure);
@@ -9431,7 +9431,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, string state, Span<float> x, Span<float> y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(gamecontroller, touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
@@ -9567,7 +9567,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, float* x, float* y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, pressure);
@@ -9575,7 +9575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, float* x, float* y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, ref pressure.GetPinnableReference());
@@ -9583,7 +9583,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, float* x, Span<float> y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), pressure);
@@ -9591,7 +9591,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, float* x, Span<float> y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
@@ -9599,7 +9599,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, Span<float> x, float* y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, pressure);
@@ -9607,7 +9607,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, Span<float> x, float* y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, ref pressure.GetPinnableReference());
@@ -9615,7 +9615,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, Span<float> x, Span<float> y, float* pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, float* pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), pressure);
@@ -9623,7 +9623,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 720, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, string state, Span<float> x, Span<float> y, Span<float> pressure)
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
             return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
@@ -9855,7 +9855,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
-        public static unsafe byte* GetPrefPath(this Sdl thisApi, Span<byte> org, string app)
+        public static unsafe byte* GetPrefPath(this Sdl thisApi, Span<byte> org, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string app)
         {
             // SpanOverloader
             return thisApi.GetPrefPath(ref org.GetPinnableReference(), app);
@@ -9863,7 +9863,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 31 in build/submodules/SDL/include\\SDL_filesystem.h")]
-        public static unsafe byte* GetPrefPath(this Sdl thisApi, string org, Span<byte> app)
+        public static unsafe byte* GetPrefPath(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string org, Span<byte> app)
         {
             // SpanOverloader
             return thisApi.GetPrefPath(org, ref app.GetPinnableReference());
@@ -10135,7 +10135,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, Span<byte> name, string value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, Span<byte> name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(ref name.GetPinnableReference(), value, priority);
@@ -10143,7 +10143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, string name, Span<byte> value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<byte> value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(name, ref value.GetPinnableReference(), priority);
@@ -10175,7 +10175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe SdlBool SetHint(this Sdl thisApi, Span<byte> name, string value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, Span<byte> name, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
         {
             // SpanOverloader
             return thisApi.SetHint(ref name.GetPinnableReference(), value);
@@ -10183,7 +10183,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe SdlBool SetHint(this Sdl thisApi, string name, Span<byte> value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<byte> value)
         {
             // SpanOverloader
             return thisApi.SetHint(name, ref value.GetPinnableReference());
@@ -10231,7 +10231,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1758, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -10263,7 +10263,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1774, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DelHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -10303,7 +10303,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 88, Column 31 in build/submodules/SDL/include\\SDL_loadso.h")]
-        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, string name) where T0 : unmanaged
+        public static unsafe void* LoadFunction<T0>(this Sdl thisApi, Span<T0> handle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LoadFunction(ref handle.GetPinnableReference(), name);
@@ -10407,7 +10407,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
-        public static unsafe void LogMessageV(this Sdl thisApi, int category, LogPriority priority, Span<byte> fmt, string ap)
+        public static unsafe void LogMessageV(this Sdl thisApi, int category, LogPriority priority, Span<byte> fmt, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ap)
         {
             // SpanOverloader
             thisApi.LogMessageV(category, priority, ref fmt.GetPinnableReference(), ap);
@@ -10415,7 +10415,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 30 in build/submodules/SDL/include\\SDL_log.h")]
-        public static unsafe void LogMessageV(this Sdl thisApi, int category, LogPriority priority, string fmt, Span<byte> ap)
+        public static unsafe void LogMessageV(this Sdl thisApi, int category, LogPriority priority, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fmt, Span<byte> ap)
         {
             // SpanOverloader
             thisApi.LogMessageV(category, priority, fmt, ref ap.GetPinnableReference());
@@ -10495,7 +10495,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, byte* title, string message, Span<Window> window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, byte* title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, title, message, ref window.GetPinnableReference());
@@ -10535,7 +10535,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, Span<byte> title, string message, Window* window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, Span<byte> title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Window* window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, ref title.GetPinnableReference(), message, window);
@@ -10543,7 +10543,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, Span<byte> title, string message, Span<Window> window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, Span<byte> title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, ref title.GetPinnableReference(), message, ref window.GetPinnableReference());
@@ -10551,7 +10551,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, string title, byte* message, Span<Window> window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, byte* message, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, title, message, ref window.GetPinnableReference());
@@ -10559,7 +10559,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, string title, Span<byte> message, Window* window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, Span<byte> message, Window* window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, title, ref message.GetPinnableReference(), window);
@@ -10567,7 +10567,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, string title, Span<byte> message, Span<Window> window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, Span<byte> message, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, title, ref message.GetPinnableReference(), ref window.GetPinnableReference());
@@ -10575,7 +10575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 29 in build/submodules/SDL/include\\SDL_messagebox.h")]
-        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, string title, string message, Span<Window> window)
+        public static unsafe int ShowSimpleMessageBox(this Sdl thisApi, uint flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string title, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.ShowSimpleMessageBox(flags, title, message, ref window.GetPinnableReference());
@@ -11111,7 +11111,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, byte* r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, ref g.GetPinnableReference(), b);
@@ -11119,7 +11119,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, byte* r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, g, ref b.GetPinnableReference());
@@ -11143,7 +11143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, byte* g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, ref r.GetPinnableReference(), g, b);
@@ -11167,7 +11167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -11175,7 +11175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, string g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, ref r.GetPinnableReference(), g, b);
@@ -11183,7 +11183,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -11191,7 +11191,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, string g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, ref r.GetPinnableReference(), g, b);
@@ -11199,7 +11199,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, string r, byte* g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, g, ref b.GetPinnableReference());
@@ -11207,7 +11207,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, string r, Span<byte> g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, ref g.GetPinnableReference(), b);
@@ -11215,7 +11215,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, string r, Span<byte> g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -11223,7 +11223,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, string r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, ref g.GetPinnableReference(), b);
@@ -11231,7 +11231,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, string r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Texture* texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(texture, r, g, ref b.GetPinnableReference());
@@ -11255,7 +11255,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, byte* g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11279,7 +11279,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -11287,7 +11287,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, string g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11295,7 +11295,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -11303,7 +11303,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, string g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11327,7 +11327,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, byte* g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -11351,7 +11351,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b);
@@ -11359,7 +11359,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, string g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -11367,7 +11367,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference());
@@ -11375,7 +11375,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, string g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), ref r.GetPinnableReference(), g, b);
@@ -11383,7 +11383,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, byte* g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11391,7 +11391,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, byte* g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -11399,7 +11399,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, byte* g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11407,7 +11407,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, Span<byte> g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -11415,7 +11415,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, Span<byte> g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference());
@@ -11423,7 +11423,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, Span<byte> g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, ref g.GetPinnableReference(), b);
@@ -11431,7 +11431,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, string g, byte* b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11439,7 +11439,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, string g, Span<byte> b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, ref b.GetPinnableReference());
@@ -11447,7 +11447,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, string r, string g, string b)
+        public static unsafe int GetTextureColorMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b)
         {
             // SpanOverloader
             return thisApi.GetTextureColorMod(ref texture.GetPinnableReference(), r, g, b);
@@ -11487,7 +11487,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 425, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetTextureAlphaMod(this Sdl thisApi, Span<Texture> texture, string alpha)
+        public static unsafe int GetTextureAlphaMod(this Sdl thisApi, Span<Texture> texture, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alpha)
         {
             // SpanOverloader
             return thisApi.GetTextureAlphaMod(ref texture.GetPinnableReference(), alpha);
@@ -11639,7 +11639,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11647,7 +11647,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11671,7 +11671,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11695,7 +11695,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11703,7 +11703,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11711,7 +11711,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11719,7 +11719,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11727,7 +11727,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11735,7 +11735,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11743,7 +11743,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11751,7 +11751,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11759,7 +11759,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11783,7 +11783,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11807,7 +11807,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11815,7 +11815,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11823,7 +11823,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11831,7 +11831,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11855,7 +11855,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11879,7 +11879,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11887,7 +11887,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11895,7 +11895,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11903,7 +11903,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11911,7 +11911,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11919,7 +11919,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11927,7 +11927,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11935,7 +11935,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11943,7 +11943,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11951,7 +11951,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11959,7 +11959,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11967,7 +11967,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11975,7 +11975,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11999,7 +11999,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12023,7 +12023,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12031,7 +12031,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12039,7 +12039,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12047,7 +12047,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12071,7 +12071,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12095,7 +12095,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12103,7 +12103,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12111,7 +12111,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12119,7 +12119,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12127,7 +12127,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12135,7 +12135,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12143,7 +12143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12151,7 +12151,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12159,7 +12159,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12167,7 +12167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12175,7 +12175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12183,7 +12183,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12191,7 +12191,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12215,7 +12215,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12239,7 +12239,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12247,7 +12247,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12255,7 +12255,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12263,7 +12263,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12287,7 +12287,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12311,7 +12311,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12319,7 +12319,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12327,7 +12327,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12335,7 +12335,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12343,7 +12343,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12351,7 +12351,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12359,7 +12359,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12367,7 +12367,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12375,7 +12375,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12383,7 +12383,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12391,7 +12391,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12399,7 +12399,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12407,7 +12407,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 543, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Uplane, int Upitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12439,7 +12439,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, UVplane, UVpitch);
@@ -12447,7 +12447,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, rect, Yplane, Ypitch, ref UVplane.GetPinnableReference(), UVpitch);
@@ -12471,7 +12471,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -12495,7 +12495,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, UVplane, UVpitch);
@@ -12503,7 +12503,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -12511,7 +12511,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref UVplane.GetPinnableReference(), UVpitch);
@@ -12519,7 +12519,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -12543,7 +12543,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, UVplane, UVpitch);
@@ -12567,7 +12567,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, UVplane, UVpitch);
@@ -12575,7 +12575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, UVplane, UVpitch);
@@ -12583,7 +12583,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref UVplane.GetPinnableReference(), UVpitch);
@@ -12591,7 +12591,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, UVplane, UVpitch);
@@ -12615,7 +12615,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -12639,7 +12639,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, UVplane, UVpitch);
@@ -12647,7 +12647,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, byte* UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -12655,7 +12655,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, Span<byte> UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref UVplane.GetPinnableReference(), UVpitch);
@@ -12663,7 +12663,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 565, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string UVplane, int UVpitch)
+        public static unsafe int UpdateNVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string Yplane, int Ypitch, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string UVplane, int UVpitch)
         {
             // SpanOverloader
             return thisApi.UpdateNVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, UVplane, UVpitch);
@@ -13159,7 +13159,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13167,7 +13167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13191,7 +13191,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13215,7 +13215,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13223,7 +13223,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13231,7 +13231,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -13239,7 +13239,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13247,7 +13247,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13255,7 +13255,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13263,7 +13263,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13271,7 +13271,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13279,7 +13279,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13303,7 +13303,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13327,7 +13327,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -13335,7 +13335,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13343,7 +13343,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -13351,7 +13351,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13375,7 +13375,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -13399,7 +13399,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13407,7 +13407,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -13415,7 +13415,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -13423,7 +13423,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -13431,7 +13431,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13439,7 +13439,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -13447,7 +13447,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13455,7 +13455,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -13463,7 +13463,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13471,7 +13471,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -13479,7 +13479,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13487,7 +13487,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -13495,7 +13495,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, string g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, ref r.GetPinnableReference(), g, b, a);
@@ -13503,7 +13503,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, byte* g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13511,7 +13511,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, byte* g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13519,7 +13519,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, byte* g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13527,7 +13527,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13535,7 +13535,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13543,7 +13543,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13551,7 +13551,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -13559,7 +13559,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13567,7 +13567,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13575,7 +13575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13583,7 +13583,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13591,7 +13591,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13599,7 +13599,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -13607,7 +13607,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, ref g.GetPinnableReference(), b, a);
@@ -13615,7 +13615,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13623,7 +13623,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13631,7 +13631,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13639,7 +13639,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, ref b.GetPinnableReference(), a);
@@ -13647,7 +13647,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, string r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Renderer* renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(renderer, r, g, b, ref a.GetPinnableReference());
@@ -13671,7 +13671,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13695,7 +13695,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -13703,7 +13703,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13711,7 +13711,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -13719,7 +13719,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13743,7 +13743,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -13767,7 +13767,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13775,7 +13775,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -13783,7 +13783,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -13791,7 +13791,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -13799,7 +13799,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13807,7 +13807,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -13815,7 +13815,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13823,7 +13823,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -13831,7 +13831,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -13839,7 +13839,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -13847,7 +13847,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13855,7 +13855,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -13863,7 +13863,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, string g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, byte* r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -13887,7 +13887,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -13911,7 +13911,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -13919,7 +13919,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -13927,7 +13927,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -13935,7 +13935,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -13959,7 +13959,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -13983,7 +13983,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -13991,7 +13991,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -13999,7 +13999,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -14007,7 +14007,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), ref g.GetPinnableReference(), b, a);
@@ -14015,7 +14015,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -14023,7 +14023,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -14031,7 +14031,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -14039,7 +14039,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -14047,7 +14047,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -14055,7 +14055,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, ref b.GetPinnableReference(), a);
@@ -14063,7 +14063,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -14071,7 +14071,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, ref a.GetPinnableReference());
@@ -14079,7 +14079,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, string g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, Span<byte> r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), ref r.GetPinnableReference(), g, b, a);
@@ -14087,7 +14087,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14095,7 +14095,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -14103,7 +14103,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14111,7 +14111,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -14119,7 +14119,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -14127,7 +14127,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -14135,7 +14135,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14143,7 +14143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -14151,7 +14151,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, byte* g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, byte* g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14159,7 +14159,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -14167,7 +14167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -14175,7 +14175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -14183,7 +14183,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -14191,7 +14191,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -14199,7 +14199,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), ref b.GetPinnableReference(), a);
@@ -14207,7 +14207,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -14215,7 +14215,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, ref a.GetPinnableReference());
@@ -14223,7 +14223,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, Span<byte> g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, Span<byte> g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, ref g.GetPinnableReference(), b, a);
@@ -14231,7 +14231,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, byte* b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14239,7 +14239,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, byte* b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -14247,7 +14247,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, byte* b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, byte* b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14255,7 +14255,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, Span<byte> b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -14263,7 +14263,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, Span<byte> b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), ref a.GetPinnableReference());
@@ -14271,7 +14271,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, Span<byte> b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, Span<byte> b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, ref b.GetPinnableReference(), a);
@@ -14279,7 +14279,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, string b, byte* a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, byte* a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);
@@ -14287,7 +14287,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, string b, Span<byte> a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, Span<byte> a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, ref a.GetPinnableReference());
@@ -14295,7 +14295,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 939, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, string r, string g, string b, string a)
+        public static unsafe int GetRenderDrawColor(this Sdl thisApi, Span<Renderer> renderer, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string r, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string g, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string b, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string a)
         {
             // SpanOverloader
             return thisApi.GetRenderDrawColor(ref renderer.GetPinnableReference(), r, g, b, a);

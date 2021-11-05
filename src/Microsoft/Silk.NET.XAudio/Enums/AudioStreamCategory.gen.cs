@@ -34,5 +34,11 @@ namespace Silk.NET.XAudio
         AudioCategoryMovie = 0xA,
         [NativeName("Name", "AudioCategory_Media")]
         AudioCategoryMedia = 0xB,
+        [NativeName("Name", "AudioCategory_FarFieldSpeech")]
+        AudioCategoryFarFieldSpeech = 0xC,
+        [NativeName("Name", "AudioCategory_UniformSpeech")]
+        AudioCategoryUniformSpeech = 0xD,
+        [NativeName("Name", "AudioCategory_VoiceTyping")]
+        AudioCategoryVoiceTyping = 0xE,
     }
 }

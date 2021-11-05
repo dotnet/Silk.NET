@@ -146,9 +146,9 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParametersPtr = &pParameters)
+            fixed (void* pParametersPtr = &pParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, T0*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
             }
             return ret;
         }
@@ -167,9 +167,9 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pParametersPtr = &pParameters)
+            fixed (void* pParametersPtr = &pParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, T0*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
+                ret = ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
             }
             return ret;
         }

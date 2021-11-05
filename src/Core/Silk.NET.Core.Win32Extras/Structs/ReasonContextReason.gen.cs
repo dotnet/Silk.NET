@@ -39,8 +39,8 @@ namespace Silk.NET.Core.Win32Extras
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\minwinbase.h:269:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\minwinbase.h:269:9)")]
+        [NativeName("Type", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/um\\minwinbase.h:269:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/um\\minwinbase.h:269:9)")]
         [NativeName("Name", "Detailed")]
         public ReasonContextReasonDetailed Detailed;
 

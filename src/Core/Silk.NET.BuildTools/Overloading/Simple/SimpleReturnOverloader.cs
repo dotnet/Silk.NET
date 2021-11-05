@@ -34,11 +34,15 @@ namespace Silk.NET.BuildTools.Overloading
             yield return original;
             foreach (var overloader in overloaders)
             {
-                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, core))
+                var attrs = original.Attributes
+                    .Select(x => new Attribute { Name = x.Name, Arguments = new(x.Arguments) })
+                    .ToList();
+                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, attrs, core))
                 {
                     var ret = new FunctionSignatureBuilder(original)
                         .WithName(original.Name + ReturnOverloadSuffix)
                         .WithReturnType(varied)
+                        .WithAttributes(attrs)
                         .Build();
                     ret.Kind = SignatureKind.ReturnOverload;
                     yield return ret;

@@ -156,27 +156,27 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(string pFilename, IDxcBlob** ppIncludeSource)
+        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
+            var pFilenamePtr = (byte*) SilkMarshal.StringToPtr(pFilename, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
-            Marshal.FreeHGlobal((nint)pFilenamePtr);
+            SilkMarshal.Free((nint)pFilenamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(string pFilename, ref IDxcBlob* ppIncludeSource)
+        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
+            var pFilenamePtr = (byte*) SilkMarshal.StringToPtr(pFilename, NativeStringEncoding.LPWStr);
             fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
             }
-            Marshal.FreeHGlobal((nint)pFilenamePtr);
+            SilkMarshal.Free((nint)pFilenamePtr);
             return ret;
         }
 

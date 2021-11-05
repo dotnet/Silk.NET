@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
 
         [NativeApi(EntryPoint = "glPopGroupMarkerEXT")]
         public partial void PopGroupMarker();
@@ -39,7 +39,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
 
         public ExtDebugMarker(INativeContext ctx)
             : base(ctx)

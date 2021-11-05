@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in byte indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB")]
-        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string indices);
+        public partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexusvARB")]
         public unsafe partial void MatrixIndex([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* indices);
