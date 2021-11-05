@@ -247,3 +247,5 @@ Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1
 
 **Note** When we update any item in the chain it overwrites the existing memory, so the ptrs remain fixed. It also
 ensures the PNext value is maintained.
+
+You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s.
