@@ -1,6 +1,6 @@
 <!-- Begin exclude from NuGet readme. -->
 <h1 align="center">
-    <a href="#"><img align="center" src="documentation/readme/silkdotnet_v3_horizontal.png" height="96"></a>
+    <a href="#"><img align="center" src="documentation/readme/silkdotnet_v3_horizontal_96.svg"></a>
     <br />
 </h1>
 <div align="center">
@@ -29,7 +29,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, 
 <div>
 
 <!-- Begin exclude from NuGet readme. -->
-    <a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
+<a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)
