@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSDKVersion(uint SDKVersion, [UnmanagedType(UnmanagedType.LPStr)] string SDKPath)
+        public readonly int SetSDKVersion(uint SDKVersion, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string SDKPath)
         {
             var @this = (ID3D12SDKConfiguration*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

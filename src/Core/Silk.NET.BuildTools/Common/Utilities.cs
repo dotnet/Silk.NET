@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using ClangSharp.Interop;
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
@@ -22,7 +22,6 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets a list of keywords in the C# language.
         /// </summary>
-        [NotNull]
         public static readonly HashSet<string> CSharpKeywords = new HashSet<string>
         {
             "abstract",
@@ -152,7 +151,6 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="arrayDimensions">The dimension.</param>
         /// <returns>The string.</returns>
-        [NotNull]
         public static string GetArrayDimensionString(int arrayDimensions)
         {
             if (arrayDimensions == 0)
@@ -436,12 +434,12 @@ namespace Silk.NET.BuildTools.Common
 
         public static string MapUnmanagedType(this Functions.Type type) => type.OriginalName?.ToUpper() switch
         {
-            "BSTR" => "UnmanagedType.BStr",
-            "LPSTR" or "LPCSTR" => "UnmanagedType.LPStr",
-            "LPTSTR" or "LPCTSTR" => "UnmanagedType.LPTStr",
-            "LPUTF8STR" => "UnmanagedType.LPUTF8Str",
-            "LPWSTR" or "LPCWSTR" => "UnmanagedType.LPWStr",
-            _ => "UnmanagedType.LPUTF8Str"
+            "BSTR" => "Silk.NET.Core.Native.UnmanagedType.BStr",
+            "LPSTR" or "LPCSTR" => "Silk.NET.Core.Native.UnmanagedType.LPStr",
+            "LPTSTR" or "LPCTSTR" => "Silk.NET.Core.Native.UnmanagedType.LPTStr",
+            "LPUTF8STR" => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str",
+            "LPWSTR" or "LPCWSTR" => "Silk.NET.Core.Native.UnmanagedType.LPWStr",
+            _ => "Silk.NET.Core.Native.UnmanagedType.LPUTF8Str"
         };
     }
 }

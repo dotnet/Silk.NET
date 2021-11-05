@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Xml.Linq;
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools.Converters.Khronos

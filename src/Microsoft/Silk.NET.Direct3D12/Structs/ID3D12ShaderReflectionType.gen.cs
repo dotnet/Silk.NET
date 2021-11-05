@@ -90,7 +90,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D12ShaderReflectionType* GetMemberTypeByName([UnmanagedType(UnmanagedType.LPStr)] string Name)
+        public readonly unsafe ID3D12ShaderReflectionType* GetMemberTypeByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
         {
             var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D12ShaderReflectionType* ret = default;
@@ -110,7 +110,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [return: UnmanagedType(UnmanagedType.LPStr)]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)]
         public readonly string GetMemberTypeNameS(uint Index)
         {
             var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

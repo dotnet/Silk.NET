@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier([UnmanagedType(UnmanagedType.LPWStr)] string pExportName)
+        public readonly unsafe void* GetShaderIdentifier([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ulong GetShaderStackSize([UnmanagedType(UnmanagedType.LPWStr)] string pExportName)
+        public readonly ulong GetShaderStackSize([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;

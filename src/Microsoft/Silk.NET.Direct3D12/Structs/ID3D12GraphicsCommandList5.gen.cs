@@ -357,7 +357,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([UnmanagedType(UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

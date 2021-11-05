@@ -12,7 +12,7 @@ using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
 using Humanizer;
-using JetBrains.Annotations;
+
 using Microsoft.Extensions.FileSystemGlobbing;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;

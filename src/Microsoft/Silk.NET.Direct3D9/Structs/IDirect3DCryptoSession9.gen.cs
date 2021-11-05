@@ -150,7 +150,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCertificate(uint CertifacteSize, [UnmanagedType(UnmanagedType.LPUTF8Str)] string ppCertificate)
+        public readonly int GetCertificate(uint CertifacteSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string ppCertificate)
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

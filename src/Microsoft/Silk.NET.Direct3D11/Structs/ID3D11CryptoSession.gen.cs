@@ -408,7 +408,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCertificate(uint CertificateSize, [UnmanagedType(UnmanagedType.LPUTF8Str)] string pCertificate)
+        public readonly int GetCertificate(uint CertificateSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pCertificate)
         {
             var @this = (ID3D11CryptoSession*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

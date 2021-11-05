@@ -406,7 +406,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetInstanceName([UnmanagedType(UnmanagedType.LPStr)] string pInstanceName, nuint* pBufferLength)
+        public readonly unsafe void GetInstanceName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pInstanceName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pInstanceNamePtr = (byte*) SilkMarshal.StringToPtr(pInstanceName, NativeStringEncoding.LPStr);
@@ -415,7 +415,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetInstanceName([UnmanagedType(UnmanagedType.LPStr)] string pInstanceName, ref nuint pBufferLength)
+        public readonly void GetInstanceName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pInstanceName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pInstanceNamePtr = (byte*) SilkMarshal.StringToPtr(pInstanceName, NativeStringEncoding.LPStr);
@@ -467,7 +467,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetTypeName([UnmanagedType(UnmanagedType.LPStr)] string pTypeName, nuint* pBufferLength)
+        public readonly unsafe void GetTypeName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTypeName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pTypeNamePtr = (byte*) SilkMarshal.StringToPtr(pTypeName, NativeStringEncoding.LPStr);
@@ -476,7 +476,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetTypeName([UnmanagedType(UnmanagedType.LPStr)] string pTypeName, ref nuint pBufferLength)
+        public readonly void GetTypeName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pTypeName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pTypeNamePtr = (byte*) SilkMarshal.StringToPtr(pTypeName, NativeStringEncoding.LPStr);

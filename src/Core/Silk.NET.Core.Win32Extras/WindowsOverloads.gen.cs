@@ -42,7 +42,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StartTraceW(this Windows thisApi, ulong* TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -82,7 +82,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceW(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties)
+        public static unsafe uint StartTraceW(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, EventTraceProperties* Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceW(ref TraceHandle.GetPinnableReference(), InstanceName, Properties);
@@ -90,7 +90,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1612, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceW(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StartTraceW(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceW(ref TraceHandle.GetPinnableReference(), InstanceName, ref Properties.GetPinnableReference());
@@ -122,7 +122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceA(this Windows thisApi, ulong* TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StartTraceA(this Windows thisApi, ulong* TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -162,7 +162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceA(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties)
+        public static unsafe uint StartTraceA(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, EventTraceProperties* Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceA(ref TraceHandle.GetPinnableReference(), InstanceName, Properties);
@@ -170,7 +170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1627, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StartTraceA(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StartTraceA(this Windows thisApi, Span<ulong> TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StartTraceA(ref TraceHandle.GetPinnableReference(), InstanceName, ref Properties.GetPinnableReference());
@@ -202,7 +202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1654, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StopTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StopTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StopTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -234,7 +234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1669, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint StopTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint StopTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.StopTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -266,7 +266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1695, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint QueryTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint QueryTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.QueryTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -298,7 +298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1710, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint QueryTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint QueryTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.QueryTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -330,7 +330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1730, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint UpdateTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint UpdateTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.UpdateTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -362,7 +362,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1739, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint UpdateTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint UpdateTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.UpdateTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -394,7 +394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1767, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint FlushTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint FlushTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.FlushTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -426,7 +426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1784, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint FlushTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
+        public static unsafe uint FlushTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties)
         {
             // SpanOverloader
             return thisApi.FlushTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference());
@@ -458,7 +458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1803, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint ControlTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties, uint ControlCode)
+        public static unsafe uint ControlTraceW(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string InstanceName, Span<EventTraceProperties> Properties, uint ControlCode)
         {
             // SpanOverloader
             return thisApi.ControlTraceW(TraceHandle, InstanceName, ref Properties.GetPinnableReference(), ControlCode);
@@ -490,7 +490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1819, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint ControlTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties, uint ControlCode)
+        public static unsafe uint ControlTraceA(this Windows thisApi, ulong TraceHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string InstanceName, Span<EventTraceProperties> Properties, uint ControlCode)
         {
             // SpanOverloader
             return thisApi.ControlTraceA(TraceHandle, InstanceName, ref Properties.GetPinnableReference(), ControlCode);
@@ -818,7 +818,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -858,7 +858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -866,7 +866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -874,7 +874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -882,7 +882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -890,7 +890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -898,7 +898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -938,7 +938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -946,7 +946,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -986,7 +986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -994,7 +994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1002,7 +1002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1010,7 +1010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1018,7 +1018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1026,7 +1026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1034,7 +1034,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1042,7 +1042,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1082,7 +1082,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1090,7 +1090,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1130,7 +1130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1138,7 +1138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1146,7 +1146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1154,7 +1154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1162,7 +1162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1170,7 +1170,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1178,7 +1178,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1186,7 +1186,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1226,7 +1226,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1234,7 +1234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1274,7 +1274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1282,7 +1282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1290,7 +1290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1298,7 +1298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1306,7 +1306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1314,7 +1314,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1322,7 +1322,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1330,7 +1330,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsW(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1370,7 +1370,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1378,7 +1378,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1418,7 +1418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1426,7 +1426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1434,7 +1434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1442,7 +1442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1450,7 +1450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1458,7 +1458,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1466,7 +1466,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1474,7 +1474,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1514,7 +1514,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1522,7 +1522,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1562,7 +1562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1570,7 +1570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1578,7 +1578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1586,7 +1586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1594,7 +1594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1602,7 +1602,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1610,7 +1610,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1618,7 +1618,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1658,7 +1658,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1666,7 +1666,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1706,7 +1706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1714,7 +1714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1722,7 +1722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1730,7 +1730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1738,7 +1738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1746,7 +1746,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1754,7 +1754,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -1762,7 +1762,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1802,7 +1802,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1810,7 +1810,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, char* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1850,7 +1850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1858,7 +1858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<char> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1866,7 +1866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1874,7 +1874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, char* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1882,7 +1882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, Span<char> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -1898,7 +1898,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -1906,7 +1906,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2450, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsW<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsW(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1938,7 +1938,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1978,7 +1978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -1986,7 +1986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -1994,7 +1994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2002,7 +2002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2010,7 +2010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2018,7 +2018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2058,7 +2058,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2066,7 +2066,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2106,7 +2106,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2114,7 +2114,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2122,7 +2122,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2130,7 +2130,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2138,7 +2138,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2146,7 +2146,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2154,7 +2154,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2162,7 +2162,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2202,7 +2202,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2210,7 +2210,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2250,7 +2250,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2258,7 +2258,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2266,7 +2266,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2274,7 +2274,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2282,7 +2282,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2290,7 +2290,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2298,7 +2298,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2306,7 +2306,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2346,7 +2346,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2354,7 +2354,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2394,7 +2394,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2402,7 +2402,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2410,7 +2410,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2418,7 +2418,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2426,7 +2426,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2434,7 +2434,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2442,7 +2442,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2450,7 +2450,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
+        public static unsafe uint RegisterTraceGuidsA(this Windows thisApi, PfnWmidprequest RequestAddress, void* RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle)
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, RequestContext, ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2490,7 +2490,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2498,7 +2498,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2538,7 +2538,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2546,7 +2546,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2554,7 +2554,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2562,7 +2562,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2570,7 +2570,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2578,7 +2578,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2586,7 +2586,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2594,7 +2594,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2634,7 +2634,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2642,7 +2642,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2682,7 +2682,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2690,7 +2690,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2698,7 +2698,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2706,7 +2706,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2714,7 +2714,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2722,7 +2722,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2730,7 +2730,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2738,7 +2738,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Guid* ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ControlGuid, GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2778,7 +2778,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2786,7 +2786,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2826,7 +2826,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2834,7 +2834,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2842,7 +2842,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2850,7 +2850,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2858,7 +2858,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -2866,7 +2866,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -2874,7 +2874,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, RegistrationHandle);
@@ -2882,7 +2882,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, TraceGuidRegistration* TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, TraceGuidReg, MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2922,7 +2922,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2930,7 +2930,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, byte* MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2970,7 +2970,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, RegistrationHandle);
@@ -2978,7 +2978,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, Span<byte> MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), ref MofImagePath.GetPinnableReference(), MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -2986,7 +2986,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -2994,7 +2994,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, byte* MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -3002,7 +3002,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), RegistrationHandle);
@@ -3010,7 +3010,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, Span<byte> MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, ref MofResourceName.GetPinnableReference(), ref RegistrationHandle.GetPinnableReference());
@@ -3018,7 +3018,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, ulong* RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, RegistrationHandle);
@@ -3026,7 +3026,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2470, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
+        public static unsafe uint RegisterTraceGuidsA<T0>(this Windows thisApi, PfnWmidprequest RequestAddress, Span<T0> RequestContext, Span<Guid> ControlGuid, uint GuidCount, Span<TraceGuidRegistration> TraceGuidReg, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofImagePath, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string MofResourceName, Span<ulong> RegistrationHandle) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterTraceGuidsA(RequestAddress, ref RequestContext.GetPinnableReference(), ref ControlGuid.GetPinnableReference(), GuidCount, ref TraceGuidReg.GetPinnableReference(), MofImagePath, MofResourceName, ref RegistrationHandle.GetPinnableReference());
@@ -3234,7 +3234,7 @@ namespace Silk.NET.Core.Win32Extras
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2678, Column 1 in D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h")]
-        public static unsafe uint TraceMessageVa(this Windows thisApi, ulong LoggerHandle, uint MessageFlags, Span<Guid> MessageGuid, ushort MessageNumber, [UnmanagedType(UnmanagedType.LPUTF8Str)] string MessageArgList)
+        public static unsafe uint TraceMessageVa(this Windows thisApi, ulong LoggerHandle, uint MessageFlags, Span<Guid> MessageGuid, ushort MessageNumber, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string MessageArgList)
         {
             // SpanOverloader
             return thisApi.TraceMessageVa(LoggerHandle, MessageFlags, ref MessageGuid.GetPinnableReference(), MessageNumber, MessageArgList);

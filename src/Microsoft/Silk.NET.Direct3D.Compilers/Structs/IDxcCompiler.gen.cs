@@ -636,7 +636,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -647,7 +647,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -661,7 +661,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -675,7 +675,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -692,7 +692,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -706,7 +706,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -723,7 +723,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -740,7 +740,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -760,7 +760,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -774,7 +774,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -791,7 +791,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -808,7 +808,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -828,7 +828,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -845,7 +845,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -865,7 +865,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -885,7 +885,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1532,7 +1532,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1546,7 +1546,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1563,7 +1563,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1580,7 +1580,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1600,7 +1600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1617,7 +1617,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1637,7 +1637,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1657,7 +1657,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1680,7 +1680,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1697,7 +1697,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1717,7 +1717,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1737,7 +1737,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1760,7 +1760,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1780,7 +1780,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1803,7 +1803,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1826,7 +1826,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1852,7 +1852,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1863,7 +1863,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1877,7 +1877,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1891,7 +1891,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1908,7 +1908,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1922,7 +1922,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1939,7 +1939,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1956,7 +1956,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1976,7 +1976,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1990,7 +1990,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2007,7 +2007,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2024,7 +2024,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2044,7 +2044,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2061,7 +2061,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2081,7 +2081,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2101,7 +2101,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2124,7 +2124,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2138,7 +2138,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2155,7 +2155,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2172,7 +2172,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2192,7 +2192,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2209,7 +2209,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2229,7 +2229,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2249,7 +2249,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2272,7 +2272,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2289,7 +2289,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2309,7 +2309,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2329,7 +2329,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2352,7 +2352,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2372,7 +2372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2395,7 +2395,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2418,7 +2418,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2444,7 +2444,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2457,7 +2457,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2473,7 +2473,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2489,7 +2489,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2508,7 +2508,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2524,7 +2524,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2543,7 +2543,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2562,7 +2562,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2584,7 +2584,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2600,7 +2600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2619,7 +2619,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2638,7 +2638,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2660,7 +2660,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2679,7 +2679,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2701,7 +2701,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2723,7 +2723,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3372,7 +3372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3386,7 +3386,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3403,7 +3403,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3420,7 +3420,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3440,7 +3440,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3457,7 +3457,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3477,7 +3477,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3497,7 +3497,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3520,7 +3520,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3537,7 +3537,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3557,7 +3557,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3577,7 +3577,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3600,7 +3600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3620,7 +3620,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3643,7 +3643,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3666,7 +3666,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4412,7 +4412,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4429,7 +4429,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4449,7 +4449,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4469,7 +4469,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4492,7 +4492,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4512,7 +4512,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4535,7 +4535,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4558,7 +4558,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4584,7 +4584,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4604,7 +4604,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4627,7 +4627,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4650,7 +4650,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4676,7 +4676,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4699,7 +4699,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4725,7 +4725,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4751,7 +4751,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4780,7 +4780,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4794,7 +4794,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4811,7 +4811,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4828,7 +4828,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4848,7 +4848,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4865,7 +4865,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4885,7 +4885,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4905,7 +4905,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4928,7 +4928,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4945,7 +4945,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4965,7 +4965,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4985,7 +4985,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5008,7 +5008,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5028,7 +5028,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5051,7 +5051,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5074,7 +5074,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5100,7 +5100,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5117,7 +5117,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5137,7 +5137,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5157,7 +5157,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5180,7 +5180,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5200,7 +5200,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5223,7 +5223,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5246,7 +5246,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5272,7 +5272,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5292,7 +5292,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5315,7 +5315,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5338,7 +5338,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5364,7 +5364,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5387,7 +5387,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5413,7 +5413,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5439,7 +5439,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5468,7 +5468,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5484,7 +5484,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5503,7 +5503,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5522,7 +5522,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5544,7 +5544,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5563,7 +5563,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5585,7 +5585,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5607,7 +5607,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5632,7 +5632,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5651,7 +5651,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5673,7 +5673,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5695,7 +5695,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5720,7 +5720,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5742,7 +5742,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5767,7 +5767,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5792,7 +5792,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5820,7 +5820,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5831,7 +5831,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5845,7 +5845,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5859,7 +5859,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5876,7 +5876,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5890,7 +5890,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5907,7 +5907,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5924,7 +5924,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5944,7 +5944,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5958,7 +5958,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5975,7 +5975,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5992,7 +5992,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6012,7 +6012,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6029,7 +6029,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6049,7 +6049,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6069,7 +6069,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6092,7 +6092,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6106,7 +6106,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6123,7 +6123,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6140,7 +6140,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6160,7 +6160,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6177,7 +6177,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6197,7 +6197,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6217,7 +6217,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6240,7 +6240,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6257,7 +6257,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6277,7 +6277,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6297,7 +6297,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6320,7 +6320,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6340,7 +6340,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6363,7 +6363,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6386,7 +6386,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6412,7 +6412,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6425,7 +6425,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6441,7 +6441,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6457,7 +6457,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6476,7 +6476,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6492,7 +6492,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6511,7 +6511,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6530,7 +6530,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6552,7 +6552,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6568,7 +6568,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6587,7 +6587,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6606,7 +6606,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6628,7 +6628,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6647,7 +6647,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6669,7 +6669,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6691,7 +6691,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6716,7 +6716,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6730,7 +6730,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6747,7 +6747,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6764,7 +6764,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6784,7 +6784,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6801,7 +6801,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6821,7 +6821,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6841,7 +6841,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6864,7 +6864,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6881,7 +6881,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6901,7 +6901,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6921,7 +6921,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6944,7 +6944,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6964,7 +6964,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6987,7 +6987,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7010,7 +7010,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7036,7 +7036,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7053,7 +7053,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7073,7 +7073,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7093,7 +7093,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7116,7 +7116,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7136,7 +7136,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7159,7 +7159,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7182,7 +7182,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7208,7 +7208,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7228,7 +7228,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7251,7 +7251,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7274,7 +7274,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7300,7 +7300,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7323,7 +7323,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7349,7 +7349,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7375,7 +7375,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7404,7 +7404,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7420,7 +7420,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7439,7 +7439,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7458,7 +7458,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7480,7 +7480,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7499,7 +7499,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7521,7 +7521,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7543,7 +7543,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7568,7 +7568,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7587,7 +7587,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7609,7 +7609,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7631,7 +7631,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7656,7 +7656,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7678,7 +7678,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7703,7 +7703,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7728,7 +7728,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7756,7 +7756,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7769,7 +7769,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7785,7 +7785,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7801,7 +7801,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7820,7 +7820,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7836,7 +7836,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7855,7 +7855,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7874,7 +7874,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7896,7 +7896,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7912,7 +7912,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7931,7 +7931,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7950,7 +7950,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7972,7 +7972,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7991,7 +7991,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8013,7 +8013,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8035,7 +8035,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8060,7 +8060,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8076,7 +8076,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8095,7 +8095,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8114,7 +8114,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8136,7 +8136,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8155,7 +8155,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8177,7 +8177,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8199,7 +8199,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8224,7 +8224,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8243,7 +8243,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8265,7 +8265,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8287,7 +8287,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8312,7 +8312,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8334,7 +8334,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8359,7 +8359,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8384,7 +8384,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8412,7 +8412,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8427,7 +8427,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8445,7 +8445,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8463,7 +8463,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8484,7 +8484,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8502,7 +8502,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8523,7 +8523,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8544,7 +8544,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8568,7 +8568,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8586,7 +8586,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8607,7 +8607,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8628,7 +8628,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8652,7 +8652,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8673,7 +8673,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8697,7 +8697,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8721,7 +8721,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9372,7 +9372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9386,7 +9386,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9403,7 +9403,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9420,7 +9420,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9440,7 +9440,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9457,7 +9457,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9477,7 +9477,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9497,7 +9497,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9520,7 +9520,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9537,7 +9537,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9557,7 +9557,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9577,7 +9577,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9600,7 +9600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9620,7 +9620,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9643,7 +9643,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -9666,7 +9666,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10412,7 +10412,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10429,7 +10429,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10449,7 +10449,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10469,7 +10469,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10492,7 +10492,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10512,7 +10512,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10535,7 +10535,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10558,7 +10558,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10584,7 +10584,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10604,7 +10604,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10627,7 +10627,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10650,7 +10650,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10676,7 +10676,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10699,7 +10699,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10725,7 +10725,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10751,7 +10751,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10780,7 +10780,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10794,7 +10794,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10811,7 +10811,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10828,7 +10828,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10848,7 +10848,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10865,7 +10865,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10885,7 +10885,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10905,7 +10905,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10928,7 +10928,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10945,7 +10945,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10965,7 +10965,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -10985,7 +10985,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11008,7 +11008,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11028,7 +11028,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11051,7 +11051,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11074,7 +11074,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11100,7 +11100,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11117,7 +11117,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11137,7 +11137,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11157,7 +11157,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11180,7 +11180,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11200,7 +11200,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11223,7 +11223,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11246,7 +11246,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11272,7 +11272,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11292,7 +11292,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11315,7 +11315,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11338,7 +11338,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11364,7 +11364,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11387,7 +11387,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11413,7 +11413,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11439,7 +11439,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11468,7 +11468,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11484,7 +11484,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11503,7 +11503,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11522,7 +11522,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11544,7 +11544,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11563,7 +11563,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11585,7 +11585,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11607,7 +11607,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11632,7 +11632,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11651,7 +11651,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11673,7 +11673,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11695,7 +11695,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11720,7 +11720,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11742,7 +11742,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11767,7 +11767,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -11792,7 +11792,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, char* pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12540,7 +12540,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12557,7 +12557,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12577,7 +12577,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12597,7 +12597,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12620,7 +12620,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12640,7 +12640,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12663,7 +12663,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12686,7 +12686,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12712,7 +12712,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12732,7 +12732,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12755,7 +12755,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12778,7 +12778,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12804,7 +12804,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12827,7 +12827,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12853,7 +12853,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -12879,7 +12879,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13724,7 +13724,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13744,7 +13744,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13767,7 +13767,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13790,7 +13790,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13816,7 +13816,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13839,7 +13839,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13865,7 +13865,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13891,7 +13891,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13920,7 +13920,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13943,7 +13943,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13969,7 +13969,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -13995,7 +13995,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14024,7 +14024,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14050,7 +14050,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14079,7 +14079,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14108,7 +14108,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14140,7 +14140,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14157,7 +14157,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14177,7 +14177,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14197,7 +14197,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14220,7 +14220,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14240,7 +14240,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14263,7 +14263,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14286,7 +14286,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14312,7 +14312,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14332,7 +14332,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14355,7 +14355,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14378,7 +14378,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14404,7 +14404,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14427,7 +14427,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14453,7 +14453,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14479,7 +14479,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14508,7 +14508,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14528,7 +14528,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14551,7 +14551,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14574,7 +14574,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14600,7 +14600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14623,7 +14623,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14649,7 +14649,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14675,7 +14675,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14704,7 +14704,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14727,7 +14727,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14753,7 +14753,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14779,7 +14779,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14808,7 +14808,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14834,7 +14834,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14863,7 +14863,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14892,7 +14892,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14924,7 +14924,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14943,7 +14943,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14965,7 +14965,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -14987,7 +14987,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15012,7 +15012,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15034,7 +15034,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15059,7 +15059,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15084,7 +15084,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15112,7 +15112,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15134,7 +15134,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15159,7 +15159,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15184,7 +15184,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15212,7 +15212,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15237,7 +15237,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15265,7 +15265,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15293,7 +15293,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, ref char pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15324,7 +15324,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15338,7 +15338,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15355,7 +15355,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15372,7 +15372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15392,7 +15392,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15409,7 +15409,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15429,7 +15429,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15449,7 +15449,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15472,7 +15472,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15489,7 +15489,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15509,7 +15509,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15529,7 +15529,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15552,7 +15552,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15572,7 +15572,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15595,7 +15595,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15618,7 +15618,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15644,7 +15644,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15661,7 +15661,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15681,7 +15681,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15701,7 +15701,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15724,7 +15724,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15744,7 +15744,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15767,7 +15767,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15790,7 +15790,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15816,7 +15816,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15836,7 +15836,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15859,7 +15859,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15882,7 +15882,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15908,7 +15908,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15931,7 +15931,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15957,7 +15957,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -15983,7 +15983,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16012,7 +16012,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16028,7 +16028,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16047,7 +16047,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16066,7 +16066,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16088,7 +16088,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16107,7 +16107,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16129,7 +16129,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16151,7 +16151,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16176,7 +16176,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16195,7 +16195,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16217,7 +16217,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16239,7 +16239,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16264,7 +16264,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16286,7 +16286,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16311,7 +16311,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16336,7 +16336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char* pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16364,7 +16364,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16381,7 +16381,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16401,7 +16401,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16421,7 +16421,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16444,7 +16444,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16464,7 +16464,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16487,7 +16487,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16510,7 +16510,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16536,7 +16536,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16556,7 +16556,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16579,7 +16579,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16602,7 +16602,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16628,7 +16628,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16651,7 +16651,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16677,7 +16677,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16703,7 +16703,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16732,7 +16732,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16752,7 +16752,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16775,7 +16775,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16798,7 +16798,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16824,7 +16824,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16847,7 +16847,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16873,7 +16873,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16899,7 +16899,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16928,7 +16928,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16951,7 +16951,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -16977,7 +16977,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17003,7 +17003,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17032,7 +17032,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17058,7 +17058,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17087,7 +17087,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17116,7 +17116,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17148,7 +17148,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17167,7 +17167,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17189,7 +17189,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17211,7 +17211,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17236,7 +17236,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17258,7 +17258,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17283,7 +17283,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17308,7 +17308,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17336,7 +17336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17358,7 +17358,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17383,7 +17383,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17408,7 +17408,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17436,7 +17436,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17461,7 +17461,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17489,7 +17489,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17517,7 +17517,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17548,7 +17548,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17564,7 +17564,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17583,7 +17583,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17602,7 +17602,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17624,7 +17624,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17643,7 +17643,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17665,7 +17665,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17687,7 +17687,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17712,7 +17712,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17731,7 +17731,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17753,7 +17753,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17775,7 +17775,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17800,7 +17800,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17822,7 +17822,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17847,7 +17847,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17872,7 +17872,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, char* pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17900,7 +17900,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17919,7 +17919,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17941,7 +17941,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17963,7 +17963,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -17988,7 +17988,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18010,7 +18010,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18035,7 +18035,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18060,7 +18060,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18088,7 +18088,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18110,7 +18110,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18135,7 +18135,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18160,7 +18160,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18188,7 +18188,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18213,7 +18213,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18241,7 +18241,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18269,7 +18269,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, ref char pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18300,7 +18300,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18318,7 +18318,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18339,7 +18339,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18360,7 +18360,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18384,7 +18384,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18405,7 +18405,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18429,7 +18429,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18453,7 +18453,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18480,7 +18480,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18501,7 +18501,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18525,7 +18525,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18549,7 +18549,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18576,7 +18576,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18600,7 +18600,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18627,7 +18627,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -18654,7 +18654,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Compile(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19212,7 +19212,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19223,7 +19223,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19237,7 +19237,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19251,7 +19251,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19268,7 +19268,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19282,7 +19282,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19299,7 +19299,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19316,7 +19316,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19336,7 +19336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19350,7 +19350,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19367,7 +19367,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19384,7 +19384,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19404,7 +19404,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19421,7 +19421,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19441,7 +19441,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -19461,7 +19461,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(IDxcBlob* pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20108,7 +20108,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20122,7 +20122,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20139,7 +20139,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20156,7 +20156,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20176,7 +20176,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20193,7 +20193,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20213,7 +20213,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20233,7 +20233,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, char** pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20256,7 +20256,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20273,7 +20273,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20293,7 +20293,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20313,7 +20313,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] Define* pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20336,7 +20336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20356,7 +20356,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, IDxcIncludeHandler* pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20379,7 +20379,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -20402,7 +20402,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
+        public readonly unsafe int Preprocess(ref IDxcBlob pSource, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pSourceName, ref char* pArguments, uint argCount, [Flow(FlowDirection.In)] in Define pDefines, uint defineCount, ref IDxcIncludeHandler pIncludeHandler, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcCompiler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -156,7 +156,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([UnmanagedType(UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([UnmanagedType(UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

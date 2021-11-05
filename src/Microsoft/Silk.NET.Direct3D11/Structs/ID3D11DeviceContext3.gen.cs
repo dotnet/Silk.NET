@@ -8811,7 +8811,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarkerInt([UnmanagedType(UnmanagedType.LPWStr)] string pLabel, int Data)
+        public readonly void SetMarkerInt([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);
@@ -8837,7 +8837,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEventInt([UnmanagedType(UnmanagedType.LPWStr)] string pLabel, int Data)
+        public readonly void BeginEventInt([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pLabel, int Data)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) SilkMarshal.StringToPtr(pLabel, NativeStringEncoding.LPWStr);

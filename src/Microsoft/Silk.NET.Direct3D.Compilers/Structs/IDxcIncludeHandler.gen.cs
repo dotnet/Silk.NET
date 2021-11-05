@@ -156,7 +156,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([UnmanagedType(UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
+        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([UnmanagedType(UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
+        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

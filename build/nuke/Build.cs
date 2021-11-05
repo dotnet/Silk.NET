@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using JetBrains.Annotations;
+
 using Nuke.Common;
 using Nuke.Common.Execution;
 using Nuke.Common.IO;
@@ -92,7 +92,7 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
 
-    [CanBeNull] Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> SolutionsValue;
+    Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)>? SolutionsValue;
 
     Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> Solutions
         => SolutionsValue ??= Projects.ProcessSolution(Solution, FeatureSets, HasDesktopMsBuild);

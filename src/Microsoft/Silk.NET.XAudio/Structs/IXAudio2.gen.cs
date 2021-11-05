@@ -830,7 +830,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -841,7 +841,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -915,7 +915,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -929,7 +929,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

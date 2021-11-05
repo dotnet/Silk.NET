@@ -333,12 +333,12 @@ namespace Silk.NET.XInput
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
@@ -363,12 +363,12 @@ namespace Silk.NET.XInput
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, char* pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
@@ -393,12 +393,12 @@ namespace Silk.NET.XInput
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
@@ -423,72 +423,72 @@ namespace Silk.NET.XInput
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public partial uint GetAudioDeviceIds(uint dwUserIndex, ref char pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, char* pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, ref char pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, ref char pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, ref char pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, ref char pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, uint* pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, char* pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, char* pCaptureDeviceId, ref uint pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, char* pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, ref char pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, ref char pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, ref char pCaptureDeviceId, ref uint pCaptureCount);
+        public partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, ref char pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
+        public unsafe partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, uint* pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputGetAudioDeviceIds")]
-        public partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
+        public partial uint GetAudioDeviceIds(uint dwUserIndex, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pRenderDeviceId, ref uint pRenderCount, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pCaptureDeviceId, ref uint pCaptureCount);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 297, Column 14 in D:/Windows Kits/10/Include/10.0.22000.0/um\\Xinput.h")]

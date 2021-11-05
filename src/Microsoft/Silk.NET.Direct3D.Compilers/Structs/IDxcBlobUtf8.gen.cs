@@ -189,7 +189,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        [return: UnmanagedType(UnmanagedType.LPStr)]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)]
         public readonly string GetStringPointerS()
         {
             var @this = (IDxcBlobUtf8*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

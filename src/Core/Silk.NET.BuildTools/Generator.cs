@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;

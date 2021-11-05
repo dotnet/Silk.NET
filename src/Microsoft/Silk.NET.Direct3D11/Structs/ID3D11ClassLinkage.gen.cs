@@ -380,7 +380,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int GetClassInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -391,7 +391,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int GetClassInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassInstanceName, uint InstanceIndex, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -453,7 +453,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
+        public readonly unsafe int CreateClassInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ID3D11ClassInstance** ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -464,7 +464,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateClassInstance([UnmanagedType(UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
+        public readonly unsafe int CreateClassInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pClassTypeName, uint ConstantBufferOffset, uint ConstantVectorOffset, uint TextureOffset, uint SamplerOffset, ref ID3D11ClassInstance* ppInstance)
         {
             var @this = (ID3D11ClassLinkage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

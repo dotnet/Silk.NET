@@ -351,7 +351,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([UnmanagedType(UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3178,7 +3178,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3189,7 +3189,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3263,7 +3263,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3277,7 +3277,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3354,7 +3354,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3368,7 +3368,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3457,7 +3457,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, void** pHandle)
+        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, void** pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3474,7 +3474,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(UnmanagedType.LPWStr)] string Name, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3650,7 +3650,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandleByName([UnmanagedType(UnmanagedType.LPWStr)] string Name, uint Access, void** pNTHandle)
+        public readonly unsafe int OpenSharedHandleByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, void** pNTHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3661,7 +3661,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenSharedHandleByName([UnmanagedType(UnmanagedType.LPWStr)] string Name, uint Access, ref void* pNTHandle)
+        public readonly unsafe int OpenSharedHandleByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name, uint Access, ref void* pNTHandle)
         {
             var @this = (ID3D12Device5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
