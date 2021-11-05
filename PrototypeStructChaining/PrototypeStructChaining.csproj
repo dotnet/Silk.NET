@@ -19,4 +19,19 @@
         <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Update="ManagedChain.tt">
+            <Generator>TextTemplatingFileGenerator</Generator>
+            <LastGenOutput>ManagedChain.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="ManagedChain.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>ManagedChain.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

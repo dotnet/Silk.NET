@@ -82,22 +82,22 @@ public class TestManagedChains
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 
         var item1Ptr = chain.Item1Ptr;
-        
+
         // Overwrite Item1
         chain.Item1 = new PhysicalDeviceDescriptorIndexingFeatures
         {
             // Again we do not need to set SType or PNext, which will be set to the correct values
             ShaderInputAttachmentArrayDynamicIndexing = false
         };
-        
+
         // Check our value was cleared
         Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
-        
+
         // Note all the pointers are still correct (and have not changed)
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
         Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
-        
+
         // As is the SType
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
     }
