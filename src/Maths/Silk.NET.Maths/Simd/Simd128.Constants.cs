@@ -1,7 +1,5 @@
-// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 #if INTRINSICS
 using System;
@@ -10,8 +8,14 @@ using System.Runtime.Intrinsics;
 
 namespace Silk.NET.Maths
 {
+    /// <summary>
+    /// Exposes bunch of methods for working with hardware accelerated operations.
+    /// </summary>
     public static class Simd128<T> where T : unmanaged
     {
+        /// <summary>
+        /// Indicates if the type is supported.
+        /// </summary>
         public static bool IsSupported => typeof(T) == typeof(sbyte)
                                           || typeof(T) == typeof(byte)
                                           || typeof(T) == typeof(ushort)
@@ -98,6 +102,28 @@ namespace Silk.NET.Maths
         /// </summary>
         public static readonly Vector128<T> Tau;
 
+        /// <summary>
+        /// Gets a new <see cref="Vector128{T}" /> with all bits set to 1.
+        /// </summary>
+        public static readonly Vector128<T> AllBitsSet;
+        
+        /// <summary>
+        /// Indicates if there exists SIMD hardware acceleration
+        /// for the type <typeparamref name="T"/>.
+        /// </summary>
+        public static bool IsHardwareAccelerated =>
+#if SSE
+            System.Runtime.Intrinsics.X86.Sse2.IsSupported
+#else
+            false
+#endif
+             ||
+#if AdvSIMD
+            System.Runtime.Intrinsics.Arm.AdvSimd.IsSupported;
+#else
+            false;
+#endif
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd128()
         {
@@ -115,6 +141,15 @@ namespace Silk.NET.Maths
             Pi = Simd128.Create(Scalar<T>.Pi);
             PiOver2 = Simd128.Create(Scalar<T>.PiOver2);
             Tau = Simd128.Create(Scalar<T>.Tau);
+#if NET5_0_OR_GREATER
+            AllBitsSet = Vector128<T>.AllBitsSet;
+#else
+            AllBitsSet = Vector128<T>.Zero;
+            for (int i = 0; i < Vector128<T>.Count; i++)
+            {
+                AllBitsSet.WithElement(i, Scalar.Not(Scalar<T>.Zero));
+            }
+#endif
         }
     }
 }

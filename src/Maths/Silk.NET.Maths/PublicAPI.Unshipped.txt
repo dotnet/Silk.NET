@@ -1,1 +1,105 @@
 #nullable enable
+Silk.NET.Maths.Simd128
+Silk.NET.Maths.Simd128<T>
+Silk.NET.Maths.Simd256
+Silk.NET.Maths.Simd256<T>
+Silk.NET.Maths.Simd64
+Silk.NET.Maths.Simd64<T>
+static readonly Silk.NET.Maths.Simd128<T>.AllBitsSet -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.E -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.Epsilon -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.MaxValue -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.MinusOne -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.MinusTwo -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.MinValue -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.NaN -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.NegativeInfinity -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.One -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.Pi -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.PiOver2 -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.PositiveInfinity -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.Tau -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.Two -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd128<T>.Zero -> System.Runtime.Intrinsics.Vector128<T>
+static readonly Silk.NET.Maths.Simd256<T>.AllBitsSet -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.E -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.Epsilon -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.MaxValue -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.MinusOne -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.MinusTwo -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.MinValue -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.NaN -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.NegativeInfinity -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.One -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.Pi -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.PiOver2 -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.PositiveInfinity -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.Tau -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.Two -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd256<T>.Zero -> System.Runtime.Intrinsics.Vector256<T>
+static readonly Silk.NET.Maths.Simd64<T>.AllBitsSet -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.E -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.Epsilon -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.MaxValue -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.MinusOne -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.MinusTwo -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.MinValue -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.NaN -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.NegativeInfinity -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.One -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.Pi -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.PiOver2 -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.PositiveInfinity -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.Tau -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.Two -> System.Runtime.Intrinsics.Vector64<T>
+static readonly Silk.NET.Maths.Simd64<T>.Zero -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Scalar.And<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.Not<T>(T value) -> T
+static Silk.NET.Maths.Scalar.Or<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.RotateLeft<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.RotateRight<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.ShiftLeft<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.ShiftRight<T>(T value, int offset) -> T
+static Silk.NET.Maths.Scalar.Xor<T>(T left, T right) -> T
+static Silk.NET.Maths.Simd128.Abs<T>(System.Runtime.Intrinsics.Vector128<T> vector) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Add<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.And<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Create<T>(T value) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Divide<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Load<T>(T* ptr) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Multiply<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Not<T>(System.Runtime.Intrinsics.Vector128<T> vector) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Or<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Store<T>(T* destination, System.Runtime.Intrinsics.Vector128<T> source) -> void
+static Silk.NET.Maths.Simd128.Subtract<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128.Xor<T>(System.Runtime.Intrinsics.Vector128<T> left, System.Runtime.Intrinsics.Vector128<T> right) -> System.Runtime.Intrinsics.Vector128<T>
+static Silk.NET.Maths.Simd128<T>.IsHardwareAccelerated.get -> bool
+static Silk.NET.Maths.Simd128<T>.IsSupported.get -> bool
+static Silk.NET.Maths.Simd256.Abs<T>(System.Runtime.Intrinsics.Vector256<T> vector) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Add<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.And<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Create<T>(T value) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Divide<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Load<T>(T* ptr) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Multiply<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Not<T>(System.Runtime.Intrinsics.Vector256<T> vector) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Or<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Store<T>(T* destination, System.Runtime.Intrinsics.Vector256<T> source) -> void
+static Silk.NET.Maths.Simd256.Subtract<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256.Xor<T>(System.Runtime.Intrinsics.Vector256<T> left, System.Runtime.Intrinsics.Vector256<T> right) -> System.Runtime.Intrinsics.Vector256<T>
+static Silk.NET.Maths.Simd256<T>.IsHardwareAccelerated.get -> bool
+static Silk.NET.Maths.Simd256<T>.IsSupported.get -> bool
+static Silk.NET.Maths.Simd64.Abs<T>(System.Runtime.Intrinsics.Vector64<T> vector) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Add<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.And<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Create<T>(T value) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Divide<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Load<T>(T* ptr) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Multiply<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Not<T>(System.Runtime.Intrinsics.Vector64<T> vector) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Or<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Store<T>(T* destination, System.Runtime.Intrinsics.Vector64<T> source) -> void
+static Silk.NET.Maths.Simd64.Subtract<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64.Xor<T>(System.Runtime.Intrinsics.Vector64<T> left, System.Runtime.Intrinsics.Vector64<T> right) -> System.Runtime.Intrinsics.Vector64<T>
+static Silk.NET.Maths.Simd64<T>.IsHardwareAccelerated.get -> bool
+static Silk.NET.Maths.Simd64<T>.IsSupported.get -> bool
