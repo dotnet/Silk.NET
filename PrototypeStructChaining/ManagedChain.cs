@@ -604,7 +604,7 @@ public unsafe class ManagedChain<TChain, T1> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -624,6 +624,21 @@ public unsafe class ManagedChain<TChain, T1> : IDisposable
         ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item2">Item 2.</param>
+    /// <typeparam name="T2">Type of Item 2</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2> Append<T2>(T2 item2 = default)
+        where T2: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2>(this, item2);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -639,6 +654,7 @@ public unsafe class ManagedChain<TChain, T1> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -716,7 +732,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -743,6 +759,53 @@ public unsafe class ManagedChain<TChain, T1, T2> : IDisposable
         ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item2">Item 2.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1> previous, T2 item2 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+
+        var originalSize = headSize + item1Size;
+        var newSize = originalSize + item2Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        // Append the last structure
+        item2.StructureType();
+        Marshal.StructureToPtr(item2, _item2Ptr, false);
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item3">Item 3.</param>
+    /// <typeparam name="T3">Type of Item 3</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3> Append<T3>(T3 item3 = default)
+        where T3: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3>(this, item3);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -760,6 +823,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -860,7 +924,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -894,6 +958,57 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : IDisposable
         ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item3">Item 3.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2> previous, T3 item3 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+
+        var originalSize = headSize + item1Size + item2Size;
+        var newSize = originalSize + item3Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        // Append the last structure
+        item3.StructureType();
+        Marshal.StructureToPtr(item3, _item3Ptr, false);
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item4">Item 4.</param>
+    /// <typeparam name="T4">Type of Item 4</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4> Append<T4>(T4 item4 = default)
+        where T4: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4>(this, item4);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -913,6 +1028,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -1036,7 +1152,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -1077,6 +1193,61 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : IDisposable
         ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item4">Item 4.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3> previous, T4 item4 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size;
+        var newSize = originalSize + item4Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        // Append the last structure
+        item4.StructureType();
+        Marshal.StructureToPtr(item4, _item4Ptr, false);
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item5">Item 5.</param>
+    /// <typeparam name="T5">Type of Item 5</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5> Append<T5>(T5 item5 = default)
+        where T5: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5>(this, item5);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -1098,6 +1269,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -1244,7 +1416,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -1292,6 +1464,65 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : IDisposable
         ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item5">Item 5.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4> previous, T5 item5 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size;
+        var newSize = originalSize + item5Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        // Append the last structure
+        item5.StructureType();
+        Marshal.StructureToPtr(item5, _item5Ptr, false);
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item6">Item 6.</param>
+    /// <typeparam name="T6">Type of Item 6</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6> Append<T6>(T6 item6 = default)
+        where T6: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6>(this, item6);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -1315,6 +1546,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -1484,7 +1716,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : IDisposable
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -1539,6 +1771,69 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : IDisposable
         ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item6">Item 6.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5> previous, T6 item6 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size;
+        var newSize = originalSize + item6Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        // Append the last structure
+        item6.StructureType();
+        Marshal.StructureToPtr(item6, _item6Ptr, false);
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item7">Item 7.</param>
+    /// <typeparam name="T7">Type of Item 7</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> Append<T7>(T7 item7 = default)
+        where T7: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7>(this, item7);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -1564,6 +1859,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : IDisposable
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -1756,7 +2052,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IDisposab
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -1818,6 +2114,73 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IDisposab
         ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item7">Item 7.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6> previous, T7 item7 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size;
+        var newSize = originalSize + item7Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        // Append the last structure
+        item7.StructureType();
+        Marshal.StructureToPtr(item7, _item7Ptr, false);
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item8">Item 8.</param>
+    /// <typeparam name="T8">Type of Item 8</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Append<T8>(T8 item8 = default)
+        where T8: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this, item8);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -1845,6 +2208,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : IDisposab
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -2060,7 +2424,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IDisp
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -2129,6 +2493,77 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IDisp
         ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item8">Item 8.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> previous, T8 item8 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size;
+        var newSize = originalSize + item8Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        // Append the last structure
+        item8.StructureType();
+        Marshal.StructureToPtr(item8, _item8Ptr, false);
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item9">Item 9.</param>
+    /// <typeparam name="T9">Type of Item 9</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Append<T9>(T9 item9 = default)
+        where T9: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this, item9);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -2158,6 +2593,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : IDisp
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -2396,7 +2832,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : I
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -2472,6 +2908,81 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : I
         ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item9">Item 9.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> previous, T9 item9 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size;
+        var newSize = originalSize + item9Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        // Append the last structure
+        item9.StructureType();
+        Marshal.StructureToPtr(item9, _item9Ptr, false);
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item10">Item 10.</param>
+    /// <typeparam name="T10">Type of Item 10</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Append<T10>(T10 item10 = default)
+        where T10: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this, item10);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -2503,6 +3014,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : I
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -2764,7 +3276,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -2847,6 +3359,85 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item10">Item 10.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> previous, T10 item10 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size;
+        var newSize = originalSize + item10Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        // Append the last structure
+        item10.StructureType();
+        Marshal.StructureToPtr(item10, _item10Ptr, false);
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item11">Item 11.</param>
+    /// <typeparam name="T11">Type of Item 11</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Append<T11>(T11 item11 = default)
+        where T11: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this, item11);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -2880,6 +3471,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -3164,7 +3756,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -3254,6 +3846,89 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item11">Item 11.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> previous, T11 item11 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+        var item11Size = Marshal.SizeOf<T11>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size;
+        var newSize = originalSize + item11Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+
+        _item11Ptr = _item10Ptr + item10Size;
+        // Append the last structure
+        item11.StructureType();
+        Marshal.StructureToPtr(item11, _item11Ptr, false);
+        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item12">Item 12.</param>
+    /// <typeparam name="T12">Type of Item 12</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Append<T12>(T12 item12 = default)
+        where T12: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this, item12);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -3289,6 +3964,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -3596,7 +4272,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -3693,6 +4369,93 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item12">Item 12.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> previous, T12 item12 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+        var item11Size = Marshal.SizeOf<T11>();
+        var item12Size = Marshal.SizeOf<T12>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size;
+        var newSize = originalSize + item12Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+
+        _item11Ptr = _item10Ptr + item10Size;
+        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+
+        _item12Ptr = _item11Ptr + item11Size;
+        // Append the last structure
+        item12.StructureType();
+        Marshal.StructureToPtr(item12, _item12Ptr, false);
+        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item13">Item 13.</param>
+    /// <typeparam name="T13">Type of Item 13</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Append<T13>(T13 item13 = default)
+        where T13: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this, item13);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -3730,6 +4493,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -4060,7 +4824,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -4164,6 +4928,97 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item13">Item 13.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> previous, T13 item13 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+        var item11Size = Marshal.SizeOf<T11>();
+        var item12Size = Marshal.SizeOf<T12>();
+        var item13Size = Marshal.SizeOf<T13>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size;
+        var newSize = originalSize + item13Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+
+        _item11Ptr = _item10Ptr + item10Size;
+        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+
+        _item12Ptr = _item11Ptr + item11Size;
+        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+
+        _item13Ptr = _item12Ptr + item12Size;
+        // Append the last structure
+        item13.StructureType();
+        Marshal.StructureToPtr(item13, _item13Ptr, false);
+        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item14">Item 14.</param>
+    /// <typeparam name="T14">Type of Item 14</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Append<T14>(T14 item14 = default)
+        where T14: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this, item14);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -4203,6 +5058,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -4556,7 +5412,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -4667,6 +5523,101 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
     }
 
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item14">Item 14.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> previous, T14 item14 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+        var item11Size = Marshal.SizeOf<T11>();
+        var item12Size = Marshal.SizeOf<T12>();
+        var item13Size = Marshal.SizeOf<T13>();
+        var item14Size = Marshal.SizeOf<T14>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size;
+        var newSize = originalSize + item14Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+
+        _item11Ptr = _item10Ptr + item10Size;
+        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+
+        _item12Ptr = _item11Ptr + item11Size;
+        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+
+        _item13Ptr = _item12Ptr + item12Size;
+        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
+
+        _item14Ptr = _item13Ptr + item13Size;
+        // Append the last structure
+        item14.StructureType();
+        Marshal.StructureToPtr(item14, _item14Ptr, false);
+        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item15">Item 15.</param>
+    /// <typeparam name="T15">Type of Item 15</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Append<T15>(T15 item15 = default)
+        where T15: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this, item15);
+    }
+
     /// <inheritdoc />
     public void Dispose()
     {
@@ -4708,6 +5659,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.FreeHGlobal(headPtr);
     }
 }
+
 /// <summary>
 /// A <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -5084,7 +6036,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
@@ -5197,6 +6149,90 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
 
         _item15Ptr = _item14Ptr + item14Size;
+        item15.StructureType();
+        Marshal.StructureToPtr(item15, _item15Ptr, false);
+        ((Chain*) _item14Ptr)->PNext = (Chain*) _item15Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item15">Item 15.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> previous, T15 item15 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+        var item2Size = Marshal.SizeOf<T2>();
+        var item3Size = Marshal.SizeOf<T3>();
+        var item4Size = Marshal.SizeOf<T4>();
+        var item5Size = Marshal.SizeOf<T5>();
+        var item6Size = Marshal.SizeOf<T6>();
+        var item7Size = Marshal.SizeOf<T7>();
+        var item8Size = Marshal.SizeOf<T8>();
+        var item9Size = Marshal.SizeOf<T9>();
+        var item10Size = Marshal.SizeOf<T10>();
+        var item11Size = Marshal.SizeOf<T11>();
+        var item12Size = Marshal.SizeOf<T12>();
+        var item13Size = Marshal.SizeOf<T13>();
+        var item14Size = Marshal.SizeOf<T14>();
+        var item15Size = Marshal.SizeOf<T15>();
+
+        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size;
+        var newSize = originalSize + item15Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+
+        _item1Ptr = _headPtr + headSize;
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+
+        _item2Ptr = _item1Ptr + item1Size;
+        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+
+        _item3Ptr = _item2Ptr + item2Size;
+        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+
+        _item4Ptr = _item3Ptr + item3Size;
+        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+
+        _item5Ptr = _item4Ptr + item4Size;
+        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+
+        _item6Ptr = _item5Ptr + item5Size;
+        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+
+        _item7Ptr = _item6Ptr + item6Size;
+        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+
+        _item8Ptr = _item7Ptr + item7Size;
+        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+
+        _item9Ptr = _item8Ptr + item8Size;
+        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+
+        _item10Ptr = _item9Ptr + item9Size;
+        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+
+        _item11Ptr = _item10Ptr + item10Size;
+        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+
+        _item12Ptr = _item11Ptr + item11Size;
+        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+
+        _item13Ptr = _item12Ptr + item12Size;
+        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
+
+        _item14Ptr = _item13Ptr + item13Size;
+        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
+
+        _item15Ptr = _item14Ptr + item14Size;
+        // Append the last structure
         item15.StructureType();
         Marshal.StructureToPtr(item15, _item15Ptr, false);
         ((Chain*) _item14Ptr)->PNext = (Chain*) _item15Ptr;

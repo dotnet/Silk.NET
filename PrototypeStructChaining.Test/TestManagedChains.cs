@@ -101,4 +101,41 @@ public class TestManagedChains
         // As is the SType
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
     }
+    
+    [Fact]
+    public unsafe void TestManagedChainAppend()
+    {
+        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>(
+            item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true});
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) 0, (nint) chain.Item1.PNext);
+        
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR>();
+        
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, newChain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, newChain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) newChain.Item1Ptr, (nint) newChain.Head.PNext);
+        Assert.Equal((nint) newChain.Item2Ptr, (nint) newChain.Item1.PNext);
+        Assert.Equal((nint) 0, (nint) newChain.Item2.PNext);
+        
+        // Check flag still set
+        Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+        
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+    }
 }

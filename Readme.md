@@ -249,3 +249,18 @@ Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1
 ensures the PNext value is maintained.
 
 You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s.
+
+Finally, you can call append on a `ManagedChain` to create a new, larger, `ManagedChain` with a new item appended to the
+end, e.g:
+
+```csharp
+using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>(
+    item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true});
+
+// The new chain, will efficiently copy the old chain and append a new structure to the end
+using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR>();
+// You will usualy wish to dispose the old chain here, the two chains are now independent of each other.
+
+// Check the flag from the first chain is still set in the new chain.
+Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);        
+```

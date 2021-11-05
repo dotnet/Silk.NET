@@ -126,12 +126,12 @@ public static class ManagedChain
     } // for (var 2 = 1; i <= maximumItems; i++) {
 #>
 }
-
 <#
     for (var i = 2; i <= maximumItems; i++)
     {
         var tList = typeList(i);
 #>
+
 /// <summary>
 /// A <see cref="ManagedChain{<#= tList #>}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
@@ -191,7 +191,7 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
 #>
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain,T1,T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
 <#= parameterDocs(i, "    /// ") #>
     public ManagedChain(<#= paramList(i) #>)
@@ -231,6 +231,90 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
         } // for (int j = 1; j < i; j++) {
 #>
     }
+<#
+        if (i > 2)
+        {
+#>
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item<#= i - 1 #>">Item <#= i - 1 #>.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<<#= typeList(i - 1) #>> previous, T<#= i - 1 #> item<#= i - 1 #> = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+<#
+            for (var j = 1; j < i; j++)
+            {
+#>
+        var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
+<#
+            } // for (int j = 1; j < i; j++) {
+#>
+
+        var originalSize = headSize<#
+            for (var j = 1; j < i - 1; j++)
+            {
+#> + item<#= j #>Size<#
+            } // for (int j = 1; j < i; j++) {
+#>;
+        var newSize = originalSize + item<#= i - 1 #>Size;
+
+        _headPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+<#
+            for (var j = 1; j < i; j++)
+            {
+                var prevItem = j > 1
+                    ? $"item{j - 1}"
+                    : "head";
+#>
+
+        _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
+<#
+                if (j == i - 1)
+                {#>
+        // Append the last structure
+        item<#= j #>.StructureType();
+        Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
+<#
+                } // if (j == i - 1)
+                #>
+        ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
+<#
+            } // for (int j = 1; j < i; j++) {
+#>
+    }
+<#
+        } //if (i > 2)
+
+        if (i < maximumItems)
+        {
+#>
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item<#= i #>">Item <#= i #>.</param>
+    /// <typeparam name="T<#= i #>">Type of Item <#= i #></typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<<#= tList #>, T<#= i #>> Append<T<#= i #>>(T<#= i #> item<#= i #> = default)
+        where T<#= i #>: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<<#= tList #>, T<#= i #>>(this, item<#= i #>);
+    }
+<#
+        } // if (i < maximumItems)
+#>
 
     /// <inheritdoc />
     public void Dispose()
@@ -244,8 +328,8 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
         for (var j = 1; j < i; j++)
         {
 #>
-        var item<#=j#>Ptr = Interlocked.Exchange(ref _item<#=j#>Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item<#=j#>Ptr);
+        var item<#= j #>Ptr = Interlocked.Exchange(ref _item<#= j #>Ptr, IntPtr.Zero);
+        Marshal.DestroyStructure<TChain>(item<#= j #>Ptr);
 <#
         } // for (int j = 1; j < i; j++) {
 #>
