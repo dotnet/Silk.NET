@@ -49,7 +49,18 @@ method `void IStructuredType.StructureType()`
 which sets the `SType` correctly and returns it to the caller.
 
 ```csharp
-# ../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/IStructuredType.cs
+namespace Silk.Net.Vulkan;
+
+public interface IStructuredType
+{
+    /// <summary>
+    /// Gets the structured type's <see cref="Vulkan.StructureType"/> enum value.
+    /// </summary>
+    /// <remarks>
+    /// Retrieving the <see cref="Vulkan.StructureType"/> also coerces it to the correct value.
+    /// </remarks>
+    StructureType StructureType();
+}
 ```
 
 ### IStructureType implementation
