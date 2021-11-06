@@ -29,7 +29,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if AVX
+#if AVX && NET5_0_OR_GREATER
                     if (Avx2.IsSupported)
                     {
                         return Avx2.CompareGreaterThanOrEqual(left.AsSingle(), right.AsSingle()).As<float, T>();
@@ -44,7 +44,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-#if AVX
+#if AVX && NET5_0_OR_GREATER
                     if (Avx2.IsSupported)
                     {
                         return Avx2.CompareGreaterThanOrEqual(left.AsDouble(), right.AsDouble()).As<double, T>();

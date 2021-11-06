@@ -159,7 +159,12 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
+#if NET5_0_OR_GREATER
                         return Avx2.CompareEqual(left.AsSingle(), right.AsSingle()).As<float, T>();
+#else
+                        // floats are equal iff int32 are equal
+                        return Avx2.CompareEqual(left.AsInt32(), right.AsInt32()).As<int, T>();
+#endif
                     }
 #endif
                 }
@@ -174,7 +179,12 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
+#if NET5_0_OR_GREATER
                         return Avx2.CompareEqual(left.AsDouble(), right.AsDouble()).As<double, T>();
+#else
+                        // doubles are equal iff int64 are equal
+                        return Avx2.CompareEqual(left.AsInt64(), right.AsInt64()).As<long, T>();
+#endif
                     }
 #endif
                 }
