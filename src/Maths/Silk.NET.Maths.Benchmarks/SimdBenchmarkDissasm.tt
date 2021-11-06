@@ -12,11 +12,11 @@ using System.Runtime.Intrinsics;
 
 namespace Silk.NET.Maths.Benchmark
 {
-    [SimpleJob(RuntimeMoniker.Net50, launchCount: 3, warmupCount: 3, targetCount: 3)]
+    [SimpleJob(RuntimeMoniker.Net50, launchCount: 1, warmupCount: 3, targetCount: 3)]
     [DisassemblyDiagnoser(exportHtml: true)]
     public unsafe class SIMDDisasm
     {
-        const int IterCount = 20;
+        const int IterCount = 30;
         void* a;
         void* b;
         void* c;
@@ -25,9 +25,16 @@ namespace Silk.NET.Maths.Benchmark
         public void Setup()
         {
             // native memory is not a thing on .net 5
-            a = (void*)Marshal.AllocHGlobal(256/*bits*/ / 8 * IterCount);
-            b = (void*)Marshal.AllocHGlobal(256/*bits*/ / 8 * IterCount);
-            c = (void*)Marshal.AllocHGlobal(256/*bits*/ / 8 * IterCount);
+            var byteCount = 256/*bits*/ / 8 * IterCount;
+            a = (void*)Marshal.AllocHGlobal(byteCount);
+            b = (void*)Marshal.AllocHGlobal(byteCount);
+            c = (void*)Marshal.AllocHGlobal(byteCount);
+            var rand = new Random();
+            for (int i = 0; i < byteCount; i++)
+            {
+                *(byte*)a = (byte)rand.Next(0, 255);
+                *(byte*)b = (byte)rand.Next(0, 255);
+            }
         }
 
 <# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
