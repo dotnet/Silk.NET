@@ -256,6 +256,17 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
             _ => throw new IndexOutOfRangeException()
         };
 
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    public void Deconstruct(out TChain head, out T1 item1)
+    {
+            head = Head;
+            item1 = Item1;
+    }  
+
     /// <inheritdoc />
     public override void Dispose()
     {
@@ -506,6 +517,19 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
             2 => Item2,
             _ => throw new IndexOutOfRangeException()
         };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    /// <param name="item2">Item 2.</param>
+    public void Deconstruct(out TChain head, out T1 item1, out T2 item2)
+    {
+            head = Head;
+            item1 = Item1;
+            item2 = Item2;
+    }  
 
     /// <inheritdoc />
     public override void Dispose()
@@ -816,6 +840,21 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
             3 => Item3,
             _ => throw new IndexOutOfRangeException()
         };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    /// <param name="item2">Item 2.</param>
+    /// <param name="item3">Item 3.</param>
+    public void Deconstruct(out TChain head, out T1 item1, out T2 item2, out T3 item3)
+    {
+            head = Head;
+            item1 = Item1;
+            item2 = Item2;
+            item3 = Item3;
+    }  
 
     /// <inheritdoc />
     public override void Dispose()
@@ -1170,6 +1209,23 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
             4 => Item4,
             _ => throw new IndexOutOfRangeException()
         };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    /// <param name="item2">Item 2.</param>
+    /// <param name="item3">Item 3.</param>
+    /// <param name="item4">Item 4.</param>
+    public void Deconstruct(out TChain head, out T1 item1, out T2 item2, out T3 item3, out T4 item4)
+    {
+            head = Head;
+            item1 = Item1;
+            item2 = Item2;
+            item3 = Item3;
+            item4 = Item4;
+    }  
 
     /// <inheritdoc />
     public override void Dispose()

@@ -233,4 +233,18 @@ The unmanaged chain was length 4, expected length 5", errors);
         Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
         Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
     }
+
+    [Fact]
+    public unsafe void TestDeconstructor()
+    {
+        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
+
+        var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;
+        
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, physicalDeviceFeatures2.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, accelerationStructureFeaturesKhr.SType);
+    }
 }

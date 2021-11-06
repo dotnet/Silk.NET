@@ -363,3 +363,14 @@ Assert.IsType<PhysicalDeviceFeatures2>(structures[0]);
 Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
 Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
 ```
+
+### Deconstructor
+
+Each `ManageChain<TChain, T1 ...>` has a corresponding deconstructor for convenience, e.g.:
+
+```csharp
+```
+
+# TODOS
+
+- Add `Load` static methods to `ManagedChain` to call the `ManagedChain(TChain chain, out string errors)` constructors.

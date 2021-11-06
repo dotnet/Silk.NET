@@ -2,7 +2,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var maximumItems = 5;
+    var maximumItems = 5; // TODO use 16/32 in production
 
     string parameterDocs(int index, string prefix)
     {
@@ -431,6 +431,28 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
 #>
             _ => throw new IndexOutOfRangeException()
         };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+<#= parameterDocs(i, "    /// ") #>
+    public void Deconstruct(out TChain head<#
+    for (var j = 1; j < i; j++)
+    {
+#>, out T<#= j #> item<#= j #><#
+    } // for (int j = 1; j < i; j++) {
+#>)
+    {
+            head = Head;
+<#
+    for (var j = 1; j < i; j++)
+    {
+#>
+            item<#= j #> = Item<#= j #>;
+<#
+    } // for (int j = 1; j < i; j++) {
+#>
+    }  
 
     /// <inheritdoc />
     public override void Dispose()
