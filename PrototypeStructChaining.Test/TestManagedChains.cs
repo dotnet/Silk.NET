@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Silk.Net.Vulkan;
 using Xunit;
 
@@ -206,5 +208,29 @@ The unmanaged chain was length 4, expected length 5", errors);
 
         // Despite the errors indexing features was at the right location so was loaded
         Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
+    }
+
+    [Fact]
+    public unsafe void TestReadOnlyList()
+    {
+        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
+
+        Assert.Equal(3, chain.Count);
+        
+        // Ensure all STypes set correctly using indexer
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain[0].StructureType());
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain[1].StructureType());
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain[2].StructureType());
+
+        Assert.Throws<IndexOutOfRangeException>(() => chain[3]);
+
+        // Get array using IEnumerable implementation
+        IChainable[] structures = chain.ToArray();
+        
+        // Check concrete types
+        Assert.IsType<PhysicalDeviceFeatures2>(structures[0]);
+        Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
+        Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
     }
 }

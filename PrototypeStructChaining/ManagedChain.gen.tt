@@ -2,7 +2,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var maximumItems = 16;
+    var maximumItems = 5;
 
     string parameterDocs(int index, string prefix)
     {
@@ -95,6 +95,7 @@
         return builder.ToString();
     }
 #>
+using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -104,8 +105,24 @@ namespace Silk.Net.Vulkan;
 /// <summary>
 ///  Static class for creating Managed Chains.
 /// </summary>
-public static class ManagedChain
+public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
 {
+    /// <inheritdoc />
+    public abstract IEnumerator<IChainable> GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    /// <inheritdoc />
+    public abstract int Count { get; }
+    
+    /// <inheritdoc />
+    public abstract IChainable this[int index] { get; }
+
+    /// <inheritdoc />
+    public abstract void Dispose();
+
 <#
     for (var i = 2; i <= maximumItems; i++)
     {
@@ -137,7 +154,7 @@ public static class ManagedChain
 /// A <see cref="ManagedChain{<#= tList #>}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 <#= parameterTypeDocs(i, "/// ") #>
-public unsafe class ManagedChain<<#= tList #>> : IDisposable
+public unsafe class ManagedChain<<#= tList #>> : ManagedChain
 <#= constraintList(i, "    ") #>
 {
     private IntPtr _headPtr;
@@ -257,13 +274,13 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
             errorBuilder.AppendLine("The unmanaged chain was length <#= j #>, expected length <#= i #>");
         else {
             expectedStructureType = item<#= j #>.StructureType();
-            if (currentPtr->SType != expectedStructureType)
+            if (currentPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
                     .Append(currentPtr->SType)
                     .Append(" at position <#= j + 1 #>; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            else
+            } else
                 item<#= j #> = Unsafe.AsRef<T<#= j #>>(currentPtr);
         }
         var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
@@ -384,7 +401,39 @@ public unsafe class ManagedChain<<#= tList #>> : IDisposable
 #>
 
     /// <inheritdoc />
-    public void Dispose()
+    public override IEnumerator<IChainable> GetEnumerator()
+    {
+        yield return Head;
+<#
+        for (var j = 1; j < i; j++)
+        {
+#>
+        yield return Item<#= j #>;
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+    }
+
+    /// <inheritdoc />
+    public override int Count => <#= i #>;
+
+    /// <inheritdoc />
+    public override IChainable this[int index]
+        => index switch 
+        {
+            0 => Head,<#
+    for (var j = 1; j < i; j++)
+    {
+#>
+            <#= j #> => Item<#= j #>,
+<#
+    } // for (int j = 1; j < i; j++) {
+#>
+            _ => throw new IndexOutOfRangeException()
+        };
+
+    /// <inheritdoc />
+    public override void Dispose()
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
         if (headPtr == IntPtr.Zero) return;
