@@ -157,7 +157,7 @@ public class TestManagedChains
         // Loads a new managed chain from an unmanaged chain
         using var managedChain =
             new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-                PhysicalDeviceAccelerationStructureFeaturesKHR>(unmanagedChain, out var errors);
+                PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
 
         // Check we had no loading errors
         Assert.Equal("", errors);
@@ -192,19 +192,47 @@ public class TestManagedChains
 
         // Loads a new managed chain from an unmanaged chain
         using var managedChain =
-            new ManagedChain<
+            ManagedChain.Load<
                 DeviceCreateInfo,
                 // Note we are supplied a PhysicalDeviceFeatures2 here from the unmanaged chain
                 PhysicalDeviceAccelerationStructureFeaturesKHR,
                 PhysicalDeviceDescriptorIndexingFeatures,
                 PhysicalDeviceAccelerationStructureFeaturesKHR,
                 // Note that the unmanaged chain did not supply a 5th entry
-                PhysicalDeviceFeatures2>(unmanagedChain, out var errors);
+                PhysicalDeviceFeatures2>(out var errors, unmanagedChain);
 
         // Check for errors
         Assert.Equal(
             @"The unmanaged chain has a structure type PhysicalDeviceFeatures2Khr at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr
 The unmanaged chain was length 4, expected length 5", errors);
+
+        // Despite the errors indexing features was at the right location so was loaded
+        Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
+    }
+
+    [Fact]
+    public unsafe void TestManagedChainLoadWithErrorTooLong()
+    {
+        var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+        {
+            ShaderInputAttachmentArrayDynamicIndexing = true
+        };
+        // Load an unmanaged chain
+        DeviceCreateInfo
+            .Chain(out var unmanagedChain)
+            .AddNext(out PhysicalDeviceFeatures2 features2)
+            .SetNext(ref indexingFeatures)
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+
+        // Try loading a shorter managed chain
+        using var managedChain =
+            ManagedChain.Load<
+                DeviceCreateInfo,
+                PhysicalDeviceFeatures2,
+                PhysicalDeviceDescriptorIndexingFeatures>(out var errors, unmanagedChain);
+
+        // Check for errors
+        Assert.Equal(@"The unmanaged chain was longer than the expected length 3", errors);
 
         // Despite the errors indexing features was at the right location so was loaded
         Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);

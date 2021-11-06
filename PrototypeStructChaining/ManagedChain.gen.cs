@@ -42,6 +42,32 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
     }
 
     /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    public static ManagedChain<TChain, T1> Load<TChain, T1>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    public static ManagedChain<TChain, T1> Load<TChain, T1>(TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+    {
+        return new(out var _, chain);
+    }
+
+    /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
@@ -57,6 +83,34 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
         where T2 : struct, IExtendsChain<TChain>
     {
         return new(head, item1, item2);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.</returns>
+    public static ManagedChain<TChain, T1, T2> Load<TChain, T1, T2>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.</returns>
+    public static ManagedChain<TChain, T1, T2> Load<TChain, T1, T2>(TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+    {
+        return new(out var _, chain);
     }
 
     /// <summary>
@@ -81,6 +135,36 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
     }
 
     /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items.</returns>
+    public static ManagedChain<TChain, T1, T2, T3> Load<TChain, T1, T2, T3>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+        where T3 : struct, IExtendsChain<TChain>
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items.</returns>
+    public static ManagedChain<TChain, T1, T2, T3> Load<TChain, T1, T2, T3>(TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+        where T3 : struct, IExtendsChain<TChain>
+    {
+        return new(out var _, chain);
+    }
+
+    /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
@@ -102,6 +186,38 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
         where T4 : struct, IExtendsChain<TChain>
     {
         return new(head, item1, item2, item3, item4);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.</returns>
+    public static ManagedChain<TChain, T1, T2, T3, T4> Load<TChain, T1, T2, T3, T4>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+        where T3 : struct, IExtendsChain<TChain>
+        where T4 : struct, IExtendsChain<TChain>
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.</returns>
+    public static ManagedChain<TChain, T1, T2, T3, T4> Load<TChain, T1, T2, T3, T4>(TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+        where T2 : struct, IExtendsChain<TChain>
+        where T3 : struct, IExtendsChain<TChain>
+        where T4 : struct, IExtendsChain<TChain>
+    {
+        return new(out var _, chain);
     }
 
 }
@@ -183,9 +299,9 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
     /// </summary>
-    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <param name="errors">Any errors loading the chain.</param>
-    public ManagedChain(TChain chain, out string errors)
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
     {
         // Load existing chain first, so any errors occur before we allocate memory
         var head = chain;
@@ -208,6 +324,8 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
                     .AppendLine();
             } else
                 item1 = Unsafe.AsRef<T1>(currentPtr);
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 2");
         }
         var item1Size = Marshal.SizeOf<T1>();
 
@@ -390,9 +508,9 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items from an existing unmanaged chain.
     /// </summary>
-    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <param name="errors">Any errors loading the chain.</param>
-    public ManagedChain(TChain chain, out string errors)
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
     {
         // Load existing chain first, so any errors occur before we allocate memory
         var head = chain;
@@ -432,6 +550,8 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
                     .AppendLine();
             } else
                 item2 = Unsafe.AsRef<T2>(currentPtr);
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 3");
         }
         var item2Size = Marshal.SizeOf<T2>();
 
@@ -686,9 +806,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items from an existing unmanaged chain.
     /// </summary>
-    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <param name="errors">Any errors loading the chain.</param>
-    public ManagedChain(TChain chain, out string errors)
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
     {
         // Load existing chain first, so any errors occur before we allocate memory
         var head = chain;
@@ -745,6 +865,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
                     .AppendLine();
             } else
                 item3 = Unsafe.AsRef<T3>(currentPtr);
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 4");
         }
         var item3Size = Marshal.SizeOf<T3>();
 
@@ -1043,9 +1165,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing unmanaged chain.
     /// </summary>
-    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <param name="errors">Any errors loading the chain.</param>
-    public ManagedChain(TChain chain, out string errors)
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
     {
         // Load existing chain first, so any errors occur before we allocate memory
         var head = chain;
@@ -1119,6 +1241,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
                     .AppendLine();
             } else
                 item4 = Unsafe.AsRef<T4>(currentPtr);
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 5");
         }
         var item4Size = Marshal.SizeOf<T4>();
 

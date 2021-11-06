@@ -273,8 +273,8 @@ Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 
 ### Loading from an unmanaged chain
 
-If you have created an unmanaged chain and would like to load that into a `ManagedChain` you can supply it to a
-constructor:
+If you have created an unmanaged chain and would like to load that into a `ManagedChain` you can use one of the
+`ManagedChain.Load<TChain, T1...>` methods:
 
 ```csharp
 // Load an unmanaged chain
@@ -289,7 +289,7 @@ PhysicalDeviceFeatures2
 
 // Loads a new managed chain from an unmanaged chain
 using var managedChain =
-    new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+    ManagedChain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
         PhysicalDeviceAccelerationStructureFeaturesKHR>(unmanagedChain, out var errors);
 
 // Check we had no loading errors
@@ -299,10 +299,12 @@ Assert.Equal("", errors);
 Assert.True(managedChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 ```
 
-Notice that this special form of the constructor returns an output parameter `errors`. It does this to prevent any
-possible confusion with the normal constructor which also can accept a single parameter of type `TChain` (which will
-only load the head of the chain). Secondly, it also allows the constructor to indicate any failures that occurred whilst
-loading from the unmanaged type, for example:
+The full version of the `Load` method returns an output parameter `errors` as it's first parameter. The `errors`
+parameter will be `string.Empty` if there are no errors, otherwise each line will contain a separate error for each
+issue found during loading. There is also an overload that accepts a single argument `chain` for when you don't care if
+there are any errors. Either method always succeeds, even if the unmanaged chain doesn't match exactly - for example it
+is shorter or longer than the chain being loaded, or if the managed chain has different structure types in any of the
+positions. Any structure type in the expected position will always be loaded into the new `ManagedChain`.
 
 ```csharp
 var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
@@ -337,6 +339,8 @@ The unmanaged chain was length 4, expected length 5",
 Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
 ```
 
+Notice that the above form use the constructor as an alternative.
+
 ### IReadOnlyList
 
 All the fully generic `ManageChain<TChain, T1 ...>` types extend `ManagedChain` which implements `IDisposable`
@@ -364,13 +368,24 @@ Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
 Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
 ```
 
-### Deconstructor
+### Deconstruction
 
 Each `ManageChain<TChain, T1 ...>` has a corresponding deconstructor for convenience, e.g.:
 
 ```csharp
+using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+    PhysicalDeviceAccelerationStructureFeaturesKHR>();
+
+var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;
+
+// Ensure all STypes set correctly
+Assert.Equal(StructureType.PhysicalDeviceFeatures2, physicalDeviceFeatures2.SType);
+Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
+Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, accelerationStructureFeaturesKhr.SType);
 ```
 
-# TODOS
+### Disposal
 
-- Add `Load` static methods to `ManagedChain` to call the `ManagedChain(TChain chain, out string errors)` constructors.
+As each `ManagedChain` holds the underlying structures in unmanaged memory (to prevent them being moved and their
+pointers being invalidated), then it is critical you dispose them; either by calling `Dispose()` or by using a `using`
+statement.

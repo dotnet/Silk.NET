@@ -140,6 +140,30 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
         return new(<#= argList(i) #>);
     }
 
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    public static ManagedChain<<#= tList #>> Load<<#= tList #>>(out string errors, TChain chain)
+<#= constraintList(i, "        ") #>
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    public static ManagedChain<<#= tList #>> Load<<#= tList #>>(TChain chain)
+<#= constraintList(i, "        ") #>
+    {
+        return new(out var _, chain);
+    }
+
 <#
     } // for (var 2 = 1; i <= maximumItems; i++) {
 #>
@@ -253,9 +277,9 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <summary>
     /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
     /// </summary>
-    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <param name="errors">Any errors loading the chain.</param>
-    public ManagedChain(TChain chain, out string errors)
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
     {
         // Load existing chain first, so any errors occur before we allocate memory
         var head = chain;
@@ -282,6 +306,15 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
                     .AppendLine();
             } else
                 item<#= j #> = Unsafe.AsRef<T<#= j #>>(currentPtr);
+<#
+            if (j == i -1)
+            {
+#>
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length <#= i #>");
+<#
+            } // if (j == i -1)
+#>
         }
         var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
 
