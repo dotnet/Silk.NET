@@ -38,7 +38,7 @@ namespace Silk.NET.Maths.Benchmark
         }
 
 <# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
-<# foreach (var bitness in new [] { 64, 128, 256 }) { #>
+<# foreach (var bitness in new [] { /*64, x86 doesn't have AdvSIMD anyway*/ 128, 256 }) { #>
 <# foreach (var method in new [] { "GreaterThan", "LessThan", "GreaterThanOrEqual", "LessThanOrEqual", "Add", "Subtract", "Multiply", "Divide", "Min", "Max", "Equal", "NotEqual" }) { #>
         [Benchmark]
         public void Simd<#= bitness #><#= method #>_<#= type #>()
