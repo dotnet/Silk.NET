@@ -50,14 +50,32 @@ namespace Silk.NET.Maths
 #endif
                 }
         
-                return Integer(left, right);
+                return OtherHWAccelerated(left, right);
             }
             
             [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Integer(Vector256<T> left, Vector256<T> right)
+            static Vector256<T> OtherHWAccelerated(Vector256<T> left, Vector256<T> right)
             {
                 if (Simd256<T>.IsHardwareAccelerated)
+                {
+#if AdvSIMD
+                    var leftLow = *(Vector128<T>*)&left;
+                    var leftHigh = *((Vector128<T>*)&left + 1);
+                    var rightLow = *(Vector128<T>*)&right;
+                    var rightHigh = *((Vector128<T>*)&right + 1);
+                    Vector256<T> res;
+                    *(Vector128<T>*)&res = Simd128.LessThanOrEqual(leftLow, rightLow);
+                    *((Vector128<T>*)&res + 1) = Simd128.LessThanOrEqual(leftHigh, rightHigh);
+                    return res;
+#else
+                    /*
+                     
+                    128 bit Avx2 doesn't have accelerated LessThanOrEqual
+                    
+                    */
                     return Or(LessThan(left, right), Equal(left, right));
+#endif
+                }
                 return Other(left, right);
             }
             

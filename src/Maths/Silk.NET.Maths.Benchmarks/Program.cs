@@ -1,9 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Reflection;
-using System.Runtime.Intrinsics;
 using BenchmarkDotNet.Running;
 
 namespace Silk.NET.Maths.Benchmark
@@ -12,8 +10,7 @@ namespace Silk.NET.Maths.Benchmark
     {
         public static void Main(string[] args)
         {
-            // BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()).Run(args);
-            BenchmarkRunner.Run<SIMDDisasm>();
+            BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()).Run(args);
         }
     }
 }

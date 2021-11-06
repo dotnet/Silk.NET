@@ -34,6 +34,7 @@ namespace Silk.NET.Maths
                         return AdvSimd.CompareGreaterThanOrEqual(left.AsByte(), right.AsByte()).As<byte, T>();
                     }
 #endif
+                    
                 }
         
                 return SByte(left, right);

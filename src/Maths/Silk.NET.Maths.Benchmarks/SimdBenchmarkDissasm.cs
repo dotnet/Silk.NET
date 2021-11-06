@@ -38,6 +38,78 @@ namespace Silk.NET.Maths.Benchmark
         }
 
         [Benchmark]
+        public void Simd64GreaterThan_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.GreaterThan(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.LessThan(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Add(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Subtract(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Multiply(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Divide(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Min(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Max(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.Equal(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_byte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<byte>*)c + i) = Simd64.NotEqual(*((Vector64<byte>*)a + i), *((Vector64<byte>*)b + i)); 
+        }
+        [Benchmark]
         public void Simd128GreaterThan_byte()
         {
             for (int i = 0; i < IterCount * (2); i++)
@@ -180,6 +252,78 @@ namespace Silk.NET.Maths.Benchmark
         {
             for (int i = 0; i < IterCount * (1); i++)
                 *((Vector256<byte>*)c + i) = Simd256.NotEqual(*((Vector256<byte>*)a + i), *((Vector256<byte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThan_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.GreaterThan(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.LessThan(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Add(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Subtract(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Multiply(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Divide(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Min(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Max(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.Equal(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_sbyte()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<sbyte>*)c + i) = Simd64.NotEqual(*((Vector64<sbyte>*)a + i), *((Vector64<sbyte>*)b + i)); 
         }
         [Benchmark]
         public void Simd128GreaterThan_sbyte()
@@ -326,6 +470,78 @@ namespace Silk.NET.Maths.Benchmark
                 *((Vector256<sbyte>*)c + i) = Simd256.NotEqual(*((Vector256<sbyte>*)a + i), *((Vector256<sbyte>*)b + i)); 
         }
         [Benchmark]
+        public void Simd64GreaterThan_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.GreaterThan(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.LessThan(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Add(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Subtract(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Multiply(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Divide(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Min(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Max(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.Equal(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_ushort()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ushort>*)c + i) = Simd64.NotEqual(*((Vector64<ushort>*)a + i), *((Vector64<ushort>*)b + i)); 
+        }
+        [Benchmark]
         public void Simd128GreaterThan_ushort()
         {
             for (int i = 0; i < IterCount * (2); i++)
@@ -468,6 +684,78 @@ namespace Silk.NET.Maths.Benchmark
         {
             for (int i = 0; i < IterCount * (1); i++)
                 *((Vector256<ushort>*)c + i) = Simd256.NotEqual(*((Vector256<ushort>*)a + i), *((Vector256<ushort>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThan_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.GreaterThan(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.LessThan(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Add(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Subtract(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Multiply(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Divide(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Min(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Max(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.Equal(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_short()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<short>*)c + i) = Simd64.NotEqual(*((Vector64<short>*)a + i), *((Vector64<short>*)b + i)); 
         }
         [Benchmark]
         public void Simd128GreaterThan_short()
@@ -614,6 +902,78 @@ namespace Silk.NET.Maths.Benchmark
                 *((Vector256<short>*)c + i) = Simd256.NotEqual(*((Vector256<short>*)a + i), *((Vector256<short>*)b + i)); 
         }
         [Benchmark]
+        public void Simd64GreaterThan_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.GreaterThan(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.LessThan(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Add(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Subtract(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Multiply(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Divide(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Min(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Max(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.Equal(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_uint()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<uint>*)c + i) = Simd64.NotEqual(*((Vector64<uint>*)a + i), *((Vector64<uint>*)b + i)); 
+        }
+        [Benchmark]
         public void Simd128GreaterThan_uint()
         {
             for (int i = 0; i < IterCount * (2); i++)
@@ -756,6 +1116,78 @@ namespace Silk.NET.Maths.Benchmark
         {
             for (int i = 0; i < IterCount * (1); i++)
                 *((Vector256<uint>*)c + i) = Simd256.NotEqual(*((Vector256<uint>*)a + i), *((Vector256<uint>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThan_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.GreaterThan(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.LessThan(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Add(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Subtract(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Multiply(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Divide(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Min(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Max(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.Equal(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_int()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<int>*)c + i) = Simd64.NotEqual(*((Vector64<int>*)a + i), *((Vector64<int>*)b + i)); 
         }
         [Benchmark]
         public void Simd128GreaterThan_int()
@@ -902,6 +1334,78 @@ namespace Silk.NET.Maths.Benchmark
                 *((Vector256<int>*)c + i) = Simd256.NotEqual(*((Vector256<int>*)a + i), *((Vector256<int>*)b + i)); 
         }
         [Benchmark]
+        public void Simd64GreaterThan_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.GreaterThan(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.LessThan(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Add(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Subtract(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Multiply(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Divide(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Min(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Max(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.Equal(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_ulong()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<ulong>*)c + i) = Simd64.NotEqual(*((Vector64<ulong>*)a + i), *((Vector64<ulong>*)b + i)); 
+        }
+        [Benchmark]
         public void Simd128GreaterThan_ulong()
         {
             for (int i = 0; i < IterCount * (2); i++)
@@ -1044,6 +1548,78 @@ namespace Silk.NET.Maths.Benchmark
         {
             for (int i = 0; i < IterCount * (1); i++)
                 *((Vector256<ulong>*)c + i) = Simd256.NotEqual(*((Vector256<ulong>*)a + i), *((Vector256<ulong>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThan_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.GreaterThan(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.LessThan(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Add(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Subtract(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Multiply(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Divide(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Min(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Max(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.Equal(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_long()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<long>*)c + i) = Simd64.NotEqual(*((Vector64<long>*)a + i), *((Vector64<long>*)b + i)); 
         }
         [Benchmark]
         public void Simd128GreaterThan_long()
@@ -1190,6 +1766,78 @@ namespace Silk.NET.Maths.Benchmark
                 *((Vector256<long>*)c + i) = Simd256.NotEqual(*((Vector256<long>*)a + i), *((Vector256<long>*)b + i)); 
         }
         [Benchmark]
+        public void Simd64GreaterThan_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.GreaterThan(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.LessThan(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Add(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Subtract(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Multiply(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Divide(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Min(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Max(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.Equal(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_float()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<float>*)c + i) = Simd64.NotEqual(*((Vector64<float>*)a + i), *((Vector64<float>*)b + i)); 
+        }
+        [Benchmark]
         public void Simd128GreaterThan_float()
         {
             for (int i = 0; i < IterCount * (2); i++)
@@ -1332,6 +1980,78 @@ namespace Silk.NET.Maths.Benchmark
         {
             for (int i = 0; i < IterCount * (1); i++)
                 *((Vector256<float>*)c + i) = Simd256.NotEqual(*((Vector256<float>*)a + i), *((Vector256<float>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThan_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.GreaterThan(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThan_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.LessThan(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64GreaterThanOrEqual_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.GreaterThanOrEqual(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64LessThanOrEqual_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.LessThanOrEqual(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Add_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Add(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Subtract_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Subtract(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Multiply_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Multiply(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Divide_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Divide(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Min_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Min(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Max_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Max(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64Equal_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.Equal(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
+        }
+        [Benchmark]
+        public void Simd64NotEqual_double()
+        {
+            for (int i = 0; i < IterCount * (4); i++)
+                *((Vector64<double>*)c + i) = Simd64.NotEqual(*((Vector64<double>*)a + i), *((Vector64<double>*)b + i)); 
         }
         [Benchmark]
         public void Simd128GreaterThan_double()

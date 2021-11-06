@@ -22,8 +22,8 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> LessThan<T>(Vector256<T> left, Vector256<T> right) where T : unmanaged
         {
-            return Single(left, right);            
-            
+            return Single(left, right);     
+                   
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Single(Vector256<T> left, Vector256<T> right)
             {
@@ -61,7 +61,9 @@ namespace Silk.NET.Maths
             static Vector256<T> OtherHWAccelerated(Vector256<T> left, Vector256<T> right)
             {
                 if (Simd256<T>.IsHardwareAccelerated)
-                    return Not(GreaterThanOrEqual(left, right));
+                {
+                    return And(Not(GreaterThan(left, right)), NotEqual(left, right));
+                }
                 return Other(left, right);
             }
             
