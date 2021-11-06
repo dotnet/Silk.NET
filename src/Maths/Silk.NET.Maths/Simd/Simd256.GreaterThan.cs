@@ -156,24 +156,14 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+                    if (Avx2.IsSupported)
+                    {
 #if AVX && NET5_0_OR_GREATER
-                    if (Avx2.IsSupported)
-                    {
                         return Avx2.CompareGreaterThan(left.AsSingle(), right.AsSingle()).As<float, T>();
-                    }
 #elif AVX
-                    if (Avx2.IsSupported)
-                    {
-                        var leftLow = *(Vector128<float>*)&left;
-                        var leftHigh = *((Vector128<float>*)&left + 1);
-                        var rightLow = *(Vector128<float>*)&right;
-                        var rightHigh = *((Vector128<float>*)&right + 1);
-                        Vector256<float> res;
-                        *(Vector128<float>*)&res = Avx2.CompareGreaterThan(leftLow, rightLow);
-                        *((Vector128<float>*)&res + 1) = Avx2.CompareGreaterThan(leftHigh, rightHigh);
-                        return res.As<float, T>();
-                    }
+                        return Avx2.Compare(left.AsSingle(), right.AsSingle(), FloatComparisonMode.OrderedGreaterThanSignaling).As<float, T>();
 #endif
+                    }
                 }
         
                 return Double(left, right);
@@ -184,23 +174,11 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(double))
                 {
 #if AVX && NET5_0_OR_GREATER
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.CompareGreaterThan(left.AsDouble(), right.AsDouble()).As<double, T>();
-                    }
+                    return Avx2.CompareGreaterThan(left.AsDouble(), right.AsDouble()).As<double, T>();
 #elif AVX
-                    if (Avx2.IsSupported)
-                    {
-                        var leftLow = *(Vector128<double>*)&left;
-                        var leftHigh = *((Vector128<double>*)&left + 1);
-                        var rightLow = *(Vector128<double>*)&right;
-                        var rightHigh = *((Vector128<double>*)&right + 1);
-                        Vector256<double> res;
-                        *(Vector128<double>*)&res = Avx2.CompareGreaterThan(leftLow, rightLow);
-                        *((Vector128<double>*)&res + 1) = Avx2.CompareGreaterThan(leftHigh, rightHigh);
-                        return res.As<double, T>();
-                    }
+                    return Avx2.Compare(left.AsDouble(), right.AsDouble(), FloatComparisonMode.OrderedGreaterThanSignaling).As<double, T>();
 #endif
+
                 }
         
                 return Other(left, right);
