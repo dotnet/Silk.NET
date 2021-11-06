@@ -34,6 +34,18 @@ namespace Silk.NET.Maths
                     {
                         return Avx2.CompareGreaterThanOrEqual(left.AsSingle(), right.AsSingle()).As<float, T>();
                     }
+#elif AVX
+                    if (Avx2.IsSupported)
+                    {
+                        var leftLow = *(Vector128<float>*)&left;
+                        var leftHigh = *((Vector128<float>*)&left + 1);
+                        var rightLow = *(Vector128<float>*)&right;
+                        var rightHigh = *((Vector128<float>*)&right + 1);
+                        Vector256<float> res;
+                        *(Vector128<float>*)&res = Avx2.CompareGreaterThanOrEqual(leftLow, rightLow);
+                        *((Vector128<float>*)&res + 1) = Avx2.CompareGreaterThanOrEqual(leftHigh, rightHigh);
+                        return res.As<float, T>();
+                    }
 #endif
                 }
         
@@ -48,6 +60,18 @@ namespace Silk.NET.Maths
                     if (Avx2.IsSupported)
                     {
                         return Avx2.CompareGreaterThanOrEqual(left.AsDouble(), right.AsDouble()).As<double, T>();
+                    }
+#elif AVX
+                    if (Avx2.IsSupported)
+                    {
+                        var leftLow = *(Vector128<double>*)&left;
+                        var leftHigh = *((Vector128<double>*)&left + 1);
+                        var rightLow = *(Vector128<double>*)&right;
+                        var rightHigh = *((Vector128<double>*)&right + 1);
+                        Vector256<double> res;
+                        *(Vector128<double>*)&res = Avx2.CompareGreaterThanOrEqual(leftLow, rightLow);
+                        *((Vector128<double>*)&res + 1) = Avx2.CompareGreaterThanOrEqual(leftHigh, rightHigh);
+                        return res.As<double, T>();
                     }
 #endif
                 }
