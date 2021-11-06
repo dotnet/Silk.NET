@@ -178,8 +178,10 @@ As adding `IChainStart` requires relatively simple logic I believe it's worth in
 ## ManagedChain
 
 Sometimes it is desirable to keep the structures around on the heap. To facilitate that you can use
-the `ManagedChain<TChain, T1, ...>`
-types. Like `Tuple` et al, these support up to chain size 16. They should be disposed when finished with.
+the `ManagedChain<TChain, T1, ...>` types. Like `Tuple` et al, these support up to chain size 16. They must be
+disposed when finished with.  Whenever a structure is loaded into the `ManagedChain` it's `SType` and `PNext` are
+forced to be correct, preventing errors.  Structures can be replaced at any time, and we be inserted efficiently
+into the chain as an O(1) operation.
 
 ### Creation
 
