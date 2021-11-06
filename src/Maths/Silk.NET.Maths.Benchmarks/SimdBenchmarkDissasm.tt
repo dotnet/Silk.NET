@@ -9,32 +9,10 @@ using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
 using System.Runtime.Intrinsics;
 
-/*
- 
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1288 (20H2/October2020Update)
-Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
-.NET SDK=6.0.100-rc.2.21456.8
-  [Host]   : .NET 5.0.8 (5.0.821.31504), X64 RyuJIT
-  .NET 5.0 : .NET 5.0.8 (5.0.821.31504), X64 RyuJIT
-
-Job=.NET 5.0  Runtime=.NET 5.0
-
-|                    Method |     Mean |    Error |   StdDev | Code Size |
-|-------------------------- |---------:|---------:|---------:|----------:|
-|        Simd256GreaterThan | 25.17 ns | 0.656 ns | 1.893 ns |      59 B |
-|           Simd256LessThan | 25.72 ns | 0.557 ns | 1.087 ns |      59 B |
-| Simd256GreaterThanOrEqual | 25.53 ns | 0.603 ns | 1.660 ns |      59 B |
-|    Simd256LessThanOrEqual | 27.54 ns | 0.835 ns | 2.355 ns |      59 B |
- 
- */
 
 namespace Silk.NET.Maths.Benchmark
 {
-    // [SimpleJob(RuntimeMoniker.NetCoreApp50, launchCount: 1, warmupCount: 1, targetCount: 1)]
-    
-    // [SimpleJob(RuntimeMoniker.NetCoreApp31, launchCount: 1, warmupCount: 1, targetCount: 1)]
-    
-    [SimpleJob(RuntimeMoniker.Net50)]
+    [SimpleJob(RuntimeMoniker.Net50, launchCount: 3, warmupCount: 3, targetCount: 3)]
     [DisassemblyDiagnoser(exportHtml: true)]
     public unsafe class SIMDDisasm
     {
@@ -54,34 +32,14 @@ namespace Silk.NET.Maths.Benchmark
 
 <# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
 <# foreach (var bitness in new [] { 64, 128, 256 }) { #>
-        
+<# foreach (var method in new [] { "GreaterThan", "LessThan", "GreaterThanOrEqual", "LessThanOrEqual", "Add", "Subtract", "Multiply", "Divide", "Min", "Max", "Equal", "NotEqual" }) { #>
         [Benchmark]
-        public void Simd<#= bitness #>_<#= type #>()
+        public void Simd<#= bitness #><#= method #>_<#= type #>()
         {
             for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)
-                *((Vector<#= bitness #><<#= type #>>*)c + i) = Simd<#= bitness #>.GreaterThan(*((Vector<#= bitness #><<#= type #>>*)a + i), *((Vector<#= bitness #><<#= type #>>*)b + i)); 
+                *((Vector<#= bitness #><<#= type #>>*)c + i) = Simd<#= bitness #>.<#= method #>(*((Vector<#= bitness #><<#= type #>>*)a + i), *((Vector<#= bitness #><<#= type #>>*)b + i)); 
         }
-        
-        [Benchmark]
-        public void Simd<#= bitness #>LessThan_<#= type #>()
-        {
-            for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)
-                *((Vector<#= bitness #><<#= type #>>*)c + i) = Simd<#= bitness #>.LessThan(*((Vector<#= bitness #><<#= type #>>*)a + i), *((Vector<#= bitness #><<#= type #>>*)b + i)); 
-        }
-        
-        [Benchmark]
-        public void Simd<#= bitness #>GreaterThanOrEqual_<#= type #>()
-        {
-            for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)
-                *((Vector<#= bitness #><<#= type #>>*)c + i) = Simd<#= bitness #>.GreaterThanOrEqual(*((Vector<#= bitness #><<#= type #>>*)a + i), *((Vector<#= bitness #><<#= type #>>*)b + i)); 
-        }
-        
-        [Benchmark]
-        public void Simd<#= bitness #>LessThanOrEqual_<#= type #>()
-        {
-            for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)
-                *((Vector<#= bitness #><<#= type #>>*)c + i) = Simd<#= bitness #>.LessThanOrEqual(*((Vector<#= bitness #><<#= type #>>*)a + i), *((Vector<#= bitness #><<#= type #>>*)b + i)); 
-        }
+<# } #>
 <# } #>
 <# } #>
     }
