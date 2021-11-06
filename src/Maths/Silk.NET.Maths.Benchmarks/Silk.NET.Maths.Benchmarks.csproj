@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>netframework4.8;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+        <TargetFrameworks>net5.0;netcoreapp3.1;netframework4.8</TargetFrameworks>
         <LangVersion>9.0</LangVersion>
         <DefineConstants>$(DefineConstants);MATHF</DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
