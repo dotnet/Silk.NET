@@ -22,61 +22,7 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> LessThan<T>(Vector256<T> left, Vector256<T> right) where T : unmanaged
         {
-            return Single(left, right);     
-                   
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Single(Vector256<T> left, Vector256<T> right)
-            {
-                if (typeof(T) == typeof(float))
-                {
-#if AVX && NET5_0_OR_GREATER
-                    return Avx2.CompareLessThan(left.AsSingle(), right.AsSingle()).As<float, T>();
-#elif AVX
-                    return Avx2.Compare(left.AsSingle(), right.AsSingle(), FloatComparisonMode.OrderedLessThanSignaling).As<float, T>();
-#endif
-                }
-        
-                return Double(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Double(Vector256<T> left, Vector256<T> right)
-            {
-                if (typeof(T) == typeof(double))
-                {
-
-                    if (Avx2.IsSupported)
-                    {
-#if AVX && NET5_0_OR_GREATER
-                        return Avx2.CompareLessThan(left.AsDouble(), right.AsDouble()).As<double, T>();
-#elif AVX
-                        return Avx2.Compare(left.AsDouble(), right.AsDouble(), FloatComparisonMode.OrderedLessThanSignaling).As<double, T>();
-#endif
-                    }
-                }
-        
-                return OtherHWAccelerated(left, right);
-            }
-            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> OtherHWAccelerated(Vector256<T> left, Vector256<T> right)
-            {
-                if (Simd256<T>.IsHardwareAccelerated)
-                {
-                    return And(Not(GreaterThan(left, right)), NotEqual(left, right));
-                }
-                return Other(left, right);
-            }
-            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Other(Vector256<T> left, Vector256<T> right)
-            {
-                var vec = Vector256<T>.Zero;
-                for (int i = 0; i < Vector256<T>.Count; i++)
-                {
-                    vec = vec.WithElement(i, Scalar.LessThan(left.GetElement(i), right.GetElement(i)) ? Scalar<T>.AllBitsSet : Scalar<T>.Zero);
-                }
-                return vec;
-            }
+            return GreaterThan(right, left);
         }
     }
 }
