@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Integer(Vector128<T> left, Vector128<T> right)
             {
-                if (Simd256<T>.IsHardwareAccelerated)
+                if (Simd128<T>.IsHardwareAccelerated)
                     return Not(Equal(left, right));
                 return Other(left, right);
             }

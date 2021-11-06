@@ -27,7 +27,7 @@ namespace Silk.NET.Maths
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> OtherHWAccelerated(Vector64<T> left, Vector64<T> right)
             {
-                if (Simd256<T>.IsHardwareAccelerated)
+                if (Simd64<T>.IsHardwareAccelerated)
                     return Not(Equal(left, right));
                 return Other(left, right);
             }
