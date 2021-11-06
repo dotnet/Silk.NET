@@ -1,7 +1,8 @@
 # Summary
+TODO
 
 # Contributors
-- [Craig Dean, DevDecoder](https://github.com/thargy) 
+- [Craig Dean, DevDecoder](https://github.com/thargy)
 
 # Current Status
 - [x] Proposed
@@ -10,7 +11,7 @@
 - [ ] Implemented
 
 # Design Decisions
-This proposal purposely excludes window views as described in the views proposal, as barely any of the concepts
-are applicable to mobile/view-based windowing platforms.
+TODO
 
 # Proposed API
+TODO
