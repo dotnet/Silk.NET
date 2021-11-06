@@ -31,9 +31,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd256.Add(left.AsByte(), Simd256<byte>.MaxValueOver2);
-                        var rightShifted = Simd256.Add(right.AsByte(), Simd256<byte>.MaxValueOver2);
-                        return Avx2.CompareEqual(leftShifted.AsSByte(), rightShifted.AsSByte()).As<SByte, T>();
+                        return Avx2.CompareEqual(left.AsSByte(), right.AsSByte()).As<SByte, T>();
                     }
 #endif
                 }
@@ -63,9 +61,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd256.Add(left.AsUInt16(), Simd256<ushort>.MaxValueOver2);
-                        var rightShifted = Simd256.Add(right.AsUInt16(), Simd256<ushort>.MaxValueOver2);
-                        return Avx2.CompareEqual(leftShifted.AsInt16(), rightShifted.AsInt16()).As<Int16, T>();
+                        return Avx2.CompareEqual(left.AsInt16(), right.AsInt16()).As<Int16, T>();
                     }
 #endif
                 }
@@ -95,9 +91,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd256.Add(left.AsUInt32(), Simd256<uint>.MaxValueOver2);
-                        var rightShifted = Simd256.Add(right.AsUInt32(), Simd256<uint>.MaxValueOver2);
-                        return Avx2.CompareEqual(leftShifted.AsInt32(), rightShifted.AsInt32()).As<Int32, T>();
+                        return Avx2.CompareEqual(left.AsInt32(), right.AsInt32()).As<Int32, T>();
                     }
 #endif
                 }
@@ -127,9 +121,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd256.Add(left.AsUInt64(), Simd256<ulong>.MaxValueOver2);
-                        var rightShifted = Simd256.Add(right.AsUInt64(), Simd256<ulong>.MaxValueOver2);
-                        return Avx2.CompareEqual(leftShifted.AsInt64(), rightShifted.AsInt64()).As<Int64, T>();
+                        return Avx2.CompareEqual(left.AsInt64(), right.AsInt64()).As<Int64, T>();
                     }
 #endif
                 }
