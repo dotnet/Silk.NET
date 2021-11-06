@@ -18,13 +18,14 @@ namespace Tutorial
         private static Texture Texture;
         private static Shader Shader;
 
+        // OpenGL has image origin in the bottom-left corner.
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
-             0.5f,  0.5f, 0.0f, 1f, 1f,
-             0.5f, -0.5f, 0.0f, 1f, 0f,
-            -0.5f, -0.5f, 0.0f, 0f, 0f,
-            -0.5f,  0.5f, 0.5f, 0f, 1f
+             0.5f,  0.5f, 0.0f, 1f, 0f,
+             0.5f, -0.5f, 0.0f, 1f, 1f,
+            -0.5f, -0.5f, 0.0f, 0f, 1f,
+            -0.5f,  0.5f, 0.5f, 0f, 0f
         };
 
         private static readonly uint[] Indices =
