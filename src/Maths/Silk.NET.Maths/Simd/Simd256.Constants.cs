@@ -114,7 +114,7 @@ namespace Silk.NET.Maths
         /// </summary>
         public static bool IsHardwareAccelerated => Avx2.IsSupported;
 
-        internal static Vector256<T> MaxValueOver2 = Simd256.Divide(Simd256<T>.MaxValue, Simd256<T>.Two);
+        internal static readonly Vector256<T> MaxValueOver2;
 
         [MethodImpl(Scalar.MaxOpt)]
         static Simd256()
@@ -133,6 +133,7 @@ namespace Silk.NET.Maths
             Pi = Simd256.Create(Scalar<T>.Pi);
             PiOver2 = Simd256.Create(Scalar<T>.PiOver2);
             Tau = Simd256.Create(Scalar<T>.Tau);
+            MaxValueOver2 = Simd256.Divide(Simd256<T>.MaxValue, Simd256<T>.Two);
 #if NET5_0_OR_GREATER
             AllBitsSet = Vector256<T>.AllBitsSet;
 #else

@@ -200,7 +200,7 @@ namespace Silk.NET.Maths
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
-                    vec.WithElement(i, Scalar.Max(left.GetElement(i), right.GetElement(i)));
+                    vec = vec.WithElement(i, Scalar.Max(left.GetElement(i), right.GetElement(i)));
                 }
                 return vec;
             }

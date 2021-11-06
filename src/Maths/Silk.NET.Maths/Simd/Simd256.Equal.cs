@@ -189,7 +189,7 @@ namespace Silk.NET.Maths
                 var vec = Vector256<T>.Zero;
                 for (int i = 0; i < Vector256<T>.Count; i++)
                 {
-                    vec.WithElement(i, Scalar.Equal(left.GetElement(i), right.GetElement(i)) ? Scalar<T>.AllBitsSet : Scalar<T>.Zero);
+                    vec = vec.WithElement(i, Scalar.Equal(left.GetElement(i), right.GetElement(i)) ? Scalar<T>.AllBitsSet : Scalar<T>.Zero);
                 }
                 return vec;
             }

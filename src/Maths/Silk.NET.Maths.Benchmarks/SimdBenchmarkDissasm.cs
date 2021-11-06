@@ -32,8 +32,8 @@ namespace Silk.NET.Maths.Benchmark
             var rand = new Random();
             for (int i = 0; i < byteCount; i++)
             {
-                *(byte*)a = (byte)rand.Next(0, 255);
-                *(byte*)b = (byte)rand.Next(0, 255);
+                *(byte*)a = (byte)rand.Next(1, 255);
+                *(byte*)b = (byte)rand.Next(1, 255);
             }
         }
 
