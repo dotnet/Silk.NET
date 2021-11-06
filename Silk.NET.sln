@@ -468,6 +468,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenXR.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenXR.Extensions.HTCX", "src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.HTCX\Silk.NET.OpenXR.Extensions.HTCX.csproj", "{782B6A7E-9F04-429A-9DCD-D7273AA3882E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk30InputPrototyping", "src\Lab\Experiments\Silk30InputPrototyping\Silk30InputPrototyping.csproj", "{173A3DC7-D765-49B1-A575-390188073C7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2793,6 +2795,18 @@ Global
 		{782B6A7E-9F04-429A-9DCD-D7273AA3882E}.Release|x64.Build.0 = Release|Any CPU
 		{782B6A7E-9F04-429A-9DCD-D7273AA3882E}.Release|x86.ActiveCfg = Release|Any CPU
 		{782B6A7E-9F04-429A-9DCD-D7273AA3882E}.Release|x86.Build.0 = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|x64.Build.0 = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Debug|x86.Build.0 = Debug|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|x64.ActiveCfg = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|x64.Build.0 = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|x86.ActiveCfg = Release|Any CPU
+		{173A3DC7-D765-49B1-A575-390188073C7C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3019,6 +3033,7 @@ Global
 		{3E30D674-9282-4297-AD1F-9B233A166308} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
 		{606214B8-07FC-436F-9523-02AF32E1AB1E} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
 		{782B6A7E-9F04-429A-9DCD-D7273AA3882E} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
+		{173A3DC7-D765-49B1-A575-390188073C7C} = {39B598E9-44BA-4A61-A1BB-7C543734DBA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
