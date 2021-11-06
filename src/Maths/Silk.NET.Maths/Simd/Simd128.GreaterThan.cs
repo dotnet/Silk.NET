@@ -37,7 +37,9 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.CompareGreaterThan(left.AsByte(), right.AsByte()).As<byte, T>();
+                        var leftShifted = Simd128.Add(left.AsByte(), Simd128<byte>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsByte(), Simd128<byte>.MaxValueOver2);
+                        return Sse2.CompareGreaterThan(leftShifted.AsSByte(), rightShifted.AsSByte()).As<SByte, T>();
                     }
 #endif
                 }
@@ -79,7 +81,9 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.CompareGreaterThan(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        var leftShifted = Simd128.Add(left.AsUInt16(), Simd128<ushort>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsUInt16(), Simd128<ushort>.MaxValueOver2);
+                        return Sse2.CompareGreaterThan(leftShifted.AsInt16(), rightShifted.AsInt16()).As<Int16, T>();
                     }
 #endif
                 }
@@ -121,7 +125,9 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.CompareGreaterThan(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        var leftShifted = Simd128.Add(left.AsUInt32(), Simd128<uint>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsUInt32(), Simd128<uint>.MaxValueOver2);
+                        return Sse2.CompareGreaterThan(leftShifted.AsInt32(), rightShifted.AsInt32()).As<Int32, T>();
                     }
 #endif
                 }
@@ -147,50 +153,9 @@ namespace Silk.NET.Maths
 #endif
                 }
         
-                return UInt64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> UInt64(Vector128<T> left, Vector128<T> right)
-            {
-                if (typeof(T) == typeof(ulong))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.CompareGreaterThan(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
-#if SSE
-                    if (Sse2.IsSupported)
-                    {
-                        return Sse2.CompareGreaterThan(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
-                }
-        
-                return Int64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector128<T> Int64(Vector128<T> left, Vector128<T> right)
-            {
-                if (typeof(T) == typeof(long))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.CompareGreaterThan(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
-#if SSE
-                    if (Sse2.IsSupported)
-                    {
-                        return Sse2.CompareGreaterThan(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
-                }
-        
                 return Single(left, right);
             }            
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Single(Vector128<T> left, Vector128<T> right)
             {

@@ -118,6 +118,8 @@ namespace Silk.NET.Maths
             false;
 #endif
 
+        internal static Vector64<T> MaxValueOver2 = Simd64.Divide(Simd64<T>.MaxValue, Simd64<T>.Two);
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd64()
         {

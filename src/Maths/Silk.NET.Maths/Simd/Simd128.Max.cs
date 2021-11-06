@@ -34,10 +34,13 @@ namespace Silk.NET.Maths
                         return AdvSimd.Max(left.AsByte(), right.AsByte()).As<byte, T>();
                     }
 #endif
-#if SSE
-                    if (Sse2.IsSupported)
+#if AVX
+                    if (Avx2.IsSupported)
                     {
-                        return Sse2.Max(left.AsByte(), right.AsByte()).As<byte, T>();
+                        var leftShifted = Simd128.Add(left.AsByte(), Simd128<byte>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsByte(), Simd128<byte>.MaxValueOver2);
+                        var res = Avx2.Max(leftShifted.AsSByte(), rightShifted.AsSByte());
+                        return Avx2.Subtract(res.AsByte(), Simd128<byte>.MaxValueOver2).As<Byte, T>();
                     }
 #endif
                 }
@@ -56,9 +59,9 @@ namespace Silk.NET.Maths
                     }
 #endif
 #if SSE
-                    if (Sse2.IsSupported)
+                    if (Avx2.IsSupported)
                     {
-                        return Sse2.Max(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                        return Avx2.Max(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
                     }
 #endif
                 }
@@ -79,7 +82,10 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.Max(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                        var leftShifted = Simd128.Add(left.AsUInt16(), Simd128<ushort>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsUInt16(), Simd128<ushort>.MaxValueOver2);
+                        var res = Sse2.Max(leftShifted.AsInt16(), rightShifted.AsInt16());
+                        return Sse2.Subtract(res.AsUInt16(), Simd128<ushort>.MaxValueOver2).As<UInt16, T>();
                     }
 #endif
                 }
@@ -121,7 +127,10 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.Max(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                        var leftShifted = Simd128.Add(left.AsUInt32(), Simd128<uint>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsUInt32(), Simd128<uint>.MaxValueOver2);
+                        var res = Sse2.Max(leftShifted.AsInt32(), rightShifted.AsInt32());
+                        return Sse2.Subtract(res.AsUInt32(), Simd128<uint>.MaxValueOver2).As<UInt32, T>();
                     }
 #endif
                 }
@@ -163,7 +172,10 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.Max(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                        var leftShifted = Simd128.Add(left.AsUInt64(), Simd128<ulong>.MaxValueOver2);
+                        var rightShifted = Simd128.Add(right.AsUInt64(), Simd128<ulong>.MaxValueOver2);
+                        var res = Sse2.Max(leftShifted.AsInt64(), rightShifted.AsInt64());
+                        return Sse2.Subtract(res.AsUInt64(), Simd128<ulong>.MaxValueOver2).As<UInt64, T>();
                     }
 #endif
                 }

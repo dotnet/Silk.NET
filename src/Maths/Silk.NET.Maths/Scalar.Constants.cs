@@ -108,6 +108,8 @@ namespace Silk.NET.Maths
         /// This is equivalent to <c>MathF.Pi / 180</c>.
         /// </remarks>
         public static readonly T RadiansPerDegree;
+        
+        internal static readonly T AllBitsSet = Scalar.Not(Scalar<T>.Zero);
 
         internal static readonly bool IntrinsicsApplicable = typeof(T) == typeof(byte)
                                                             || typeof(T) == typeof(sbyte)

@@ -114,6 +114,8 @@ namespace Silk.NET.Maths
         /// </summary>
         public static bool IsHardwareAccelerated => Avx2.IsSupported;
 
+        internal static Vector256<T> MaxValueOver2 = Simd256.Divide(Simd256<T>.MaxValue, Simd256<T>.Two);
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd256()
         {

@@ -124,6 +124,8 @@ namespace Silk.NET.Maths
             false;
 #endif
 
+        internal static Vector128<T> MaxValueOver2 = Simd128.Divide(Simd128<T>.MaxValue, Simd128<T>.Two);
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd128()
         {
