@@ -120,41 +120,9 @@ namespace Silk.NET.Maths
 #endif
                 }
         
-                return UInt64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> UInt64(Vector256<T> left, Vector256<T> right)
-            {
-                if (typeof(T) == typeof(ulong))
-                {
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        var leftShifted = Simd256.Add(left.AsUInt64(), Simd256<ulong>.MaxValueOver2);
-                        var rightShifted = Simd256.Add(right.AsUInt64(), Simd256<ulong>.MaxValueOver2);
-                        var res = Avx2.Min(leftShifted.AsInt64(), rightShifted.AsInt64());
-                        return Avx2.Subtract(res.AsUInt64(), Simd256<ulong>.MaxValueOver2).As<UInt64, T>();
-                    }
-#endif
-                }
-        
-                return Int64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector256<T> Int64(Vector256<T> left, Vector256<T> right)
-            {
-                if (typeof(T) == typeof(long))
-                {
-#if AVX
-                    if (Avx2.IsSupported)
-                    {
-                        return Avx2.Min(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
-                }
-        
                 return Single(left, right);
-            }            
+            }
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Single(Vector256<T> left, Vector256<T> right)
             {

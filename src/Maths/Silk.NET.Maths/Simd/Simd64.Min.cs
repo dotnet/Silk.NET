@@ -111,38 +111,9 @@ namespace Silk.NET.Maths
 #endif
                 }
         
-                return UInt64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> UInt64(Vector64<T> left, Vector64<T> right)
-            {
-                if (typeof(T) == typeof(ulong))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Min(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
-                    }
-#endif
-                }
-        
-                return Int64(left, right);
-            }            
-            [MethodImpl(Scalar.MaxOpt)]
-            static Vector64<T> Int64(Vector64<T> left, Vector64<T> right)
-            {
-                if (typeof(T) == typeof(long))
-                {
-#if AdvSIMD
-                    if (AdvSimd.IsSupported)
-                    {
-                        return AdvSimd.Min(left.AsInt64(), right.AsInt64()).As<long, T>();
-                    }
-#endif
-                }
-        
                 return Single(left, right);
             }            
+               
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Single(Vector64<T> left, Vector64<T> right)
             {
