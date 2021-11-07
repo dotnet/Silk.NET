@@ -8,6 +8,7 @@ using System;
 using System.Numerics;
 using Xunit;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 
 
@@ -23,11 +24,37 @@ namespace Silk.NET.Maths.Tests
         }
     }
 
+    public unsafe class SimdTests_Constants
+    {
+        static bool AreEqual<T>(T a, T b) where T : unmanaged
+        {
+            if (sizeof(T) == 1)
+                return Unsafe.As<T, byte>(ref a) == Unsafe.As<T, byte>(ref b);
+            if (sizeof(T) == 2)
+                return Unsafe.As<T, ushort>(ref a) == Unsafe.As<T, ushort>(ref b);
+            if (sizeof(T) == 4)
+                return Unsafe.As<T, uint>(ref a) == Unsafe.As<T, uint>(ref b);
+            if (sizeof(T) == 8)
+                return Unsafe.As<T, ulong>(ref a) == Unsafe.As<T, ulong>(ref b);
+            throw new($"Unexpected type {typeof(T)}");
+        }
+<# foreach (var bitness in new [] { 64, 128, 256 }) { #>
+<# foreach (var constant in new [] { "Epsilon", "MaxValue", "MinValue", "NaN", "NegativeInfinity", "PositiveInfinity", "One", "Two", "MinusOne", "MinusTwo", "E", "Pi", "PiOver2", "Tau", "MaxValueOver2", "AllBitsSet" }) { #>
+<# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
+        [Fact]
+        public void Simd<#= bitness #>_<#= constant #>_<#= type #>()
+        {
+            for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
+                Assert.True(AreEqual(Scalar<<#= type #>>.<#= constant #>, Simd<#= bitness #><<#= type #>>.<#= constant #>.GetElement(i)), $"\nExpected: {Scalar<<#= type #>>.<#= constant #>}\nActual: {Simd<#= bitness #><<#= type #>>.<#= constant #>.GetElement(i)}");
+        }
+<# } #>
+<# } #>
+<# } #>
+    }
+
     // Vector x Vector -> Vector
     public unsafe class SimdTests_Vector_Vector_Vector
     {
-        
-
 <# foreach (var bitness in new [] { 64, 128, 256 }) { #>
 <# foreach (var method in new [] { "GreaterThan", "LessThan", "GreaterThanOrEqual", "LessThanOrEqual", "Add", "Subtract", "Multiply", "Divide", "And", "Xor", "Or", "Min", "Max", "Equal", "NotEqual" }) { #>
 <# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>

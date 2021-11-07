@@ -125,6 +125,8 @@ namespace Silk.NET.Maths
         private const float FloatE = 2.71828175f;
         private const float FloatPi = 3.14159274f;
         private const float FloatTau = 6.283185307f;
+        
+        internal static readonly T MaxValueOver2;
 
         [MethodImpl(Scalar.MaxOpt)]
 #pragma warning disable 8618 // unitialized fields
@@ -153,6 +155,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (Half) FloatE;
                 Pi = (T) (object) (Half) FloatPi;
                 Tau = (T) (object) (Half) FloatTau;
+                MaxValueOver2 = (T) (object) (Half) ((float)Half.MaxValue / (float)2);
             }
             else if (typeof(T) == typeof(float))
             {
@@ -169,6 +172,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) FloatE;
                 Pi = (T) (object) FloatPi;
                 Tau = (T) (object) FloatTau;
+                MaxValueOver2 = (T) (object) (float.MaxValue / 2);
             }
             else if (typeof(T) == typeof(double))
             {
@@ -189,6 +193,7 @@ namespace Silk.NET.Maths
 #else
                 Tau = (T) (object) Math.Tau;
 #endif
+                MaxValueOver2 = (T) (object) (double.MaxValue / 2);
             }
             else if (typeof(T) == typeof(decimal))
             {
@@ -205,6 +210,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (decimal) Math.E;
                 Pi = (T) (object) (decimal) Math.PI;
                 Tau = Scalar.Multiply(Pi, Two);
+                MaxValueOver2 = (T) (object) (decimal.MaxValue / 2);
             }
             else if (typeof(T) == typeof(short))
             {
@@ -221,6 +227,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (short) FloatE;
                 Pi = (T) (object) (short) FloatPi;
                 Tau = (T) (object) (short) FloatTau;
+                MaxValueOver2 = (T) (object) (short.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(ushort))
             {
@@ -237,6 +244,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (ushort) FloatE;
                 Pi = (T) (object) (ushort) FloatPi;
                 Tau = (T) (object) (ushort) FloatTau;
+                MaxValueOver2 = (T) (object) (ushort.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(sbyte))
             {
@@ -253,6 +261,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (sbyte) FloatE;
                 Pi = (T) (object) (sbyte) FloatPi;
                 Tau = (T) (object) (sbyte) FloatTau;
+                MaxValueOver2 = (T) (object) (sbyte.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(byte))
             {
@@ -269,6 +278,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (byte) FloatE;
                 Pi = (T) (object) (byte) FloatPi;
                 Tau = (T) (object) (byte) FloatTau;
+                MaxValueOver2 = (T) (object) (byte.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(int))
             {
@@ -285,6 +295,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (int) FloatE;
                 Pi = (T) (object) (int) FloatPi;
                 Tau = (T) (object) (int) FloatTau;
+                MaxValueOver2 = (T) (object) (int.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(uint))
             {
@@ -301,6 +312,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (uint) FloatE;
                 Pi = (T) (object) (uint) FloatPi;
                 Tau = (T) (object) (uint) FloatTau;
+                MaxValueOver2 = (T) (object) (uint.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(long))
             {
@@ -317,6 +329,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (long) FloatE;
                 Pi = (T) (object) (long) FloatPi;
                 Tau = (T) (object) (long) FloatTau;
+                MaxValueOver2 = (T) (object) (long.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(ulong))
             {
@@ -333,6 +346,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (ulong) FloatE;
                 Pi = (T) (object) (ulong) FloatPi;
                 Tau = (T) (object) (ulong) FloatTau;
+                MaxValueOver2 = (T) (object) (ulong.MaxValue / 2 + 1);
             }
             else if (typeof(T) == typeof(BigInteger))
             {
@@ -349,6 +363,7 @@ namespace Silk.NET.Maths
                 E = (T) (object) (BigInteger) FloatE;
                 Pi = (T) (object) (BigInteger) FloatPi;
                 Tau = (T) (object) (BigInteger) FloatTau;
+                MaxValueOver2 = default!;
             }
             else if (typeof(T) == typeof(Complex))
             {
@@ -374,6 +389,7 @@ namespace Silk.NET.Maths
 #else
                 Tau = (T) (object) (Complex) Math.Tau;
 #endif
+                MaxValueOver2 = default!;
             }
             else
             {
