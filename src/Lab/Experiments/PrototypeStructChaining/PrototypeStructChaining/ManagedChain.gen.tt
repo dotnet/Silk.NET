@@ -2,7 +2,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    var maximumItems = 5; // TODO use 16/32 in production
+    var maximumItems = 16;
 
     string parameterDocs(int index, string prefix)
     {
