@@ -127,8 +127,20 @@ namespace Silk.NET.Maths
 #endif
                 }
         
+                return Other8byte(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector64<T> Other8byte(Vector64<T> left, Vector64<T> right)
+            {
+                if (sizeof(T) == 8)
+                {
+                    var res = Scalar.GreaterThan(Unsafe.As<Vector64<T>, T>(ref left), Unsafe.As<Vector64<T>, T>(ref right));
+                    return res ? Simd64<T>.AllBitsSet : Simd64<T>.Zero;
+                }
                 return Other(left, right);
             }
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
             {

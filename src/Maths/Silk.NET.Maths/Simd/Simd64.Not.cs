@@ -25,7 +25,18 @@ namespace Silk.NET.Maths
             if (Simd64<T>.IsHardwareAccelerated)
                 return Simd64.Xor(vector, Simd64<T>.AllBitsSet);
                 
-            return Other(vector);
+            return Other8byte(vector);
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector64<T> Other8byte(Vector64<T> vector)
+            {
+                if (sizeof(T) == 8)
+                {
+                    var res = Scalar.Not(Unsafe.As<Vector64<T>, T>(ref vector));
+                    return Unsafe.As<T, Vector64<T>>(ref res);
+                }
+                return Other(vector);
+            }
             
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> vector)
