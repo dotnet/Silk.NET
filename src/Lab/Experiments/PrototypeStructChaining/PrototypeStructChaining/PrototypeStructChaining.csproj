@@ -27,16 +27,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Update="ManagedChain.gen.cs">
-          <AutoGen>True</AutoGen>
-          <DesignTime>True</DesignTime>
-          <DependentUpon>ManagedChain.gen.tt</DependentUpon>
-        </Compile>
-        <Compile Update="ManagedChain.gen.cs">
-          <AutoGen>True</AutoGen>
-          <DesignTime>True</DesignTime>
-          <DependentUpon>ManagedChain.gen.tt</DependentUpon>
-        </Compile>
+      <Compile Update="ManagedChain.gen.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>ManagedChain.gen.tt</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

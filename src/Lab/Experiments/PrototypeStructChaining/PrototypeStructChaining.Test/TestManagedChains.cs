@@ -21,7 +21,7 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
     }
 
     [Fact]
@@ -38,7 +38,7 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
 
         Assert.Equal(0U, chain.Head.Flags);
 
@@ -81,7 +81,7 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
 
         // Check our value was set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -101,7 +101,7 @@ public class TestManagedChains
         // Note all the pointers are still correct (and have not changed)
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
 
         // As is the SType
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
@@ -121,7 +121,7 @@ public class TestManagedChains
 
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
 
         // Check flag set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -134,7 +134,7 @@ public class TestManagedChains
 
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
 
         // Check flag set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -158,7 +158,7 @@ public class TestManagedChains
 
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
 
         // Check flag set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -173,7 +173,7 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) newChain.Item1Ptr, (nint) newChain.Head.PNext);
         Assert.Equal((nint) newChain.Item2Ptr, (nint) newChain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) newChain.Item2.PNext);
+        Assert.Equal(0, (nint) newChain.Item2.PNext);
 
         // Check flag still set
         Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -204,7 +204,7 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
 
         // Check flag set
         Assert.True(chain.Item2.AccelerationStructure);
@@ -219,7 +219,7 @@ public class TestManagedChains
 
         // Ensure pointers set correctly
         Assert.Equal((nint) newChain.Item1Ptr, (nint) newChain.Head.PNext);
-        Assert.Equal((nint) 0, (nint) newChain.Item1.PNext);
+        Assert.Equal(0, (nint) newChain.Item1.PNext);
 
         // Check removed type flag
         Assert.True(accelerationStructure.AccelerationStructure);
@@ -261,11 +261,11 @@ public class TestManagedChains
         // Ensure pointers set correctly
         Assert.Equal((nint) managedChain.Item1Ptr, (nint) managedChain.Head.PNext);
         Assert.Equal((nint) managedChain.Item2Ptr, (nint) managedChain.Item1.PNext);
-        Assert.Equal((nint) 0, (nint) managedChain.Item2.PNext);
+        Assert.Equal(0, (nint) managedChain.Item2.PNext);
     }
 
     [Fact]
-    public unsafe void TestManagedChainLoadWithError()
+    public void TestManagedChainLoadWithError()
     {
         var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
         {
@@ -301,7 +301,7 @@ The unmanaged chain was length 4, expected length 5", errors
     }
 
     [Fact]
-    public unsafe void TestManagedChainLoadWithErrorTooLong()
+    public void TestManagedChainLoadWithErrorTooLong()
     {
         var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
         {
@@ -329,7 +329,7 @@ The unmanaged chain was length 4, expected length 5", errors
     }
 
     [Fact]
-    public unsafe void TestReadOnlyList()
+    public void TestReadOnlyList()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
             PhysicalDeviceAccelerationStructureFeaturesKHR>();
@@ -353,7 +353,7 @@ The unmanaged chain was length 4, expected length 5", errors
     }
 
     [Fact]
-    public unsafe void TestDeconstructor()
+    public void TestDeconstructor()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
             PhysicalDeviceAccelerationStructureFeaturesKHR>();

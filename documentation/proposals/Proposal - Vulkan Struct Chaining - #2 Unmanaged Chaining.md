@@ -18,7 +18,8 @@ The `IChainable` interface extends the `IStructuredType` interface
 from [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md)
 and so the explicit implementation of `IChainable.StructureType()` from
 [that proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md#istructuretype-implementation)
-is triggerred for the structure, providing a mechanism for ensuring the `SType` is correctly set.
+is triggerred for the structure, providing a mechanism for ensuring the `SType` is correctly set. It then exposes
+a `Chain* PNext { get; set; }` property for easy access to the next item in the chain.
 
 The presence of the `IChainable` interface, also acts as a **guarantee** that it is safe to cast any pointer of a struct
 implementing it to a pointer to a `Chain` struct, which is a struct which has just the `SType` and `PNext` fields
@@ -31,16 +32,15 @@ run time.
 offset 0, i.e. in the first position.
 
 However, rather than extending `IChainable` directly, it will be more common to choose one of `IChainStart`
-or `IExtendsChain<TChain>` (both of which extend `IChainable`). It does this based on the `structextends` attribute
-provided in
+or `IExtendsChain<TChain>` (both of which extend `IChainable`). `BuildTools` will do this based on the `structextends`
+attribute provided in
 the [Vulkan Specification](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Headers/master/registry/vk.xml)).
 
-For example, if `struct B` extends `struct A` (as per
-the [Vulkan Specification](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Headers/master/registry/vk.xml)), then
-`struct B` will be marked with `IExtendsChain<A>` and `struct A` will be marked with `IChainStart`. A struct may only
-extend `IChainStart` once (even though it may appear in the `structextends` attribute of many structs), but is may
-implement multiple `IExtendsChain<TChain>` interfaces. It is also feasible for a struct to implement both (i.e. be able
-to extend other chains, as well as being a chain start), a real example of this can be seen
+For example, if `struct B` extends `struct A`, then `struct B` will be marked with `IExtendsChain<A>` and `struct A`
+will be marked with `IChainStart`. A struct may only extend `IChainStart` once (even though it may appear in
+the `structextends` attribute of many structs), but is may implement multiple `IExtendsChain<TChain>` interfaces. It is
+also feasible for a struct to implement both (i.e. be able to extend other chains, as well as being a chain start), a
+real example of this can be seen
 [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/PhysicalDeviceFeatures2.cs).
 
 As a result, `IChainable` will not usually be directly implemented (just as it is unlikely to see `IStructuredType`
@@ -52,12 +52,12 @@ will be explicitly marked as `IChainable`.
 
 Whenever a struct is marked as `IChainStart` a static `ref [StructType] Chain(out [StructType]) capture);` method is
 also added, providing an easy form of starting a chain with default values. As `IChainStart` also
-implements `IStructuredType` (via `IChainable`), then a chain start will have two additional methods generated (the
-static
-`Chain(out)` method and the explicit `IStructuredType.StructureType()` implementation); as compared to all other
-`IChainable` structs, which will only have the explicit `IStructuredType.StructureType()` implementation from
+implements `IChainable`, which implements `IStructuredType`, then a chain start will have three additional methods
+generated (the static `Chain(out)` method and the explicit `IStructuredType.StructureType()` and `IChainable.PNext`
+implementation); as compared to all other `IChainable` structs, which will only have the
+explicit `IStructuredType.StructureType()` implementation from
 [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md)
-.
+and the explicit `Chain* IChainable.PNext { get; set;}` property from this proposal.
 
 The remaining functionality is provided entirely by the following new extension methods:
 
@@ -115,13 +115,13 @@ What this proposal does not do (some of these _are_ addressed
 in [Proposal - Vulkan Struct Chaining - #3 Managed Chaining](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%233%20Managed%20Chaining.md))
 is manage pointers of structures that find themselves on the heap. Any supplied structures should be held on the stack,
 once moved to the heap their `PNext` values can no longer be trusted as the GC is free to move structures in heap
-memory. The interface of this proposal makes it difficult to use with heap objects, but it is not impossible. The
+memory. The proposed extension methods make it difficult to use with heap objects, but it is not impossible. The
 presence of the `ManagedChain` classes
 from [the proposal for managed chains](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%233%20Managed%20Chaining.md),
 along with a well documented API should highlight the danger of such practices.
 
-Indeed, it is important to remember that such dangers are already part of the existing implementation are a feature of
-using unmanaged pointers in .NET rather than a 'limitation' of this proposal.
+Indeed, it is important to remember that such dangers are already part of the existing implementation and are a feature of
+using unmanaged pointers in .NET rather than a limitation of this proposal.
 
 # Usage
 

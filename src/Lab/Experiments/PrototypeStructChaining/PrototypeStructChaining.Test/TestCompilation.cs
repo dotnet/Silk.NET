@@ -64,7 +64,7 @@ public class Test
     }
 
     [Fact]
-    public unsafe void TestCantAddUnsupportedNext()
+    public void TestCantAddUnsupportedNext()
     {
         var diagnostics = CheckCompile
         (
@@ -80,7 +80,7 @@ public class Test
     }
 
     [Fact]
-    public unsafe void TestCanAddSupportedNext()
+    public void TestCanAddSupportedNext()
     {
         var diagnostics = CheckCompile
         (

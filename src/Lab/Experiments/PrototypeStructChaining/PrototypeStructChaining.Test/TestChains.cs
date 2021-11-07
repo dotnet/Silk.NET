@@ -19,7 +19,7 @@ public class TestChains
         // Ensure all pointers set correctly
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
         Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
-        Assert.Equal((nint) 0, (nint) accelerationStructureFeaturesKhr.PNext);
+        Assert.Equal(0, (nint) accelerationStructureFeaturesKhr.PNext);
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
@@ -76,7 +76,7 @@ public class TestChains
 
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
         Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
-        Assert.Equal((nint) 0, (nint) accelerationStructureFeaturesKhr.PNext);
+        Assert.Equal(0, (nint) accelerationStructureFeaturesKhr.PNext);
 
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
@@ -104,7 +104,7 @@ public class TestChains
             .SetNext(ref indexingFeatures);
 
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal((nint) 0, (nint) indexingFeatures.PNext);
+        Assert.Equal(0, (nint) indexingFeatures.PNext);
 
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
@@ -117,7 +117,7 @@ public class TestChains
         features2.SetNext(ref indexingFeatures2);
 
         Assert.Equal((nint) (&indexingFeatures2), (nint) features2.PNext);
-        Assert.Equal((nint) 0, (nint) indexingFeatures2.PNext);
+        Assert.Equal(0, (nint) indexingFeatures2.PNext);
 
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures2.SType);
 
@@ -139,7 +139,7 @@ public class TestChains
             .SetNext(ref indexingFeatures);
 
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal((nint) 0, (nint) indexingFeatures.PNext);
+        Assert.Equal(0, (nint) indexingFeatures.PNext);
 
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
@@ -153,7 +153,7 @@ public class TestChains
 
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
         Assert.Equal((nint) (&indexingFeatures2), (nint) indexingFeatures.PNext);
-        Assert.Equal((nint) 0, (nint) indexingFeatures2.PNext);
+        Assert.Equal(0, (nint) indexingFeatures2.PNext);
 
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures2.SType);
 
@@ -172,7 +172,7 @@ public class TestChains
         // However, note that AddNext will still coerce the SType of createInfo.
         createInfo.AddNext(out PhysicalDeviceFeatures2 features2);
         Assert.Equal((nint) (&features2), (nint) createInfo.PNext);
-        Assert.Equal((nint) 0, (nint) features2.PNext);
+        Assert.Equal(0, (nint) features2.PNext);
 
         // Note, even though we didn't use chain, we have still coerced the SType
         Assert.Equal(StructureType.DeviceCreateInfo, createInfo.SType);
