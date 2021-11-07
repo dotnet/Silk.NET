@@ -7,7 +7,7 @@ on [Proposal - Vulkan Struct Chaining - #2 Unmanaged Chaining](Proposal%20-%20Vu
 This proposal presents a _managed_ mechanism for safely building, and storing, Vulkan Structure Chains. You may wish to
 start with the [previous proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md),
 followed by the [Usage section below](#Usage) to aid understanding. There is also a fully working prototype
-[in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/).
+[in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining).
 
 The [previous proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md) provided a
 lightweight mechanism for building structure chains, but the responsibility for ensuring that the provided structures
@@ -19,8 +19,8 @@ However, many consumers are uncomfortable with pointers, and are especially pron
 structs onto the heap. This proposal provides a convenient `ManagedChain` class, and multiple
 descendent `ManagedChain<TChain, T1...>` classes to safely fix the structures in memory and prevent pointer bugs.
 
-Whenever a structure is loaded into the `ManagedChain` it's `SType` and `PNext` are forced to be correct, preventing
-errors. Structures can be replaced at any time, and we be inserted efficiently into the chain as an O(1) operation.
+Whenever a structure is loaded into the `ManagedChain` its `SType` and `PNext` are forced to be correct, preventing
+errors. Structures can be replaced at any time, and will be inserted efficiently into the chain as an O(1) operation.
 
 # Contributors
 
@@ -39,6 +39,12 @@ errors. Structures can be replaced at any time, and we be inserted efficiently i
 - Although the `ManagedChain<TChain, T1...>` generic classes are auto-generated (for convenience) this is done using T4
   templating, an implementation of which is
   provided [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/ManagedChain.gen.tt).
+- For improved performance, the chain's structures are held in a single block of contiguous unmanaged memory, as the
+  memory is unmanaged, the position of the structures remains fixed, even though the containing object can be safely
+  moved around by the GC in the heap.
+- The structure accessors return a copy of the structures, and always correct the `SType` and `PNext` on input. Even
+  though the `PNext` values are exposed there is no way to modify them from outside the class, guaranteeing their
+  safety.
 
 Open questions:
 
@@ -58,12 +64,14 @@ Open questions:
   order of chains (after the start) is not fixed in Vulkan, and it will allow importing existing chains where the order
   doesn't matter.
 - Similar to `Append` do we want a `Truncate` method to trim the end of a chain?
-- Similar to `Append` and `Truncate` we could also add `Insert` and `Remove` methods, however this is more complex, as
-  we'd have to generate multiples of each, for example:
+- Similar to `Append` and `Truncate` we could also add `Insert` and `Remove` methods, though slightly more complex, as
+  we'd have to generate multiples of each, it is not difficult to do, for example:
 
 ```csharp
 pubilc class ManagedCache<TChain, T1, T2> ... {
-    // There would <length> of these methods (not too bad to be fair, the worst case would be maxsize -1 as we
+    ...
+    
+    // There would be <length> of these methods (not too bad to be fair, the worst case would be maxsize -1 as we
     // wouldn't add these methods to the largest possible ManagedCache)
     public ManagedCache<TNew, TChain, T1, T2> InsertBeforeHead<TNew>(TChain newHead) {...}
     public ManagedCache<TChain, TNew, T1, T2> InsertBeforeItem1<TNew>(TNew newValue) {...}
@@ -81,7 +89,9 @@ pubilc class ManagedCache<TChain, T1, T2> ... {
 
 ### Creation
 
-For example:
+The following will create a chain starting with `PhysicalDeviceFeatures2`, pointing
+to `PhysicalDeviceDescriptorIndexingFeatures` and finishing with a `PhysicalDeviceAccelerationStructureFeaturesKHR`
+structure:
 
 ```csharp
 using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
@@ -98,59 +108,68 @@ Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
 Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
 ```
 
-The structures are held in unmanaged memory, preventing movement by the GC, and ensuring that the ptrs remain fixed.
+The structures are held in unmanaged memory, preventing movement by the GC, and ensuring that the pointers remain fixed.
 
-You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s.
+You can also use the `ManagedChain.Create(...)` static methods to create `ManagedChain`s, e.g.:
+
+```csharp
+using var chain = ManagedChain.Create<
+    DeviceCreateInfo, 
+    PhysicalDeviceFeatures2, 
+    PhysicalDeviceDescriptorIndexingFeatures>();
+```
+
+or, using generic type inference:
+
+```csharp
+using var chain = ManagedChain.Create(
+    new DeviceCreateInfo { Flags = 1U },
+    default(PhysicalDeviceFeatures2),
+    default(PhysicalDeviceDescriptorIndexingFeatures)
+);
+```
 
 ### Modifying values
 
-We can easily modify any value in the `ManagedChain`, and it will maintain the ptrs automatically, e.g.:
+We can easily modify any value in the `ManagedChain`, and it will maintain the pointers automatically, e.g.:
 
 ```csharp
-using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-    PhysicalDeviceAccelerationStructureFeaturesKHR>(item1: new PhysicalDeviceDescriptorIndexingFeatures
-{
-    // We can set any non-default values, note we do not need to set SType or PNext
-    // indeed they will be overwritten.
-    ShaderInputAttachmentArrayDynamicIndexing = true
-});
+using var chain = ManagedChain.Create<
+    DeviceCreateInfo, 
+    PhysicalDeviceFeatures2, 
+    PhysicalDeviceDescriptorIndexingFeatures>();
 
 // Ensure all STypes set correctly
-Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
-Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
-Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+Assert.Equal(StructureType.DeviceCreateInfo, chain.Head.SType);
+Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Item1.SType);
+Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item2.SType);
 
 // Ensure pointers set correctly
 Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
 Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
 Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
 
-// Check our value was set
-Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+Assert.Equal(0U, chain.Head.Flags);
 
-var item1Ptr = chain.Item1Ptr;
+var headPtr = chain.HeadPtr;
 
-// Overwrite Item1
-chain.Item1 = new PhysicalDeviceDescriptorIndexingFeatures
-{
-    // Again we do not need to set SType or PNext, which will be set to the correct values
-    ShaderInputAttachmentArrayDynamicIndexing = false
-};
+// Get the current head (this is a copy)
+var head = chain.Head;
+// Update the flags
+head.Flags = 1U;
+// Update the chain
+chain.Head = head;
 
-// Check our value was cleared
-Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+Assert.Equal(1U, chain.Head.Flags);
 
-// Note all the pointers are still correct (and have not changed)
+// The head ptr should not change, as we overwrite the same memory location with the new value
+Assert.Equal((nint) headPtr, (nint) chain.HeadPtr);
+// But the next pointer should not change
 Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
-Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
-Assert.Equal((nint) 0, (nint) chain.Item2.PNext);
-
-// As is the SType
-Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
 ```
 
-**Note** When we update any item in the chain it overwrites the existing memory, so the ptrs remain fixed. It also
-ensures the PNext value is maintained.
+**Note** When we update any item in the chain it overwrites the existing memory, so the pointers remain fixed. It also
+ensures the `PNext` value pointing to it is maintained.
 
 ### Appending to a chain
 
@@ -168,6 +187,10 @@ using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR
 // Check the flag from the first chain is still set in the new chain.
 Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);        
 ```
+
+**Note** As a `ManagedChain` holds a block of unmanaged memory, it must be [disposed manually](#disposal) when it is
+finished with, when using the `Append` method you will produce a new `ManagedChain` and should not forget to dispose the
+original if it is no longer needed.
 
 ### Loading from an unmanaged chain
 
@@ -188,10 +211,10 @@ PhysicalDeviceFeatures2
 // Loads a new managed chain from an unmanaged chain
 using var managedChain =
     ManagedChain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-        PhysicalDeviceAccelerationStructureFeaturesKHR>(unmanagedChain, out var errors);
+        PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
 
 // Check we had no loading errors
-Assert.Equal("", errors);
+Assert.Equal(string.Empty, errors);
 
 // Check the flag still set
 Assert.True(managedChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
@@ -225,7 +248,7 @@ using var managedChain =
         PhysicalDeviceDescriptorIndexingFeatures,
         PhysicalDeviceAccelerationStructureFeaturesKHR,
         // Note that the unmanaged chain did not supply a 5th entry
-        PhysicalDeviceFeatures2>(unmanagedChain, out var errors);
+        PhysicalDeviceFeatures2>(out var errors, unmanagedChain );
 
 // Check for errors
 Assert.Equal(
@@ -237,7 +260,8 @@ The unmanaged chain was length 4, expected length 5",
 Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
 ```
 
-Notice that the above form use the constructor as an alternative.
+Notice that the above form uses the equivalent constructor as an alternative to the `Load` method. There is no
+equivalent constructor to `Load(TChain)` as that would be ambiguous.
 
 ### IReadOnlyList
 
@@ -290,4 +314,244 @@ statement.
 
 # Proposed API
 
-TODO
+## Abstract base class
+
+The `ManagedChain`, non-generic abstract base class provides an abstract implementation of `IReadOnlyList<IChainable>`,
+and defines static `Create` and `Load` methods for each size of chain.
+
+```csharp
+public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
+{
+    /// <inheritdoc />
+    public abstract IEnumerator<IChainable> GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    /// <inheritdoc />
+    public abstract int Count { get; }
+    
+    /// <inheritdoc />
+    public abstract IChainable this[int index] { get; }
+
+    /// <inheritdoc />
+    public abstract void Dispose();
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    /// <typeparam name="TChain">The chain type</typeparam>
+    /// <typeparam name="T1">Type of Item 1.</typeparam>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    public static ManagedChain<TChain, T1> Create<TChain, T1>(TChain head = default, T1 item1 = default)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+    {
+        return new(head, item1);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    public static ManagedChain<TChain, T1> Load<TChain, T1>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+        where T1 : struct, IExtendsChain<TChain>
+    {
+        return new(out errors, chain);
+    }
+    
+    // Only showing one example of Create/Load methods
+    ...
+}
+```
+
+## Concrete generic classes
+
+A class is generated for each valid size of a chain, here is one example:
+
+```csharp
+/// <summary>
+/// A <see cref="ManagedChain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
+/// </summary>
+/// <typeparam name="TChain">The chain type</typeparam>
+/// <typeparam name="T1">Type of Item 1.</typeparam>
+public unsafe class ManagedChain<TChain, T1> : ManagedChain
+    where TChain : struct, IChainStart
+    where T1 : struct, IExtendsChain<TChain>
+{
+    private IntPtr _headPtr;
+
+    /// <summary>
+    /// Gets a pointer to the current head.
+    /// </summary>
+    public Chain* HeadPtr => (Chain*) _headPtr;
+
+    /// <summary>
+    /// Gets or sets the head of the chain.
+    /// </summary>
+    public TChain Head
+    {
+        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        set
+        {
+            value.StructureType();
+            var nextPtr = ((Chain*) _headPtr)->PNext;
+            Marshal.StructureToPtr(value, _headPtr, true);
+            ((Chain*) _headPtr)->PNext = nextPtr;
+        }
+    }
+
+    private IntPtr _item1Ptr;
+
+    /// <summary>
+    /// Gets a pointer to the second item in the chain.
+    /// </summary>
+    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+
+    /// <summary>
+    /// Gets or sets item #1 in the chain.
+    /// </summary>
+    public T1 Item1
+    {
+        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        set
+        {
+            value.StructureType();
+            var nextPtr = ((Chain*) _item1Ptr)->PNext;
+            Marshal.StructureToPtr(value, _item1Ptr, true);
+            ((Chain*) _item1Ptr)->PNext = nextPtr;
+        }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    public ManagedChain(TChain head = default, T1 item1 = default)
+    {
+        // Calculate memory requirements
+        var headSize = Marshal.SizeOf<TChain>();
+        var item1Size = Marshal.SizeOf<T1>();
+
+        _headPtr = Marshal.AllocHGlobal(headSize + item1Size);
+        head.StructureType();
+        Marshal.StructureToPtr(head, _headPtr, false);
+
+        _item1Ptr = _headPtr + headSize;
+        item1.StructureType();
+        Marshal.StructureToPtr(item1, _item1Ptr, false);
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
+    {
+        // Load existing chain first, so any errors occur before we allocate memory
+        var head = chain;
+        var headSize = Marshal.SizeOf<TChain>();
+        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        StructureType expectedStructureType;
+        StringBuilder errorBuilder = new StringBuilder();
+
+        currentPtr = currentPtr->PNext;
+        T1 item1 = default;
+        if (currentPtr is null)
+            errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 2");
+        else {
+            expectedStructureType = item1.StructureType();
+            if (currentPtr->SType != expectedStructureType) {
+                errorBuilder.Append("The unmanaged chain has a structure type ")
+                    .Append(currentPtr->SType)
+                    .Append(" at position 2; expected ")
+                    .Append(expectedStructureType)
+                    .AppendLine();
+            } else
+                item1 = Unsafe.AsRef<T1>(currentPtr);
+            if (currentPtr->PNext is not null)
+                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 2");
+        }
+        var item1Size = Marshal.SizeOf<T1>();
+
+
+        // Create string of errors
+        errors = errorBuilder.ToString().Trim();
+
+        _headPtr = Marshal.AllocHGlobal(headSize + item1Size);
+        Marshal.StructureToPtr(head, _headPtr, false);
+
+        _item1Ptr = _headPtr + headSize;
+        Marshal.StructureToPtr(item1, _item1Ptr, false);
+        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item2">Item 2.</param>
+    /// <typeparam name="T2">Type of Item 2</typeparam>
+    /// <remarks>
+    /// Do not forget to dispose this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2> Append<T2>(T2 item2 = default)
+        where T2: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1, T2>(this, item2);
+    }
+
+    /// <inheritdoc />
+    public override IEnumerator<IChainable> GetEnumerator()
+    {
+        yield return Head;
+        yield return Item1;
+    }
+
+    /// <inheritdoc />
+    public override int Count => 2;
+
+    /// <inheritdoc />
+    public override IChainable this[int index]
+        => index switch 
+        {
+            0 => Head,            1 => Item1,
+            _ => throw new IndexOutOfRangeException()
+        };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <param name="item1">Item 1.</param>
+    public void Deconstruct(out TChain head, out T1 item1)
+    {
+            head = Head;
+            item1 = Item1;
+    }  
+
+    /// <inheritdoc />
+    public override void Dispose()
+    {
+        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
+        if (headPtr == IntPtr.Zero) return;
+
+        // Destroy all structures
+        Marshal.DestroyStructure<TChain>(headPtr);
+        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
+        Marshal.DestroyStructure<TChain>(item1Ptr);
+
+        // Free memory block
+        Marshal.FreeHGlobal(headPtr);
+    }
+}
+```
