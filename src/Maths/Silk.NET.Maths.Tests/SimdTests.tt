@@ -33,11 +33,11 @@ namespace Silk.NET.Maths.Tests
             FillWithRandomData(&b, <#= bitness / 8 #>);
             var actual = Simd<#= bitness #>.<#= method #>(a, b);
             for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
-<# if (method is "Add" or "Subtract" or "Multiply" or "Divide" or "Min" or "Max" or "And" or "Xor" or "Or") { #>
-                Assert.Equal(Scalar.<#= method #>(a.GetElement(i), b.GetElement(i)), actual.GetElement(i));
-<# } else { #>
-                Assert.Equal(Scalar.<#= method #>(a.GetElement(i), b.GetElement(i)) ? Scalar<<#= type #>>.AllBitsSet : Scalar<<#= type #>>.Zero, actual.GetElement(i));
-<# } #>
+<# var boolProcess = method is "Add" or "Subtract" or "Multiply" or "Divide" or "Min" or "Max" or "And" or "Xor" or "Or" ? "" : $" ? Scalar<{type}>.AllBitsSet : Scalar<{type}>.Zero"; #>
+            {
+                var expected = Scalar.<#= method #>(a.GetElement(i), b.GetElement(i))<#= boolProcess #>; 
+                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
         }
 <# } #>
 <# } #>
