@@ -69,7 +69,7 @@ namespace Silk.NET.Maths
                     128 bit Avx2 doesn't have accelerated GreaterThanOrEqual
                     
                     */
-                    return Or(GreaterThan(left, right), Equal(left, right));
+                    return Not(LessThan(left, right));
 #endif                    
                 }
                 return Other(left, right);

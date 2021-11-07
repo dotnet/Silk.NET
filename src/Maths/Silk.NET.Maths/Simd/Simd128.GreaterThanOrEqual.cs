@@ -156,7 +156,7 @@ namespace Silk.NET.Maths
             static Vector128<T> Integer(Vector128<T> left, Vector128<T> right)
             {
                 if (Simd128<T>.IsHardwareAccelerated)
-                    return Or(GreaterThan(left, right), Equal(left, right));
+                    return Not(LessThan(left, right));
                 return Other(left, right);
             }
             

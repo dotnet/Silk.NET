@@ -127,8 +127,17 @@ namespace Silk.NET.Maths
 #endif
                 }
         
+                return OtherHWAccelerated(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector64<T> OtherHWAccelerated(Vector64<T> left, Vector64<T> right)
+            {
+                if (Simd64<T>.IsHardwareAccelerated)
+                    return Not(LessThan(left, right));
                 return Other(left, right);
             }
+            
             [MethodImpl(Scalar.MaxOpt)]
             static Vector64<T> Other(Vector64<T> left, Vector64<T> right)
             {
