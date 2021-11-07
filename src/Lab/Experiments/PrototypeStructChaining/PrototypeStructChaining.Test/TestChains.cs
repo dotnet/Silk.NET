@@ -14,7 +14,7 @@ public class TestChains
             // AddNext will create an empty struct, with the correct SType (as well as ensuring the
             // chain's SType is coerced correctly.
             .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
-            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
 
         // Ensure all pointers set correctly
         Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
@@ -63,7 +63,7 @@ public class TestChains
         {
             ShaderInputAttachmentArrayDynamicIndexing = true
         };
-        var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKHR
+        var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKhr
         {
             AccelerationStructure = true
         };

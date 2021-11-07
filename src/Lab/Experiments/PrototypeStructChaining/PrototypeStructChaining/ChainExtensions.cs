@@ -22,7 +22,7 @@ public static class ChainExtensions
     /// {
     ///     ShaderInputAttachmentArrayDynamicIndexing = true
     /// };
-    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKHR
+    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKhr
     /// {
     ///     AccelerationStructure = true
     /// };
@@ -92,7 +92,7 @@ public static class ChainExtensions
     /// PhysicalDeviceFeatures2
     ///     .Chain(out var features2)
     ///     .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
-    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
     /// </code>
     /// <para>Note, the value is always added, even if an equivalent value is added in the chain already.  Use
     /// <see cref="TryAddNext{TChain,TNext}"/> to only add if not already present.</para>
@@ -202,5 +202,130 @@ public static class ChainExtensions
         } while (currentPtr is not null);
 
         return -1;
+    }
+    
+    /// <summary>
+    /// Gets the corresponding <see cref="StructureType"/> for a <see cref="Type"/>, if any.
+    /// </summary>
+    /// <param name="structureType">The structure type.</param>
+    /// <returns> The corresponding <see cref="StructureType"/> for <paramref name="structureType"/>, if any; otherwise,
+    /// <see langword="null"/>.</returns>
+    public static Type ClrType(this StructureType structureType)
+    {
+        return Chain.ClrTypes[structureType];
+    }
+    
+    /// <summary>
+    /// Gets the corresponding <see cref="StructureType"/> for a <see cref="Type"/>, if any.
+    /// </summary>
+    /// <param name="type">The CLR type.</param>
+    /// <returns>The corresponding <see cref="StructureType"/> for <paramref name="type"/>, if any; otherwise,
+    /// <see langword="null"/>.</returns>
+    public static StructureType? StructureType(this Type type)
+    {
+        return Chain.StructureTypes.TryGetValue(type, out var structureType) ? structureType : null;
+    }
+
+    /// <summary>
+    /// Whether the <see cref="StructureType"/> can start a chain.
+    /// </summary>
+    /// <param name="type">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainStart(this StructureType type)
+    {
+        return Chain.Extenders.ContainsKey(type);
+    }
+    
+    /// <summary>
+    /// Whether the <see cref="Type"/> can start a chain.
+    /// </summary>
+    /// <param name="type">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainStart(this Type type)
+    {
+        return Chain.StructureTypes.TryGetValue(type, out var structureType) &&
+               Chain.Extenders.ContainsKey(structureType);
+    }
+
+    /// <summary>
+    /// Whether the <see cref="StructureType"/> is chainable.
+    /// </summary>
+    /// <param name="type">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainable(this StructureType type)
+    {
+        return Chain.Extenders.ContainsKey(type) ||
+               Chain.Extensions.ContainsKey(type);
+    }
+    
+    /// <summary>
+    /// Whether the <see cref="Type"/> is chainable.
+    /// </summary>
+    /// <param name="type">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainable(this Type type)
+    {
+        return Chain.StructureTypes.TryGetValue(type, out var structureType) &&
+               (Chain.Extenders.ContainsKey(structureType) ||  Chain.Extensions.ContainsKey(structureType));
+    }
+
+    /// <summary>
+    /// Whether the current <see cref="StructureType"/> can extend the <paramref name="chain"/>.
+    /// </summary>
+    /// <param name="next">The <see cref="StructureType"/> to test.</param>
+    /// <param name="chain">The <see cref="StructureType"/> of the chain.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanBeExtendedBy(Silk.Net.Vulkan.StructureType,Silk.Net.Vulkan.StructureType)"/>
+    public static bool CanExtend(this StructureType next, StructureType chain)
+    {
+        return Chain.Extensions.TryGetValue(next, out var extensions) && extensions.Contains(chain);
+    }
+
+    /// <summary>
+    /// Whether the current <see cref="Type"/> can extend the <paramref name="chain"/>.
+    /// </summary>
+    /// <param name="next">The <see cref="Type"/> to test.</param>
+    /// <param name="chain">The <see cref="Type"/> of the chain.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanBeExtendedBy(System.Type,System.Type)"/>
+    public static bool CanExtend(this Type next, Type chain)
+    {
+        return 
+            Chain.StructureTypes.TryGetValue(next, out var nextType) &&
+            Chain.StructureTypes.TryGetValue(chain, out var chainType) &&
+            Chain.Extensions.TryGetValue(nextType, out var extensions) &&
+            extensions.Contains(chainType);
+    }
+
+    /// <summary>
+    /// Whether the current <paramref name="chain"/> can be extended by the <paramref name="next"/> <see cref="StructureType"/>.
+    /// </summary>
+    /// <param name="chain">The <see cref="StructureType"/> of the chain.</param>
+    /// <param name="next">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <paramref name="chain"/> can be extended the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanExtend(Silk.Net.Vulkan.StructureType,Silk.Net.Vulkan.StructureType)"/>
+    public static bool CanBeExtendedBy(this StructureType chain, StructureType next)
+    {
+        return Chain.Extenders.TryGetValue(chain, out var extenders) && extenders.Contains(next);
+    }
+
+    /// <summary>
+    /// Whether the current <paramref name="chain"/> can be extended by the <paramref name="next"/> <see cref="Type"/>.
+    /// </summary>
+    /// <param name="chain">The <see cref="Type"/> of the chain.</param>
+    /// <param name="next">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanExtend(Type, Type)"/>
+    public static bool CanBeExtendedBy(this Type chain, Type next)
+    {
+        return 
+            Chain.StructureTypes.TryGetValue(next, out var nextType) &&
+            Chain.StructureTypes.TryGetValue(chain, out var chainType) &&
+            Chain.Extenders.TryGetValue(chainType, out var extenders) && 
+            extenders.Contains(nextType);
     }
 }

@@ -1,6 +1,6 @@
 namespace Silk.Net.Vulkan;
 
-public struct PhysicalDeviceAccelerationStructureFeaturesKHR :
+public struct PhysicalDeviceAccelerationStructureFeaturesKhr :
     IExtendsChain<PhysicalDeviceFeatures2>,
     IExtendsChain<DeviceCreateInfo>
 {
@@ -15,7 +15,7 @@ public struct PhysicalDeviceAccelerationStructureFeaturesKHR :
 
     // NOTE Truncated for example
 
-    public unsafe PhysicalDeviceAccelerationStructureFeaturesKHR(
+    public unsafe PhysicalDeviceAccelerationStructureFeaturesKhr(
         StructureType? sType = StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
         void* pNext = null,
         bool? accelerationStructure = null)
