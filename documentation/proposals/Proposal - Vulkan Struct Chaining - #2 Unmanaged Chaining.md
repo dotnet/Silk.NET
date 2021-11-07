@@ -1,5 +1,9 @@
 # Summary
 
+**_This proposal is dependent
+on [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md)
+._**
+
 This proposal presents a lightweight mechanism for fluently building Vulkan Structure Chains. You may wish to start with
 the [Usage section below](#Usage) to aid understanding. There is also a fully working prototype
 [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/).
