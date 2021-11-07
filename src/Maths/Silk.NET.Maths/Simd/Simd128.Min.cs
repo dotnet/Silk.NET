@@ -37,10 +37,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd128.Add(left.AsByte(), Simd128<byte>.MaxValueOver2);
-                        var rightShifted = Simd128.Add(right.AsByte(), Simd128<byte>.MaxValueOver2);
-                        var res = Avx2.Min(leftShifted.AsSByte(), rightShifted.AsSByte());
-                        return Avx2.Subtract(res.AsByte(), Simd128<byte>.MaxValueOver2).As<Byte, T>();
+                        return Avx2.Min(left.AsByte(), right.AsByte()).As<byte, T>();
                     }
 #endif
                 }
@@ -82,10 +79,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd128.Add(left.AsUInt16(), Simd128<ushort>.MaxValueOver2);
-                        var rightShifted = Simd128.Add(right.AsUInt16(), Simd128<ushort>.MaxValueOver2);
-                        var res = Avx2.Min(leftShifted.AsInt16(), rightShifted.AsInt16());
-                        return Avx2.Subtract(res.AsUInt16(), Simd128<ushort>.MaxValueOver2).As<UInt16, T>();
+                        return Avx2.Min(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
                     }
 #endif
                 }
@@ -127,10 +121,7 @@ namespace Silk.NET.Maths
 #if AVX
                     if (Avx2.IsSupported)
                     {
-                        var leftShifted = Simd128.Add(left.AsUInt32(), Simd128<uint>.MaxValueOver2);
-                        var rightShifted = Simd128.Add(right.AsUInt32(), Simd128<uint>.MaxValueOver2);
-                        var res = Avx2.Min(leftShifted.AsInt32(), rightShifted.AsInt32());
-                        return Avx2.Subtract(res.AsUInt32(), Simd128<uint>.MaxValueOver2).As<UInt32, T>();
+                        return Avx2.Min(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
                     }
 #endif
                 }
