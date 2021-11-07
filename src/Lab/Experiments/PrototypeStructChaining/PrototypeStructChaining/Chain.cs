@@ -15,6 +15,7 @@ public struct Chain : IChainable
     /// The structure type.
     /// </summary>
     public StructureType SType;
+
     /// <summary>
     /// The next <see cref="IChainable"/> struct in the chain, if any; otherwise <see langword="null"/>.
     /// </summary>
@@ -25,5 +26,12 @@ public struct Chain : IChainable
     StructureType IStructuredType.StructureType()
     {
         return SType;
+    }
+
+    /// <inheritdoc />
+    unsafe Chain* IChainable.PNext
+    {
+        get => (Chain*) PNext;
+        set => PNext = value;
     }
 }

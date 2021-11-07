@@ -43,5 +43,12 @@ public struct PhysicalDeviceFeatures2 :
         return SType = StructureType.PhysicalDeviceFeatures2;
     }
 
+    /// <inheritdoc />
+    unsafe Chain* IChainable.PNext
+    {
+        get => (Chain*) PNext;
+        set => PNext = value;
+    }
+
     #endregion
 }

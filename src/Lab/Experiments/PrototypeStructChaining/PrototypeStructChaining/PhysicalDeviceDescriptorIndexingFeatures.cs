@@ -39,5 +39,12 @@ public struct PhysicalDeviceDescriptorIndexingFeatures :
         return SType = StructureType.PhysicalDeviceDescriptorIndexingFeaturesExt;
     }
 
+    /// <inheritdoc />
+    unsafe Chain* IChainable.PNext
+    {
+        get => (Chain*) PNext;
+        set => PNext = value;
+    }
+
     #endregion
 }

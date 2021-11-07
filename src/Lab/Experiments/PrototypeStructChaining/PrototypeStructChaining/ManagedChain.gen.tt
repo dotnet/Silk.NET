@@ -1,10 +1,9 @@
 <#@ template language="C#" #>
 <#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#
     var maximumItems = 16;
 
-    string parameterDocs(int index, string prefix)
+    string ParameterDocs(int index, string prefix)
     {
         var builder = new StringBuilder(prefix);
         builder.Append("<param name=\"head\">The head of the chain.</param>");
@@ -22,7 +21,7 @@
         return builder.ToString();
     }
 
-    string parameterTypeDocs(int index, string prefix)
+    string ParameterTypeDocs(int index, string prefix)
     {
         var builder = new StringBuilder(prefix);
         builder.Append("<typeparam name=\"TChain\">The chain type</typeparam>");
@@ -40,7 +39,7 @@
         return builder.ToString();
     }
 
-    string typeList(int index)
+    string TypeList(int index)
     {
         var builder = new StringBuilder("TChain");
         for (var i = 1; i < index; i++)
@@ -52,7 +51,7 @@
         return builder.ToString();
     }
 
-    string paramList(int index)
+    string ParamList(int index)
     {
         var builder = new StringBuilder("TChain head = default");
         for (var i = 1; i < index; i++)
@@ -67,7 +66,7 @@
         return builder.ToString();
     }
 
-    string argList(int index)
+    string ArgList(int index)
     {
         var builder = new StringBuilder("head");
         for (var i = 1; i < index; i++)
@@ -79,7 +78,7 @@
         return builder.ToString();
     }
 
-    string constraintList(int index, string prefix)
+    string ConstraintList(int index, string prefix)
     {
         var builder = new StringBuilder(prefix);
         builder.Append("where TChain : struct, IChainStart");
@@ -95,6 +94,7 @@
         return builder.ToString();
     }
 #>
+// ReSharper disable StaticMemberInGenericType
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -124,20 +124,20 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
     public abstract void Dispose();
 
 <#
-    for (var i = 2; i <= maximumItems; i++)
+    for (var i = 1; i <= maximumItems; i++)
     {
-        var tList = typeList(i);
+        var tList = TypeList(i);
 #>
     /// <summary>
     /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
-<#= parameterDocs(i, "    /// ") #>
-<#= parameterTypeDocs(i, "    /// ") #>
+<#= ParameterDocs(i, "    /// ") #>
+<#= ParameterTypeDocs(i, "    /// ") #>
     /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
-    public static ManagedChain<<#= tList #>> Create<<#= tList #>>(<#= paramList(i) #>)
-<#= constraintList(i, "        ") #>
+    public static ManagedChain<<#= tList #>> Create<<#= tList #>>(<#= ParamList(i) #>)
+<#= ConstraintList(i, "        ") #>
     {
-        return new(<#= argList(i) #>);
+        return new(<#= ArgList(i) #>);
     }
 
     /// <summary>
@@ -147,7 +147,7 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
     public static ManagedChain<<#= tList #>> Load<<#= tList #>>(out string errors, TChain chain)
-<#= constraintList(i, "        ") #>
+<#= ConstraintList(i, "        ") #>
     {
         return new(out errors, chain);
     }
@@ -159,29 +159,56 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
     public static ManagedChain<<#= tList #>> Load<<#= tList #>>(TChain chain)
-<#= constraintList(i, "        ") #>
+<#= ConstraintList(i, "        ") #>
     {
         return new(out var _, chain);
     }
 
 <#
-    } // for (var 2 = 1; i <= maximumItems; i++) {
+    } // for (var i = 1; i <= maximumItems; i++)
 #>
 }
 <#
-    for (var i = 2; i <= maximumItems; i++)
+    for (var i = 1; i <= maximumItems; i++)
     {
-        var tList = typeList(i);
+        var tList = TypeList(i);
 #>
 
 /// <summary>
 /// A <see cref="ManagedChain{<#= tList #>}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
-<#= parameterTypeDocs(i, "/// ") #>
+<#= ParameterTypeDocs(i, "/// ") #>
 public unsafe class ManagedChain<<#= tList #>> : ManagedChain
-<#= constraintList(i, "    ") #>
+<#= ConstraintList(i, "    ") #>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+<#
+        for (var j = 1; j < i; j++)
+        {
+#>
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item<#= j #>Offset = <#= j == 1 ? "HeadSize" : $"Item{j - 1}Offset + Item{j - 1}Size" #>;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = <#= i == 1 ? "HeadSize" : $"Item{i - 1}Offset + Item{i - 1}Size" #>;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -197,35 +224,35 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
 <#
         for (var j = 1; j < i; j++)
         {
 #>
-    private IntPtr _item<#= j #>Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item<#= j #>Ptr => (Chain*) _item<#= j #>Ptr;
+    public Chain* Item<#= j #>Ptr => (Chain*) (_headPtr + Item<#= j #>Offset);
 
     /// <summary>
     /// Gets or sets item #<#= j #> in the chain.
     /// </summary>
     public T<#= j #> Item<#= j #>
     {
-        get => Unsafe.AsRef<T<#= j #>>((Chain*) _item<#= j #>Ptr);
+        get => Unsafe.AsRef<T<#= j #>>(Item<#= j #>Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item<#= j #>Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item<#= j #>Ptr, true);
-            ((Chain*) _item<#= j #>Ptr)->PNext = nextPtr;
+            var ptr = Item<#= j #>Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
 <#
@@ -233,45 +260,38 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
 #>
 
     /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
+    }
+
+    /// <summary>
     /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
-<#= parameterDocs(i, "    /// ") #>
-    public ManagedChain(<#= paramList(i) #>)
+<#= ParameterDocs(i, "    /// ") #>
+    public ManagedChain(<#= ParamList(i) #>)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-<#
-        for (var j = 1; j < i; j++)
-        {
-#>
-        var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
-<#
-        } // for (int j = 1; j < i; j++) {
-#>
-
-        _headPtr = Marshal.AllocHGlobal(headSize<#
-        for (var j = 1; j < i; j++)
-        {
-#> + item<#= j #>Size<#
-        } // for (int j = 1; j < i; j++) {
-#>);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
 <#
         for (var j = 1; j < i; j++)
         {
-            var prevItem = j > 1
-                ? $"item{j - 1}"
-                : "head";
 #>
-
-        _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
+        <#= j == 1 ? "Chain* " : "" #>itemPtr = Item<#= j #>Ptr;
         item<#= j #>.StructureType();
-        Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
-        ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
+        Marshal.StructureToPtr(item<#= j #>, (nint)itemPtr, false);
+        <#= j == 1 ? "HeadPtr" : $"Item{j - 1}Ptr" #>->PNext = itemPtr;
 <#
         } // for (int j = 1; j < i; j++) {
 #>
+        <#= i == 1 ? "HeadPtr" : $"Item{i - 1}Ptr" #>->PNext = null;
     }
 
     /// <summary>
@@ -280,139 +300,195 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
-        StringBuilder errorBuilder = new StringBuilder();
-
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
 <#
-        for (var j = 1; j < i; j++)
+        if (i == 1)
         {
 #>
-        currentPtr = currentPtr->PNext;
+        errors = string.Empty;
+<#
+        }
+        else
+        {
+#>
+        StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
+<#
+            for (var j = 1; j < i; j++)
+            {
+#>
+
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item<#= j #>Offset);
+        newPtr = newPtr->PNext;
+
         T<#= j #> item<#= j #> = default;
-        if (currentPtr is null)
+        <#= j == 1 ? "var " : "" #>expectedStructureType = item<#= j #>.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length <#= j #>, expected length <#= i #>");
-        else {
-            expectedStructureType = item<#= j #>.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position <#= j + 1 #>; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item<#= j #> = Unsafe.AsRef<T<#= j #>>(currentPtr);
+            } else {
 <#
-            if (j == i -1)
-            {
+                if (j == i - 1)
+                {
 #>
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length <#= i #>");
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length <#= i #>");
+                    existingPtr->PNext = null;
+                }
 <#
-            } // if (j == i -1)
+                } // if (j == i -1)
 #>
+                item<#= j #> = Unsafe.AsRef<T<#= j #>>(existingPtr);
+            }
         }
-        var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
-
+        Marshal.StructureToPtr(item<#= j #>, (nint) newPtr, false);
 <#
-        } // for (int j = 1; j < i; j++) {
+            } // for (int j = 1; j < i; j++) {
 #>
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize<#
-        for (var j = 1; j < i; j++)
-        {
-#> + item<#= j #>Size<#
-        } // for (int j = 1; j < i; j++) {
-#>);
-        Marshal.StructureToPtr(head, _headPtr, false);
 <#
-        for (var j = 1; j < i; j++)
-        {
-            var prevItem = j > 1
-                ? $"item{j - 1}"
-                : "head";
-#>
-
-        _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
-        Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
-        ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
-<#
-        } // for (int j = 1; j < i; j++) {
+        } // if (i == 1) {} else {...
 #>
     }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<<#= tList #>> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
 <#
-        if (i > 2)
+        if (i > 1)
         {
+#>
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+<#
+        } // if (i > 1)
+#>
+<#
+        for (var j = 2; j < i; j++)
+        {
+#>
+        ((Chain*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = (Chain*) (newHeadPtr + Item<#= j #>Offset); 
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+        return new ManagedChain<<#= tList #>>(newHeadPtr);
+    }
+<#
+        if (i > 1)
+        {
+            var shortTList = TypeList(i - 1);
 #>
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
+    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items, by appending 
+    /// <paramref name="item<#= i - 1 #>"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item<#= i - 1 #>">Item <#= i - 1 #>.</param>
     /// <remarks>
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
-    public ManagedChain(ManagedChain<<#= typeList(i - 1) #>> previous, T<#= i - 1 #> item<#= i - 1 #> = default)
+    public ManagedChain(ManagedChain<<#= shortTList #>> previous, T<#= i - 1 #> item<#= i - 1 #> = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-<#
-            for (var j = 1; j < i; j++)
-            {
-#>
-        var item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
-<#
-            } // for (int j = 1; j < i; j++) {
-#>
-
-        var originalSize = headSize<#
-            for (var j = 1; j < i - 1; j++)
-            {
-#> + item<#= j #>Size<#
-            } // for (int j = 1; j < i; j++) {
-#>;
-        var newSize = originalSize + item<#= i - 1 #>Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item<#= i - 1 #>Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
-<#
-            for (var j = 1; j < i; j++)
-            {
-                var prevItem = j > 1
-                    ? $"item{j - 1}"
-                    : "head";
-#>
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item <#= i - 1 #>
+        item<#= i - 1 #>.StructureType();        
+        Marshal.StructureToPtr(item<#= i - 1 #>, _headPtr + previousSize, false);
 
-        _item<#= j #>Ptr = _<#= prevItem #>Ptr + <#= prevItem #>Size;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
 <#
-                if (j == i - 1)
+            for (var j = 2; j < i; j++)
+            {
+#>
+        ((Chain*)(_headPtr + Item<#= j - 1 #>Offset))->PNext = (Chain*) (_headPtr + Item<#= j #>Offset); 
+<#
+            } // for (int j = 1; j < i; j++) {
+#>
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<<#= shortTList #>> Truncate()
+    {
+        return Truncate(out var _);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing 
+    /// <paramref name="item<#= i - 1 #>"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<<#= shortTList #>> Truncate(out T<#= i - 1 #> item<#= i - 1 #>)
+    {
+        item<#= i - 1 #> = Item<#= i - 1 #>;
+
+        var newSize = MemorySize - Item<#= i - 1 #>Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+<#
+            if (i > 2)
+            {
+#>
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+<#
+                for (var j = 2; j < i; j++)
                 {
 #>
-        // Append the last structure
-        item<#= j #>.StructureType();
-        Marshal.StructureToPtr(item<#= j #>, _item<#= j #>Ptr, false);
+        ((Chain*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = <#= j == i -1 ? "null" : $"(Chain*) (newHeadPtr + Item{j}Offset)"#>; 
 <#
-                } // if (j == i - 1)
-#>
-        ((Chain*) _<#= prevItem #>Ptr)->PNext = (Chain*) _item<#= j #>Ptr;
+                } // for (int j = 1; j < i - 1; j++)
+            }
+            else // if (i > 1)
+            {
+                #>
+        ((Chain*)newHeadPtr)->PNext = null;
 <#
-            } // for (int j = 1; j < i; j++) {
+            }
 #>
+        return new ManagedChain<<#= shortTList #>>(newHeadPtr);
     }
 <#
-        } //if (i > 2)
+        } // if (i > 1)
 
         if (i < maximumItems)
         {
+            var bigTList = TypeList(i + 1);
 #>
 
     /// <summary>
@@ -422,9 +498,9 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <param name="item<#= i #>">Item <#= i #>.</param>
     /// <typeparam name="T<#= i #>">Type of Item <#= i #></typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    public ManagedChain<<#= tList #>, T<#= i #>> Append<T<#= i #>>(T<#= i #> item<#= i #> = default)
+    public ManagedChain<<#= bigTList #>> Append<T<#= i #>>(T<#= i #> item<#= i #> = default)
         where T<#= i #>: struct, IExtendsChain<TChain>
     {
         return new ManagedChain<<#= tList #>, T<#= i #>>(this, item<#= i #>);
@@ -454,13 +530,14 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,<#
-    for (var j = 1; j < i; j++)
-    {
+            0 => Head,
+<#
+        for (var j = 1; j < i; j++)
+        {
 #>
             <#= j #> => Item<#= j #>,
 <#
-    } // for (int j = 1; j < i; j++) {
+        } // for (int j = 1; j < i; j++) {
 #>
             _ => throw new IndexOutOfRangeException()
         };
@@ -468,30 +545,32 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <summary>
     /// Deconstructs this chain.
     /// </summary>
-<#= parameterDocs(i, "    /// ") #>
+<#= ParameterDocs(i, "    /// ") #>
     public void Deconstruct(out TChain head<#
-    for (var j = 1; j < i; j++)
-    {
+        for (var j = 1; j < i; j++)
+        {
 #>, out T<#= j #> item<#= j #><#
-    } // for (int j = 1; j < i; j++) {
+        } // for (int j = 1; j < i; j++) {
 #>)
     {
             head = Head;
 <#
-    for (var j = 1; j < i; j++)
-    {
+        for (var j = 1; j < i; j++)
+        {
 #>
             item<#= j #> = Item<#= j #>;
 <#
-    } // for (int j = 1; j < i; j++) {
+        } // for (int j = 1; j < i; j++) {
 #>
     }  
 
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
@@ -499,8 +578,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         for (var j = 1; j < i; j++)
         {
 #>
-        var item<#= j #>Ptr = Interlocked.Exchange(ref _item<#= j #>Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item<#= j #>Ptr);
+        Marshal.DestroyStructure<T<#= j #>>(headPtr + Item<#= j #>Offset);
 <#
         } // for (int j = 1; j < i; j++) {
 #>
@@ -510,5 +588,5 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     }
 }
 <#
-    } // for (var i = 2; i <= maximumItems; i++) {
+    } // for (var i = 1; i <= maximumItems; i++)
 #>

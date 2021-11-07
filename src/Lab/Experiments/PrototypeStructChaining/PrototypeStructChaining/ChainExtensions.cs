@@ -33,8 +33,12 @@ public static class ChainExtensions
     ///     .SetNext(ref accelerationStructureFeaturesKhr);
     /// </code>
     /// </remarks>
-    public static unsafe ref TChain SetNext<TChain, TNext>(this ref TChain chain, ref TNext value,
-        bool alwaysAdd = false)
+    public static unsafe ref TChain SetNext<TChain, TNext>
+    (
+        this ref TChain chain,
+        ref TNext value,
+        bool alwaysAdd = false
+    )
         where TChain : struct, IChainStart
         where TNext : struct, IExtendsChain<TChain>
     {
@@ -52,7 +56,11 @@ public static class ChainExtensions
             if (!alwaysAdd && currentPtr->SType == structureType)
             {
                 // We have an existing structure, replace it.
-                if (previousPtr is not null) previousPtr->PNext = valuePtr;
+                if (previousPtr is not null)
+                {
+                    previousPtr->PNext = valuePtr;
+                }
+
                 valuePtr->PNext = nextPtr;
 
                 return ref chain;
@@ -98,7 +106,10 @@ public static class ChainExtensions
 
         // Find end of chain
         var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        while (currentPtr->PNext is not null) currentPtr = currentPtr->PNext;
+        while (currentPtr->PNext is not null)
+        {
+            currentPtr = currentPtr->PNext;
+        }
 
         // Create new entry and set it's structure type
         next = default;
@@ -147,7 +158,11 @@ public static class ChainExtensions
             }
 
             var nextPtr = currentPtr->PNext;
-            if (nextPtr is null) break;
+            if (nextPtr is null)
+            {
+                break;
+            }
+
             currentPtr = nextPtr;
         } while (true);
 
@@ -178,7 +193,10 @@ public static class ChainExtensions
         do
         {
             if (currentPtr == valuePtr)
+            {
                 return index;
+            }
+
             currentPtr = currentPtr->PNext;
             index++;
         } while (currentPtr is not null);

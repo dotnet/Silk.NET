@@ -1,3 +1,4 @@
+// ReSharper disable StaticMemberInGenericType
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -25,6 +26,42 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
 
     /// <inheritdoc />
     public abstract void Dispose();
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    /// <typeparam name="TChain">The chain type</typeparam>
+    /// <returns>A new <see cref="ManagedChain{TChain}"/> with 1 items.</returns>
+    public static ManagedChain<TChain> Create<TChain>(TChain head = default)
+        where TChain : struct, IChainStart
+    {
+        return new(head);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain}"/> with 1 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain}"/> with 1 items.</returns>
+    public static ManagedChain<TChain> Load<TChain>(out string errors, TChain chain)
+        where TChain : struct, IChainStart
+    {
+        return new(out errors, chain);
+    }
+
+    /// <summary>
+    /// Loads a new <see cref="ManagedChain{TChain}"/> with 1 items from an existing unmanaged chain,
+    /// ignoring any errors.
+    /// </summary>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    /// <returns>A new <see cref="ManagedChain{TChain}"/> with 1 items.</returns>
+    public static ManagedChain<TChain> Load<TChain>(TChain chain)
+        where TChain : struct, IChainStart
+    {
+        return new(out var _, chain);
+    }
 
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
@@ -1169,15 +1206,23 @@ public abstract class ManagedChain : IReadOnlyList<IChainable>, IDisposable
 }
 
 /// <summary>
-/// A <see cref="ManagedChain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
+/// A <see cref="ManagedChain{TChain}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
-/// <typeparam name="T1">Type of Item 1.</typeparam>
-public unsafe class ManagedChain<TChain, T1> : ManagedChain
+public unsafe class ManagedChain<TChain> : ManagedChain
     where TChain : struct, IChainStart
-    where T1 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = HeadSize;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -1193,32 +1238,204 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
 
-    private IntPtr _item1Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    public ManagedChain(TChain head = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
+    {
+        head.StructureType();
+        Marshal.StructureToPtr(head, _headPtr, false);
+        HeadPtr->PNext = null;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items from an existing unmanaged chain.
+    /// </summary>
+    /// <param name="errors">Any errors loading the chain.</param>
+    /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
+    public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
+    {
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
+        errors = string.Empty;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        return new ManagedChain<TChain>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
+    /// the end of this chain.
+    /// </summary>
+    /// <param name="item1">Item 1.</param>
+    /// <typeparam name="T1">Type of Item 1</typeparam>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1> Append<T1>(T1 item1 = default)
+        where T1: struct, IExtendsChain<TChain>
+    {
+        return new ManagedChain<TChain, T1>(this, item1);
+    }
+
+    /// <inheritdoc />
+    public override IEnumerator<IChainable> GetEnumerator()
+    {
+        yield return Head;
+    }
+
+    /// <inheritdoc />
+    public override int Count => 1;
+
+    /// <inheritdoc />
+    public override IChainable this[int index]
+        => index switch 
+        {
+            0 => Head,
+            _ => throw new IndexOutOfRangeException()
+        };
+
+    /// <summary>
+    /// Deconstructs this chain.
+    /// </summary>
+    /// <param name="head">The head of the chain.</param>
+    public void Deconstruct(out TChain head)
+    {
+            head = Head;
+    }  
+
+    /// <inheritdoc />
+    public override void Dispose()
+    {
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
+
+        // Destroy all structures
+        Marshal.DestroyStructure<TChain>(headPtr);
+
+        // Free memory block
+        Marshal.FreeHGlobal(headPtr);
+    }
+}
+
+/// <summary>
+/// A <see cref="ManagedChain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
+/// </summary>
+/// <typeparam name="TChain">The chain type</typeparam>
+/// <typeparam name="T1">Type of Item 1.</typeparam>
+public unsafe class ManagedChain<TChain, T1> : ManagedChain
+    where TChain : struct, IChainStart
+    where T1 : struct, IExtendsChain<TChain>
+{
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item1Offset + Item1Size;
+    
+    private nint _headPtr;
+
+    /// <summary>
+    /// Gets a pointer to the current head.
+    /// </summary>
+    public Chain* HeadPtr => (Chain*) _headPtr;
+
+    /// <summary>
+    /// Gets or sets the head of the chain.
+    /// </summary>
+    public TChain Head
+    {
+        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        set
+        {
+            value.StructureType();
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, _headPtr, true);
+            ptr->PNext = nextPtr;
+        }
+    }
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -1227,19 +1444,15 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
     public ManagedChain(TChain head = default, T1 item1 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        Item1Ptr->PNext = null;
     }
 
     /// <summary>
@@ -1248,43 +1461,114 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 2");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 2");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 2");
+                    existingPtr->PNext = null;
+                }
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
-
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
+    }
 
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        return new ManagedChain<TChain, T1>(newHeadPtr);
+    }
 
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by appending 
+    /// <paramref name="item1"/> to the end of this chain.
+    /// </summary>
+    /// <param name="previous">The chain to append to.</param>
+    /// <param name="item1">Item 1.</param>
+    /// <remarks>
+    /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain(ManagedChain<TChain> previous, T1 item1 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
+    {
+        var previousSize = MemorySize - Item1Size;
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 1
+        item1.StructureType();        
+        Marshal.StructureToPtr(item1, _headPtr + previousSize, false);
+
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain> Truncate()
+    {
+        return Truncate(out var _);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items, by removing 
+    /// <paramref name="item1"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain> Truncate(out T1 item1)
+    {
+        item1 = Item1;
+
+        var newSize = MemorySize - Item1Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = null;
+        return new ManagedChain<TChain>(newHeadPtr);
     }
 
     /// <summary>
@@ -1294,7 +1578,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <param name="item2">Item 2.</param>
     /// <typeparam name="T2">Type of Item 2</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2> Append<T2>(T2 item2 = default)
         where T2: struct, IExtendsChain<TChain>
@@ -1316,7 +1600,8 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             _ => throw new IndexOutOfRangeException()
         };
 
@@ -1334,13 +1619,14 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -1358,7 +1644,37 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     where T1 : struct, IExtendsChain<TChain>
     where T2 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item2Offset + Item2Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -1374,53 +1690,65 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -1430,25 +1758,19 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <param name="item1">Item 1.</param>
     /// <param name="item2">Item 2.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        Item2Ptr->PNext = null;
     }
 
     /// <summary>
@@ -1457,68 +1779,84 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 3");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 3");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 3");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 3");
+                    existingPtr->PNext = null;
+                }
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
-
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        return new ManagedChain<TChain, T1, T2>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items, by appending 
+    /// <paramref name="item2"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item2">Item 2.</param>
@@ -1526,27 +1864,53 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1> previous, T2 item2 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-
-        var originalSize = headSize + item1Size;
-        var newSize = originalSize + item2Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item2Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 2
+        item2.StructureType();        
+        Marshal.StructureToPtr(item2, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        // Append the last structure
-        item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1> Truncate()
+    {
+        return Truncate(out var _);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by removing 
+    /// <paramref name="item2"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1> Truncate(out T2 item2)
+    {
+        item2 = Item2;
+
+        var newSize = MemorySize - Item2Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1>(newHeadPtr);
     }
 
     /// <summary>
@@ -1556,7 +1920,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <param name="item3">Item 3.</param>
     /// <typeparam name="T3">Type of Item 3</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3> Append<T3>(T3 item3 = default)
         where T3: struct, IExtendsChain<TChain>
@@ -1579,7 +1943,8 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             _ => throw new IndexOutOfRangeException()
         };
@@ -1600,15 +1965,15 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -1628,7 +1993,47 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     where T2 : struct, IExtendsChain<TChain>
     where T3 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item3Offset + Item3Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -1644,74 +2049,86 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -1722,31 +2139,23 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <param name="item2">Item 2.</param>
     /// <param name="item3">Item 3.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        Item3Ptr->PNext = null;
     }
 
     /// <summary>
@@ -1755,89 +2164,106 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 4");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 4");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 4");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 4");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 4");
+                    existingPtr->PNext = null;
+                }
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
-
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        return new ManagedChain<TChain, T1, T2, T3>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items, by appending 
+    /// <paramref name="item3"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item3">Item 3.</param>
@@ -1845,31 +2271,55 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2> previous, T3 item3 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-
-        var originalSize = headSize + item1Size + item2Size;
-        var newSize = originalSize + item3Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item3Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 3
+        item3.StructureType();        
+        Marshal.StructureToPtr(item3, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        // Append the last structure
-        item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2}"/> with 3 items, by removing 
+    /// <paramref name="item3"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2> Truncate(out T3 item3)
+    {
+        item3 = Item3;
+
+        var newSize = MemorySize - Item3Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2>(newHeadPtr);
     }
 
     /// <summary>
@@ -1879,7 +2329,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <param name="item4">Item 4.</param>
     /// <typeparam name="T4">Type of Item 4</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4> Append<T4>(T4 item4 = default)
         where T4: struct, IExtendsChain<TChain>
@@ -1903,7 +2353,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             _ => throw new IndexOutOfRangeException()
@@ -1927,17 +2378,16 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -1959,7 +2409,57 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     where T3 : struct, IExtendsChain<TChain>
     where T4 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item4Offset + Item4Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -1975,95 +2475,107 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -2075,37 +2587,27 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <param name="item3">Item 3.</param>
     /// <param name="item4">Item 4.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        Item4Ptr->PNext = null;
     }
 
     /// <summary>
@@ -2114,110 +2616,128 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 5");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 5");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 5");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 5");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 5");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 5");
+                    existingPtr->PNext = null;
+                }
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
-
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending 
+    /// <paramref name="item4"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item4">Item 4.</param>
@@ -2225,35 +2745,57 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3> previous, T4 item4 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size;
-        var newSize = originalSize + item4Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item4Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 4
+        item4.StructureType();        
+        Marshal.StructureToPtr(item4, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3}"/> with 4 items, by removing 
+    /// <paramref name="item4"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3> Truncate(out T4 item4)
+    {
+        item4 = Item4;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        // Append the last structure
-        item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
+        var newSize = MemorySize - Item4Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3>(newHeadPtr);
     }
 
     /// <summary>
@@ -2263,7 +2805,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <param name="item5">Item 5.</param>
     /// <typeparam name="T5">Type of Item 5</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5> Append<T5>(T5 item5 = default)
         where T5: struct, IExtendsChain<TChain>
@@ -2288,7 +2830,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -2315,19 +2858,17 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -2351,7 +2892,67 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     where T4 : struct, IExtendsChain<TChain>
     where T5 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item5Offset + Item5Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -2367,116 +2968,128 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -2489,43 +3102,31 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <param name="item4">Item 4.</param>
     /// <param name="item5">Item 5.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        Item5Ptr->PNext = null;
     }
 
     /// <summary>
@@ -2534,131 +3135,150 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 6");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 6");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 6");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 6");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 6");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 6");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 6");
+                    existingPtr->PNext = null;
+                }
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
-
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending 
+    /// <paramref name="item5"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item5">Item 5.</param>
@@ -2666,39 +3286,59 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4> previous, T5 item5 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size;
-        var newSize = originalSize + item5Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item5Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 5
+        item5.StructureType();        
+        Marshal.StructureToPtr(item5, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing 
+    /// <paramref name="item5"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4> Truncate(out T5 item5)
+    {
+        item5 = Item5;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        // Append the last structure
-        item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
+        var newSize = MemorySize - Item5Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4>(newHeadPtr);
     }
 
     /// <summary>
@@ -2708,7 +3348,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <param name="item6">Item 6.</param>
     /// <typeparam name="T6">Type of Item 6</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6> Append<T6>(T6 item6 = default)
         where T6: struct, IExtendsChain<TChain>
@@ -2734,7 +3374,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -2764,21 +3405,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -2804,7 +3442,77 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     where T5 : struct, IExtendsChain<TChain>
     where T6 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item6Offset + Item6Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -2820,137 +3528,149 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -2964,49 +3684,35 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <param name="item5">Item 5.</param>
     /// <param name="item6">Item 6.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        Item6Ptr->PNext = null;
     }
 
     /// <summary>
@@ -3015,152 +3721,172 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 7");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 7");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 7");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 7");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 7");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 7");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 7");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 7");
+                    existingPtr->PNext = null;
+                }
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
-
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending 
+    /// <paramref name="item6"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item6">Item 6.</param>
@@ -3168,43 +3894,61 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5> previous, T6 item6 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size;
-        var newSize = originalSize + item6Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item6Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 6
+        item6.StructureType();        
+        Marshal.StructureToPtr(item6, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing 
+    /// <paramref name="item6"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5> Truncate(out T6 item6)
+    {
+        item6 = Item6;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        // Append the last structure
-        item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
+        var newSize = MemorySize - Item6Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
     }
 
     /// <summary>
@@ -3214,7 +3958,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <param name="item7">Item 7.</param>
     /// <typeparam name="T7">Type of Item 7</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> Append<T7>(T7 item7 = default)
         where T7: struct, IExtendsChain<TChain>
@@ -3241,7 +3985,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -3274,23 +4019,19 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -3318,7 +4059,87 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     where T6 : struct, IExtendsChain<TChain>
     where T7 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item7Offset + Item7Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -3334,158 +4155,170 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -3500,55 +4333,39 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <param name="item6">Item 6.</param>
     /// <param name="item7">Item 7.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        Item7Ptr->PNext = null;
     }
 
     /// <summary>
@@ -3557,173 +4374,194 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 8");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 8");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 8");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 8");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 8");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 8");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 8");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 8");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 8");
+                    existingPtr->PNext = null;
+                }
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
-
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending 
+    /// <paramref name="item7"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item7">Item 7.</param>
@@ -3731,47 +4569,63 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6> previous, T7 item7 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size;
-        var newSize = originalSize + item7Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item7Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 7
+        item7.StructureType();        
+        Marshal.StructureToPtr(item7, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing 
+    /// <paramref name="item7"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6> Truncate(out T7 item7)
+    {
+        item7 = Item7;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        // Append the last structure
-        item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
+        var newSize = MemorySize - Item7Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
     }
 
     /// <summary>
@@ -3781,7 +4635,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <param name="item8">Item 8.</param>
     /// <typeparam name="T8">Type of Item 8</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Append<T8>(T8 item8 = default)
         where T8: struct, IExtendsChain<TChain>
@@ -3809,7 +4663,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -3845,25 +4700,20 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -3893,7 +4743,97 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     where T7 : struct, IExtendsChain<TChain>
     where T8 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item8Offset + Item8Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -3909,179 +4849,191 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -4097,61 +5049,43 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <param name="item7">Item 7.</param>
     /// <param name="item8">Item 8.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        Item8Ptr->PNext = null;
     }
 
     /// <summary>
@@ -4160,194 +5094,216 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 9");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 9");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 9");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 9");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 9");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 9");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 9");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 9");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 9");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 9");
+                    existingPtr->PNext = null;
+                }
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
-
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending 
+    /// <paramref name="item8"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item8">Item 8.</param>
@@ -4355,51 +5311,65 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> previous, T8 item8 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size;
-        var newSize = originalSize + item8Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item8Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 8
+        item8.StructureType();        
+        Marshal.StructureToPtr(item8, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing 
+    /// <paramref name="item8"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate(out T8 item8)
+    {
+        item8 = Item8;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        // Append the last structure
-        item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
+        var newSize = MemorySize - Item8Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
     }
 
     /// <summary>
@@ -4409,7 +5379,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <param name="item9">Item 9.</param>
     /// <typeparam name="T9">Type of Item 9</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Append<T9>(T9 item9 = default)
         where T9: struct, IExtendsChain<TChain>
@@ -4438,7 +5408,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -4477,27 +5448,21 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -4529,7 +5494,107 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     where T8 : struct, IExtendsChain<TChain>
     where T9 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item9Offset + Item9Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -4545,200 +5610,212 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -4755,67 +5832,47 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <param name="item8">Item 8.</param>
     /// <param name="item9">Item 9.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        Item9Ptr->PNext = null;
     }
 
     /// <summary>
@@ -4824,215 +5881,238 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 10");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 10");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 10");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 10");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 10");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 10");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 10");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 10");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 10");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 10");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 10");
+                    existingPtr->PNext = null;
+                }
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
-
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending 
+    /// <paramref name="item9"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item9">Item 9.</param>
@@ -5040,55 +6120,67 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> previous, T9 item9 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size;
-        var newSize = originalSize + item9Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item9Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 9
+        item9.StructureType();        
+        Marshal.StructureToPtr(item9, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing 
+    /// <paramref name="item9"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate(out T9 item9)
+    {
+        item9 = Item9;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        // Append the last structure
-        item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
+        var newSize = MemorySize - Item9Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
     }
 
     /// <summary>
@@ -5098,7 +6190,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <param name="item10">Item 10.</param>
     /// <typeparam name="T10">Type of Item 10</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Append<T10>(T10 item10 = default)
         where T10: struct, IExtendsChain<TChain>
@@ -5128,7 +6220,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -5170,29 +6263,22 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -5226,7 +6312,117 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T9 : struct, IExtendsChain<TChain>
     where T10 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item10Offset + Item10Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -5242,221 +6438,233 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -5474,73 +6682,51 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item9">Item 9.</param>
     /// <param name="item10">Item 10.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        Item10Ptr->PNext = null;
     }
 
     /// <summary>
@@ -5549,236 +6735,260 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 11");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 11");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 11");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 11");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 11");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 11");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 11");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 11");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 11");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 11");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 11");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 11");
+                    existingPtr->PNext = null;
+                }
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
-
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending 
+    /// <paramref name="item10"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item10">Item 10.</param>
@@ -5786,59 +6996,69 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> previous, T10 item10 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size;
-        var newSize = originalSize + item10Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item10Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 10
+        item10.StructureType();        
+        Marshal.StructureToPtr(item10, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing 
+    /// <paramref name="item10"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate(out T10 item10)
+    {
+        item10 = Item10;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        // Append the last structure
-        item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
+        var newSize = MemorySize - Item10Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
     }
 
     /// <summary>
@@ -5848,7 +7068,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item11">Item 11.</param>
     /// <typeparam name="T11">Type of Item 11</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Append<T11>(T11 item11 = default)
         where T11: struct, IExtendsChain<TChain>
@@ -5879,7 +7099,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -5924,31 +7145,23 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -5984,7 +7197,127 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T10 : struct, IExtendsChain<TChain>
     where T11 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item11Offset = Item10Offset + Item10Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item11Offset + Item11Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -6000,242 +7333,254 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item11Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) _item11Ptr;
+    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
     /// </summary>
     public T11 Item11
     {
-        get => Unsafe.AsRef<T11>((Chain*) _item11Ptr);
+        get => Unsafe.AsRef<T11>(Item11Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item11Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item11Ptr, true);
-            ((Chain*) _item11Ptr)->PNext = nextPtr;
+            var ptr = Item11Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -6254,79 +7599,55 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item10">Item 10.</param>
     /// <param name="item11">Item 11.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        Item10Ptr->PNext = itemPtr;
+        Item11Ptr->PNext = null;
     }
 
     /// <summary>
@@ -6335,257 +7656,282 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 12");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 12");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 12");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 12");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 12");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 12");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 12");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 12");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 12");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 12");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
+            } else {
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
+        newPtr = newPtr->PNext;
+
         T11 item11 = default;
-        if (currentPtr is null)
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 11, expected length 12");
-        else {
-            expectedStructureType = item11.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 12; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item11 = Unsafe.AsRef<T11>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 12");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 12");
+                    existingPtr->PNext = null;
+                }
+                item11 = Unsafe.AsRef<T11>(existingPtr);
+            }
         }
-        var item11Size = Marshal.SizeOf<T11>();
-
+        Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending 
+    /// <paramref name="item11"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item11">Item 11.</param>
@@ -6593,63 +7939,71 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> previous, T11 item11 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size;
-        var newSize = originalSize + item11Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item11Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 11
+        item11.StructureType();        
+        Marshal.StructureToPtr(item11, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing 
+    /// <paramref name="item11"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate(out T11 item11)
+    {
+        item11 = Item11;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        // Append the last structure
-        item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
+        var newSize = MemorySize - Item11Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
     }
 
     /// <summary>
@@ -6659,7 +8013,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item12">Item 12.</param>
     /// <typeparam name="T12">Type of Item 12</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Append<T12>(T12 item12 = default)
         where T12: struct, IExtendsChain<TChain>
@@ -6691,7 +8045,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -6739,33 +8094,24 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
-        var item11Ptr = Interlocked.Exchange(ref _item11Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item11Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
+        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -6803,7 +8149,137 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T11 : struct, IExtendsChain<TChain>
     where T12 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item11Offset = Item10Offset + Item10Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item12Offset = Item11Offset + Item11Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item12Offset + Item12Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -6819,263 +8295,275 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item11Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) _item11Ptr;
+    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
     /// </summary>
     public T11 Item11
     {
-        get => Unsafe.AsRef<T11>((Chain*) _item11Ptr);
+        get => Unsafe.AsRef<T11>(Item11Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item11Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item11Ptr, true);
-            ((Chain*) _item11Ptr)->PNext = nextPtr;
+            var ptr = Item11Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item12Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) _item12Ptr;
+    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
     /// </summary>
     public T12 Item12
     {
-        get => Unsafe.AsRef<T12>((Chain*) _item12Ptr);
+        get => Unsafe.AsRef<T12>(Item12Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item12Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item12Ptr, true);
-            ((Chain*) _item12Ptr)->PNext = nextPtr;
+            var ptr = Item12Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -7095,85 +8583,59 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item11">Item 11.</param>
     /// <param name="item12">Item 12.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
+        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        Item10Ptr->PNext = itemPtr;
+        itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        Item11Ptr->PNext = itemPtr;
+        Item12Ptr->PNext = null;
     }
 
     /// <summary>
@@ -7182,278 +8644,304 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 13");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 13");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 13");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 13");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 13");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 13");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 13");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 13");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 13");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 13");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
+            } else {
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
+        newPtr = newPtr->PNext;
+
         T11 item11 = default;
-        if (currentPtr is null)
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 11, expected length 13");
-        else {
-            expectedStructureType = item11.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 12; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item11 = Unsafe.AsRef<T11>(currentPtr);
+            } else {
+                item11 = Unsafe.AsRef<T11>(existingPtr);
+            }
         }
-        var item11Size = Marshal.SizeOf<T11>();
+        Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
+        newPtr = newPtr->PNext;
+
         T12 item12 = default;
-        if (currentPtr is null)
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 12, expected length 13");
-        else {
-            expectedStructureType = item12.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 13; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item12 = Unsafe.AsRef<T12>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 13");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 13");
+                    existingPtr->PNext = null;
+                }
+                item12 = Unsafe.AsRef<T12>(existingPtr);
+            }
         }
-        var item12Size = Marshal.SizeOf<T12>();
-
+        Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending 
+    /// <paramref name="item12"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item12">Item 12.</param>
@@ -7461,67 +8949,73 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> previous, T12 item12 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size;
-        var newSize = originalSize + item12Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item12Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 12
+        item12.StructureType();        
+        Marshal.StructureToPtr(item12, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
+        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing 
+    /// <paramref name="item12"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate(out T12 item12)
+    {
+        item12 = Item12;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        // Append the last structure
-        item12.StructureType();
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
+        var newSize = MemorySize - Item12Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
     }
 
     /// <summary>
@@ -7531,7 +9025,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item13">Item 13.</param>
     /// <typeparam name="T13">Type of Item 13</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Append<T13>(T13 item13 = default)
         where T13: struct, IExtendsChain<TChain>
@@ -7564,7 +9058,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -7615,35 +9110,25 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
-        var item11Ptr = Interlocked.Exchange(ref _item11Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item11Ptr);
-        var item12Ptr = Interlocked.Exchange(ref _item12Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item12Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
+        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
+        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -7683,7 +9168,147 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T12 : struct, IExtendsChain<TChain>
     where T13 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item11Offset = Item10Offset + Item10Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item12Offset = Item11Offset + Item11Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item13Offset = Item12Offset + Item12Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item13Offset + Item13Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -7699,284 +9324,296 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item11Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) _item11Ptr;
+    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
     /// </summary>
     public T11 Item11
     {
-        get => Unsafe.AsRef<T11>((Chain*) _item11Ptr);
+        get => Unsafe.AsRef<T11>(Item11Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item11Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item11Ptr, true);
-            ((Chain*) _item11Ptr)->PNext = nextPtr;
+            var ptr = Item11Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item12Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) _item12Ptr;
+    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
     /// </summary>
     public T12 Item12
     {
-        get => Unsafe.AsRef<T12>((Chain*) _item12Ptr);
+        get => Unsafe.AsRef<T12>(Item12Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item12Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item12Ptr, true);
-            ((Chain*) _item12Ptr)->PNext = nextPtr;
+            var ptr = Item12Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item13Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) _item13Ptr;
+    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
     /// </summary>
     public T13 Item13
     {
-        get => Unsafe.AsRef<T13>((Chain*) _item13Ptr);
+        get => Unsafe.AsRef<T13>(Item13Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item13Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item13Ptr, true);
-            ((Chain*) _item13Ptr)->PNext = nextPtr;
+            var ptr = Item13Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -7997,91 +9634,63 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item12">Item 12.</param>
     /// <param name="item13">Item 13.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
+        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        Item10Ptr->PNext = itemPtr;
+        itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
+        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        Item11Ptr->PNext = itemPtr;
+        itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
+        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        Item12Ptr->PNext = itemPtr;
+        Item13Ptr->PNext = null;
     }
 
     /// <summary>
@@ -8090,299 +9699,326 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 14");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 14");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 14");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 14");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 14");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 14");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 14");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 14");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 14");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 14");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
+            } else {
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
+        newPtr = newPtr->PNext;
+
         T11 item11 = default;
-        if (currentPtr is null)
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 11, expected length 14");
-        else {
-            expectedStructureType = item11.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 12; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item11 = Unsafe.AsRef<T11>(currentPtr);
+            } else {
+                item11 = Unsafe.AsRef<T11>(existingPtr);
+            }
         }
-        var item11Size = Marshal.SizeOf<T11>();
+        Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
+        newPtr = newPtr->PNext;
+
         T12 item12 = default;
-        if (currentPtr is null)
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 12, expected length 14");
-        else {
-            expectedStructureType = item12.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 13; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item12 = Unsafe.AsRef<T12>(currentPtr);
+            } else {
+                item12 = Unsafe.AsRef<T12>(existingPtr);
+            }
         }
-        var item12Size = Marshal.SizeOf<T12>();
+        Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
+        newPtr = newPtr->PNext;
+
         T13 item13 = default;
-        if (currentPtr is null)
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 13, expected length 14");
-        else {
-            expectedStructureType = item13.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 14; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item13 = Unsafe.AsRef<T13>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 14");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 14");
+                    existingPtr->PNext = null;
+                }
+                item13 = Unsafe.AsRef<T13>(existingPtr);
+            }
         }
-        var item13Size = Marshal.SizeOf<T13>();
-
+        Marshal.StructureToPtr(item13, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending 
+    /// <paramref name="item13"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item13">Item 13.</param>
@@ -8390,71 +10026,75 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> previous, T13 item13 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size;
-        var newSize = originalSize + item13Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item13Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 13
+        item13.StructureType();        
+        Marshal.StructureToPtr(item13, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
+        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
+        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing 
+    /// <paramref name="item13"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate(out T13 item13)
+    {
+        item13 = Item13;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        // Append the last structure
-        item13.StructureType();
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
+        var newSize = MemorySize - Item13Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
     }
 
     /// <summary>
@@ -8464,7 +10104,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item14">Item 14.</param>
     /// <typeparam name="T14">Type of Item 14</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Append<T14>(T14 item14 = default)
         where T14: struct, IExtendsChain<TChain>
@@ -8498,7 +10138,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -8552,37 +10193,26 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
-        var item11Ptr = Interlocked.Exchange(ref _item11Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item11Ptr);
-        var item12Ptr = Interlocked.Exchange(ref _item12Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item12Ptr);
-        var item13Ptr = Interlocked.Exchange(ref _item13Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item13Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
+        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
+        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
+        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -8624,7 +10254,157 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T13 : struct, IExtendsChain<TChain>
     where T14 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item11Offset = Item10Offset + Item10Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item12Offset = Item11Offset + Item11Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item13Offset = Item12Offset + Item12Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item14Offset = Item13Offset + Item13Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item14Size = Marshal.SizeOf<T14>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item14Offset + Item14Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -8640,305 +10420,317 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item11Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) _item11Ptr;
+    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
     /// </summary>
     public T11 Item11
     {
-        get => Unsafe.AsRef<T11>((Chain*) _item11Ptr);
+        get => Unsafe.AsRef<T11>(Item11Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item11Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item11Ptr, true);
-            ((Chain*) _item11Ptr)->PNext = nextPtr;
+            var ptr = Item11Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item12Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) _item12Ptr;
+    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
     /// </summary>
     public T12 Item12
     {
-        get => Unsafe.AsRef<T12>((Chain*) _item12Ptr);
+        get => Unsafe.AsRef<T12>(Item12Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item12Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item12Ptr, true);
-            ((Chain*) _item12Ptr)->PNext = nextPtr;
+            var ptr = Item12Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item13Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) _item13Ptr;
+    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
     /// </summary>
     public T13 Item13
     {
-        get => Unsafe.AsRef<T13>((Chain*) _item13Ptr);
+        get => Unsafe.AsRef<T13>(Item13Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item13Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item13Ptr, true);
-            ((Chain*) _item13Ptr)->PNext = nextPtr;
+            var ptr = Item13Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item14Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item14Ptr => (Chain*) _item14Ptr;
+    public Chain* Item14Ptr => (Chain*) (_headPtr + Item14Offset);
 
     /// <summary>
     /// Gets or sets item #14 in the chain.
     /// </summary>
     public T14 Item14
     {
-        get => Unsafe.AsRef<T14>((Chain*) _item14Ptr);
+        get => Unsafe.AsRef<T14>(Item14Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item14Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item14Ptr, true);
-            ((Chain*) _item14Ptr)->PNext = nextPtr;
+            var ptr = Item14Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -8960,97 +10752,67 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item13">Item 13.</param>
     /// <param name="item14">Item 14.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-        var item14Size = Marshal.SizeOf<T14>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
+        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        Item10Ptr->PNext = itemPtr;
+        itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
+        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        Item11Ptr->PNext = itemPtr;
+        itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
+        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        Item12Ptr->PNext = itemPtr;
+        itemPtr = Item14Ptr;
         item14.StructureType();
-        Marshal.StructureToPtr(item14, _item14Ptr, false);
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
+        Marshal.StructureToPtr(item14, (nint)itemPtr, false);
+        Item13Ptr->PNext = itemPtr;
+        Item14Ptr->PNext = null;
     }
 
     /// <summary>
@@ -9059,320 +10821,348 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 15");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 15");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 15");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 15");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 15");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 15");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 15");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 15");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 15");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 15");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
+            } else {
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
+        newPtr = newPtr->PNext;
+
         T11 item11 = default;
-        if (currentPtr is null)
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 11, expected length 15");
-        else {
-            expectedStructureType = item11.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 12; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item11 = Unsafe.AsRef<T11>(currentPtr);
+            } else {
+                item11 = Unsafe.AsRef<T11>(existingPtr);
+            }
         }
-        var item11Size = Marshal.SizeOf<T11>();
+        Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
+        newPtr = newPtr->PNext;
+
         T12 item12 = default;
-        if (currentPtr is null)
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 12, expected length 15");
-        else {
-            expectedStructureType = item12.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 13; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item12 = Unsafe.AsRef<T12>(currentPtr);
+            } else {
+                item12 = Unsafe.AsRef<T12>(existingPtr);
+            }
         }
-        var item12Size = Marshal.SizeOf<T12>();
+        Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
+        newPtr = newPtr->PNext;
+
         T13 item13 = default;
-        if (currentPtr is null)
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 13, expected length 15");
-        else {
-            expectedStructureType = item13.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 14; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item13 = Unsafe.AsRef<T13>(currentPtr);
+            } else {
+                item13 = Unsafe.AsRef<T13>(existingPtr);
+            }
         }
-        var item13Size = Marshal.SizeOf<T13>();
+        Marshal.StructureToPtr(item13, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item14Offset);
+        newPtr = newPtr->PNext;
+
         T14 item14 = default;
-        if (currentPtr is null)
+        expectedStructureType = item14.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 14, expected length 15");
-        else {
-            expectedStructureType = item14.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 15; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item14 = Unsafe.AsRef<T14>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 15");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 15");
+                    existingPtr->PNext = null;
+                }
+                item14 = Unsafe.AsRef<T14>(existingPtr);
+            }
         }
-        var item14Size = Marshal.SizeOf<T14>();
-
+        Marshal.StructureToPtr(item14, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
-        Marshal.StructureToPtr(item14, _item14Ptr, false);
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending 
+    /// <paramref name="item14"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item14">Item 14.</param>
@@ -9380,75 +11170,77 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> previous, T14 item14 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-        var item14Size = Marshal.SizeOf<T14>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size;
-        var newSize = originalSize + item14Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item14Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 14
+        item14.StructureType();        
+        Marshal.StructureToPtr(item14, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
+        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
+        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
+        ((Chain*)(_headPtr + Item13Offset))->PNext = (Chain*) (_headPtr + Item14Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing 
+    /// <paramref name="item14"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate(out T14 item14)
+    {
+        item14 = Item14;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
-        // Append the last structure
-        item14.StructureType();
-        Marshal.StructureToPtr(item14, _item14Ptr, false);
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
+        var newSize = MemorySize - Item14Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        ((Chain*)(newHeadPtr + Item13Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
     }
 
     /// <summary>
@@ -9458,7 +11250,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item15">Item 15.</param>
     /// <typeparam name="T15">Type of Item 15</typeparam>
     /// <remarks>
-    /// Do not forget to dispose this chain if you are no longer using it.
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
     public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Append<T15>(T15 item15 = default)
         where T15: struct, IExtendsChain<TChain>
@@ -9493,7 +11285,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -9550,39 +11343,27 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
-        var item11Ptr = Interlocked.Exchange(ref _item11Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item11Ptr);
-        var item12Ptr = Interlocked.Exchange(ref _item12Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item12Ptr);
-        var item13Ptr = Interlocked.Exchange(ref _item13Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item13Ptr);
-        var item14Ptr = Interlocked.Exchange(ref _item14Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item14Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
+        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
+        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
+        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
+        Marshal.DestroyStructure<T14>(headPtr + Item14Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);
@@ -9626,7 +11407,167 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     where T14 : struct, IExtendsChain<TChain>
     where T15 : struct, IExtendsChain<TChain>
 {
-    private IntPtr _headPtr;
+    /// <summary>
+    /// Gets the size (in bytes) of the head structure.
+    /// </summary>
+    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item1Offset = HeadSize;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item2Offset = Item1Offset + Item1Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item3Offset = Item2Offset + Item2Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item4Offset = Item3Offset + Item3Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item5Offset = Item4Offset + Item4Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item6Offset = Item5Offset + Item5Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item7Offset = Item6Offset + Item6Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item8Offset = Item7Offset + Item7Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item9Offset = Item8Offset + Item8Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item10Offset = Item9Offset + Item9Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item11Offset = Item10Offset + Item10Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item12Offset = Item11Offset + Item11Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item13Offset = Item12Offset + Item12Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item14Offset = Item13Offset + Item13Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item14Size = Marshal.SizeOf<T14>();
+
+    /// <summary>
+    /// Gets the offset to the start of <see cref="Item1"/>.
+    /// </summary>
+    public static readonly int Item15Offset = Item14Offset + Item14Size;
+
+    /// <summary>
+    /// Gets the size (in bytes) of the Item 1.
+    /// </summary>
+    public static readonly int Item15Size = Marshal.SizeOf<T15>();
+
+    /// <summary>
+    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
+    /// </summary>
+    public static readonly int MemorySize = Item15Offset + Item15Size;
+    
+    private nint _headPtr;
 
     /// <summary>
     /// Gets a pointer to the current head.
@@ -9642,326 +11583,338 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _headPtr)->PNext;
+            var ptr = (Chain*) _headPtr;
+            var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
-            ((Chain*) _headPtr)->PNext = nextPtr;
+            ptr->PNext = nextPtr;
         }
     }
-
-    private IntPtr _item1Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) _item1Ptr;
+    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
     /// </summary>
     public T1 Item1
     {
-        get => Unsafe.AsRef<T1>((Chain*) _item1Ptr);
+        get => Unsafe.AsRef<T1>(Item1Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item1Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item1Ptr, true);
-            ((Chain*) _item1Ptr)->PNext = nextPtr;
+            var ptr = Item1Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item2Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) _item2Ptr;
+    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
     /// </summary>
     public T2 Item2
     {
-        get => Unsafe.AsRef<T2>((Chain*) _item2Ptr);
+        get => Unsafe.AsRef<T2>(Item2Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item2Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item2Ptr, true);
-            ((Chain*) _item2Ptr)->PNext = nextPtr;
+            var ptr = Item2Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item3Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) _item3Ptr;
+    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
     /// </summary>
     public T3 Item3
     {
-        get => Unsafe.AsRef<T3>((Chain*) _item3Ptr);
+        get => Unsafe.AsRef<T3>(Item3Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item3Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item3Ptr, true);
-            ((Chain*) _item3Ptr)->PNext = nextPtr;
+            var ptr = Item3Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item4Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) _item4Ptr;
+    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
     /// </summary>
     public T4 Item4
     {
-        get => Unsafe.AsRef<T4>((Chain*) _item4Ptr);
+        get => Unsafe.AsRef<T4>(Item4Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item4Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item4Ptr, true);
-            ((Chain*) _item4Ptr)->PNext = nextPtr;
+            var ptr = Item4Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item5Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) _item5Ptr;
+    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
     /// </summary>
     public T5 Item5
     {
-        get => Unsafe.AsRef<T5>((Chain*) _item5Ptr);
+        get => Unsafe.AsRef<T5>(Item5Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item5Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item5Ptr, true);
-            ((Chain*) _item5Ptr)->PNext = nextPtr;
+            var ptr = Item5Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item6Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) _item6Ptr;
+    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
     /// </summary>
     public T6 Item6
     {
-        get => Unsafe.AsRef<T6>((Chain*) _item6Ptr);
+        get => Unsafe.AsRef<T6>(Item6Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item6Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item6Ptr, true);
-            ((Chain*) _item6Ptr)->PNext = nextPtr;
+            var ptr = Item6Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item7Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) _item7Ptr;
+    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
     /// </summary>
     public T7 Item7
     {
-        get => Unsafe.AsRef<T7>((Chain*) _item7Ptr);
+        get => Unsafe.AsRef<T7>(Item7Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item7Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item7Ptr, true);
-            ((Chain*) _item7Ptr)->PNext = nextPtr;
+            var ptr = Item7Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item8Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) _item8Ptr;
+    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
     /// </summary>
     public T8 Item8
     {
-        get => Unsafe.AsRef<T8>((Chain*) _item8Ptr);
+        get => Unsafe.AsRef<T8>(Item8Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item8Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item8Ptr, true);
-            ((Chain*) _item8Ptr)->PNext = nextPtr;
+            var ptr = Item8Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item9Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) _item9Ptr;
+    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
     /// </summary>
     public T9 Item9
     {
-        get => Unsafe.AsRef<T9>((Chain*) _item9Ptr);
+        get => Unsafe.AsRef<T9>(Item9Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item9Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item9Ptr, true);
-            ((Chain*) _item9Ptr)->PNext = nextPtr;
+            var ptr = Item9Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item10Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) _item10Ptr;
+    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
     /// </summary>
     public T10 Item10
     {
-        get => Unsafe.AsRef<T10>((Chain*) _item10Ptr);
+        get => Unsafe.AsRef<T10>(Item10Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item10Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item10Ptr, true);
-            ((Chain*) _item10Ptr)->PNext = nextPtr;
+            var ptr = Item10Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item11Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) _item11Ptr;
+    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
     /// </summary>
     public T11 Item11
     {
-        get => Unsafe.AsRef<T11>((Chain*) _item11Ptr);
+        get => Unsafe.AsRef<T11>(Item11Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item11Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item11Ptr, true);
-            ((Chain*) _item11Ptr)->PNext = nextPtr;
+            var ptr = Item11Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item12Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) _item12Ptr;
+    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
     /// </summary>
     public T12 Item12
     {
-        get => Unsafe.AsRef<T12>((Chain*) _item12Ptr);
+        get => Unsafe.AsRef<T12>(Item12Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item12Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item12Ptr, true);
-            ((Chain*) _item12Ptr)->PNext = nextPtr;
+            var ptr = Item12Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item13Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) _item13Ptr;
+    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
     /// </summary>
     public T13 Item13
     {
-        get => Unsafe.AsRef<T13>((Chain*) _item13Ptr);
+        get => Unsafe.AsRef<T13>(Item13Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item13Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item13Ptr, true);
-            ((Chain*) _item13Ptr)->PNext = nextPtr;
+            var ptr = Item13Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item14Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item14Ptr => (Chain*) _item14Ptr;
+    public Chain* Item14Ptr => (Chain*) (_headPtr + Item14Offset);
 
     /// <summary>
     /// Gets or sets item #14 in the chain.
     /// </summary>
     public T14 Item14
     {
-        get => Unsafe.AsRef<T14>((Chain*) _item14Ptr);
+        get => Unsafe.AsRef<T14>(Item14Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item14Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item14Ptr, true);
-            ((Chain*) _item14Ptr)->PNext = nextPtr;
+            var ptr = Item14Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
     }
-    private IntPtr _item15Ptr;
 
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item15Ptr => (Chain*) _item15Ptr;
+    public Chain* Item15Ptr => (Chain*) (_headPtr + Item15Offset);
 
     /// <summary>
     /// Gets or sets item #15 in the chain.
     /// </summary>
     public T15 Item15
     {
-        get => Unsafe.AsRef<T15>((Chain*) _item15Ptr);
+        get => Unsafe.AsRef<T15>(Item15Ptr);
         set
         {
             value.StructureType();
-            var nextPtr = ((Chain*) _item15Ptr)->PNext;
-            Marshal.StructureToPtr(value, _item15Ptr, true);
-            ((Chain*) _item15Ptr)->PNext = nextPtr;
+            var ptr = Item15Ptr;
+            var nextPtr = ptr->PNext;
+            Marshal.StructureToPtr(value, (nint)ptr, true);
+            ptr->PNext = nextPtr;
         }
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items from an existing memory block.
+    /// </summary>
+    /// <param name="headPtr">The pointer to the head of the chain..</param>
+    /// <remarks>
+    /// Callers are responsible for ensuring the size of the memory is correct.
+    /// </remarks>
+    internal ManagedChain(nint headPtr)
+    {
+        _headPtr = headPtr;
     }
 
     /// <summary>
@@ -9984,103 +11937,71 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item14">Item 14.</param>
     /// <param name="item15">Item 15.</param>
     public ManagedChain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default, T15 item15 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-        var item14Size = Marshal.SizeOf<T14>();
-        var item15Size = Marshal.SizeOf<T15>();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size + item15Size);
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
+        Chain* itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
+        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        HeadPtr->PNext = itemPtr;
+        itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
+        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        Item1Ptr->PNext = itemPtr;
+        itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
+        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        Item2Ptr->PNext = itemPtr;
+        itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
+        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        Item3Ptr->PNext = itemPtr;
+        itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
+        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        Item4Ptr->PNext = itemPtr;
+        itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
+        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        Item5Ptr->PNext = itemPtr;
+        itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
+        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        Item6Ptr->PNext = itemPtr;
+        itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
+        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        Item7Ptr->PNext = itemPtr;
+        itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
+        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        Item8Ptr->PNext = itemPtr;
+        itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
+        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        Item9Ptr->PNext = itemPtr;
+        itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
+        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        Item10Ptr->PNext = itemPtr;
+        itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
+        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        Item11Ptr->PNext = itemPtr;
+        itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
+        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        Item12Ptr->PNext = itemPtr;
+        itemPtr = Item14Ptr;
         item14.StructureType();
-        Marshal.StructureToPtr(item14, _item14Ptr, false);
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
-
-        _item15Ptr = _item14Ptr + item14Size;
+        Marshal.StructureToPtr(item14, (nint)itemPtr, false);
+        Item13Ptr->PNext = itemPtr;
+        itemPtr = Item15Ptr;
         item15.StructureType();
-        Marshal.StructureToPtr(item15, _item15Ptr, false);
-        ((Chain*) _item14Ptr)->PNext = (Chain*) _item15Ptr;
+        Marshal.StructureToPtr(item15, (nint)itemPtr, false);
+        Item14Ptr->PNext = itemPtr;
+        Item15Ptr->PNext = null;
     }
 
     /// <summary>
@@ -10089,341 +12010,370 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
     public ManagedChain(out string errors, TChain chain)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Load existing chain first, so any errors occur before we allocate memory
-        var head = chain;
-        var headSize = Marshal.SizeOf<TChain>();
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        StructureType expectedStructureType;
+        chain.StructureType();
+        Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
+        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var newPtr = (Chain*) _headPtr;
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
+        newPtr = newPtr->PNext;
+
         T1 item1 = default;
-        if (currentPtr is null)
+        var expectedStructureType = item1.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 1, expected length 16");
-        else {
-            expectedStructureType = item1.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 2; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item1 = Unsafe.AsRef<T1>(currentPtr);
+            } else {
+                item1 = Unsafe.AsRef<T1>(existingPtr);
+            }
         }
-        var item1Size = Marshal.SizeOf<T1>();
+        Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
+        newPtr = newPtr->PNext;
+
         T2 item2 = default;
-        if (currentPtr is null)
+        expectedStructureType = item2.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 2, expected length 16");
-        else {
-            expectedStructureType = item2.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 3; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item2 = Unsafe.AsRef<T2>(currentPtr);
+            } else {
+                item2 = Unsafe.AsRef<T2>(existingPtr);
+            }
         }
-        var item2Size = Marshal.SizeOf<T2>();
+        Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
+        newPtr = newPtr->PNext;
+
         T3 item3 = default;
-        if (currentPtr is null)
+        expectedStructureType = item3.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 3, expected length 16");
-        else {
-            expectedStructureType = item3.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 4; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item3 = Unsafe.AsRef<T3>(currentPtr);
+            } else {
+                item3 = Unsafe.AsRef<T3>(existingPtr);
+            }
         }
-        var item3Size = Marshal.SizeOf<T3>();
+        Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
+        newPtr = newPtr->PNext;
+
         T4 item4 = default;
-        if (currentPtr is null)
+        expectedStructureType = item4.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 4, expected length 16");
-        else {
-            expectedStructureType = item4.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 5; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item4 = Unsafe.AsRef<T4>(currentPtr);
+            } else {
+                item4 = Unsafe.AsRef<T4>(existingPtr);
+            }
         }
-        var item4Size = Marshal.SizeOf<T4>();
+        Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
+        newPtr = newPtr->PNext;
+
         T5 item5 = default;
-        if (currentPtr is null)
+        expectedStructureType = item5.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 5, expected length 16");
-        else {
-            expectedStructureType = item5.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 6; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item5 = Unsafe.AsRef<T5>(currentPtr);
+            } else {
+                item5 = Unsafe.AsRef<T5>(existingPtr);
+            }
         }
-        var item5Size = Marshal.SizeOf<T5>();
+        Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
+        newPtr = newPtr->PNext;
+
         T6 item6 = default;
-        if (currentPtr is null)
+        expectedStructureType = item6.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 6, expected length 16");
-        else {
-            expectedStructureType = item6.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 7; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item6 = Unsafe.AsRef<T6>(currentPtr);
+            } else {
+                item6 = Unsafe.AsRef<T6>(existingPtr);
+            }
         }
-        var item6Size = Marshal.SizeOf<T6>();
+        Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
+        newPtr = newPtr->PNext;
+
         T7 item7 = default;
-        if (currentPtr is null)
+        expectedStructureType = item7.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 7, expected length 16");
-        else {
-            expectedStructureType = item7.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 8; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item7 = Unsafe.AsRef<T7>(currentPtr);
+            } else {
+                item7 = Unsafe.AsRef<T7>(existingPtr);
+            }
         }
-        var item7Size = Marshal.SizeOf<T7>();
+        Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
+        newPtr = newPtr->PNext;
+
         T8 item8 = default;
-        if (currentPtr is null)
+        expectedStructureType = item8.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 8, expected length 16");
-        else {
-            expectedStructureType = item8.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 9; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item8 = Unsafe.AsRef<T8>(currentPtr);
+            } else {
+                item8 = Unsafe.AsRef<T8>(existingPtr);
+            }
         }
-        var item8Size = Marshal.SizeOf<T8>();
+        Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
+        newPtr = newPtr->PNext;
+
         T9 item9 = default;
-        if (currentPtr is null)
+        expectedStructureType = item9.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 9, expected length 16");
-        else {
-            expectedStructureType = item9.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 10; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item9 = Unsafe.AsRef<T9>(currentPtr);
+            } else {
+                item9 = Unsafe.AsRef<T9>(existingPtr);
+            }
         }
-        var item9Size = Marshal.SizeOf<T9>();
+        Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
+        newPtr = newPtr->PNext;
+
         T10 item10 = default;
-        if (currentPtr is null)
+        expectedStructureType = item10.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 10, expected length 16");
-        else {
-            expectedStructureType = item10.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 11; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item10 = Unsafe.AsRef<T10>(currentPtr);
+            } else {
+                item10 = Unsafe.AsRef<T10>(existingPtr);
+            }
         }
-        var item10Size = Marshal.SizeOf<T10>();
+        Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
+        newPtr = newPtr->PNext;
+
         T11 item11 = default;
-        if (currentPtr is null)
+        expectedStructureType = item11.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 11, expected length 16");
-        else {
-            expectedStructureType = item11.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 12; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item11 = Unsafe.AsRef<T11>(currentPtr);
+            } else {
+                item11 = Unsafe.AsRef<T11>(existingPtr);
+            }
         }
-        var item11Size = Marshal.SizeOf<T11>();
+        Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
+        newPtr = newPtr->PNext;
+
         T12 item12 = default;
-        if (currentPtr is null)
+        expectedStructureType = item12.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 12, expected length 16");
-        else {
-            expectedStructureType = item12.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 13; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item12 = Unsafe.AsRef<T12>(currentPtr);
+            } else {
+                item12 = Unsafe.AsRef<T12>(existingPtr);
+            }
         }
-        var item12Size = Marshal.SizeOf<T12>();
+        Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
+        newPtr = newPtr->PNext;
+
         T13 item13 = default;
-        if (currentPtr is null)
+        expectedStructureType = item13.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 13, expected length 16");
-        else {
-            expectedStructureType = item13.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 14; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item13 = Unsafe.AsRef<T13>(currentPtr);
+            } else {
+                item13 = Unsafe.AsRef<T13>(existingPtr);
+            }
         }
-        var item13Size = Marshal.SizeOf<T13>();
+        Marshal.StructureToPtr(item13, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item14Offset);
+        newPtr = newPtr->PNext;
+
         T14 item14 = default;
-        if (currentPtr is null)
+        expectedStructureType = item14.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 14, expected length 16");
-        else {
-            expectedStructureType = item14.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 15; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item14 = Unsafe.AsRef<T14>(currentPtr);
+            } else {
+                item14 = Unsafe.AsRef<T14>(existingPtr);
+            }
         }
-        var item14Size = Marshal.SizeOf<T14>();
+        Marshal.StructureToPtr(item14, (nint) newPtr, false);
 
-        currentPtr = currentPtr->PNext;
+        existingPtr = existingPtr->PNext;
+        newPtr->PNext = (Chain*) (_headPtr + Item15Offset);
+        newPtr = newPtr->PNext;
+
         T15 item15 = default;
-        if (currentPtr is null)
+        expectedStructureType = item15.StructureType();
+        if (existingPtr is null) {
             errorBuilder.AppendLine("The unmanaged chain was length 15, expected length 16");
-        else {
-            expectedStructureType = item15.StructureType();
-            if (currentPtr->SType != expectedStructureType) {
+        } else {
+            if (existingPtr->SType != expectedStructureType) {
                 errorBuilder.Append("The unmanaged chain has a structure type ")
-                    .Append(currentPtr->SType)
+                    .Append(existingPtr->SType)
                     .Append(" at position 16; expected ")
                     .Append(expectedStructureType)
                     .AppendLine();
-            } else
-                item15 = Unsafe.AsRef<T15>(currentPtr);
-            if (currentPtr->PNext is not null)
-                errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 16");
+            } else {
+                if (existingPtr->PNext is not null) {
+                    errorBuilder.AppendLine("The unmanaged chain was longer than the expected length 16");
+                    existingPtr->PNext = null;
+                }
+                item15 = Unsafe.AsRef<T15>(existingPtr);
+            }
         }
-        var item15Size = Marshal.SizeOf<T15>();
-
+        Marshal.StructureToPtr(item15, (nint) newPtr, false);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-
-        _headPtr = Marshal.AllocHGlobal(headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size + item15Size);
-        Marshal.StructureToPtr(head, _headPtr, false);
-
-        _item1Ptr = _headPtr + headSize;
-        Marshal.StructureToPtr(item1, _item1Ptr, false);
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
-
-        _item2Ptr = _item1Ptr + item1Size;
-        Marshal.StructureToPtr(item2, _item2Ptr, false);
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
-
-        _item3Ptr = _item2Ptr + item2Size;
-        Marshal.StructureToPtr(item3, _item3Ptr, false);
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
-
-        _item4Ptr = _item3Ptr + item3Size;
-        Marshal.StructureToPtr(item4, _item4Ptr, false);
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        Marshal.StructureToPtr(item5, _item5Ptr, false);
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        Marshal.StructureToPtr(item6, _item6Ptr, false);
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        Marshal.StructureToPtr(item7, _item7Ptr, false);
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        Marshal.StructureToPtr(item8, _item8Ptr, false);
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        Marshal.StructureToPtr(item9, _item9Ptr, false);
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        Marshal.StructureToPtr(item10, _item10Ptr, false);
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        Marshal.StructureToPtr(item11, _item11Ptr, false);
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        Marshal.StructureToPtr(item12, _item12Ptr, false);
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        Marshal.StructureToPtr(item13, _item13Ptr, false);
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
-        Marshal.StructureToPtr(item14, _item14Ptr, false);
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
-
-        _item15Ptr = _item14Ptr + item14Size;
-        Marshal.StructureToPtr(item15, _item15Ptr, false);
-        ((Chain*) _item14Ptr)->PNext = (Chain*) _item15Ptr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items.
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 by copying this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Duplicate() 
+    {
+        var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
+        ((Chain*)(newHeadPtr + Item14Offset))->PNext = (Chain*) (newHeadPtr + Item15Offset); 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending 
+    /// <paramref name="item15"/> to the end of this chain.
     /// </summary>
     /// <param name="previous">The chain to append to.</param>
     /// <param name="item15">Item 15.</param>
@@ -10431,79 +12381,79 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// Do not forget to dispose the <paramref name="previous"/> chain if you are no longer using it.
     /// </remarks>
     public ManagedChain(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> previous, T15 item15 = default)
+        : this(Marshal.AllocHGlobal(MemorySize))
     {
-        // Calculate memory requirements
-        var headSize = Marshal.SizeOf<TChain>();
-        var item1Size = Marshal.SizeOf<T1>();
-        var item2Size = Marshal.SizeOf<T2>();
-        var item3Size = Marshal.SizeOf<T3>();
-        var item4Size = Marshal.SizeOf<T4>();
-        var item5Size = Marshal.SizeOf<T5>();
-        var item6Size = Marshal.SizeOf<T6>();
-        var item7Size = Marshal.SizeOf<T7>();
-        var item8Size = Marshal.SizeOf<T8>();
-        var item9Size = Marshal.SizeOf<T9>();
-        var item10Size = Marshal.SizeOf<T10>();
-        var item11Size = Marshal.SizeOf<T11>();
-        var item12Size = Marshal.SizeOf<T12>();
-        var item13Size = Marshal.SizeOf<T13>();
-        var item14Size = Marshal.SizeOf<T14>();
-        var item15Size = Marshal.SizeOf<T15>();
-
-        var originalSize = headSize + item1Size + item2Size + item3Size + item4Size + item5Size + item6Size + item7Size + item8Size + item9Size + item10Size + item11Size + item12Size + item13Size + item14Size;
-        var newSize = originalSize + item15Size;
-
-        _headPtr = Marshal.AllocHGlobal(newSize);
+        var previousSize = MemorySize - Item15Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, originalSize, originalSize);
+        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        
+        // Append item 15
+        item15.StructureType();        
+        Marshal.StructureToPtr(item15, _headPtr + previousSize, false);
 
-        _item1Ptr = _headPtr + headSize;
-        ((Chain*) _headPtr)->PNext = (Chain*) _item1Ptr;
+        // Update all pointers
+        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
+        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
+        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
+        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
+        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
+        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
+        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
+        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
+        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
+        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
+        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
+        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
+        ((Chain*)(_headPtr + Item13Offset))->PNext = (Chain*) (_headPtr + Item14Offset); 
+        ((Chain*)(_headPtr + Item14Offset))->PNext = (Chain*) (_headPtr + Item15Offset); 
+        ((Chain*)(_headPtr + previousSize))->PNext = null;
+    }
 
-        _item2Ptr = _item1Ptr + item1Size;
-        ((Chain*) _item1Ptr)->PNext = (Chain*) _item2Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
+    /// from this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate()
+    {
+        return Truncate(out var _);
+    }
 
-        _item3Ptr = _item2Ptr + item2Size;
-        ((Chain*) _item2Ptr)->PNext = (Chain*) _item3Ptr;
+    /// <summary>
+    /// Creates a new <see cref="ManagedChain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing 
+    /// <paramref name="item15"/> from the end of this chain.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    public ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate(out T15 item15)
+    {
+        item15 = Item15;
 
-        _item4Ptr = _item3Ptr + item3Size;
-        ((Chain*) _item3Ptr)->PNext = (Chain*) _item4Ptr;
-
-        _item5Ptr = _item4Ptr + item4Size;
-        ((Chain*) _item4Ptr)->PNext = (Chain*) _item5Ptr;
-
-        _item6Ptr = _item5Ptr + item5Size;
-        ((Chain*) _item5Ptr)->PNext = (Chain*) _item6Ptr;
-
-        _item7Ptr = _item6Ptr + item6Size;
-        ((Chain*) _item6Ptr)->PNext = (Chain*) _item7Ptr;
-
-        _item8Ptr = _item7Ptr + item7Size;
-        ((Chain*) _item7Ptr)->PNext = (Chain*) _item8Ptr;
-
-        _item9Ptr = _item8Ptr + item8Size;
-        ((Chain*) _item8Ptr)->PNext = (Chain*) _item9Ptr;
-
-        _item10Ptr = _item9Ptr + item9Size;
-        ((Chain*) _item9Ptr)->PNext = (Chain*) _item10Ptr;
-
-        _item11Ptr = _item10Ptr + item10Size;
-        ((Chain*) _item10Ptr)->PNext = (Chain*) _item11Ptr;
-
-        _item12Ptr = _item11Ptr + item11Size;
-        ((Chain*) _item11Ptr)->PNext = (Chain*) _item12Ptr;
-
-        _item13Ptr = _item12Ptr + item12Size;
-        ((Chain*) _item12Ptr)->PNext = (Chain*) _item13Ptr;
-
-        _item14Ptr = _item13Ptr + item13Size;
-        ((Chain*) _item13Ptr)->PNext = (Chain*) _item14Ptr;
-
-        _item15Ptr = _item14Ptr + item14Size;
-        // Append the last structure
-        item15.StructureType();
-        Marshal.StructureToPtr(item15, _item15Ptr, false);
-        ((Chain*) _item14Ptr)->PNext = (Chain*) _item15Ptr;
+        var newSize = MemorySize - Item15Size;
+        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        // Block copy original struct data for speed
+        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
+        ((Chain*)(newHeadPtr + Item14Offset))->PNext = null; 
+        return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -10534,7 +12484,8 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public override IChainable this[int index]
         => index switch 
         {
-            0 => Head,            1 => Item1,
+            0 => Head,
+            1 => Item1,
             2 => Item2,
             3 => Item3,
             4 => Item4,
@@ -10594,41 +12545,28 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     public override void Dispose()
     {
-        var headPtr = Interlocked.Exchange(ref _headPtr, IntPtr.Zero);
-        if (headPtr == IntPtr.Zero) return;
+        var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
+        if (headPtr == (nint)0) { 
+            return;
+        }
 
         // Destroy all structures
         Marshal.DestroyStructure<TChain>(headPtr);
-        var item1Ptr = Interlocked.Exchange(ref _item1Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item1Ptr);
-        var item2Ptr = Interlocked.Exchange(ref _item2Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item2Ptr);
-        var item3Ptr = Interlocked.Exchange(ref _item3Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item3Ptr);
-        var item4Ptr = Interlocked.Exchange(ref _item4Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item4Ptr);
-        var item5Ptr = Interlocked.Exchange(ref _item5Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item5Ptr);
-        var item6Ptr = Interlocked.Exchange(ref _item6Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item6Ptr);
-        var item7Ptr = Interlocked.Exchange(ref _item7Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item7Ptr);
-        var item8Ptr = Interlocked.Exchange(ref _item8Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item8Ptr);
-        var item9Ptr = Interlocked.Exchange(ref _item9Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item9Ptr);
-        var item10Ptr = Interlocked.Exchange(ref _item10Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item10Ptr);
-        var item11Ptr = Interlocked.Exchange(ref _item11Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item11Ptr);
-        var item12Ptr = Interlocked.Exchange(ref _item12Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item12Ptr);
-        var item13Ptr = Interlocked.Exchange(ref _item13Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item13Ptr);
-        var item14Ptr = Interlocked.Exchange(ref _item14Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item14Ptr);
-        var item15Ptr = Interlocked.Exchange(ref _item15Ptr, IntPtr.Zero);
-        Marshal.DestroyStructure<TChain>(item15Ptr);
+        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
+        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
+        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
+        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
+        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
+        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
+        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
+        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
+        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
+        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
+        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
+        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
+        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
+        Marshal.DestroyStructure<T14>(headPtr + Item14Offset);
+        Marshal.DestroyStructure<T15>(headPtr + Item15Offset);
 
         // Free memory block
         Marshal.FreeHGlobal(headPtr);

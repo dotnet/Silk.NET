@@ -39,5 +39,12 @@ public struct PhysicalDeviceAccelerationStructureFeaturesKHR :
         return SType = StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr;
     }
 
+    /// <inheritdoc />
+    unsafe Chain* IChainable.PNext
+    {
+        get => (Chain*) PNext;
+        set => PNext = value;
+    }
+
     #endregion
 }

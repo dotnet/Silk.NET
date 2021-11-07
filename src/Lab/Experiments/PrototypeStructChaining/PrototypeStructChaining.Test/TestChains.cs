@@ -24,8 +24,11 @@ public class TestChains
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
-        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
-            accelerationStructureFeaturesKhr.SType);
+        Assert.Equal
+        (
+            StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
+            accelerationStructureFeaturesKhr.SType
+        );
 
         // Check indices
         Assert.Equal(1, features2.IndexOf(ref indexingFeatures));
@@ -77,8 +80,11 @@ public class TestChains
 
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
-        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
-            accelerationStructureFeaturesKhr.SType);
+        Assert.Equal
+        (
+            StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
+            accelerationStructureFeaturesKhr.SType
+        );
 
         Assert.True(indexingFeatures.ShaderInputAttachmentArrayDynamicIndexing);
         Assert.True(accelerationStructureFeaturesKhr.AccelerationStructure);

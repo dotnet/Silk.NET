@@ -14,18 +14,28 @@ public struct DeviceCreateInfo : IChainStart
     // NOTE Truncated for example
 
 
-    public unsafe DeviceCreateInfo(
+    public unsafe DeviceCreateInfo
+    (
         StructureType? sType = StructureType.DeviceCreateInfo,
         void* pNext = null,
-        uint? flags = null)
+        uint? flags = null
+    )
         : this()
     {
         if (sType.HasValue)
+        {
             SType = sType.Value;
+        }
+
         if ((IntPtr) pNext != IntPtr.Zero)
+        {
             PNext = pNext;
+        }
+
         if (flags.HasValue)
+        {
             Flags = flags.Value;
+        }
         // NOTE Truncated for example
     }
 
@@ -36,8 +46,10 @@ public struct DeviceCreateInfo : IChainStart
     /// </summary>
     /// <param name="capture">The newly created chain root</param>
     /// <returns>A reference to the newly created chain.</returns>
-    public static unsafe ref DeviceCreateInfo Chain(
-        out DeviceCreateInfo capture)
+    public static unsafe ref DeviceCreateInfo Chain
+    (
+        out DeviceCreateInfo capture
+    )
     {
         capture = new DeviceCreateInfo(StructureType.DeviceCreateInfo);
         return ref capture;
@@ -47,6 +59,13 @@ public struct DeviceCreateInfo : IChainStart
     StructureType IStructuredType.StructureType()
     {
         return SType = StructureType.DeviceCreateInfo;
+    }
+
+    /// <inheritdoc />
+    unsafe Chain* IChainable.PNext
+    {
+        get => (Chain*) PNext;
+        set => PNext = value;
     }
 
     #endregion

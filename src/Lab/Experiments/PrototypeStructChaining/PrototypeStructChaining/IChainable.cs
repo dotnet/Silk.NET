@@ -8,4 +8,5 @@ namespace Silk.Net.Vulkan;
 /// to a pointer to a <see cref="Chain"/>.</para></remarks>
 public interface IChainable : IStructuredType
 {
+    unsafe Chain* PNext { get; set; }
 }
