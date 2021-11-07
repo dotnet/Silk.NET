@@ -31,7 +31,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -44,7 +44,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -57,7 +57,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -70,7 +70,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -83,7 +83,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -96,7 +96,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -109,7 +109,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -135,8 +135,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -148,8 +148,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThan(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -161,7 +161,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -174,7 +174,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -187,7 +187,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -200,7 +200,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -213,7 +213,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -226,7 +226,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -239,7 +239,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -252,7 +252,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -265,8 +265,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -278,8 +278,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThan(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -291,7 +291,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -304,7 +304,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -317,7 +317,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -330,7 +330,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -343,7 +343,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -356,7 +356,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -369,7 +369,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -382,7 +382,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -395,8 +395,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -408,8 +408,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -421,7 +421,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -434,7 +434,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -447,7 +447,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -460,7 +460,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -473,7 +473,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -486,7 +486,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -499,7 +499,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -512,7 +512,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -525,8 +525,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -538,8 +538,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -551,7 +551,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -564,7 +564,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -577,7 +577,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -590,7 +590,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -603,7 +603,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -616,7 +616,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -629,7 +629,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -642,7 +642,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -655,8 +655,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -668,8 +668,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Add(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -681,7 +681,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -694,7 +694,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -707,7 +707,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -720,7 +720,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -733,7 +733,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -746,7 +746,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -759,7 +759,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -772,7 +772,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -785,8 +785,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -798,8 +798,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Subtract(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -811,7 +811,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -824,7 +824,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -837,7 +837,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -850,7 +850,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -863,7 +863,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -876,7 +876,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -889,7 +889,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -902,7 +902,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -915,8 +915,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -928,8 +928,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Multiply(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -941,7 +941,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -954,7 +954,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -967,7 +967,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -980,7 +980,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -993,7 +993,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1006,7 +1006,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1032,7 +1032,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1045,8 +1045,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1058,8 +1058,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Divide(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1071,7 +1071,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1084,7 +1084,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1097,7 +1097,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1110,7 +1110,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1123,7 +1123,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1136,7 +1136,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1149,7 +1149,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1162,7 +1162,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1175,8 +1175,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1188,8 +1188,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.And(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1201,7 +1201,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1214,7 +1214,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1227,7 +1227,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1240,7 +1240,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1253,7 +1253,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1266,7 +1266,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1279,7 +1279,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1292,7 +1292,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1305,8 +1305,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1318,8 +1318,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Xor(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1331,7 +1331,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1344,7 +1344,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1357,7 +1357,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1370,7 +1370,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1383,7 +1383,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1396,7 +1396,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1409,7 +1409,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1422,7 +1422,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1435,8 +1435,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1448,8 +1448,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Or(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1461,7 +1461,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1474,7 +1474,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1487,7 +1487,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1500,7 +1500,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1513,7 +1513,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1526,7 +1526,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1539,7 +1539,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1552,7 +1552,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1565,8 +1565,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1578,8 +1578,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Min(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1591,7 +1591,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1604,7 +1604,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1617,7 +1617,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1630,7 +1630,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1643,7 +1643,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1656,7 +1656,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1669,7 +1669,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1682,7 +1682,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1695,8 +1695,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1708,8 +1708,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Max(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1721,7 +1721,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1734,7 +1734,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1747,7 +1747,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1760,7 +1760,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1773,7 +1773,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1786,7 +1786,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1799,7 +1799,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1812,7 +1812,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1825,8 +1825,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1838,8 +1838,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.Equal(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1851,7 +1851,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<byte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1864,7 +1864,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<sbyte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1877,7 +1877,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<ushort>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<short>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1903,7 +1903,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<uint>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1916,7 +1916,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<int>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1929,7 +1929,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<ulong>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1942,7 +1942,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<long>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1955,8 +1955,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<float>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1968,8 +1968,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd64.NotEqual(a, b);
             for (int i = 0; i < Vector64<double>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -1981,7 +1981,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -1994,7 +1994,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2007,7 +2007,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2020,7 +2020,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2033,7 +2033,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2046,7 +2046,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2059,7 +2059,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2072,7 +2072,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2085,8 +2085,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2098,8 +2098,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThan(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2111,7 +2111,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2124,7 +2124,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2137,7 +2137,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2150,7 +2150,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2163,7 +2163,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2176,7 +2176,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2189,7 +2189,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2202,7 +2202,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2215,8 +2215,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2228,8 +2228,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThan(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2241,7 +2241,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2254,7 +2254,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2267,7 +2267,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2280,7 +2280,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2293,7 +2293,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2306,7 +2306,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2319,7 +2319,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2332,7 +2332,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2345,8 +2345,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2358,8 +2358,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2371,7 +2371,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2384,7 +2384,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2397,7 +2397,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2410,7 +2410,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2423,7 +2423,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2436,7 +2436,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2449,7 +2449,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2462,7 +2462,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2475,8 +2475,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2488,8 +2488,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2501,7 +2501,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2514,7 +2514,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2527,7 +2527,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2540,7 +2540,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2553,7 +2553,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2566,7 +2566,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2579,7 +2579,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2592,7 +2592,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2605,8 +2605,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2618,8 +2618,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Add(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2631,7 +2631,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2644,7 +2644,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2657,7 +2657,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2670,7 +2670,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2683,7 +2683,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2696,7 +2696,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2709,7 +2709,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2722,7 +2722,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2735,8 +2735,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2748,8 +2748,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Subtract(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2761,7 +2761,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2774,7 +2774,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2787,7 +2787,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2800,7 +2800,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2813,7 +2813,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2826,7 +2826,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2839,7 +2839,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2852,7 +2852,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2865,8 +2865,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2878,8 +2878,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Multiply(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -2891,7 +2891,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2904,7 +2904,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2917,7 +2917,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2930,7 +2930,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2943,7 +2943,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2956,7 +2956,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2969,7 +2969,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2982,7 +2982,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -2995,8 +2995,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3008,8 +3008,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Divide(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3021,7 +3021,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3034,7 +3034,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3047,7 +3047,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3060,7 +3060,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3073,7 +3073,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3086,7 +3086,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3099,7 +3099,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3112,7 +3112,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3125,8 +3125,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3138,8 +3138,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.And(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3151,7 +3151,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3164,7 +3164,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3177,7 +3177,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3190,7 +3190,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3203,7 +3203,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3216,7 +3216,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3229,7 +3229,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3242,7 +3242,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3255,8 +3255,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3268,8 +3268,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Xor(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3281,7 +3281,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3294,7 +3294,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3307,7 +3307,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3320,7 +3320,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3333,7 +3333,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3346,7 +3346,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3359,7 +3359,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3372,7 +3372,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3385,8 +3385,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3398,8 +3398,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Or(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3411,7 +3411,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3424,7 +3424,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3437,7 +3437,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3450,7 +3450,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3463,7 +3463,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3476,7 +3476,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3489,7 +3489,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3502,7 +3502,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3515,8 +3515,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3528,8 +3528,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Min(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3541,7 +3541,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3554,7 +3554,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3567,7 +3567,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3580,7 +3580,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3593,7 +3593,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3606,7 +3606,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3619,7 +3619,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3632,7 +3632,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3645,8 +3645,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3658,8 +3658,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Max(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3671,7 +3671,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3684,7 +3684,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3697,7 +3697,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3710,7 +3710,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3723,7 +3723,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3736,7 +3736,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3749,7 +3749,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3762,7 +3762,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3775,8 +3775,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3788,8 +3788,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.Equal(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3801,7 +3801,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<byte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3814,7 +3814,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<sbyte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3827,7 +3827,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<ushort>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3840,7 +3840,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<short>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3853,7 +3853,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<uint>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3866,7 +3866,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<int>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3879,7 +3879,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<ulong>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3892,7 +3892,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<long>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3905,8 +3905,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<float>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3918,8 +3918,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd128.NotEqual(a, b);
             for (int i = 0; i < Vector128<double>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -3931,7 +3931,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3944,7 +3944,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3957,7 +3957,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3970,7 +3970,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3983,7 +3983,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -3996,7 +3996,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4009,7 +4009,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4022,7 +4022,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4035,8 +4035,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4048,8 +4048,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThan(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4061,7 +4061,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4074,7 +4074,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4087,7 +4087,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4100,7 +4100,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4113,7 +4113,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4126,7 +4126,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4139,7 +4139,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4152,7 +4152,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4165,8 +4165,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4178,8 +4178,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThan(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThan(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4191,7 +4191,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4204,7 +4204,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4217,7 +4217,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4230,7 +4230,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4243,7 +4243,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4256,7 +4256,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4269,7 +4269,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4282,7 +4282,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4295,8 +4295,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4308,8 +4308,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.GreaterThanOrEqual(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.GreaterThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4321,7 +4321,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4334,7 +4334,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4347,7 +4347,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4360,7 +4360,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4373,7 +4373,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4386,7 +4386,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4399,7 +4399,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4412,7 +4412,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4425,8 +4425,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4438,8 +4438,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.LessThanOrEqual(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.LessThanOrEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4451,7 +4451,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4464,7 +4464,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4477,7 +4477,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4490,7 +4490,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4503,7 +4503,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4516,7 +4516,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4529,7 +4529,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4542,7 +4542,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4555,8 +4555,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4568,8 +4568,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Add(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Add(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4581,7 +4581,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4594,7 +4594,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4607,7 +4607,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4620,7 +4620,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4633,7 +4633,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4646,7 +4646,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4659,7 +4659,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4672,7 +4672,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4685,8 +4685,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4698,8 +4698,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Subtract(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Subtract(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4711,7 +4711,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4724,7 +4724,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4737,7 +4737,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4750,7 +4750,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4763,7 +4763,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4776,7 +4776,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4789,7 +4789,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4802,7 +4802,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4815,8 +4815,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4828,8 +4828,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Multiply(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Multiply(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4841,7 +4841,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4854,7 +4854,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4867,7 +4867,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4880,7 +4880,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4893,7 +4893,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4906,7 +4906,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4919,7 +4919,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4932,7 +4932,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4945,8 +4945,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4958,8 +4958,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Divide(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Divide(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -4971,7 +4971,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4984,7 +4984,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -4997,7 +4997,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5010,7 +5010,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5023,7 +5023,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5036,7 +5036,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5049,7 +5049,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5062,7 +5062,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5075,8 +5075,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5088,8 +5088,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.And(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.And(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.And(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5101,7 +5101,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5114,7 +5114,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5127,7 +5127,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5140,7 +5140,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5153,7 +5153,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5166,7 +5166,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5179,7 +5179,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5192,7 +5192,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5205,8 +5205,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5218,8 +5218,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Xor(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Xor(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5231,7 +5231,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5244,7 +5244,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5257,7 +5257,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5270,7 +5270,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5283,7 +5283,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5296,7 +5296,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5309,7 +5309,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5322,7 +5322,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5335,8 +5335,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5348,8 +5348,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Or(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Or(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5361,7 +5361,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5374,7 +5374,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5387,7 +5387,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5400,7 +5400,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5413,7 +5413,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5426,7 +5426,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5439,7 +5439,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5452,7 +5452,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5465,8 +5465,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5478,8 +5478,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Min(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Min(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5491,7 +5491,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5504,7 +5504,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5517,7 +5517,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5530,7 +5530,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5543,7 +5543,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5556,7 +5556,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5569,7 +5569,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5582,7 +5582,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5595,8 +5595,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5608,8 +5608,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Max(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i)); 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Max(a.GetElement(i), b.GetElement(i));
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5621,7 +5621,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5634,7 +5634,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5647,7 +5647,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5660,7 +5660,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5673,7 +5673,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5686,7 +5686,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5699,7 +5699,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5712,7 +5712,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5725,8 +5725,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5738,8 +5738,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.Equal(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.Equal(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5751,7 +5751,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<byte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<byte>.AllBitsSet : Scalar<byte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5764,7 +5764,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<sbyte>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<sbyte>.AllBitsSet : Scalar<sbyte>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5777,7 +5777,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<ushort>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ushort>.AllBitsSet : Scalar<ushort>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5790,7 +5790,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<short>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<short>.AllBitsSet : Scalar<short>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5803,7 +5803,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<uint>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<uint>.AllBitsSet : Scalar<uint>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5816,7 +5816,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<int>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<int>.AllBitsSet : Scalar<int>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5829,7 +5829,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<ulong>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<ulong>.AllBitsSet : Scalar<ulong>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5842,7 +5842,7 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<long>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero; 
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<long>.AllBitsSet : Scalar<long>.Zero;
                 Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
@@ -5855,8 +5855,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<float>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<float>.AllBitsSet : Scalar<float>.Zero;
+                Assert.True(expected == actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
         [Fact]
@@ -5868,8 +5868,8 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd256.NotEqual(a, b);
             for (int i = 0; i < Vector256<double>.Count; i++)
             {
-                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.NotEqual(a.GetElement(i), b.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
+                Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
     }

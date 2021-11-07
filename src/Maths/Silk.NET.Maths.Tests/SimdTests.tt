@@ -35,8 +35,9 @@ namespace Silk.NET.Maths.Tests
             for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
 <# var boolProcess = method is "Add" or "Subtract" or "Multiply" or "Divide" or "Min" or "Max" or "And" or "Xor" or "Or" ? "" : $" ? Scalar<{type}>.AllBitsSet : Scalar<{type}>.Zero"; #>
             {
-                var expected = Scalar.<#= method #>(a.GetElement(i), b.GetElement(i))<#= boolProcess #>; 
-                Assert.True(expected == actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+                var expected = Scalar.<#= method #>(a.GetElement(i), b.GetElement(i))<#= boolProcess #>;
+<# var nanProcess = type is "float" or "double" ? $" || {type}.IsNaN(expected) && {type}.IsNaN(actual.GetElement(i))" : ""; #>
+                Assert.True(expected == actual.GetElement(i)<#= nanProcess #>, $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
 <# } #>
