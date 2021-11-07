@@ -133,7 +133,7 @@ namespace Silk.NET.Maths
             Pi = Simd256.Create(Scalar<T>.Pi);
             PiOver2 = Simd256.Create(Scalar<T>.PiOver2);
             Tau = Simd256.Create(Scalar<T>.Tau);
-            MaxValueOver2 = Simd256.Divide(Simd256<T>.MaxValue, Simd256<T>.Two);
+            MaxValueOver2 = Simd256.Add(Simd256.Divide(Simd256<T>.MaxValue, Simd256<T>.Two), Simd256<T>.One);
 #if NET5_0_OR_GREATER
             AllBitsSet = Vector256<T>.AllBitsSet;
 #else
