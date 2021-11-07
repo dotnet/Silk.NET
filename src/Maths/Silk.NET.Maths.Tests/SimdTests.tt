@@ -13,14 +13,20 @@ using System.Runtime.Intrinsics;
 
 namespace Silk.NET.Maths.Tests
 {
-    public unsafe class SimdTests_Vector_Vector_Vector
+    internal unsafe static class SimdTestsUtils
     {
-        static void FillWithRandomData(void* ptr, int len)
+        internal static void FillWithRandomData(void* ptr, int len)
         {
             var rand = new Random(10);
             for (int i = 0; i < len; i++)
                 *((byte*)ptr + i) = (byte)rand.Next(4, 12);
         }
+    }
+
+    // Vector x Vector -> Vector
+    public unsafe class SimdTests_Vector_Vector_Vector
+    {
+        
 
 <# foreach (var bitness in new [] { 64, 128, 256 }) { #>
 <# foreach (var method in new [] { "GreaterThan", "LessThan", "GreaterThanOrEqual", "LessThanOrEqual", "Add", "Subtract", "Multiply", "Divide", "And", "Xor", "Or", "Min", "Max", "Equal", "NotEqual" }) { #>
@@ -29,8 +35,8 @@ namespace Silk.NET.Maths.Tests
         public void Simd<#= bitness #>_<#= method #>_<#= type #>()
         {
             Vector<#= bitness #><<#= type #>> a, b;
-            FillWithRandomData(&a, <#= bitness / 8 #>); 
-            FillWithRandomData(&b, <#= bitness / 8 #>);
+            SimdTestsUtils.FillWithRandomData(&a, <#= bitness / 8 #>); 
+            SimdTestsUtils.FillWithRandomData(&b, <#= bitness / 8 #>);
             var actual = Simd<#= bitness #>.<#= method #>(a, b);
             for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
 <# var boolProcess = method is "Add" or "Subtract" or "Multiply" or "Divide" or "Min" or "Max" or "And" or "Xor" or "Or" ? "" : $" ? Scalar<{type}>.AllBitsSet : Scalar<{type}>.Zero"; #>
@@ -38,6 +44,31 @@ namespace Silk.NET.Maths.Tests
                 var expected = Scalar.<#= method #>(a.GetElement(i), b.GetElement(i))<#= boolProcess #>;
 <# var nanProcess = type is "float" or "double" ? $" || {type}.IsNaN(expected) && {type}.IsNaN(actual.GetElement(i))" : ""; #>
                 Assert.True(expected == actual.GetElement(i)<#= nanProcess #>, $"\nId {i}\na[i]: {a.GetElement(i)}\nb[i]: {b.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+<# } #>
+<# } #>
+<# } #>
+    }
+
+
+    // Vector -> Vector
+    public unsafe class SimdTests_Vector_Vector
+    {
+<# foreach (var bitness in new [] { 64, 128, 256 }) { #>
+<# foreach (var method in new [] { "Not", "Abs" }) { #>
+<# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
+        [Fact]
+        public void Simd<#= bitness #>_<#= method #>_<#= type #>()
+        {
+            Vector<#= bitness #><<#= type #>> a;
+            SimdTestsUtils.FillWithRandomData(&a, <#= bitness / 8 #>); 
+            var actual = Simd<#= bitness #>.<#= method #>(a);
+            for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
+            {
+                var expected = Scalar.<#= method #>(a.GetElement(i));
+<# var nanProcess = type is "float" or "double" ? $" || {type}.IsNaN(expected) && {type}.IsNaN(actual.GetElement(i))" : ""; #>
+                Assert.True(expected == actual.GetElement(i)<#= nanProcess #>, $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
 <# } #>
