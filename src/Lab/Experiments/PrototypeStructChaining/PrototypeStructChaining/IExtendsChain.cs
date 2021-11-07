@@ -1,7 +1,8 @@
 namespace Silk.Net.Vulkan;
 
 /// <summary>
-/// Generic interface indicating which chain this type can be added to.
+/// Marks a <see cref="IChainable">chainable</see> struct indicating which <see cref="IChainStart">chain</see> this type
+/// extends.
 /// </summary>
 /// <typeparam name="TChain">A chain start structure.</typeparam>
 public interface IExtendsChain<out TChain> : IChainable

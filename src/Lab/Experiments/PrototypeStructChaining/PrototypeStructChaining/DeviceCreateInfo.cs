@@ -39,8 +39,7 @@ public struct DeviceCreateInfo : IChainStart
     public static unsafe ref DeviceCreateInfo Chain(
         out DeviceCreateInfo capture)
     {
-        capture = new DeviceCreateInfo(
-            StructureType.DeviceCreateInfo);
+        capture = new DeviceCreateInfo(StructureType.DeviceCreateInfo);
         return ref capture;
     }
 

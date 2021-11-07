@@ -70,36 +70,6 @@ public static class ChainExtensions
     }
 
     /// <summary>
-    /// Returns the index of the <paramref name="value"/> in the <paramref name="chain"/>, if present.
-    /// </summary>
-    /// <param name="chain">The chain</param>
-    /// <param name="value">The structure value</param>
-    /// <typeparam name="TChain">The type of the current chain</typeparam>
-    /// <typeparam name="TNext">The type of the value</typeparam>
-    /// <returns>The zero-indexed index if found; otherwise -1.</returns>
-    public static unsafe int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
-        where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain>
-    {
-        // Ensure structure type of chain is set.
-        chain.StructureType();
-
-        var index = 0;
-        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var valuePtr = (Chain*) Unsafe.AsPointer(ref value);
-        // Follow chain
-        do
-        {
-            if (currentPtr == valuePtr)
-                return index;
-            currentPtr = currentPtr->PNext;
-            index++;
-        } while (currentPtr is not null);
-
-        return -1;
-    }
-
-    /// <summary>
     /// Adds a structure to the end of the chain.
     /// </summary>
     /// <param name="chain">The current chain</param>
@@ -184,5 +154,35 @@ public static class ChainExtensions
         currentPtr->PNext = (Chain*) Unsafe.AsPointer(ref next);
         added = true;
         return ref chain;
+    }
+
+    /// <summary>
+    /// Returns the index of the <paramref name="value"/> in the <paramref name="chain"/>, if present.
+    /// </summary>
+    /// <param name="chain">The chain</param>
+    /// <param name="value">The structure value</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the value</typeparam>
+    /// <returns>The zero-indexed index if found; otherwise -1.</returns>
+    public static unsafe int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
+        where TChain : struct, IChainStart
+        where TNext : struct, IExtendsChain<TChain>
+    {
+        // Ensure structure type of chain is set.
+        chain.StructureType();
+
+        var index = 0;
+        var currentPtr = (Chain*) Unsafe.AsPointer(ref chain);
+        var valuePtr = (Chain*) Unsafe.AsPointer(ref value);
+        // Follow chain
+        do
+        {
+            if (currentPtr == valuePtr)
+                return index;
+            currentPtr = currentPtr->PNext;
+            index++;
+        } while (currentPtr is not null);
+
+        return -1;
     }
 }

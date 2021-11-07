@@ -33,8 +33,7 @@ public struct PhysicalDeviceFeatures2 :
     public static unsafe ref PhysicalDeviceFeatures2 Chain(
         out PhysicalDeviceFeatures2 capture)
     {
-        capture = new PhysicalDeviceFeatures2(
-            StructureType.PhysicalDeviceFeatures2);
+        capture = new PhysicalDeviceFeatures2(StructureType.PhysicalDeviceFeatures2);
         return ref capture;
     }
 

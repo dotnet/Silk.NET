@@ -1,7 +1,7 @@
 # Summary
 
 This proposal is a minimal enhancement to [`Silk.Net.Vulkan`](../../src/Vulkan/Silk.NET.Vulkan) to mark all structures
-that contain a `StructureType SType` field (in the first position) as implementing the interface `IStructuredType`.
+that contain a `StructureType SType` field as implementing the interface `IStructuredType`.
 
 This is a tiny pre-requisite for
 [Proposal - Vulkan Struct Chaining - #2 Unmanaged Chaining.md](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
@@ -24,11 +24,22 @@ correctly set when passing to Vulkan, and to provide a mechanism for doing so.
 - The `IStructuredType` interface will usually not be implemented directly, instead `IChainable` (from
   the [unmanaged chaining proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md))
   will extend this interface.
-- The BuildTools should instead only add this interface to any structure that meets the above constraints (the first
-  field must be `StructureType SType`) that _doesn't_ already add the `IChainable` interface. Though I believe this
-  scenario won't occur in the current Vulkan specification, I need to check all valid StructureType structures to
+- The BuildTools should instead only add this interface to any structure that meets the above constraint (the structure
+  has a `StructureType SType` field) that _doesn't_ already add the `IChainable` interface. Though I believe this
+  scenario won't occur in the current Vulkan specification, we'd need to check all valid StructureType structures to
   confirm, and regardless, writing the code to add the interface in such scenarios will future proof it.
-- Whenever the `IStructuredType` is added to an interface
+- Whenever the `IStructuredType` is added to an interface (either directly or indirectly) the
+  corresponding `StructureType()` method should also be explicitly
+  implemented ([see below](#istructuretype-implementation)).
+- This proposed interface could easily be combined/merged with the `IChainable`
+  interface which [is proposed](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md) as an
+  extension. However, that interface marks a struct as having a second field `void* PNext`, as well as requiring
+  that `StructureType sType` field is in the first position, which is not required by this proposal (but is allowed).
+  Keeping the two concepts separate is good encapsulation and good for supporting future changes. The concept
+  that an `SType` must be correct is somewhat different to the concept of a chain (implied by `void* PNext`).
+- To be clear, this proposal does not need to guarantee that the `SType` field is in position 0 (i.e. first),
+  that requirement is only necessary to implement the functionality
+  [proposed by the unmanaged chaining system](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
 
 # Implementation Notes
 
@@ -51,13 +62,17 @@ which sets the `SType` correctly and returns it to the caller.
 ```csharp
 namespace Silk.Net.Vulkan;
 
+/// <summary>
+/// Base interface for any struct that has a <see cref="StructureType"/> field called `SType`, that must be correctly
+/// set when passing into the Vulkan API.
+/// </summary>
 public interface IStructuredType
 {
     /// <summary>
     /// Gets the structured type's <see cref="Vulkan.StructureType"/> enum value.
     /// </summary>
     /// <remarks>
-    /// Retrieving the <see cref="Vulkan.StructureType"/> also coerces it to the correct value.
+    /// Retrieving the <see cref="Vulkan.StructureType"/> also ensures it is set to the correct value.
     /// </remarks>
     StructureType StructureType();
 }
