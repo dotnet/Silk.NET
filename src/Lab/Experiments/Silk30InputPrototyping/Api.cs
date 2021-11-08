@@ -10,55 +10,11 @@ using Silk.NET.Maths;
 namespace Silk.NET.Input;
 
 // ---
-// ADDED: Enums from MouseButton
-// RENAMED: MouseButton.Left to ButtonName.LeftMouseButton
-// RENAMED: MouseButton.Right to ButtonName.RightMouseButton
-// RENAMED: MouseButton.Middle to ButtonName.MiddleMouseButton
-// RENAMED: MouseButton.Button4 to ButtonName.MouseButton4
-// RENAMED: MouseButton.Button5 to ButtonName.MouseButton5
-// RENAMED: MouseButton.Button6 to ButtonName.MouseButton6
-// RENAMED: MouseButton.Button7 to ButtonName.MouseButton7
-// RENAMED: MouseButton.Button8 to ButtonName.MouseButton8
-// RENAMED: MouseButton.Button9 to ButtonName.MouseButton9
-// RENAMED: MouseButton.Button10 to ButtonName.MouseButton10
-// RENAMED: MouseButton.Button11 to ButtonName.MouseButton11
-// RENAMED: MouseButton.Button12 to ButtonName.MouseButton12
-// ADDED: ButtonName.MouseButton13 through ButtonName.MouseButton31
+// RENAMED: from ButtonName
 // ---
-public enum ButtonName
+public enum JoystickButton
 {
     Unknown = -1,
-    LeftMouseButton = 0,
-    RightMouseButton,
-    MiddleMouseButton,
-    MouseButton4,
-    MouseButton5,
-    MouseButton6,
-    MouseButton7,
-    MouseButton8,
-    MouseButton9,
-    MouseButton10,
-    MouseButton11,
-    MouseButton12,
-    MouseButton13,
-    MouseButton14,
-    MouseButton15,
-    MouseButton16,
-    MouseButton17,
-    MouseButton18,
-    MouseButton19,
-    MouseButton20,
-    MouseButton21,
-    MouseButton22,
-    MouseButton23,
-    MouseButton24,
-    MouseButton25,
-    MouseButton26,
-    MouseButton27,
-    MouseButton28,
-    MouseButton29,
-    MouseButton30,
-    MouseButton31,
     A,
     B,
     X,
@@ -74,6 +30,45 @@ public enum ButtonName
     DPadRight,
     DPadDown,
     DPadLeft
+}
+
+// ---
+// ADDED: Button13 through Button31
+// ---
+public enum MouseButton
+{
+    Unknown = -1,
+    LeftButton = 0,
+    RightButton,
+    MiddleButton,
+    Button4,
+    Button5,
+    Button6,
+    Button7,
+    Button8,
+    Button9,
+    Button10,
+    Button11,
+    Button12,
+    Button13,
+    Button14,
+    Button15,
+    Button16,
+    Button17,
+    Button18,
+    Button19,
+    Button20,
+    Button21,
+    Button22,
+    Button23,
+    Button24,
+    Button25,
+    Button26,
+    Button27,
+    Button28,
+    Button29,
+    Button30,
+    Button31,
 }
 
 // ---
@@ -123,7 +118,7 @@ public readonly record struct Axis(int Index, float Position);
 // ---
 // RENAMED: from Button
 // ---
-public readonly record struct ButtonState(ButtonName Name, int Index, bool Pressed);
+public readonly record struct ButtonState<T>(T Name, int Index, bool Pressed);
 
 // ---
 // Unchanged
@@ -159,16 +154,17 @@ public readonly record struct CursorState(Vector2 Position);
 
 // ---
 // REFACTOR: IMouse to MouseState - getters moved out to be a immutable record
+// REMOVED: Support for multiple scroll wheels (it wasn't properly plumbed in anyway)
 // ---
 public readonly partial record struct MouseState
 (
     IInputDevice Device,
-    ReadOnlyMemory<ButtonState> Buttons,
-    ReadOnlyMemory<Vector2> ScrollWheels,
+    ReadOnlyMemory<ButtonState<MouseButton>> Buttons,
+    Vector2 ScrollWheel,
     CursorState Cursor
 )
 {
-    public partial bool IsButtonPressed(ButtonName btn);
+    public partial bool IsButtonPressed(MouseButton btn);
 }
 
 // ---
@@ -192,10 +188,30 @@ public readonly record struct MouseConfiguration
     CursorConfiguration? Cursor = null
 );
 
+public readonly record struct DeviceInfo
+(
+    IInputBackend Backend,
+    int BackendSpecificIndex,
+    string Name,
+    bool IsConnected
+);
+
+public readonly record struct MouseButtonEvent(IMouse Mouse, IReadOnlyList<ButtonState> Buttons);
+public readonly record struct MouseClickEvent(IMouse Mouse, ButtonName Button, Vector2 Position, Vector2 Hotspot);
+public readonly record struct MouseMoveEvent(IMouse Mouse, Vector2 Position, Vector2 Previous);
+
 public interface IInputDevice
 {
+    ref readonly DeviceInfo Info { get; }
     bool TryGet<T>(out T config);
     bool TrySet<T>(in T config, out string error);
+}
+
+public interface IInputBackend
+{
+    IReadOnlyList<IInputDevice> Devices { get; }
+    event Action<IReadOnlyList<IInputDevice>>? DevicesAdded;
+    event Action<IReadOnlyList<IInputDevice>>? DevicesRemoved;
 }
 
 public interface IMouse : IInputDevice
@@ -203,7 +219,13 @@ public interface IMouse : IInputDevice
     // For IInputDevice.TryGet accepts Ts: MouseState, CursorState, MouseConfiguration, CursorConfiguration
     // For IInputDevice.TrySet accepts Ts: MouseConfiguration, CursorConfiguration, CursorState
     MouseState State { get; }
-    MouseConfiguration Configuration { get; } 
+    ref readonly MouseConfiguration Configuration { get; }
+    event Action<MouseButtonEvent> MouseDown;
+    event Action<MouseButtonEvent> MouseUp;
+    event Action<MouseClickEvent> Click;
+    event Action<MouseClickEvent> DoubleClick;
+    event Action<MouseMoveEvent> MouseMove;
+    event Action<MouseMoveEvent> Scroll;
 }
 
 public static partial class MouseExtensions
@@ -230,4 +252,20 @@ public static partial class MouseExtensions
     public static partial IMouse SetDoubleClickTime(this IMouse mouse, int value);
     public static partial IMouse SetDoubleClickRange(this IMouse mouse, int value);
     public static partial IMouse SetCursor(this IMouse mouse, CursorConfiguration value);
+}
+
+public readonly record struct KeyboardState
+(
+    
+);
+
+public interface IKeyboard : IInputDevice
+{
+    IReadOnlyList<Key> SupportedKeys { get; }
+    bool IsKeyPressed(Key key);
+    event Action<IKeyboard, Key, int>? KeyDown;
+    event Action<IKeyboard, Key, int>? KeyUp;
+    event Action<IKeyboard, char>? KeyChar;
+    void BeginInput();
+    void EndInput();
 }
