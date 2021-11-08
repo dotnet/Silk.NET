@@ -109,7 +109,10 @@ namespace Silk.NET.Maths
         /// </remarks>
         public static readonly T RadiansPerDegree;
         
-        internal static readonly T AllBitsSet = Scalar.Not(Scalar<T>.Zero);
+        /// <summary>
+        /// Returns the value with all its bits set to 1.
+        /// </summary>
+        public static readonly T AllBitsSet;
 
         internal static readonly bool IntrinsicsApplicable = typeof(T) == typeof(byte)
                                                             || typeof(T) == typeof(sbyte)
@@ -396,7 +399,8 @@ namespace Silk.NET.Maths
                 // if it's none of these cases, don't do the general cases.
                 return;
             }
-
+            
+            AllBitsSet = Scalar.Not(Scalar<T>.Zero);
             PiOver2 = Scalar.Divide(Pi, Two);
             DegreesPerRadian = Scalar.Divide(Scalar.As<float, T>(180), Pi);
             RadiansPerDegree = Scalar.Divide(Pi, Scalar.As<float, T>(180));
