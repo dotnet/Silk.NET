@@ -20,6 +20,8 @@ To make this simpler for both me, and anyone who reads this, I've provided the A
 This same API would also be amended to the Vectorization/SIMD proposal, if both are accepted.
 
 ```cs
+static readonly Silk.NET.Maths.Scalar<T>.AllBitsSet -> T
+
 static Silk.NET.Maths.Scalar.And<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Or<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Xor<T>(T left, T right) -> T
