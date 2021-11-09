@@ -215,7 +215,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                 foreach (var alias in aList)
                 {
-                    var aliasStruct = @struct.Clone(Naming.Translate(TrimName(alias, task), prefix), alias);
+                    var aliasStruct = @struct.Clone(Naming.TranslateLite(TrimName(alias, task), prefix), alias);
                     aliasStruct.Attributes.Add
                     (
                         new()
