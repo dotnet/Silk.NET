@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageStencilUsageCreateInfo")]
     [NativeName("Aliases", "VkImageStencilUsageCreateInfoEXT")]
-    public unsafe partial struct ImageStencilUsageCreateInfo : IExtendsChain<ImageCreateInfo>, IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2Khr>
+    public unsafe partial struct ImageStencilUsageCreateInfo : IExtendsChain<ImageCreateInfo>, IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2KHR>
     {
         public ImageStencilUsageCreateInfo
         (

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoProfilesKHR")]
-    public unsafe partial struct VideoProfilesKHR : IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2Khr>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<BufferCreateInfo>
+    public unsafe partial struct VideoProfilesKHR : IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2KHR>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<BufferCreateInfo>
     {
         public VideoProfilesKHR
         (

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
-    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT : IExtendsChain<RenderPassCreateInfo>, IExtendsChain<RenderPassCreateInfo2>, IExtendsChain<RenderPassCreateInfo2Khr>
+    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT : IExtendsChain<RenderPassCreateInfo>, IExtendsChain<RenderPassCreateInfo2>, IExtendsChain<RenderPassCreateInfo2KHR>
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryRequirementsInfo2KHR")]
     [NativeName("AliasOf", "VkBufferMemoryRequirementsInfo2")]
-    public unsafe partial struct BufferMemoryRequirementsInfo2Khr : IChainable
+    public unsafe partial struct BufferMemoryRequirementsInfo2KHR : IChainable
     {
-        public BufferMemoryRequirementsInfo2Khr
+        public BufferMemoryRequirementsInfo2KHR
         (
             StructureType? sType = StructureType.BufferMemoryRequirementsInfo2,
             void* pNext = null,

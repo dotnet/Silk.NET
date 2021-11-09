@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePointClippingProperties")]
     [NativeName("Aliases", "VkPhysicalDevicePointClippingPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePointClippingProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDevicePointClippingProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDevicePointClippingProperties
         (

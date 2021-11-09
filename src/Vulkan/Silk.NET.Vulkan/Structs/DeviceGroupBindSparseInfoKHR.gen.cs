@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupBindSparseInfoKHR")]
     [NativeName("AliasOf", "VkDeviceGroupBindSparseInfo")]
-    public unsafe partial struct DeviceGroupBindSparseInfoKhr : IExtendsChain<BindSparseInfo>
+    public unsafe partial struct DeviceGroupBindSparseInfoKHR : IExtendsChain<BindSparseInfo>
     {
-        public DeviceGroupBindSparseInfoKhr
+        public DeviceGroupBindSparseInfoKHR
         (
             StructureType? sType = StructureType.DeviceGroupBindSparseInfo,
             void* pNext = null,

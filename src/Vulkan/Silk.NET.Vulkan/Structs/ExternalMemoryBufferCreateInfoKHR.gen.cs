@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryBufferCreateInfoKHR")]
     [NativeName("AliasOf", "VkExternalMemoryBufferCreateInfo")]
-    public unsafe partial struct ExternalMemoryBufferCreateInfoKhr : IExtendsChain<BufferCreateInfo>
+    public unsafe partial struct ExternalMemoryBufferCreateInfoKHR : IExtendsChain<BufferCreateInfo>
     {
-        public ExternalMemoryBufferCreateInfoKhr
+        public ExternalMemoryBufferCreateInfoKHR
         (
             StructureType? sType = StructureType.ExternalMemoryBufferCreateInfo,
             void* pNext = null,

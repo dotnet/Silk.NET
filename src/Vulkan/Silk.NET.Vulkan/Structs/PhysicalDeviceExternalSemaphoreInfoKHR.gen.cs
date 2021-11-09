@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalSemaphoreInfoKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceExternalSemaphoreInfo")]
-    public unsafe partial struct PhysicalDeviceExternalSemaphoreInfoKhr : IChainStart
+    public unsafe partial struct PhysicalDeviceExternalSemaphoreInfoKHR : IChainStart
     {
-        public PhysicalDeviceExternalSemaphoreInfoKhr
+        public PhysicalDeviceExternalSemaphoreInfoKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref PhysicalDeviceExternalSemaphoreInfoKhr Chain(
-            out PhysicalDeviceExternalSemaphoreInfoKhr capture)
+        public static unsafe ref PhysicalDeviceExternalSemaphoreInfoKHR Chain(
+            out PhysicalDeviceExternalSemaphoreInfoKHR capture)
         {
-            capture = new PhysicalDeviceExternalSemaphoreInfoKhr(StructureType.PhysicalDeviceExternalSemaphoreInfo);
+            capture = new PhysicalDeviceExternalSemaphoreInfoKHR(StructureType.PhysicalDeviceExternalSemaphoreInfo);
             return ref capture;
         }
     }

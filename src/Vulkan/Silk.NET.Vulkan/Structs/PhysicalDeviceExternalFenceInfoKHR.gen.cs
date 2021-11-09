@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalFenceInfoKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceExternalFenceInfo")]
-    public unsafe partial struct PhysicalDeviceExternalFenceInfoKhr : IChainable
+    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR : IChainable
     {
-        public PhysicalDeviceExternalFenceInfoKhr
+        public PhysicalDeviceExternalFenceInfoKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceExternalFenceInfo,
             void* pNext = null,

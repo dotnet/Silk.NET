@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDriverPropertiesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceDriverProperties")]
-    public unsafe partial struct PhysicalDeviceDriverPropertiesKhr : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceDriverPropertiesKHR : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
-        public PhysicalDeviceDriverPropertiesKhr
+        public PhysicalDeviceDriverPropertiesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceDriverProperties,
             void* pNext = null,

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryBudgetPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT : IExtendsChain<PhysicalDeviceMemoryProperties2>, IExtendsChain<PhysicalDeviceMemoryProperties2Khr>
+    public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT : IExtendsChain<PhysicalDeviceMemoryProperties2>, IExtendsChain<PhysicalDeviceMemoryProperties2KHR>
     {
         public PhysicalDeviceMemoryBudgetPropertiesEXT
         (

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalSemaphorePropertiesKHR")]
     [NativeName("AliasOf", "VkExternalSemaphoreProperties")]
-    public unsafe partial struct ExternalSemaphorePropertiesKhr : IChainable
+    public unsafe partial struct ExternalSemaphorePropertiesKHR : IChainable
     {
-        public ExternalSemaphorePropertiesKhr
+        public ExternalSemaphorePropertiesKHR
         (
             StructureType? sType = StructureType.ExternalSemaphoreProperties,
             void* pNext = null,

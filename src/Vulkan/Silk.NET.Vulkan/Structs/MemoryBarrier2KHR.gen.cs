@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryBarrier2KHR")]
-    public unsafe partial struct MemoryBarrier2KHR : IExtendsChain<SubpassDependency2>, IExtendsChain<SubpassDependency2Khr>
+    public unsafe partial struct MemoryBarrier2KHR : IExtendsChain<SubpassDependency2>, IExtendsChain<SubpassDependency2KHR>
     {
         public MemoryBarrier2KHR
         (

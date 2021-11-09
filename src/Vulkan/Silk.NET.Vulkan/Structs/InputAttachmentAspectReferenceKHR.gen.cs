@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInputAttachmentAspectReferenceKHR")]
     [NativeName("AliasOf", "VkInputAttachmentAspectReference")]
-    public unsafe partial struct InputAttachmentAspectReferenceKhr
+    public unsafe partial struct InputAttachmentAspectReferenceKHR
     {
-        public InputAttachmentAspectReferenceKhr
+        public InputAttachmentAspectReferenceKHR
         (
             uint? subpass = null,
             uint? inputAttachmentIndex = null,

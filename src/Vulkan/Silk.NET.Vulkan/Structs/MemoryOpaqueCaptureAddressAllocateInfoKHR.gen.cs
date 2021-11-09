@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfoKHR")]
     [NativeName("AliasOf", "VkMemoryOpaqueCaptureAddressAllocateInfo")]
-    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKhr : IExtendsChain<MemoryAllocateInfo>
+    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR : IExtendsChain<MemoryAllocateInfo>
     {
-        public MemoryOpaqueCaptureAddressAllocateInfoKhr
+        public MemoryOpaqueCaptureAddressAllocateInfoKHR
         (
             StructureType? sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
             void* pNext = null,

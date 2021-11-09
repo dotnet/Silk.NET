@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescription2KHR")]
     [NativeName("AliasOf", "VkSubpassDescription2")]
-    public unsafe partial struct SubpassDescription2Khr : IChainStart
+    public unsafe partial struct SubpassDescription2KHR : IChainStart
     {
-        public SubpassDescription2Khr
+        public SubpassDescription2KHR
         (
             StructureType? sType = StructureType.SubpassDescription2,
             void* pNext = null,
@@ -187,10 +187,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref SubpassDescription2Khr Chain(
-            out SubpassDescription2Khr capture)
+        public static unsafe ref SubpassDescription2KHR Chain(
+            out SubpassDescription2KHR capture)
         {
-            capture = new SubpassDescription2Khr(StructureType.SubpassDescription2);
+            capture = new SubpassDescription2KHR(StructureType.SubpassDescription2);
             return ref capture;
         }
     }

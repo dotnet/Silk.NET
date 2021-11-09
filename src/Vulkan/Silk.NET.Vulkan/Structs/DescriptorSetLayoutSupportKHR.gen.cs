@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutSupportKHR")]
     [NativeName("AliasOf", "VkDescriptorSetLayoutSupport")]
-    public unsafe partial struct DescriptorSetLayoutSupportKhr : IChainStart
+    public unsafe partial struct DescriptorSetLayoutSupportKHR : IChainStart
     {
-        public DescriptorSetLayoutSupportKhr
+        public DescriptorSetLayoutSupportKHR
         (
             StructureType? sType = StructureType.DescriptorSetLayoutSupport,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref DescriptorSetLayoutSupportKhr Chain(
-            out DescriptorSetLayoutSupportKhr capture)
+        public static unsafe ref DescriptorSetLayoutSupportKHR Chain(
+            out DescriptorSetLayoutSupportKHR capture)
         {
-            capture = new DescriptorSetLayoutSupportKhr(StructureType.DescriptorSetLayoutSupport);
+            capture = new DescriptorSetLayoutSupportKHR(StructureType.DescriptorSetLayoutSupport);
             return ref capture;
         }
     }

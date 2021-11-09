@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedRequirementsKHR")]
     [NativeName("AliasOf", "VkMemoryDedicatedRequirements")]
-    public unsafe partial struct MemoryDedicatedRequirementsKhr : IExtendsChain<MemoryRequirements2>, IExtendsChain<MemoryRequirements2Khr>
+    public unsafe partial struct MemoryDedicatedRequirementsKHR : IExtendsChain<MemoryRequirements2>, IExtendsChain<MemoryRequirements2KHR>
     {
-        public MemoryDedicatedRequirementsKhr
+        public MemoryDedicatedRequirementsKHR
         (
             StructureType? sType = StructureType.MemoryDedicatedRequirements,
             void* pNext = null,

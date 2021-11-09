@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubpassShadingPropertiesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceSubpassShadingPropertiesHUAWEI
         (

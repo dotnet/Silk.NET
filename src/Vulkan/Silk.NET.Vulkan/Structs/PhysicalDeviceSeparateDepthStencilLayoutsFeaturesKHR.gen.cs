@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures")]
-    public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKhr
+        public PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
             void* pNext = null,

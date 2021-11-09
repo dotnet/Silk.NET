@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreWaitInfoKHR")]
     [NativeName("AliasOf", "VkSemaphoreWaitInfo")]
-    public unsafe partial struct SemaphoreWaitInfoKhr : IChainable
+    public unsafe partial struct SemaphoreWaitInfoKHR : IChainable
     {
-        public SemaphoreWaitInfoKhr
+        public SemaphoreWaitInfoKHR
         (
             StructureType? sType = StructureType.SemaphoreWaitInfo,
             void* pNext = null,

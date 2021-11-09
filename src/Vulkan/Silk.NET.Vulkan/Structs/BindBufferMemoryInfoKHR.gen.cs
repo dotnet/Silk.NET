@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryInfoKHR")]
     [NativeName("AliasOf", "VkBindBufferMemoryInfo")]
-    public unsafe partial struct BindBufferMemoryInfoKhr : IChainStart
+    public unsafe partial struct BindBufferMemoryInfoKHR : IChainStart
     {
-        public BindBufferMemoryInfoKhr
+        public BindBufferMemoryInfoKHR
         (
             StructureType? sType = StructureType.BindBufferMemoryInfo,
             void* pNext = null,
@@ -99,10 +99,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref BindBufferMemoryInfoKhr Chain(
-            out BindBufferMemoryInfoKhr capture)
+        public static unsafe ref BindBufferMemoryInfoKHR Chain(
+            out BindBufferMemoryInfoKHR capture)
         {
-            capture = new BindBufferMemoryInfoKhr(StructureType.BindBufferMemoryInfo);
+            capture = new BindBufferMemoryInfoKHR(StructureType.BindBufferMemoryInfo);
             return ref capture;
         }
     }

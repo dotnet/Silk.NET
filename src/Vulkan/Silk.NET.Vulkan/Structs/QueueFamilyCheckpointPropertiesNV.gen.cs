@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyCheckpointPropertiesNV")]
-    public unsafe partial struct QueueFamilyCheckpointPropertiesNV : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2Khr>
+    public unsafe partial struct QueueFamilyCheckpointPropertiesNV : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyCheckpointPropertiesNV
         (

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageFormatProperties2KHR")]
     [NativeName("AliasOf", "VkSparseImageFormatProperties2")]
-    public unsafe partial struct SparseImageFormatProperties2Khr : IChainable
+    public unsafe partial struct SparseImageFormatProperties2KHR : IChainable
     {
-        public SparseImageFormatProperties2Khr
+        public SparseImageFormatProperties2KHR
         (
             StructureType? sType = StructureType.SparseImageFormatProperties2,
             void* pNext = null,

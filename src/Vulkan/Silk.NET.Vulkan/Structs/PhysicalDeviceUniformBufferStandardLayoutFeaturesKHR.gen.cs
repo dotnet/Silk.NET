@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceUniformBufferStandardLayoutFeatures")]
-    public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceUniformBufferStandardLayoutFeaturesKhr
+        public PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures,
             void* pNext = null,

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportSemaphoreCreateInfoKHR")]
     [NativeName("AliasOf", "VkExportSemaphoreCreateInfo")]
-    public unsafe partial struct ExportSemaphoreCreateInfoKhr : IExtendsChain<SemaphoreCreateInfo>
+    public unsafe partial struct ExportSemaphoreCreateInfoKHR : IExtendsChain<SemaphoreCreateInfo>
     {
-        public ExportSemaphoreCreateInfoKhr
+        public ExportSemaphoreCreateInfoKHR
         (
             StructureType? sType = StructureType.ExportSemaphoreCreateInfo,
             void* pNext = null,

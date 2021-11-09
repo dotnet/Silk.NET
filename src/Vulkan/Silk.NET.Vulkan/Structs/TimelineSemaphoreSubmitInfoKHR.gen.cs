@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTimelineSemaphoreSubmitInfoKHR")]
     [NativeName("AliasOf", "VkTimelineSemaphoreSubmitInfo")]
-    public unsafe partial struct TimelineSemaphoreSubmitInfoKhr : IExtendsChain<SubmitInfo>, IExtendsChain<BindSparseInfo>
+    public unsafe partial struct TimelineSemaphoreSubmitInfoKHR : IExtendsChain<SubmitInfo>, IExtendsChain<BindSparseInfo>
     {
-        public TimelineSemaphoreSubmitInfoKhr
+        public TimelineSemaphoreSubmitInfoKHR
         (
             StructureType? sType = StructureType.TimelineSemaphoreSubmitInfo,
             void* pNext = null,

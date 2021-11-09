@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewUsageCreateInfoKHR")]
     [NativeName("AliasOf", "VkImageViewUsageCreateInfo")]
-    public unsafe partial struct ImageViewUsageCreateInfoKhr : IExtendsChain<ImageViewCreateInfo>
+    public unsafe partial struct ImageViewUsageCreateInfoKHR : IExtendsChain<ImageViewCreateInfo>
     {
-        public ImageViewUsageCreateInfoKhr
+        public ImageViewUsageCreateInfoKHR
         (
             StructureType? sType = StructureType.ImageViewUsageCreateInfo,
             void* pNext = null,

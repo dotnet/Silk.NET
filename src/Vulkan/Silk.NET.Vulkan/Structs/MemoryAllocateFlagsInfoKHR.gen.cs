@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryAllocateFlagsInfoKHR")]
     [NativeName("AliasOf", "VkMemoryAllocateFlagsInfo")]
-    public unsafe partial struct MemoryAllocateFlagsInfoKhr : IExtendsChain<MemoryAllocateInfo>
+    public unsafe partial struct MemoryAllocateFlagsInfoKHR : IExtendsChain<MemoryAllocateInfo>
     {
-        public MemoryAllocateFlagsInfoKhr
+        public MemoryAllocateFlagsInfoKHR
         (
             StructureType? sType = StructureType.MemoryAllocateFlagsInfo,
             void* pNext = null,

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalFencePropertiesKHR")]
     [NativeName("AliasOf", "VkExternalFenceProperties")]
-    public unsafe partial struct ExternalFencePropertiesKhr : IChainable
+    public unsafe partial struct ExternalFencePropertiesKHR : IChainable
     {
-        public ExternalFencePropertiesKhr
+        public ExternalFencePropertiesKHR
         (
             StructureType? sType = StructureType.ExternalFenceProperties,
             void* pNext = null,

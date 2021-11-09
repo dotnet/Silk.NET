@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormatProperties2KHR")]
     [NativeName("AliasOf", "VkFormatProperties2")]
-    public unsafe partial struct FormatProperties2Khr : IChainStart
+    public unsafe partial struct FormatProperties2KHR : IChainStart
     {
-        public FormatProperties2Khr
+        public FormatProperties2KHR
         (
             StructureType? sType = StructureType.FormatProperties2,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref FormatProperties2Khr Chain(
-            out FormatProperties2Khr capture)
+        public static unsafe ref FormatProperties2KHR Chain(
+            out FormatProperties2KHR capture)
         {
-            capture = new FormatProperties2Khr(StructureType.FormatProperties2);
+            capture = new FormatProperties2KHR(StructureType.FormatProperties2);
             return ref capture;
         }
     }

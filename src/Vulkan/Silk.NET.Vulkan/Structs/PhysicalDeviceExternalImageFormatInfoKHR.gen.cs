@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfoKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceExternalImageFormatInfo")]
-    public unsafe partial struct PhysicalDeviceExternalImageFormatInfoKhr : IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2Khr>
+    public unsafe partial struct PhysicalDeviceExternalImageFormatInfoKHR : IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2KHR>
     {
-        public PhysicalDeviceExternalImageFormatInfoKhr
+        public PhysicalDeviceExternalImageFormatInfoKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceExternalImageFormatInfo,
             void* pNext = null,

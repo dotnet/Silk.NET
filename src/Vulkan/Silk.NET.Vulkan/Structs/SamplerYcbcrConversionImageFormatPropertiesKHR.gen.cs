@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionImageFormatPropertiesKHR")]
     [NativeName("AliasOf", "VkSamplerYcbcrConversionImageFormatProperties")]
-    public unsafe partial struct SamplerYcbcrConversionImageFormatPropertiesKhr : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
+    public unsafe partial struct SamplerYcbcrConversionImageFormatPropertiesKHR : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
-        public SamplerYcbcrConversionImageFormatPropertiesKhr
+        public SamplerYcbcrConversionImageFormatPropertiesKHR
         (
             StructureType? sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
             void* pNext = null,

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImagelessFramebufferFeaturesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceImagelessFramebufferFeatures")]
-    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceImagelessFramebufferFeaturesKhr
+        public PhysicalDeviceImagelessFramebufferFeaturesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceImagelessFramebufferFeatures,
             void* pNext = null,

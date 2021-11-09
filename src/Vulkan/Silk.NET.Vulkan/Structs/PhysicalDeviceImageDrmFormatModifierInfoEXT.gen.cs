@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageDrmFormatModifierInfoEXT")]
-    public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT : IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2Khr>
+    public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT : IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2KHR>
     {
         public PhysicalDeviceImageDrmFormatModifierInfoEXT
         (

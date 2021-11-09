@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatProperties2KHR")]
     [NativeName("AliasOf", "VkImageFormatProperties2")]
-    public unsafe partial struct ImageFormatProperties2Khr : IChainStart
+    public unsafe partial struct ImageFormatProperties2KHR : IChainStart
     {
-        public ImageFormatProperties2Khr
+        public ImageFormatProperties2KHR
         (
             StructureType? sType = StructureType.ImageFormatProperties2,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref ImageFormatProperties2Khr Chain(
-            out ImageFormatProperties2Khr capture)
+        public static unsafe ref ImageFormatProperties2KHR Chain(
+            out ImageFormatProperties2KHR capture)
         {
-            capture = new ImageFormatProperties2Khr(StructureType.ImageFormatProperties2);
+            capture = new ImageFormatProperties2KHR(StructureType.ImageFormatProperties2);
             return ref capture;
         }
     }

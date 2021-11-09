@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalBufferPropertiesKHR")]
     [NativeName("AliasOf", "VkExternalBufferProperties")]
-    public unsafe partial struct ExternalBufferPropertiesKhr : IChainable
+    public unsafe partial struct ExternalBufferPropertiesKHR : IChainable
     {
-        public ExternalBufferPropertiesKhr
+        public ExternalBufferPropertiesKHR
         (
             StructureType? sType = StructureType.ExternalBufferProperties,
             void* pNext = null,

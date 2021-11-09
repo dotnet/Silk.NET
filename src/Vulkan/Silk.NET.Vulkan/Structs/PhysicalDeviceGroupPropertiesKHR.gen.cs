@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceGroupPropertiesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceGroupProperties")]
-    public unsafe partial struct PhysicalDeviceGroupPropertiesKhr : IChainable
+    public unsafe partial struct PhysicalDeviceGroupPropertiesKHR : IChainable
     {
-        public PhysicalDeviceGroupPropertiesKhr
+        public PhysicalDeviceGroupPropertiesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceGroupProperties,
             void* pNext = null,

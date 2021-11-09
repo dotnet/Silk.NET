@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountLayoutSupportEXT")]
     [NativeName("AliasOf", "VkDescriptorSetVariableDescriptorCountLayoutSupport")]
-    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupportExt : IExtendsChain<DescriptorSetLayoutSupport>, IExtendsChain<DescriptorSetLayoutSupportKhr>
+    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupportEXT : IExtendsChain<DescriptorSetLayoutSupport>, IExtendsChain<DescriptorSetLayoutSupportKHR>
     {
-        public DescriptorSetVariableDescriptorCountLayoutSupportExt
+        public DescriptorSetVariableDescriptorCountLayoutSupportEXT
         (
             StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
             void* pNext = null,

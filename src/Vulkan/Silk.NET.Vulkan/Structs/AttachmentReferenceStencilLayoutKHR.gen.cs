@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReferenceStencilLayoutKHR")]
     [NativeName("AliasOf", "VkAttachmentReferenceStencilLayout")]
-    public unsafe partial struct AttachmentReferenceStencilLayoutKhr : IExtendsChain<AttachmentReference2>, IExtendsChain<AttachmentReference2Khr>
+    public unsafe partial struct AttachmentReferenceStencilLayoutKHR : IExtendsChain<AttachmentReference2>, IExtendsChain<AttachmentReference2KHR>
     {
-        public AttachmentReferenceStencilLayoutKhr
+        public AttachmentReferenceStencilLayoutKHR
         (
             StructureType? sType = StructureType.AttachmentReferenceStencilLayout,
             void* pNext = null,

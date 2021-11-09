@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageFormatInfo2KHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceImageFormatInfo2")]
-    public unsafe partial struct PhysicalDeviceImageFormatInfo2Khr : IChainStart
+    public unsafe partial struct PhysicalDeviceImageFormatInfo2KHR : IChainStart
     {
-        public PhysicalDeviceImageFormatInfo2Khr
+        public PhysicalDeviceImageFormatInfo2KHR
         (
             StructureType? sType = StructureType.PhysicalDeviceImageFormatInfo2,
             void* pNext = null,
@@ -121,10 +121,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref PhysicalDeviceImageFormatInfo2Khr Chain(
-            out PhysicalDeviceImageFormatInfo2Khr capture)
+        public static unsafe ref PhysicalDeviceImageFormatInfo2KHR Chain(
+            out PhysicalDeviceImageFormatInfo2KHR capture)
         {
-            capture = new PhysicalDeviceImageFormatInfo2Khr(StructureType.PhysicalDeviceImageFormatInfo2);
+            capture = new PhysicalDeviceImageFormatInfo2KHR(StructureType.PhysicalDeviceImageFormatInfo2);
             return ref capture;
         }
     }

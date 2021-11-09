@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImagePlaneMemoryInfo")]
     [NativeName("Aliases", "VkBindImagePlaneMemoryInfoKHR")]
-    public unsafe partial struct BindImagePlaneMemoryInfo : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKhr>
+    public unsafe partial struct BindImagePlaneMemoryInfo : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKHR>
     {
         public BindImagePlaneMemoryInfo
         (

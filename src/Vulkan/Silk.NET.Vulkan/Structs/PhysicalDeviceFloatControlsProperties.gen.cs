@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFloatControlsProperties")]
     [NativeName("Aliases", "VkPhysicalDeviceFloatControlsPropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceFloatControlsProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceFloatControlsProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceFloatControlsProperties
         (

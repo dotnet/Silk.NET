@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceHostQueryResetFeatures")]
     [NativeName("Aliases", "VkPhysicalDeviceHostQueryResetFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceHostQueryResetFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceHostQueryResetFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceHostQueryResetFeatures
         (

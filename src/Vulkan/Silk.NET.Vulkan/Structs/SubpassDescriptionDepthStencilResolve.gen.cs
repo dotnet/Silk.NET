@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescriptionDepthStencilResolve")]
     [NativeName("Aliases", "VkSubpassDescriptionDepthStencilResolveKHR")]
-    public unsafe partial struct SubpassDescriptionDepthStencilResolve : IExtendsChain<SubpassDescription2>, IExtendsChain<SubpassDescription2Khr>
+    public unsafe partial struct SubpassDescriptionDepthStencilResolve : IExtendsChain<SubpassDescription2>, IExtendsChain<SubpassDescription2KHR>
     {
         public SubpassDescriptionDepthStencilResolve
         (

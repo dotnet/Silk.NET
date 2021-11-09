@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupSubmitInfoKHR")]
     [NativeName("AliasOf", "VkDeviceGroupSubmitInfo")]
-    public unsafe partial struct DeviceGroupSubmitInfoKhr : IExtendsChain<SubmitInfo>
+    public unsafe partial struct DeviceGroupSubmitInfoKHR : IExtendsChain<SubmitInfo>
     {
-        public DeviceGroupSubmitInfoKhr
+        public DeviceGroupSubmitInfoKHR
         (
             StructureType? sType = StructureType.DeviceGroupSubmitInfo,
             void* pNext = null,

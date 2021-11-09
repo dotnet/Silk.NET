@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedAllocateInfoKHR")]
     [NativeName("AliasOf", "VkMemoryDedicatedAllocateInfo")]
-    public unsafe partial struct MemoryDedicatedAllocateInfoKhr : IExtendsChain<MemoryAllocateInfo>
+    public unsafe partial struct MemoryDedicatedAllocateInfoKHR : IExtendsChain<MemoryAllocateInfo>
     {
-        public MemoryDedicatedAllocateInfoKhr
+        public MemoryDedicatedAllocateInfoKHR
         (
             StructureType? sType = StructureType.MemoryDedicatedAllocateInfo,
             void* pNext = null,

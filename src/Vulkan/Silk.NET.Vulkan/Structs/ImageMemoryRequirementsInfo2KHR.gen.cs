@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryRequirementsInfo2KHR")]
     [NativeName("AliasOf", "VkImageMemoryRequirementsInfo2")]
-    public unsafe partial struct ImageMemoryRequirementsInfo2Khr : IChainStart
+    public unsafe partial struct ImageMemoryRequirementsInfo2KHR : IChainStart
     {
-        public ImageMemoryRequirementsInfo2Khr
+        public ImageMemoryRequirementsInfo2KHR
         (
             StructureType? sType = StructureType.ImageMemoryRequirementsInfo2,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref ImageMemoryRequirementsInfo2Khr Chain(
-            out ImageMemoryRequirementsInfo2Khr capture)
+        public static unsafe ref ImageMemoryRequirementsInfo2KHR Chain(
+            out ImageMemoryRequirementsInfo2KHR capture)
         {
-            capture = new ImageMemoryRequirementsInfo2Khr(StructureType.ImageMemoryRequirementsInfo2);
+            capture = new ImageMemoryRequirementsInfo2KHR(StructureType.ImageMemoryRequirementsInfo2);
             return ref capture;
         }
     }

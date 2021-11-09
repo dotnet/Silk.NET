@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferAttachmentImageInfoKHR")]
     [NativeName("AliasOf", "VkFramebufferAttachmentImageInfo")]
-    public unsafe partial struct FramebufferAttachmentImageInfoKhr : IChainable
+    public unsafe partial struct FramebufferAttachmentImageInfoKHR : IChainable
     {
-        public FramebufferAttachmentImageInfoKhr
+        public FramebufferAttachmentImageInfoKHR
         (
             StructureType? sType = StructureType.FramebufferAttachmentImageInfo,
             void* pNext = null,

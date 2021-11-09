@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassCreateInfo2KHR")]
     [NativeName("AliasOf", "VkRenderPassCreateInfo2")]
-    public unsafe partial struct RenderPassCreateInfo2Khr : IChainStart
+    public unsafe partial struct RenderPassCreateInfo2KHR : IChainStart
     {
-        public RenderPassCreateInfo2Khr
+        public RenderPassCreateInfo2KHR
         (
             StructureType? sType = StructureType.RenderPassCreateInfo2,
             void* pNext = null,
@@ -165,10 +165,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref RenderPassCreateInfo2Khr Chain(
-            out RenderPassCreateInfo2Khr capture)
+        public static unsafe ref RenderPassCreateInfo2KHR Chain(
+            out RenderPassCreateInfo2KHR capture)
         {
-            capture = new RenderPassCreateInfo2Khr(StructureType.RenderPassCreateInfo2);
+            capture = new RenderPassCreateInfo2KHR(StructureType.RenderPassCreateInfo2);
             return ref capture;
         }
     }

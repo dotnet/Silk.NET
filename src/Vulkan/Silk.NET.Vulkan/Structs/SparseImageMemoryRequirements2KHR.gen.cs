@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageMemoryRequirements2KHR")]
     [NativeName("AliasOf", "VkSparseImageMemoryRequirements2")]
-    public unsafe partial struct SparseImageMemoryRequirements2Khr : IChainable
+    public unsafe partial struct SparseImageMemoryRequirements2KHR : IChainable
     {
-        public SparseImageMemoryRequirements2Khr
+        public SparseImageMemoryRequirements2KHR
         (
             StructureType? sType = StructureType.SparseImageMemoryRequirements2,
             void* pNext = null,

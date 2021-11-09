@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassBeginInfoKHR")]
     [NativeName("AliasOf", "VkSubpassBeginInfo")]
-    public unsafe partial struct SubpassBeginInfoKhr : IChainable
+    public unsafe partial struct SubpassBeginInfoKHR : IChainable
     {
-        public SubpassBeginInfoKhr
+        public SubpassBeginInfoKHR
         (
             StructureType? sType = StructureType.SubpassBeginInfo,
             void* pNext = null,

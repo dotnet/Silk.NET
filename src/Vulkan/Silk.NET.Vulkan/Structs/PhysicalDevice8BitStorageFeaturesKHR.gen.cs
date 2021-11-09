@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevice8BitStorageFeaturesKHR")]
     [NativeName("AliasOf", "VkPhysicalDevice8BitStorageFeatures")]
-    public unsafe partial struct PhysicalDevice8BitStorageFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDevice8BitStorageFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDevice8BitStorageFeaturesKhr
+        public PhysicalDevice8BitStorageFeaturesKHR
         (
             StructureType? sType = StructureType.PhysicalDevice8BitStorageFeatures,
             void* pNext = null,

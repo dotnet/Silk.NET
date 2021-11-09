@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMaintenance3Properties")]
     [NativeName("Aliases", "VkPhysicalDeviceMaintenance3PropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceMaintenance3Properties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceMaintenance3Properties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceMaintenance3Properties
         (

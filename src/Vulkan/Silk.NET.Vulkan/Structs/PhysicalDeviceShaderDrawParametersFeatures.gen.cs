@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderDrawParametersFeatures")]
     [NativeName("Aliases", "VkPhysicalDeviceShaderDrawParameterFeatures")]
-    public unsafe partial struct PhysicalDeviceShaderDrawParametersFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceShaderDrawParametersFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderDrawParametersFeatures
         (

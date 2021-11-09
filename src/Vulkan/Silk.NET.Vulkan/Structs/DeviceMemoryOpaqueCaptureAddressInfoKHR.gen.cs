@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfoKHR")]
     [NativeName("AliasOf", "VkDeviceMemoryOpaqueCaptureAddressInfo")]
-    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfoKhr : IChainable
+    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfoKHR : IChainable
     {
-        public DeviceMemoryOpaqueCaptureAddressInfoKhr
+        public DeviceMemoryOpaqueCaptureAddressInfoKHR
         (
             StructureType? sType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo,
             void* pNext = null,

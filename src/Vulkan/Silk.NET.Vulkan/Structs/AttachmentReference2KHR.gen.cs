@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReference2KHR")]
     [NativeName("AliasOf", "VkAttachmentReference2")]
-    public unsafe partial struct AttachmentReference2Khr : IChainStart
+    public unsafe partial struct AttachmentReference2KHR : IChainStart
     {
-        public AttachmentReference2Khr
+        public AttachmentReference2KHR
         (
             StructureType? sType = StructureType.AttachmentReference2,
             void* pNext = null,
@@ -99,10 +99,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref AttachmentReference2Khr Chain(
-            out AttachmentReference2Khr capture)
+        public static unsafe ref AttachmentReference2KHR Chain(
+            out AttachmentReference2KHR capture)
         {
-            capture = new AttachmentReference2Khr(StructureType.AttachmentReference2);
+            capture = new AttachmentReference2KHR(StructureType.AttachmentReference2);
             return ref capture;
         }
     }

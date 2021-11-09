@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConformanceVersionKHR")]
     [NativeName("AliasOf", "VkConformanceVersion")]
-    public unsafe partial struct ConformanceVersionKhr
+    public unsafe partial struct ConformanceVersionKHR
     {
-        public ConformanceVersionKhr
+        public ConformanceVersionKHR
         (
             byte? major = null,
             byte? minor = null,

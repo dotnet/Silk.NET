@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
     [NativeName("AliasOf", "VkQueryPoolPerformanceQueryCreateInfoINTEL")]
-    public unsafe partial struct QueryPoolCreateInfoIntel : IExtendsChain<QueryPoolCreateInfo>
+    public unsafe partial struct QueryPoolCreateInfoINTEL : IExtendsChain<QueryPoolCreateInfo>
     {
-        public QueryPoolCreateInfoIntel
+        public QueryPoolCreateInfoINTEL
         (
             StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
             void* pNext = null,

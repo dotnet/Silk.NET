@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemorySwapchainInfoKHR")]
-    public unsafe partial struct BindImageMemorySwapchainInfoKHR : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKhr>
+    public unsafe partial struct BindImageMemorySwapchainInfoKHR : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKHR>
     {
         public BindImageMemorySwapchainInfoKHR
         (

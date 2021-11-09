@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoQueueFamilyProperties2KHR")]
-    public unsafe partial struct VideoQueueFamilyProperties2KHR : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2Khr>
+    public unsafe partial struct VideoQueueFamilyProperties2KHR : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public VideoQueueFamilyProperties2KHR
         (

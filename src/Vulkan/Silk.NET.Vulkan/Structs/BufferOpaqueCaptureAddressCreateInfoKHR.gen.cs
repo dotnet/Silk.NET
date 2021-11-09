@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferOpaqueCaptureAddressCreateInfoKHR")]
     [NativeName("AliasOf", "VkBufferOpaqueCaptureAddressCreateInfo")]
-    public unsafe partial struct BufferOpaqueCaptureAddressCreateInfoKhr : IExtendsChain<BufferCreateInfo>
+    public unsafe partial struct BufferOpaqueCaptureAddressCreateInfoKHR : IExtendsChain<BufferCreateInfo>
     {
-        public BufferOpaqueCaptureAddressCreateInfoKhr
+        public BufferOpaqueCaptureAddressCreateInfoKHR
         (
             StructureType? sType = StructureType.BufferOpaqueCaptureAddressCreateInfo,
             void* pNext = null,

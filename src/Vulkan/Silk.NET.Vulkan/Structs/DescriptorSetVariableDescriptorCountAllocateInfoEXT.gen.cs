@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountAllocateInfoEXT")]
     [NativeName("AliasOf", "VkDescriptorSetVariableDescriptorCountAllocateInfo")]
-    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfoExt : IExtendsChain<DescriptorSetAllocateInfo>
+    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfoEXT : IExtendsChain<DescriptorSetAllocateInfo>
     {
-        public DescriptorSetVariableDescriptorCountAllocateInfoExt
+        public DescriptorSetVariableDescriptorCountAllocateInfoEXT
         (
             StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo,
             void* pNext = null,

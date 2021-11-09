@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionInfoKHR")]
     [NativeName("AliasOf", "VkSamplerYcbcrConversionInfo")]
-    public unsafe partial struct SamplerYcbcrConversionInfoKhr : IExtendsChain<SamplerCreateInfo>, IExtendsChain<ImageViewCreateInfo>
+    public unsafe partial struct SamplerYcbcrConversionInfoKHR : IExtendsChain<SamplerCreateInfo>, IExtendsChain<ImageViewCreateInfo>
     {
-        public SamplerYcbcrConversionInfoKhr
+        public SamplerYcbcrConversionInfoKHR
         (
             StructureType? sType = StructureType.SamplerYcbcrConversionInfo,
             void* pNext = null,

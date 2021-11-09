@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupCommandBufferBeginInfoKHR")]
     [NativeName("AliasOf", "VkDeviceGroupCommandBufferBeginInfo")]
-    public unsafe partial struct DeviceGroupCommandBufferBeginInfoKhr : IExtendsChain<CommandBufferBeginInfo>
+    public unsafe partial struct DeviceGroupCommandBufferBeginInfoKHR : IExtendsChain<CommandBufferBeginInfo>
     {
-        public DeviceGroupCommandBufferBeginInfoKhr
+        public DeviceGroupCommandBufferBeginInfoKHR
         (
             StructureType? sType = StructureType.DeviceGroupCommandBufferBeginInfo,
             void* pNext = null,

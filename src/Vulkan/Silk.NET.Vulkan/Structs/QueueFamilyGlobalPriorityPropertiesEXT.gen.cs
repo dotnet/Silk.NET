@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyGlobalPriorityPropertiesEXT")]
-    public unsafe partial struct QueueFamilyGlobalPriorityPropertiesEXT : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2Khr>
+    public unsafe partial struct QueueFamilyGlobalPriorityPropertiesEXT : IExtendsChain<QueueFamilyProperties2>, IExtendsChain<QueueFamilyProperties2KHR>
     {
         public QueueFamilyGlobalPriorityPropertiesEXT
         (

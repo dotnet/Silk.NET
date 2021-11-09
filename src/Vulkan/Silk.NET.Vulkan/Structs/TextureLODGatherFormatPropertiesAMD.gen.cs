@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTextureLODGatherFormatPropertiesAMD")]
-    public unsafe partial struct TextureLODGatherFormatPropertiesAMD : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
+    public unsafe partial struct TextureLODGatherFormatPropertiesAMD : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
         public TextureLODGatherFormatPropertiesAMD
         (

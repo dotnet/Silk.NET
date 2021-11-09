@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerReductionModeCreateInfoEXT")]
     [NativeName("AliasOf", "VkSamplerReductionModeCreateInfo")]
-    public unsafe partial struct SamplerReductionModeCreateInfoExt : IExtendsChain<SamplerCreateInfo>
+    public unsafe partial struct SamplerReductionModeCreateInfoEXT : IExtendsChain<SamplerCreateInfo>
     {
-        public SamplerReductionModeCreateInfoExt
+        public SamplerReductionModeCreateInfoEXT
         (
             StructureType? sType = StructureType.SamplerReductionModeCreateInfo,
             void* pNext = null,

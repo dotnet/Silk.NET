@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceProperties2KHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceProperties2")]
-    public unsafe partial struct PhysicalDeviceProperties2Khr : IChainStart
+    public unsafe partial struct PhysicalDeviceProperties2KHR : IChainStart
     {
-        public PhysicalDeviceProperties2Khr
+        public PhysicalDeviceProperties2KHR
         (
             StructureType? sType = StructureType.PhysicalDeviceProperties2,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref PhysicalDeviceProperties2Khr Chain(
-            out PhysicalDeviceProperties2Khr capture)
+        public static unsafe ref PhysicalDeviceProperties2KHR Chain(
+            out PhysicalDeviceProperties2KHR capture)
         {
-            capture = new PhysicalDeviceProperties2Khr(StructureType.PhysicalDeviceProperties2);
+            capture = new PhysicalDeviceProperties2KHR(StructureType.PhysicalDeviceProperties2);
             return ref capture;
         }
     }

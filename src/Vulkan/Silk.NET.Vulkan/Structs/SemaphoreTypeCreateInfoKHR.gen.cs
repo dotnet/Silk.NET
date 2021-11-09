@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreTypeCreateInfoKHR")]
     [NativeName("AliasOf", "VkSemaphoreTypeCreateInfo")]
-    public unsafe partial struct SemaphoreTypeCreateInfoKhr : IExtendsChain<SemaphoreCreateInfo>, IExtendsChain<PhysicalDeviceExternalSemaphoreInfo>, IExtendsChain<PhysicalDeviceExternalSemaphoreInfoKhr>
+    public unsafe partial struct SemaphoreTypeCreateInfoKHR : IExtendsChain<SemaphoreCreateInfo>, IExtendsChain<PhysicalDeviceExternalSemaphoreInfo>, IExtendsChain<PhysicalDeviceExternalSemaphoreInfoKHR>
     {
-        public SemaphoreTypeCreateInfoKhr
+        public SemaphoreTypeCreateInfoKHR
         (
             StructureType? sType = StructureType.SemaphoreTypeCreateInfo,
             void* pNext = null,

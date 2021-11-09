@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalImageFormatProperties")]
     [NativeName("Aliases", "VkExternalImageFormatPropertiesKHR")]
-    public unsafe partial struct ExternalImageFormatProperties : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
+    public unsafe partial struct ExternalImageFormatProperties : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
         public ExternalImageFormatProperties
         (

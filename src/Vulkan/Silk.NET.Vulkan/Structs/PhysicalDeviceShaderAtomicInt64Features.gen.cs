@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderAtomicInt64Features")]
     [NativeName("Aliases", "VkPhysicalDeviceShaderAtomicInt64FeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceShaderAtomicInt64Features : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceShaderAtomicInt64Features : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderAtomicInt64Features
         (

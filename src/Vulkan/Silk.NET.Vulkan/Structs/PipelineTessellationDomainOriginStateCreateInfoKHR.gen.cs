@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationDomainOriginStateCreateInfoKHR")]
     [NativeName("AliasOf", "VkPipelineTessellationDomainOriginStateCreateInfo")]
-    public unsafe partial struct PipelineTessellationDomainOriginStateCreateInfoKhr : IExtendsChain<PipelineTessellationStateCreateInfo>
+    public unsafe partial struct PipelineTessellationDomainOriginStateCreateInfoKHR : IExtendsChain<PipelineTessellationStateCreateInfo>
     {
-        public PipelineTessellationDomainOriginStateCreateInfoKhr
+        public PipelineTessellationDomainOriginStateCreateInfoKHR
         (
             StructureType? sType = StructureType.PipelineTessellationDomainOriginStateCreateInfo,
             void* pNext = null,

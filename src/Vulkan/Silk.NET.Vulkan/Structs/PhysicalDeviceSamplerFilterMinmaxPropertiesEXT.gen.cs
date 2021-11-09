@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT")]
     [NativeName("AliasOf", "VkPhysicalDeviceSamplerFilterMinmaxProperties")]
-    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxPropertiesExt : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxPropertiesEXT : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
-        public PhysicalDeviceSamplerFilterMinmaxPropertiesExt
+        public PhysicalDeviceSamplerFilterMinmaxPropertiesEXT
         (
             StructureType? sType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties,
             void* pNext = null,

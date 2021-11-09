@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryPropertiesKHR")]
     [NativeName("AliasOf", "VkExternalMemoryProperties")]
-    public unsafe partial struct ExternalMemoryPropertiesKhr
+    public unsafe partial struct ExternalMemoryPropertiesKHR
     {
-        public ExternalMemoryPropertiesKhr
+        public ExternalMemoryPropertiesKHR
         (
             ExternalMemoryFeatureFlags? externalMemoryFeatures = null,
             ExternalMemoryHandleTypeFlags? exportFromImportedHandleTypes = null,

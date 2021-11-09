@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateCreateInfoKHR")]
     [NativeName("AliasOf", "VkDescriptorUpdateTemplateCreateInfo")]
-    public unsafe partial struct DescriptorUpdateTemplateCreateInfoKhr : IChainable
+    public unsafe partial struct DescriptorUpdateTemplateCreateInfoKHR : IChainable
     {
-        public DescriptorUpdateTemplateCreateInfoKhr
+        public DescriptorUpdateTemplateCreateInfoKHR
         (
             StructureType? sType = StructureType.DescriptorUpdateTemplateCreateInfo,
             void* pNext = null,

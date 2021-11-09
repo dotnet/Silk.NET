@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphoreFeaturesKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceTimelineSemaphoreFeatures")]
-    public unsafe partial struct PhysicalDeviceTimelineSemaphoreFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceTimelineSemaphoreFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceTimelineSemaphoreFeaturesKhr
+        public PhysicalDeviceTimelineSemaphoreFeaturesKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures,
             void* pNext = null,

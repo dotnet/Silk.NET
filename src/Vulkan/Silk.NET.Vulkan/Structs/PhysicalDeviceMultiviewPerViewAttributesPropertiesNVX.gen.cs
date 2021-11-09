@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX")]
-    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
         (

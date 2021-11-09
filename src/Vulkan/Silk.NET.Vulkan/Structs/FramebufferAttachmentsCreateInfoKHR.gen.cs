@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferAttachmentsCreateInfoKHR")]
     [NativeName("AliasOf", "VkFramebufferAttachmentsCreateInfo")]
-    public unsafe partial struct FramebufferAttachmentsCreateInfoKhr : IExtendsChain<FramebufferCreateInfo>
+    public unsafe partial struct FramebufferAttachmentsCreateInfoKHR : IExtendsChain<FramebufferCreateInfo>
     {
-        public FramebufferAttachmentsCreateInfoKhr
+        public FramebufferAttachmentsCreateInfoKHR
         (
             StructureType? sType = StructureType.FramebufferAttachmentsCreateInfo,
             void* pNext = null,

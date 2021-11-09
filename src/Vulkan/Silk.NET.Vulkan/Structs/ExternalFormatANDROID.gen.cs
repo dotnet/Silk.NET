@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalFormatANDROID")]
-    public unsafe partial struct ExternalFormatANDROID : IExtendsChain<ImageCreateInfo>, IExtendsChain<SamplerYcbcrConversionCreateInfo>, IExtendsChain<SamplerYcbcrConversionCreateInfoKhr>
+    public unsafe partial struct ExternalFormatANDROID : IExtendsChain<ImageCreateInfo>, IExtendsChain<SamplerYcbcrConversionCreateInfo>, IExtendsChain<SamplerYcbcrConversionCreateInfoKHR>
     {
         public ExternalFormatANDROID
         (

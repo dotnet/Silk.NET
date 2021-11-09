@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupDeviceCreateInfoKHR")]
     [NativeName("AliasOf", "VkDeviceGroupDeviceCreateInfo")]
-    public unsafe partial struct DeviceGroupDeviceCreateInfoKhr : IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct DeviceGroupDeviceCreateInfoKHR : IExtendsChain<DeviceCreateInfo>
     {
-        public DeviceGroupDeviceCreateInfoKhr
+        public DeviceGroupDeviceCreateInfoKHR
         (
             StructureType? sType = StructureType.DeviceGroupDeviceCreateInfo,
             void* pNext = null,

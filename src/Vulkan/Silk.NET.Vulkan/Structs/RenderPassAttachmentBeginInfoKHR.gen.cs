@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassAttachmentBeginInfoKHR")]
     [NativeName("AliasOf", "VkRenderPassAttachmentBeginInfo")]
-    public unsafe partial struct RenderPassAttachmentBeginInfoKhr : IExtendsChain<RenderPassBeginInfo>
+    public unsafe partial struct RenderPassAttachmentBeginInfoKHR : IExtendsChain<RenderPassBeginInfo>
     {
-        public RenderPassAttachmentBeginInfoKhr
+        public RenderPassAttachmentBeginInfoKHR
         (
             StructureType? sType = StructureType.RenderPassAttachmentBeginInfo,
             void* pNext = null,

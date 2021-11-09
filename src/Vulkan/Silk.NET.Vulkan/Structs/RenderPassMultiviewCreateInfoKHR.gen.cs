@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassMultiviewCreateInfoKHR")]
     [NativeName("AliasOf", "VkRenderPassMultiviewCreateInfo")]
-    public unsafe partial struct RenderPassMultiviewCreateInfoKhr : IExtendsChain<RenderPassCreateInfo>
+    public unsafe partial struct RenderPassMultiviewCreateInfoKHR : IExtendsChain<RenderPassCreateInfo>
     {
-        public RenderPassMultiviewCreateInfoKhr
+        public RenderPassMultiviewCreateInfoKHR
         (
             StructureType? sType = StructureType.RenderPassMultiviewCreateInfo,
             void* pNext = null,

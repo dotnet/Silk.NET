@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSparseImageFormatInfo2KHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceSparseImageFormatInfo2")]
-    public unsafe partial struct PhysicalDeviceSparseImageFormatInfo2Khr : IChainable
+    public unsafe partial struct PhysicalDeviceSparseImageFormatInfo2KHR : IChainable
     {
-        public PhysicalDeviceSparseImageFormatInfo2Khr
+        public PhysicalDeviceSparseImageFormatInfo2KHR
         (
             StructureType? sType = StructureType.PhysicalDeviceSparseImageFormatInfo2,
             void* pNext = null,

@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportFenceCreateInfoKHR")]
     [NativeName("AliasOf", "VkExportFenceCreateInfo")]
-    public unsafe partial struct ExportFenceCreateInfoKhr : IExtendsChain<FenceCreateInfo>
+    public unsafe partial struct ExportFenceCreateInfoKHR : IExtendsChain<FenceCreateInfo>
     {
-        public ExportFenceCreateInfoKhr
+        public ExportFenceCreateInfoKHR
         (
             StructureType? sType = StructureType.ExportFenceCreateInfo,
             void* pNext = null,

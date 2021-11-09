@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceScalarBlockLayoutFeaturesEXT")]
     [NativeName("AliasOf", "VkPhysicalDeviceScalarBlockLayoutFeatures")]
-    public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeaturesExt : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
+    public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceScalarBlockLayoutFeaturesExt
+        public PhysicalDeviceScalarBlockLayoutFeaturesEXT
         (
             StructureType? sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
             void* pNext = null,

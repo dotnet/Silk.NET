@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryImageCreateInfoKHR")]
     [NativeName("AliasOf", "VkExternalMemoryImageCreateInfo")]
-    public unsafe partial struct ExternalMemoryImageCreateInfoKhr : IExtendsChain<ImageCreateInfo>
+    public unsafe partial struct ExternalMemoryImageCreateInfoKHR : IExtendsChain<ImageCreateInfo>
     {
-        public ExternalMemoryImageCreateInfoKhr
+        public ExternalMemoryImageCreateInfoKHR
         (
             StructureType? sType = StructureType.ExternalMemoryImageCreateInfo,
             void* pNext = null,

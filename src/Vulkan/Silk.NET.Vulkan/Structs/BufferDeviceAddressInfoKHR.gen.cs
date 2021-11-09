@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferDeviceAddressInfoKHR")]
     [NativeName("AliasOf", "VkBufferDeviceAddressInfo")]
-    public unsafe partial struct BufferDeviceAddressInfoKhr : IChainable
+    public unsafe partial struct BufferDeviceAddressInfoKHR : IChainable
     {
-        public BufferDeviceAddressInfoKhr
+        public BufferDeviceAddressInfoKHR
         (
             StructureType? sType = StructureType.BufferDeviceAddressInfo,
             void* pNext = null,

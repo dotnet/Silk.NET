@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutBindingFlagsCreateInfoEXT")]
     [NativeName("AliasOf", "VkDescriptorSetLayoutBindingFlagsCreateInfo")]
-    public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfoExt : IExtendsChain<DescriptorSetLayoutCreateInfo>
+    public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfoEXT : IExtendsChain<DescriptorSetLayoutCreateInfo>
     {
-        public DescriptorSetLayoutBindingFlagsCreateInfoExt
+        public DescriptorSetLayoutBindingFlagsCreateInfoEXT
         (
             StructureType? sType = StructureType.DescriptorSetLayoutBindingFlagsCreateInfo,
             void* pNext = null,

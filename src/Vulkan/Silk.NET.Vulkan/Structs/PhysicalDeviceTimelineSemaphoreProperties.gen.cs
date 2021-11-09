@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphoreProperties")]
     [NativeName("Aliases", "VkPhysicalDeviceTimelineSemaphorePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceTimelineSemaphoreProperties
         (

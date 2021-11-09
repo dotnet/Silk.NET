@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalBufferInfoKHR")]
     [NativeName("AliasOf", "VkPhysicalDeviceExternalBufferInfo")]
-    public unsafe partial struct PhysicalDeviceExternalBufferInfoKhr : IChainable
+    public unsafe partial struct PhysicalDeviceExternalBufferInfoKHR : IChainable
     {
-        public PhysicalDeviceExternalBufferInfoKhr
+        public PhysicalDeviceExternalBufferInfoKHR
         (
             StructureType? sType = StructureType.PhysicalDeviceExternalBufferInfo,
             void* pNext = null,

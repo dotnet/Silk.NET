@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionCreateInfoKHR")]
     [NativeName("AliasOf", "VkSamplerYcbcrConversionCreateInfo")]
-    public unsafe partial struct SamplerYcbcrConversionCreateInfoKhr : IChainStart
+    public unsafe partial struct SamplerYcbcrConversionCreateInfoKHR : IChainStart
     {
-        public SamplerYcbcrConversionCreateInfoKhr
+        public SamplerYcbcrConversionCreateInfoKHR
         (
             StructureType? sType = StructureType.SamplerYcbcrConversionCreateInfo,
             void* pNext = null,
@@ -154,10 +154,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref SamplerYcbcrConversionCreateInfoKhr Chain(
-            out SamplerYcbcrConversionCreateInfoKhr capture)
+        public static unsafe ref SamplerYcbcrConversionCreateInfoKHR Chain(
+            out SamplerYcbcrConversionCreateInfoKHR capture)
         {
-            capture = new SamplerYcbcrConversionCreateInfoKhr(StructureType.SamplerYcbcrConversionCreateInfo);
+            capture = new SamplerYcbcrConversionCreateInfoKHR(StructureType.SamplerYcbcrConversionCreateInfo);
             return ref capture;
         }
     }

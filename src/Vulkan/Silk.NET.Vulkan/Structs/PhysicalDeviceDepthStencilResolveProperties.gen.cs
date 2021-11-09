@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDepthStencilResolveProperties")]
     [NativeName("Aliases", "VkPhysicalDeviceDepthStencilResolvePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
+    public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceDepthStencilResolveProperties
         (

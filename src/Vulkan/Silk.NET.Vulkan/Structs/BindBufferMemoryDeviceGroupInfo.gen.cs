@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryDeviceGroupInfo")]
     [NativeName("Aliases", "VkBindBufferMemoryDeviceGroupInfoKHR")]
-    public unsafe partial struct BindBufferMemoryDeviceGroupInfo : IExtendsChain<BindBufferMemoryInfo>, IExtendsChain<BindBufferMemoryInfoKhr>
+    public unsafe partial struct BindBufferMemoryDeviceGroupInfo : IExtendsChain<BindBufferMemoryInfo>, IExtendsChain<BindBufferMemoryInfoKHR>
     {
         public BindBufferMemoryDeviceGroupInfo
         (

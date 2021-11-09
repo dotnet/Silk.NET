@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyProperties2KHR")]
     [NativeName("AliasOf", "VkQueueFamilyProperties2")]
-    public unsafe partial struct QueueFamilyProperties2Khr : IChainStart
+    public unsafe partial struct QueueFamilyProperties2KHR : IChainStart
     {
-        public QueueFamilyProperties2Khr
+        public QueueFamilyProperties2KHR
         (
             StructureType? sType = StructureType.QueueFamilyProperties2,
             void* pNext = null,
@@ -77,10 +77,10 @@ namespace Silk.NET.Vulkan
         /// </summary>
         /// <param name="capture">The newly created chain root</param>
         /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref QueueFamilyProperties2Khr Chain(
-            out QueueFamilyProperties2Khr capture)
+        public static unsafe ref QueueFamilyProperties2KHR Chain(
+            out QueueFamilyProperties2KHR capture)
         {
-            capture = new QueueFamilyProperties2Khr(StructureType.QueueFamilyProperties2);
+            capture = new QueueFamilyProperties2KHR(StructureType.QueueFamilyProperties2);
             return ref capture;
         }
     }
