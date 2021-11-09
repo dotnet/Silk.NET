@@ -56,8 +56,79 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var prefix = task.FunctionPrefix;
             var ret = new Dictionary<string, Struct>();
 
+            // Gets all aliases of a struct, no matter where in an alias chain we start
+            // Note this could be simpler if we just assume we only need to check $VKALIASES, but this 
+            // version is bombproof.
+            IReadOnlyList<Struct> GetAllAliasesFromName(string structName)
+            {
+                var todo = new Queue<string>();
+                todo.Enqueue(structName);
+                var result = new Dictionary<string, Struct>();
+
+                while (todo.Any())
+                {
+                    structName = todo.Dequeue();
+                    if (!ret.TryGetValue(structName, out var s))
+                    {
+                        result[structName] = null;
+                        continue;
+                    }
+
+                    result[structName] = s;
+
+                    // Get any aliases
+                    var aliasOf = s.Attributes
+                        .FirstOrDefault
+                        (
+                            a => a.Arguments.Count > 1 && a.Name == "BuildToolsIntrinsic" &&
+                                 a.Arguments[0] == "$VKALIASOF"
+                        )
+                        ?.Arguments[1];
+                    if (!string.IsNullOrWhiteSpace(aliasOf) && !result.ContainsKey(aliasOf))
+                    {
+                        todo.Enqueue(aliasOf);
+                    }
+
+                    // Check other way as well
+                    foreach (var a in s.Attributes
+                                          .FirstOrDefault
+                                          (
+                                              a => a.Arguments.Count > 1 && a.Name == "BuildToolsIntrinsic" &&
+                                                   a.Arguments[0] == "$VKALIASES"
+                                          )
+                                          ?.Arguments
+                                          .Skip(1)
+                                          .Where(a => !string.IsNullOrWhiteSpace(a) && !result.ContainsKey(a))
+                                          .ToArray()
+                                      ?? Array.Empty<string>())
+                    {
+                        todo.Enqueue(a);
+                    }
+                }
+
+                return result.Values.Where(s => s is not null).ToList();
+            }
+
+            // Opposite way round lookup of what aliases exist for this key-struct
+            // i.e. if VkB is an alias of VkA, and VkC is an alias of VkA, then aliases has [VkA]={VkB,VkC}
+            var aliases = new Dictionary<string, List<string>>();
+            // Holds any chain starts for chains we haven't seen yet (should rarely be needed).
+            var chainExtensions = new List<(Struct, IReadOnlyList<string>)>();
             foreach (var s in spec.Structures)
             {
+                // Build aliases dictionary
+                if (!string.IsNullOrWhiteSpace(s.Alias))
+                {
+                    if (!aliases.TryGetValue(s.Alias, out var aList))
+                    {
+                        aList = new();
+                        aliases[s.Alias] = aList;
+                    }
+
+                    aList.Add(s.Name);
+                    continue;
+                }
+
                 var @struct = new Struct
                 {
                     Fields = s.Members.Select
@@ -93,9 +164,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     NativeName = s.Name
                 };
 
-                // Find the STYpe field (and it's position)
-                var sTypeField = @struct.Fields
-                    .FirstOrDefault(f => f.Name == "SType" && f.Type.Name == "VkStructureType");
+                // Find the STYpe field (and it's position, which is required for IChainable
+                var (sTypeField, sTypeFieldIndex) = @struct.Fields.Select((f, i) => (Field: f, Index: i))
+                    .FirstOrDefault(f => f.Field.Name == "SType" && f.Field.Type.Name == "VkStructureType");
                 if (sTypeField is not null)
                 {
                     @struct.Attributes.Add
@@ -106,9 +177,122 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             Arguments = new() {"$VKSTRUCTUREDTYPE", sTypeField.DefaultAssignment ?? string.Empty}
                         }
                     );
+
+                    // Ensure SType was in position 0, and we have a pointer called PNext in position 1.
+                    Field pNextField;
+                    if (sTypeFieldIndex == 0 &&
+                        @struct.Fields.Count > 1 &&
+                        (pNextField = @struct.Fields[1]).Name == "PNext" &&
+                        pNextField.Type.IsPointer)
+                    {
+                        // The type is at least chainable.
+                        @struct.Attributes.Add
+                        (
+                            new()
+                            {
+                                Name = "BuildToolsIntrinsic",
+                                Arguments = new() {"$VKCHAINABLE"}
+                            }
+                        );
+
+                        if (s.Extends.Any())
+                        {
+                            chainExtensions.Add((@struct, s.Extends));
+                        }
+                    }
                 }
 
                 ret.Add(s.Name, @struct);
+            }
+
+            // Create Aliases
+            foreach (var (structName, aList) in aliases)
+            {
+                if (!ret.TryGetValue(structName, out var @struct))
+                {
+                    continue;
+                }
+
+                foreach (var alias in aList)
+                {
+                    var aliasStruct = @struct.Clone(Naming.Translate(TrimName(alias, task), prefix), alias);
+                    aliasStruct.Attributes.Add
+                    (
+                        new()
+                        {
+                            Name = "BuildToolsIntrinsic",
+                            Arguments = new() {"$VKALIASOF", @struct.NativeName}
+                        }
+                    );
+                    // Create a clone for the alias
+                    ret.Add(alias, aliasStruct);
+                }
+
+                // Now that we've finished cloning we can add the build intrinsic to the root struct.
+                @struct.Attributes.Add
+                (
+                    new()
+                    {
+                        Name = "BuildToolsIntrinsic",
+                        Arguments = new[] {"$VKALIASES"}.Concat(aList).ToList()
+                    }
+                );
+            }
+
+            // Add chain extensions, we have to do this now to account for aliases, we
+            if (chainExtensions.Any())
+            {
+                foreach (var (@struct, chainNames) in chainExtensions)
+                {
+                    // Get all the aliases of this struct (including this one)
+                    var allStructs = GetAllAliasesFromName(@struct.NativeName);
+                    // Get all the chains this struct extends (including their aliases)
+                    var chains = chainNames.SelectMany(n => GetAllAliasesFromName(n)).ToArray();
+
+                    // Add $VKEXTENDSCHAIN build tools intrinsic attribute to all versions of this struct
+                    Attribute attribute = null;
+                    foreach (var s in allStructs)
+                    {
+                        if (attribute is null)
+                        {
+                            // Create $VKEXTENDSCHAIN build tools intrinsic attribute
+                            attribute = new()
+                            {
+                                Name = "BuildToolsIntrinsic",
+                                Arguments = new[] {"$VKEXTENDSCHAIN"}.Concat(chains.Select(c => c.Name)).ToList()
+                            };
+                        }
+                        else
+                        {
+                            // Clone existing attribute.
+                            attribute = attribute.Clone();
+                        }
+
+                        s.Attributes.Add(attribute);
+                    }
+
+                    // Add chain starts to all chains and their aliases
+                    attribute = null;
+                    foreach (var c in chains)
+                    {
+                        if (attribute is null)
+                        {
+                            // Create $VKEXTENDSCHAIN build tools intrinsic attribute
+                            attribute = new()
+                            {
+                                Name = "BuildToolsIntrinsic",
+                                Arguments = new[] {"$VKCHAINSTART"}.Concat(allStructs.Select(s => s.Name)).ToList()
+                            };
+                        }
+                        else
+                        {
+                            // Clone existing attribute.
+                            attribute = attribute.Clone();
+                        }
+
+                        c.Attributes.Add(attribute);
+                    }
+                }
             }
 
             foreach (var h in spec.Handles)

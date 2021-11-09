@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Silk.NET.BuildTools.Common
@@ -38,6 +39,19 @@ namespace Silk.NET.BuildTools.Common
 
             sb.Append(")]");
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Clones this attribute.
+        /// </summary>
+        /// <returns>A copy.</returns>
+        public Attribute Clone()
+        {
+            return new Attribute
+            {
+                Name = Name,
+                Arguments = Arguments.ToList()
+            };
         }
     }
 }

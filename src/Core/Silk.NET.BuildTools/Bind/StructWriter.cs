@@ -52,14 +52,47 @@ namespace Silk.NET.BuildTools.Bind
             static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
             var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
             string structuredType = null;
+            var isChainable = false;
+            // Which chain this struct extends
+            IReadOnlyList<string> chainExtensions = null;
+            // Which chain extend the current struct
+            IReadOnlyList<string> chainExtenderss = null;
+            IReadOnlyList<string> aliases = null;
+            string aliasOf = null;
 
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
-                    if (attr.Arguments.Count > 1 && attr.Arguments[0] == "$VKSTRUCTUREDTYPE")
+                    if (attr.Arguments.Count > 0)
                     {
-                        structuredType = attr.Arguments[1];
+                        switch (attr.Arguments[0])
+                        {
+                            case "$VKSTRUCTUREDTYPE":
+                                structuredType = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
+                                break;
+                            case "$VKCHAINABLE":
+                                isChainable = true;
+                                break;
+                            case "$VKEXTENDSCHAIN":
+                                chainExtensions = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            case "$VKCHAINSTART":
+                                chainExtenderss = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            case "$VKALIASOF":
+                                aliasOf = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
+                                break;
+                            case "$VKALIASES":
+                                aliases = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            default:
+                                Console.WriteLine
+                                (
+                                    $"Unexpected build intrinsic attribute '{attr.Arguments[0]}' on '{@struct.Name}' struct!"
+                                );
+                                break;
+                        }
                     }
 
                     continue;
@@ -79,15 +112,50 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
+            // Build interface list
+            var interfaces = new List<string>();
+            if (chainExtenderss?.Any() == true)
+            {
+                interfaces.Add("IChainStart");
+            }
+
+            interfaces.AddRange
+            (
+                chainExtensions?.Select(e => $"IExtendsChain<{e}>") ??
+                Array.Empty<string>()
+            );
+            if (!interfaces.Any())
+            {
+                // We only need to add these interfaces if a descendant not already added above.
+                if (isChainable)
+                {
+                    interfaces.Add("IChainable");
+                }
+                else if (structuredType is not null)
+                {
+                    interfaces.Add("IStructuredType");
+                }
+            }
+
             if (needsCharSetFixup)
             {
                 sw.WriteLine("    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]");
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
+            if (!string.IsNullOrWhiteSpace(aliasOf))
+            {
+                sw.WriteLine($"    [NativeName(\"AliasOf\", \"{aliasOf}\")]");
+            }
+
+            if (aliases is not null)
+            {
+                sw.WriteLine($"    [NativeName(\"Aliases\", \"{string.Join(", ", aliases)}\")]");
+            }
+
             sw.WriteLine
             (
-                $"    public unsafe partial struct {@struct.Name}{(structuredType is not null ? " : IStructuredType" : string.Empty)}"
+                $"    public unsafe partial struct {@struct.Name}{(interfaces.Any() ? " : " + string.Join(", ", interfaces) : string.Empty)}"
             );
             sw.WriteLine("    {");
             if (guid is not null)
@@ -405,7 +473,10 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     sw.WriteLine("        /// <remarks>Note, there is no fixed value for this type.</remarks>");
                 }
-                sw.Write(@"        StructureType IStructuredType.StructureType()
+
+                sw.Write
+                (
+                    @"        StructureType IStructuredType.StructureType()
         {
             return SType"
                 );
@@ -420,6 +491,58 @@ namespace Silk.NET.BuildTools.Bind
                     @";
         }"
                 );
+
+
+                if (isChainable)
+                {
+                    // Correct for none void* or BaseInStructure* PNext
+                    var pNextType = @struct.Fields.FirstOrDefault(f => f.Name == "PNext")?.Type.Name ?? "void";
+                    string getCast, setCast;
+                    switch (pNextType)
+                    {
+                        case "void":
+                            getCast = "(BaseInStructure*) ";
+                            setCast = "";
+                            break;
+                        case "BaseInStructure":
+                            getCast = setCast = "";
+                            break;
+                        default:
+                            getCast = "(BaseInStructure*) ";
+                            setCast = $"({pNextType}*) ";
+                            break;
+                            
+                    }
+                    sw.WriteLine
+                    (
+                        @$"
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {{
+            get => {getCast}PNext;
+            set => PNext = {setCast}value;
+        }}"
+                    );
+                }
+
+                if (chainExtenderss?.Any() == true && structuredType.Length > 0)
+                {
+                    sw.WriteLine
+                    (
+                        @$"
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name=""capture"">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref {@struct.Name} Chain(
+            out {@struct.Name} capture)
+        {{
+            capture = new {@struct.Name}({structuredType});
+            return ref capture;
+        }}"
+                    );
+                }
             }
 
             sw.WriteLine("    }");
