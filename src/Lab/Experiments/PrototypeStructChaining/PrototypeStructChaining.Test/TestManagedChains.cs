@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Silk.Net.Vulkan;
+using Silk.NET.Vulkan;
 using Xunit;
 
 namespace PrototypeStructChaining.Test;
@@ -11,7 +11,7 @@ public class TestManagedChains
     public unsafe void TestManagedChain()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-            PhysicalDeviceAccelerationStructureFeaturesKhr>();
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
@@ -63,7 +63,7 @@ public class TestManagedChains
     public unsafe void TestManagedChainReplaceMiddle()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-            PhysicalDeviceAccelerationStructureFeaturesKhr>
+            PhysicalDeviceAccelerationStructureFeaturesKHR>
         (
             item1: new PhysicalDeviceDescriptorIndexingFeatures
             {
@@ -163,7 +163,7 @@ public class TestManagedChains
         // Check flag set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 
-        using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKhr>();
+        using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
@@ -190,9 +190,9 @@ public class TestManagedChains
             ManagedChain.Create<
                 PhysicalDeviceFeatures2,
                 PhysicalDeviceDescriptorIndexingFeatures,
-                PhysicalDeviceAccelerationStructureFeaturesKhr>
+                PhysicalDeviceAccelerationStructureFeaturesKHR>
             (
-                item2: new PhysicalDeviceAccelerationStructureFeaturesKhr
+                item2: new PhysicalDeviceAccelerationStructureFeaturesKHR
                     {AccelerationStructure = true}
             );
 
@@ -240,12 +240,12 @@ public class TestManagedChains
         PhysicalDeviceFeatures2
             .Chain(out var unmanagedChain)
             .SetNext(ref indexingFeatures)
-            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
         // Loads a new managed chain from an unmanaged chain
         using var managedChain =
             new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-                PhysicalDeviceAccelerationStructureFeaturesKhr>(out var errors, unmanagedChain);
+                PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
 
         // Check we had no loading errors
         Assert.Equal("", errors);
@@ -276,16 +276,16 @@ public class TestManagedChains
             .Chain(out var unmanagedChain)
             .AddNext(out PhysicalDeviceFeatures2 features2)
             .SetNext(ref indexingFeatures)
-            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
         // Loads a new managed chain from an unmanaged chain
         using var managedChain =
             ManagedChain.Load<
                 DeviceCreateInfo,
                 // Note we are supplied a PhysicalDeviceFeatures2 here from the unmanaged chain
-                PhysicalDeviceAccelerationStructureFeaturesKhr,
+                PhysicalDeviceAccelerationStructureFeaturesKHR,
                 PhysicalDeviceDescriptorIndexingFeatures,
-                PhysicalDeviceAccelerationStructureFeaturesKhr,
+                PhysicalDeviceAccelerationStructureFeaturesKHR,
                 // Note that the unmanaged chain did not supply a 5th entry
                 PhysicalDeviceFeatures2>(out var errors, unmanagedChain);
 
@@ -312,7 +312,7 @@ The unmanaged chain was length 4, expected length 5", errors
             .Chain(out var unmanagedChain)
             .AddNext(out PhysicalDeviceFeatures2 features2)
             .SetNext(ref indexingFeatures)
-            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
         // Try loading a shorter managed chain
         using var managedChain =
@@ -332,7 +332,7 @@ The unmanaged chain was length 4, expected length 5", errors
     public void TestReadOnlyList()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-            PhysicalDeviceAccelerationStructureFeaturesKhr>();
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
         Assert.Equal(3, chain.Count);
 
@@ -349,14 +349,14 @@ The unmanaged chain was length 4, expected length 5", errors
         // Check concrete types
         Assert.IsType<PhysicalDeviceFeatures2>(structures[0]);
         Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
-        Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKhr>(structures[2]);
+        Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
     }
 
     [Fact]
     public void TestDeconstructor()
     {
         using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-            PhysicalDeviceAccelerationStructureFeaturesKhr>();
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
         var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;
 

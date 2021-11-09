@@ -27,6 +27,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Vulkan\Silk.NET.Vulkan\Silk.NET.Vulkan.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Compile Update="ManagedChain.gen.cs">
         <AutoGen>True</AutoGen>
         <DesignTime>True</DesignTime>

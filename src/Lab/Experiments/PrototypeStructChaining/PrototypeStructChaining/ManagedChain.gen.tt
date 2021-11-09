@@ -100,7 +100,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 ///  Static class for creating Managed Chains.
@@ -374,7 +374,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
 <#
         if (i > 1)
         {
@@ -414,7 +414,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     {
         var previousSize = MemorySize - Item<#= i - 1 #>Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item <#= i - 1 #>
         item<#= i - 1 #>.StructureType();        
@@ -459,7 +459,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         var newSize = MemorySize - Item<#= i - 1 #>Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
 <#
             if (i > 2)

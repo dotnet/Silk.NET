@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 ///  Static class for creating Managed Chains.
@@ -1292,7 +1292,7 @@ public unsafe class ManagedChain<TChain> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         return new ManagedChain<TChain>(newHeadPtr);
     }
 
@@ -1508,7 +1508,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         return new ManagedChain<TChain, T1>(newHeadPtr);
@@ -1528,7 +1528,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     {
         var previousSize = MemorySize - Item1Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 1
         item1.StructureType();        
@@ -1565,7 +1565,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         var newSize = MemorySize - Item1Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = null;
         return new ManagedChain<TChain>(newHeadPtr);
@@ -1847,7 +1847,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -1868,7 +1868,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     {
         var previousSize = MemorySize - Item2Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 2
         item2.StructureType();        
@@ -1906,7 +1906,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         var newSize = MemorySize - Item2Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = null; 
@@ -2253,7 +2253,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -2275,7 +2275,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     {
         var previousSize = MemorySize - Item3Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 3
         item3.StructureType();        
@@ -2314,7 +2314,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         var newSize = MemorySize - Item3Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -2726,7 +2726,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -2749,7 +2749,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     {
         var previousSize = MemorySize - Item4Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 4
         item4.StructureType();        
@@ -2789,7 +2789,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         var newSize = MemorySize - Item4Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -3266,7 +3266,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -3290,7 +3290,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     {
         var previousSize = MemorySize - Item5Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 5
         item5.StructureType();        
@@ -3331,7 +3331,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         var newSize = MemorySize - Item5Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -3873,7 +3873,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -3898,7 +3898,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     {
         var previousSize = MemorySize - Item6Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 6
         item6.StructureType();        
@@ -3940,7 +3940,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         var newSize = MemorySize - Item6Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -4547,7 +4547,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -4573,7 +4573,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     {
         var previousSize = MemorySize - Item7Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 7
         item7.StructureType();        
@@ -4616,7 +4616,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         var newSize = MemorySize - Item7Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -5288,7 +5288,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -5315,7 +5315,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     {
         var previousSize = MemorySize - Item8Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 8
         item8.StructureType();        
@@ -5359,7 +5359,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         var newSize = MemorySize - Item8Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -6096,7 +6096,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -6124,7 +6124,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     {
         var previousSize = MemorySize - Item9Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 9
         item9.StructureType();        
@@ -6169,7 +6169,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         var newSize = MemorySize - Item9Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -6971,7 +6971,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -7000,7 +7000,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item10Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 10
         item10.StructureType();        
@@ -7046,7 +7046,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item10Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -7913,7 +7913,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -7943,7 +7943,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item11Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 11
         item11.StructureType();        
@@ -7990,7 +7990,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item11Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -8922,7 +8922,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -8953,7 +8953,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item12Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 12
         item12.StructureType();        
@@ -9001,7 +9001,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item12Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -9998,7 +9998,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -10030,7 +10030,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item13Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 13
         item13.StructureType();        
@@ -10079,7 +10079,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item13Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -11141,7 +11141,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -11174,7 +11174,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item14Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 14
         item14.StructureType();        
@@ -11224,7 +11224,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item14Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -12351,7 +12351,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var newHeadPtr = Marshal.AllocHGlobal(MemorySize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
@@ -12385,7 +12385,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         var previousSize = MemorySize - Item15Size;
         // Block copy original struct data for speed
-        Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
+        System.Buffer.MemoryCopy(previous.HeadPtr, (void*)_headPtr, previousSize, previousSize);
         
         // Append item 15
         item15.StructureType();        
@@ -12436,7 +12436,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         var newSize = MemorySize - Item15Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
-        Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
         ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
