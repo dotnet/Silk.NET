@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryBarrier2KHR")]
-    public unsafe partial struct MemoryBarrier2KHR : IStructuredType
+    public unsafe partial struct MemoryBarrier2KHR : IExtendsChain<SubpassDependency2>, IExtendsChain<SubpassDependency2Khr>
     {
         public MemoryBarrier2KHR
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryBarrier2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

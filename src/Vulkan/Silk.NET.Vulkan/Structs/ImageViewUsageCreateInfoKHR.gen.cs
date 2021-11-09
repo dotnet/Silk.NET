@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewUsageCreateInfoKHR")]
-    public unsafe partial struct ImageViewUsageCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkImageViewUsageCreateInfo")]
+    public unsafe partial struct ImageViewUsageCreateInfoKhr : IExtendsChain<ImageViewCreateInfo>
     {
-        public ImageViewUsageCreateInfoKHR
+        public ImageViewUsageCreateInfoKhr
         (
             StructureType? sType = StructureType.ImageViewUsageCreateInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageViewUsageCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

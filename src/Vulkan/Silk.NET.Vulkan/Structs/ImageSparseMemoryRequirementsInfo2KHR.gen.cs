@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSparseMemoryRequirementsInfo2KHR")]
-    public unsafe partial struct ImageSparseMemoryRequirementsInfo2KHR : IStructuredType
+    [NativeName("AliasOf", "VkImageSparseMemoryRequirementsInfo2")]
+    public unsafe partial struct ImageSparseMemoryRequirementsInfo2Khr : IChainable
     {
-        public ImageSparseMemoryRequirementsInfo2KHR
+        public ImageSparseMemoryRequirementsInfo2Khr
         (
             StructureType? sType = StructureType.ImageSparseMemoryRequirementsInfo2,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageSparseMemoryRequirementsInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

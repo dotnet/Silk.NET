@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassAttachmentBeginInfo")]
-    public unsafe partial struct RenderPassAttachmentBeginInfo : IStructuredType
+    [NativeName("Aliases", "VkRenderPassAttachmentBeginInfoKHR")]
+    public unsafe partial struct RenderPassAttachmentBeginInfo : IExtendsChain<RenderPassBeginInfo>
     {
         public RenderPassAttachmentBeginInfo
         (
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderPassAttachmentBeginInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

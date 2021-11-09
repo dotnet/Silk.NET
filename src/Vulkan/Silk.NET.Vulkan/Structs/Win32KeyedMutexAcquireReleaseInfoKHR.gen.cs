@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWin32KeyedMutexAcquireReleaseInfoKHR")]
-    public unsafe partial struct Win32KeyedMutexAcquireReleaseInfoKHR : IStructuredType
+    public unsafe partial struct Win32KeyedMutexAcquireReleaseInfoKHR : IExtendsChain<SubmitInfo>, IExtendsChain<SubmitInfo2KHR>
     {
         public Win32KeyedMutexAcquireReleaseInfoKHR
         (
@@ -128,6 +128,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.Win32KeyedMutexAcquireReleaseInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

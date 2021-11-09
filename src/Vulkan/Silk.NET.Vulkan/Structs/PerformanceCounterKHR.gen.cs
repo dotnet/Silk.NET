@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceCounterKHR")]
-    public unsafe partial struct PerformanceCounterKHR : IStructuredType
+    public unsafe partial struct PerformanceCounterKHR : IChainable
     {
         public PerformanceCounterKHR
         (
@@ -89,6 +89,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PerformanceCounterKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

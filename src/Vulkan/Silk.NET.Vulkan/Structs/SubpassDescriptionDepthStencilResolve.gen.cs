@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescriptionDepthStencilResolve")]
-    public unsafe partial struct SubpassDescriptionDepthStencilResolve : IStructuredType
+    [NativeName("Aliases", "VkSubpassDescriptionDepthStencilResolveKHR")]
+    public unsafe partial struct SubpassDescriptionDepthStencilResolve : IExtendsChain<SubpassDescription2>, IExtendsChain<SubpassDescription2Khr>
     {
         public SubpassDescriptionDepthStencilResolve
         (
@@ -84,6 +85,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SubpassDescriptionDepthStencilResolve;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

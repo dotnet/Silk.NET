@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryRequirements2KHR")]
-    public unsafe partial struct MemoryRequirements2KHR : IStructuredType
+    [NativeName("AliasOf", "VkMemoryRequirements2")]
+    public unsafe partial struct MemoryRequirements2Khr : IChainStart
     {
-        public MemoryRequirements2KHR
+        public MemoryRequirements2Khr
         (
             StructureType? sType = StructureType.MemoryRequirements2,
             void* pNext = null,
@@ -62,6 +63,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryRequirements2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref MemoryRequirements2Khr Chain(
+            out MemoryRequirements2Khr capture)
+        {
+            capture = new MemoryRequirements2Khr(StructureType.MemoryRequirements2);
+            return ref capture;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoPictureResourceKHR")]
-    public unsafe partial struct VideoPictureResourceKHR : IStructuredType
+    public unsafe partial struct VideoPictureResourceKHR : IChainable
     {
         public VideoPictureResourceKHR
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.VideoPictureResourceKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

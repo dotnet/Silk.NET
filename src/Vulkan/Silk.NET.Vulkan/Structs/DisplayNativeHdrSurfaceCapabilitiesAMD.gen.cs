@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayNativeHdrSurfaceCapabilitiesAMD")]
-    public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD : IStructuredType
+    public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD : IExtendsChain<SurfaceCapabilities2KHR>
     {
         public DisplayNativeHdrSurfaceCapabilitiesAMD
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DisplayNativeHdrSurfaceCapabilitiesAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

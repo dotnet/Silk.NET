@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferDeviceAddressInfo")]
-    public unsafe partial struct BufferDeviceAddressInfo : IStructuredType
+    [NativeName("Aliases", "VkBufferDeviceAddressInfoKHR, VkBufferDeviceAddressInfoEXT")]
+    public unsafe partial struct BufferDeviceAddressInfo : IChainable
     {
         public BufferDeviceAddressInfo
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BufferDeviceAddressInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryPriorityAllocateInfoEXT")]
-    public unsafe partial struct MemoryPriorityAllocateInfoEXT : IStructuredType
+    public unsafe partial struct MemoryPriorityAllocateInfoEXT : IExtendsChain<MemoryAllocateInfo>
     {
         public MemoryPriorityAllocateInfoEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryPriorityAllocateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyProperties2KHR")]
-    public unsafe partial struct QueueFamilyProperties2KHR : IStructuredType
+    [NativeName("AliasOf", "VkQueueFamilyProperties2")]
+    public unsafe partial struct QueueFamilyProperties2Khr : IChainStart
     {
-        public QueueFamilyProperties2KHR
+        public QueueFamilyProperties2Khr
         (
             StructureType? sType = StructureType.QueueFamilyProperties2,
             void* pNext = null,
@@ -62,6 +63,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.QueueFamilyProperties2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref QueueFamilyProperties2Khr Chain(
+            out QueueFamilyProperties2Khr capture)
+        {
+            capture = new QueueFamilyProperties2Khr(StructureType.QueueFamilyProperties2);
+            return ref capture;
         }
     }
 }

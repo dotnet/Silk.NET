@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportFenceFdInfoKHR")]
-    public unsafe partial struct ImportFenceFdInfoKHR : IStructuredType
+    public unsafe partial struct ImportFenceFdInfoKHR : IChainable
     {
         public ImportFenceFdInfoKHR
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImportFenceFDInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

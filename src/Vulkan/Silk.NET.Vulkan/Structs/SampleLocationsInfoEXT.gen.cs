@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSampleLocationsInfoEXT")]
-    public unsafe partial struct SampleLocationsInfoEXT : IStructuredType
+    public unsafe partial struct SampleLocationsInfoEXT : IExtendsChain<ImageMemoryBarrier>, IExtendsChain<ImageMemoryBarrier2KHR>
     {
         public SampleLocationsInfoEXT
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SampleLocationsInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

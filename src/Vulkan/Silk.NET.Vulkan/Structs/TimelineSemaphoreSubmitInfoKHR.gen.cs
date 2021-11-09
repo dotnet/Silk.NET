@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTimelineSemaphoreSubmitInfoKHR")]
-    public unsafe partial struct TimelineSemaphoreSubmitInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkTimelineSemaphoreSubmitInfo")]
+    public unsafe partial struct TimelineSemaphoreSubmitInfoKhr : IExtendsChain<SubmitInfo>, IExtendsChain<BindSparseInfo>
     {
-        public TimelineSemaphoreSubmitInfoKHR
+        public TimelineSemaphoreSubmitInfoKhr
         (
             StructureType? sType = StructureType.TimelineSemaphoreSubmitInfo,
             void* pNext = null,
@@ -95,6 +96,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.TimelineSemaphoreSubmitInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

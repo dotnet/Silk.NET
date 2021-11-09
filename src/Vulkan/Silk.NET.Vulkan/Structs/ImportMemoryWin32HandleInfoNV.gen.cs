@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryWin32HandleInfoNV")]
-    public unsafe partial struct ImportMemoryWin32HandleInfoNV : IStructuredType
+    public unsafe partial struct ImportMemoryWin32HandleInfoNV : IExtendsChain<MemoryAllocateInfo>
     {
         public ImportMemoryWin32HandleInfoNV
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImportMemoryWin32HandleInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

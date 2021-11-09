@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCalibratedTimestampInfoEXT")]
-    public unsafe partial struct CalibratedTimestampInfoEXT : IStructuredType
+    public unsafe partial struct CalibratedTimestampInfoEXT : IChainable
     {
         public CalibratedTimestampInfoEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CalibratedTimestampInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

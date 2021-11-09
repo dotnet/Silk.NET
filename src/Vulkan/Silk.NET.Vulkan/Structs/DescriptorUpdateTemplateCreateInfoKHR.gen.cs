@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateCreateInfoKHR")]
-    public unsafe partial struct DescriptorUpdateTemplateCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkDescriptorUpdateTemplateCreateInfo")]
+    public unsafe partial struct DescriptorUpdateTemplateCreateInfoKhr : IChainable
     {
-        public DescriptorUpdateTemplateCreateInfoKHR
+        public DescriptorUpdateTemplateCreateInfoKhr
         (
             StructureType? sType = StructureType.DescriptorUpdateTemplateCreateInfo,
             void* pNext = null,
@@ -139,6 +140,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DescriptorUpdateTemplateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

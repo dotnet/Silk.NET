@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetAllocateInfo")]
-    public unsafe partial struct DescriptorSetAllocateInfo : IStructuredType
+    public unsafe partial struct DescriptorSetAllocateInfo : IChainStart
     {
         public DescriptorSetAllocateInfo
         (
@@ -84,6 +84,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DescriptorSetAllocateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DescriptorSetAllocateInfo Chain(
+            out DescriptorSetAllocateInfo capture)
+        {
+            capture = new DescriptorSetAllocateInfo(StructureType.DescriptorSetAllocateInfo);
+            return ref capture;
         }
     }
 }

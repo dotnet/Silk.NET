@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCollectionConstraintsInfoFUCHSIA")]
-    public unsafe partial struct BufferCollectionConstraintsInfoFUCHSIA : IStructuredType
+    public unsafe partial struct BufferCollectionConstraintsInfoFUCHSIA : IChainable
     {
         public BufferCollectionConstraintsInfoFUCHSIA
         (
@@ -106,6 +106,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BufferCollectionConstraintsInfoFuchsia;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

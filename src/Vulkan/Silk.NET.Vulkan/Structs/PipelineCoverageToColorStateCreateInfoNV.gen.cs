@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCoverageToColorStateCreateInfoNV")]
-    public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV : IStructuredType
+    public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV : IExtendsChain<PipelineMultisampleStateCreateInfo>
     {
         public PipelineCoverageToColorStateCreateInfoNV
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PipelineCoverageToColorStateCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

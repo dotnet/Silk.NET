@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubmitInfo2KHR")]
-    public unsafe partial struct SubmitInfo2KHR : IStructuredType
+    public unsafe partial struct SubmitInfo2KHR : IChainStart
     {
         public SubmitInfo2KHR
         (
@@ -128,6 +128,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SubmitInfo2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SubmitInfo2KHR Chain(
+            out SubmitInfo2KHR capture)
+        {
+            capture = new SubmitInfo2KHR(StructureType.SubmitInfo2Khr);
+            return ref capture;
         }
     }
 }

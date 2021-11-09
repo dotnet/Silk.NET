@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineFragmentShadingRateStateCreateInfoKHR")]
-    public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR : IStructuredType
+    public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineFragmentShadingRateStateCreateInfoKHR
         (
@@ -94,6 +94,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PipelineFragmentShadingRateStateCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

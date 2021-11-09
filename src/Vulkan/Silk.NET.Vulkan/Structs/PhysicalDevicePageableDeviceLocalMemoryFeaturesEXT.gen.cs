@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT")]
-    public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT : IStructuredType
+    public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDevicePageableDeviceLocalMemoryFeaturesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

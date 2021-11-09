@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
-    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT : IStructuredType
+    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT : IExtendsChain<RenderPassCreateInfo>, IExtendsChain<RenderPassCreateInfo2>, IExtendsChain<RenderPassCreateInfo2Khr>
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderPassFragmentDensityMapCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

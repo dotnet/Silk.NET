@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationDomainOriginStateCreateInfoKHR")]
-    public unsafe partial struct PipelineTessellationDomainOriginStateCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkPipelineTessellationDomainOriginStateCreateInfo")]
+    public unsafe partial struct PipelineTessellationDomainOriginStateCreateInfoKhr : IExtendsChain<PipelineTessellationStateCreateInfo>
     {
-        public PipelineTessellationDomainOriginStateCreateInfoKHR
+        public PipelineTessellationDomainOriginStateCreateInfoKhr
         (
             StructureType? sType = StructureType.PipelineTessellationDomainOriginStateCreateInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PipelineTessellationDomainOriginStateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

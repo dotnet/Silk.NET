@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureBuildGeometryInfoKHR")]
-    public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR : IStructuredType
+    public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR : IChainable
     {
         public AccelerationStructureBuildGeometryInfoKHR
         (
@@ -150,6 +150,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AccelerationStructureBuildGeometryInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCreateInfo")]
-    public unsafe partial struct ImageCreateInfo : IStructuredType
+    public unsafe partial struct ImageCreateInfo : IChainStart
     {
         public ImageCreateInfo
         (
@@ -194,6 +194,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ImageCreateInfo Chain(
+            out ImageCreateInfo capture)
+        {
+            capture = new ImageCreateInfo(StructureType.ImageCreateInfo);
+            return ref capture;
         }
     }
 }

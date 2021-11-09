@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayModeCreateInfoKHR")]
-    public unsafe partial struct DisplayModeCreateInfoKHR : IStructuredType
+    public unsafe partial struct DisplayModeCreateInfoKHR : IChainable
     {
         public DisplayModeCreateInfoKHR
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DisplayModeCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

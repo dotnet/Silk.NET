@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryBufferCollectionFUCHSIA")]
-    public unsafe partial struct ImportMemoryBufferCollectionFUCHSIA : IStructuredType
+    public unsafe partial struct ImportMemoryBufferCollectionFUCHSIA : IExtendsChain<MemoryAllocateInfo>
     {
         public ImportMemoryBufferCollectionFUCHSIA
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImportMemoryBufferCollectionFuchsia;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

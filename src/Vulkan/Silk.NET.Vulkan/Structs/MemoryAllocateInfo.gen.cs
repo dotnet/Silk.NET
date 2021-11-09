@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryAllocateInfo")]
-    public unsafe partial struct MemoryAllocateInfo : IStructuredType
+    public unsafe partial struct MemoryAllocateInfo : IChainStart
     {
         public MemoryAllocateInfo
         (
@@ -73,6 +73,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryAllocateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref MemoryAllocateInfo Chain(
+            out MemoryAllocateInfo capture)
+        {
+            capture = new MemoryAllocateInfo(StructureType.MemoryAllocateInfo);
+            return ref capture;
         }
     }
 }

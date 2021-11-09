@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferSubmitInfoKHR")]
-    public unsafe partial struct CommandBufferSubmitInfoKHR : IStructuredType
+    public unsafe partial struct CommandBufferSubmitInfoKHR : IChainable
     {
         public CommandBufferSubmitInfoKHR
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CommandBufferSubmitInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

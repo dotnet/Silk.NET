@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkXlibSurfaceCreateInfoKHR")]
-    public unsafe partial struct XlibSurfaceCreateInfoKHR : IStructuredType
+    public unsafe partial struct XlibSurfaceCreateInfoKHR : IChainable
     {
         public XlibSurfaceCreateInfoKHR
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.XlibSurfaceCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

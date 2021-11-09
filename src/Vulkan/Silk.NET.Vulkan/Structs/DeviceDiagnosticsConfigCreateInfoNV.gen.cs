@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceDiagnosticsConfigCreateInfoNV")]
-    public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV : IStructuredType
+    public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV : IExtendsChain<DeviceCreateInfo>
     {
         public DeviceDiagnosticsConfigCreateInfoNV
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceDiagnosticsConfigCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

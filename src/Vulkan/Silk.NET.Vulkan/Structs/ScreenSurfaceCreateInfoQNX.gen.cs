@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkScreenSurfaceCreateInfoQNX")]
-    public unsafe partial struct ScreenSurfaceCreateInfoQNX : IStructuredType
+    public unsafe partial struct ScreenSurfaceCreateInfoQNX : IChainable
     {
         public ScreenSurfaceCreateInfoQNX
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ScreenSurfaceCreateInfoQnx;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

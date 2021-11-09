@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceRenderingInfoKHR")]
-    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR : IStructuredType
+    public unsafe partial struct CommandBufferInheritanceRenderingInfoKHR : IExtendsChain<CommandBufferInheritanceInfo>
     {
         public CommandBufferInheritanceRenderingInfoKHR
         (
@@ -128,6 +128,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CommandBufferInheritanceRenderingInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

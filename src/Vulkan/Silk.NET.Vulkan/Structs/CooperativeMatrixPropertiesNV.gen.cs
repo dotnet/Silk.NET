@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCooperativeMatrixPropertiesNV")]
-    public unsafe partial struct CooperativeMatrixPropertiesNV : IStructuredType
+    public unsafe partial struct CooperativeMatrixPropertiesNV : IChainable
     {
         public CooperativeMatrixPropertiesNV
         (
@@ -139,6 +139,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CooperativeMatrixPropertiesNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

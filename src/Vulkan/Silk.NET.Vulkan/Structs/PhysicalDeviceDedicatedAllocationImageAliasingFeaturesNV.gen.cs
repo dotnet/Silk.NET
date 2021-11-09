@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV : IStructuredType
+    public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentFrameTokenGGP")]
-    public unsafe partial struct PresentFrameTokenGGP : IStructuredType
+    public unsafe partial struct PresentFrameTokenGGP : IExtendsChain<PresentInfoKHR>
     {
         public PresentFrameTokenGGP
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PresentFrameTokenGgp;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePresentationPropertiesANDROID")]
-    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID : IStructuredType
+    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID : IChainable
     {
         public PhysicalDevicePresentationPropertiesANDROID
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDevicePresentationPropertiesAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

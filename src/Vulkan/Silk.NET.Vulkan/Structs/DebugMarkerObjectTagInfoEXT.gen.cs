@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugMarkerObjectTagInfoEXT")]
-    public unsafe partial struct DebugMarkerObjectTagInfoEXT : IStructuredType
+    public unsafe partial struct DebugMarkerObjectTagInfoEXT : IChainable
     {
         public DebugMarkerObjectTagInfoEXT
         (
@@ -106,6 +106,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DebugMarkerObjectTagInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

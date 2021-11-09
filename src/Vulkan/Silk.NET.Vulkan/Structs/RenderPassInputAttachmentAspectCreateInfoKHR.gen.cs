@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassInputAttachmentAspectCreateInfoKHR")]
-    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkRenderPassInputAttachmentAspectCreateInfo")]
+    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfoKhr : IExtendsChain<RenderPassCreateInfo>
     {
-        public RenderPassInputAttachmentAspectCreateInfoKHR
+        public RenderPassInputAttachmentAspectCreateInfoKhr
         (
             StructureType? sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
             void* pNext = null,
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderPassInputAttachmentAspectCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

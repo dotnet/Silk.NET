@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueInfo2")]
-    public unsafe partial struct DeviceQueueInfo2 : IStructuredType
+    public unsafe partial struct DeviceQueueInfo2 : IChainable
     {
         public DeviceQueueInfo2
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceQueueInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

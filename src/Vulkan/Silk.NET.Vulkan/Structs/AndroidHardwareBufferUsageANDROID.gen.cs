@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidHardwareBufferUsageANDROID")]
-    public unsafe partial struct AndroidHardwareBufferUsageANDROID : IStructuredType
+    public unsafe partial struct AndroidHardwareBufferUsageANDROID : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
     {
         public AndroidHardwareBufferUsageANDROID
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AndroidHardwareBufferUsageAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

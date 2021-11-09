@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBlitImageInfo2KHR")]
-    public unsafe partial struct BlitImageInfo2KHR : IStructuredType
+    public unsafe partial struct BlitImageInfo2KHR : IChainable
     {
         public BlitImageInfo2KHR
         (
@@ -128,6 +128,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BlitImageInfo2Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

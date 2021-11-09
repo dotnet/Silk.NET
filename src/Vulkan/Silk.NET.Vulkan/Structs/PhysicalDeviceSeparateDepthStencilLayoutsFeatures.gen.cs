@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures")]
-    public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures : IStructuredType
+    [NativeName("Aliases", "VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceSeparateDepthStencilLayoutsFeatures
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

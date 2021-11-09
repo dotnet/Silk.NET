@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatProperties2KHR")]
-    public unsafe partial struct ImageFormatProperties2KHR : IStructuredType
+    [NativeName("AliasOf", "VkImageFormatProperties2")]
+    public unsafe partial struct ImageFormatProperties2Khr : IChainStart
     {
-        public ImageFormatProperties2KHR
+        public ImageFormatProperties2Khr
         (
             StructureType? sType = StructureType.ImageFormatProperties2,
             void* pNext = null,
@@ -62,6 +63,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageFormatProperties2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ImageFormatProperties2Khr Chain(
+            out ImageFormatProperties2Khr capture)
+        {
+            capture = new ImageFormatProperties2Khr(StructureType.ImageFormatProperties2);
+            return ref capture;
         }
     }
 }

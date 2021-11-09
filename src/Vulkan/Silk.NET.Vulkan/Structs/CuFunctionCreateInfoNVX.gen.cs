@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCuFunctionCreateInfoNVX")]
-    public unsafe partial struct CuFunctionCreateInfoNVX : IStructuredType
+    public unsafe partial struct CuFunctionCreateInfoNVX : IChainable
     {
         public CuFunctionCreateInfoNVX
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CUFunctionCreateInfoNvx;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

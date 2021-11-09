@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImagelessFramebufferFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeaturesKHR : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDeviceImagelessFramebufferFeatures")]
+    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeaturesKhr : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceImagelessFramebufferFeaturesKHR
+        public PhysicalDeviceImagelessFramebufferFeaturesKhr
         (
             StructureType? sType = StructureType.PhysicalDeviceImagelessFramebufferFeatures,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceImagelessFramebufferFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

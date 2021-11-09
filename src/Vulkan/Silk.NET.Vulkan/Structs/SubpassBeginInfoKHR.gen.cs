@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassBeginInfoKHR")]
-    public unsafe partial struct SubpassBeginInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkSubpassBeginInfo")]
+    public unsafe partial struct SubpassBeginInfoKhr : IChainable
     {
-        public SubpassBeginInfoKHR
+        public SubpassBeginInfoKhr
         (
             StructureType? sType = StructureType.SubpassBeginInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SubpassBeginInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

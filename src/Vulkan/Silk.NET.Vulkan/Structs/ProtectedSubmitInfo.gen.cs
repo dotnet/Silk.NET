@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkProtectedSubmitInfo")]
-    public unsafe partial struct ProtectedSubmitInfo : IStructuredType
+    public unsafe partial struct ProtectedSubmitInfo : IExtendsChain<SubmitInfo>
     {
         public ProtectedSubmitInfo
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ProtectedSubmitInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceHostQueryResetFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceHostQueryResetFeaturesEXT : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDeviceHostQueryResetFeatures")]
+    public unsafe partial struct PhysicalDeviceHostQueryResetFeaturesExt : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
-        public PhysicalDeviceHostQueryResetFeaturesEXT
+        public PhysicalDeviceHostQueryResetFeaturesExt
         (
             StructureType? sType = StructureType.PhysicalDeviceHostQueryResetFeatures,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceHostQueryResetFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

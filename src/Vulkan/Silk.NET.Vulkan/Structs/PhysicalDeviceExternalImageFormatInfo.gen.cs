@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfo")]
-    public unsafe partial struct PhysicalDeviceExternalImageFormatInfo : IStructuredType
+    [NativeName("Aliases", "VkPhysicalDeviceExternalImageFormatInfoKHR")]
+    public unsafe partial struct PhysicalDeviceExternalImageFormatInfo : IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2Khr>
     {
         public PhysicalDeviceExternalImageFormatInfo
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceExternalImageFormatInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

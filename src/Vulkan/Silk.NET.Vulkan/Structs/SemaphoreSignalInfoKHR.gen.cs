@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreSignalInfoKHR")]
-    public unsafe partial struct SemaphoreSignalInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkSemaphoreSignalInfo")]
+    public unsafe partial struct SemaphoreSignalInfoKhr : IChainable
     {
-        public SemaphoreSignalInfoKHR
+        public SemaphoreSignalInfoKhr
         (
             StructureType? sType = StructureType.SemaphoreSignalInfo,
             void* pNext = null,
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SemaphoreSignalInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

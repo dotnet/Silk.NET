@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHeadlessSurfaceCreateInfoEXT")]
-    public unsafe partial struct HeadlessSurfaceCreateInfoEXT : IStructuredType
+    public unsafe partial struct HeadlessSurfaceCreateInfoEXT : IChainable
     {
         public HeadlessSurfaceCreateInfoEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.HeadlessSurfaceCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

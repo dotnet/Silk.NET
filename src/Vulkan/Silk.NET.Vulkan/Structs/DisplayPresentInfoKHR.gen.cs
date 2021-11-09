@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPresentInfoKHR")]
-    public unsafe partial struct DisplayPresentInfoKHR : IStructuredType
+    public unsafe partial struct DisplayPresentInfoKHR : IExtendsChain<PresentInfoKHR>
     {
         public DisplayPresentInfoKHR
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DisplayPresentInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

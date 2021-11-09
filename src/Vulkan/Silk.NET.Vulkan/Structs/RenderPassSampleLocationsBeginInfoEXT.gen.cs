@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassSampleLocationsBeginInfoEXT")]
-    public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT : IStructuredType
+    public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT : IExtendsChain<RenderPassBeginInfo>
     {
         public RenderPassSampleLocationsBeginInfoEXT
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderPassSampleLocationsBeginInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

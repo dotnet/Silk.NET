@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerCreateInfo")]
-    public unsafe partial struct SamplerCreateInfo : IStructuredType
+    public unsafe partial struct SamplerCreateInfo : IChainStart
     {
         public SamplerCreateInfo
         (
@@ -227,6 +227,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SamplerCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SamplerCreateInfo Chain(
+            out SamplerCreateInfo capture)
+        {
+            capture = new SamplerCreateInfo(StructureType.SamplerCreateInfo);
+            return ref capture;
         }
     }
 }

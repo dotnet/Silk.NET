@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT : IStructuredType
+    public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
     {
         public PhysicalDeviceBlendOperationAdvancedPropertiesEXT
         (
@@ -117,6 +117,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceBlendOperationAdvancedPropertiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

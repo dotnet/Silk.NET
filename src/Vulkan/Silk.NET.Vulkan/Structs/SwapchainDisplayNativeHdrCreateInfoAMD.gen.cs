@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainDisplayNativeHdrCreateInfoAMD")]
-    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD : IStructuredType
+    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD : IExtendsChain<SwapchainCreateInfoKHR>
     {
         public SwapchainDisplayNativeHdrCreateInfoAMD
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

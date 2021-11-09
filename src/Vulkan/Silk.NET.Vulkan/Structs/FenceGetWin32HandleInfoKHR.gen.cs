@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFenceGetWin32HandleInfoKHR")]
-    public unsafe partial struct FenceGetWin32HandleInfoKHR : IStructuredType
+    public unsafe partial struct FenceGetWin32HandleInfoKHR : IChainable
     {
         public FenceGetWin32HandleInfoKHR
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.FenceGetWin32HandleInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

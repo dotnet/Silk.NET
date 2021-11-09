@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGraphicsPipelineShaderGroupsCreateInfoNV")]
-    public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV : IStructuredType
+    public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public GraphicsPipelineShaderGroupsCreateInfoNV
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

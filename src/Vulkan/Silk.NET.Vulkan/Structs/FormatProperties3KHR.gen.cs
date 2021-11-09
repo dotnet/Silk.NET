@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormatProperties3KHR")]
-    public unsafe partial struct FormatProperties3KHR : IStructuredType
+    public unsafe partial struct FormatProperties3KHR : IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2Khr>
     {
         public FormatProperties3KHR
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.FormatProperties3Khr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

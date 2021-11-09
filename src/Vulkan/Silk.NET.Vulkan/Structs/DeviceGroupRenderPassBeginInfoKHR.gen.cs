@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupRenderPassBeginInfoKHR")]
-    public unsafe partial struct DeviceGroupRenderPassBeginInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkDeviceGroupRenderPassBeginInfo")]
+    public unsafe partial struct DeviceGroupRenderPassBeginInfoKhr : IExtendsChain<RenderPassBeginInfo>, IExtendsChain<RenderingInfoKHR>
     {
-        public DeviceGroupRenderPassBeginInfoKHR
+        public DeviceGroupRenderPassBeginInfoKhr
         (
             StructureType? sType = StructureType.DeviceGroupRenderPassBeginInfo,
             void* pNext = null,
@@ -84,6 +85,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceGroupRenderPassBeginInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceStreamMarkerInfoINTEL")]
-    public unsafe partial struct PerformanceStreamMarkerInfoINTEL : IStructuredType
+    public unsafe partial struct PerformanceStreamMarkerInfoINTEL : IChainable
     {
         public PerformanceStreamMarkerInfoINTEL
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PerformanceStreamMarkerInfoIntel;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

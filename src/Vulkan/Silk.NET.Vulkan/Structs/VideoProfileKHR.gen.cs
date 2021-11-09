@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoProfileKHR")]
-    public unsafe partial struct VideoProfileKHR : IStructuredType
+    public unsafe partial struct VideoProfileKHR : IChainStart, IExtendsChain<QueryPoolCreateInfo>, IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2Khr>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<BufferCreateInfo>
     {
         public VideoProfileKHR
         (
@@ -95,6 +95,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.VideoProfileKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoProfileKHR Chain(
+            out VideoProfileKHR capture)
+        {
+            capture = new VideoProfileKHR(StructureType.VideoProfileKhr);
+            return ref capture;
         }
     }
 }

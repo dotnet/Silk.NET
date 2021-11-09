@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFilterCubicImageViewImageFormatPropertiesEXT")]
-    public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT : IStructuredType
+    public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
     {
         public FilterCubicImageViewImageFormatPropertiesEXT
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.FilterCubicImageViewImageFormatPropertiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

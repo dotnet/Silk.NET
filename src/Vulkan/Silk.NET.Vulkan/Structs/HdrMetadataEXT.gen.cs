@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHdrMetadataEXT")]
-    public unsafe partial struct HdrMetadataEXT : IStructuredType
+    public unsafe partial struct HdrMetadataEXT : IChainable
     {
         public HdrMetadataEXT
         (
@@ -139,6 +139,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.HdrMetadataExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

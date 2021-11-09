@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceInvocationMaskFeaturesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHUAWEI : IStructuredType
+    public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHUAWEI : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceInvocationMaskFeaturesHUAWEI
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceInvocationMaskFeaturesHuawei;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReference2KHR")]
-    public unsafe partial struct AttachmentReference2KHR : IStructuredType
+    [NativeName("AliasOf", "VkAttachmentReference2")]
+    public unsafe partial struct AttachmentReference2Khr : IChainStart
     {
-        public AttachmentReference2KHR
+        public AttachmentReference2Khr
         (
             StructureType? sType = StructureType.AttachmentReference2,
             void* pNext = null,
@@ -84,6 +85,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AttachmentReference2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref AttachmentReference2Khr Chain(
+            out AttachmentReference2Khr capture)
+        {
+            capture = new AttachmentReference2Khr(StructureType.AttachmentReference2);
+            return ref capture;
         }
     }
 }

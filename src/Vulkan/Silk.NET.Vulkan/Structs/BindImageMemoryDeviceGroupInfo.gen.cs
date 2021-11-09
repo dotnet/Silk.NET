@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemoryDeviceGroupInfo")]
-    public unsafe partial struct BindImageMemoryDeviceGroupInfo : IStructuredType
+    [NativeName("Aliases", "VkBindImageMemoryDeviceGroupInfoKHR")]
+    public unsafe partial struct BindImageMemoryDeviceGroupInfo : IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKhr>
     {
         public BindImageMemoryDeviceGroupInfo
         (
@@ -95,6 +96,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BindImageMemoryDeviceGroupInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

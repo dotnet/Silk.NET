@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountLayoutSupportEXT")]
-    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupportEXT : IStructuredType
+    [NativeName("AliasOf", "VkDescriptorSetVariableDescriptorCountLayoutSupport")]
+    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupportExt : IExtendsChain<DescriptorSetLayoutSupport>, IExtendsChain<DescriptorSetLayoutSupportKhr>
     {
-        public DescriptorSetVariableDescriptorCountLayoutSupportEXT
+        public DescriptorSetVariableDescriptorCountLayoutSupportExt
         (
             StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

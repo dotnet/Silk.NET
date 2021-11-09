@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedRequirements")]
-    public unsafe partial struct MemoryDedicatedRequirements : IStructuredType
+    [NativeName("Aliases", "VkMemoryDedicatedRequirementsKHR")]
+    public unsafe partial struct MemoryDedicatedRequirements : IExtendsChain<MemoryRequirements2>, IExtendsChain<MemoryRequirements2Khr>
     {
         public MemoryDedicatedRequirements
         (
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryDedicatedRequirements;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

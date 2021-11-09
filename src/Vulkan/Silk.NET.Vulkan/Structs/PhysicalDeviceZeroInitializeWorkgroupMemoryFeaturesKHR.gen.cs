@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR : IStructuredType
+    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2Khr>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

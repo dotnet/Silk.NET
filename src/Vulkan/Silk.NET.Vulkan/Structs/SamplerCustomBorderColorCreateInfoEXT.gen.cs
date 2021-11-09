@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerCustomBorderColorCreateInfoEXT")]
-    public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT : IStructuredType
+    public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT : IExtendsChain<SamplerCreateInfo>
     {
         public SamplerCustomBorderColorCreateInfoEXT
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SamplerCustomBorderColorCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

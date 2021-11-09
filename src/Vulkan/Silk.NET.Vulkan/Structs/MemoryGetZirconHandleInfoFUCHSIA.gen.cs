@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryGetZirconHandleInfoFUCHSIA")]
-    public unsafe partial struct MemoryGetZirconHandleInfoFUCHSIA : IStructuredType
+    public unsafe partial struct MemoryGetZirconHandleInfoFUCHSIA : IChainable
     {
         public MemoryGetZirconHandleInfoFUCHSIA
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryGetZirconHandleInfoFuchsia;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

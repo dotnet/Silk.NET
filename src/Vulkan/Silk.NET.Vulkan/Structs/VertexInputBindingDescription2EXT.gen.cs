@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputBindingDescription2EXT")]
-    public unsafe partial struct VertexInputBindingDescription2EXT : IStructuredType
+    public unsafe partial struct VertexInputBindingDescription2EXT : IChainable
     {
         public VertexInputBindingDescription2EXT
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.VertexInputBindingDescription2Ext;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

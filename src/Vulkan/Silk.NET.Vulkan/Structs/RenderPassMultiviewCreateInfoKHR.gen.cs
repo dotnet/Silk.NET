@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassMultiviewCreateInfoKHR")]
-    public unsafe partial struct RenderPassMultiviewCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkRenderPassMultiviewCreateInfo")]
+    public unsafe partial struct RenderPassMultiviewCreateInfoKhr : IExtendsChain<RenderPassCreateInfo>
     {
-        public RenderPassMultiviewCreateInfoKHR
+        public RenderPassMultiviewCreateInfoKhr
         (
             StructureType? sType = StructureType.RenderPassMultiviewCreateInfo,
             void* pNext = null,
@@ -117,6 +118,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderPassMultiviewCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueGlobalPriorityCreateInfoEXT")]
-    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT : IStructuredType
+    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT : IExtendsChain<DeviceQueueCreateInfo>
     {
         public DeviceQueueGlobalPriorityCreateInfoEXT
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

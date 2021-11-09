@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfoKHR")]
-    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkMemoryOpaqueCaptureAddressAllocateInfo")]
+    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKhr : IExtendsChain<MemoryAllocateInfo>
     {
-        public MemoryOpaqueCaptureAddressAllocateInfoKHR
+        public MemoryOpaqueCaptureAddressAllocateInfoKhr
         (
             StructureType? sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

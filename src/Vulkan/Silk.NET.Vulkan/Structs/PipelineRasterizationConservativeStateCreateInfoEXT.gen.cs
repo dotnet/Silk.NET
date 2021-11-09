@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationConservativeStateCreateInfoEXT")]
-    public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT : IStructuredType
+    public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT : IExtendsChain<PipelineRasterizationStateCreateInfo>
     {
         public PipelineRasterizationConservativeStateCreateInfoEXT
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PipelineRasterizationConservativeStateCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

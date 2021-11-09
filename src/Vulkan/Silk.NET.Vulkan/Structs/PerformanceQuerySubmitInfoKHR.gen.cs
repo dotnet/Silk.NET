@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceQuerySubmitInfoKHR")]
-    public unsafe partial struct PerformanceQuerySubmitInfoKHR : IStructuredType
+    public unsafe partial struct PerformanceQuerySubmitInfoKHR : IExtendsChain<SubmitInfo>, IExtendsChain<SubmitInfo2KHR>
     {
         public PerformanceQuerySubmitInfoKHR
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PerformanceQuerySubmitInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

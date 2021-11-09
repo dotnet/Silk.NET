@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewAddressPropertiesNVX")]
-    public unsafe partial struct ImageViewAddressPropertiesNVX : IStructuredType
+    public unsafe partial struct ImageViewAddressPropertiesNVX : IChainable
     {
         public ImageViewAddressPropertiesNVX
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageViewAddressPropertiesNvx;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

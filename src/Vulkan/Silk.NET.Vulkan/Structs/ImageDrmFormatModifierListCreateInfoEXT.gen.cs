@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageDrmFormatModifierListCreateInfoEXT")]
-    public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT : IStructuredType
+    public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT : IExtendsChain<ImageCreateInfo>
     {
         public ImageDrmFormatModifierListCreateInfoEXT
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageDrmFormatModifierListCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

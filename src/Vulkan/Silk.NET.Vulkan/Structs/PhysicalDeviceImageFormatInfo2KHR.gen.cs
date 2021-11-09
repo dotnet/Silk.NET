@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageFormatInfo2KHR")]
-    public unsafe partial struct PhysicalDeviceImageFormatInfo2KHR : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDeviceImageFormatInfo2")]
+    public unsafe partial struct PhysicalDeviceImageFormatInfo2Khr : IChainStart
     {
-        public PhysicalDeviceImageFormatInfo2KHR
+        public PhysicalDeviceImageFormatInfo2Khr
         (
             StructureType? sType = StructureType.PhysicalDeviceImageFormatInfo2,
             void* pNext = null,
@@ -106,6 +107,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceImageFormatInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PhysicalDeviceImageFormatInfo2Khr Chain(
+            out PhysicalDeviceImageFormatInfo2Khr capture)
+        {
+            capture = new PhysicalDeviceImageFormatInfo2Khr(StructureType.PhysicalDeviceImageFormatInfo2);
+            return ref capture;
         }
     }
 }

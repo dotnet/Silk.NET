@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassShadingPipelineCreateInfoHUAWEI")]
-    public unsafe partial struct SubpassShadingPipelineCreateInfoHUAWEI : IStructuredType
+    public unsafe partial struct SubpassShadingPipelineCreateInfoHUAWEI : IExtendsChain<ComputePipelineCreateInfo>
     {
         public SubpassShadingPipelineCreateInfoHUAWEI
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SubpassShadingPipelineCreateInfoHuawei;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

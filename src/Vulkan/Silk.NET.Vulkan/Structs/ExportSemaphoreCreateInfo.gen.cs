@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportSemaphoreCreateInfo")]
-    public unsafe partial struct ExportSemaphoreCreateInfo : IStructuredType
+    [NativeName("Aliases", "VkExportSemaphoreCreateInfoKHR")]
+    public unsafe partial struct ExportSemaphoreCreateInfo : IExtendsChain<SemaphoreCreateInfo>
     {
         public ExportSemaphoreCreateInfo
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ExportSemaphoreCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

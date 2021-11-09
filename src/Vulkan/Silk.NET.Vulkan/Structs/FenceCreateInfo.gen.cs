@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFenceCreateInfo")]
-    public unsafe partial struct FenceCreateInfo : IStructuredType
+    public unsafe partial struct FenceCreateInfo : IChainStart
     {
         public FenceCreateInfo
         (
@@ -62,6 +62,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.FenceCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref FenceCreateInfo Chain(
+            out FenceCreateInfo capture)
+        {
+            capture = new FenceCreateInfo(StructureType.FenceCreateInfo);
+            return ref capture;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportAndroidHardwareBufferInfoANDROID")]
-    public unsafe partial struct ImportAndroidHardwareBufferInfoANDROID : IStructuredType
+    public unsafe partial struct ImportAndroidHardwareBufferInfoANDROID : IExtendsChain<MemoryAllocateInfo>
     {
         public ImportAndroidHardwareBufferInfoANDROID
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImportAndroidHardwareBufferInfoAndroid;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

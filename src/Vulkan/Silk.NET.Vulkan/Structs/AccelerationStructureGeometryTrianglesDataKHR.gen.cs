@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureGeometryTrianglesDataKHR")]
-    public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR : IStructuredType
+    public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR : IChainStart
     {
         public AccelerationStructureGeometryTrianglesDataKHR
         (
@@ -128,6 +128,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AccelerationStructureGeometryTrianglesDataKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref AccelerationStructureGeometryTrianglesDataKHR Chain(
+            out AccelerationStructureGeometryTrianglesDataKHR capture)
+        {
+            capture = new AccelerationStructureGeometryTrianglesDataKHR(StructureType.AccelerationStructureGeometryTrianglesDataKhr);
+            return ref capture;
         }
     }
 }

@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerReductionModeCreateInfoEXT")]
-    public unsafe partial struct SamplerReductionModeCreateInfoEXT : IStructuredType
+    [NativeName("AliasOf", "VkSamplerReductionModeCreateInfo")]
+    public unsafe partial struct SamplerReductionModeCreateInfoExt : IExtendsChain<SamplerCreateInfo>
     {
-        public SamplerReductionModeCreateInfoEXT
+        public SamplerReductionModeCreateInfoExt
         (
             StructureType? sType = StructureType.SamplerReductionModeCreateInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SamplerReductionModeCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

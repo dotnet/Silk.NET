@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphorePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKHR : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDeviceTimelineSemaphoreProperties")]
+    public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKhr : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
     {
-        public PhysicalDeviceTimelineSemaphorePropertiesKHR
+        public PhysicalDeviceTimelineSemaphorePropertiesKhr
         (
             StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceTimelineSemaphoreProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

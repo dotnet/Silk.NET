@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInputAttachmentAspectReferenceKHR")]
-    public unsafe partial struct InputAttachmentAspectReferenceKHR
+    [NativeName("AliasOf", "VkInputAttachmentAspectReference")]
+    public unsafe partial struct InputAttachmentAspectReferenceKhr
     {
-        public InputAttachmentAspectReferenceKHR
+        public InputAttachmentAspectReferenceKhr
         (
             uint? subpass = null,
             uint? inputAttachmentIndex = null,

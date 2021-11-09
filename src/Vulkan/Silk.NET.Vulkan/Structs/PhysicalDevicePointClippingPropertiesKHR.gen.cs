@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePointClippingPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDevicePointClippingProperties")]
+    public unsafe partial struct PhysicalDevicePointClippingPropertiesKhr : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
     {
-        public PhysicalDevicePointClippingPropertiesKHR
+        public PhysicalDevicePointClippingPropertiesKhr
         (
             StructureType? sType = StructureType.PhysicalDevicePointClippingProperties,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDevicePointClippingProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

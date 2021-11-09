@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutSupport")]
-    public unsafe partial struct DescriptorSetLayoutSupport : IStructuredType
+    [NativeName("Aliases", "VkDescriptorSetLayoutSupportKHR")]
+    public unsafe partial struct DescriptorSetLayoutSupport : IChainStart
     {
         public DescriptorSetLayoutSupport
         (
@@ -62,6 +63,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DescriptorSetLayoutSupport;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DescriptorSetLayoutSupport Chain(
+            out DescriptorSetLayoutSupport capture)
+        {
+            capture = new DescriptorSetLayoutSupport(StructureType.DescriptorSetLayoutSupport);
+            return ref capture;
         }
     }
 }

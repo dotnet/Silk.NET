@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportFenceCreateInfoKHR")]
-    public unsafe partial struct ExportFenceCreateInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkExportFenceCreateInfo")]
+    public unsafe partial struct ExportFenceCreateInfoKhr : IExtendsChain<FenceCreateInfo>
     {
-        public ExportFenceCreateInfoKHR
+        public ExportFenceCreateInfoKhr
         (
             StructureType? sType = StructureType.ExportFenceCreateInfo,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ExportFenceCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCreateInfo")]
-    public unsafe partial struct BufferCreateInfo : IStructuredType
+    public unsafe partial struct BufferCreateInfo : IChainStart
     {
         public BufferCreateInfo
         (
@@ -117,6 +117,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BufferCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BufferCreateInfo Chain(
+            out BufferCreateInfo capture)
+        {
+            capture = new BufferCreateInfo(StructureType.BufferCreateInfo);
+            return ref capture;
         }
     }
 }

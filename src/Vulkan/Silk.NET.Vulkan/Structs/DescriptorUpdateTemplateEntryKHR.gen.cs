@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateEntryKHR")]
-    public unsafe partial struct DescriptorUpdateTemplateEntryKHR
+    [NativeName("AliasOf", "VkDescriptorUpdateTemplateEntry")]
+    public unsafe partial struct DescriptorUpdateTemplateEntryKhr
     {
-        public DescriptorUpdateTemplateEntryKHR
+        public DescriptorUpdateTemplateEntryKhr
         (
             uint? dstBinding = null,
             uint? dstArrayElement = null,

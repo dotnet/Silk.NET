@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageStencilUsageCreateInfo")]
-    public unsafe partial struct ImageStencilUsageCreateInfo : IStructuredType
+    [NativeName("Aliases", "VkImageStencilUsageCreateInfoEXT")]
+    public unsafe partial struct ImageStencilUsageCreateInfo : IExtendsChain<ImageCreateInfo>, IExtendsChain<PhysicalDeviceImageFormatInfo2>, IExtendsChain<PhysicalDeviceImageFormatInfo2Khr>
     {
         public ImageStencilUsageCreateInfo
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImageStencilUsageCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComputePipelineCreateInfo")]
-    public unsafe partial struct ComputePipelineCreateInfo : IStructuredType
+    public unsafe partial struct ComputePipelineCreateInfo : IChainStart
     {
         public ComputePipelineCreateInfo
         (
@@ -106,6 +106,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ComputePipelineCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ComputePipelineCreateInfo Chain(
+            out ComputePipelineCreateInfo capture)
+        {
+            capture = new ComputePipelineCreateInfo(StructureType.ComputePipelineCreateInfo);
+            return ref capture;
         }
     }
 }

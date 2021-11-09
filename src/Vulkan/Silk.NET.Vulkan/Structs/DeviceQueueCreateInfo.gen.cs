@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueCreateInfo")]
-    public unsafe partial struct DeviceQueueCreateInfo : IStructuredType
+    public unsafe partial struct DeviceQueueCreateInfo : IChainStart
     {
         public DeviceQueueCreateInfo
         (
@@ -95,6 +95,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceQueueCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DeviceQueueCreateInfo Chain(
+            out DeviceQueueCreateInfo capture)
+        {
+            capture = new DeviceQueueCreateInfo(StructureType.DeviceQueueCreateInfo);
+            return ref capture;
         }
     }
 }

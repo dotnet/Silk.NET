@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalBufferPropertiesKHR")]
-    public unsafe partial struct ExternalBufferPropertiesKHR : IStructuredType
+    [NativeName("AliasOf", "VkExternalBufferProperties")]
+    public unsafe partial struct ExternalBufferPropertiesKhr : IChainable
     {
-        public ExternalBufferPropertiesKHR
+        public ExternalBufferPropertiesKhr
         (
             StructureType? sType = StructureType.ExternalBufferProperties,
             void* pNext = null,
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ExternalBufferProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoBeginCodingInfoKHR")]
-    public unsafe partial struct VideoBeginCodingInfoKHR : IStructuredType
+    public unsafe partial struct VideoBeginCodingInfoKHR : IChainable
     {
         public VideoBeginCodingInfoKHR
         (
@@ -117,6 +117,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.VideoBeginCodingInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIOSSurfaceCreateInfoMVK")]
-    public unsafe partial struct IOSSurfaceCreateInfoMVK : IStructuredType
+    public unsafe partial struct IOSSurfaceCreateInfoMVK : IChainable
     {
         public IOSSurfaceCreateInfoMVK
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.IosSurfaceCreateInfoMvk;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

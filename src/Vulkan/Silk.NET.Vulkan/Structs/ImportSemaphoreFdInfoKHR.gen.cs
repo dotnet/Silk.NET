@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportSemaphoreFdInfoKHR")]
-    public unsafe partial struct ImportSemaphoreFdInfoKHR : IStructuredType
+    public unsafe partial struct ImportSemaphoreFdInfoKHR : IChainable
     {
         public ImportSemaphoreFdInfoKHR
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ImportSemaphoreFDInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

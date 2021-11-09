@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceOverrideInfoINTEL")]
-    public unsafe partial struct PerformanceOverrideInfoINTEL : IStructuredType
+    public unsafe partial struct PerformanceOverrideInfoINTEL : IChainable
     {
         public PerformanceOverrideInfoINTEL
         (
@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PerformanceOverrideInfoIntel;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingShaderGroupCreateInfoNV")]
-    public unsafe partial struct RayTracingShaderGroupCreateInfoNV : IStructuredType
+    public unsafe partial struct RayTracingShaderGroupCreateInfoNV : IChainable
     {
         public RayTracingShaderGroupCreateInfoNV
         (
@@ -106,6 +106,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RayTracingShaderGroupCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindAccelerationStructureMemoryInfoNV")]
-    public unsafe partial struct BindAccelerationStructureMemoryInfoNV : IStructuredType
+    public unsafe partial struct BindAccelerationStructureMemoryInfoNV : IChainable
     {
         public BindAccelerationStructureMemoryInfoNV
         (
@@ -106,6 +106,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BindAccelerationStructureMemoryInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalImageFormatProperties")]
-    public unsafe partial struct ExternalImageFormatProperties : IStructuredType
+    [NativeName("Aliases", "VkExternalImageFormatPropertiesKHR")]
+    public unsafe partial struct ExternalImageFormatProperties : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2Khr>
     {
         public ExternalImageFormatProperties
         (
@@ -62,6 +63,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ExternalImageFormatProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationStateCreateInfo")]
-    public unsafe partial struct PipelineTessellationStateCreateInfo : IStructuredType
+    public unsafe partial struct PipelineTessellationStateCreateInfo : IChainStart
     {
         public PipelineTessellationStateCreateInfo
         (
@@ -73,6 +73,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PipelineTessellationStateCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PipelineTessellationStateCreateInfo Chain(
+            out PipelineTessellationStateCreateInfo capture)
+        {
+            capture = new PipelineTessellationStateCreateInfo(StructureType.PipelineTessellationStateCreateInfo);
+            return ref capture;
         }
     }
 }

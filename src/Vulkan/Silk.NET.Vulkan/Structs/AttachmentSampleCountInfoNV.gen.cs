@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentSampleCountInfoNV")]
-    public unsafe partial struct AttachmentSampleCountInfoNV : IStructuredType
+    [NativeName("AliasOf", "VkAttachmentSampleCountInfoAMD")]
+    public unsafe partial struct AttachmentSampleCountInfoNV : IExtendsChain<CommandBufferInheritanceInfo>, IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public AttachmentSampleCountInfoNV
         (
@@ -84,6 +85,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AttachmentSampleCountInfoAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

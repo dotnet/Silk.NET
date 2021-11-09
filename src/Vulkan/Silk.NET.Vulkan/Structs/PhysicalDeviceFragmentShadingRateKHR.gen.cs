@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShadingRateKHR")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR : IStructuredType
+    public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR : IChainable
     {
         public PhysicalDeviceFragmentShadingRateKHR
         (
@@ -73,6 +73,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceFragmentShadingRateKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

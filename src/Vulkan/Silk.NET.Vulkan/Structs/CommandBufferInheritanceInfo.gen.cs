@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceInfo")]
-    public unsafe partial struct CommandBufferInheritanceInfo : IStructuredType
+    public unsafe partial struct CommandBufferInheritanceInfo : IChainStart
     {
         public CommandBufferInheritanceInfo
         (
@@ -117,6 +117,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.CommandBufferInheritanceInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref CommandBufferInheritanceInfo Chain(
+            out CommandBufferInheritanceInfo capture)
+        {
+            capture = new CommandBufferInheritanceInfo(StructureType.CommandBufferInheritanceInfo);
+            return ref capture;
         }
     }
 }

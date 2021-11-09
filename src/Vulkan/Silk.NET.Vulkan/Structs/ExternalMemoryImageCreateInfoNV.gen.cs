@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryImageCreateInfoNV")]
-    public unsafe partial struct ExternalMemoryImageCreateInfoNV : IStructuredType
+    public unsafe partial struct ExternalMemoryImageCreateInfoNV : IExtendsChain<ImageCreateInfo>
     {
         public ExternalMemoryImageCreateInfoNV
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.ExternalMemoryImageCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

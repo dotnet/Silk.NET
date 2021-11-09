@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSharedPresentSurfaceCapabilitiesKHR")]
-    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR : IStructuredType
+    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR : IExtendsChain<SurfaceCapabilities2KHR>
     {
         public SharedPresentSurfaceCapabilitiesKHR
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.SharedPresentSurfaceCapabilitiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

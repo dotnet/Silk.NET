@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeneratedCommandsMemoryRequirementsInfoNV")]
-    public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV : IStructuredType
+    public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV : IChainable
     {
         public GeneratedCommandsMemoryRequirementsInfoNV
         (
@@ -95,6 +95,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.GeneratedCommandsMemoryRequirementsInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxPropertiesEXT : IStructuredType
+    [NativeName("AliasOf", "VkPhysicalDeviceSamplerFilterMinmaxProperties")]
+    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxPropertiesExt : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2Khr>
     {
-        public PhysicalDeviceSamplerFilterMinmaxPropertiesEXT
+        public PhysicalDeviceSamplerFilterMinmaxPropertiesExt
         (
             StructureType? sType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties,
             void* pNext = null,
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

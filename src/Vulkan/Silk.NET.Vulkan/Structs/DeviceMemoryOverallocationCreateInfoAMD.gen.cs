@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOverallocationCreateInfoAMD")]
-    public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD : IStructuredType
+    public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD : IExtendsChain<DeviceCreateInfo>
     {
         public DeviceMemoryOverallocationCreateInfoAMD
         (
@@ -62,6 +62,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.DeviceMemoryOverallocationCreateInfoAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }

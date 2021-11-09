@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemoryInfoKHR")]
-    public unsafe partial struct BindImageMemoryInfoKHR : IStructuredType
+    [NativeName("AliasOf", "VkBindImageMemoryInfo")]
+    public unsafe partial struct BindImageMemoryInfoKhr : IChainStart
     {
-        public BindImageMemoryInfoKHR
+        public BindImageMemoryInfoKhr
         (
             StructureType? sType = StructureType.BindImageMemoryInfo,
             void* pNext = null,
@@ -84,6 +85,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.BindImageMemoryInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref BindImageMemoryInfoKhr Chain(
+            out BindImageMemoryInfoKhr capture)
+        {
+            capture = new BindImageMemoryInfoKhr(StructureType.BindImageMemoryInfo);
+            return ref capture;
         }
     }
 }

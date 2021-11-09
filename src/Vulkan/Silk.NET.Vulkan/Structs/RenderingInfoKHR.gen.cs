@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingInfoKHR")]
-    public unsafe partial struct RenderingInfoKHR : IStructuredType
+    public unsafe partial struct RenderingInfoKHR : IChainStart
     {
         public RenderingInfoKHR
         (
@@ -139,6 +139,25 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.RenderingInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref RenderingInfoKHR Chain(
+            out RenderingInfoKHR capture)
+        {
+            capture = new RenderingInfoKHR(StructureType.RenderingInfoKhr);
+            return ref capture;
         }
     }
 }

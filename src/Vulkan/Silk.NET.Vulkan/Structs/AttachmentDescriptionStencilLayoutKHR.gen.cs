@@ -17,9 +17,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentDescriptionStencilLayoutKHR")]
-    public unsafe partial struct AttachmentDescriptionStencilLayoutKHR : IStructuredType
+    [NativeName("AliasOf", "VkAttachmentDescriptionStencilLayout")]
+    public unsafe partial struct AttachmentDescriptionStencilLayoutKhr : IExtendsChain<AttachmentDescription2>, IExtendsChain<AttachmentDescription2Khr>
     {
-        public AttachmentDescriptionStencilLayoutKHR
+        public AttachmentDescriptionStencilLayoutKhr
         (
             StructureType? sType = StructureType.AttachmentDescriptionStencilLayout,
             void* pNext = null,
@@ -73,6 +74,13 @@ namespace Silk.NET.Vulkan
         StructureType IStructuredType.StructureType()
         {
             return SType = StructureType.AttachmentDescriptionStencilLayout;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
         }
     }
 }
