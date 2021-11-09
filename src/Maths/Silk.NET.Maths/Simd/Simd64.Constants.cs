@@ -144,7 +144,7 @@ namespace Silk.NET.Maths
             AllBitsSet = Vector64<T>.Zero;
             for (int i = 0; i < Vector64<T>.Count; i++)
             {
-                AllBitsSet.WithElement(i, Scalar.Not(Scalar<T>.Zero));
+                AllBitsSet = AllBitsSet.WithElement(i, Scalar.Not(Scalar<T>.Zero));
             }
 #endif
         }
