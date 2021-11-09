@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using Humanizer;
-using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
@@ -34,7 +33,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         private class State
         {
             public XDocument Document { get; set; }
-            [CanBeNull] public IEnumerable<Function> Functions { get; set; }
+            public IEnumerable<Function>? Functions { get; set; }
         }
         
         /// <inheritdoc />
@@ -233,8 +232,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// </summary>
         /// <param name="typeElement">The element to parse.</param>
         /// <returns>The type signature.</returns>
-        [NotNull]
-        public static Type ParseTypeSignature([NotNull] XElement typeElement)
+        public static Type ParseTypeSignature(XElement typeElement)
         {
             var typeString = typeElement.Attribute("type")?.Value ?? throw new DataException("Couldn't find type.");
             var group = typeElement.Attribute("group")?.Value;
@@ -262,8 +260,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <param name="original">The original type string. Can be omitted.</param>
         /// <returns>The parsed type.</returns>
         /// <exception cref="InvalidDataException">Thrown if type tries to be both a pointer and array.</exception>
-        [NotNull]
-        public static Type ParseTypeSignature([NotNull] string type, string original = null)
+        public static Type ParseTypeSignature(string type, string? original = null)
         {
             if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))
             {
@@ -343,19 +340,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// if <paramref name="hasValueReference"/> is false, this is null.</param>
         /// <returns>The computed Count.</returns>
         /// <exception cref="InvalidDataException">Thrown if no valid count could be deduced.</exception>
-        [CanBeNull]
-        [ContractAnnotation
+        public static Count? ParseCountSignature
         (
-            "hasComputedCount : true => computedCountParameterNames : notnull; hasValueReference : true => valueReferenceName : notnull"
-        )]
-        public static Count ParseCountSignature
-        (
-            [CanBeNull] string countData,
+            string? countData,
             out bool hasComputedCount,
-            [CanBeNull] out IReadOnlyList<string> computedCountParameterNames,
+            out IReadOnlyList<string>? computedCountParameterNames,
             out bool hasValueReference,
-            [CanBeNull] out string valueReferenceName,
-            [CanBeNull] out string valueReferenceExpression
+            out string? valueReferenceName,
+            out string? valueReferenceExpression
         )
         {
             computedCountParameterNames = null;
@@ -457,7 +449,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             throw new InvalidDataException("No valid count could be parsed from the input.");
         }
         
-        private static List<Parameter> ParseParameters([NotNull] XElement functionElement)
+        private static List<Parameter> ParseParameters(XElement functionElement)
         {
             var parameterElements = functionElement.Elements().Where(e => e.Name == "param");
             var parametersWithComputedCounts =
@@ -499,12 +491,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
         
         private static Parameter ParseParameter
         (
-            [NotNull] XElement paramElement,
+            XElement paramElement,
             out bool hasComputedCount,
-            [CanBeNull] out IReadOnlyList<string> computedCountParameterNames,
+            out IReadOnlyList<string>? computedCountParameterNames,
             out bool hasValueReference,
-            [CanBeNull] out string valueReferenceName,
-            [CanBeNull] out string valueReferenceExpression
+            out string? valueReferenceName,
+            out string? valueReferenceExpression
         )
         {
             var paramName = paramElement.Attribute("name")?.Value ?? throw new DataException("Missing name attribute.");

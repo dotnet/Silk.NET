@@ -138,13 +138,13 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindConstantBufferByName(string pName, uint uDstSlot, uint cbDstOffset)
+        public readonly int BindConstantBufferByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint cbDstOffset)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -179,13 +179,13 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceByName(string pName, uint uDstSlot, uint uCount)
+        public readonly int BindResourceByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -220,13 +220,13 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindSamplerByName(string pName, uint uDstSlot, uint uCount)
+        public readonly int BindSamplerByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -261,13 +261,13 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindUnorderedAccessViewByName(string pName, uint uDstSlot, uint uCount)
+        public readonly int BindUnorderedAccessViewByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
+            var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((nint)pNamePtr);
+            SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
@@ -302,13 +302,13 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceAsUnorderedAccessViewByName(string pSrvName, uint uDstUavSlot, uint uCount)
+        public readonly int BindResourceAsUnorderedAccessViewByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrvName, uint uDstUavSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pSrvNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrvName);
+            var pSrvNamePtr = (byte*) SilkMarshal.StringToPtr(pSrvName, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
-            Marshal.FreeHGlobal((nint)pSrvNamePtr);
+            SilkMarshal.Free((nint)pSrvNamePtr);
             return ret;
         }
 

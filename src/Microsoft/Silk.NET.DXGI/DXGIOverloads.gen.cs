@@ -17,7 +17,7 @@ namespace Silk.NET.DXGI
     public static class DXGIOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 155, Column 16 in dxgidebug.h")]
+        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
         public static unsafe int GetDebugInterface(this DXGI thisApi, Span<Guid> riid, void** ppDebug)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 155, Column 16 in dxgidebug.h")]
+        [NativeName("Src", "Line 163, Column 16 in dxgidebug.h")]
         public static unsafe int GetDebugInterface(this DXGI thisApi, Span<Guid> riid, ref void* ppDebug)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 113, Column 16 in dxgi1_3.h")]
+        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
         public static unsafe int CreateDXGIFactory2(this DXGI thisApi, uint Flags, Span<Guid> riid, void** ppFactory)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 113, Column 16 in dxgi1_3.h")]
+        [NativeName("Src", "Line 121, Column 16 in dxgi1_3.h")]
         public static unsafe int CreateDXGIFactory2(this DXGI thisApi, uint Flags, Span<Guid> riid, ref void* ppFactory)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 114, Column 16 in dxgi1_3.h")]
+        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
         public static unsafe int GetDebugInterface1(this DXGI thisApi, uint Flags, Span<Guid> riid, void** pDebug)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 114, Column 16 in dxgi1_3.h")]
+        [NativeName("Src", "Line 122, Column 16 in dxgi1_3.h")]
         public static unsafe int GetDebugInterface1(this DXGI thisApi, uint Flags, Span<Guid> riid, ref void* pDebug)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2165, Column 16 in dxgi.h")]
+        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
         public static unsafe int CreateDXGIFactory(this DXGI thisApi, Span<Guid> riid, void** ppFactory)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2165, Column 16 in dxgi.h")]
+        [NativeName("Src", "Line 2293, Column 16 in dxgi.h")]
         public static unsafe int CreateDXGIFactory(this DXGI thisApi, Span<Guid> riid, ref void* ppFactory)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2168, Column 16 in dxgi.h")]
+        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
         public static unsafe int CreateDXGIFactory1(this DXGI thisApi, Span<Guid> riid, void** ppFactory)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2168, Column 16 in dxgi.h")]
+        [NativeName("Src", "Line 2296, Column 16 in dxgi.h")]
         public static unsafe int CreateDXGIFactory1(this DXGI thisApi, Span<Guid> riid, ref void* ppFactory)
         {
             // SpanOverloader

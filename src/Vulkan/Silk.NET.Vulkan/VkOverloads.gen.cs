@@ -2348,21 +2348,21 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, pPropertyCount, ref pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, ref pPropertyCount.GetPinnableReference(), ref pProperties.GetPinnableReference());
@@ -2439,21 +2439,21 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, pPropertyCount, ref pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, ref pPropertyCount.GetPinnableReference(), ref pProperties.GetPinnableReference());

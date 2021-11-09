@@ -30,7 +30,7 @@ namespace Silk.NET.OpenXR.Extensions.OCULUS
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetAudioInputDeviceGuidOculus")]
-        public partial Result GetAudioInputDeviceGuidOcul([Count(Count = 0)] Instance instance, string buffer);
+        public partial Result GetAudioInputDeviceGuidOcul([Count(Count = 0)] Instance instance, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus")]
@@ -42,7 +42,7 @@ namespace Silk.NET.OpenXR.Extensions.OCULUS
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetAudioOutputDeviceGuidOculus")]
-        public partial Result GetAudioOutputDeviceGuidOcul([Count(Count = 0)] Instance instance, string buffer);
+        public partial Result GetAudioOutputDeviceGuidOcul([Count(Count = 0)] Instance instance, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         public OculusAudioDeviceGuid(INativeContext ctx)
             : base(ctx)

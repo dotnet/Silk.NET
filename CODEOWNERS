@@ -1,8 +1,25 @@
 # Everything
-*                       			@Perksey
+*                                   @dotnet/silk-dotnet
 
 # Maths
-/src/Maths/             			@HurricanKai
+/src/Maths/                         @HurricanKai
 
 # SilkTouch
-/src/Core/Silk.NET.SilkTouch		@HurricanKai
+/src/Core/Silk.NET.SilkTouch        @HurricanKai
+
+# Core
+/src/Core/Silk.NET.Core             @Perksey
+/src/Core/Silk.NET.Core.Win32Extras @Perksey
+
+# BuildTools
+/src/Core/Silk.NET.BuildTools       @Perksey
+/**/*.gen.cs                        @Perksey
+
+# Vulkan
+/src/Vulkan/**/!*.gen.cs            @HurricanKai
+
+# OpenGL
+/src/OpenGL/**/!*.gen.cs            @ThomasMiz
+
+# Input
+/src/Input/**/!*.gen.cs             @ThomasMiz

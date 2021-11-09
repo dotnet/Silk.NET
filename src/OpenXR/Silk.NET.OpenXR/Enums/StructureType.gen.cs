@@ -316,6 +316,10 @@ namespace Silk.NET.OpenXR
         TypeSceneDeserializeInfoMsft = 1000098001,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_DISPLAY_REFRESH_RATE_CHANGED_FB")]
         TypeEventDataDisplayRefreshRateChangedFB = 1000101000,
+        [NativeName("Name", "XR_TYPE_VIVE_TRACKER_PATHS_HTCX")]
+        TypeViveTrackerPathsHtcx = 1000103000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_VIVE_TRACKER_CONNECTED_HTCX")]
+        TypeEventDataViveTrackerConnectedHtcx = 1000103001,
         [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
         TypeSystemColorSpacePropertiesFB = 1000108000,
         [NativeName("Name", "XR_TYPE_HAND_TRACKING_MESH_FB")]
@@ -334,6 +338,28 @@ namespace Silk.NET.OpenXR
         TypeSwapchainStateFoveationFB = 1000114002,
         [NativeName("Name", "XR_TYPE_FOVEATION_LEVEL_PROFILE_CREATE_INFO_FB")]
         TypeFoveationLevelProfileCreateInfoFB = 1000115000,
+        [NativeName("Name", "XR_TYPE_TRIANGLE_MESH_CREATE_INFO_FB")]
+        TypeTriangleMeshCreateInfoFB = 1000117001,
+        [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_PROPERTIES_FB")]
+        TypeSystemPassthroughPropertiesFB = 1000118000,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_FB")]
+        TypePassthroughCreateInfoFB = 1000118001,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_LAYER_CREATE_INFO_FB")]
+        TypePassthroughLayerCreateInfoFB = 1000118002,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_PASSTHROUGH_FB")]
+        TypeCompositionLayerPassthroughFB = 1000118003,
+        [NativeName("Name", "XR_TYPE_GEOMETRY_INSTANCE_CREATE_INFO_FB")]
+        TypeGeometryInstanceCreateInfoFB = 1000118004,
+        [NativeName("Name", "XR_TYPE_GEOMETRY_INSTANCE_TRANSFORM_FB")]
+        TypeGeometryInstanceTransformFB = 1000118005,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_STYLE_FB")]
+        TypePassthroughStyleFB = 1000118020,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_MONO_TO_RGBA_FB")]
+        TypePassthroughColorMapMonoToRgbaFB = 1000118021,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_MAP_MONO_TO_MONO_FB")]
+        TypePassthroughColorMapMonoToMonoFB = 1000118022,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_PASSTHROUGH_STATE_CHANGED_FB")]
+        TypeEventDataPassthroughStateChangedFB = 1000118030,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
         [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
@@ -344,6 +370,12 @@ namespace Silk.NET.OpenXR
         TypeSystemFoveatedRenderingPropertiesVarjo = 1000121002,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_DEPTH_TEST_VARJO")]
         TypeCompositionLayerDepthTestVarjo = 1000122000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_MARKER_TRACKING_PROPERTIES_VARJO")]
+        TypeSystemMarkerTrackingPropertiesVarjo = 1000124000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_MARKER_TRACKING_UPDATE_VARJO")]
+        TypeEventDataMarkerTrackingUpdateVarjo = 1000124001,
+        [NativeName("Name", "XR_TYPE_MARKER_SPACE_CREATE_INFO_VARJO")]
+        TypeMarkerSpaceCreateInfoVarjo = 1000124002,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
         TypeSpatialAnchorPersistenceInfoMsft = 1000142000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]

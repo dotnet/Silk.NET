@@ -102,7 +102,7 @@ namespace Silk.NET.Direct3D11
         public RtvDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3803_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3915_C5")]
         [NativeName("Name", "anonymous1")]
         public RenderTargetViewDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

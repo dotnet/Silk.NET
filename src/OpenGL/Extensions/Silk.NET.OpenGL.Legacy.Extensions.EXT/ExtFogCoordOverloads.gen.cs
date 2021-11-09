@@ -28,18 +28,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.FogCoord(in coord.GetPinnableReference());
         }
 
-        public static unsafe void FogCoordPointer<T0>(this ExtFogCoord thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void FogCoordPointer<T0>(this ExtFogCoord thisApi, [Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FogCoordPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

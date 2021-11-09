@@ -61,7 +61,7 @@ namespace Silk.NET.Direct3D11
         public TraceRegisterType RegType;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L226_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11shadertracing_L234_C5")]
         [NativeName("Name", "anonymous1")]
         public TraceRegisterUnion Anonymous;
 

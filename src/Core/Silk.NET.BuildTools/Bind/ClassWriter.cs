@@ -172,7 +172,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
+                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"], task.Task.OverloaderExclusions))
                     {
                         var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                             ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
@@ -377,7 +377,7 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine();
                         }
 
-                        foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"]))
+                        foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"], task.Task.OverloaderExclusions))
                         {
                             var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                                 ? swOverloads ??= CreateOverloadsFile(folder, name, true)

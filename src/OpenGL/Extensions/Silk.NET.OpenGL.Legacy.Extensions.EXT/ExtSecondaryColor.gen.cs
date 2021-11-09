@@ -75,7 +75,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] in byte v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ubvEXT")]
-        public partial void SecondaryColor3([Flow(FlowDirection.In)] string v);
+        public partial void SecondaryColor3([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3uiEXT")]
         public partial void SecondaryColor3([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue);
@@ -99,13 +99,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
-        public partial void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
         public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
-        public partial void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public ExtSecondaryColor(INativeContext ctx)
             : base(ctx)
