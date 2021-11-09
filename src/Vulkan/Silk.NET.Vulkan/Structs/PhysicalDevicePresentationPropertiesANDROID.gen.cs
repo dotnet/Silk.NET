@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePresentationPropertiesANDROID")]
-    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID
+    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID : IStructuredType
     {
         public PhysicalDevicePresentationPropertiesANDROID
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "sharedImage")]
         public Bool32 SharedImage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePresentationPropertiesAndroid;
+        }
     }
 }

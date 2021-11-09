@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportFenceCreateInfoKHR")]
-    public unsafe partial struct ExportFenceCreateInfoKHR
+    public unsafe partial struct ExportFenceCreateInfoKHR : IStructuredType
     {
         public ExportFenceCreateInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalFenceHandleTypeFlags")]
         [NativeName("Name", "handleTypes")]
         public ExternalFenceHandleTypeFlags HandleTypes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExportFenceCreateInfo;
+        }
     }
 }

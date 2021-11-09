@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoProfileKHR")]
-    public unsafe partial struct VideoProfileKHR
+    public unsafe partial struct VideoProfileKHR : IStructuredType
     {
         public VideoProfileKHR
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoComponentBitDepthFlagsKHR")]
         [NativeName("Name", "chromaBitDepth")]
         public VideoComponentBitDepthFlagsKHR ChromaBitDepth;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoProfileKhr;
+        }
     }
 }

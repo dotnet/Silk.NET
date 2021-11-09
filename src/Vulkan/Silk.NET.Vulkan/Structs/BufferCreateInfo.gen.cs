@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCreateInfo")]
-    public unsafe partial struct BufferCreateInfo
+    public unsafe partial struct BufferCreateInfo : IStructuredType
     {
         public BufferCreateInfo
         (
@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pQueueFamilyIndices")]
         public uint* PQueueFamilyIndices;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferCreateInfo;
+        }
     }
 }

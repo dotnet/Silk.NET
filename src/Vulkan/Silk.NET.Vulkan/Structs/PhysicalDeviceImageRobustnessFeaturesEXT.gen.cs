@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageRobustnessFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceImageRobustnessFeaturesEXT
+    public unsafe partial struct PhysicalDeviceImageRobustnessFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceImageRobustnessFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "robustImageAccess")]
         public Bool32 RobustImageAccess;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImageRobustnessFeaturesExt;
+        }
     }
 }

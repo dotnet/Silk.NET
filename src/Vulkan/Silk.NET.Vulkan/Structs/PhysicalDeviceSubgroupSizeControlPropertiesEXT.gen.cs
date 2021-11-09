@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceSubgroupSizeControlPropertiesEXT
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceSubgroupSizeControlPropertiesEXT
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShaderStageFlags")]
         [NativeName("Name", "requiredSubgroupSizeStages")]
         public ShaderStageFlags RequiredSubgroupSizeStages;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSubgroupSizeControlPropertiesExt;
+        }
     }
 }

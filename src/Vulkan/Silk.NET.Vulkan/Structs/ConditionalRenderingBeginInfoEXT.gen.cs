@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConditionalRenderingBeginInfoEXT")]
-    public unsafe partial struct ConditionalRenderingBeginInfoEXT
+    public unsafe partial struct ConditionalRenderingBeginInfoEXT : IStructuredType
     {
         public ConditionalRenderingBeginInfoEXT
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkConditionalRenderingFlagsEXT")]
         [NativeName("Name", "flags")]
         public ConditionalRenderingFlagsEXT Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ConditionalRenderingBeginInfoExt;
+        }
     }
 }

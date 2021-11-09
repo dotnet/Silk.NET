@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceBorderColorSwizzleFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
+    public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceBorderColorSwizzleFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "borderColorSwizzleFromImage")]
         public Bool32 BorderColorSwizzleFromImage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceBorderColorSwizzleFeaturesExt;
+        }
     }
 }

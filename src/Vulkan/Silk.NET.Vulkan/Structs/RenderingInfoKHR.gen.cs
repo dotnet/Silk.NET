@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingInfoKHR")]
-    public unsafe partial struct RenderingInfoKHR
+    public unsafe partial struct RenderingInfoKHR : IStructuredType
     {
         public RenderingInfoKHR
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRenderingAttachmentInfoKHR")]
         [NativeName("Name", "pStencilAttachment")]
         public RenderingAttachmentInfoKHR* PStencilAttachment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderingInfoKhr;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureMemoryRequirementsInfoNV")]
-    public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
+    public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV : IStructuredType
     {
         public AccelerationStructureMemoryRequirementsInfoNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureNV")]
         [NativeName("Name", "accelerationStructure")]
         public AccelerationStructureNV AccelerationStructure;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureMemoryRequirementsInfoNV;
+        }
     }
 }

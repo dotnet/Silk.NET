@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRayTracingPipelineFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
+    public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceRayTracingPipelineFeaturesKHR
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "rayTraversalPrimitiveCulling")]
         public Bool32 RayTraversalPrimitiveCulling;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceRayTracingPipelineFeaturesKhr;
+        }
     }
 }

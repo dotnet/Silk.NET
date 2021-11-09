@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFenceCreateInfo")]
-    public unsafe partial struct FenceCreateInfo
+    public unsafe partial struct FenceCreateInfo : IStructuredType
     {
         public FenceCreateInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFenceCreateFlags")]
         [NativeName("Name", "flags")]
         public FenceCreateFlags Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.FenceCreateInfo;
+        }
     }
 }

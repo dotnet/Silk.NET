@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyProperties2KHR")]
-    public unsafe partial struct QueueFamilyProperties2KHR
+    public unsafe partial struct QueueFamilyProperties2KHR : IStructuredType
     {
         public QueueFamilyProperties2KHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkQueueFamilyProperties")]
         [NativeName("Name", "queueFamilyProperties")]
         public QueueFamilyProperties QueueFamilyProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueueFamilyProperties2;
+        }
     }
 }

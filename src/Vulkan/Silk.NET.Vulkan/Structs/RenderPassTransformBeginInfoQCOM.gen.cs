@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassTransformBeginInfoQCOM")]
-    public unsafe partial struct RenderPassTransformBeginInfoQCOM
+    public unsafe partial struct RenderPassTransformBeginInfoQCOM : IStructuredType
     {
         public RenderPassTransformBeginInfoQCOM
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceTransformFlagBitsKHR")]
         [NativeName("Name", "transform")]
         public SurfaceTransformFlagsKHR Transform;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassTransformBeginInfoQCom;
+        }
     }
 }

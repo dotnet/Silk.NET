@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
-    public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
+    public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT : IStructuredType
     {
         public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "primitiveTopologyPatchListRestart")]
         public Bool32 PrimitiveTopologyPatchListRestart;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePrimitiveTopologyListRestartFeaturesExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePerformanceQueryPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
+    public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR : IStructuredType
     {
         public PhysicalDevicePerformanceQueryPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "allowCommandBufferQueryCopies")]
         public Bool32 AllowCommandBufferQueryCopies;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr;
+        }
     }
 }

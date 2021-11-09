@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutSupport")]
-    public unsafe partial struct DescriptorSetLayoutSupport
+    public unsafe partial struct DescriptorSetLayoutSupport : IStructuredType
     {
         public DescriptorSetLayoutSupport
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "supported")]
         public Bool32 Supported;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetLayoutSupport;
+        }
     }
 }

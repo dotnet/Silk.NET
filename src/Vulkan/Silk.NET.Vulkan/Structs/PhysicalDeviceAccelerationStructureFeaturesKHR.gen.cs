@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceAccelerationStructureFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
+    public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceAccelerationStructureFeaturesKHR
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "descriptorBindingAccelerationStructureUpdateAfterBind")]
         public Bool32 DescriptorBindingAccelerationStructureUpdateAfterBind;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr;
+        }
     }
 }

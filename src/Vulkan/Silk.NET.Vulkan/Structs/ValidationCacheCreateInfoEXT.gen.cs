@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationCacheCreateInfoEXT")]
-    public unsafe partial struct ValidationCacheCreateInfoEXT
+    public unsafe partial struct ValidationCacheCreateInfoEXT : IStructuredType
     {
         public ValidationCacheCreateInfoEXT
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pInitialData")]
         public void* PInitialData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ValidationCacheCreateInfoExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModuleCreateInfo")]
-    public unsafe partial struct ShaderModuleCreateInfo
+    public unsafe partial struct ShaderModuleCreateInfo : IStructuredType
     {
         public ShaderModuleCreateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pCode")]
         public uint* PCode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ShaderModuleCreateInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPrivateDataSlotCreateInfoEXT")]
-    public unsafe partial struct PrivateDataSlotCreateInfoEXT
+    public unsafe partial struct PrivateDataSlotCreateInfoEXT : IStructuredType
     {
         public PrivateDataSlotCreateInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPrivateDataSlotCreateFlagsEXT")]
         [NativeName("Name", "flags")]
         public PrivateDataSlotCreateFlagsEXT Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PrivateDataSlotCreateInfoExt;
+        }
     }
 }

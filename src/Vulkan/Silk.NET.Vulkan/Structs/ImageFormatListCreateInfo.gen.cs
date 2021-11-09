@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatListCreateInfo")]
-    public unsafe partial struct ImageFormatListCreateInfo
+    public unsafe partial struct ImageFormatListCreateInfo : IStructuredType
     {
         public ImageFormatListCreateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "pViewFormats")]
         public Format* PViewFormats;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageFormatListCreateInfo;
+        }
     }
 }

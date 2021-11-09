@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateCreateInfo")]
-    public unsafe partial struct DescriptorUpdateTemplateCreateInfo
+    public unsafe partial struct DescriptorUpdateTemplateCreateInfo : IStructuredType
     {
         public DescriptorUpdateTemplateCreateInfo
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "set")]
         public uint Set;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorUpdateTemplateCreateInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceMarkerInfoINTEL")]
-    public unsafe partial struct PerformanceMarkerInfoINTEL
+    public unsafe partial struct PerformanceMarkerInfoINTEL : IStructuredType
     {
         public PerformanceMarkerInfoINTEL
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "marker")]
         public ulong Marker;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PerformanceMarkerInfoIntel;
+        }
     }
 }

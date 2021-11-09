@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayEventInfoEXT")]
-    public unsafe partial struct DisplayEventInfoEXT
+    public unsafe partial struct DisplayEventInfoEXT : IStructuredType
     {
         public DisplayEventInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDisplayEventTypeEXT")]
         [NativeName("Name", "displayEvent")]
         public DisplayEventTypeEXT DisplayEvent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DisplayEventInfoExt;
+        }
     }
 }

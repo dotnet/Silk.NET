@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPresentInfoKHR")]
-    public unsafe partial struct DisplayPresentInfoKHR
+    public unsafe partial struct DisplayPresentInfoKHR : IStructuredType
     {
         public DisplayPresentInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "persistent")]
         public Bool32 Persistent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DisplayPresentInfoKhr;
+        }
     }
 }

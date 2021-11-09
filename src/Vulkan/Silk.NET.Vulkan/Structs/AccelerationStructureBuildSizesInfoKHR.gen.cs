@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureBuildSizesInfoKHR")]
-    public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
+    public unsafe partial struct AccelerationStructureBuildSizesInfoKHR : IStructuredType
     {
         public AccelerationStructureBuildSizesInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "buildScratchSize")]
         public ulong BuildScratchSize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureBuildSizesInfoKhr;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportSwizzleStateCreateInfoNV")]
-    public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
+    public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV : IStructuredType
     {
         public PipelineViewportSwizzleStateCreateInfoNV
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkViewportSwizzleNV")]
         [NativeName("Name", "pViewportSwizzles")]
         public ViewportSwizzleNV* PViewportSwizzles;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineViewportSwizzleStateCreateInfoNV;
+        }
     }
 }

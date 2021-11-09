@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageConstraintsInfoFUCHSIA")]
-    public unsafe partial struct ImageConstraintsInfoFUCHSIA
+    public unsafe partial struct ImageConstraintsInfoFUCHSIA : IStructuredType
     {
         public ImageConstraintsInfoFUCHSIA
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageConstraintsInfoFlagsFUCHSIA")]
         [NativeName("Name", "flags")]
         public ImageConstraintsInfoFlagsFUCHSIA Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageConstraintsInfoFuchsia;
+        }
     }
 }

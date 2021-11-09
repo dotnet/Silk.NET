@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCollectionPropertiesFUCHSIA")]
-    public unsafe partial struct BufferCollectionPropertiesFUCHSIA
+    public unsafe partial struct BufferCollectionPropertiesFUCHSIA : IStructuredType
     {
         public BufferCollectionPropertiesFUCHSIA
         (
@@ -167,5 +167,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkChromaLocation")]
         [NativeName("Name", "suggestedYChromaOffset")]
         public ChromaLocation SuggestedYChromaOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferCollectionPropertiesFuchsia;
+        }
     }
 }

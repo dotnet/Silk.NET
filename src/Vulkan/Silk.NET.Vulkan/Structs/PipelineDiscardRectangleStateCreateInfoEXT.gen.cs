@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDiscardRectangleStateCreateInfoEXT")]
-    public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
+    public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT : IStructuredType
     {
         public PipelineDiscardRectangleStateCreateInfoEXT
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRect2D")]
         [NativeName("Name", "pDiscardRectangles")]
         public Rect2D* PDiscardRectangles;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineDiscardRectangleStateCreateInfoExt;
+        }
     }
 }

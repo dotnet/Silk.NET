@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBaseOutStructure")]
-    public unsafe partial struct BaseOutStructure
+    public unsafe partial struct BaseOutStructure : IStructuredType
     {
         public BaseOutStructure
         (
@@ -46,5 +46,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBaseOutStructure")]
         [NativeName("Name", "pNext")]
         public BaseOutStructure* PNext;
+
+        /// <inheritdoc />
+        /// <remarks>Note, there is no fixed value for this type.</remarks>
+        StructureType IStructuredType.StructureType()
+        {
+            return SType;
+        }
     }
 }

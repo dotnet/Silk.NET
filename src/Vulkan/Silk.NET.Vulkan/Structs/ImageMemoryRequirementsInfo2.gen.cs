@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryRequirementsInfo2")]
-    public unsafe partial struct ImageMemoryRequirementsInfo2
+    public unsafe partial struct ImageMemoryRequirementsInfo2 : IStructuredType
     {
         public ImageMemoryRequirementsInfo2
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImage")]
         [NativeName("Name", "image")]
         public Image Image;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageMemoryRequirementsInfo2;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesNV
+    public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesNV : IStructuredType
     {
         public PhysicalDeviceFragmentShaderBarycentricFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "fragmentShaderBarycentric")]
         public Bool32 FragmentShaderBarycentric;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNV;
+        }
     }
 }

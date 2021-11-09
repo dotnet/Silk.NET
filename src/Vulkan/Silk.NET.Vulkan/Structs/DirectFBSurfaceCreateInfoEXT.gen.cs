@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDirectFBSurfaceCreateInfoEXT")]
-    public unsafe partial struct DirectFBSurfaceCreateInfoEXT
+    public unsafe partial struct DirectFBSurfaceCreateInfoEXT : IStructuredType
     {
         public DirectFBSurfaceCreateInfoEXT
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "IDirectFBSurface")]
         [NativeName("Name", "surface")]
         public nint Surface;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DirectfbSurfaceCreateInfoExt;
+        }
     }
 }

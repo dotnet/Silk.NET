@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTimelineSemaphoreSubmitInfo")]
-    public unsafe partial struct TimelineSemaphoreSubmitInfo
+    public unsafe partial struct TimelineSemaphoreSubmitInfo : IStructuredType
     {
         public TimelineSemaphoreSubmitInfo
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "pSignalSemaphoreValues")]
         public ulong* PSignalSemaphoreValues;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.TimelineSemaphoreSubmitInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
+    public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderSubgroupUniformControlFlow")]
         public Bool32 ShaderSubgroupUniformControlFlow;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKhr;
+        }
     }
 }

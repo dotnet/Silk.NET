@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineInputAssemblyStateCreateInfo")]
-    public unsafe partial struct PipelineInputAssemblyStateCreateInfo
+    public unsafe partial struct PipelineInputAssemblyStateCreateInfo : IStructuredType
     {
         public PipelineInputAssemblyStateCreateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "primitiveRestartEnable")]
         public Bool32 PrimitiveRestartEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineInputAssemblyStateCreateInfo;
+        }
     }
 }

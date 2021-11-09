@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePrivateDataFeaturesEXT")]
-    public unsafe partial struct PhysicalDevicePrivateDataFeaturesEXT
+    public unsafe partial struct PhysicalDevicePrivateDataFeaturesEXT : IStructuredType
     {
         public PhysicalDevicePrivateDataFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "privateData")]
         public Bool32 PrivateData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePrivateDataFeaturesExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInstanceCreateInfo")]
-    public unsafe partial struct InstanceCreateInfo
+    public unsafe partial struct InstanceCreateInfo : IStructuredType
     {
         public InstanceCreateInfo
         (
@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "ppEnabledExtensionNames")]
         public byte** PpEnabledExtensionNames;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.InstanceCreateInfo;
+        }
     }
 }

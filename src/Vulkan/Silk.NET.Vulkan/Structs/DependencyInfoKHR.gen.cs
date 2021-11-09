@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDependencyInfoKHR")]
-    public unsafe partial struct DependencyInfoKHR
+    public unsafe partial struct DependencyInfoKHR : IStructuredType
     {
         public DependencyInfoKHR
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageMemoryBarrier2KHR")]
         [NativeName("Name", "pImageMemoryBarriers")]
         public ImageMemoryBarrier2KHR* PImageMemoryBarriers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DependencyInfoKhr;
+        }
     }
 }

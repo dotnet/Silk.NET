@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyDescriptorSet")]
-    public unsafe partial struct CopyDescriptorSet
+    public unsafe partial struct CopyDescriptorSet : IStructuredType
     {
         public CopyDescriptorSet
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "descriptorCount")]
         public uint DescriptorCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyDescriptorSet;
+        }
     }
 }

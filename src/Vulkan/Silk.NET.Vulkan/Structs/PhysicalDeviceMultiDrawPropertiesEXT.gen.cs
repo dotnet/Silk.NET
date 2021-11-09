@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiDrawPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceMultiDrawPropertiesEXT
+    public unsafe partial struct PhysicalDeviceMultiDrawPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceMultiDrawPropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxMultiDrawCount")]
         public uint MaxMultiDrawCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMultiDrawPropertiesExt;
+        }
     }
 }

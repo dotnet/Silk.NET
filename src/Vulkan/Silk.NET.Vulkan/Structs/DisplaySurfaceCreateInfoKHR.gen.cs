@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplaySurfaceCreateInfoKHR")]
-    public unsafe partial struct DisplaySurfaceCreateInfoKHR
+    public unsafe partial struct DisplaySurfaceCreateInfoKHR : IStructuredType
     {
         public DisplaySurfaceCreateInfoKHR
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "imageExtent")]
         public Extent2D ImageExtent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DisplaySurfaceCreateInfoKhr;
+        }
     }
 }

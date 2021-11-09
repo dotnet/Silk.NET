@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputAttributeDescription2EXT")]
-    public unsafe partial struct VertexInputAttributeDescription2EXT
+    public unsafe partial struct VertexInputAttributeDescription2EXT : IStructuredType
     {
         public VertexInputAttributeDescription2EXT
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "offset")]
         public uint Offset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VertexInputAttributeDescription2Ext;
+        }
     }
 }

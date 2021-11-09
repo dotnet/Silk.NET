@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportExclusiveScissorStateCreateInfoNV")]
-    public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
+    public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV : IStructuredType
     {
         public PipelineViewportExclusiveScissorStateCreateInfoNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRect2D")]
         [NativeName("Name", "pExclusiveScissors")]
         public Rect2D* PExclusiveScissors;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV;
+        }
     }
 }

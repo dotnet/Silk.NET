@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImagePlaneMemoryRequirementsInfo")]
-    public unsafe partial struct ImagePlaneMemoryRequirementsInfo
+    public unsafe partial struct ImagePlaneMemoryRequirementsInfo : IStructuredType
     {
         public ImagePlaneMemoryRequirementsInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageAspectFlagBits")]
         [NativeName("Name", "planeAspect")]
         public ImageAspectFlags PlaneAspect;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImagePlaneMemoryRequirementsInfo;
+        }
     }
 }

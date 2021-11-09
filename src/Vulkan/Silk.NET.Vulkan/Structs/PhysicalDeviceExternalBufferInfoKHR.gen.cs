@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalBufferInfoKHR")]
-    public unsafe partial struct PhysicalDeviceExternalBufferInfoKHR
+    public unsafe partial struct PhysicalDeviceExternalBufferInfoKHR : IStructuredType
     {
         public PhysicalDeviceExternalBufferInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalMemoryHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalBufferInfo;
+        }
     }
 }

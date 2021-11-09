@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupPresentInfoKHR")]
-    public unsafe partial struct DeviceGroupPresentInfoKHR
+    public unsafe partial struct DeviceGroupPresentInfoKHR : IStructuredType
     {
         public DeviceGroupPresentInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagBitsKHR")]
         [NativeName("Name", "mode")]
         public DeviceGroupPresentModeFlagsKHR Mode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupPresentInfoKhr;
+        }
     }
 }

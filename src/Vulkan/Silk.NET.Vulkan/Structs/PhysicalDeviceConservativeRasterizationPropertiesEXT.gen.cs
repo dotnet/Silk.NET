@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceConservativeRasterizationPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEXT
+    public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceConservativeRasterizationPropertiesEXT
         (
@@ -145,5 +145,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "conservativeRasterizationPostDepthCoverage")]
         public Bool32 ConservativeRasterizationPostDepthCoverage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceConservativeRasterizationPropertiesExt;
+        }
     }
 }

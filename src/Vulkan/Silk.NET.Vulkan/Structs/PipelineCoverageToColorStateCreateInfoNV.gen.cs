@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCoverageToColorStateCreateInfoNV")]
-    public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
+    public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV : IStructuredType
     {
         public PipelineCoverageToColorStateCreateInfoNV
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "coverageToColorLocation")]
         public uint CoverageToColorLocation;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineCoverageToColorStateCreateInfoNV;
+        }
     }
 }

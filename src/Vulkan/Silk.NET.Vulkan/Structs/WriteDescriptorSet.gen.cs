@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSet")]
-    public unsafe partial struct WriteDescriptorSet
+    public unsafe partial struct WriteDescriptorSet : IStructuredType
     {
         public WriteDescriptorSet
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferView")]
         [NativeName("Name", "pTexelBufferView")]
         public BufferView* PTexelBufferView;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.WriteDescriptorSet;
+        }
     }
 }

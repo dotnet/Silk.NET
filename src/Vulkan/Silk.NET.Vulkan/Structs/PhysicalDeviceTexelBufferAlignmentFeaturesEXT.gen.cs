@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
+    public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceTexelBufferAlignmentFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "texelBufferAlignment")]
         public Bool32 TexelBufferAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreSignalInfoKHR")]
-    public unsafe partial struct SemaphoreSignalInfoKHR
+    public unsafe partial struct SemaphoreSignalInfoKHR : IStructuredType
     {
         public SemaphoreSignalInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "value")]
         public ulong Value;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SemaphoreSignalInfo;
+        }
     }
 }

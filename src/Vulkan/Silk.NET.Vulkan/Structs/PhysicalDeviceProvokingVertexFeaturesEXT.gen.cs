@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceProvokingVertexFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
+    public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceProvokingVertexFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "transformFeedbackPreservesProvokingVertex")]
         public Bool32 TransformFeedbackPreservesProvokingVertex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceProvokingVertexFeaturesExt;
+        }
     }
 }

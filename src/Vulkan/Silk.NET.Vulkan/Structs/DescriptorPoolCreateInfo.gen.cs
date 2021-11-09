@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolCreateInfo")]
-    public unsafe partial struct DescriptorPoolCreateInfo
+    public unsafe partial struct DescriptorPoolCreateInfo : IStructuredType
     {
         public DescriptorPoolCreateInfo
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorPoolSize")]
         [NativeName("Name", "pPoolSizes")]
         public DescriptorPoolSize* PPoolSizes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorPoolCreateInfo;
+        }
     }
 }

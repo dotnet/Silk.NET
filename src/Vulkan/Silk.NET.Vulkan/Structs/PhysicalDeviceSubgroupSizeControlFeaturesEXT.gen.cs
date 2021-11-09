@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceSubgroupSizeControlFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "computeFullSubgroups")]
         public Bool32 ComputeFullSubgroups;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSubgroupSizeControlFeaturesExt;
+        }
     }
 }

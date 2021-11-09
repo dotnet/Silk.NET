@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferViewCreateInfo")]
-    public unsafe partial struct BufferViewCreateInfo
+    public unsafe partial struct BufferViewCreateInfo : IStructuredType
     {
         public BufferViewCreateInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "range")]
         public ulong Range;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferViewCreateInfo;
+        }
     }
 }

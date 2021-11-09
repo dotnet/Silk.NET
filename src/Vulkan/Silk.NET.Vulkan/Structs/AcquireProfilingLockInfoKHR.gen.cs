@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAcquireProfilingLockInfoKHR")]
-    public unsafe partial struct AcquireProfilingLockInfoKHR
+    public unsafe partial struct AcquireProfilingLockInfoKHR : IStructuredType
     {
         public AcquireProfilingLockInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "timeout")]
         public ulong Timeout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AcquireProfilingLockInfoKhr;
+        }
     }
 }

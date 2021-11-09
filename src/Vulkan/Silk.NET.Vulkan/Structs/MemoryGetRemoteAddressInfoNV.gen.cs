@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryGetRemoteAddressInfoNV")]
-    public unsafe partial struct MemoryGetRemoteAddressInfoNV
+    public unsafe partial struct MemoryGetRemoteAddressInfoNV : IStructuredType
     {
         public MemoryGetRemoteAddressInfoNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalMemoryHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryGetRemoteAddressInfoNV;
+        }
     }
 }

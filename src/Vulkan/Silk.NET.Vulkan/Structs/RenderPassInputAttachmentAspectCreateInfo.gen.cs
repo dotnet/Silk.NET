@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassInputAttachmentAspectCreateInfo")]
-    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo
+    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo : IStructuredType
     {
         public RenderPassInputAttachmentAspectCreateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkInputAttachmentAspectReference")]
         [NativeName("Name", "pAspectReferences")]
         public InputAttachmentAspectReference* PAspectReferences;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassInputAttachmentAspectCreateInfo;
+        }
     }
 }

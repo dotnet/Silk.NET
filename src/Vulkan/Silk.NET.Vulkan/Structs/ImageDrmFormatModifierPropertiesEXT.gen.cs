@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageDrmFormatModifierPropertiesEXT")]
-    public unsafe partial struct ImageDrmFormatModifierPropertiesEXT
+    public unsafe partial struct ImageDrmFormatModifierPropertiesEXT : IStructuredType
     {
         public ImageDrmFormatModifierPropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "drmFormatModifier")]
         public ulong DrmFormatModifier;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageDrmFormatModifierPropertiesExt;
+        }
     }
 }

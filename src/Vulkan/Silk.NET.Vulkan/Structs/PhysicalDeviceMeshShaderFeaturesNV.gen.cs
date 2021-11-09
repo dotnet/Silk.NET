@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMeshShaderFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV
+    public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV : IStructuredType
     {
         public PhysicalDeviceMeshShaderFeaturesNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "meshShader")]
         public Bool32 MeshShader;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMeshShaderFeaturesNV;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoQueueFamilyProperties2KHR")]
-    public unsafe partial struct VideoQueueFamilyProperties2KHR
+    public unsafe partial struct VideoQueueFamilyProperties2KHR : IStructuredType
     {
         public VideoQueueFamilyProperties2KHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoCodecOperationFlagsKHR")]
         [NativeName("Name", "videoCodecOperations")]
         public VideoCodecOperationFlagsKHR VideoCodecOperations;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoQueueFamilyProperties2Khr;
+        }
     }
 }

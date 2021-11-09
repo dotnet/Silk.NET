@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportSemaphoreCreateInfoKHR")]
-    public unsafe partial struct ExportSemaphoreCreateInfoKHR
+    public unsafe partial struct ExportSemaphoreCreateInfoKHR : IStructuredType
     {
         public ExportSemaphoreCreateInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalSemaphoreHandleTypeFlags")]
         [NativeName("Name", "handleTypes")]
         public ExternalSemaphoreHandleTypeFlags HandleTypes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExportSemaphoreCreateInfo;
+        }
     }
 }

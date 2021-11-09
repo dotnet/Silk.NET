@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryBarrier2KHR")]
-    public unsafe partial struct ImageMemoryBarrier2KHR
+    public unsafe partial struct ImageMemoryBarrier2KHR : IStructuredType
     {
         public ImageMemoryBarrier2KHR
         (
@@ -156,5 +156,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageSubresourceRange")]
         [NativeName("Name", "subresourceRange")]
         public ImageSubresourceRange SubresourceRange;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageMemoryBarrier2Khr;
+        }
     }
 }

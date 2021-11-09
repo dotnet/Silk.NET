@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationStateCreateInfo")]
-    public unsafe partial struct PipelineRasterizationStateCreateInfo
+    public unsafe partial struct PipelineRasterizationStateCreateInfo : IStructuredType
     {
         public PipelineRasterizationStateCreateInfo
         (
@@ -167,5 +167,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "lineWidth")]
         public float LineWidth;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRasterizationStateCreateInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryDeviceGroupInfo")]
-    public unsafe partial struct BindBufferMemoryDeviceGroupInfo
+    public unsafe partial struct BindBufferMemoryDeviceGroupInfo : IStructuredType
     {
         public BindBufferMemoryDeviceGroupInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pDeviceIndices")]
         public uint* PDeviceIndices;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindBufferMemoryDeviceGroupInfo;
+        }
     }
 }

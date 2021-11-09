@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemorySwapchainInfoKHR")]
-    public unsafe partial struct BindImageMemorySwapchainInfoKHR
+    public unsafe partial struct BindImageMemorySwapchainInfoKHR : IStructuredType
     {
         public BindImageMemorySwapchainInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "imageIndex")]
         public uint ImageIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindImageMemorySwapchainInfoKhr;
+        }
     }
 }

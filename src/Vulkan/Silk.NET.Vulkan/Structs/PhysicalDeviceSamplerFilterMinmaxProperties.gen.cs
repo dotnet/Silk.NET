@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSamplerFilterMinmaxProperties")]
-    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
+    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties : IStructuredType
     {
         public PhysicalDeviceSamplerFilterMinmaxProperties
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "filterMinmaxImageComponentMapping")]
         public Bool32 FilterMinmaxImageComponentMapping;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties;
+        }
     }
 }

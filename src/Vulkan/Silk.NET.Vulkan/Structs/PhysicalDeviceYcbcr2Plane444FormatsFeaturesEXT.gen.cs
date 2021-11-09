@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
+    public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "ycbcr2plane444Formats")]
         public Bool32 Ycbcr2plane444formats;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceYcbcr2Plane444FormatsFeaturesExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceASTCDecodeFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT
+    public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceASTCDecodeFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "decodeModeSharedExponent")]
         public Bool32 DecodeModeSharedExponent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt;
+        }
     }
 }

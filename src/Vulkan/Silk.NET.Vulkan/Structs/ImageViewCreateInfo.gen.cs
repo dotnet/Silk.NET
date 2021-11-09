@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewCreateInfo")]
-    public unsafe partial struct ImageViewCreateInfo
+    public unsafe partial struct ImageViewCreateInfo : IStructuredType
     {
         public ImageViewCreateInfo
         (
@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageSubresourceRange")]
         [NativeName("Name", "subresourceRange")]
         public ImageSubresourceRange SubresourceRange;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageViewCreateInfo;
+        }
     }
 }

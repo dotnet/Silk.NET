@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceCapabilities2EXT")]
-    public unsafe partial struct SurfaceCapabilities2EXT
+    public unsafe partial struct SurfaceCapabilities2EXT : IStructuredType
     {
         public SurfaceCapabilities2EXT
         (
@@ -167,5 +167,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceCounterFlagsEXT")]
         [NativeName("Name", "supportedSurfaceCounters")]
         public SurfaceCounterFlagsEXT SupportedSurfaceCounters;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SurfaceCapabilities2Ext;
+        }
     }
 }

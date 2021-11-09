@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDrmFormatModifierPropertiesList2EXT")]
-    public unsafe partial struct DrmFormatModifierPropertiesList2EXT
+    public unsafe partial struct DrmFormatModifierPropertiesList2EXT : IStructuredType
     {
         public DrmFormatModifierPropertiesList2EXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDrmFormatModifierProperties2EXT")]
         [NativeName("Name", "pDrmFormatModifierProperties")]
         public DrmFormatModifierProperties2EXT* PDrmFormatModifierProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DrmFormatModifierPropertiesList2Ext;
+        }
     }
 }

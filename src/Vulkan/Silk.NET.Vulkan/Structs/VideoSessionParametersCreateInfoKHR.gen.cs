@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionParametersCreateInfoKHR")]
-    public unsafe partial struct VideoSessionParametersCreateInfoKHR
+    public unsafe partial struct VideoSessionParametersCreateInfoKHR : IStructuredType
     {
         public VideoSessionParametersCreateInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoSessionKHR")]
         [NativeName("Name", "videoSession")]
         public VideoSessionKHR VideoSession;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionParametersCreateInfoKhr;
+        }
     }
 }

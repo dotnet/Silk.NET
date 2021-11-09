@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportCoarseSampleOrderStateCreateInfoNV")]
-    public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
+    public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV : IStructuredType
     {
         public PipelineViewportCoarseSampleOrderStateCreateInfoNV
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCoarseSampleOrderCustomNV")]
         [NativeName("Name", "pCustomSampleOrders")]
         public CoarseSampleOrderCustomNV* PCustomSampleOrders;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineViewportCoarseSampleOrderStateCreateInfoNV;
+        }
     }
 }

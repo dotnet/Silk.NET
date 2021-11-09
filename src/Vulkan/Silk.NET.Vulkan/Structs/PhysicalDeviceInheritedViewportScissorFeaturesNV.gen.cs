@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceInheritedViewportScissorFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
+    public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV : IStructuredType
     {
         public PhysicalDeviceInheritedViewportScissorFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "inheritedViewportScissor2D")]
         public Bool32 InheritedViewportScissor2D;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceInheritedViewportScissorFeaturesNV;
+        }
     }
 }

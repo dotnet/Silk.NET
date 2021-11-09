@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingFragmentDensityMapAttachmentInfoEXT")]
-    public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
+    public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT : IStructuredType
     {
         public RenderingFragmentDensityMapAttachmentInfoEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageLayout")]
         [NativeName("Name", "imageLayout")]
         public ImageLayout ImageLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderingFragmentDensityMapAttachmentInfoExt;
+        }
     }
 }

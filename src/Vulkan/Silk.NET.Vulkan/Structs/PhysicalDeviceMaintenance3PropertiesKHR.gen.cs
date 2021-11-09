@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMaintenance3PropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceMaintenance3PropertiesKHR
+    public unsafe partial struct PhysicalDeviceMaintenance3PropertiesKHR : IStructuredType
     {
         public PhysicalDeviceMaintenance3PropertiesKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "maxMemoryAllocationSize")]
         public ulong MaxMemoryAllocationSize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMaintenance3Properties;
+        }
     }
 }

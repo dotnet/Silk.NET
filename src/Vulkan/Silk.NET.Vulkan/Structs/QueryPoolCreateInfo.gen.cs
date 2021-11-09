@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfo")]
-    public unsafe partial struct QueryPoolCreateInfo
+    public unsafe partial struct QueryPoolCreateInfo : IStructuredType
     {
         public QueryPoolCreateInfo
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkQueryPipelineStatisticFlags")]
         [NativeName("Name", "pipelineStatistics")]
         public QueryPipelineStatisticFlags PipelineStatistics;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueryPoolCreateInfo;
+        }
     }
 }

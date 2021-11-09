@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescriptionDepthStencilResolve")]
-    public unsafe partial struct SubpassDescriptionDepthStencilResolve
+    public unsafe partial struct SubpassDescriptionDepthStencilResolve : IStructuredType
     {
         public SubpassDescriptionDepthStencilResolve
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAttachmentReference2")]
         [NativeName("Name", "pDepthStencilResolveAttachment")]
         public AttachmentReference2* PDepthStencilResolveAttachment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubpassDescriptionDepthStencilResolve;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVideoFormatInfoKHR")]
-    public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR
+    public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR : IStructuredType
     {
         public PhysicalDeviceVideoFormatInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoProfilesKHR")]
         [NativeName("Name", "pVideoProfiles")]
         public VideoProfilesKHR* PVideoProfiles;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVideoFormatInfoKhr;
+        }
     }
 }

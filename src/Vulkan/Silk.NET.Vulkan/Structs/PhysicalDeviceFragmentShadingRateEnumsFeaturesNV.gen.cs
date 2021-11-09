@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
+    public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV : IStructuredType
     {
         public PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "noInvocationFragmentShadingRates")]
         public Bool32 NoInvocationFragmentShadingRates;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentShadingRateEnumsFeaturesNV;
+        }
     }
 }

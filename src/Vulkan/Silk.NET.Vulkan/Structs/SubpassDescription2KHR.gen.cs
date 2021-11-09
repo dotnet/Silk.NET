@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescription2KHR")]
-    public unsafe partial struct SubpassDescription2KHR
+    public unsafe partial struct SubpassDescription2KHR : IStructuredType
     {
         public SubpassDescription2KHR
         (
@@ -167,5 +167,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pPreserveAttachments")]
         public uint* PPreserveAttachments;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubpassDescription2;
+        }
     }
 }

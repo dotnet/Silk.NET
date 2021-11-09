@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewPropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceMultiviewPropertiesKHR
+    public unsafe partial struct PhysicalDeviceMultiviewPropertiesKHR : IStructuredType
     {
         public PhysicalDeviceMultiviewPropertiesKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxMultiviewInstanceIndex")]
         public uint MaxMultiviewInstanceIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMultiviewProperties;
+        }
     }
 }

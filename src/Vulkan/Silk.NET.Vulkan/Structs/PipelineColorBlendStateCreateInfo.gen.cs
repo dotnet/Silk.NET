@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendStateCreateInfo")]
-    public unsafe partial struct PipelineColorBlendStateCreateInfo
+    public unsafe partial struct PipelineColorBlendStateCreateInfo : IStructuredType
     {
         public PipelineColorBlendStateCreateInfo
         (
@@ -106,5 +106,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "blendConstants")]
         public fixed float BlendConstants[4];
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineColorBlendStateCreateInfo;
+        }
     }
 }

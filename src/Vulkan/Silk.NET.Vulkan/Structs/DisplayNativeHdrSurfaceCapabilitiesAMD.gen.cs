@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayNativeHdrSurfaceCapabilitiesAMD")]
-    public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD
+    public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD : IStructuredType
     {
         public DisplayNativeHdrSurfaceCapabilitiesAMD
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "localDimmingSupport")]
         public Bool32 LocalDimmingSupport;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DisplayNativeHdrSurfaceCapabilitiesAmd;
+        }
     }
 }

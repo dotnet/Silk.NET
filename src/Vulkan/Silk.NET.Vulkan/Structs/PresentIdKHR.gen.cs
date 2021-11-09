@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentIdKHR")]
-    public unsafe partial struct PresentIdKHR
+    public unsafe partial struct PresentIdKHR : IStructuredType
     {
         public PresentIdKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "pPresentIds")]
         public ulong* PPresentIds;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PresentIDKhr;
+        }
     }
 }

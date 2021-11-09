@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
-    public unsafe partial struct QueryPoolCreateInfoINTEL
+    public unsafe partial struct QueryPoolCreateInfoINTEL : IStructuredType
     {
         public QueryPoolCreateInfoINTEL
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkQueryPoolSamplingModeINTEL")]
         [NativeName("Name", "performanceCountersSampling")]
         public QueryPoolSamplingModeINTEL PerformanceCountersSampling;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel;
+        }
     }
 }

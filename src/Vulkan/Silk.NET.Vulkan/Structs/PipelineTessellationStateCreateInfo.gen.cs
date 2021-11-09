@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationStateCreateInfo")]
-    public unsafe partial struct PipelineTessellationStateCreateInfo
+    public unsafe partial struct PipelineTessellationStateCreateInfo : IStructuredType
     {
         public PipelineTessellationStateCreateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "patchControlPoints")]
         public uint PatchControlPoints;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineTessellationStateCreateInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe partial struct PipelineLibraryCreateInfoKHR
+    public unsafe partial struct PipelineLibraryCreateInfoKHR : IStructuredType
     {
         public PipelineLibraryCreateInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipeline")]
         [NativeName("Name", "pLibraries")]
         public Pipeline* PLibraries;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineLibraryCreateInfoKhr;
+        }
     }
 }

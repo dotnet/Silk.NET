@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCreateInfo")]
-    public unsafe partial struct ImageCreateInfo
+    public unsafe partial struct ImageCreateInfo : IStructuredType
     {
         public ImageCreateInfo
         (
@@ -189,5 +189,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageLayout")]
         [NativeName("Name", "initialLayout")]
         public ImageLayout InitialLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageCreateInfo;
+        }
     }
 }

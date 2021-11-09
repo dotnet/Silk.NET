@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViSurfaceCreateInfoNN")]
-    public unsafe partial struct ViSurfaceCreateInfoNN
+    public unsafe partial struct ViSurfaceCreateInfoNN : IStructuredType
     {
         public ViSurfaceCreateInfoNN
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "window")]
         public void* Window;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VISurfaceCreateInfoNN;
+        }
     }
 }

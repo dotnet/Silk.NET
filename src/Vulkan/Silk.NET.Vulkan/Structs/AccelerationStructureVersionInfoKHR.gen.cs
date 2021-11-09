@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureVersionInfoKHR")]
-    public unsafe partial struct AccelerationStructureVersionInfoKHR
+    public unsafe partial struct AccelerationStructureVersionInfoKHR : IStructuredType
     {
         public AccelerationStructureVersionInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "pVersionData")]
         public byte* PVersionData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureVersionInfoKhr;
+        }
     }
 }

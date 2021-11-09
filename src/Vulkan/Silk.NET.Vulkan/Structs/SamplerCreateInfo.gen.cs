@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerCreateInfo")]
-    public unsafe partial struct SamplerCreateInfo
+    public unsafe partial struct SamplerCreateInfo : IStructuredType
     {
         public SamplerCreateInfo
         (
@@ -222,5 +222,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "unnormalizedCoordinates")]
         public Bool32 UnnormalizedCoordinates;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SamplerCreateInfo;
+        }
     }
 }

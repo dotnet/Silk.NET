@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDiscardRectanglePropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
+    public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT : IStructuredType
     {
         public PhysicalDeviceDiscardRectanglePropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxDiscardRectangles")]
         public uint MaxDiscardRectangles;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDiscardRectanglePropertiesExt;
+        }
     }
 }

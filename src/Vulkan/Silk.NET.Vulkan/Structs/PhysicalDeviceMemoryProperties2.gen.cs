@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryProperties2")]
-    public unsafe partial struct PhysicalDeviceMemoryProperties2
+    public unsafe partial struct PhysicalDeviceMemoryProperties2 : IStructuredType
     {
         public PhysicalDeviceMemoryProperties2
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPhysicalDeviceMemoryProperties")]
         [NativeName("Name", "memoryProperties")]
         public PhysicalDeviceMemoryProperties MemoryProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMemoryProperties2;
+        }
     }
 }

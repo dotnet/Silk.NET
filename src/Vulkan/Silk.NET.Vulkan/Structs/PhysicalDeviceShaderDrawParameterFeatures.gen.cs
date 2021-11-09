@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderDrawParameterFeatures")]
-    public unsafe partial struct PhysicalDeviceShaderDrawParameterFeatures
+    public unsafe partial struct PhysicalDeviceShaderDrawParameterFeatures : IStructuredType
     {
         public PhysicalDeviceShaderDrawParameterFeatures
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderDrawParameters")]
         public Bool32 ShaderDrawParameters;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderDrawParametersFeatures;
+        }
     }
 }

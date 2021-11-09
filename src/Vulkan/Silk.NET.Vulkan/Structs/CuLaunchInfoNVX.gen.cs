@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCuLaunchInfoNVX")]
-    public unsafe partial struct CuLaunchInfoNVX
+    public unsafe partial struct CuLaunchInfoNVX : IStructuredType
     {
         public CuLaunchInfoNVX
         (
@@ -178,5 +178,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pExtras")]
         public void* PExtras;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CULaunchInfoNvx;
+        }
     }
 }

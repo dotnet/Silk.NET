@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCooperativeMatrixPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesNV
+    public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesNV : IStructuredType
     {
         public PhysicalDeviceCooperativeMatrixPropertiesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShaderStageFlags")]
         [NativeName("Name", "cooperativeMatrixSupportedStages")]
         public ShaderStageFlags CooperativeMatrixSupportedStages;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesNV;
+        }
     }
 }

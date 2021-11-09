@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportSemaphoreWin32HandleInfoKHR")]
-    public unsafe partial struct ImportSemaphoreWin32HandleInfoKHR
+    public unsafe partial struct ImportSemaphoreWin32HandleInfoKHR : IStructuredType
     {
         public ImportSemaphoreWin32HandleInfoKHR
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "name")]
         public nint Name;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImportSemaphoreWin32HandleInfoKhr;
+        }
     }
 }

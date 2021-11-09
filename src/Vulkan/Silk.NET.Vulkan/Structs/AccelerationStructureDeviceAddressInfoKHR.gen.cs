@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureDeviceAddressInfoKHR")]
-    public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR
+    public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR : IStructuredType
     {
         public AccelerationStructureDeviceAddressInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureKHR")]
         [NativeName("Name", "accelerationStructure")]
         public AccelerationStructureKHR AccelerationStructure;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureDeviceAddressInfoKhr;
+        }
     }
 }

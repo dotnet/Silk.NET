@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderCoreProperties2AMD")]
-    public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
+    public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD : IStructuredType
     {
         public PhysicalDeviceShaderCoreProperties2AMD
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "activeComputeUnitCount")]
         public uint ActiveComputeUnitCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderCoreProperties2Amd;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphoreFeatures")]
-    public unsafe partial struct PhysicalDeviceTimelineSemaphoreFeatures
+    public unsafe partial struct PhysicalDeviceTimelineSemaphoreFeatures : IStructuredType
     {
         public PhysicalDeviceTimelineSemaphoreFeatures
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "timelineSemaphore")]
         public Bool32 TimelineSemaphore;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures;
+        }
     }
 }

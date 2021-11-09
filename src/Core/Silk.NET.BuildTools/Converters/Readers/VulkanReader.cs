@@ -55,47 +55,62 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             var prefix = task.FunctionPrefix;
             var ret = new Dictionary<string, Struct>();
+
             foreach (var s in spec.Structures)
             {
-                ret.Add
-                (
-                    s.Name, new Struct
-                    {
-                        Fields = s.Members.Select
-                            (
-                                x => new Field
-                                {
-                                    Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
-                                        ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                        : new Count(x.ElementCountSymbolic, false),
-                                    Name = Naming.Translate(TrimName(x.Name, task), prefix),
-                                    Doc = $"/// <summary>{x.Comment}</summary>",
-                                    NativeName = x.Name,
-                                    NativeType = x.Type.ToString(),
-                                    Type = ConvertType(x.Type),
-                                    DefaultAssignment =
-                                        (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
-                                        && !string.IsNullOrWhiteSpace(x.LegalValues)
-                                            ? "StructureType." + TryTrim
+                var @struct = new Struct
+                {
+                    Fields = s.Members.Select
+                        (
+                            x => new Field
+                            {
+                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                    : new Count(x.ElementCountSymbolic, false),
+                                Name = Naming.Translate(TrimName(x.Name, task), prefix),
+                                Doc = $"/// <summary>{x.Comment}</summary>",
+                                NativeName = x.Name,
+                                NativeType = x.Type.ToString(),
+                                Type = ConvertType(x.Type),
+                                DefaultAssignment =
+                                    (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
+                                    && !string.IsNullOrWhiteSpace(x.LegalValues)
+                                        ? "StructureType." + TryTrim
+                                        (
+                                            Naming.Translate
                                             (
-                                                Naming.Translate
-                                                (
-                                                    TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
-                                                    task.FunctionPrefix
-                                                ),
-                                                Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
-                                            )
-                                            : null,
-                                    NumBits = x.NumBits
-                                }.WithFixedFieldFixup09072020()
-                            )
-                            .ToList(),
-                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
-                        NativeName = s.Name
-                    }
-                );
+                                                TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
+                                                task.FunctionPrefix
+                                            ),
+                                            Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
+                                        )
+                                        : null,
+                                NumBits = x.NumBits
+                            }.WithFixedFieldFixup09072020()
+                        )
+                        .ToList(),
+                    Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
+                    NativeName = s.Name
+                };
+
+                // Find the STYpe field (and it's position)
+                var sTypeField = @struct.Fields
+                    .FirstOrDefault(f => f.Name == "SType" && f.Type.Name == "VkStructureType");
+                if (sTypeField is not null)
+                {
+                    @struct.Attributes.Add
+                    (
+                        new()
+                        {
+                            Name = "BuildToolsIntrinsic",
+                            Arguments = new() {"$VKSTRUCTUREDTYPE", sTypeField.DefaultAssignment ?? string.Empty}
+                        }
+                    );
+                }
+
+                ret.Add(s.Name, @struct);
             }
-            
+
             foreach (var h in spec.Handles)
             {
                 ret.Add
@@ -103,7 +118,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     h.Name, new Struct
                     {
                         Fields = new List<Field>
-                            {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}},
+                        {
+                            new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}
+                        },
                         Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
                         NativeName = h.Name
                     }
@@ -112,13 +129,19 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             foreach (var u in spec.Unions)
             {
-                ret.Add(u.Name, new Struct
-                {
-                    Attributes = new List<Attribute>{new Attribute{Name = "StructLayout", Arguments = new List<string>{"LayoutKind.Explicit"}}},
-                    Fields = GetFields(u, task).ToList(),
-                    Name = Naming.TranslateLite(TrimName(u.Name, task), prefix),
-                    NativeName = u.Name
-                });
+                ret.Add
+                (
+                    u.Name, new Struct
+                    {
+                        Attributes = new List<Attribute>
+                        {
+                            new Attribute {Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}}
+                        },
+                        Fields = GetFields(u, task).ToList(),
+                        Name = Naming.TranslateLite(TrimName(u.Name, task), prefix),
+                        NativeName = u.Name
+                    }
+                );
             }
 
             return ret;
@@ -138,7 +161,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             Name = $"{Naming.Translate(x.Name, task.FunctionPrefix)}_{i}",
                             Attributes = new List<Attribute>
                             {
-                                new Attribute{Name = "FieldOffset", Arguments = new List<string> {$"{i * fieldSize}"}}
+                                new Attribute {Name = "FieldOffset", Arguments = new List<string> {$"{i * fieldSize}"}}
                             },
                             Doc = $"/// <summary>{x.Comment}</summary>",
                             NativeName = x.Name,
@@ -155,7 +178,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         Name = $"{Naming.Translate(x.Name, task.FunctionPrefix)}",
                         Attributes = new List<Attribute>
                         {
-                            new Attribute{Name = "FieldOffset", Arguments = new List<string> {"0"}}
+                            new Attribute {Name = "FieldOffset", Arguments = new List<string> {"0"}}
                         },
                         Doc = $"/// <summary>{x.Comment}</summary>",
                         NativeName = x.Name,
@@ -165,7 +188,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-        } 
+        }
 
         private int GetTypeSize(string type, IEnumerable<Dictionary<string, string>> maps)
         {
@@ -237,7 +260,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 }
             }
-            
+
             foreach (var extension in spec.Extensions)
             {
                 foreach (var name in extension.CommandNames)
@@ -273,14 +296,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 (
                     function.Name, new Function
                     {
-                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix), task.FunctionPrefix),
+                        Name = Naming.Translate
+                            (NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix), task.FunctionPrefix),
                         Parameters = function.Parameters.Select
                             (
                                 x => new Parameter
                                 {
                                     Count = x.IsNullTerminated ? null :
-                                        x.ElementCountSymbolic != null ?
-                                            function.Parameters.Any(y => y.Name == x.ElementCountSymbolic)
+                                        x.ElementCountSymbolic != null ? function.Parameters.Any
+                                            (y => y.Name == x.ElementCountSymbolic)
                                             ? new(x.ElementCountSymbolic)
                                             : new(x.ElementCountSymbolic.Split(',')) :
                                         new(x.ElementCount),
@@ -322,7 +346,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-            
+
             task.InjectTypeMap(tm);
         }
 
@@ -342,7 +366,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ConstantType.Float32 => new Type {Name = "float"},
                             ConstantType.UInt32 => new Type {Name = "uint"},
                             ConstantType.UInt64 => new Type {Name = "ulong"},
-                            _ => new Type{Name = "ulong"}
+                            _ => new Type {Name = "ulong"}
                         },
                         ExtensionName = "Core"
                     }
@@ -363,21 +387,23 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             }
                         )
                     )
-                ).Concat
+                )
+                .Concat
                 (
                     spec.Extensions.SelectMany
                     (
-                        x => x.EnumExtensions.Where(y => y.ExtendedType is null).Select
-                        (
-                            y => new Constant
-                            {
-                                Name = Naming.Translate(TrimName(y.Name, task), task.FunctionPrefix),
-                                NativeName = y.Name,
-                                Value = y.Value,
-                                Type = new Type {Name = "uint"},
-                                ExtensionName = TrimName(x.Name, task)
-                            }
-                        )
+                        x => x.EnumExtensions.Where(y => y.ExtendedType is null)
+                            .Select
+                            (
+                                y => new Constant
+                                {
+                                    Name = Naming.Translate(TrimName(y.Name, task), task.FunctionPrefix),
+                                    NativeName = y.Name,
+                                    Value = y.Value,
+                                    Type = new Type {Name = "uint"},
+                                    ExtensionName = TrimName(x.Name, task)
+                                }
+                            )
                     )
                 );
         }
@@ -395,7 +421,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(task.FunctionPrefix.ToLower()) ? name.Remove(0, task.FunctionPrefix.Length) : name;
+            return name.ToLower().StartsWith(task.FunctionPrefix.ToLower())
+                ? name.Remove(0, task.FunctionPrefix.Length)
+                : name;
         }
 
         private static FlowDirection ConvertFlow(ParameterModifier mod)
@@ -408,7 +436,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 _ => FlowDirection.In
             };
         }
-        
+
         private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, BindTask task)
         {
             var ret = new Dictionary<string, Enum>();
@@ -440,8 +468,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             : new List<Attribute>(),
                         EnumBaseType = e.BitWidth switch
                         {
-                            64 => new(){Name = "long"},
-                            _ => new(){Name = "int"}
+                            64 => new() {Name = "long"},
+                            _ => new() {Name = "int"}
                         }
                     }
                 );
@@ -458,6 +486,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
 
         private static readonly char[] Digits = "1234567890".ToCharArray();
+
         private static string TryTrim(string token, string @enum)
         {
             var trimmed = token.StartsWith(@enum) ? token.Substring(@enum.Length) : token;

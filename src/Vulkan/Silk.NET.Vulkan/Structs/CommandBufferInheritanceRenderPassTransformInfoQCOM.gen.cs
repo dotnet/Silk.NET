@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceRenderPassTransformInfoQCOM")]
-    public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
+    public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM : IStructuredType
     {
         public CommandBufferInheritanceRenderPassTransformInfoQCOM
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRect2D")]
         [NativeName("Name", "renderArea")]
         public Rect2D RenderArea;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferInheritanceRenderPassTransformInfoQCom;
+        }
     }
 }

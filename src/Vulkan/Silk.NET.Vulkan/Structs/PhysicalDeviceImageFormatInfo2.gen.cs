@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageFormatInfo2")]
-    public unsafe partial struct PhysicalDeviceImageFormatInfo2
+    public unsafe partial struct PhysicalDeviceImageFormatInfo2 : IStructuredType
     {
         public PhysicalDeviceImageFormatInfo2
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageCreateFlags")]
         [NativeName("Name", "flags")]
         public ImageCreateFlags Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImageFormatInfo2;
+        }
     }
 }

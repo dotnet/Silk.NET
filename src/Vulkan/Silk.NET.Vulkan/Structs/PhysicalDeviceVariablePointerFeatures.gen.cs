@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVariablePointerFeatures")]
-    public unsafe partial struct PhysicalDeviceVariablePointerFeatures
+    public unsafe partial struct PhysicalDeviceVariablePointerFeatures : IStructuredType
     {
         public PhysicalDeviceVariablePointerFeatures
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "variablePointers")]
         public Bool32 VariablePointers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVariablePointersFeatures;
+        }
     }
 }

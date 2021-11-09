@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceOverrideInfoINTEL")]
-    public unsafe partial struct PerformanceOverrideInfoINTEL
+    public unsafe partial struct PerformanceOverrideInfoINTEL : IStructuredType
     {
         public PerformanceOverrideInfoINTEL
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "parameter")]
         public ulong Parameter;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PerformanceOverrideInfoIntel;
+        }
     }
 }

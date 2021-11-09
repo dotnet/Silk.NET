@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoFormatPropertiesKHR")]
-    public unsafe partial struct VideoFormatPropertiesKHR
+    public unsafe partial struct VideoFormatPropertiesKHR : IStructuredType
     {
         public VideoFormatPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "format")]
         public Format Format;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoFormatPropertiesKhr;
+        }
     }
 }

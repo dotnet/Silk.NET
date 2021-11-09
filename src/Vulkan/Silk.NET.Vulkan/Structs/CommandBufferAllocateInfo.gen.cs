@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferAllocateInfo")]
-    public unsafe partial struct CommandBufferAllocateInfo
+    public unsafe partial struct CommandBufferAllocateInfo : IStructuredType
     {
         public CommandBufferAllocateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "commandBufferCount")]
         public uint CommandBufferCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferAllocateInfo;
+        }
     }
 }

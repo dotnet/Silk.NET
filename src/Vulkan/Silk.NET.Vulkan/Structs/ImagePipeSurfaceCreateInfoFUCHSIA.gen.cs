@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImagePipeSurfaceCreateInfoFUCHSIA")]
-    public unsafe partial struct ImagePipeSurfaceCreateInfoFUCHSIA
+    public unsafe partial struct ImagePipeSurfaceCreateInfoFUCHSIA : IStructuredType
     {
         public ImagePipeSurfaceCreateInfoFUCHSIA
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "zx_handle_t")]
         [NativeName("Name", "imagePipeHandle")]
         public nint ImagePipeHandle;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImagepipeSurfaceCreateInfoFuchsia;
+        }
     }
 }

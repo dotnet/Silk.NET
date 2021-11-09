@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalFormatANDROID")]
-    public unsafe partial struct ExternalFormatANDROID
+    public unsafe partial struct ExternalFormatANDROID : IStructuredType
     {
         public ExternalFormatANDROID
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "externalFormat")]
         public ulong ExternalFormat;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalFormatAndroid;
+        }
     }
 }

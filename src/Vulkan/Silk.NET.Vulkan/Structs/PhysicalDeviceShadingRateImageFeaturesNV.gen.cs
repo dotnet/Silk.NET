@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShadingRateImageFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceShadingRateImageFeaturesNV
+    public unsafe partial struct PhysicalDeviceShadingRateImageFeaturesNV : IStructuredType
     {
         public PhysicalDeviceShadingRateImageFeaturesNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shadingRateCoarseSampleOrder")]
         public Bool32 ShadingRateCoarseSampleOrder;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShadingRateImageFeaturesNV;
+        }
     }
 }

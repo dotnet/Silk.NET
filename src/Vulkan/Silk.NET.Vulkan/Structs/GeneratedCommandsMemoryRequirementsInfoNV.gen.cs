@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeneratedCommandsMemoryRequirementsInfoNV")]
-    public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
+    public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV : IStructuredType
     {
         public GeneratedCommandsMemoryRequirementsInfoNV
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxSequencesCount")]
         public uint MaxSequencesCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.GeneratedCommandsMemoryRequirementsInfoNV;
+        }
     }
 }

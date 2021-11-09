@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceProtectedMemoryFeatures")]
-    public unsafe partial struct PhysicalDeviceProtectedMemoryFeatures
+    public unsafe partial struct PhysicalDeviceProtectedMemoryFeatures : IStructuredType
     {
         public PhysicalDeviceProtectedMemoryFeatures
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "protectedMemory")]
         public Bool32 ProtectedMemory;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceProtectedMemoryFeatures;
+        }
     }
 }

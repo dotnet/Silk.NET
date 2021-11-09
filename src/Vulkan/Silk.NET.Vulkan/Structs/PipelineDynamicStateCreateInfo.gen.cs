@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDynamicStateCreateInfo")]
-    public unsafe partial struct PipelineDynamicStateCreateInfo
+    public unsafe partial struct PipelineDynamicStateCreateInfo : IStructuredType
     {
         public PipelineDynamicStateCreateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDynamicState")]
         [NativeName("Name", "pDynamicStates")]
         public DynamicState* PDynamicStates;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineDynamicStateCreateInfo;
+        }
     }
 }

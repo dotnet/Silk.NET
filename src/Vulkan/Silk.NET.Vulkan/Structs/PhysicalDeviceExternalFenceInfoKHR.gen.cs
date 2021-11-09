@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalFenceInfoKHR")]
-    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR
+    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR : IStructuredType
     {
         public PhysicalDeviceExternalFenceInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalFenceHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalFenceHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalFenceInfo;
+        }
     }
 }

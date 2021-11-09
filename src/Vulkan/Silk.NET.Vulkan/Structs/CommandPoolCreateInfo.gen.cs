@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandPoolCreateInfo")]
-    public unsafe partial struct CommandPoolCreateInfo
+    public unsafe partial struct CommandPoolCreateInfo : IStructuredType
     {
         public CommandPoolCreateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "queueFamilyIndex")]
         public uint QueueFamilyIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandPoolCreateInfo;
+        }
     }
 }

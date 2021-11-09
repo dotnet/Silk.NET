@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCompilerControlCreateInfoAMD")]
-    public unsafe partial struct PipelineCompilerControlCreateInfoAMD
+    public unsafe partial struct PipelineCompilerControlCreateInfoAMD : IStructuredType
     {
         public PipelineCompilerControlCreateInfoAMD
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPipelineCompilerControlFlagsAMD")]
         [NativeName("Name", "compilerControlFlags")]
         public PipelineCompilerControlFlagsAMD CompilerControlFlags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineCompilerControlCreateInfoAmd;
+        }
     }
 }

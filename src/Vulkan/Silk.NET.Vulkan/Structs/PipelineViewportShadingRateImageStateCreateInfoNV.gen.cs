@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportShadingRateImageStateCreateInfoNV")]
-    public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
+    public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV : IStructuredType
     {
         public PipelineViewportShadingRateImageStateCreateInfoNV
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkShadingRatePaletteNV")]
         [NativeName("Name", "pShadingRatePalettes")]
         public ShadingRatePaletteNV* PShadingRatePalettes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineViewportShadingRateImageStateCreateInfoNV;
+        }
     }
 }

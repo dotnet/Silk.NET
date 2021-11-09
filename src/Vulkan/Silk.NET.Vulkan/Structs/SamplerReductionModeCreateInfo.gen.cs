@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerReductionModeCreateInfo")]
-    public unsafe partial struct SamplerReductionModeCreateInfo
+    public unsafe partial struct SamplerReductionModeCreateInfo : IStructuredType
     {
         public SamplerReductionModeCreateInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSamplerReductionMode")]
         [NativeName("Name", "reductionMode")]
         public SamplerReductionMode ReductionMode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SamplerReductionModeCreateInfo;
+        }
     }
 }

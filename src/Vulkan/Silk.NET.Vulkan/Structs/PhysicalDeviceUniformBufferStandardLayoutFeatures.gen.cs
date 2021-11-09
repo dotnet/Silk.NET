@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceUniformBufferStandardLayoutFeatures")]
-    public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeatures
+    public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeatures : IStructuredType
     {
         public PhysicalDeviceUniformBufferStandardLayoutFeatures
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "uniformBufferStandardLayout")]
         public Bool32 UniformBufferStandardLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoReferenceSlotKHR")]
-    public unsafe partial struct VideoReferenceSlotKHR
+    public unsafe partial struct VideoReferenceSlotKHR : IStructuredType
     {
         public VideoReferenceSlotKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
         [NativeName("Name", "pPictureResource")]
         public VideoPictureResourceKHR* PPictureResource;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoReferenceSlotKhr;
+        }
     }
 }

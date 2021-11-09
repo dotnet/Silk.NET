@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryAllocateInfo")]
-    public unsafe partial struct MemoryAllocateInfo
+    public unsafe partial struct MemoryAllocateInfo : IStructuredType
     {
         public MemoryAllocateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "memoryTypeIndex")]
         public uint MemoryTypeIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryAllocateInfo;
+        }
     }
 }

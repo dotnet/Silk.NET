@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceScalarBlockLayoutFeatures")]
-    public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeatures
+    public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeatures : IStructuredType
     {
         public PhysicalDeviceScalarBlockLayoutFeatures
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "scalarBlockLayout")]
         public Bool32 ScalarBlockLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures;
+        }
     }
 }

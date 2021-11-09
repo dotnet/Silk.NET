@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountAllocateInfo")]
-    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfo
+    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfo : IStructuredType
     {
         public DescriptorSetVariableDescriptorCountAllocateInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pDescriptorCounts")]
         public uint* PDescriptorCounts;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo;
+        }
     }
 }

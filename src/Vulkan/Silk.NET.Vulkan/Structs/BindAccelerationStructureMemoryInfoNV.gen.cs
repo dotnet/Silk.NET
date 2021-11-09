@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindAccelerationStructureMemoryInfoNV")]
-    public unsafe partial struct BindAccelerationStructureMemoryInfoNV
+    public unsafe partial struct BindAccelerationStructureMemoryInfoNV : IStructuredType
     {
         public BindAccelerationStructureMemoryInfoNV
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pDeviceIndices")]
         public uint* PDeviceIndices;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindAccelerationStructureMemoryInfoNV;
+        }
     }
 }

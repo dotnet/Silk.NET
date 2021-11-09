@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindSparseInfo")]
-    public unsafe partial struct BindSparseInfo
+    public unsafe partial struct BindSparseInfo : IStructuredType
     {
         public BindSparseInfo
         (
@@ -156,5 +156,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphore")]
         [NativeName("Name", "pSignalSemaphores")]
         public Semaphore* PSignalSemaphores;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindSparseInfo;
+        }
     }
 }

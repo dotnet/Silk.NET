@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfo")]
-    public unsafe partial struct PhysicalDeviceExternalImageFormatInfo
+    public unsafe partial struct PhysicalDeviceExternalImageFormatInfo : IStructuredType
     {
         public PhysicalDeviceExternalImageFormatInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalMemoryHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalImageFormatInfo;
+        }
     }
 }

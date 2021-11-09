@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubpassShadingFeaturesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
+    public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI : IStructuredType
     {
         public PhysicalDeviceSubpassShadingFeaturesHUAWEI
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "subpassShading")]
         public Bool32 SubpassShading;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSubpassShadingFeaturesHuawei;
+        }
     }
 }

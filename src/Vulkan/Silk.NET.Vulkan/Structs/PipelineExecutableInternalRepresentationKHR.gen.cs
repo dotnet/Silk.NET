@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineExecutableInternalRepresentationKHR")]
-    public unsafe partial struct PipelineExecutableInternalRepresentationKHR
+    public unsafe partial struct PipelineExecutableInternalRepresentationKHR : IStructuredType
     {
         public PipelineExecutableInternalRepresentationKHR
         (
@@ -89,5 +89,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pData")]
         public void* PData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineExecutableInternalRepresentationKhr;
+        }
     }
 }

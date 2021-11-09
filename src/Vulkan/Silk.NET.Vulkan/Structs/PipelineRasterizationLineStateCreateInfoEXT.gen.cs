@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
-    public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT : IStructuredType
     {
         public PipelineRasterizationLineStateCreateInfoEXT
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "lineStipplePattern")]
         public ushort LineStipplePattern;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRasterizationLineStateCreateInfoExt;
+        }
     }
 }

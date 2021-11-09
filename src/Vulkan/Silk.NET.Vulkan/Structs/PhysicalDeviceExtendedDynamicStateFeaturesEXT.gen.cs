@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExtendedDynamicStateFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceExtendedDynamicStateFeaturesEXT
+    public unsafe partial struct PhysicalDeviceExtendedDynamicStateFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceExtendedDynamicStateFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "extendedDynamicState")]
         public Bool32 ExtendedDynamicState;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExtendedDynamicStateFeaturesExt;
+        }
     }
 }

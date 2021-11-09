@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceLineRasterizationFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceLineRasterizationFeaturesEXT
+    public unsafe partial struct PhysicalDeviceLineRasterizationFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceLineRasterizationFeaturesEXT
         (
@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "stippledSmoothLines")]
         public Bool32 StippledSmoothLines;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceLineRasterizationFeaturesExt;
+        }
     }
 }

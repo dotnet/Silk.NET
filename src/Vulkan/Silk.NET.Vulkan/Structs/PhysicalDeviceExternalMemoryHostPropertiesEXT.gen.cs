@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalMemoryHostPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
+    public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceExternalMemoryHostPropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "minImportedHostPointerAlignment")]
         public ulong MinImportedHostPointerAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesExt;
+        }
     }
 }

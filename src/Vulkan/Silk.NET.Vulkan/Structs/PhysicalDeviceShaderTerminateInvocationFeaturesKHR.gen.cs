@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderTerminateInvocationFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeaturesKHR
+    public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceShaderTerminateInvocationFeaturesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderTerminateInvocation")]
         public Bool32 ShaderTerminateInvocation;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderTerminateInvocationFeaturesKhr;
+        }
     }
 }

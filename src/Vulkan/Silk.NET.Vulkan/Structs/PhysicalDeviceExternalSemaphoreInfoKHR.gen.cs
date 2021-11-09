@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalSemaphoreInfoKHR")]
-    public unsafe partial struct PhysicalDeviceExternalSemaphoreInfoKHR
+    public unsafe partial struct PhysicalDeviceExternalSemaphoreInfoKHR : IStructuredType
     {
         public PhysicalDeviceExternalSemaphoreInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalSemaphoreHandleTypeFlagBits")]
         [NativeName("Name", "handleType")]
         public ExternalSemaphoreHandleTypeFlags HandleType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExternalSemaphoreInfo;
+        }
     }
 }

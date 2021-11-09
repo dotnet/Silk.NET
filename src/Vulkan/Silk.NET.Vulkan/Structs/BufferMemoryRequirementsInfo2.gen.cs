@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryRequirementsInfo2")]
-    public unsafe partial struct BufferMemoryRequirementsInfo2
+    public unsafe partial struct BufferMemoryRequirementsInfo2 : IStructuredType
     {
         public BufferMemoryRequirementsInfo2
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBuffer")]
         [NativeName("Name", "buffer")]
         public Buffer Buffer;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferMemoryRequirementsInfo2;
+        }
     }
 }

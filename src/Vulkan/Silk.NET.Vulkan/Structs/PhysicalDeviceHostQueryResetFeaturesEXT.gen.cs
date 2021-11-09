@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceHostQueryResetFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceHostQueryResetFeaturesEXT
+    public unsafe partial struct PhysicalDeviceHostQueryResetFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceHostQueryResetFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "hostQueryReset")]
         public Bool32 HostQueryReset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceHostQueryResetFeatures;
+        }
     }
 }

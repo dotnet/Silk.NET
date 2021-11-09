@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMutableDescriptorTypeFeaturesVALVE")]
-    public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
+    public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesVALVE : IStructuredType
     {
         public PhysicalDeviceMutableDescriptorTypeFeaturesVALVE
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "mutableDescriptorType")]
         public Bool32 MutableDescriptorType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMutableDescriptorTypeFeaturesValve;
+        }
     }
 }

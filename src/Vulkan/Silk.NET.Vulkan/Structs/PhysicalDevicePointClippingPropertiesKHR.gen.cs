@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePointClippingPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR
+    public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR : IStructuredType
     {
         public PhysicalDevicePointClippingPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPointClippingBehavior")]
         [NativeName("Name", "pointClippingBehavior")]
         public PointClippingBehavior PointClippingBehavior;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePointClippingProperties;
+        }
     }
 }

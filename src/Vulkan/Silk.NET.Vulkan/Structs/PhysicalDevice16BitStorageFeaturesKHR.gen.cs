@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevice16BitStorageFeaturesKHR")]
-    public unsafe partial struct PhysicalDevice16BitStorageFeaturesKHR
+    public unsafe partial struct PhysicalDevice16BitStorageFeaturesKHR : IStructuredType
     {
         public PhysicalDevice16BitStorageFeaturesKHR
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "storageInputOutput16")]
         public Bool32 StorageInputOutput16;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevice16BitStorageFeatures;
+        }
     }
 }

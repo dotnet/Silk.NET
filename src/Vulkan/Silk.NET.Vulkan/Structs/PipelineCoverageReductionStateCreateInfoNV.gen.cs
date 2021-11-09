@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCoverageReductionStateCreateInfoNV")]
-    public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
+    public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV : IStructuredType
     {
         public PipelineCoverageReductionStateCreateInfoNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCoverageReductionModeNV")]
         [NativeName("Name", "coverageReductionMode")]
         public CoverageReductionModeNV CoverageReductionMode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineCoverageReductionStateCreateInfoNV;
+        }
     }
 }

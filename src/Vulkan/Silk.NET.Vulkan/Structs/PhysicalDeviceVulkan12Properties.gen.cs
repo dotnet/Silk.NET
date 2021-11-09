@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkan12Properties")]
-    public unsafe partial struct PhysicalDeviceVulkan12Properties
+    public unsafe partial struct PhysicalDeviceVulkan12Properties : IStructuredType
     {
         public PhysicalDeviceVulkan12Properties
         (
@@ -606,5 +606,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlags")]
         [NativeName("Name", "framebufferIntegerColorSampleCounts")]
         public SampleCountFlags FramebufferIntegerColorSampleCounts;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVulkan12Properties;
+        }
     }
 }

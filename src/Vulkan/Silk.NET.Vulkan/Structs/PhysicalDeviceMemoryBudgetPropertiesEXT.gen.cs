@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryBudgetPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
+    public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceMemoryBudgetPropertiesEXT
         (
@@ -56,5 +56,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "heapUsage")]
         public fixed ulong HeapUsage[16];
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt;
+        }
     }
 }

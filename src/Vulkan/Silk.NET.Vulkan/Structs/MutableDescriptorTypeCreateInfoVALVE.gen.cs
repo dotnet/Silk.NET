@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMutableDescriptorTypeCreateInfoVALVE")]
-    public unsafe partial struct MutableDescriptorTypeCreateInfoVALVE
+    public unsafe partial struct MutableDescriptorTypeCreateInfoVALVE : IStructuredType
     {
         public MutableDescriptorTypeCreateInfoVALVE
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMutableDescriptorTypeListVALVE")]
         [NativeName("Name", "pMutableDescriptorTypeLists")]
         public MutableDescriptorTypeListVALVE* PMutableDescriptorTypeLists;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MutableDescriptorTypeCreateInfoValve;
+        }
     }
 }

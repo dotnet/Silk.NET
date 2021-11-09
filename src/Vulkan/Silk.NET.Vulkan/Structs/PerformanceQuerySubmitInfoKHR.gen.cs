@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceQuerySubmitInfoKHR")]
-    public unsafe partial struct PerformanceQuerySubmitInfoKHR
+    public unsafe partial struct PerformanceQuerySubmitInfoKHR : IStructuredType
     {
         public PerformanceQuerySubmitInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "counterPassIndex")]
         public uint CounterPassIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PerformanceQuerySubmitInfoKhr;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryBarrier")]
-    public unsafe partial struct MemoryBarrier
+    public unsafe partial struct MemoryBarrier : IStructuredType
     {
         public MemoryBarrier
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccessFlags")]
         [NativeName("Name", "dstAccessMask")]
         public AccessFlags DstAccessMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryBarrier;
+        }
     }
 }

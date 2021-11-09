@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCustomBorderColorPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
+    public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceCustomBorderColorPropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxCustomBorderColorSamplers")]
         public uint MaxCustomBorderColorSamplers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt;
+        }
     }
 }

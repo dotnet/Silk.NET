@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentRegionsKHR")]
-    public unsafe partial struct PresentRegionsKHR
+    public unsafe partial struct PresentRegionsKHR : IStructuredType
     {
         public PresentRegionsKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPresentRegionKHR")]
         [NativeName("Name", "pRegions")]
         public PresentRegionKHR* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PresentRegionsKhr;
+        }
     }
 }

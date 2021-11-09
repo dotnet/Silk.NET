@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedRequirements")]
-    public unsafe partial struct MemoryDedicatedRequirements
+    public unsafe partial struct MemoryDedicatedRequirements : IStructuredType
     {
         public MemoryDedicatedRequirements
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "requiresDedicatedAllocation")]
         public Bool32 RequiresDedicatedAllocation;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryDedicatedRequirements;
+        }
     }
 }

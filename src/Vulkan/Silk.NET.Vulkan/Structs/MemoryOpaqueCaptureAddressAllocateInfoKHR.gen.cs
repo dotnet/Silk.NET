@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfoKHR")]
-    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR
+    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR : IStructuredType
     {
         public MemoryOpaqueCaptureAddressAllocateInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "opaqueCaptureAddress")]
         public ulong OpaqueCaptureAddress;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo;
+        }
     }
 }

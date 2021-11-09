@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
+    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV : IStructuredType
     {
         public PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "deviceGeneratedCommands")]
         public Bool32 DeviceGeneratedCommands;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV;
+        }
     }
 }

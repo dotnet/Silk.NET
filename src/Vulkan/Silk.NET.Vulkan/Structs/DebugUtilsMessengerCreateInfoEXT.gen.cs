@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsMessengerCreateInfoEXT")]
-    public unsafe partial struct DebugUtilsMessengerCreateInfoEXT
+    public unsafe partial struct DebugUtilsMessengerCreateInfoEXT : IStructuredType
     {
         public DebugUtilsMessengerCreateInfoEXT
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pUserData")]
         public void* PUserData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DebugUtilsMessengerCreateInfoExt;
+        }
     }
 }

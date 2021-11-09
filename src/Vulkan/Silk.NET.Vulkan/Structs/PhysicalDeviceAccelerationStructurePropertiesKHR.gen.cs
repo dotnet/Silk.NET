@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceAccelerationStructurePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
+    public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR : IStructuredType
     {
         public PhysicalDeviceAccelerationStructurePropertiesKHR
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "minAccelerationStructureScratchOffsetAlignment")]
         public uint MinAccelerationStructureScratchOffsetAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceAccelerationStructurePropertiesKhr;
+        }
     }
 }

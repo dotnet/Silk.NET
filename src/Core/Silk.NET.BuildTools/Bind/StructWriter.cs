@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -27,10 +27,11 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
+        /// <param name="task">The bind state.</param>
         public static void WriteStruct
             (this Struct @struct, string file, Profile profile, Project project, BindState task)
         {
-            if (@struct.Attributes.IsBuildToolsIntrinsic(out var args))
+            if (@struct.Attributes.IsBuildToolsIntrinsic(out var args) && args.FirstOrDefault() == "$PFN")
             {
                 WriteBuildToolsIntrinsic(@struct, file, profile, project, task, args);
                 return;
@@ -47,14 +48,20 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             string guid = null;
-            
+
             static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
             var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
-            
+            string structuredType = null;
+
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
+                    if (attr.Arguments.Count > 1 && attr.Arguments[0] == "$VKSTRUCTUREDTYPE")
+                    {
+                        structuredType = attr.Arguments[1];
+                    }
+
                     continue;
                 }
 
@@ -78,7 +85,10 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
-            sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
+            sw.WriteLine
+            (
+                $"    public unsafe partial struct {@struct.Name}{(structuredType is not null ? " : IStructuredType" : string.Empty)}"
+            );
             sw.WriteLine("    {");
             if (guid is not null)
             {
@@ -214,7 +224,8 @@ namespace Silk.NET.BuildTools.Bind
                 }
                 else if (structField.NumBits is not null)
                 {
-                    WriteBitfield(structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
+                    WriteBitfield
+                        (structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
                 }
                 else if (!(structField.Count is null))
                 {
@@ -347,7 +358,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+                         (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
             {
                 using (var sr = new StringReader(function.Signature.Doc))
                 {
@@ -364,7 +375,7 @@ namespace Silk.NET.BuildTools.Bind
                 }
 
                 using (var sr = new StringReader
-                    (function.Signature.ToString(null, accessibility: true, semicolon: false)))
+                           (function.Signature.ToString(null, accessibility: true, semicolon: false)))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
@@ -383,6 +394,34 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
+            if (structuredType is not null)
+            {
+                sw.WriteLine
+                (
+                    @"
+        /// <inheritdoc />"
+                );
+                if (structuredType.Length < 1)
+                {
+                    sw.WriteLine("        /// <remarks>Note, there is no fixed value for this type.</remarks>");
+                }
+                sw.Write(@"        StructureType IStructuredType.StructureType()
+        {
+            return SType"
+                );
+                if (structuredType.Length > 0)
+                {
+                    sw.Write(" = ");
+                    sw.Write(structuredType);
+                }
+
+                sw.WriteLine
+                (
+                    @";
+        }"
+                );
+            }
+
             sw.WriteLine("    }");
             sw.WriteLine("}");
             sw.Flush();
@@ -395,7 +434,9 @@ namespace Silk.NET.BuildTools.Bind
             if (args[0] == "$PFN")
             {
                 WriteFunctionPointerWrapper
-                    (@struct, file, profile, project, task, args[1], args[2], Enum.Parse<CallingConvention>(args[3]));
+                (
+                    @struct, file, profile, project, task, args[1], args[2], Enum.Parse<CallingConvention>(args[3])
+                );
             }
             else
             {
@@ -468,7 +509,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"            => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");
             sw.WriteLine();
             sw.WriteLine($"        public static implicit operator {fnPtrSig}({pfnName} pfn) => pfn.Handle;");
-            sw.WriteLine($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
+            sw.WriteLine
+                ($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
             sw.WriteLine("    }");
             sw.WriteLine();
             // type.FunctionPointerSignature.Name = delegateName;
@@ -476,7 +518,10 @@ namespace Silk.NET.BuildTools.Bind
             // type.Name = type.FunctionPointerSignature.NativeName;
             // type.IndirectionLevels--;
             using (var sr = new StringReader
-                (type.FunctionPointerSignature.ToString(null, @delegate: true, semicolon: true, accessibility: true)))
+                   (
+                       type.FunctionPointerSignature.ToString
+                           (null, @delegate: true, semicolon: true, accessibility: true)
+                   ))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -490,7 +535,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
         }
 
-        public static void WriteFusedField(Struct @struct, Project p, Field field, List<string> args, StreamWriter sw)
+        public static void WriteFusedField
+            (Struct @struct, Project p, Field field, List<string> args, StreamWriter sw)
         {
             var temporaryValue = IsTemporaryValue(p, @struct, args);
             if (!temporaryValue)
@@ -519,7 +565,8 @@ namespace Silk.NET.BuildTools.Bind
             static bool IsTemporaryValue(Project p, Struct @struct, List<string> args)
             {
                 // ReSharper disable AccessToModifiedClosure
-                var fusingStruct = p.Structs.First(x => x.Name == @struct.Fields.First(y => y.Name == args[1]).Type.Name);
+                var fusingStruct = p.Structs.First
+                    (x => x.Name == @struct.Fields.First(y => y.Name == args[1]).Type.Name);
                 var fusingFieldInst = fusingStruct.Fields.First(x => x.Name == args[2]);
                 if (fusingFieldInst.NumBits is not null)
                 {
@@ -609,7 +656,8 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             var bitfieldOffset = currentSize * 8 - remainingBits;
-            var bitwidthHexStringBacking = ((1 << fieldDecl.NumBits.Value) - 1).ToString("X") + typeNameBacking switch
+            var bitwidthHexStringBacking = ((1 << fieldDecl.NumBits.Value) - 1).ToString
+                ("X") + typeNameBacking switch
             {
                 "byte" => string.Empty,
                 "sbyte" => string.Empty,

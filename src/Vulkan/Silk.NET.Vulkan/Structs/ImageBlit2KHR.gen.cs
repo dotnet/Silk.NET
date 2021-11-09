@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageBlit2KHR")]
-    public unsafe partial struct ImageBlit2KHR
+    public unsafe partial struct ImageBlit2KHR : IStructuredType
     {
         public ImageBlit2KHR
         (
@@ -132,5 +132,11 @@ namespace Silk.NET.Vulkan
 #endif
         }
 
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageBlit2Khr;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPowerInfoEXT")]
-    public unsafe partial struct DisplayPowerInfoEXT
+    public unsafe partial struct DisplayPowerInfoEXT : IStructuredType
     {
         public DisplayPowerInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDisplayPowerStateEXT")]
         [NativeName("Name", "powerState")]
         public DisplayPowerStateEXT PowerState;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DisplayPowerInfoExt;
+        }
     }
 }

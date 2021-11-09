@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayoutCreateInfo")]
-    public unsafe partial struct PipelineLayoutCreateInfo
+    public unsafe partial struct PipelineLayoutCreateInfo : IStructuredType
     {
         public PipelineLayoutCreateInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPushConstantRange")]
         [NativeName("Name", "pPushConstantRanges")]
         public PushConstantRange* PPushConstantRanges;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineLayoutCreateInfo;
+        }
     }
 }

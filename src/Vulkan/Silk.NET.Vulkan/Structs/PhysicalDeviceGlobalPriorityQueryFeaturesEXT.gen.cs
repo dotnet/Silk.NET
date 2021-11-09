@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceGlobalPriorityQueryFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceGlobalPriorityQueryFeaturesEXT
+    public unsafe partial struct PhysicalDeviceGlobalPriorityQueryFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceGlobalPriorityQueryFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "globalPriorityQuery")]
         public Bool32 GlobalPriorityQuery;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceGlobalPriorityQueryFeaturesExt;
+        }
     }
 }

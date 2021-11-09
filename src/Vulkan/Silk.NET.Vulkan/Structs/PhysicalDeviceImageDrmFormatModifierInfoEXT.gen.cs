@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageDrmFormatModifierInfoEXT")]
-    public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
+    public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT : IStructuredType
     {
         public PhysicalDeviceImageDrmFormatModifierInfoEXT
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pQueueFamilyIndices")]
         public uint* PQueueFamilyIndices;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImageDrmFormatModifierInfoExt;
+        }
     }
 }

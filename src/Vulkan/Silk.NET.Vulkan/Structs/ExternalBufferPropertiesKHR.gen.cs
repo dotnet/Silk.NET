@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalBufferPropertiesKHR")]
-    public unsafe partial struct ExternalBufferPropertiesKHR
+    public unsafe partial struct ExternalBufferPropertiesKHR : IStructuredType
     {
         public ExternalBufferPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryProperties")]
         [NativeName("Name", "externalMemoryProperties")]
         public ExternalMemoryProperties ExternalMemoryProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalBufferProperties;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutCreateInfo")]
-    public unsafe partial struct DescriptorSetLayoutCreateInfo
+    public unsafe partial struct DescriptorSetLayoutCreateInfo : IStructuredType
     {
         public DescriptorSetLayoutCreateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorSetLayoutBinding")]
         [NativeName("Name", "pBindings")]
         public DescriptorSetLayoutBinding* PBindings;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetLayoutCreateInfo;
+        }
     }
 }

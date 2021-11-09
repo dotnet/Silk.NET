@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassAttachmentBeginInfoKHR")]
-    public unsafe partial struct RenderPassAttachmentBeginInfoKHR
+    public unsafe partial struct RenderPassAttachmentBeginInfoKHR : IStructuredType
     {
         public RenderPassAttachmentBeginInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageView")]
         [NativeName("Name", "pAttachments")]
         public ImageView* PAttachments;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassAttachmentBeginInfo;
+        }
     }
 }

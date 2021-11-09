@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatProperties2")]
-    public unsafe partial struct ImageFormatProperties2
+    public unsafe partial struct ImageFormatProperties2 : IStructuredType
     {
         public ImageFormatProperties2
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageFormatProperties")]
         [NativeName("Name", "imageFormatProperties")]
         public ImageFormatProperties ImageFormatProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageFormatProperties2;
+        }
     }
 }

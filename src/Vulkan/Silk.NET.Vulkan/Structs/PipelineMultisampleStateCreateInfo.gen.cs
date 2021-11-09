@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineMultisampleStateCreateInfo")]
-    public unsafe partial struct PipelineMultisampleStateCreateInfo
+    public unsafe partial struct PipelineMultisampleStateCreateInfo : IStructuredType
     {
         public PipelineMultisampleStateCreateInfo
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "alphaToOneEnable")]
         public Bool32 AlphaToOneEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineMultisampleStateCreateInfo;
+        }
     }
 }

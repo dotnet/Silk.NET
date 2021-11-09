@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyBufferInfo2KHR")]
-    public unsafe partial struct CopyBufferInfo2KHR
+    public unsafe partial struct CopyBufferInfo2KHR : IStructuredType
     {
         public CopyBufferInfo2KHR
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBufferCopy2KHR")]
         [NativeName("Name", "pRegions")]
         public BufferCopy2KHR* PRegions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CopyBufferInfo2Khr;
+        }
     }
 }

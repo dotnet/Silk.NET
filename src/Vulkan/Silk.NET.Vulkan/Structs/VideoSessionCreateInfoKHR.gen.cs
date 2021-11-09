@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionCreateInfoKHR")]
-    public unsafe partial struct VideoSessionCreateInfoKHR
+    public unsafe partial struct VideoSessionCreateInfoKHR : IStructuredType
     {
         public VideoSessionCreateInfoKHR
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxReferencePicturesActiveCount")]
         public uint MaxReferencePicturesActiveCount;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionCreateInfoKhr;
+        }
     }
 }

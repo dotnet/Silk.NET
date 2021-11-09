@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryBarrier")]
-    public unsafe partial struct BufferMemoryBarrier
+    public unsafe partial struct BufferMemoryBarrier : IStructuredType
     {
         public BufferMemoryBarrier
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "size")]
         public ulong Size;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BufferMemoryBarrier;
+        }
     }
 }

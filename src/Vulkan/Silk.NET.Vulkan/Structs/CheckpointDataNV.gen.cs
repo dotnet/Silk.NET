@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCheckpointDataNV")]
-    public unsafe partial struct CheckpointDataNV
+    public unsafe partial struct CheckpointDataNV : IStructuredType
     {
         public CheckpointDataNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pCheckpointMarker")]
         public void* PCheckpointMarker;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CheckpointDataNV;
+        }
     }
 }

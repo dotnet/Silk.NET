@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReference2KHR")]
-    public unsafe partial struct AttachmentReference2KHR
+    public unsafe partial struct AttachmentReference2KHR : IStructuredType
     {
         public AttachmentReference2KHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageAspectFlags")]
         [NativeName("Name", "aspectMask")]
         public ImageAspectFlags AspectMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AttachmentReference2;
+        }
     }
 }

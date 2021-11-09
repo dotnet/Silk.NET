@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComputePipelineCreateInfo")]
-    public unsafe partial struct ComputePipelineCreateInfo
+    public unsafe partial struct ComputePipelineCreateInfo : IStructuredType
     {
         public ComputePipelineCreateInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int32_t")]
         [NativeName("Name", "basePipelineIndex")]
         public int BasePipelineIndex;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ComputePipelineCreateInfo;
+        }
     }
 }

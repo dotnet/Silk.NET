@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageCreateInfo")]
-    public unsafe partial struct PipelineShaderStageCreateInfo
+    public unsafe partial struct PipelineShaderStageCreateInfo : IStructuredType
     {
         public PipelineShaderStageCreateInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSpecializationInfo")]
         [NativeName("Name", "pSpecializationInfo")]
         public SpecializationInfo* PSpecializationInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineShaderStageCreateInfo;
+        }
     }
 }

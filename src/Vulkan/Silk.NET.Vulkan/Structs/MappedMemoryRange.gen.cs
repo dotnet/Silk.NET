@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMappedMemoryRange")]
-    public unsafe partial struct MappedMemoryRange
+    public unsafe partial struct MappedMemoryRange : IStructuredType
     {
         public MappedMemoryRange
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "size")]
         public ulong Size;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MappedMemoryRange;
+        }
     }
 }

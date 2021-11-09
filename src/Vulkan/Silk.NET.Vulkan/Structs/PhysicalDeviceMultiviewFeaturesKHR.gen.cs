@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceMultiviewFeaturesKHR
+    public unsafe partial struct PhysicalDeviceMultiviewFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceMultiviewFeaturesKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "multiviewTessellationShader")]
         public Bool32 MultiviewTessellationShader;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceMultiviewFeatures;
+        }
     }
 }

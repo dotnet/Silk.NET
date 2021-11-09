@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionCreateInfo")]
-    public unsafe partial struct SamplerYcbcrConversionCreateInfo
+    public unsafe partial struct SamplerYcbcrConversionCreateInfo : IStructuredType
     {
         public SamplerYcbcrConversionCreateInfo
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "forceExplicitReconstruction")]
         public Bool32 ForceExplicitReconstruction;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SamplerYcbcrConversionCreateInfo;
+        }
     }
 }

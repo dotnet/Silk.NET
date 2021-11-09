@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewUsageCreateInfo")]
-    public unsafe partial struct ImageViewUsageCreateInfo
+    public unsafe partial struct ImageViewUsageCreateInfo : IStructuredType
     {
         public ImageViewUsageCreateInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageUsageFlags")]
         [NativeName("Name", "usage")]
         public ImageUsageFlags Usage;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageViewUsageCreateInfo;
+        }
     }
 }

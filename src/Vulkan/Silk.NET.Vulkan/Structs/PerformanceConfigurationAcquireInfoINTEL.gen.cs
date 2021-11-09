@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceConfigurationAcquireInfoINTEL")]
-    public unsafe partial struct PerformanceConfigurationAcquireInfoINTEL
+    public unsafe partial struct PerformanceConfigurationAcquireInfoINTEL : IStructuredType
     {
         public PerformanceConfigurationAcquireInfoINTEL
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkPerformanceConfigurationTypeINTEL")]
         [NativeName("Name", "type")]
         public PerformanceConfigurationTypeINTEL Type;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PerformanceConfigurationAcquireInfoIntel;
+        }
     }
 }

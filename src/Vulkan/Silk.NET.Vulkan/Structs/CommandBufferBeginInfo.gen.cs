@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferBeginInfo")]
-    public unsafe partial struct CommandBufferBeginInfo
+    public unsafe partial struct CommandBufferBeginInfo : IStructuredType
     {
         public CommandBufferBeginInfo
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkCommandBufferInheritanceInfo")]
         [NativeName("Name", "pInheritanceInfo")]
         public CommandBufferInheritanceInfo* PInheritanceInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.CommandBufferBeginInfo;
+        }
     }
 }

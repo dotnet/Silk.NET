@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceConditionalRenderingFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
+    public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceConditionalRenderingFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "inheritedConditionalRendering")]
         public Bool32 InheritedConditionalRendering;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt;
+        }
     }
 }

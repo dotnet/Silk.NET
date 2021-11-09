@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryInfo")]
-    public unsafe partial struct BindBufferMemoryInfo
+    public unsafe partial struct BindBufferMemoryInfo : IStructuredType
     {
         public BindBufferMemoryInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "memoryOffset")]
         public ulong MemoryOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.BindBufferMemoryInfo;
+        }
     }
 }

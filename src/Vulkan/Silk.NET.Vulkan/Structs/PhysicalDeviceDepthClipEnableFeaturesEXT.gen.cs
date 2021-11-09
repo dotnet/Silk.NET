@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDepthClipEnableFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
+    public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceDepthClipEnableFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "depthClipEnable")]
         public Bool32 DepthClipEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDepthClipEnableFeaturesExt;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSetAccelerationStructureKHR")]
-    public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
+    public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR : IStructuredType
     {
         public WriteDescriptorSetAccelerationStructureKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureKHR")]
         [NativeName("Name", "pAccelerationStructures")]
         public AccelerationStructureKHR* PAccelerationStructures;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.WriteDescriptorSetAccelerationStructureKhr;
+        }
     }
 }

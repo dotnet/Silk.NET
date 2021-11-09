@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDependency2KHR")]
-    public unsafe partial struct SubpassDependency2KHR
+    public unsafe partial struct SubpassDependency2KHR : IStructuredType
     {
         public SubpassDependency2KHR
         (
@@ -134,5 +134,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int32_t")]
         [NativeName("Name", "viewOffset")]
         public int ViewOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubpassDependency2;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalImageFormatPropertiesKHR")]
-    public unsafe partial struct ExternalImageFormatPropertiesKHR
+    public unsafe partial struct ExternalImageFormatPropertiesKHR : IStructuredType
     {
         public ExternalImageFormatPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryProperties")]
         [NativeName("Name", "externalMemoryProperties")]
         public ExternalMemoryProperties ExternalMemoryProperties;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExternalImageFormatProperties;
+        }
     }
 }

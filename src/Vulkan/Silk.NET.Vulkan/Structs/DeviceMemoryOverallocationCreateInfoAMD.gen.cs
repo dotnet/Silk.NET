@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOverallocationCreateInfoAMD")]
-    public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD
+    public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD : IStructuredType
     {
         public DeviceMemoryOverallocationCreateInfoAMD
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMemoryOverallocationBehaviorAMD")]
         [NativeName("Name", "overallocationBehavior")]
         public MemoryOverallocationBehaviorAMD OverallocationBehavior;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceMemoryOverallocationCreateInfoAmd;
+        }
     }
 }

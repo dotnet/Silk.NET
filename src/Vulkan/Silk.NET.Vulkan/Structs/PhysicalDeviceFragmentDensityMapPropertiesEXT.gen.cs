@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentDensityMapPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
+    public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT : IStructuredType
     {
         public PhysicalDeviceFragmentDensityMapPropertiesEXT
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "fragmentDensityInvocations")]
         public Bool32 FragmentDensityInvocations;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFragmentDensityMapPropertiesExt;
+        }
     }
 }

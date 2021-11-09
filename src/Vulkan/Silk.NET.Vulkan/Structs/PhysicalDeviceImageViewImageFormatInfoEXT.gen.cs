@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageViewImageFormatInfoEXT")]
-    public unsafe partial struct PhysicalDeviceImageViewImageFormatInfoEXT
+    public unsafe partial struct PhysicalDeviceImageViewImageFormatInfoEXT : IStructuredType
     {
         public PhysicalDeviceImageViewImageFormatInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageViewType")]
         [NativeName("Name", "imageViewType")]
         public ImageViewType ImageViewType;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt;
+        }
     }
 }

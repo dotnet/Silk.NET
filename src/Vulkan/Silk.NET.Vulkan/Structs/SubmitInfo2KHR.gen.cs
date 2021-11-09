@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubmitInfo2KHR")]
-    public unsafe partial struct SubmitInfo2KHR
+    public unsafe partial struct SubmitInfo2KHR : IStructuredType
     {
         public SubmitInfo2KHR
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphoreSubmitInfoKHR")]
         [NativeName("Name", "pSignalSemaphoreInfos")]
         public SemaphoreSubmitInfoKHR* PSignalSemaphoreInfos;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubmitInfo2Khr;
+        }
     }
 }

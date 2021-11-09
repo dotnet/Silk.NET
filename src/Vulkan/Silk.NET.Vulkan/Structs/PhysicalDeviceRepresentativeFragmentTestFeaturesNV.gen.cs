@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+    public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV : IStructuredType
     {
         public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "representativeFragmentTest")]
         public Bool32 RepresentativeFragmentTest;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNV;
+        }
     }
 }

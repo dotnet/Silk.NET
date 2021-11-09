@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryFdInfoKHR")]
-    public unsafe partial struct ImportMemoryFdInfoKHR
+    public unsafe partial struct ImportMemoryFdInfoKHR : IStructuredType
     {
         public ImportMemoryFdInfoKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "int")]
         [NativeName("Name", "fd")]
         public int Fd;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImportMemoryFDInfoKhr;
+        }
     }
 }

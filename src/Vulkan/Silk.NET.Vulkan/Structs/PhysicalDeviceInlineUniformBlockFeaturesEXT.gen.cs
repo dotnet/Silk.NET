@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceInlineUniformBlockFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceInlineUniformBlockFeaturesEXT
+    public unsafe partial struct PhysicalDeviceInlineUniformBlockFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceInlineUniformBlockFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "descriptorBindingInlineUniformBlockUpdateAfterBind")]
         public Bool32 DescriptorBindingInlineUniformBlockUpdateAfterBind;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceInlineUniformBlockFeaturesExt;
+        }
     }
 }

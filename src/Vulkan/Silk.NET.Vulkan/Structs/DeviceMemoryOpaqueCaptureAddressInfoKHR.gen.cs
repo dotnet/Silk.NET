@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfoKHR")]
-    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfoKHR
+    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfoKHR : IStructuredType
     {
         public DeviceMemoryOpaqueCaptureAddressInfoKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceMemory")]
         [NativeName("Name", "memory")]
         public DeviceMemory Memory;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo;
+        }
     }
 }

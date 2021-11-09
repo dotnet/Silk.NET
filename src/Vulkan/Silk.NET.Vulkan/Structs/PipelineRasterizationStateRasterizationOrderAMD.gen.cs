@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationStateRasterizationOrderAMD")]
-    public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD
+    public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD : IStructuredType
     {
         public PipelineRasterizationStateRasterizationOrderAMD
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkRasterizationOrderAMD")]
         [NativeName("Name", "rasterizationOrder")]
         public RasterizationOrderAMD RasterizationOrder;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRasterizationStateRasterizationOrderAmd;
+        }
     }
 }

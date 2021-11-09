@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryAABBNV")]
-    public unsafe partial struct GeometryAABBNV
+    public unsafe partial struct GeometryAABBNV : IStructuredType
     {
         public GeometryAABBNV
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "offset")]
         public ulong Offset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.GeometryAabbNV;
+        }
     }
 }

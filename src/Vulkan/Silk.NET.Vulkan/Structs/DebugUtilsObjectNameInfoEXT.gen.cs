@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsObjectNameInfoEXT")]
-    public unsafe partial struct DebugUtilsObjectNameInfoEXT
+    public unsafe partial struct DebugUtilsObjectNameInfoEXT : IStructuredType
     {
         public DebugUtilsObjectNameInfoEXT
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "pObjectName")]
         public byte* PObjectName;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DebugUtilsObjectNameInfoExt;
+        }
     }
 }

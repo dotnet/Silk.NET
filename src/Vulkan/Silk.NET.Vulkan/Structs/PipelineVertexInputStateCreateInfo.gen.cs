@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineVertexInputStateCreateInfo")]
-    public unsafe partial struct PipelineVertexInputStateCreateInfo
+    public unsafe partial struct PipelineVertexInputStateCreateInfo : IStructuredType
     {
         public PipelineVertexInputStateCreateInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkVertexInputAttributeDescription")]
         [NativeName("Name", "pVertexAttributeDescriptions")]
         public VertexInputAttributeDescription* PVertexAttributeDescriptions;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineVertexInputStateCreateInfo;
+        }
     }
 }

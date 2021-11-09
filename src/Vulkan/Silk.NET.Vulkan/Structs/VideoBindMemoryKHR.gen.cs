@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoBindMemoryKHR")]
-    public unsafe partial struct VideoBindMemoryKHR
+    public unsafe partial struct VideoBindMemoryKHR : IStructuredType
     {
         public VideoBindMemoryKHR
         (
@@ -90,5 +90,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "memorySize")]
         public ulong MemorySize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoBindMemoryKhr;
+        }
     }
 }

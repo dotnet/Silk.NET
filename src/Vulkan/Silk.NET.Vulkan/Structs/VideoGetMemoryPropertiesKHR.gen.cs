@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoGetMemoryPropertiesKHR")]
-    public unsafe partial struct VideoGetMemoryPropertiesKHR
+    public unsafe partial struct VideoGetMemoryPropertiesKHR : IStructuredType
     {
         public VideoGetMemoryPropertiesKHR
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkMemoryRequirements2")]
         [NativeName("Name", "pMemoryRequirements")]
         public MemoryRequirements2* PMemoryRequirements;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoGetMemoryPropertiesKhr;
+        }
     }
 }

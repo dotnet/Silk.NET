@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphorePropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKHR
+    public unsafe partial struct PhysicalDeviceTimelineSemaphorePropertiesKHR : IStructuredType
     {
         public PhysicalDeviceTimelineSemaphorePropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "maxTimelineSemaphoreValueDifference")]
         public ulong MaxTimelineSemaphoreValueDifference;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceTimelineSemaphoreProperties;
+        }
     }
 }

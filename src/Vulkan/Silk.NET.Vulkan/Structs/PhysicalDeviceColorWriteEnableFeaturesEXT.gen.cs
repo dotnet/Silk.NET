@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceColorWriteEnableFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
+    public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceColorWriteEnableFeaturesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "colorWriteEnable")]
         public Bool32 ColorWriteEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceColorWriteEnableFeaturesExt;
+        }
     }
 }

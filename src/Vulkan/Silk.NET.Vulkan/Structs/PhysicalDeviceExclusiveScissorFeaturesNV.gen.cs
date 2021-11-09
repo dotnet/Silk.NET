@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExclusiveScissorFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
+    public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV : IStructuredType
     {
         public PhysicalDeviceExclusiveScissorFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "exclusiveScissor")]
         public Bool32 ExclusiveScissor;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV;
+        }
     }
 }

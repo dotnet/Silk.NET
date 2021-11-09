@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupSubmitInfo")]
-    public unsafe partial struct DeviceGroupSubmitInfo
+    public unsafe partial struct DeviceGroupSubmitInfo : IStructuredType
     {
         public DeviceGroupSubmitInfo
         (
@@ -112,5 +112,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pSignalSemaphoreDeviceIndices")]
         public uint* PSignalSemaphoreDeviceIndices;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupSubmitInfo;
+        }
     }
 }

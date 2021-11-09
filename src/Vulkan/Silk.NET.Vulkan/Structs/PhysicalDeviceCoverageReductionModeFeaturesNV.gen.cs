@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCoverageReductionModeFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV
+    public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV : IStructuredType
     {
         public PhysicalDeviceCoverageReductionModeFeaturesNV
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "coverageReductionMode")]
         public Bool32 CoverageReductionMode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceCoverageReductionModeFeaturesNV;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHeadlessSurfaceCreateInfoEXT")]
-    public unsafe partial struct HeadlessSurfaceCreateInfoEXT
+    public unsafe partial struct HeadlessSurfaceCreateInfoEXT : IStructuredType
     {
         public HeadlessSurfaceCreateInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkHeadlessSurfaceCreateFlagsEXT")]
         [NativeName("Name", "flags")]
         public uint Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.HeadlessSurfaceCreateInfoExt;
+        }
     }
 }

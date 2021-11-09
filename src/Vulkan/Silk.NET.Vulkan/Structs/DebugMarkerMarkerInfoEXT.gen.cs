@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugMarkerMarkerInfoEXT")]
-    public unsafe partial struct DebugMarkerMarkerInfoEXT
+    public unsafe partial struct DebugMarkerMarkerInfoEXT : IStructuredType
     {
         public DebugMarkerMarkerInfoEXT
         (
@@ -62,5 +62,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "color")]
         public fixed float Color[4];
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DebugMarkerMarkerInfoExt;
+        }
     }
 }

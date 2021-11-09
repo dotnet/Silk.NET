@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainCreateInfoKHR")]
-    public unsafe partial struct SwapchainCreateInfoKHR
+    public unsafe partial struct SwapchainCreateInfoKHR : IStructuredType
     {
         public SwapchainCreateInfoKHR
         (
@@ -222,5 +222,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSwapchainKHR")]
         [NativeName("Name", "oldSwapchain")]
         public SwapchainKHR OldSwapchain;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SwapchainCreateInfoKhr;
+        }
     }
 }

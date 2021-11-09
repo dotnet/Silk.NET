@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassBeginInfo")]
-    public unsafe partial struct RenderPassBeginInfo
+    public unsafe partial struct RenderPassBeginInfo : IStructuredType
     {
         public RenderPassBeginInfo
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkClearValue")]
         [NativeName("Name", "pClearValues")]
         public ClearValue* PClearValues;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassBeginInfo;
+        }
     }
 }

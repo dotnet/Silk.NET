@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassCreateInfo2")]
-    public unsafe partial struct RenderPassCreateInfo2
+    public unsafe partial struct RenderPassCreateInfo2 : IStructuredType
     {
         public RenderPassCreateInfo2
         (
@@ -145,5 +145,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pCorrelatedViewMasks")]
         public uint* PCorrelatedViewMasks;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderPassCreateInfo2;
+        }
     }
 }

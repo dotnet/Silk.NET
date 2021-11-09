@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineSampleLocationsStateCreateInfoEXT")]
-    public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
+    public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT : IStructuredType
     {
         public PipelineSampleLocationsStateCreateInfoEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
         [NativeName("Name", "sampleLocationsInfo")]
         public SampleLocationsInfoEXT SampleLocationsInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineSampleLocationsStateCreateInfoExt;
+        }
     }
 }

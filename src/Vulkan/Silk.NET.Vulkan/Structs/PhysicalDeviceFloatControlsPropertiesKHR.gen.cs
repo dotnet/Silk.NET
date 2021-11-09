@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFloatControlsPropertiesKHR")]
-    public unsafe partial struct PhysicalDeviceFloatControlsPropertiesKHR
+    public unsafe partial struct PhysicalDeviceFloatControlsPropertiesKHR : IStructuredType
     {
         public PhysicalDeviceFloatControlsPropertiesKHR
         (
@@ -233,5 +233,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderRoundingModeRTZFloat64")]
         public Bool32 ShaderRoundingModeRtzfloat64;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceFloatControlsProperties;
+        }
     }
 }

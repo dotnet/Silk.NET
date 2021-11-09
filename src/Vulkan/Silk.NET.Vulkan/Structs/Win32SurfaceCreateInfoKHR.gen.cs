@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWin32SurfaceCreateInfoKHR")]
-    public unsafe partial struct Win32SurfaceCreateInfoKHR
+    public unsafe partial struct Win32SurfaceCreateInfoKHR : IStructuredType
     {
         public Win32SurfaceCreateInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "HWND")]
         [NativeName("Name", "hwnd")]
         public nint Hwnd;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.Win32SurfaceCreateInfoKhr;
+        }
     }
 }

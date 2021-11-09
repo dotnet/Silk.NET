@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCopy2KHR")]
-    public unsafe partial struct ImageCopy2KHR
+    public unsafe partial struct ImageCopy2KHR : IStructuredType
     {
         public ImageCopy2KHR
         (
@@ -101,5 +101,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent3D")]
         [NativeName("Name", "extent")]
         public Extent3D Extent;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageCopy2Khr;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceVertexAttributeDivisorFeaturesEXT
+    public unsafe partial struct PhysicalDeviceVertexAttributeDivisorFeaturesEXT : IStructuredType
     {
         public PhysicalDeviceVertexAttributeDivisorFeaturesEXT
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "vertexAttributeInstanceRateZeroDivisor")]
         public Bool32 VertexAttributeInstanceRateZeroDivisor;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt;
+        }
     }
 }

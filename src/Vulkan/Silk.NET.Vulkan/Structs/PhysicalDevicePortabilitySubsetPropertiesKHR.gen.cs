@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePortabilitySubsetPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePortabilitySubsetPropertiesKHR
+    public unsafe partial struct PhysicalDevicePortabilitySubsetPropertiesKHR : IStructuredType
     {
         public PhysicalDevicePortabilitySubsetPropertiesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "minVertexInputBindingStrideAlignment")]
         public uint MinVertexInputBindingStrideAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDevicePortabilitySubsetPropertiesKhr;
+        }
     }
 }

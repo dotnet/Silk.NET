@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSysmemColorSpaceFUCHSIA")]
-    public unsafe partial struct SysmemColorSpaceFUCHSIA
+    public unsafe partial struct SysmemColorSpaceFUCHSIA : IStructuredType
     {
         public SysmemColorSpaceFUCHSIA
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "colorSpace")]
         public uint ColorSpace;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SysmemColorSpaceFuchsia;
+        }
     }
 }

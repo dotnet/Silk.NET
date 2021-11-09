@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureCreateInfoNV")]
-    public unsafe partial struct AccelerationStructureCreateInfoNV
+    public unsafe partial struct AccelerationStructureCreateInfoNV : IStructuredType
     {
         public AccelerationStructureCreateInfoNV
         (
@@ -68,5 +68,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureInfoNV")]
         [NativeName("Name", "info")]
         public AccelerationStructureInfoNV Info;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureCreateInfoNV;
+        }
     }
 }

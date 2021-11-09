@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferCreateInfo")]
-    public unsafe partial struct FramebufferCreateInfo
+    public unsafe partial struct FramebufferCreateInfo : IStructuredType
     {
         public FramebufferCreateInfo
         (
@@ -123,5 +123,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "layers")]
         public uint Layers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.FramebufferCreateInfo;
+        }
     }
 }

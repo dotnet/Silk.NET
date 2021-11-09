@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFormat2KHR")]
-    public unsafe partial struct SurfaceFormat2KHR
+    public unsafe partial struct SurfaceFormat2KHR : IStructuredType
     {
         public SurfaceFormat2KHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSurfaceFormatKHR")]
         [NativeName("Name", "surfaceFormat")]
         public SurfaceFormatKHR SurfaceFormat;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SurfaceFormat2Khr;
+        }
     }
 }

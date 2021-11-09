@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingFragmentShadingRateAttachmentInfoKHR")]
-    public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
+    public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR : IStructuredType
     {
         public RenderingFragmentShadingRateAttachmentInfoKHR
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "shadingRateAttachmentTexelSize")]
         public Extent2D ShadingRateAttachmentTexelSize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.RenderingFragmentShadingRateAttachmentInfoKhr;
+        }
     }
 }

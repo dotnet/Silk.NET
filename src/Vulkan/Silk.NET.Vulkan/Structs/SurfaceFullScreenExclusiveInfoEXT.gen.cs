@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFullScreenExclusiveInfoEXT")]
-    public unsafe partial struct SurfaceFullScreenExclusiveInfoEXT
+    public unsafe partial struct SurfaceFullScreenExclusiveInfoEXT : IStructuredType
     {
         public SurfaceFullScreenExclusiveInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFullScreenExclusiveEXT")]
         [NativeName("Name", "fullScreenExclusive")]
         public FullScreenExclusiveEXT FullScreenExclusive;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SurfaceFullScreenExclusiveInfoExt;
+        }
     }
 }

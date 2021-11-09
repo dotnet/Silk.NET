@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetAllocateInfo")]
-    public unsafe partial struct DescriptorSetAllocateInfo
+    public unsafe partial struct DescriptorSetAllocateInfo : IStructuredType
     {
         public DescriptorSetAllocateInfo
         (
@@ -79,5 +79,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDescriptorSetLayout")]
         [NativeName("Name", "pSetLayouts")]
         public DescriptorSetLayout* PSetLayouts;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DescriptorSetAllocateInfo;
+        }
     }
 }

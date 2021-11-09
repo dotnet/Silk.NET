@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReferenceStencilLayout")]
-    public unsafe partial struct AttachmentReferenceStencilLayout
+    public unsafe partial struct AttachmentReferenceStencilLayout : IStructuredType
     {
         public AttachmentReferenceStencilLayout
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageLayout")]
         [NativeName("Name", "stencilLayout")]
         public ImageLayout StencilLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AttachmentReferenceStencilLayout;
+        }
     }
 }

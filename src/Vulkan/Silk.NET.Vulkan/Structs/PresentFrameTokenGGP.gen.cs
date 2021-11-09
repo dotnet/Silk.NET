@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentFrameTokenGGP")]
-    public unsafe partial struct PresentFrameTokenGGP
+    public unsafe partial struct PresentFrameTokenGGP : IStructuredType
     {
         public PresentFrameTokenGGP
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "GgpFrameToken")]
         [NativeName("Name", "frameToken")]
         public nint FrameToken;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PresentFrameTokenGgp;
+        }
     }
 }

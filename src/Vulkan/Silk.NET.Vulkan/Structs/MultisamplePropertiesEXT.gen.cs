@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMultisamplePropertiesEXT")]
-    public unsafe partial struct MultisamplePropertiesEXT
+    public unsafe partial struct MultisamplePropertiesEXT : IStructuredType
     {
         public MultisamplePropertiesEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExtent2D")]
         [NativeName("Name", "maxSampleLocationGridSize")]
         public Extent2D MaxSampleLocationGridSize;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.MultisamplePropertiesExt;
+        }
     }
 }

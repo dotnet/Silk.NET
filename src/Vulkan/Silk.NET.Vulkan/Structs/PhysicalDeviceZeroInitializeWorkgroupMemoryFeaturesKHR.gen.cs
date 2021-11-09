@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR
+    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR : IStructuredType
     {
         public PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderZeroInitializeWorkgroupMemory")]
         public Bool32 ShaderZeroInitializeWorkgroupMemory;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKhr;
+        }
     }
 }

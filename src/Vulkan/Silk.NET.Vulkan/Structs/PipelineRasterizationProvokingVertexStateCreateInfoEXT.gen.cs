@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationProvokingVertexStateCreateInfoEXT")]
-    public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfoEXT : IStructuredType
     {
         public PipelineRasterizationProvokingVertexStateCreateInfoEXT
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkProvokingVertexModeEXT")]
         [NativeName("Name", "provokingVertexMode")]
         public ProvokingVertexModeEXT ProvokingVertexMode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineRasterizationProvokingVertexStateCreateInfoExt;
+        }
     }
 }

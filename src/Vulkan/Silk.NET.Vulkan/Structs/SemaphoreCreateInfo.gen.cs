@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreCreateInfo")]
-    public unsafe partial struct SemaphoreCreateInfo
+    public unsafe partial struct SemaphoreCreateInfo : IStructuredType
     {
         public SemaphoreCreateInfo
         (
@@ -57,5 +57,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSemaphoreCreateFlags")]
         [NativeName("Name", "flags")]
         public uint Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SemaphoreCreateInfo;
+        }
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
+    public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT : IStructuredType
     {
         public PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         (
@@ -178,5 +178,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "sparseImageFloat32AtomicMinMax")]
         public Bool32 SparseImageFloat32AtomicMinMax;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceShaderAtomicFloat2FeaturesExt;
+        }
     }
 }
