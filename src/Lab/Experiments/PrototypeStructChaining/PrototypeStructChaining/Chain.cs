@@ -1,53 +1,214 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.Net.Vulkan;
 
-/// <summary>
-/// Header struct of all <see cref="IChainable"/> structs.
-/// </summary>
-/// <remarks>
-/// <para>Any pointer to a structure marked as <see cref="IChainable"/> can safely be cast to a pointer to this type.</para>
-/// <para>In particular, this means that the <c>void* PNext</c> field can always be safely cast to <c>Chain*</c>, providing
-/// access to the `SType` and `PNext` fields.
-/// </para>
-/// </remarks>
-public struct Chain : IChainable
+public static class Chain
 {
+    /// <summary>
+    /// Replaces a structure in the chain (if present, and <paramref name="alwaysAdd"/> is false), or adds it to the end.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="value">A reference to the structure to update</param>
+    /// <param name="alwaysAdd">Always adds to the end of the chain, even if an equivalent structure is present.</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the value</typeparam>
+    /// <returns>A reference to the value value in the chain</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the supplied value will have their `SType` correctly set.  Further,
+    /// the supplied structure's <see cref="IChainable.PNext"/> will be overwritten.</para>
+    /// <para>To use</para>
+    /// <code>
+    /// var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+    /// {
+    ///     ShaderInputAttachmentArrayDynamicIndexing = true
+    /// };
+    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKhr
+    /// {
+    ///     AccelerationStructure = true
+    /// };
+    /// 
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .SetNext(ref indexingFeatures)
+    ///     .SetNext(ref accelerationStructureFeaturesKhr);
+    /// </code>
+    /// </remarks>
+    public static unsafe ref TChain SetNext<TChain, TNext>
+    (
+        this ref TChain chain,
+        ref TNext value,
+        bool alwaysAdd = false
+    )
+        where TChain : struct, IChainStart
+        where TNext : struct, IExtendsChain<TChain>
+    {
+        // Ensure structure type of chain and value are set.
+        chain.StructureType();
+        var structureType = value.StructureType();
+
+        // Find end of chain
+        var previousPtr = (BaseInStructure*) null;
+        var currentPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var valuePtr = (BaseInStructure*) Unsafe.AsPointer(ref value);
+        do
+        {
+            var nextPtr = currentPtr->PNext;
+            if (!alwaysAdd && currentPtr->SType == structureType)
+            {
+                // We have an existing structure, replace it.
+                if (previousPtr is not null)
+                {
+                    previousPtr->PNext = valuePtr;
+                }
+
+                valuePtr->PNext = nextPtr;
+
+                return ref chain;
+            }
+
+            previousPtr = currentPtr;
+            currentPtr = (BaseInStructure*) nextPtr;
+        } while (currentPtr is not null);
+
+        // Add value to end of chain
+        previousPtr->PNext = valuePtr;
+        valuePtr->PNext = null;
+
+        return ref chain;
+    }
+
+    /// <summary>
+    /// Adds a structure to the end of the chain.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="next">The structure added to the end of the chain</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the structure to add</typeparam>
+    /// <returns>The reference to the chain.</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the added structure will have their `SType` correctly set</para>
+    /// <para>To use specify the output type required, e.g.:</para>
+    /// <code>
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
+    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
+    /// </code>
+    /// <para>Note, the value is always added, even if an equivalent value is added in the chain already.  Use
+    /// <see cref="TryAddNext{TChain,TNext}"/> to only add if not already present.</para>
+    /// </remarks>
+    public static unsafe ref TChain AddNext<TChain, TNext>(this ref TChain chain, out TNext next)
+        where TChain : struct, IChainStart
+        where TNext : struct, IExtendsChain<TChain>
+    {
+        // Ensure structure type of chain is set.
+        chain.StructureType();
+
+        // Find end of chain
+        var currentPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        while (currentPtr->PNext is not null)
+        {
+            currentPtr = (BaseInStructure*) currentPtr->PNext;
+        }
+
+        // Create new entry and set it's structure type
+        next = default;
+        next.StructureType();
+        currentPtr->PNext = (BaseInStructure*) Unsafe.AsPointer(ref next);
+        return ref chain;
+    }
+
+    /// <summary>
+    /// Tries to add a structure to the end of the chain.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="next">The structure added to the end of the chain</param>
+    /// <param name="added">Whether the structure was actually added</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the structure to add</typeparam>
+    /// <returns>The reference to the chain.</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the added structure will have their `SType` correctly set</para>
+    /// <para>To use specify the output type required, e.g.:</para>
+    /// <code>
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .TryAddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures, out var added);
+    /// </code>
+    /// </remarks>
+    public static unsafe ref TChain TryAddNext<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
+        where TChain : struct, IChainStart
+        where TNext : struct, IExtendsChain<TChain>
+    {
+        // Ensure structure type of chain is set.
+        chain.StructureType();
+
+        // Create new entry and get it's structure type
+        next = default;
+        var structureType = next.StructureType();
+
+        // Follow chain
+        var currentPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        do
+        {
+            if (currentPtr->SType == structureType)
+            {
+                added = false;
+                return ref chain;
+            }
+
+            var nextPtr = currentPtr->PNext;
+            if (nextPtr is null)
+            {
+                break;
+            }
+
+            currentPtr = (BaseInStructure*) nextPtr;
+        } while (true);
+
+        currentPtr->PNext = (BaseInStructure*) Unsafe.AsPointer(ref next);
+        added = true;
+        return ref chain;
+    }
+
     /// <summary>
     /// Provides a set of all the <see cref="StructureType"/>s that can be extended by a <see cref="StructureType"/>.
     /// </summary>
     public static readonly IReadOnlyDictionary<StructureType, IReadOnlyCollection<StructureType>> Extensions =
         new Dictionary<StructureType, IReadOnlyCollection<StructureType>>
         {
-            [StructureType.PhysicalDeviceFeatures2] = new HashSet<StructureType>
+            [Vulkan.StructureType.PhysicalDeviceFeatures2] = new HashSet<StructureType>
             {
-                StructureType.DeviceCreateInfo
+                Vulkan.StructureType.DeviceCreateInfo
             },
-            [StructureType.PhysicalDeviceDescriptorIndexingFeatures] = new HashSet<StructureType>
+            [Vulkan.StructureType.PhysicalDeviceDescriptorIndexingFeatures] = new HashSet<StructureType>
             {
-                StructureType.PhysicalDeviceFeatures2,
-                StructureType.DeviceCreateInfo
+                Vulkan.StructureType.PhysicalDeviceFeatures2,
+                Vulkan.StructureType.DeviceCreateInfo
             },
-            [StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr] = new HashSet<StructureType>
+            [Vulkan.StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr] = new HashSet<StructureType>
             {
-                StructureType.PhysicalDeviceFeatures2,
-                StructureType.DeviceCreateInfo
+                Vulkan.StructureType.PhysicalDeviceFeatures2,
+                Vulkan.StructureType.DeviceCreateInfo
             }
         };
-    
+
     /// <summary>
     /// Provides a set of all the <see cref="StructureType"/>s that can extend a <see cref="StructureType"/>.
     /// </summary>
     public static readonly IReadOnlyDictionary<StructureType, IReadOnlyCollection<StructureType>> Extenders =
         new Dictionary<StructureType, IReadOnlyCollection<StructureType>>
         {
-            [StructureType.DeviceCreateInfo] = new HashSet<StructureType>
+            [Vulkan.StructureType.DeviceCreateInfo] = new HashSet<StructureType>
             {
-                StructureType.PhysicalDeviceFeatures2, StructureType.PhysicalDeviceDescriptorIndexingFeatures,
-                StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
+                Vulkan.StructureType.PhysicalDeviceFeatures2,
+                Vulkan.StructureType.PhysicalDeviceDescriptorIndexingFeatures,
+                Vulkan.StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
             },
-            [StructureType.PhysicalDeviceFeatures2] = new HashSet<StructureType>
+            [Vulkan.StructureType.PhysicalDeviceFeatures2] = new HashSet<StructureType>
             {
-                StructureType.PhysicalDeviceDescriptorIndexingFeatures,
-                StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
+                Vulkan.StructureType.PhysicalDeviceDescriptorIndexingFeatures,
+                Vulkan.StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
             }
         };
 
@@ -57,10 +218,12 @@ public struct Chain : IChainable
     public static readonly IReadOnlyDictionary<StructureType, Type> ClrTypes =
         new Dictionary<StructureType, Type>
         {
-            [StructureType.DeviceCreateInfo] = typeof(DeviceCreateInfo),
-            [StructureType.PhysicalDeviceFeatures2] = typeof(PhysicalDeviceFeatures2),
-            [StructureType.PhysicalDeviceDescriptorIndexingFeatures]= typeof(PhysicalDeviceDescriptorIndexingFeatures),
-            [StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr] = typeof(PhysicalDeviceAccelerationStructureFeaturesKhr)
+            [Vulkan.StructureType.DeviceCreateInfo] = typeof(DeviceCreateInfo),
+            [Vulkan.StructureType.PhysicalDeviceFeatures2] = typeof(PhysicalDeviceFeatures2),
+            [Vulkan.StructureType.PhysicalDeviceDescriptorIndexingFeatures] =
+                typeof(PhysicalDeviceDescriptorIndexingFeatures),
+            [Vulkan.StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr] =
+                typeof(PhysicalDeviceAccelerationStructureFeaturesKhr)
         };
 
     /// <summary>
@@ -69,33 +232,169 @@ public struct Chain : IChainable
     public static readonly IReadOnlyDictionary<Type, StructureType> StructureTypes =
         new Dictionary<Type, StructureType>
         {
-            [typeof(DeviceCreateInfo)] = StructureType.DeviceCreateInfo,
-            [typeof(PhysicalDeviceFeatures2)] = StructureType.PhysicalDeviceFeatures2,
-            [typeof(PhysicalDeviceDescriptorIndexingFeatures)]= StructureType.PhysicalDeviceDescriptorIndexingFeatures,
-            [typeof(PhysicalDeviceAccelerationStructureFeaturesKhr)] = StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
+            [typeof(DeviceCreateInfo)] = Vulkan.StructureType.DeviceCreateInfo,
+            [typeof(PhysicalDeviceFeatures2)] = Vulkan.StructureType.PhysicalDeviceFeatures2,
+            [typeof(PhysicalDeviceDescriptorIndexingFeatures)] =
+                Vulkan.StructureType.PhysicalDeviceDescriptorIndexingFeatures,
+            [typeof(PhysicalDeviceAccelerationStructureFeaturesKhr)] =
+                Vulkan.StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr
         };
 
     /// <summary>
-    /// The structure type.
+    /// Returns the index of the <paramref name="value"/> in the <paramref name="chain"/>, if present.
     /// </summary>
-    public StructureType SType;
-
-    /// <summary>
-    /// The next <see cref="IChainable"/> struct in the chain, if any; otherwise <see langword="null"/>.
-    /// </summary>
-    public unsafe Chain* PNext;
-
-    /// <inheritdoc />
-    /// <remarks>Note, this cannot coerce the type as 'guaranteed by the `IStructuredType` interface.</remarks>
-    StructureType IStructuredType.StructureType()
+    /// <param name="chain">The chain</param>
+    /// <param name="value">The structure value</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the value</typeparam>
+    /// <returns>The zero-indexed index if found; otherwise -1.</returns>
+    public static unsafe int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
+        where TChain : struct, IChainStart
+        where TNext : struct, IExtendsChain<TChain>
     {
-        return SType;
+        // Ensure structure type of chain is set.
+        chain.StructureType();
+
+        var index = 0;
+        var currentPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var valuePtr = (BaseInStructure*) Unsafe.AsPointer(ref value);
+        // Follow chain
+        do
+        {
+            if (currentPtr == valuePtr)
+            {
+                return index;
+            }
+
+            currentPtr = (BaseInStructure*) currentPtr->PNext;
+            index++;
+        } while (currentPtr is not null);
+
+        return -1;
     }
 
-    /// <inheritdoc />
-    unsafe Chain* IChainable.PNext
+    /// <summary>
+    /// Gets the corresponding <see cref="StructureType"/> for a <see cref="Type"/>, if any.
+    /// </summary>
+    /// <param name="structureType">The structure type.</param>
+    /// <returns> The corresponding <see cref="StructureType"/> for <paramref name="structureType"/>, if any; otherwise,
+    /// <see langword="null"/>.</returns>
+    public static Type ClrType(this StructureType structureType)
     {
-        get => (Chain*) PNext;
-        set => PNext = value;
+        return ClrTypes[structureType];
+    }
+
+    /// <summary>
+    /// Gets the corresponding <see cref="StructureType"/> for a <see cref="Type"/>, if any.
+    /// </summary>
+    /// <param name="type">The CLR type.</param>
+    /// <returns>The corresponding <see cref="StructureType"/> for <paramref name="type"/>, if any; otherwise,
+    /// <see langword="null"/>.</returns>
+    public static StructureType? StructureType(this Type type)
+    {
+        return StructureTypes.TryGetValue(type, out var structureType) ? structureType : null;
+    }
+
+    /// <summary>
+    /// Whether the <see cref="StructureType"/> can start a chain.
+    /// </summary>
+    /// <param name="type">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainStart(this StructureType type)
+    {
+        return Extenders.ContainsKey(type);
+    }
+
+    /// <summary>
+    /// Whether the <see cref="Type"/> can start a chain.
+    /// </summary>
+    /// <param name="type">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainStart(this Type type)
+    {
+        return StructureTypes.TryGetValue(type, out var structureType) &&
+               Extenders.ContainsKey(structureType);
+    }
+
+    /// <summary>
+    /// Whether the <see cref="StructureType"/> is chainable.
+    /// </summary>
+    /// <param name="type">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainable(this StructureType type)
+    {
+        return Extenders.ContainsKey(type) ||
+               Extensions.ContainsKey(type);
+    }
+
+    /// <summary>
+    /// Whether the <see cref="Type"/> is chainable.
+    /// </summary>
+    /// <param name="type">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can start a chain; otherwise
+    /// <see langword="false"/>.</returns>
+    public static bool IsChainable(this Type type)
+    {
+        return StructureTypes.TryGetValue(type, out var structureType) &&
+               (Extenders.ContainsKey(structureType) || Extensions.ContainsKey(structureType));
+    }
+
+    /// <summary>
+    /// Whether the current <see cref="StructureType"/> can extend the <paramref name="chain"/>.
+    /// </summary>
+    /// <param name="next">The <see cref="StructureType"/> to test.</param>
+    /// <param name="chain">The <see cref="StructureType"/> of the chain.</param>
+    /// <returns><see langword="true"/> if the <see cref="StructureType"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanBeExtendedBy(Silk.Net.Vulkan.StructureType,Silk.Net.Vulkan.StructureType)"/>
+    public static bool CanExtend(this StructureType next, StructureType chain)
+    {
+        return Extensions.TryGetValue(next, out var extensions) && extensions.Contains(chain);
+    }
+
+    /// <summary>
+    /// Whether the current <see cref="Type"/> can extend the <paramref name="chain"/>.
+    /// </summary>
+    /// <param name="next">The <see cref="Type"/> to test.</param>
+    /// <param name="chain">The <see cref="Type"/> of the chain.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanBeExtendedBy(System.Type,System.Type)"/>
+    public static bool CanExtend(this Type next, Type chain)
+    {
+        return
+            StructureTypes.TryGetValue(next, out var nextType) &&
+            StructureTypes.TryGetValue(chain, out var chainType) &&
+            Extensions.TryGetValue(nextType, out var extensions) &&
+            extensions.Contains(chainType);
+    }
+
+    /// <summary>
+    /// Whether the current <paramref name="chain"/> can be extended by the <paramref name="next"/> <see cref="StructureType"/>.
+    /// </summary>
+    /// <param name="chain">The <see cref="StructureType"/> of the chain.</param>
+    /// <param name="next">The <see cref="StructureType"/> to test.</param>
+    /// <returns><see langword="true"/> if the <paramref name="chain"/> can be extended the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanExtend(Silk.Net.Vulkan.StructureType,Silk.Net.Vulkan.StructureType)"/>
+    public static bool CanBeExtendedBy(this StructureType chain, StructureType next)
+    {
+        return Extenders.TryGetValue(chain, out var extenders) && extenders.Contains(next);
+    }
+
+    /// <summary>
+    /// Whether the current <paramref name="chain"/> can be extended by the <paramref name="next"/> <see cref="Type"/>.
+    /// </summary>
+    /// <param name="chain">The <see cref="Type"/> of the chain.</param>
+    /// <param name="next">The <see cref="Type"/> to test.</param>
+    /// <returns><see langword="true"/> if the <see cref="Type"/> can extend the <paramref name="chain"/>; otherwise, false.</returns>
+    /// <seealso cref="CanExtend(Type, Type)"/>
+    public static bool CanBeExtendedBy(this Type chain, Type next)
+    {
+        return
+            StructureTypes.TryGetValue(next, out var nextType) &&
+            StructureTypes.TryGetValue(chain, out var chainType) &&
+            Extenders.TryGetValue(chainType, out var extenders) &&
+            extenders.Contains(nextType);
     }
 }

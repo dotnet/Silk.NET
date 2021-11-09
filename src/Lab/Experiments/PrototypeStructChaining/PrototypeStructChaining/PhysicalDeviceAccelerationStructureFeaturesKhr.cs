@@ -40,9 +40,9 @@ public struct PhysicalDeviceAccelerationStructureFeaturesKhr :
     }
 
     /// <inheritdoc />
-    unsafe Chain* IChainable.PNext
+    unsafe BaseInStructure* IChainable.PNext
     {
-        get => (Chain*) PNext;
+        get => (BaseInStructure*) PNext;
         set => PNext = value;
     }
 

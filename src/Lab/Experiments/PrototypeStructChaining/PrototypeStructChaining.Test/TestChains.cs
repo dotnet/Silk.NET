@@ -9,7 +9,7 @@ public class TestChains
     public unsafe void TestAddNext()
     {
         PhysicalDeviceFeatures2
-            // The Chain method, is a convenient static, to provide a consistent syntax.
+            // The BaseInStructure method, is a convenient static, to provide a consistent syntax.
             .Chain(out var features2)
             // AddNext will create an empty struct, with the correct SType (as well as ensuring the
             // chain's SType is coerced correctly.
@@ -39,7 +39,7 @@ public class TestChains
     public unsafe void TestTryAddNext()
     {
         PhysicalDeviceFeatures2
-            // The Chain method, is a convenient static, to provide a consistent syntax.
+            // The BaseInStructure method, is a convenient static, to provide a consistent syntax.
             .Chain(out var features2)
             // AddNext will create an empty struct, with the correct SType (as well as ensuring the
             // chain's SType is coerced correctly.
@@ -164,7 +164,7 @@ public class TestChains
     [Fact]
     public unsafe void TestWithoutChain()
     {
-        // We don't have to use the Chain() pattern, as we can start with an existing struct
+        // We don't have to use the BaseInStructure() pattern, as we can start with an existing struct
         var createInfo = new DeviceCreateInfo
         {
             Flags = 1U

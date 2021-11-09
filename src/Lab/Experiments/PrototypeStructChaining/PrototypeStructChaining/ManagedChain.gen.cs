@@ -1227,18 +1227,18 @@ public unsafe class ManagedChain<TChain> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -1387,18 +1387,18 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -1408,7 +1408,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -1448,7 +1448,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -1466,12 +1466,12 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -1510,7 +1510,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
         return new ManagedChain<TChain, T1>(newHeadPtr);
     }
 
@@ -1535,8 +1535,8 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         Marshal.StructureToPtr(item1, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -1567,7 +1567,7 @@ public unsafe class ManagedChain<TChain, T1> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = null;
+        ((BaseInStructure*)newHeadPtr)->PNext = null;
         return new ManagedChain<TChain>(newHeadPtr);
     }
 
@@ -1679,18 +1679,18 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -1700,7 +1700,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -1721,7 +1721,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -1762,7 +1762,7 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -1784,12 +1784,12 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -1808,9 +1808,9 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -1849,8 +1849,8 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
         return new ManagedChain<TChain, T1, T2>(newHeadPtr);
     }
 
@@ -1875,9 +1875,9 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         Marshal.StructureToPtr(item2, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -1908,8 +1908,8 @@ public unsafe class ManagedChain<TChain, T1, T2> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = null; 
         return new ManagedChain<TChain, T1>(newHeadPtr);
     }
 
@@ -2038,18 +2038,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -2059,7 +2059,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -2080,7 +2080,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -2101,7 +2101,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -2143,7 +2143,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -2169,12 +2169,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -2193,9 +2193,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -2214,9 +2214,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -2255,9 +2255,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
         return new ManagedChain<TChain, T1, T2, T3>(newHeadPtr);
     }
 
@@ -2282,10 +2282,10 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         Marshal.StructureToPtr(item3, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -2316,9 +2316,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2>(newHeadPtr);
     }
 
@@ -2464,18 +2464,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -2485,7 +2485,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -2506,7 +2506,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -2527,7 +2527,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -2548,7 +2548,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -2591,7 +2591,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -2621,12 +2621,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -2645,9 +2645,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -2666,9 +2666,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -2687,9 +2687,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -2728,10 +2728,10 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4>(newHeadPtr);
     }
 
@@ -2756,11 +2756,11 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         Marshal.StructureToPtr(item4, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -2791,10 +2791,10 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3>(newHeadPtr);
     }
 
@@ -2957,18 +2957,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -2978,7 +2978,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -2999,7 +2999,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -3020,7 +3020,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -3041,7 +3041,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -3062,7 +3062,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -3106,7 +3106,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -3140,12 +3140,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -3164,9 +3164,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -3185,9 +3185,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -3206,9 +3206,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -3227,9 +3227,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -3268,11 +3268,11 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
     }
 
@@ -3297,12 +3297,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         Marshal.StructureToPtr(item5, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -3333,11 +3333,11 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4>(newHeadPtr);
     }
 
@@ -3517,18 +3517,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -3538,7 +3538,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -3559,7 +3559,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -3580,7 +3580,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -3601,7 +3601,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -3622,7 +3622,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -3643,7 +3643,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -3688,7 +3688,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -3726,12 +3726,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -3750,9 +3750,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -3771,9 +3771,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -3792,9 +3792,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -3813,9 +3813,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -3834,9 +3834,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -3875,12 +3875,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
     }
 
@@ -3905,13 +3905,13 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         Marshal.StructureToPtr(item6, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -3942,12 +3942,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : ManagedChain
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
     }
 
@@ -4144,18 +4144,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -4165,7 +4165,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -4186,7 +4186,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -4207,7 +4207,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -4228,7 +4228,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -4249,7 +4249,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -4270,7 +4270,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -4291,7 +4291,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -4337,7 +4337,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -4379,12 +4379,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -4403,9 +4403,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -4424,9 +4424,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -4445,9 +4445,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -4466,9 +4466,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -4487,9 +4487,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -4508,9 +4508,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -4549,13 +4549,13 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
     }
 
@@ -4580,14 +4580,14 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         Marshal.StructureToPtr(item7, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -4618,13 +4618,13 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : ManagedCh
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
     }
 
@@ -4838,18 +4838,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -4859,7 +4859,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -4880,7 +4880,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -4901,7 +4901,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -4922,7 +4922,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -4943,7 +4943,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -4964,7 +4964,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -4985,7 +4985,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -5006,7 +5006,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -5053,7 +5053,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -5099,12 +5099,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -5123,9 +5123,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -5144,9 +5144,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -5165,9 +5165,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -5186,9 +5186,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -5207,9 +5207,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -5228,9 +5228,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -5249,9 +5249,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -5290,14 +5290,14 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
     }
 
@@ -5322,15 +5322,15 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         Marshal.StructureToPtr(item8, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -5361,14 +5361,14 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Manag
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
     }
 
@@ -5599,18 +5599,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -5620,7 +5620,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -5641,7 +5641,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -5662,7 +5662,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -5683,7 +5683,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -5704,7 +5704,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -5725,7 +5725,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -5746,7 +5746,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -5767,7 +5767,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -5788,7 +5788,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -5836,7 +5836,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -5886,12 +5886,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -5910,9 +5910,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -5931,9 +5931,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -5952,9 +5952,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -5973,9 +5973,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -5994,9 +5994,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -6015,9 +6015,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -6036,9 +6036,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -6057,9 +6057,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -6098,15 +6098,15 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
     }
 
@@ -6131,16 +6131,16 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         Marshal.StructureToPtr(item9, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -6171,15 +6171,15 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : M
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
     }
 
@@ -6427,18 +6427,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -6448,7 +6448,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -6469,7 +6469,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -6490,7 +6490,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -6511,7 +6511,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -6532,7 +6532,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -6553,7 +6553,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -6574,7 +6574,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -6595,7 +6595,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -6616,7 +6616,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -6637,7 +6637,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -6686,7 +6686,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -6740,12 +6740,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -6764,9 +6764,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -6785,9 +6785,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -6806,9 +6806,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -6827,9 +6827,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -6848,9 +6848,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -6869,9 +6869,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -6890,9 +6890,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -6911,9 +6911,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -6932,9 +6932,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -6973,16 +6973,16 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
     }
 
@@ -7007,17 +7007,17 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item10, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -7048,16 +7048,16 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
     }
 
@@ -7322,18 +7322,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -7343,7 +7343,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -7364,7 +7364,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -7385,7 +7385,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -7406,7 +7406,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -7427,7 +7427,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -7448,7 +7448,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -7469,7 +7469,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -7490,7 +7490,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -7511,7 +7511,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -7532,7 +7532,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -7553,7 +7553,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
+    public BaseInStructure* Item11Ptr => (BaseInStructure*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
@@ -7603,7 +7603,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -7661,12 +7661,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -7685,9 +7685,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -7706,9 +7706,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -7727,9 +7727,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -7748,9 +7748,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -7769,9 +7769,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -7790,9 +7790,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -7811,9 +7811,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -7832,9 +7832,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -7853,9 +7853,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -7874,9 +7874,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item11Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T11 item11 = default;
         expectedStructureType = item11.StructureType();
@@ -7915,17 +7915,17 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
     }
 
@@ -7950,18 +7950,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item11, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + Item10Offset))->PNext = (BaseInStructure*) (_headPtr + Item11Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -7992,17 +7992,17 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
     }
 
@@ -8284,18 +8284,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -8305,7 +8305,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -8326,7 +8326,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -8347,7 +8347,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -8368,7 +8368,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -8389,7 +8389,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -8410,7 +8410,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -8431,7 +8431,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -8452,7 +8452,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -8473,7 +8473,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -8494,7 +8494,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -8515,7 +8515,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
+    public BaseInStructure* Item11Ptr => (BaseInStructure*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
@@ -8536,7 +8536,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
+    public BaseInStructure* Item12Ptr => (BaseInStructure*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
@@ -8587,7 +8587,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -8649,12 +8649,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -8673,9 +8673,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -8694,9 +8694,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -8715,9 +8715,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -8736,9 +8736,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -8757,9 +8757,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -8778,9 +8778,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -8799,9 +8799,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -8820,9 +8820,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -8841,9 +8841,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -8862,9 +8862,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item11Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T11 item11 = default;
         expectedStructureType = item11.StructureType();
@@ -8883,9 +8883,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item12Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T12 item12 = default;
         expectedStructureType = item12.StructureType();
@@ -8924,18 +8924,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
     }
 
@@ -8960,19 +8960,19 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item12, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
-        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + Item10Offset))->PNext = (BaseInStructure*) (_headPtr + Item11Offset); 
+        ((BaseInStructure*)(_headPtr + Item11Offset))->PNext = (BaseInStructure*) (_headPtr + Item12Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -9003,18 +9003,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
     }
 
@@ -9313,18 +9313,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -9334,7 +9334,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -9355,7 +9355,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -9376,7 +9376,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -9397,7 +9397,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -9418,7 +9418,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -9439,7 +9439,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -9460,7 +9460,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -9481,7 +9481,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -9502,7 +9502,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -9523,7 +9523,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -9544,7 +9544,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
+    public BaseInStructure* Item11Ptr => (BaseInStructure*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
@@ -9565,7 +9565,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
+    public BaseInStructure* Item12Ptr => (BaseInStructure*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
@@ -9586,7 +9586,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
+    public BaseInStructure* Item13Ptr => (BaseInStructure*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
@@ -9638,7 +9638,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -9704,12 +9704,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -9728,9 +9728,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -9749,9 +9749,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -9770,9 +9770,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -9791,9 +9791,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -9812,9 +9812,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -9833,9 +9833,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -9854,9 +9854,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -9875,9 +9875,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -9896,9 +9896,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -9917,9 +9917,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item11Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T11 item11 = default;
         expectedStructureType = item11.StructureType();
@@ -9938,9 +9938,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item12Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T12 item12 = default;
         expectedStructureType = item12.StructureType();
@@ -9959,9 +9959,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item13Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T13 item13 = default;
         expectedStructureType = item13.StructureType();
@@ -10000,19 +10000,19 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
     }
 
@@ -10037,20 +10037,20 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item13, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
-        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
-        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + Item10Offset))->PNext = (BaseInStructure*) (_headPtr + Item11Offset); 
+        ((BaseInStructure*)(_headPtr + Item11Offset))->PNext = (BaseInStructure*) (_headPtr + Item12Offset); 
+        ((BaseInStructure*)(_headPtr + Item12Offset))->PNext = (BaseInStructure*) (_headPtr + Item13Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -10081,19 +10081,19 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
     }
 
@@ -10409,18 +10409,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -10430,7 +10430,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -10451,7 +10451,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -10472,7 +10472,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -10493,7 +10493,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -10514,7 +10514,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -10535,7 +10535,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -10556,7 +10556,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -10577,7 +10577,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -10598,7 +10598,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -10619,7 +10619,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -10640,7 +10640,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
+    public BaseInStructure* Item11Ptr => (BaseInStructure*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
@@ -10661,7 +10661,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
+    public BaseInStructure* Item12Ptr => (BaseInStructure*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
@@ -10682,7 +10682,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
+    public BaseInStructure* Item13Ptr => (BaseInStructure*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
@@ -10703,7 +10703,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item14Ptr => (Chain*) (_headPtr + Item14Offset);
+    public BaseInStructure* Item14Ptr => (BaseInStructure*) (_headPtr + Item14Offset);
 
     /// <summary>
     /// Gets or sets item #14 in the chain.
@@ -10756,7 +10756,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -10826,12 +10826,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -10850,9 +10850,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -10871,9 +10871,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -10892,9 +10892,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -10913,9 +10913,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -10934,9 +10934,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -10955,9 +10955,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -10976,9 +10976,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -10997,9 +10997,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -11018,9 +11018,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -11039,9 +11039,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item11Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T11 item11 = default;
         expectedStructureType = item11.StructureType();
@@ -11060,9 +11060,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item12Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T12 item12 = default;
         expectedStructureType = item12.StructureType();
@@ -11081,9 +11081,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item13Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T13 item13 = default;
         expectedStructureType = item13.StructureType();
@@ -11102,9 +11102,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item13, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item14Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item14Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T14 item14 = default;
         expectedStructureType = item14.StructureType();
@@ -11143,20 +11143,20 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
-        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
     }
 
@@ -11181,21 +11181,21 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item14, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
-        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
-        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
-        ((Chain*)(_headPtr + Item13Offset))->PNext = (Chain*) (_headPtr + Item14Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + Item10Offset))->PNext = (BaseInStructure*) (_headPtr + Item11Offset); 
+        ((BaseInStructure*)(_headPtr + Item11Offset))->PNext = (BaseInStructure*) (_headPtr + Item12Offset); 
+        ((BaseInStructure*)(_headPtr + Item12Offset))->PNext = (BaseInStructure*) (_headPtr + Item13Offset); 
+        ((BaseInStructure*)(_headPtr + Item13Offset))->PNext = (BaseInStructure*) (_headPtr + Item14Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -11226,20 +11226,20 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
-        ((Chain*)(newHeadPtr + Item13Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
     }
 
@@ -11572,18 +11572,18 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -11593,7 +11593,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item1Ptr => (Chain*) (_headPtr + Item1Offset);
+    public BaseInStructure* Item1Ptr => (BaseInStructure*) (_headPtr + Item1Offset);
 
     /// <summary>
     /// Gets or sets item #1 in the chain.
@@ -11614,7 +11614,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item2Ptr => (Chain*) (_headPtr + Item2Offset);
+    public BaseInStructure* Item2Ptr => (BaseInStructure*) (_headPtr + Item2Offset);
 
     /// <summary>
     /// Gets or sets item #2 in the chain.
@@ -11635,7 +11635,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item3Ptr => (Chain*) (_headPtr + Item3Offset);
+    public BaseInStructure* Item3Ptr => (BaseInStructure*) (_headPtr + Item3Offset);
 
     /// <summary>
     /// Gets or sets item #3 in the chain.
@@ -11656,7 +11656,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item4Ptr => (Chain*) (_headPtr + Item4Offset);
+    public BaseInStructure* Item4Ptr => (BaseInStructure*) (_headPtr + Item4Offset);
 
     /// <summary>
     /// Gets or sets item #4 in the chain.
@@ -11677,7 +11677,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item5Ptr => (Chain*) (_headPtr + Item5Offset);
+    public BaseInStructure* Item5Ptr => (BaseInStructure*) (_headPtr + Item5Offset);
 
     /// <summary>
     /// Gets or sets item #5 in the chain.
@@ -11698,7 +11698,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item6Ptr => (Chain*) (_headPtr + Item6Offset);
+    public BaseInStructure* Item6Ptr => (BaseInStructure*) (_headPtr + Item6Offset);
 
     /// <summary>
     /// Gets or sets item #6 in the chain.
@@ -11719,7 +11719,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item7Ptr => (Chain*) (_headPtr + Item7Offset);
+    public BaseInStructure* Item7Ptr => (BaseInStructure*) (_headPtr + Item7Offset);
 
     /// <summary>
     /// Gets or sets item #7 in the chain.
@@ -11740,7 +11740,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item8Ptr => (Chain*) (_headPtr + Item8Offset);
+    public BaseInStructure* Item8Ptr => (BaseInStructure*) (_headPtr + Item8Offset);
 
     /// <summary>
     /// Gets or sets item #8 in the chain.
@@ -11761,7 +11761,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item9Ptr => (Chain*) (_headPtr + Item9Offset);
+    public BaseInStructure* Item9Ptr => (BaseInStructure*) (_headPtr + Item9Offset);
 
     /// <summary>
     /// Gets or sets item #9 in the chain.
@@ -11782,7 +11782,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item10Ptr => (Chain*) (_headPtr + Item10Offset);
+    public BaseInStructure* Item10Ptr => (BaseInStructure*) (_headPtr + Item10Offset);
 
     /// <summary>
     /// Gets or sets item #10 in the chain.
@@ -11803,7 +11803,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item11Ptr => (Chain*) (_headPtr + Item11Offset);
+    public BaseInStructure* Item11Ptr => (BaseInStructure*) (_headPtr + Item11Offset);
 
     /// <summary>
     /// Gets or sets item #11 in the chain.
@@ -11824,7 +11824,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item12Ptr => (Chain*) (_headPtr + Item12Offset);
+    public BaseInStructure* Item12Ptr => (BaseInStructure*) (_headPtr + Item12Offset);
 
     /// <summary>
     /// Gets or sets item #12 in the chain.
@@ -11845,7 +11845,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item13Ptr => (Chain*) (_headPtr + Item13Offset);
+    public BaseInStructure* Item13Ptr => (BaseInStructure*) (_headPtr + Item13Offset);
 
     /// <summary>
     /// Gets or sets item #13 in the chain.
@@ -11866,7 +11866,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item14Ptr => (Chain*) (_headPtr + Item14Offset);
+    public BaseInStructure* Item14Ptr => (BaseInStructure*) (_headPtr + Item14Offset);
 
     /// <summary>
     /// Gets or sets item #14 in the chain.
@@ -11887,7 +11887,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item15Ptr => (Chain*) (_headPtr + Item15Offset);
+    public BaseInStructure* Item15Ptr => (BaseInStructure*) (_headPtr + Item15Offset);
 
     /// <summary>
     /// Gets or sets item #15 in the chain.
@@ -11941,7 +11941,7 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         head.StructureType();
         Marshal.StructureToPtr(head, _headPtr, false);
-        Chain* itemPtr = Item1Ptr;
+        BaseInStructure* itemPtr = Item1Ptr;
         item1.StructureType();
         Marshal.StructureToPtr(item1, (nint)itemPtr, false);
         HeadPtr->PNext = itemPtr;
@@ -12015,12 +12015,12 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         chain.StructureType();
         Marshal.StructureToPtr(chain, _headPtr, false);
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item1Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item1Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T1 item1 = default;
         var expectedStructureType = item1.StructureType();
@@ -12039,9 +12039,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item1, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item2Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item2Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T2 item2 = default;
         expectedStructureType = item2.StructureType();
@@ -12060,9 +12060,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item2, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item3Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item3Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T3 item3 = default;
         expectedStructureType = item3.StructureType();
@@ -12081,9 +12081,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item3, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item4Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item4Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T4 item4 = default;
         expectedStructureType = item4.StructureType();
@@ -12102,9 +12102,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item4, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item5Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item5Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T5 item5 = default;
         expectedStructureType = item5.StructureType();
@@ -12123,9 +12123,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item5, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item6Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item6Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T6 item6 = default;
         expectedStructureType = item6.StructureType();
@@ -12144,9 +12144,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item6, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item7Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item7Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T7 item7 = default;
         expectedStructureType = item7.StructureType();
@@ -12165,9 +12165,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item7, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item8Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item8Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T8 item8 = default;
         expectedStructureType = item8.StructureType();
@@ -12186,9 +12186,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item8, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item9Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item9Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T9 item9 = default;
         expectedStructureType = item9.StructureType();
@@ -12207,9 +12207,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item9, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item10Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item10Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T10 item10 = default;
         expectedStructureType = item10.StructureType();
@@ -12228,9 +12228,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item10, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item11Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item11Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T11 item11 = default;
         expectedStructureType = item11.StructureType();
@@ -12249,9 +12249,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item11, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item12Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item12Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T12 item12 = default;
         expectedStructureType = item12.StructureType();
@@ -12270,9 +12270,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item12, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item13Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item13Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T13 item13 = default;
         expectedStructureType = item13.StructureType();
@@ -12291,9 +12291,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item13, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item14Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item14Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T14 item14 = default;
         expectedStructureType = item14.StructureType();
@@ -12312,9 +12312,9 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         }
         Marshal.StructureToPtr(item14, (nint) newPtr, false);
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item15Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item15Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T15 item15 = default;
         expectedStructureType = item15.StructureType();
@@ -12353,21 +12353,21 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, MemorySize, MemorySize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
-        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
-        ((Chain*)(newHeadPtr + Item14Offset))->PNext = (Chain*) (newHeadPtr + Item15Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item14Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item15Offset); 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
     }
 
@@ -12392,22 +12392,22 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         Marshal.StructureToPtr(item15, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
-        ((Chain*)(_headPtr + Item1Offset))->PNext = (Chain*) (_headPtr + Item2Offset); 
-        ((Chain*)(_headPtr + Item2Offset))->PNext = (Chain*) (_headPtr + Item3Offset); 
-        ((Chain*)(_headPtr + Item3Offset))->PNext = (Chain*) (_headPtr + Item4Offset); 
-        ((Chain*)(_headPtr + Item4Offset))->PNext = (Chain*) (_headPtr + Item5Offset); 
-        ((Chain*)(_headPtr + Item5Offset))->PNext = (Chain*) (_headPtr + Item6Offset); 
-        ((Chain*)(_headPtr + Item6Offset))->PNext = (Chain*) (_headPtr + Item7Offset); 
-        ((Chain*)(_headPtr + Item7Offset))->PNext = (Chain*) (_headPtr + Item8Offset); 
-        ((Chain*)(_headPtr + Item8Offset))->PNext = (Chain*) (_headPtr + Item9Offset); 
-        ((Chain*)(_headPtr + Item9Offset))->PNext = (Chain*) (_headPtr + Item10Offset); 
-        ((Chain*)(_headPtr + Item10Offset))->PNext = (Chain*) (_headPtr + Item11Offset); 
-        ((Chain*)(_headPtr + Item11Offset))->PNext = (Chain*) (_headPtr + Item12Offset); 
-        ((Chain*)(_headPtr + Item12Offset))->PNext = (Chain*) (_headPtr + Item13Offset); 
-        ((Chain*)(_headPtr + Item13Offset))->PNext = (Chain*) (_headPtr + Item14Offset); 
-        ((Chain*)(_headPtr + Item14Offset))->PNext = (Chain*) (_headPtr + Item15Offset); 
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)(_headPtr + Item1Offset))->PNext = (BaseInStructure*) (_headPtr + Item2Offset); 
+        ((BaseInStructure*)(_headPtr + Item2Offset))->PNext = (BaseInStructure*) (_headPtr + Item3Offset); 
+        ((BaseInStructure*)(_headPtr + Item3Offset))->PNext = (BaseInStructure*) (_headPtr + Item4Offset); 
+        ((BaseInStructure*)(_headPtr + Item4Offset))->PNext = (BaseInStructure*) (_headPtr + Item5Offset); 
+        ((BaseInStructure*)(_headPtr + Item5Offset))->PNext = (BaseInStructure*) (_headPtr + Item6Offset); 
+        ((BaseInStructure*)(_headPtr + Item6Offset))->PNext = (BaseInStructure*) (_headPtr + Item7Offset); 
+        ((BaseInStructure*)(_headPtr + Item7Offset))->PNext = (BaseInStructure*) (_headPtr + Item8Offset); 
+        ((BaseInStructure*)(_headPtr + Item8Offset))->PNext = (BaseInStructure*) (_headPtr + Item9Offset); 
+        ((BaseInStructure*)(_headPtr + Item9Offset))->PNext = (BaseInStructure*) (_headPtr + Item10Offset); 
+        ((BaseInStructure*)(_headPtr + Item10Offset))->PNext = (BaseInStructure*) (_headPtr + Item11Offset); 
+        ((BaseInStructure*)(_headPtr + Item11Offset))->PNext = (BaseInStructure*) (_headPtr + Item12Offset); 
+        ((BaseInStructure*)(_headPtr + Item12Offset))->PNext = (BaseInStructure*) (_headPtr + Item13Offset); 
+        ((BaseInStructure*)(_headPtr + Item13Offset))->PNext = (BaseInStructure*) (_headPtr + Item14Offset); 
+        ((BaseInStructure*)(_headPtr + Item14Offset))->PNext = (BaseInStructure*) (_headPtr + Item15Offset); 
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -12438,21 +12438,21 @@ public unsafe class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Block copy original struct data for speed
         Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
-        ((Chain*)(newHeadPtr + Item1Offset))->PNext = (Chain*) (newHeadPtr + Item2Offset); 
-        ((Chain*)(newHeadPtr + Item2Offset))->PNext = (Chain*) (newHeadPtr + Item3Offset); 
-        ((Chain*)(newHeadPtr + Item3Offset))->PNext = (Chain*) (newHeadPtr + Item4Offset); 
-        ((Chain*)(newHeadPtr + Item4Offset))->PNext = (Chain*) (newHeadPtr + Item5Offset); 
-        ((Chain*)(newHeadPtr + Item5Offset))->PNext = (Chain*) (newHeadPtr + Item6Offset); 
-        ((Chain*)(newHeadPtr + Item6Offset))->PNext = (Chain*) (newHeadPtr + Item7Offset); 
-        ((Chain*)(newHeadPtr + Item7Offset))->PNext = (Chain*) (newHeadPtr + Item8Offset); 
-        ((Chain*)(newHeadPtr + Item8Offset))->PNext = (Chain*) (newHeadPtr + Item9Offset); 
-        ((Chain*)(newHeadPtr + Item9Offset))->PNext = (Chain*) (newHeadPtr + Item10Offset); 
-        ((Chain*)(newHeadPtr + Item10Offset))->PNext = (Chain*) (newHeadPtr + Item11Offset); 
-        ((Chain*)(newHeadPtr + Item11Offset))->PNext = (Chain*) (newHeadPtr + Item12Offset); 
-        ((Chain*)(newHeadPtr + Item12Offset))->PNext = (Chain*) (newHeadPtr + Item13Offset); 
-        ((Chain*)(newHeadPtr + Item13Offset))->PNext = (Chain*) (newHeadPtr + Item14Offset); 
-        ((Chain*)(newHeadPtr + Item14Offset))->PNext = null; 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item14Offset))->PNext = null; 
         return new ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
     }
 

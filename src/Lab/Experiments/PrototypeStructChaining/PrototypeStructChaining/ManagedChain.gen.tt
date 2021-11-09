@@ -213,18 +213,18 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>
-    public Chain* HeadPtr => (Chain*) _headPtr;
+    public BaseInStructure* HeadPtr => (BaseInStructure*) _headPtr;
 
     /// <summary>
     /// Gets or sets the head of the chain.
     /// </summary>
     public TChain Head
     {
-        get => Unsafe.AsRef<TChain>((Chain*) _headPtr);
+        get => Unsafe.AsRef<TChain>((BaseInStructure*) _headPtr);
         set
         {
             value.StructureType();
-            var ptr = (Chain*) _headPtr;
+            var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
             Marshal.StructureToPtr(value, _headPtr, true);
             ptr->PNext = nextPtr;
@@ -238,7 +238,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
     /// <summary>
     /// Gets a pointer to the second item in the chain.
     /// </summary>
-    public Chain* Item<#= j #>Ptr => (Chain*) (_headPtr + Item<#= j #>Offset);
+    public BaseInStructure* Item<#= j #>Ptr => (BaseInStructure*) (_headPtr + Item<#= j #>Offset);
 
     /// <summary>
     /// Gets or sets item #<#= j #> in the chain.
@@ -284,7 +284,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         for (var j = 1; j < i; j++)
         {
 #>
-        <#= j == 1 ? "Chain* " : "" #>itemPtr = Item<#= j #>Ptr;
+        <#= j == 1 ? "BaseInStructure* " : "" #>itemPtr = Item<#= j #>Ptr;
         item<#= j #>.StructureType();
         Marshal.StructureToPtr(item<#= j #>, (nint)itemPtr, false);
         <#= j == 1 ? "HeadPtr" : $"Item{j - 1}Ptr" #>->PNext = itemPtr;
@@ -315,16 +315,16 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         {
 #>
         StringBuilder errorBuilder = new StringBuilder();
-        var existingPtr = (Chain*) Unsafe.AsPointer(ref chain);
-        var newPtr = (Chain*) _headPtr;
+        var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
+        var newPtr = (BaseInStructure*) _headPtr;
 <#
             for (var j = 1; j < i; j++)
             {
 #>
 
-        existingPtr = existingPtr->PNext;
-        newPtr->PNext = (Chain*) (_headPtr + Item<#= j #>Offset);
-        newPtr = newPtr->PNext;
+        existingPtr = (BaseInStructure*)existingPtr->PNext;
+        newPtr->PNext = (BaseInStructure*)(_headPtr + Item<#= j #>Offset);
+        newPtr = (BaseInStructure*)newPtr->PNext;
 
         T<#= j #> item<#= j #> = default;
         <#= j == 1 ? "var " : "" #>expectedStructureType = item<#= j #>.StructureType();
@@ -380,7 +380,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         {
 #>
         // Update all pointers
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
 <#
         } // if (i > 1)
 #>
@@ -388,7 +388,7 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         for (var j = 2; j < i; j++)
         {
 #>
-        ((Chain*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = (Chain*) (newHeadPtr + Item<#= j #>Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item<#= j #>Offset); 
 <#
         } // for (int j = 1; j < i; j++) {
 #>
@@ -421,16 +421,16 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
         Marshal.StructureToPtr(item<#= i - 1 #>, _headPtr + previousSize, false);
 
         // Update all pointers
-        ((Chain*)_headPtr)->PNext = (Chain*) (_headPtr + Item1Offset);
+        ((BaseInStructure*)_headPtr)->PNext = (BaseInStructure*) (_headPtr + Item1Offset);
 <#
             for (var j = 2; j < i; j++)
             {
 #>
-        ((Chain*)(_headPtr + Item<#= j - 1 #>Offset))->PNext = (Chain*) (_headPtr + Item<#= j #>Offset); 
+        ((BaseInStructure*)(_headPtr + Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (_headPtr + Item<#= j #>Offset); 
 <#
             } // for (int j = 1; j < i; j++) {
 #>
-        ((Chain*)(_headPtr + previousSize))->PNext = null;
+        ((BaseInStructure*)(_headPtr + previousSize))->PNext = null;
     }
 
     /// <summary>
@@ -465,19 +465,19 @@ public unsafe class ManagedChain<<#= tList #>> : ManagedChain
             if (i > 2)
             {
 #>
-        ((Chain*)newHeadPtr)->PNext = (Chain*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
 <#
                 for (var j = 2; j < i; j++)
                 {
 #>
-        ((Chain*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = <#= j == i -1 ? "null" : $"(Chain*) (newHeadPtr + Item{j}Offset)"#>; 
+        ((BaseInStructure*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = <#= j == i -1 ? "null" : $"(BaseInStructure*) (newHeadPtr + Item{j}Offset)"#>; 
 <#
                 } // for (int j = 1; j < i - 1; j++)
             }
             else // if (i > 1)
             {
                 #>
-        ((Chain*)newHeadPtr)->PNext = null;
+        ((BaseInStructure*)newHeadPtr)->PNext = null;
 <#
             }
 #>

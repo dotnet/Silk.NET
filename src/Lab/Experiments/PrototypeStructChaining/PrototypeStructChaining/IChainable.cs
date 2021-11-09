@@ -5,8 +5,8 @@ namespace Silk.Net.Vulkan;
 /// </summary>
 /// <remarks><para>Note that any structure marked <see cref="IChainable"/> must start with a
 /// <see cref="StructureType"/> and a <c>void*</c> field, in that order. This is so that a pointer to it can be coerced
-/// to a pointer to a <see cref="Chain"/>.</para></remarks>
+/// to a pointer to a <see cref="BaseInStructure"/>.</para></remarks>
 public interface IChainable : IStructuredType
 {
-    unsafe Chain* PNext { get; set; }
+    unsafe BaseInStructure* PNext { get; set; }
 }

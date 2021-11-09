@@ -75,7 +75,7 @@ public class Test
 
         Assert.Single(diagnostics);
         var error = diagnostics.First();
-        // error CS0315: The type 'Silk.Net.Vulkan.PhysicalDeviceFeatures2' cannot be used as type parameter 'TChain' in the generic type or method 'ChainExtensions.AddNext<TChain, TNext>(ref TChain, out TNext)'. There is no boxing conversion from 'Silk.Net.Vulkan.PhysicalDeviceFeatures2' to 'Silk.Net.Vulkan.IChainable<Silk.Net.Vulkan.DeviceCreateInfo>'.
+        // error CS0315: The type 'Silk.Net.Vulkan.PhysicalDeviceFeatures2' cannot be used as type parameter 'TChain' in the generic type or method 'Chain.AddNext<TChain, TNext>(ref TChain, out TNext)'. There is no boxing conversion from 'Silk.Net.Vulkan.PhysicalDeviceFeatures2' to 'Silk.Net.Vulkan.IChainable<Silk.Net.Vulkan.DeviceCreateInfo>'.
         Assert.Equal("CS0315", error.Id);
     }
 

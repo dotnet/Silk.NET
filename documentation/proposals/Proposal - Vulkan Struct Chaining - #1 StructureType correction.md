@@ -24,10 +24,6 @@ correctly set when passing to Vulkan, and to provide a mechanism for doing so.
 - The `IStructuredType` interface will usually not be implemented directly, instead `IChainable` (from
   the [unmanaged chaining proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md))
   will extend this interface.
-- The BuildTools should instead only add this interface to any structure that meets the above constraint (the structure
-  has a `StructureType SType` field) that _doesn't_ already add the `IChainable` interface. Though I believe this
-  scenario won't occur in the current Vulkan specification, we'd need to check all valid StructureType structures to
-  confirm, and regardless, writing the code to add the interface in such scenarios will future proof it.
 - Whenever the `IStructuredType` is added to an interface (either directly or indirectly) the
   corresponding `StructureType()` method should also be explicitly
   implemented ([see below](#istructuretype-implementation)).
@@ -40,6 +36,8 @@ correctly set when passing to Vulkan, and to provide a mechanism for doing so.
 - To be clear, this proposal does not need to guarantee that the `SType` field is in position 0 (i.e. first),
   that requirement is only necessary to implement the functionality
   [proposed by the unmanaged chaining system](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
+- Not all structures exposed by Vulkan have a default value for the `SType`, (e.g. `BaseOutStructure` and `BaseInStructure`),
+  where no default is available, the `StructureType()` method only returns the current value, rather than setting it.
 
 # Implementation Notes
 
@@ -72,7 +70,7 @@ public interface IStructuredType
     /// Gets the structured type's <see cref="Vulkan.StructureType"/> enum value.
     /// </summary>
     /// <remarks>
-    /// Retrieving the <see cref="Vulkan.StructureType"/> also ensures it is set to the correct value.
+    /// Retrieving the <see cref="Vulkan.StructureType"/> also ensures it is set to the correct value (if any).
     /// </remarks>
     StructureType StructureType();
 }
@@ -81,7 +79,7 @@ public interface IStructuredType
 ### IStructureType implementation
 
 Each struct generated that implements `IStructuredType` should also have the following code auto-generated, to
-explicitly implement the interface. The method sets and returns the `SType` correctly for the current structure.
+explicitly implement the interface. The method sets and returns the `SType` correctly (if any) for the current structure.
 
 ```csharp
 /// <inheritdoc />

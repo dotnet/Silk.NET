@@ -19,11 +19,11 @@ from [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%
 and so the explicit implementation of `IChainable.StructureType()` from
 [that proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md#istructuretype-implementation)
 is triggerred for the structure, providing a mechanism for ensuring the `SType` is correctly set. It then exposes
-a `Chain* PNext { get; set; }` property for easy access to the next item in the chain.
+a `BaseInStructure* PNext { get; set; }` property for easy access to the next item in the chain.
 
 The presence of the `IChainable` interface, also acts as a **guarantee** that it is safe to cast any pointer of a struct
-implementing it to a pointer to a `Chain` struct, which is a struct which has just the `SType` and `PNext` fields
-present. Therefore it is always possible to cast `void* PNext` of an `IChainable` struct to `Chain*`. It is this
+implementing it to a pointer to a `BaseInStructure` struct, which is a struct which has just the `SType` and `PNext` fields
+present. Therefore it is always possible to cast `void* PNext` of an `IChainable` struct to `BaseInStructure*`. It is this
 guarantee that requires the position of the fields to be fixed (which they are in practice). However, by ensuring we
 validate the constraints at build time (when choosing to add the interface), we can prevent downstream bugs occurring at
 run time.
@@ -57,7 +57,7 @@ generated (the static `Chain(out)` method and the explicit `IStructuredType.Stru
 implementation); as compared to all other `IChainable` structs, which will only have the
 explicit `IStructuredType.StructureType()` implementation from
 [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%231%20StructureType%20correction.md)
-and the explicit `Chain* IChainable.PNext { get; set;}` property from this proposal.
+and the explicit `BaseInStructure* IChainable.PNext { get; set;}` property from this proposal.
 
 The remaining functionality is provided entirely by the following new extension methods:
 
@@ -146,7 +146,7 @@ createinfo.AddNext...
 ```
 
 -in many cases, we only want to create a default structure for population by the API. To do so, we use the
-static `Chain` method like so:
+static `BaseInStructure` method like so:
 
 ```csharp
 PhysicalDeviceFeatures2.Chain(out var features2)
@@ -158,7 +158,7 @@ This has several advantages:
 - The structure's `SType` will be correctly set immediately.
 - The syntax is fluent, and creates more readable code when used with the other chaining methods (see below).
 
-**Note** All the chaining methods return the current start of the chain by reference (including `Chain`). This allows
+**Note** All the chaining methods return the current start of the chain by reference (including `BaseInStructure`). This allows
 each method to scan the entire chain. More importantly, it allows the Type constraints to be checked during compile time
 to ensure that a type actually extends the chain. One side effect is that `ref Chain(out)` outputs the newly created
 chain _and_ returns a reference to it. This can cause confusion to less experienced C# devs, for example:
@@ -344,7 +344,7 @@ found [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeS
 ```csharp
 namespace Silk.Net.Vulkan;
 
-public static class ChainExtensions
+public static class Chain
 {
     /// <summary>
     /// Replaces a structure in the chain (if present, and <paramref name="alwaysAdd"/> is false), or adds it to the end.
@@ -442,7 +442,7 @@ public static class ChainExtensions
 
 ### Chain Structure
 
-The `Chain` struct makes it easy to access the `SType` and `PNext` of a structure pointed to by `void* PNext`, although
+The `BaseInStructure` struct makes it easy to access the `SType` and `PNext` of a structure pointed to by `void* PNext`, although
 it is used internally, it is useful for consumers of Silk.Net to have access to use in their own scenarios, that is
 because the `IChainable` interface does not directly expose the underlying `SType` and `PNext` fields; as they are
 fields (not properties), and this proposal aims to avoid boxing (so we try not to use the interface directly
@@ -456,7 +456,7 @@ namespace Silk.Net.Vulkan;
 /// </summary>
 /// <remarks>
 /// <para>Any pointer to a structure marked as <see cref="IChainable"/> can safely be cast to a pointer to this type.</para>
-/// <para>In particular, this means that the <c>void* PNext</c> field can always be safely cast to <c>Chain*</c>, providing
+/// <para>In particular, this means that the <c>void* PNext</c> field can always be safely cast to <c>BaseInStructure*</c>, providing
 /// access to the `SType` and `PNext` fields.
 /// </para>
 /// </remarks>
@@ -469,7 +469,7 @@ public struct Chain : IChainable
     /// <summary>
     /// The next <see cref="IChainable"/> struct in the chain, if any; otherwise <see langword="null"/>.
     /// </summary>
-    public unsafe Chain* PNext;
+    public unsafe BaseInStructure* PNext;
 
     /// <inheritdoc />
     /// <remarks>Note, this cannot coerce the type as 'guaranteed by the `IStructuredType` interface.</remarks>

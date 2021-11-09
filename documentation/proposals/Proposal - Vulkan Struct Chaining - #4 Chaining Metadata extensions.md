@@ -40,13 +40,13 @@ for a given chain, at runtime. To facilitate the most common scenario 4 extensio
 
 ## Auto-generated Metadata Structures
 
-The `Extensions` dictionary is added to the `Chain` structure from
+The `Extensions` dictionary is added to the `Chain` extensions class from
 the [unmanaged chaining proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
 for discoverability. It is a direct mapping of the `structextends` attribute, and is therefore trivial to generate.
 Below is a cut down example to illustrate what will be generated:
 
 ```csharp
-public struct Chain : IChainable
+public static class Chain : IChainable
 {
     ...
     /// <summary>
@@ -161,7 +161,7 @@ The following extension methods are not auto-generated and so can be added simpl
 Gets the corresponding `ClrType` for a `StructureTYpe`.
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
     /// <summary>
@@ -188,7 +188,7 @@ Assert.Equal(typeof(DeviceCreateInfo), StructureType.DeviceCreateInfo.ClrType())
 Gets the corresponding `ClrType` for a `StructureTYpe`.
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
     /// <summary>
@@ -216,7 +216,7 @@ Assert.Null(typeof(PhysicalDeviceFeatures).StructureType());
 Tests whether the `StructureType` or `Type` can be used at the start of a chain:
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
     /// <summary>
@@ -258,7 +258,7 @@ Assert.False(typeof(PhysicalDeviceDescriptorIndexingFeatures).IsChainStart());
 Tests whether the `StructureType` or `Type` can be used in a chain:
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
     /// <summary>
@@ -301,7 +301,7 @@ Assert.True(typeof(PhysicalDeviceDescriptorIndexingFeatures).IsChainable());
 Tests whether the `StructureType` or `Type` can extend the corresponding type:
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
 
@@ -349,7 +349,7 @@ Assert.False(typeof(DeviceCreateInfo).CanExtend(typeof(PhysicalDeviceFeatures2))
 Tests whether the `StructureType` or `Type` can be extended by the corresponding type:
 
 ```csharp
-public static class ChainExtensions
+public static class Chain
 {
     ...
 
