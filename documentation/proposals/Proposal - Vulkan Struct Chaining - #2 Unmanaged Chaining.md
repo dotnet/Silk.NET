@@ -120,8 +120,12 @@ presence of the `ManagedChain` classes
 from [the proposal for managed chains](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%233%20Managed%20Chaining.md),
 along with a well documented API should highlight the danger of such practices.
 
-Indeed, it is important to remember that such dangers are already part of the existing implementation and are a feature of
-using unmanaged pointers in .NET rather than a limitation of this proposal.
+Indeed, it is important to remember that such dangers are already part of the existing implementation and are a feature
+of using unmanaged pointers in .NET rather than a limitation of this proposal.
+
+To be discussed:
+
+- Whether to include [specific chain interfaces](#chain-interfaces-optional).
 
 # Usage
 
@@ -494,3 +498,23 @@ public static unsafe ref [StrucType] Chain(
     return ref capture;
 }
 ```
+
+### Chain interfaces (Optional)
+
+As a useful optional extra, whenever an `IChainStart` struct is found, a corresponding `I[StructName]Chain` is created,
+that extends from `IChainable`, e.g.:
+
+```csharp
+namespace Silk.Net.Vulkan;
+
+/// <summary>
+/// Marks a <see cref="IChainable">chainable</see> struct as being part of the `DeviceCreateInfo` chain.
+/// </summary>
+public interface IDeviceCreateInfoChain : IChainable
+{
+}
+```
+
+This interface is then added to the corresponding `IChainStart` _and_ any struct that implements the
+corresponding `IExtendsChain<TChain>`. The primary benefit of this approach is to make it significantly easier to write
+code that accepts any part of a specific chain (including the head).
