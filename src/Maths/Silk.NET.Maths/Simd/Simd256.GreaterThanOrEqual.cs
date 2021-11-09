@@ -59,10 +59,13 @@ namespace Silk.NET.Maths
                 if (Simd128<T>.IsHardwareAccelerated)
                 {   
 #if AdvSIMD
-                    var lower = Simd128.GreaterThanOrEqual(left.GetLower(), right.GetLower());
-                    var upper = Simd128.GreaterThanOrEqual(left.GetUpper(), right.GetUpper());
-                    // There's no generic Vector256.Create
-                    return Vector256.Create(lower.AsByte(), upper.AsByte()).As<byte, T>();
+                    if (AdvSimd.IsSupported)
+                    {
+                        var lower = Simd128.GreaterThanOrEqual(left.GetLower(), right.GetLower());
+                        var upper = Simd128.GreaterThanOrEqual(left.GetUpper(), right.GetUpper());
+                        // There's no generic Vector256.Create
+                        return Vector256.Create(lower.AsByte(), upper.AsByte()).As<byte, T>();
+                    }
 #else
                     /*
                      
