@@ -360,9 +360,9 @@ namespace Silk.NET.Maths
             [MethodImpl(MaxOpt)]
             static bool SByte(T f)
             {
-                if (typeof(T) == typeof(int))
+                if (typeof(T) == typeof(sbyte))
                 {
-                    return (int) (object) f < 0;
+                    return (sbyte) (object) f < 0;
                 }
 
                 return BigInteger(f);
@@ -455,6 +455,17 @@ namespace Silk.NET.Maths
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static unsafe int SingleToInt32Bits(float value)
+        {
+#if NETSTANDARD2_1_OR_GREATER
+            return BitConverter.SingleToInt32Bits(value);
+#else
+            // https://source.dot.net/#System.Private.CoreLib/BitConverter.cs,808 
+            return *((int*)&value);
+#endif
+        } 
+
         /// <summary>
         /// Determines whether the specified value is normal.
         /// </summary>
@@ -476,7 +487,13 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return IsNormal((float) (object) f);
+#if NETSTANDARD2_1_OR_GREATER
+                    return float.IsNormal((float) (object) f);
+#else
+                    int bits = SingleToInt32Bits((float) (object) f);
+                    bits &= 0x7FFFFFFF;
+                    return (bits < 0x7F800000) && (bits != 0) && ((bits & 0x7F800000) != 0);
+#endif
                 }
 
                 return Double(f);
@@ -487,7 +504,13 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return IsNormal((double) (object) f);
+#if NETSTANDARD2_1_OR_GREATER
+                    return double.IsNormal((double) (object) f);
+#else
+                    long bits = BitConverter.DoubleToInt64Bits((double) (object) f);
+                    bits &= 0x7FFFFFFFFFFFFFFF;
+                    return (bits < 0x7FF0000000000000) && (bits != 0) && ((bits & 0x7FF0000000000000) != 0);
+#endif
                 }
 
                 return Other(f);
