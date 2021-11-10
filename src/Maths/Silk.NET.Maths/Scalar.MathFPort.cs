@@ -78,28 +78,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0 && INTRINSICS
-                    if (Sse.IsSupported)
-                    {
-                        return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
-                    }
-                    else if (AdvSimd.IsSupported)
-                    {
-                        return (T) (object) (float)AdvSimd.AbsScalar(Vector64.CreateScalarUnsafe((float) (object) x)).ToScalar();
-                    }
-                    else
-#elif NETCOREAPP3_1 && INTRINSICS
-                    if (Sse.IsSupported)
-                    {
-                        return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.CreateScalarUnsafe((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
-                    }
-                    else
-#endif
-                    {
-                        var v = *(uint*) &x;
-                        v &= 0x7FFF_FFFF;
-                        return *(T*) &v;
-                    }
+                    return (T) (object) Math.Abs((float) (object) x);
                 }
 
                 return Double(x);
@@ -110,28 +89,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-#if NET5_0 && INTRINSICS
-                    if (Sse2.IsSupported)
-                    {
-                        return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
-                    }
-                    else if (AdvSimd.IsSupported)
-                    {
-                        return (T) (object) (double)AdvSimd.AbsScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
-                    }
-                    else
-#elif NETCOREAPP3_1 && INTRINSICS
-                    if (Sse2.IsSupported)
-                    {
-                        return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.CreateScalarUnsafe((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
-                    }
-                    else
-#endif
-                    {
-                        var v = *(ulong*) &x;
-                        v &= 0x7FFF_FFFF_FFFF_FFFF;
-                        return *(T*) &v;
-                    }
+                    return (T) (object) Math.Abs((double) (object) x);
                 }
 
                 return SByte(x);

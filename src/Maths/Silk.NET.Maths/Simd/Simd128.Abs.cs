@@ -39,10 +39,16 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(sbyte))
                 {
 #if AdvSIMD
-                    return AdvSimd.Abs(vector.AsSByte()).As<byte, T>();
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsSByte()).As<byte, T>();
+                    }
 #endif
 #if SSE
-                    return Ssse3.Abs(vector.AsSByte()).As<byte, T>();
+                    if (Sse2.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsSByte()).As<byte, T>();
+                    }
 #endif
                 }
         
@@ -64,10 +70,16 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(short))
                 {
 #if AdvSIMD
-                    return AdvSimd.Abs(vector.AsInt16()).As<ushort, T>();
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsInt16()).As<ushort, T>();
+                    }
 #endif
 #if SSE
-                    return Ssse3.Abs(vector.AsInt16()).As<ushort, T>();
+                    if (Sse2.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsInt16()).As<ushort, T>();
+                    }
 #endif
                 }
         
@@ -89,10 +101,16 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(int))
                 {
 #if AdvSIMD
-                    return AdvSimd.Abs(vector.AsInt32()).As<uint, T>();
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsInt32()).As<uint, T>();
+                    }
 #endif
 #if SSE
-                    return Ssse3.Abs(vector.AsInt32()).As<uint, T>();
+                    if (Sse2.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsInt32()).As<uint, T>();
+                    }
 #endif
                 }
         
@@ -134,7 +152,7 @@ namespace Silk.NET.Maths
                 var vec = Vector128<T>.Zero;
                 for (int i = 0; i < Vector128<T>.Count; i++)
                 {
-                    vec.WithElement(i, Scalar.Abs(vector.GetElement(i)));
+                    vec = vec.WithElement(i, Scalar.Abs(vector.GetElement(i)));
                 }
                 return vec;
             }

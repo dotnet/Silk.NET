@@ -124,6 +124,8 @@ namespace Silk.NET.Maths
             false;
 #endif
 
+        internal static readonly Vector128<T> MaxValueOver2;
+
         [MethodImpl(Scalar.MaxOpt)]
         static Simd128()
         {
@@ -141,13 +143,14 @@ namespace Silk.NET.Maths
             Pi = Simd128.Create(Scalar<T>.Pi);
             PiOver2 = Simd128.Create(Scalar<T>.PiOver2);
             Tau = Simd128.Create(Scalar<T>.Tau);
+            MaxValueOver2 = Simd128.Add(Simd128.Divide(Simd128<T>.MaxValue, Simd128<T>.Two), Simd128<T>.One);
 #if NET5_0_OR_GREATER
             AllBitsSet = Vector128<T>.AllBitsSet;
 #else
             AllBitsSet = Vector128<T>.Zero;
             for (int i = 0; i < Vector128<T>.Count; i++)
             {
-                AllBitsSet.WithElement(i, Scalar.Not(Scalar<T>.Zero));
+                AllBitsSet = AllBitsSet.WithElement(i, Scalar.Not(Scalar<T>.Zero));
             }
 #endif
         }

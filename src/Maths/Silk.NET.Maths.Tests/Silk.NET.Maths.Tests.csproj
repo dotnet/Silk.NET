@@ -21,4 +21,19 @@
       </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="SimdTests.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>SimdTests.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="SimdTests.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>SimdTests.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
