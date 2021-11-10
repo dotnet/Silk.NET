@@ -16,7 +16,7 @@ namespace Silk.NET.Maths.Benchmark
 {
     [SimpleJob(RuntimeMoniker.Net50, launchCount: 1, warmupCount: 3, targetCount: 3)]
     [DisassemblyDiagnoser(exportHtml: true)]
-    public unsafe class SIMDDisasm
+    public unsafe class SimdBenchmarks
     {
         const int IterCount = 30;
         void* a;
