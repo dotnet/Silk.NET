@@ -22,6 +22,37 @@ namespace Silk.NET.Maths
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector256<T> IsPositiveInfinity<T>(Vector256<T> vector) where T : unmanaged
         {
+            return SingleOrDouble(vector);
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector256<T> SingleOrDouble(Vector256<T> vector)
+            {
+                if (typeof(T) == typeof(float) || typeof(T) == typeof(double))
+                {
+                    return Equal(vector, Simd256<T>.PositiveInfinity);
+                }
+                
+                return Integer(vector);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector256<T> Integer(Vector256<T> vector)
+            {
+                if (typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long))
+                {
+                    return Simd256<T>.Zero;
+                } 
+                
+                return Other(vector);
+            }
+        
             [MethodImpl(Scalar.MaxOpt)]
             static Vector256<T> Other(Vector256<T> vector)
             {
