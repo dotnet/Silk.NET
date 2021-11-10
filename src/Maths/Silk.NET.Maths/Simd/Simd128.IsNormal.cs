@@ -37,28 +37,24 @@ namespace Silk.NET.Maths
                      */
                     var bits = And(vector.AsInt32(), SingleUnsignedMask);
                     return 
-                    // (bits < 0x7F800000) && (bits != 0) && ((bits & 0x7F800000) != 0)
-                    And(
-                        // (bits < 0x7F800000) && (bits != 0)
+                        // we exclude bits != 0
+                        // because we don't have short-circuited "and" in simd,
+                        // so doing this is useless since bits != 0 is a weaker
+                        // statement than (bits & 0x7F800000) != 0.
+                        // (bits < 0x7F800000) && ((bits & 0x7F800000) != 0)
                         And(
                             // bits < 0x7F800000
                             LessThan(bits, SingleFiniteThreshold),
-                            
-                            // bits != 0
-                            NotEqual(bits, Simd128<int>.Zero)
-                        ),
-                        
-                        // (bits & 0x7F800000) != 0
-                        NotEqual(
-                            // bits & 0x7F800000
-                            And(
-                                bits,
-                                SingleFiniteThreshold
-                            ),
-                            
-                            Simd128<int>.Zero
-                        )
-                    ).As<int, T>();
+                            // (bits & 0x7F800000) != 0
+                            NotEqual(
+                                // bits & 0x7F800000
+                                And(
+                                    bits,
+                                    SingleFiniteThreshold
+                                ),
+                                Simd128<int>.Zero
+                            )
+                        ).As<int, T>();
                 }
 
                 return Double(vector);
@@ -75,7 +71,26 @@ namespace Silk.NET.Maths
                     bits &= 0x7FFFFFFFFFFFFFFF;
                     return (bits < 0x7FF0000000000000) && (bits != 0) && ((bits & 0x7FF0000000000000) != 0);
                      */
-                    return LessThan(vector.AsInt64(), Simd128<long>.Zero).As<long, T>();
+                    var bits = And(vector.AsInt64(), DoubleUnsignedMask);
+                    return 
+                        // we exclude bits != 0
+                        // because we don't have short-circuited "and" in simd,
+                        // so doing this is useless since bits != 0 is a weaker
+                        // statement than (bits & 0x7FF0000000000000) != 0.
+                        // (bits < 0x7FF0000000000000) && ((bits & 0x7FF0000000000000) != 0)
+                        And(
+                            // bits < 0x7FF0000000000000
+                            LessThan(bits, DoubleFiniteThreshold),
+                            // (bits & 0x7FF0000000000000) != 0
+                            NotEqual(
+                                // bits & 0x7FF0000000000000
+                                And(
+                                    bits,
+                                    DoubleFiniteThreshold
+                                ),
+                                Simd128<long>.Zero
+                            )
+                        ).As<long, T>();
                 }
                 
                 return Integer(vector);
