@@ -5,28 +5,16 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET November 2021 Update
+            Silk.NET .NET Conf 2021 Update
             
-            - Added support for BigInteger and Complex in the Silk.NET.Maths.Scalar APIs. (thanks @WhiteBlackGoose)
-            - Added helper constructors for maths types (Rectangle, Box2D, Box3D, etc). (thanks @nathan-alden-sr)
-            - Added bitwise APIs to Silk.NET.Maths.Scalar. (thanks @WhiteBlackGoose)
-            - Added support for configuring OpenGL multisamping.
-            - Updated to Vulkan 1.2.197.
-            - Updated to latest OpenCL specifications.
-            - Updated to latest OpenGL specifications.
-            - Updated DirectX and Win32 bindings to Windows 11 SDK.
-            - Removed redundant references with no DLLs (i.e. BCL/legacy packages not needed on newer platforms, thanks @nathan-alden-sr @WhiteBlackGoose)
-            - Removed problematic implicit-in OpenGL overloads (fixes the infamous VertexAttribPointer bug)
-            - Fixed incorrect character encoding of keyboard (text) input on the SDL backend. (thanks @roeyskoe)
-            - Fixed native libraries not being resolved despite being present in the "runtimes" folder.
-            - Miscellaneous documentation fixes and improvements.
+            - Fixes issues with 2.10 (compiled against .NET 6 RC1) not working correctly in projects using the .NET 6 Release SDK.
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.10.0</VersionPrefix>
+        <VersionPrefix>2.10.1</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
