@@ -9860,6 +9860,126 @@ namespace Silk.NET.Maths.Tests
             }
         }
         [Fact]
+        public void Simd64_Sign_byte()
+        {
+            Vector64<byte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<byte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_sbyte()
+        {
+            Vector64<sbyte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<sbyte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_ushort()
+        {
+            Vector64<ushort> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<ushort>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_short()
+        {
+            Vector64<short> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<short>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_uint()
+        {
+            Vector64<uint> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<uint>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_int()
+        {
+            Vector64<int> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<int>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_ulong()
+        {
+            Vector64<ulong> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<ulong>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_long()
+        {
+            Vector64<long> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<long>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_float()
+        {
+            Vector64<float> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<float>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd64_Sign_double()
+        {
+            Vector64<double> a;
+            SimdTestsUtils.FillWithRandomData(&a, 8); 
+            var actual = Simd64.Sign(a);
+            for (int i = 0; i < Vector64<double>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
         public void Simd128_Not_byte()
         {
             Vector128<byte> a;
@@ -10940,6 +11060,126 @@ namespace Silk.NET.Maths.Tests
             }
         }
         [Fact]
+        public void Simd128_Sign_byte()
+        {
+            Vector128<byte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<byte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_sbyte()
+        {
+            Vector128<sbyte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<sbyte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_ushort()
+        {
+            Vector128<ushort> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<ushort>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_short()
+        {
+            Vector128<short> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<short>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_uint()
+        {
+            Vector128<uint> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<uint>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_int()
+        {
+            Vector128<int> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<int>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_ulong()
+        {
+            Vector128<ulong> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<ulong>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_long()
+        {
+            Vector128<long> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<long>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_float()
+        {
+            Vector128<float> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<float>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd128_Sign_double()
+        {
+            Vector128<double> a;
+            SimdTestsUtils.FillWithRandomData(&a, 16); 
+            var actual = Simd128.Sign(a);
+            for (int i = 0; i < Vector128<double>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
         public void Simd256_Not_byte()
         {
             Vector256<byte> a;
@@ -12017,6 +12257,126 @@ namespace Silk.NET.Maths.Tests
             {
                 var expected = Scalar.IsPositiveInfinity(a.GetElement(i)) ? Scalar<double>.AllBitsSet : Scalar<double>.Zero;
                 Assert.True(expected == actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_byte()
+        {
+            Vector256<byte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<byte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_sbyte()
+        {
+            Vector256<sbyte> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<sbyte>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_ushort()
+        {
+            Vector256<ushort> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<ushort>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_short()
+        {
+            Vector256<short> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<short>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_uint()
+        {
+            Vector256<uint> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<uint>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_int()
+        {
+            Vector256<int> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<int>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_ulong()
+        {
+            Vector256<ulong> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<ulong>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_long()
+        {
+            Vector256<long> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<long>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_float()
+        {
+            Vector256<float> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<float>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || float.IsNaN(expected) && float.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+            }
+        }
+        [Fact]
+        public void Simd256_Sign_double()
+        {
+            Vector256<double> a;
+            SimdTestsUtils.FillWithRandomData(&a, 32); 
+            var actual = Simd256.Sign(a);
+            for (int i = 0; i < Vector256<double>.Count; i++)
+            {
+                var expected = Scalar.Sign(a.GetElement(i));
+                Assert.True(expected == (int)actual.GetElement(i) || double.IsNaN(expected) && double.IsNaN(actual.GetElement(i)), $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
     }

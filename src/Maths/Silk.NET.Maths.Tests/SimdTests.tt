@@ -83,7 +83,7 @@ namespace Silk.NET.Maths.Tests
     public unsafe class SimdTests_Vector_Vector
     {
 <# foreach (var bitness in new [] { 64, 128, 256 }) { #>
-<# foreach (var method in new [] { "Not", "Abs", "IsFinite", "IsInfinity", "IsNaN", "IsNegative", "IsNegativeInfinity", "IsNormal", "IsPositiveInfinity" }) { #>
+<# foreach (var method in new [] { "Not", "Abs", "IsFinite", "IsInfinity", "IsNaN", "IsNegative", "IsNegativeInfinity", "IsNormal", "IsPositiveInfinity", "Sign" }) { #>
 <# foreach (var type in new [] { "byte", "sbyte", "ushort", "short", "uint", "int", "ulong", "long", "float", "double" }) {#>
         [Fact]
         public void Simd<#= bitness #>_<#= method #>_<#= type #>()
@@ -93,9 +93,10 @@ namespace Silk.NET.Maths.Tests
             var actual = Simd<#= bitness #>.<#= method #>(a);
             for (int i = 0; i < Vector<#= bitness #><<#= type #>>.Count; i++)
             {
-                var expected = Scalar.<#= method #>(a.GetElement(i))<#= method is "Not" or "Abs" ? "" : $" ? Scalar<{type}>.AllBitsSet : Scalar<{type}>.Zero" #>;
+                var expected = Scalar.<#= method #>(a.GetElement(i))<#= method is "Not" or "Abs" or "Sign" ? "" : $" ? Scalar<{type}>.AllBitsSet : Scalar<{type}>.Zero" #>;
 <# var nanProcess = type is "float" or "double" ? $" || {type}.IsNaN(expected) && {type}.IsNaN(actual.GetElement(i))" : ""; #>
-                Assert.True(expected == actual.GetElement(i)<#= nanProcess #>, $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
+<# var cast = method is "Sign" ? "(int)" : ""; #>
+                Assert.True(expected == <#= cast #>actual.GetElement(i)<#= nanProcess #>, $"\nId {i}\na[i]: {a.GetElement(i)}\nActual[i]: {actual.GetElement(i)}\nExpected: {expected}");
             }
         }
 <# } #>
