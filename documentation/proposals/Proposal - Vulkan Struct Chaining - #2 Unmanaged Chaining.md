@@ -6,7 +6,7 @@ on [Proposal - Vulkan Struct Chaining - #1 StructureType correction](Proposal%20
 
 This proposal presents a lightweight mechanism for fluently building Vulkan Structure Chains. You may wish to start with
 the [Usage section below](#Usage) to aid understanding. There is also a fully working prototype
-[in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/).
+[in Pull Request 683](https://github.com/dotnet/Silk.NET/pull/683).
 
 To do so it marks any structure that meets the following requirements as being `IChainable`:
 
@@ -22,19 +22,22 @@ is triggerred for the structure, providing a mechanism for ensuring the `SType` 
 a `BaseInStructure* PNext { get; set; }` property for easy access to the next item in the chain.
 
 The presence of the `IChainable` interface, also acts as a **guarantee** that it is safe to cast any pointer of a struct
-implementing it to a pointer to a `BaseInStructure` struct, which is a struct which has just the `SType` and `PNext` fields
-present. Therefore it is always possible to cast `void* PNext` of an `IChainable` struct to `BaseInStructure*`. It is this
-guarantee that requires the position of the fields to be fixed (which they are in practice). However, by ensuring we
-validate the constraints at build time (when choosing to add the interface), we can prevent downstream bugs occurring at
-run time.
+implementing it to a pointer to a `BaseInStructure` struct, which is a struct which has just the `SType` and `PNext`
+fields present. Therefore it is always possible to cast `void* PNext` of an `IChainable` struct to `BaseInStructure*`.
+It is this guarantee that requires the position of the fields to be fixed (which they are in practice). However, by
+ensuring we validate the constraints at build time (when choosing to add the interface), we can prevent downstream bugs
+occurring at run time.
 
 **Note** that the `IChainable` interface adds the additional constraint that the `StructureType SType` field must be at
-offset 0, i.e. in the first position.
+offset 0, i.e. in the first position to facilitate this functionality - which is not a constraint of `IStructuredType`.
 
-However, rather than extending `IChainable` directly, it will be more common to choose one of `IChainStart`
-or `IExtendsChain<TChain>` (both of which extend `IChainable`). `BuildTools` will do this based on the `structextends`
-attribute provided in
-the [Vulkan Specification](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Headers/master/registry/vk.xml)).
+However, rather than extending `IChainable` directly, where
+the [Vulkan Specification](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Headers/master/registry/vk.xml))
+specifies chaining constraints, via the presence of the `structextends` attribute, `BuildTools` chooses one
+of `IChainStart` or `IExtendsChain<TChain>` (both of which extend `IChainable`). The specification has nearly 100 chains
+defined in this manner, and many of the >700 structures form part of these chains. However, over 200 structures are not
+curretnly defined as part of a chain, and as such, all the utilities proposed have a 'looser' mechanism for working
+with `IChainable` directly when it is necessary to do so.
 
 For example, if `struct B` extends `struct A`, then `struct B` will be marked with `IExtendsChain<A>` and `struct A`
 will be marked with `IChainStart`. A struct may only extend `IChainStart` once (even though it may appear in
@@ -67,24 +70,37 @@ public static unsafe ref TChain SetNext<TChain, TNext>(this ref TChain chain, re
     where TChain : struct, IChainStart
     where TNext : struct, IExtendsChain<TChain> {...}
     
+public static unsafe ref TChain SetNextAny<TChain, TNext>(this ref TChain chain, ref TNext value,
+    where TChain : struct, IChainable
+    where TNext : struct, IChainable {...}
+    
 public static unsafe ref TChain AddNext<TChain, TNext>(this ref TChain chain, out TNext next)
     where TChain : struct, IChainStart
     where TNext : struct, IExtendsChain<TChain> {...}
+    
+public static unsafe ref TChain AddNextAny<TChain, TNext>(this ref TChain chain, out TNext next)
+    where TChain : struct, IChainable
+    where TNext : struct, IChainable {...}
 
 public static unsafe ref TChain TryAddNext<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
     where TChain : struct, IChainStart
     where TNext : struct, IExtendsChain<TChain> {...}
 
+public static unsafe ref TChain TryAddNextAny<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
+    where TChain : struct, IChainable
+    where TNext : struct, IChainable {...}
+
 public static unsafe int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
     where TChain : struct, IChainStart
     where TNext : struct, IExtendsChain<TChain> {...}
+
+public static unsafe int IndexOfAny<TChain, TNext>(this ref TChain chain, ref TNext value)
+    where TChain : struct, IChainable
+    where TNext : struct, IChainable {...}
 ```
 
-Their implementation can be
-found [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/ChainExtensions.cs) and
-their use is detailed below.
-
-These extension methods
+An implementation can be found [in Pull Request 683](https://github.com/dotnet/Silk.NET/pull/683) and their use is
+detailed below.
 
 # Contributors
 
@@ -95,7 +111,7 @@ These extension methods
 - [x] Proposed
 - [ ] Discussed with API Review Board (ARB)
 - [ ] Approved
-- [ ] Implemented
+- [x] Implemented
 
 # Design Decisions
 
@@ -129,12 +145,20 @@ To be discussed:
 
 # Usage
 
-The proposal provides for the following usage patterns:
+The proposal provides for the following usages. Note that where an `Any` extension method is mentioned, it is identical
+to the non-`Any` version (e.g. `AddNext` and `AddNextAny` are equivalent), save that the `Any` version does not
+constrain the types to those associated with a defined chain.
 
 ### Chain Building
 
-You can happily create the start of a chain as usual, and it's `SType` will be coerced when you start using it as a
-chain:
+You can happily create the start of a chain as usual, by declaring a variable first. Indeed it is necessary to do so if
+you wish to specify non-default values (though you can also make use of `SetNext`s replace functionality). You also need
+to use this approach when starting a chain which is not explicitly defined as a chain start by the specification. If you
+do start a chain with such a structure, you will have to use the `Any` versions of the extension methods below to
+continue manipulating it.
+
+Regardless, the `SType` and `PNext` will be overwritten whenever you start manipulating the chain, so you should never
+set them manually. For example:
 
 ```csharp
 var createInfo = new DeviceCreateInfo
@@ -145,7 +169,7 @@ var createInfo = new DeviceCreateInfo
 createinfo.AddNext...
 ```
 
--in many cases, we only want to create a default structure for population by the API. To do so, we use the
+In many cases, we only want to create a default structure for population by the API. To do so, we use the
 static `BaseInStructure` method like so:
 
 ```csharp
@@ -158,10 +182,10 @@ This has several advantages:
 - The structure's `SType` will be correctly set immediately.
 - The syntax is fluent, and creates more readable code when used with the other chaining methods (see below).
 
-**Note** All the chaining methods return the current start of the chain by reference (including `BaseInStructure`). This allows
-each method to scan the entire chain. More importantly, it allows the Type constraints to be checked during compile time
-to ensure that a type actually extends the chain. One side effect is that `ref Chain(out)` outputs the newly created
-chain _and_ returns a reference to it. This can cause confusion to less experienced C# devs, for example:
+**Note** All the chaining methods return the current start of the chain by reference (including `BaseInStructure`). This
+allows each method to scan the entire chain. More importantly, it allows the Type constraints to be checked during
+compile time to ensure that a type actually can extend the chain. One side effect is that `ref Chain(out)` outputs the
+newly created chain _and_ returns a reference to it. This can cause confusion to less experienced C# devs, for example:
 
 ```csharp
 // Don't do this, it is harmless but unnecessary and confusing!
@@ -177,7 +201,12 @@ actually updates the `PNext` of variable `b`. Once the chain is built the final 
 into `a`. None of this is undefined behaviour, but as it is generally poorly understood so none of the examples ever
 recommend assigning the output of a chain.
 
-### AddNext
+The `Chain` method is a static method implemented on `IChainStart` structures, the remaining methods are actually
+extension methods. The methods ending with `Any` can be used with any `IChainable` structure, but they do not constrain
+the entries, or the head of the chain to being structures explicitly mentioned by the specification. The non-`Any`
+methods are more restrictive, and should usually be used in preference.
+
+### AddNext / AddNextAny
 
 The most common use case is to add an empty structure to the end of a chain for it to be populated by the Vulkan API,
 this can now be done like so:
@@ -194,7 +223,7 @@ PhysicalDeviceFeatures2
 Each method `out` puts a struct into the local stack frame for querying once populated, and the pointers point to this
 local variable. Despite generics and interfaces being used, the chain methods avoid the heap entirely.
 
-### TryAddNext
+### TryAddNext / TryAddNextAny
 
 You may only want to add a structure if it doesn't already exist in the chain, this can be done with `TryAddNext`, e.g.:
 
@@ -207,7 +236,7 @@ PhysicalDeviceFeatures2
     .TryAddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures2, out bool added);
 ```
 
-### SetNext
+### SetNext / SetNextAny
 
 Sometimes we may wish to set the initial state of a structure, or replace any existing item within the structure that
 has the same `StructureType` we can do this with `SetNext`:
@@ -255,7 +284,7 @@ PhysicalDeviceFeatures2
     .SetNext(ref indexingFeatures2, true);
 ```
 
-### IndexOf
+### IndexOf / IndexOfAny
 
 Sometimes it's useful to know if a structure you previously supplied is still in a chain, this can be done
 with `IndexOf`, which returns a non-negative index (zero-indexed) if the structure is found, eg.:
@@ -297,6 +326,10 @@ namespace Silk.Net.Vulkan;
 /// to a pointer to a <see cref="Chain"/>.</para></remarks>
 public interface IChainable : IStructuredType
 {
+    /// <summary>
+    /// Points to the next <see cref="IChainable"/> in this chain, if any; otherwise <see langword="null"/>.
+    /// </summary>
+    unsafe BaseInStructure* PNext { get; set; }
 }
 
 ```
@@ -336,14 +369,17 @@ public interface IExtendsChain<out TChain> : IChainable
 }
 ```
 
-### Chain Extensions
+### Chain Extension Methods
 
 Provides the struct chaining functionality, the full implementation can be
 found [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/ChainExtensions.cs):
 
 ```csharp
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
+/// <summary>
+/// Extension methods and utilities for building unmanaged structure chains.
+/// </summary>
 public static class Chain
 {
     /// <summary>
@@ -364,21 +400,81 @@ public static class Chain
     /// {
     ///     ShaderInputAttachmentArrayDynamicIndexing = true
     /// };
-    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKHR
+    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKhr
     /// {
     ///     AccelerationStructure = true
     /// };
     /// 
     /// PhysicalDeviceFeatures2
-    ///     .Chain(out var features2)
+    ///     .BaseInStructure(out var features2)
     ///     .SetNext(ref indexingFeatures)
     ///     .SetNext(ref accelerationStructureFeaturesKhr);
     /// </code>
     /// </remarks>
-    public static unsafe ref TChain SetNext<TChain, TNext>(this ref TChain chain, ref TNext value,
-        bool alwaysAdd = false)
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ref TChain SetNext<TChain, TNext>
+    (
+        this ref TChain chain,
+        ref TNext value,
+        bool alwaysAdd = false
+    )
         where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain> {...}
+        where TNext : struct, IExtendsChain<TChain>
+        => ref SetNextAny(ref chain, ref value, alwaysAdd);
+
+    /// <summary>
+    /// Replaces a structure in the chain (if present, and <paramref name="alwaysAdd"/> is false), or adds it to the end.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="value">A reference to the structure to update</param>
+    /// <param name="alwaysAdd">Always adds to the end of the chain, even if an equivalent structure is present.</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the value</typeparam>
+    /// <returns>A reference to the value value in the chain</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the supplied value will have their `SType` correctly set.  Further,
+    /// the supplied structure's <see cref="IChainable.PNext"/> will be overwritten.</para>
+    /// <para>To use</para>
+    /// <code>
+    /// var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+    /// {
+    ///     ShaderInputAttachmentArrayDynamicIndexing = true
+    /// };
+    /// var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKhr
+    /// {
+    ///     AccelerationStructure = true
+    /// };
+    /// 
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .SetNext(ref indexingFeatures)
+    ///     .SetNext(ref accelerationStructureFeaturesKhr);
+    /// </code>
+    /// </remarks>
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    public static unsafe ref TChain SetNextAny<TChain, TNext>
+    (
+        this ref TChain chain,
+        ref TNext value,
+        bool alwaysAdd = false
+    )
+        where TChain : struct, IChainable
+        where TNext : struct, IChainable
+    {...}
 
     /// <summary>
     /// Adds a structure to the end of the chain.
@@ -393,16 +489,60 @@ public static class Chain
     /// <para>To use specify the output type required, e.g.:</para>
     /// <code>
     /// PhysicalDeviceFeatures2
-    ///     .Chain(out var features2)
+    ///     .BaseInStructure(out var features2)
     ///     .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
-    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
+    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
     /// </code>
     /// <para>Note, the value is always added, even if an equivalent value is added in the chain already.  Use
     /// <see cref="TryAddNext{TChain,TNext}"/> to only add if not already present.</para>
     /// </remarks>
-    public static unsafe ref TChain AddNext<TChain, TNext>(this ref TChain chain, out TNext next)
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ref TChain AddNext<TChain, TNext>(this ref TChain chain, out TNext next)
         where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain> {...}
+        where TNext : struct, IExtendsChain<TChain>
+        => ref AddNextAny(ref chain, out next);
+
+    /// <summary>
+    /// Adds a structure to the end of the chain.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="next">The structure added to the end of the chain</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the structure to add</typeparam>
+    /// <returns>The reference to the chain.</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the added structure will have their `SType` correctly set</para>
+    /// <para>To use specify the output type required, e.g.:</para>
+    /// <code>
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
+    ///     .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKhr accelerationStructureFeaturesKhr);
+    /// </code>
+    /// <para>Note, the value is always added, even if an equivalent value is added in the chain already.  Use
+    /// <see cref="TryAddNext{TChain,TNext}"/> to only add if not already present.</para>
+    /// </remarks>
+    /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para></remarks>
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    public static unsafe ref TChain AddNextAny<TChain, TNext>(this ref TChain chain, out TNext next)
+        where TChain : struct, IChainable
+        where TNext : struct, IChainable
+    {...}
 
     /// <summary>
     /// Tries to add a structure to the end of the chain.
@@ -418,13 +558,55 @@ public static class Chain
     /// <para>To use specify the output type required, e.g.:</para>
     /// <code>
     /// PhysicalDeviceFeatures2
-    ///     .Chain(out var features2)
+    ///     .BaseInStructure(out var features2)
     ///     .TryAddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures, out var added);
     /// </code>
     /// </remarks>
-    public static unsafe ref TChain TryAddNext<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ref TChain TryAddNext<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
         where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain> {...}
+        where TNext : struct, IExtendsChain<TChain>
+        => ref TryAddNextAny(ref chain, out next, out added);
+
+    /// <summary>
+    /// Tries to add a structure to the end of the chain.
+    /// </summary>
+    /// <param name="chain">The current chain</param>
+    /// <param name="next">The structure added to the end of the chain</param>
+    /// <param name="added">Whether the structure was actually added</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the structure to add</typeparam>
+    /// <returns>The reference to the chain.</returns>
+    /// <remarks>
+    /// <para>Note that both the supplied chain, and the added structure will have their `SType` correctly set</para>
+    /// <para>To use specify the output type required, e.g.:</para>
+    /// <code>
+    /// PhysicalDeviceFeatures2
+    ///     .BaseInStructure(out var features2)
+    ///     .TryAddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures, out var added);
+    /// </code>
+    /// </remarks>
+    /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para></remarks>
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    public static unsafe ref TChain TryAddNextAny<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
+        where TChain : struct, IChainable
+        where TNext : struct, IChainable
+    {...}
 
     /// <summary>
     /// Returns the index of the <paramref name="value"/> in the <paramref name="chain"/>, if present.
@@ -434,18 +616,51 @@ public static class Chain
     /// <typeparam name="TChain">The type of the current chain</typeparam>
     /// <typeparam name="TNext">The type of the value</typeparam>
     /// <returns>The zero-indexed index if found; otherwise -1.</returns>
-    public static unsafe int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOfAny{TChain,TNext}"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
         where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain> {...}
+        where TNext : struct, IExtendsChain<TChain>
+        => IndexOfAny(ref chain, ref value);
+
+    /// <summary>
+    /// Returns the index of the <paramref name="value"/> in the <paramref name="chain"/>, if present.
+    /// </summary>
+    /// <param name="chain">The chain</param>
+    /// <param name="value">The structure value</param>
+    /// <typeparam name="TChain">The type of the current chain</typeparam>
+    /// <typeparam name="TNext">The type of the value</typeparam>
+    /// <returns>The zero-indexed index if found; otherwise -1.</returns>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para></remarks>
+    /// <seealso cref="SetNext{TChain,TNext}"/>
+    /// <seealso cref="SetNextAny{TChain,TNext}"/>
+    /// <seealso cref="AddNext{TChain,TNext}"/>
+    /// <seealso cref="AddNextAny{TChain,TNext}"/>
+    /// <seealso cref="TryAddNext{TChain,TNext}"/>
+    /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
+    /// <seealso cref="IndexOf{TChain,TNext}"/>
+    public static unsafe int IndexOfAny<TChain, TNext>(this ref TChain chain, ref TNext value)
+        where TChain : struct, IChainable
+        where TNext : struct, IChainable
+    {...}
 }
 ```
 
 ### Chain Structure
 
-The `BaseInStructure` struct makes it easy to access the `SType` and `PNext` of a structure pointed to by `void* PNext`, although
-it is used internally, it is useful for consumers of Silk.Net to have access to use in their own scenarios, that is
-because the `IChainable` interface does not directly expose the underlying `SType` and `PNext` fields; as they are
-fields (not properties), and this proposal aims to avoid boxing (so we try not to use the interface directly
+The `BaseInStructure` struct makes it easy to access the `SType` and `PNext` of a structure pointed to by `void* PNext`,
+although it is used internally, it is useful for consumers of Silk.Net to have access to use in their own scenarios,
+that is because the `IChainable` interface does not directly expose the underlying `SType` and `PNext` fields; as they
+are fields (not properties), and this proposal aims to avoid boxing (so we try not to use the interface directly
 unnecessarily).
 
 ```csharp

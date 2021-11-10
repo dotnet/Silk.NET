@@ -8,6 +8,8 @@ This is a tiny pre-requisite for
 and is of limited value otherwise. Its primary purpose is to mark any structure that requires it's `SType` field to be
 correctly set when passing to Vulkan, and to provide a mechanism for doing so.
 
+A full implementation can be found [in Pull Request 680](https://github.com/dotnet/Silk.NET/pull/680).
+
 # Contributors
 
 - [Craig Dean, DevDecoder](https://github.com/thargy)
@@ -17,7 +19,7 @@ correctly set when passing to Vulkan, and to provide a mechanism for doing so.
 - [x] Proposed
 - [ ] Discussed with API Review Board (ARB)
 - [ ] Approved
-- [ ] Implemented
+- [x] Implemented
 
 # Design Decisions
 
