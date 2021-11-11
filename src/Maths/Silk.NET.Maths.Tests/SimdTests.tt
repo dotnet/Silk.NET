@@ -16,9 +16,9 @@ namespace Silk.NET.Maths.Tests
 {
     internal unsafe static class SimdTestsUtils
     {
+        private static readonly Random rand = new(10);
         internal static void FillWithRandomData(void* ptr, int len)
         {
-            var rand = new Random(10);
             for (int i = 0; i < len; i++)
                 *((byte*)ptr + i) = (byte)rand.Next(4, 12);
         }
