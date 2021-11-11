@@ -1,4 +1,4 @@
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 /// Header struct of all <see cref="IChainable"/> structs.
@@ -19,7 +19,7 @@ public struct BaseInStructure : IChainable
     /// <summary>
     /// The next <see cref="IChainable"/> struct in the chain, if any; otherwise <see langword="null"/>.
     /// </summary>
-    public unsafe void* PNext;
+    public unsafe BaseInStructure* PNext;
 
     /// <inheritdoc />
     /// <remarks>Note, this cannot coerce the type as 'guaranteed by the `IStructuredType` interface.</remarks>

@@ -1,4 +1,4 @@
-using Silk.Net.Vulkan;
+using Silk.NET.Vulkan;
 using Xunit;
 
 namespace PrototypeStructChaining.Test;

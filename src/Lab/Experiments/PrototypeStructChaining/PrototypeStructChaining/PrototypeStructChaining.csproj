@@ -4,9 +4,8 @@
         <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
         <LangVersion>10</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <RootNamespace>Silk.Net.Vulkan</RootNamespace>
+        <RootNamespace>Silk.NET.Vulkan</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

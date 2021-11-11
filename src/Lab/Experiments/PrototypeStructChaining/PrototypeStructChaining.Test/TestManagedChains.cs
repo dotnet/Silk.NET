@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Silk.Net.Vulkan;
+using Silk.NET.Vulkan;
 using Xunit;
 
 namespace PrototypeStructChaining.Test;
@@ -10,8 +10,12 @@ public class TestManagedChains
     [Fact]
     public unsafe void TestManagedChain()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
-            PhysicalDeviceAccelerationStructureFeaturesKhr>();
+        using var chain = ManagedChain.Create
+        (
+            default(PhysicalDeviceFeatures2),
+            default(PhysicalDeviceDescriptorIndexingFeatures),
+            default(PhysicalDeviceAccelerationStructureFeaturesKhr)
+        );
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
@@ -28,7 +32,12 @@ public class TestManagedChains
     public unsafe void TestManagedChainReplaceHead()
     {
         using var chain =
-            new ManagedChain<DeviceCreateInfo, PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>();
+            ManagedChain.Create
+            (
+                default(DeviceCreateInfo),
+                default(PhysicalDeviceFeatures2),
+                default(PhysicalDeviceDescriptorIndexingFeatures)
+            );
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.DeviceCreateInfo, chain.Head.SType);
@@ -62,7 +71,7 @@ public class TestManagedChains
     [Fact]
     public unsafe void TestManagedChainReplaceMiddle()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
             PhysicalDeviceAccelerationStructureFeaturesKhr>
         (
             item1: new PhysicalDeviceDescriptorIndexingFeatures
@@ -105,12 +114,13 @@ public class TestManagedChains
 
         // As is the SType
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+        chain.Dispose();
     }
 
     [Fact]
     public unsafe void TestManagedChainDuplicate()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
         (
             item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
         );
@@ -142,12 +152,23 @@ public class TestManagedChains
         // Check we have new copies
         Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
         Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+        
+        // Test equality
+        Assert.Equal(chain, newChain);
+        Assert.True(chain == newChain);
+        
+        // Modify second chain
+        newChain.Item1 = default;
+        
+        // Test equality
+        Assert.NotEqual(chain, newChain);
+        Assert.False(chain == newChain);
     }
 
     [Fact]
-    public unsafe void TestManagedChainAppend()
+    public unsafe void TestManagedChainAdd()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
         (
             item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
         );
@@ -163,7 +184,7 @@ public class TestManagedChains
         // Check flag set
         Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 
-        using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKhr>();
+        using var newChain = chain.Add(default(PhysicalDeviceAccelerationStructureFeaturesKhr));
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
@@ -244,7 +265,7 @@ public class TestManagedChains
 
         // Loads a new managed chain from an unmanaged chain
         using var managedChain =
-            new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            ManagedChain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
                 PhysicalDeviceAccelerationStructureFeaturesKhr>(out var errors, unmanagedChain);
 
         // Check we had no loading errors
@@ -290,10 +311,16 @@ public class TestManagedChains
                 PhysicalDeviceFeatures2>(out var errors, unmanagedChain);
 
         // Check for errors
+        var errorsArray = errors.Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+        Assert.Equal(2, errorsArray.Length);
         Assert.Equal
         (
-            @"The unmanaged chain has a structure type PhysicalDeviceFeatures2Khr at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr
-The unmanaged chain was length 4, expected length 5", errors
+            "The unmanaged chain has a structure type PhysicalDeviceFeatures2Khr at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr",
+            errorsArray[0]
+        );
+        Assert.Equal
+        (
+            "The unmanaged chain was length 4, expected length 5", errorsArray[1]
         );
 
         // Despite the errors indexing features was at the right location so was loaded
@@ -331,7 +358,7 @@ The unmanaged chain was length 4, expected length 5", errors
     [Fact]
     public void TestReadOnlyList()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
             PhysicalDeviceAccelerationStructureFeaturesKhr>();
 
         Assert.Equal(3, chain.Count);
@@ -355,7 +382,7 @@ The unmanaged chain was length 4, expected length 5", errors
     [Fact]
     public void TestDeconstructor()
     {
-        using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
             PhysicalDeviceAccelerationStructureFeaturesKhr>();
 
         var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;

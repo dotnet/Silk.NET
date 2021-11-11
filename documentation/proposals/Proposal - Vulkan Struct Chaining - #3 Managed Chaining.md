@@ -17,7 +17,7 @@ performance.
 
 However, many consumers are uncomfortable with pointers, and are especially prone to introducing bugs when placing
 structs onto the heap. This proposal provides a convenient `ManagedChain` class, and multiple
-descendent `ManagedChain<TChain...>` classes to safely fix the structures in memory and prevent pointer bugs.
+descendent `ManagedChain<TChain...>` (similar to the `System.Tuple<T1..>` classes) classes to safely fix the structures in memory and prevent pointer bugs.
 
 Whenever a structure is loaded into the `ManagedChain` its `SType` and `PNext` are forced to be correct, preventing
 errors. Structures can be replaced at any time, and will be inserted efficiently into the chain as an O(1) operation.
