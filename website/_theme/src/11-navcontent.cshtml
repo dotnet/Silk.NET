@@ -36,15 +36,9 @@
     <div class="navbar-collapse-header">
       <div class="row">
         <div class="col-6 collapse-brand">
-          @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img.dark", out navImg) ?? false)
-          {
-              <a href="@InputUrl(tocModelRoot.Href)" class="silk-dark-only">
-                <img src="@InputUrl(navImg)">
-              </a>
-          }
           @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img", out navImg) ?? false)
           {
-              <a href="@InputUrl(tocModelRoot.Href)" class="@imgClass">
+              <a href="@InputUrl(tocModelRoot.Href)">
                 <img src="@InputUrl(navImg)">
               </a>
           }
@@ -110,6 +104,16 @@
       }
     </ul>
     <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+      <li class="nav-item">
+        <a class="nav-link nav-link-icon silk-dark-only" id="lighton" href="#" data-toggle="tooltip" title="Toggle Light Mode">
+          <i class="fa fa-sun"></i>
+          <span class="nav-link-inner--text d-lg-none">Toggle Light Mode</span>
+        </a>
+        <a class="nav-link nav-link-icon silk-light-only" id="lightoff" href="#" data-toggle="tooltip" title="Toggle Dark Mode">
+          <i class="fa fa-moon"></i>
+          <span class="nav-link-inner--text d-lg-none">Toggle Dark Mode</span>
+        </a>
+      </li>
       @{
           var discordLink = string.Empty;
           var githubLink = string.Empty;
