@@ -246,3 +246,7 @@ code, pre {
 .silk-light .silk-dark-only {
     display: none !important;
 }
+
+body {
+    transition: background .15s linear;
+}
