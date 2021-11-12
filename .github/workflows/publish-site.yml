@@ -19,7 +19,7 @@ jobs:
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.100-rc.1.21458.32
+        dotnet-version: 6.0.100
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
