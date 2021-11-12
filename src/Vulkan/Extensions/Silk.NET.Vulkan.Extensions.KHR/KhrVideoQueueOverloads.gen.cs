@@ -157,6 +157,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] VideoProfileKHR* pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
@@ -171,6 +172,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoCapabilities(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoProfileKHR> pVideoProfile, [Count(Count = 0), Flow(FlowDirection.Out)] Span<VideoCapabilitiesKHR> pCapabilities)
         {
             // SpanOverloader
@@ -178,6 +180,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
@@ -192,6 +195,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
@@ -206,6 +210,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
@@ -220,6 +225,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         public static unsafe Result GetPhysicalDeviceVideoFormatProperties(this KhrVideoQueue thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo, [Count(Count = 0)] Span<uint> pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(FlowDirection.Out)] Span<VideoFormatPropertiesKHR> pVideoFormatProperties)
         {
             // SpanOverloader
@@ -227,6 +233,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
         public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint* pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoGetMemoryPropertiesKHR> pVideoSessionMemoryRequirements)
         {
             // SpanOverloader
@@ -241,6 +248,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pVideoSessionMemoryRequirements = new(StructureType.VideoGetMemoryPropertiesKhr);")]
         public static unsafe Result GetVideoSessionMemoryRequirements(this KhrVideoQueue thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] Span<uint> pVideoSessionMemoryRequirementsCount, [Count(Parameter = "pVideoSessionMemoryRequirementsCount"), Flow(FlowDirection.Out)] Span<VideoGetMemoryPropertiesKHR> pVideoSessionMemoryRequirements)
         {
             // SpanOverloader

@@ -11,7 +11,7 @@ namespace Silk.NET.BuildTools.Common.Enums
     /// <summary>
     /// Represents a C# enum.
     /// </summary>
-    public class Enum
+    public class Enum : IProfileConstituent
     {
         /// <summary>
         /// Gets or sets a list of tokens contained within this enum.

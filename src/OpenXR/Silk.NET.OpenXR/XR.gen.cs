@@ -377,19 +377,19 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
+        public partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateReferenceSpaces")]
@@ -553,7 +553,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
@@ -565,7 +565,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
@@ -577,7 +577,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
@@ -589,7 +589,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
+        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
@@ -609,11 +609,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] PfnVoidFunction* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref PfnVoidFunction function);
+        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProperties")]
@@ -745,7 +745,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]
-        public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+        public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]
@@ -757,7 +757,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]
-        public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
+        public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPollEvent")]
@@ -789,7 +789,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrResultToString")]
-        public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, string buffer);
+        public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStopHapticFeedback")]
@@ -817,11 +817,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath")]
-        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ulong* path);
+        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath")]
-        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ref ulong path);
+        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] ref ulong path);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStructureTypeToString")]
@@ -833,7 +833,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStructureTypeToString")]
-        public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, string buffer);
+        public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings")]
@@ -960,14 +960,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public unsafe Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // ImplicitCountSpanOverloader
             return EnumerateInstanceExtensionProperties(layerName, (uint) properties.Length, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public unsafe Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // ImplicitCountSpanOverloader
             return EnumerateInstanceExtensionProperties(layerName, (uint) properties.Length, ref propertyCountOutput, ref properties.GetPinnableReference());

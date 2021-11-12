@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Overloading;
 
@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// <summary>
     /// Represents a C# function.
     /// </summary>
-    public class Function : IEquatable<Function>
+    public class Function : IEquatable<Function>, IProfileConstituent
     {
         /// <summary>
         /// Gets or sets the name of this function.
@@ -40,15 +40,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the parameters of the function.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         public List<Parameter> Parameters { get; set; } = new List<Parameter>();
 
         /// <summary>
         /// Gets or sets the categories in which this function falls under.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         [JsonIgnore]
         public List<string> Categories { get; set; } = new List<string>();
         
@@ -61,8 +57,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the generic type parameters of the function.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         public List<GenericTypeParameter> GenericTypeParameters { get; set; } =
             new List<GenericTypeParameter>();
 
@@ -233,8 +227,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
         }
 
-        [NotNull]
-        private static string GetDeclarationString([NotNull] Parameter parameter)
+                private static string GetDeclarationString(Parameter parameter)
         {
             var sb = new StringBuilder();
 

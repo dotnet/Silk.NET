@@ -41,6 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
         public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
 
@@ -49,6 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
         public partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
 

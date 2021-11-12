@@ -69,13 +69,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void BinormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glBinormalPointerEXT")]
-        public partial void BinormalPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glBinormalPointerEXT")]
         public unsafe partial void BinormalPointer([Flow(FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glBinormalPointerEXT")]
-        public partial void BinormalPointer<T0>([Flow(FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTangent3bEXT")]
         public partial void Tangent3([Flow(FlowDirection.In)] sbyte tx, [Flow(FlowDirection.In)] sbyte ty, [Flow(FlowDirection.In)] sbyte tz);
@@ -126,13 +120,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void TangentPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glTangentPointerEXT")]
-        public partial void TangentPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glTangentPointerEXT")]
         public unsafe partial void TangentPointer([Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glTangentPointerEXT")]
-        public partial void TangentPointer<T0>([Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public ExtCoordinateFrame(INativeContext ctx)
             : base(ctx)

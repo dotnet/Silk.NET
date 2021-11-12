@@ -33,6 +33,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("output")] public OutputOptions OutputOpts { get; set; }
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
         [JsonProperty("namespace")] public string Namespace { get; set; }
+        [JsonProperty("overloadExclusions")] public Dictionary<string, string[]>? OverloaderExclusions { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
         [JsonProperty("nameContainer")] public NameContainer NameContainer { get; set; }
         [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; }

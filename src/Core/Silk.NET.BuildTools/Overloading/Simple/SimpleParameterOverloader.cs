@@ -36,7 +36,7 @@ namespace Silk.NET.BuildTools.Overloading
         (
             Function original,
             Project core,
-            params ISimpleParameterOverloader[] overloaders
+            IEnumerable<ISimpleParameterOverloader> overloaders
         )
         {
             if (original.Parameters.Count == 0)
@@ -90,6 +90,30 @@ namespace Silk.NET.BuildTools.Overloading
                     (original.Parameters)
                     ? SignatureKind.Normal
                     : SignatureKind.SimpleOverload : original.Kind;
+
+                if (ret.NativeName.ConstitutesVulkanOutOverload() &&
+                    (ret.Parameters.LastOrDefault()?.Type.IsOut ?? false))
+                {
+                    var last = ret.Parameters.Last();
+                    var outStruct = core.Structs.FirstOrDefault(x => x.Name == last.Type.Name);
+                    var outSType = outStruct?.Fields.FirstOrDefault();
+                    if (outSType is not null && outSType.Name == "SType" && outSType.DefaultAssignment is not null)
+                    {
+                        ret.Attributes.Add
+                        (
+                            new()
+                            {
+                                Name = "Inject",
+                                Arguments = new()
+                                {
+                                    "SilkTouchStage.Begin",
+                                    $"\"{last.Name} = new({outSType.DefaultAssignment});\""
+                                }
+                            }
+                        );
+                    }
+                }
+                    
                 yield return ret;
             }
         }

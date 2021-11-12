@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrMaintenance3Overloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this KhrMaintenance3 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader

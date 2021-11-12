@@ -141,9 +141,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -167,9 +167,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -194,9 +194,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -226,9 +226,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -249,9 +249,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -275,9 +275,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -844,9 +844,9 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, T0*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
             }
             return ret;
         }
@@ -870,9 +870,9 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, T0*, uint, uint, int>)LpVtbl[29])(@this, pAsyncPtr, pDataPtr, DataSize, GetDataFlags);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsyncPtr, pDataPtr, DataSize, GetDataFlags);
                 }
             }
             return ret;
@@ -1533,9 +1533,9 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pSrcDataPtr = &pSrcData)
+            fixed (void* pSrcDataPtr = &pSrcData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
             }
         }
 
@@ -1555,9 +1555,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pDstBoxPtr = &pDstBox)
             {
-                fixed (T0* pSrcDataPtr = &pSrcData)
+                fixed (void* pSrcDataPtr = &pSrcData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
                 }
             }
         }
@@ -1578,9 +1578,9 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
             {
-                fixed (T0* pSrcDataPtr = &pSrcData)
+                fixed (void* pSrcDataPtr = &pSrcData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBox, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
                 }
             }
         }
@@ -1606,9 +1606,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Box* pDstBoxPtr = &pDstBox)
                 {
-                    fixed (T0* pSrcDataPtr = &pSrcData)
+                    fixed (void* pSrcDataPtr = &pSrcData)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, T0*, uint, uint, void>)LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[48])(@this, pDstResourcePtr, DstSubresource, pDstBoxPtr, pSrcDataPtr, SrcRowPitch, SrcDepthPitch);
                     }
                 }
             }

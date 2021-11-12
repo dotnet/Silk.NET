@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.Serialization;
 
@@ -34,6 +37,44 @@ namespace Silk.NET.Maths
         {
             Origin = origin;
             Direction = direction;
+        }
+
+        /// <summary>
+        /// Constructs a Ray using an origin and components of a direction.
+        /// </summary>
+        /// <param name="origin">The origin of the ray.</param>
+        /// <param name="directionX">The X component of the direction of the ray.</param>
+        /// <param name="directionY">The Y component of the direction of the ray.</param>
+        /// <param name="directionZ">The Z component of the direction of the ray.</param>
+        public Ray3D(Vector3D<T> origin, T directionX, T directionY, T directionZ)
+            : this(origin, new Vector3D<T>(directionX, directionY, directionZ))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Ray using components of an origin and a direction.
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the ray.</param>
+        /// <param name="originY">The Y component of the origin of the ray.</param>
+        /// <param name="originZ">The Z component of the origin of the ray.</param>
+        /// <param name="direction">The direction of the ray.</param>
+        public Ray3D(T originX, T originY, T originZ, Vector3D<T> direction)
+            : this(new Vector3D<T>(originX, originY, originZ), direction)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Ray using components of an origin and components of a direction.
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the ray.</param>
+        /// <param name="originY">The Y component of the origin of the ray.</param>
+        /// <param name="originZ">The Z component of the origin of the ray.</param>
+        /// <param name="directionX">The X component of the direction of the ray.</param>
+        /// <param name="directionY">The Y component of the direction of the ray.</param>
+        /// <param name="directionZ">The Z component of the direction of the ray.</param>
+        public Ray3D(T originX, T originY, T originZ, T directionX, T directionY, T directionZ)
+            : this(new Vector3D<T>(originX, originY, originZ), new Vector3D<T>(directionX, directionY, directionZ))
+        {
         }
 
         /// <summary>

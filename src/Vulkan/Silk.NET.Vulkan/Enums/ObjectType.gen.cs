@@ -102,6 +102,8 @@ namespace Silk.NET.Vulkan
         IndirectCommandsLayoutNV = 1000277000,
         [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
         PrivateDataSlotExt = 1000295000,
+        [NativeName("Name", "VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA")]
+        BufferCollectionFuchsia = 1000366000,
         [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
         SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]

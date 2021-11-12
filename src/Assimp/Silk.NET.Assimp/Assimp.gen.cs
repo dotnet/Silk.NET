@@ -83,7 +83,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -98,22 +98,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, ref byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -128,7 +128,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -143,22 +143,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, ref byte pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -183,12 +183,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -213,42 +213,42 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -273,12 +273,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
@@ -303,42 +303,42 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 45 in src/Assimp/Include\\assimp/cexport.h")]
@@ -353,7 +353,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 45 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 45 in src/Assimp/Include\\assimp/cexport.h")]
@@ -368,7 +368,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 45 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 17 in src/Assimp/Include\\assimp/cexport.h")]
@@ -393,7 +393,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 43 in src/Assimp/Include\\assimp/importerdesc.h")]
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public unsafe partial ImporterDesc* GetImporterDesc(string extension);
+        public unsafe partial ImporterDesc* GetImporterDesc([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 114, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -408,7 +408,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 114, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFile")]
-        public unsafe partial Scene* ImportFile(string pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -433,12 +433,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(string pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(string pFile, uint pFlags, ref FileIO pFS);
+        public unsafe partial Scene* ImportFileEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -483,22 +483,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -513,7 +513,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, string pHint);
+        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -528,22 +528,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(ref byte pBuffer, uint pLength, uint pFlags, string pHint);
+        public unsafe partial Scene* ImportFileFromMemory(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(string pBuffer, uint pLength, uint pFlags, byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(string pBuffer, uint pLength, uint pFlags, ref byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(string pBuffer, uint pLength, uint pFlags, string pHint);
+        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -568,12 +568,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -598,42 +598,42 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 253, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
@@ -658,7 +658,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 277, Column 33 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, string file);
+        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string file);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 291, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -707,6 +707,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 24 in src/Assimp/Include\\assimp/cimport.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "aiGetErrorString")]
         public partial string GetErrorStringS();
 
@@ -723,7 +724,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 350, Column 19 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public partial int IsExtensionSupported(string szExtension);
+        public partial int IsExtensionSupported([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szExtension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 361, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -783,7 +784,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, string szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -798,7 +799,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial void SetImportPropertyInteger(ref PropertyStore store, string szName, int value);
+        public partial void SetImportPropertyInteger(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 418, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -813,7 +814,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 418, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, string szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 418, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -828,7 +829,7 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 418, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial void SetImportPropertyFloat(ref PropertyStore store, string szName, float value);
+        public partial void SetImportPropertyFloat(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -853,12 +854,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, string szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, string szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -883,12 +884,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, string szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial void SetImportPropertyString(ref PropertyStore store, string szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public partial void SetImportPropertyString(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -913,12 +914,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, string szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, string szName, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, ref System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -943,12 +944,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, string szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial void SetImportPropertyMatrix(ref PropertyStore store, string szName, ref System.Numerics.Matrix4x4 mat);
+        public partial void SetImportPropertyMatrix(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, ref System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -1203,12 +1204,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1233,12 +1234,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1283,22 +1284,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1343,22 +1344,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1403,22 +1404,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1463,22 +1464,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1503,12 +1504,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1533,12 +1534,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1563,12 +1564,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1593,12 +1594,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1623,12 +1624,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
@@ -1653,12 +1654,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref AssimpString pOut);
+        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1528, Column 25 in src/Assimp/Include\\assimp/material.h")]
@@ -2957,6 +2958,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 63, Column 25 in src/Assimp/Include\\assimp/version.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "aiGetLegalString")]
         public partial string GetLegalStringS();
 
@@ -2982,6 +2984,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 24 in src/Assimp/Include\\assimp/version.h")]
+        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
         [NativeApi(EntryPoint = "aiGetBranchName")]
         public partial string GetBranchNameS();
 

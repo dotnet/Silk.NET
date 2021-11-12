@@ -59,7 +59,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.LoadControllerModelMsft(session, modelKey, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);

@@ -34,5 +34,9 @@ namespace Silk.NET.Direct3D12
         RootSignatureFlagDenyAmplificationShaderRootAccess = 0x100,
         [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_DENY_MESH_SHADER_ROOT_ACCESS")]
         RootSignatureFlagDenyMeshShaderRootAccess = 0x200,
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_CBV_SRV_UAV_HEAP_DIRECTLY_INDEXED")]
+        RootSignatureFlagCbvSrvUavHeapDirectlyIndexed = 0x400,
+        [NativeName("Name", "D3D12_ROOT_SIGNATURE_FLAG_SAMPLER_HEAP_DIRECTLY_INDEXED")]
+        RootSignatureFlagSamplerHeapDirectlyIndexed = 0x800,
     }
 }

@@ -60,14 +60,14 @@ namespace Silk.NET.Direct3D11
         public VpivDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11375_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11823_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoProcessorInputViewDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex2DVpiv Texture2D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2D;
         }
 #else
         public Tex2DVpiv Texture2D

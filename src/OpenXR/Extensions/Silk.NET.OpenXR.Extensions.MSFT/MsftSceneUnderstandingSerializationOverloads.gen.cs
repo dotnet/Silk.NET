@@ -45,7 +45,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
+        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), buffer);
@@ -66,7 +66,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer)
+        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, buffer);
@@ -87,7 +87,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
+        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), buffer);

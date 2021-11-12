@@ -48,7 +48,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] in byte code);
 
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
-        public partial void ReplacementCode([Flow(FlowDirection.In)] string code);
+        public partial void ReplacementCode([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string code);
 
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
         public unsafe partial void ReplacementCodePointer([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);

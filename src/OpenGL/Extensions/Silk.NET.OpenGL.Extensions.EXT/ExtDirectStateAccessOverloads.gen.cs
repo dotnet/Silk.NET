@@ -1786,30 +1786,6 @@ namespace Silk.NET.OpenGL.Extensions.EXT
             thisApi.MatrixMultTranspose(mode, in m.GetPinnableReference());
         }
 
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MultiTexCoordPointer<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureUnit texunit, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MultiTexCoordPointer(texunit, size, type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void MultiTexEnv(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT texunit, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader

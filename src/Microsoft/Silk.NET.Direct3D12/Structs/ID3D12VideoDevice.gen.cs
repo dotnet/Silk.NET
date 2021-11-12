@@ -121,9 +121,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12VideoDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            fixed (void* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice*, FeatureVideo, T0*, uint, int>)LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12VideoDevice*, FeatureVideo, void*, uint, int>)LpVtbl[3])(@this, FeatureVideo, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
             return ret;
         }

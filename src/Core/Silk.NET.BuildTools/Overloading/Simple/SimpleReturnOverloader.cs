@@ -29,16 +29,20 @@ namespace Silk.NET.BuildTools.Overloading
         /// <returns>An enumerable containing the original function signature and all overloads.</returns>
         public static IEnumerable<Function> GetWithOverloads(Function original,
             Project core,
-            params ISimpleReturnOverloader[] overloaders)
+            IEnumerable<ISimpleReturnOverloader> overloaders)
         {
             yield return original;
             foreach (var overloader in overloaders)
             {
-                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, core))
+                var attrs = original.Attributes
+                    .Select(x => new Attribute { Name = x.Name, Arguments = new(x.Arguments) })
+                    .ToList();
+                if (overloader.TryGetReturnTypeVariant(original.ReturnType, out var varied, attrs, core))
                 {
                     var ret = new FunctionSignatureBuilder(original)
                         .WithName(original.Name + ReturnOverloadSuffix)
                         .WithReturnType(varied)
+                        .WithAttributes(attrs)
                         .Build();
                     ret.Kind = SignatureKind.ReturnOverload;
                     yield return ret;

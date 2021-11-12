@@ -120,7 +120,7 @@ namespace Tutorial
             VaoCube.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 6, 0);
             VaoCube.VertexAttributePointer(1, 3, VertexAttribPointerType.Float, 6, 3);
 
-            //The lighting shader will give our main cube it's colour multiplied by the light's intensity
+            //The lighting shader will give our main cube its colour multiplied by the light's intensity
             LightingShader = new Shader(Gl, "shader.vert", "lighting.frag");
             //The Lamp shader uses a fragment shader that just colours it solid white so that we know it is the light source
             LampShader = new Shader(Gl, "shader.vert", "shader.frag");

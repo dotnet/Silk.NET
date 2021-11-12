@@ -27,26 +27,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DVertexShader9
         (
-            uint? version = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (version is not null)
-            {
-                Version = version.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Version")]
-        public uint Version;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -165,9 +154,9 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfData);
             }
             return ret;
         }
@@ -177,11 +166,11 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVertexShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* arg0Ptr = &arg0)
+            fixed (void* arg0Ptr = &arg0)
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, T0*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexShader9*, void*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pSizeOfDataPtr);
                 }
             }
             return ret;

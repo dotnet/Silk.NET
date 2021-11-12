@@ -36,13 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public unsafe partial void ElementPointer([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "glElementPointerAPPLE")]
         public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementArrayAPPLE")]
         public unsafe partial void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);

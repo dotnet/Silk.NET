@@ -57,7 +57,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out byte data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
-        public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] string data);
+        public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
         public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] byte* data);
@@ -66,7 +66,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out byte data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
-        public partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.Out)] string data);
+        public partial void GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
         public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] byte* data);
@@ -75,7 +75,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out byte data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
-        public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] string data);
+        public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data);
 
         [NativeApi(EntryPoint = "glIsMemoryObjectEXT")]
         public partial bool IsMemoryObject([Flow(FlowDirection.In)] uint memoryObject);

@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_DRED_BREADCRUMB_CONTEXT")]
     public unsafe partial struct DredBreadcrumbContext
     {

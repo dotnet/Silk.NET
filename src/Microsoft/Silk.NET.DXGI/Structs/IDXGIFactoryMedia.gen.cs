@@ -220,9 +220,9 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
             }
             return ret;
         }
@@ -232,11 +232,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
                 }
             }
             return ret;
@@ -247,11 +247,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
                 }
             }
             return ret;
@@ -262,13 +262,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
             }
@@ -280,11 +280,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                 }
             }
             return ret;
@@ -295,13 +295,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
             }
@@ -313,13 +313,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
             }
@@ -331,7 +331,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
@@ -339,7 +339,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -486,9 +486,9 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
                 }
             }
             return ret;
@@ -501,11 +501,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
             }
@@ -519,11 +519,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
             }
@@ -537,13 +537,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -558,11 +558,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
             }
@@ -576,13 +576,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -597,13 +597,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -618,7 +618,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
@@ -626,7 +626,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -880,9 +880,9 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
             }
             return ret;
         }
@@ -892,11 +892,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                 }
             }
             return ret;
@@ -907,11 +907,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                 }
             }
             return ret;
@@ -922,13 +922,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
             }
@@ -940,11 +940,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                 }
             }
             return ret;
@@ -955,13 +955,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
             }
@@ -973,13 +973,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
             }
@@ -991,7 +991,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                 {
@@ -999,7 +999,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1012,11 +1012,11 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 }
             }
             return ret;
@@ -1027,13 +1027,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
             }
@@ -1045,13 +1045,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
             }
@@ -1063,7 +1063,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
@@ -1071,7 +1071,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1084,13 +1084,13 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
             }
@@ -1102,7 +1102,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
@@ -1110,7 +1110,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1123,7 +1123,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
@@ -1131,7 +1131,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1144,7 +1144,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* hSurfacePtr = &hSurface)
+            fixed (void* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
@@ -1154,7 +1154,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1458,9 +1458,9 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 }
             }
             return ret;
@@ -1473,11 +1473,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
             }
@@ -1491,11 +1491,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
             }
@@ -1509,13 +1509,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1530,11 +1530,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
             }
@@ -1548,13 +1548,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1569,13 +1569,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1590,7 +1590,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
@@ -1598,7 +1598,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1614,11 +1614,11 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                     }
                 }
             }
@@ -1632,13 +1632,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1653,13 +1653,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1674,7 +1674,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1682,7 +1682,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1698,13 +1698,13 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -1719,7 +1719,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1727,7 +1727,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1743,7 +1743,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1751,7 +1751,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -1767,7 +1767,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                fixed (T0* hSurfacePtr = &hSurface)
+                fixed (void* hSurfacePtr = &hSurface)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1777,7 +1777,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }

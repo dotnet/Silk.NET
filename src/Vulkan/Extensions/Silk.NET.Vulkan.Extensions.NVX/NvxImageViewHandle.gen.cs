@@ -25,6 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.NVX
         public unsafe partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ImageViewAddressPropertiesNvx);")]
         [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
         public partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageViewAddressPropertiesNVX pProperties);
 

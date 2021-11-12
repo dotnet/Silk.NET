@@ -30,92 +30,15 @@ namespace Silk.NET.Direct3D9
 
         public IDirect3DIndexBuffer9
         (
-            char* name = null,
-            uint? length = null,
-            uint? usage = null,
-            Format? format = null,
-            Pool? pool = null,
-            uint? priority = null,
-            uint? lockCount = null,
             void** lpVtbl = null
         ) : this()
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (length is not null)
-            {
-                Length = length.Value;
-            }
-
-            if (usage is not null)
-            {
-                Usage = usage.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (pool is not null)
-            {
-                Pool = pool.Value;
-            }
-
-            if (priority is not null)
-            {
-                Priority = priority.Value;
-            }
-
-            if (lockCount is not null)
-            {
-                LockCount = lockCount.Value;
-            }
-
             if (lpVtbl is not null)
             {
                 LpVtbl = lpVtbl;
             }
         }
 
-
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "Name")]
-        public char* Name;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Length")]
-        public uint Length;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Usage")]
-        public uint Usage;
-
-        [NativeName("Type", "D3DFORMAT")]
-        [NativeName("Type.Name", "D3DFORMAT")]
-        [NativeName("Name", "Format")]
-        public Format Format;
-
-        [NativeName("Type", "D3DPOOL")]
-        [NativeName("Type.Name", "D3DPOOL")]
-        [NativeName("Name", "Pool")]
-        public Pool Pool;
-
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Priority")]
-        public uint Priority;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "LockCount")]
-        public uint LockCount;
 
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
@@ -222,9 +145,9 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
             }
             return ret;
         }
@@ -248,9 +171,9 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
                 }
             }
             return ret;
@@ -282,9 +205,9 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
             }
             return ret;
         }
@@ -294,11 +217,11 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DIndexBuffer9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
                 }
             }
             return ret;
@@ -338,9 +261,9 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
                 }
             }
             return ret;
@@ -353,11 +276,11 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
                     fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, T0*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
                     }
                 }
             }

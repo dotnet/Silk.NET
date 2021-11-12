@@ -133,9 +133,9 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
             }
             return ret;
         }
@@ -145,11 +145,11 @@ namespace Silk.NET.Core.Native
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
                 fixed (uint* pCallbackIDPtr = &pCallbackID)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
                 }
             }
             return ret;

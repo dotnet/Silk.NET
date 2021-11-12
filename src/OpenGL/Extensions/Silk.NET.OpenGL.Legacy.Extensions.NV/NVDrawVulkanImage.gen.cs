@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial nint GetVkProcAddr([Flow(FlowDirection.In)] string name);
+        public partial nint GetVkProcAddr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         [NativeApi(EntryPoint = "glSignalVkFenceNV")]
         public partial void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);

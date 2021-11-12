@@ -97,5 +97,7 @@ namespace Silk.NET.Vulkan
         PipelineStage2SubpassShadingBitHuawei = 549755813888,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_INVOCATION_MASK_BIT_HUAWEI")]
         PipelineStage2InvocationMaskBitHuawei = 1099511627776,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_387_BIT_KHR")]
+        PipelineStage2Reserved387BitKhr = 268435456,
     }
 }

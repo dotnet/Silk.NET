@@ -98,5 +98,9 @@ namespace Silk.NET.Direct3D12
         AutoBreadcrumbOpExecuteextensioncommand = 0x29,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_DISPATCHMESH")]
         AutoBreadcrumbOpDispatchmesh = 0x2A,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME")]
+        AutoBreadcrumbOpEncodeframe = 0x2B,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA")]
+        AutoBreadcrumbOpResolveencoderoutputmetadata = 0x2C,
     }
 }

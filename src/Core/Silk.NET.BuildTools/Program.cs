@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 

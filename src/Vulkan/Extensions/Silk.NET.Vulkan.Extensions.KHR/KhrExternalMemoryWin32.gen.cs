@@ -41,6 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public unsafe partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint handle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryWin32HandleProperties = new(StructureType.MemoryWin32HandlePropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
         public partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint handle, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryWin32HandlePropertiesKHR pMemoryWin32HandleProperties);
 

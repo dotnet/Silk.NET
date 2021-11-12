@@ -46,5 +46,11 @@ namespace Silk.NET.Vulkan
         DriverIDJuiceProprietary = 16,
         [NativeName("Name", "VK_DRIVER_ID_VERISILICON_PROPRIETARY")]
         DriverIDVerisiliconProprietary = 17,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_TURNIP")]
+        DriverIDMesaTurnip = 18,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_V3DV")]
+        DriverIDMesaV3DV = 19,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_PANVK")]
+        DriverIDMesaPanvk = 20,
     }
 }

@@ -41,6 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
         public unsafe partial Result GetMemoryZirconHandlePropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryZirconHandlePropertiesFUCHSIA* pMemoryZirconHandleProperties);
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryZirconHandleProperties = new(StructureType.MemoryZirconHandlePropertiesFuchsia);")]
         [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA")]
         public partial Result GetMemoryZirconHandlePropertiesFuchsia([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint zirconHandle, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryZirconHandlePropertiesFUCHSIA pMemoryZirconHandleProperties);
 

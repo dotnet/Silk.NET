@@ -156,27 +156,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pNamespace);
+            var pNamespacePtr = (byte*) SilkMarshal.StringToPtr(pNamespace, NativeStringEncoding.LPStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstance);
-            Marshal.FreeHGlobal((nint)pNamespacePtr);
+            SilkMarshal.Free((nint)pNamespacePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var pNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pNamespace);
+            var pNamespacePtr = (byte*) SilkMarshal.StringToPtr(pNamespace, NativeStringEncoding.LPStr);
             fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
             }
-            Marshal.FreeHGlobal((nint)pNamespacePtr);
+            SilkMarshal.Free((nint)pNamespacePtr);
             return ret;
         }
 
