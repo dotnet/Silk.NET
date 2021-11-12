@@ -1,9 +1,5 @@
 
 /* Silk.NET Additions */
-.headroom--not-top, .navbar-dark, .section-shaped .shape-style-1.shape-dark {
-    background: #0e2244 !important;
-}
-
 .silk-dnf-logo {
     height: 48px;
     margin-bottom: 2px;
@@ -122,10 +118,114 @@
     text-align: center;
 }
 
-.hljs {
-    background: #0e2244 !important;
-}
-
 code, pre {
     color: #abb2bf;
+}
+
+/* These are based on the Nord colour pallette */
+
+.silk-dark, .silk-dark .dropdown-item:hover {
+    background: #3B4252 !important;
+}
+
+.silk-dark .headroom--not-top, .silk-dark .navbar-dark, .silk-dark .section-shaped .shape-style-1.shape-dark, .silk-dark .navbar-silk-fixed, .silk-dark .ct-sidebar, .silk-dark .breadcrumb, .silk-dark .dropdown-menu, .silk-dark .navbar-nav .dropdown-menu:before  {
+    background: #2E3440;
+}
+
+.silk-dark .card, .silk-dark .dropdown-item:focus {
+    background: #434C5E;
+}
+
+.silk-dark .bg-gradient-default {
+    background: #2E3440 !important;
+}
+
+.silk-dark, .silk-dark p, .silk-dark .ct-sidebar .nav>li>a {
+    color: #D8DEE9;
+}
+
+.silk-dark .text-default {
+    color: #D8DEE9 !important;
+}
+
+.silk-dark .h1, .silk-dark .h2, .silk-dark .h3, .silk-dark .h4, .silk-dark .h5, .silk-dark .h6, .silk-dark h1, .silk-dark h2, .silk-dark h3, .silk-dark h4, .silk-dark h5, .silk-dark h6, .silk-dark a {
+    color: #81A1C1;
+}
+
+.silk-dark .btn-outline-primary, .silk-dark .btn-primary, .silk-dark .btn-success, .silk-dark .btn-warning {
+    color: #ECEFF4;
+}
+
+
+.silk-dark .text-primary {
+    color: #81A1C1 !important;
+}
+
+.silk-dark .btn-white, .silk-dark .ni .text-primary i, .silk-dark .text-primary .icon {
+    color: #2E3440 !important;
+}
+
+.silk-dark a:hover, .silk-dark .ct-toc-item.active > .ct-toc-link, .silk-dark .dropdown-item:focus, .silk-dark .dropdown-item:hover, .silk-dark .dropdown-item:active, .silk-dark .ct-sidebar .nav>.active:hover>a, .silk-dark .ct-sidebar .nav>.active>a {
+    color: #88C0D0;
+}
+
+.silk-dark .dropdown-menu a.media:hover .heading, .silk-dark .dropdown-menu a.media:hover p {
+    color: #88C0D0 !important;
+}
+
+.silk-dark .ct-sidebar {
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.silk-dark .ct-sidebar .nav>.active>a:before {
+    background-color: #88C0D0;
+}
+
+.silk-dark .icon-shape-info, .silk-dark .badge-info {
+    background-color: rgba(65,215,242,.1);
+}
+
+.silk-dark .text-danger {
+    color: #BF616A !important;
+}
+
+.silk-dark .alert-danger {
+    background-color: #BF616A !important;
+}
+
+.silk-dark .text-success {
+    color: #A3BE8C !important;
+}
+
+.silk-dark .badge-success, .silk-dark .btn-success {
+    border-color: #A3BE8C;
+    background-color: #A3BE8C;
+    border: 0;
+}
+
+.silk-dark .text-warning {
+    color: #D08770 !important;
+}
+
+.silk-dark .badge-warning, .silk-dark .btn-warning {
+    border-color: #D08770;
+    background-color: #D08770;
+    border: 0;
+}
+
+.silk-dark .silk-nav-btn a {
+    color: #ECEFF4 !important;
+}
+
+.silk-dark .silk-invert-dark {
+    filter: invert(1);
+}
+
+.silk-dark .silk-light-only {
+    display: none !important;
+}
+
+.silk-light .silk-dark-only {
+    display: none !important;
 }

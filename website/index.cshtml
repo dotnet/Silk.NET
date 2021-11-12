@@ -26,7 +26,8 @@
         "theme.silk.nav.btn": "btn btn-outline-primary",
         "theme.silk.nav.btn.txt": "Getting Started",
         "theme.silk.nav.btn.href": "docs/",
-        "theme.silk.nav.img": "images/wordmark.png",
+        "theme.silk.nav.img": "images/wordmark.svg",
+        "theme.silk.nav.img.dark": "images/wordmarkw.svg",
 
         "_comment4": "Theme-global: show 'WIP' warnings everywhere!",
         "theme.silk.wip": "true",
@@ -85,8 +86,11 @@
     </div>
     <!-- SVG separator -->
     <div class="separator separator-bottom separator-skew">
-      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" class="silk-light-only">
         <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" class="silk-dark-only">
+        <polygon fill="#3B4252" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </section>
@@ -246,8 +250,11 @@
   </div>
   <!-- SVG separator -->
   <div class="separator separator-bottom separator-skew zindex-100">
-    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" class="silk-light-only">
       <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" class="silk-dark-only">
+      <polygon fill="#3B4252" points="2560 0 2560 100 0 100"></polygon>
     </svg>
   </div>
 </section>
@@ -341,7 +348,7 @@
             <p class="text-default mt-3 mb-0">Silk.NET is low-level and empowers the developer with complete control over rendering. Because of this, we understand Silk.NET isn't for everyone. If you fancy something more high-level, give Stride a shot! Stride is a 2D &amp; 3D game engine supported by the .NET Foundation.</p>
           </div>
           <div class="col-lg-3 ml-lg-auto text-center">
-            <img src="images/stride.svg" height="48" alt="Stride logo" />
+            <img src="images/stride.svg" height="48" alt="Stride logo" class="silk-invert-dark" />
             <br />
             <br />
             <a href="https://stride3d.net/" class="btn btn-lg btn-block btn-white">Learn more</a>

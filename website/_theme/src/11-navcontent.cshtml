@@ -15,9 +15,17 @@
 }
 
 <div class="container-fluid">
+  @{var imgClass = "";}
+  @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img.dark", out navImg) ?? false)
+  {
+      imgClass = "silk-light-only";
+      <a class="navbar-brand silk-dark-only" href="@InputUrl(tocModelRoot.Href)">
+        <img src="@InputUrl(navImg)">
+      </a>
+  }
   @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img", out navImg) ?? false)
   {
-      <a class="navbar-brand" href="@InputUrl(tocModelRoot.Href)">
+      <a class="navbar-brand @imgClass" href="@InputUrl(tocModelRoot.Href)">
         <img src="@InputUrl(navImg)">
       </a>
   }
@@ -28,9 +36,15 @@
     <div class="navbar-collapse-header">
       <div class="row">
         <div class="col-6 collapse-brand">
+          @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img.dark", out navImg) ?? false)
+          {
+              <a href="@InputUrl(tocModelRoot.Href)" class="silk-dark-only">
+                <img src="@InputUrl(navImg)">
+              </a>
+          }
           @if (tocModelRoot.Metadata?.TryGetValue("theme.silk.nav.img", out navImg) ?? false)
           {
-              <a href="@InputUrl(tocModelRoot.Href)">
+              <a href="@InputUrl(tocModelRoot.Href)" class="@imgClass">
                 <img src="@InputUrl(navImg)">
               </a>
           }
