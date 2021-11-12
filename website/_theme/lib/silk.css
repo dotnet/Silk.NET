@@ -1,5 +1,9 @@
 
 /* Silk.NET Additions */
+.silk-home-text {
+    color: #fff !important;
+}
+
 .silk-dnf-logo {
     height: 48px;
     margin-bottom: 2px;
@@ -224,6 +228,19 @@ code, pre {
 
 .silk-dark .silk-light-only {
     display: none !important;
+}
+
+.silk-light .section-shaped .shape-style-1.shape-dark, .silk-light .headroom--not-top, .silk-light .navbar-dark {
+    background: #dfd8f7;
+    box-shadow: 0 2.5px 2.5px 0px rgb(0 0 0 / 20%);
+}
+
+.silk-light .section-shaped .shape-style-1.shape-dark span {
+    filter: brightness(0.5);
+} 
+
+.silk-light .silk-home-text, .silk-light .nav-link {
+    color: #08090a !important;
 }
 
 .silk-light .silk-dark-only {
