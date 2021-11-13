@@ -132,7 +132,7 @@ code, pre {
     background: #3B4252 !important;
 }
 
-.silk-dark .headroom--not-top, .silk-dark .navbar-dark, .silk-dark .section-shaped .shape-style-1.shape-dark, .silk-dark .navbar-silk-fixed, .silk-dark .ct-sidebar, .silk-dark .breadcrumb, .silk-dark .dropdown-menu, .silk-dark .navbar-nav .dropdown-menu:before  {
+.silk-dark .headroom--not-top, .silk-dark .navbar-dark, .silk-dark .section-shaped .shape-style-1.shape-dark, .silk-dark .navbar-silk-fixed, .silk-dark .ct-sidebar, .silk-dark .breadcrumb, .silk-dark .dropdown-menu, .silk-dark .navbar-nav .dropdown-menu:before, code, pre {
     background: #2E3440;
 }
 
