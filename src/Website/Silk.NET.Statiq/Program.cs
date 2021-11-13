@@ -68,6 +68,14 @@ public static class Program
                             .WithExecuteModules
                             (
                                 new GenerateFeeds()
+                                    .WithItemLink
+                                    (
+                                        Config.FromDocument
+                                        (
+                                            (y, z)
+                                                => new Uri(new("https://dotnet.github.io/Silk.NET"), z.GetLink(y, true))
+                                        )
+                                    )
                                     .WithAtomPath("blog/feed.atom")
                                     .WithRssPath("blog/feed.rss")
                                     .WithFeedTitle("Silk.NET Blog")

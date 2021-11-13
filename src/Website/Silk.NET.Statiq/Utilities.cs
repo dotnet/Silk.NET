@@ -23,6 +23,11 @@ namespace Silk.NET.Statiq
             var absOutputPath = fs.RootPath / fs.GetOutputPath();
             var absDestDirPath = fs.RootPath / fs.GetOutputPath(Document.Destination.Parent);
             var relPath = absDestDirPath.GetRelativePath(absOutputPath / Href(path).TrimStart('/'));
+            if (relPath.FileName == "index.html")
+            {
+                relPath = relPath.Parent;
+            }
+
             return relPath.ToString();
         }
 
