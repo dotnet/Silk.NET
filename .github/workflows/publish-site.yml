@@ -20,6 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.100
+    - name: Checkout Website Branch
+      run: |
+        git checkout ci/github-pages
+        git merge -s theirs main
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
@@ -28,4 +32,4 @@ jobs:
         git config --local user.name "The Silk.NET Automaton"
         git add -f docs/
         git commit -am "Push latest built in-development GitHub Pages site"
-        git push -f origin HEAD:ci/github-pages
+        git push
