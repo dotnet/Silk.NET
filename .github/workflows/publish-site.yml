@@ -2,7 +2,7 @@ name: Website Build
 on:
   push:
     branches:
-      - 'feature/heavy-wip-website'
+      - 'main'
 jobs:
   Build:
     runs-on: ubuntu-latest
