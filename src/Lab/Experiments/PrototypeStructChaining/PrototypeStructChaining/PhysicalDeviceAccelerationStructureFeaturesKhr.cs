@@ -1,4 +1,4 @@
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 public struct PhysicalDeviceAccelerationStructureFeaturesKhr :
     IExtendsChain<PhysicalDeviceFeatures2>,

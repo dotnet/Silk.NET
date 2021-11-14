@@ -1,4 +1,4 @@
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 /// Base interface for any struct that has can set the next value.
@@ -8,5 +8,8 @@ namespace Silk.Net.Vulkan;
 /// to a pointer to a <see cref="BaseInStructure"/>.</para></remarks>
 public interface IChainable : IStructuredType
 {
+    /// <summary>
+    /// Points to the next <see cref="IChainable"/> in this chain, if any; otherwise <see langword="null"/>.
+    /// </summary>
     unsafe BaseInStructure* PNext { get; set; }
 }

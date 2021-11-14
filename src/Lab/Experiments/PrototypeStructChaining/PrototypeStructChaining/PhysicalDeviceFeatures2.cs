@@ -1,4 +1,4 @@
-﻿namespace Silk.Net.Vulkan;
+﻿namespace Silk.NET.Vulkan;
 
 public struct PhysicalDeviceFeatures2 :
     IChainStart,

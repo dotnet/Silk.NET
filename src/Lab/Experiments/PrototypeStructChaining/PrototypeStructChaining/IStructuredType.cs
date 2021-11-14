@@ -1,4 +1,4 @@
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 /// Base interface for any struct that has a <see cref="StructureType"/> field called `SType`, that must be correctly

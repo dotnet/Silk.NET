@@ -1,4 +1,4 @@
-namespace Silk.Net.Vulkan;
+namespace Silk.NET.Vulkan;
 
 /// <summary>
 /// Marks a <see cref="IChainable">chainable</see> struct as being allowed at the start of a chain.
