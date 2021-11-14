@@ -6,12 +6,10 @@ on:
       - 'release/*'
     paths-ignore:
       - 'documentation/**'
-      - 'README.md'
   pull_request:
     # all branches
     paths-ignore:
       - 'documentation/**'
-      - 'README.md'
 jobs:
   Build:
     runs-on: windows-latest
