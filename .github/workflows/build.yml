@@ -5,7 +5,7 @@ on:
       - 'main'
       - 'release/*'
     paths-ignore:
-      - 'proposals/**'
+      - 'documentation/**'
       - 'README.md'
   pull_request:
     # all branches
