@@ -80,6 +80,19 @@ public class Test
     }
 
     [Fact]
+    public void TestCanAddUnsupportedNextUsingAny()
+    {
+        var diagnostics = CheckCompile
+        (
+            @"PhysicalDeviceFeatures2
+            .Chain(out var features2)
+            .AddNextAny(out DeviceCreateInfo createInfo);"
+        );
+
+        Assert.Empty(diagnostics);
+    }
+
+    [Fact]
     public void TestCanAddSupportedNext()
     {
         var diagnostics = CheckCompile
