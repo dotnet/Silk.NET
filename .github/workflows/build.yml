@@ -4,8 +4,12 @@ on:
     branches:
       - 'main'
       - 'release/*'
+    paths-ignore:
+      - 'documentation/**'
   pull_request:
-    # none
+    # all branches
+    paths-ignore:
+      - 'documentation/**'
 jobs:
   Build:
     runs-on: windows-latest
