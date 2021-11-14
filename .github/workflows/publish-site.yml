@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - 'feature/heavy-wip-website'
-  pull_request:
-    # none
 jobs:
   Build:
     runs-on: ubuntu-latest
