@@ -10,7 +10,7 @@ on:
   pull_request:
     # all branches
     paths-ignore:
-      - 'proposals/**'
+      - 'documentation/**'
       - 'README.md'
 jobs:
   Build:
