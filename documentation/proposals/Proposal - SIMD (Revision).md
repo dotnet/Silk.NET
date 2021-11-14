@@ -17,6 +17,8 @@ That will bring a number of minor fixes to the [SIMD Proposal](Proposal%20-%20Ve
 
 `Sign` has been decided to return the sign of the values. So I also suggest `CopySign` method, which would work similarly to Avx's `Sign`.
 
+Finally, `IsInteger`, `IsFloat`, `IsUnsignedInteger` and `IsSignedInteger` are shorthands for checking if the type is of a certain "class".
+
 ```cs
 static Silk.NET.Maths.Simd128.ShiftLeft<T>(Vector128<T> x, Vector128<T> amount) -> Vector128<T>
 static Silk.NET.Maths.Simd128.ShiftRight<T>(Vector128<T> x, Vector128<T> amount) -> Vector128<T>
@@ -35,6 +37,21 @@ static Silk.NET.Maths.Simd64.ShiftRight<T>(Vector64<T> x, Vector64<T> amount) ->
 static Silk.NET.Maths.Simd64.RotateLeft<T>(Vector64<T> x, Vector64<T> amount) -> Vector64<T>
 static Silk.NET.Maths.Simd64.RotateRight<T>(Vector64<T> x, Vector64<T> amount) -> Vector64<T>
 static Silk.NET.Maths.Simd64.CopySign<T>(Vector64<T> source, Vector64<T> destination) -> Vector64<T>
+
+static readonly Silk.NET.Maths.Simd128<T>.IsFloat -> bool
+static readonly Silk.NET.Maths.Simd128<T>.IsInteger -> bool
+static readonly Silk.NET.Maths.Simd128<T>.IsUnsignedInteger -> bool
+static readonly Silk.NET.Maths.Simd128<T>.IsSignedInteger -> bool
+
+static readonly Silk.NET.Maths.Simd256<T>.IsFloat -> bool
+static readonly Silk.NET.Maths.Simd256<T>.IsInteger -> bool
+static readonly Silk.NET.Maths.Simd256<T>.IsUnsignedInteger -> bool
+static readonly Silk.NET.Maths.Simd256<T>.IsSignedInteger -> bool
+
+static readonly Silk.NET.Maths.Simd64<T>.IsFloat -> bool
+static readonly Silk.NET.Maths.Simd64<T>.IsInteger -> bool
+static readonly Silk.NET.Maths.Simd64<T>.IsUnsignedInteger -> bool
+static readonly Silk.NET.Maths.Simd64<T>.IsSignedInteger -> bool
 ```
 
 # Behavioural changes
