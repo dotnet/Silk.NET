@@ -4,8 +4,14 @@ on:
     branches:
       - 'main'
       - 'release/*'
+    paths-ignore:
+      - 'proposals/**'
+      - 'README.md'
   pull_request:
-    # none
+    # all branches
+    paths-ignore:
+      - 'proposals/**'
+      - 'README.md'
 jobs:
   Build:
     runs-on: windows-latest
