@@ -17,21 +17,21 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="SimdBenchmarkDissasm.tt">
+      <Compile Update="SimdBenchmarks.tt">
         <Generator>TextTemplatingFileGenerator</Generator>
-        <LastGenOutput>SimdBenchmarkDissasm.cs</LastGenOutput>
+        <LastGenOutput>SimdBenchmarks.cs</LastGenOutput>
       </Compile>
-      <Compile Update="SimdBenchmarkDissasm.cs">
+      <Compile Update="SimdBenchmarks.cs">
         <AutoGen>True</AutoGen>
         <DesignTime>True</DesignTime>
-        <DependentUpon>SimdBenchmarkDissasm.tt</DependentUpon>
+        <DependentUpon>SimdBenchmarks.tt</DependentUpon>
       </Compile>
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="SimdBenchmarkDissasm.tt">
+      <None Update="SimdBenchmarks.tt">
         <Generator>TextTemplatingFileGenerator</Generator>
-        <LastGenOutput>SimdBenchmarkDissasm.cs</LastGenOutput>
+        <LastGenOutput>SimdBenchmarks.cs</LastGenOutput>
       </None>
     </ItemGroup>
 

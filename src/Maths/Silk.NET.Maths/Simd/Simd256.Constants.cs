@@ -145,5 +145,13 @@ namespace Silk.NET.Maths
 #endif
         }
     }
+    
+    partial class Simd256
+    {
+        private static readonly Vector256<long> DoubleUnsignedMask = Vector256.Create(0x7FFFFFFFFFFFFFFF);
+        private static readonly Vector256<long> DoubleFiniteThreshold = Vector256.Create(0x7FF0000000000000);
+        private static readonly Vector256<int> SingleUnsignedMask = Vector256.Create(0x7FFFFFFF);
+        private static readonly Vector256<int> SingleFiniteThreshold = Vector256.Create(0x7F800000);
+    }
 }
 #endif
