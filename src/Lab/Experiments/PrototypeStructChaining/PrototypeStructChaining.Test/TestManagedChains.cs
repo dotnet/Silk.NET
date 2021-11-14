@@ -393,4 +393,61 @@ public class TestManagedChains
         Assert.Equal
             (StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, accelerationStructureFeaturesKhr.SType);
     }
+
+    [Fact]
+    public unsafe void TestManagedChainGetHashCode()
+    {
+        using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        (
+            item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        using var newChain = chain.Duplicate();
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1Ptr->SType);
+        
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+        
+        // Test equality
+        Assert.Equal(chain, newChain);
+        Assert.True(chain == newChain);
+        var hashCode = chain.GetHashCode();
+        var newHashCode = newChain.GetHashCode();
+        Assert.Equal(hashCode, newHashCode);
+        
+        // Modify second chain
+        newChain.Item1 = default;
+        
+        // Test equality
+        Assert.NotEqual(chain, newChain);
+        Assert.False(chain == newChain);
+        Assert.Equal(hashCode, chain.GetHashCode());
+        var newHashCode2 = newChain.GetHashCode();
+        Assert.NotEqual(hashCode, newHashCode2);
+        Assert.NotEqual(newHashCode, newHashCode2);
+    }
 }

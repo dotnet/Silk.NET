@@ -147,7 +147,7 @@ To be discussed:
 
 The proposal provides for the following usages. Note that where an `Any` extension method is mentioned, it is identical
 to the non-`Any` version (e.g. `AddNext` and `AddNextAny` are equivalent), save that the `Any` version does not
-constrain the types to those associated with a defined chain.
+constrain the types to those associated with a defined chain, instead types only need to be `IChainable`.
 
 ### Chain Building
 

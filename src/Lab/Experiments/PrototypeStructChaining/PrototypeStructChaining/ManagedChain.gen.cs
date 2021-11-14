@@ -52,6 +52,21 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
     public abstract void Dispose();
 
     /// <summary>
+    /// Combines a hashcode with the first part of a slice.
+    /// </summary>
+    /// <param name="hashCode"></param>
+    /// <param name="slice"></param>
+    /// <returns></returns>
+    protected static void CombineHash(ref int hashCode, ReadOnlySpan<byte> slice) =>
+        hashCode = slice.Length switch
+        {
+            < 2 => HashCode.Combine(hashCode, slice[0]),
+            < 4 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ushort>(slice)[0]),
+            < 8 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, uint>(slice)[0]),
+            _ => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ulong>(slice)[0])
+        };
+
+    /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
@@ -10347,6 +10362,29 @@ public unsafe sealed class ManagedChain<TChain> : ManagedChain, IEquatable<Manag
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -10558,6 +10596,37 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -10822,6 +10891,45 @@ public unsafe sealed class ManagedChain<TChain, T1, T2> : ManagedChain, IEquatab
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -11139,6 +11247,53 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3> : ManagedChain, IEqu
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -11509,6 +11664,61 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -11932,6 +12142,69 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -12408,6 +12681,77 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -12937,6 +13281,85 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -13519,6 +13942,93 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -14154,6 +14664,101 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -14842,6 +15447,109 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -15583,6 +16291,117 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item11Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -16377,6 +17196,125 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item11Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item12Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -17224,6 +18162,133 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item11Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item12Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item13Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -18124,6 +19189,141 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item11Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item12Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item13Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item14Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -19077,6 +20277,149 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
             return false;
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item1Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item2Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item3Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item4Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item5Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item6Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item7Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item8Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item9Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item10Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item11Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item12Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item13Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item14Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+
+        start += length;
+        length = Item15Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  

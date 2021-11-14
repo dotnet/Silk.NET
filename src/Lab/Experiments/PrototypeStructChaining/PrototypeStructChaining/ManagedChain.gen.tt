@@ -163,6 +163,21 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
     /// <inheritdoc />
     public abstract void Dispose();
 
+    /// <summary>
+    /// Combines a hashcode with the first part of a slice.
+    /// </summary>
+    /// <param name="hashCode"></param>
+    /// <param name="slice"></param>
+    /// <returns></returns>
+    protected static void CombineHash(ref int hashCode, ReadOnlySpan<byte> slice) =>
+        hashCode = slice.Length switch
+        {
+            < 2 => HashCode.Combine(hashCode, slice[0]),
+            < 4 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ushort>(slice)[0]),
+            < 8 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, uint>(slice)[0]),
+            _ => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ulong>(slice)[0])
+        };
+
 <#
     for (var i = 1; i <= maximumItems; i++)
     {
@@ -782,6 +797,44 @@ public unsafe sealed class ManagedChain<<#= tList #>> : ManagedChain, IEquatable
 #>
         return true;
     }
+
+    /// <inheritdoc />
+    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
+    /// structure's 'payload'.
+    public override int GetHashCode()
+    {
+        var ptr = HeadPtr;
+        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var start = 0;
+        var length = HeadSize;
+        var sliceLength = length - HeaderSize;
+        var hashCode = 0;
+        // Hash the structure type
+        var sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+
+        // Hash any payload
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+<#
+        for (var j = 1; j < i; j++)
+        {
+#>
+
+        start += length;
+        length = Item<#=j#>Size;
+        sliceLength = length - HeaderSize;
+        sTYpe = (ptr + start)->SType;
+        hashCode = HashCode.Combine(hashCode, sTYpe);
+        if (sliceLength >= 0)
+            CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+        return hashCode;
+    }
+
+
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
