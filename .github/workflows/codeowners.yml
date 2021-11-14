@@ -1,0 +1,18 @@
+name: Codeowners
+on:
+  push:
+    paths:
+      - "CODEOWNERS"
+  pull_request:
+    paths:
+      - "CODEOWNERS"
+jobs:
+  Validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mszostok/codeowners-validator@v0.6.0
+        with:
+          checks: "files,owners,duppatterns"
+          experimental_checks: "notowned"
+          github_access_token: "${{ secrets.GITHUB_TOKEN }}"
+
