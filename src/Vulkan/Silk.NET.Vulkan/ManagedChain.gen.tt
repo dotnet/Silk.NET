@@ -111,11 +111,14 @@
     }
 #>
 // ReSharper disable StaticMemberInGenericType
-#pragma warning disable CS0659, CS0660, CS0661
+#pragma warning disable CS0659, CS0660
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 namespace Silk.NET.Vulkan;
 
