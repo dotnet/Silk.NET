@@ -52,19 +52,45 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
     public abstract void Dispose();
 
     /// <summary>
-    /// Combines a hashcode with the first part of a slice.
+    /// Combines a hashcode with the contents of a slice.
     /// </summary>
     /// <param name="hashCode"></param>
     /// <param name="slice"></param>
     /// <returns></returns>
-    protected static void CombineHash(ref int hashCode, ReadOnlySpan<byte> slice) =>
-        hashCode = slice.Length switch
+    protected static void CombineHash(ref int hashCode, ReadOnlySpan<byte> slice)
+    {
+        if (slice.Length >= 8)
         {
-            < 2 => HashCode.Combine(hashCode, slice[0]),
-            < 4 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ushort>(slice)[0]),
-            < 8 => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, uint>(slice)[0]),
-            _ => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ulong>(slice)[0])
-        };
+            // Process slice in 8 byte chunks
+            var s8 = MemoryMarshal.Cast<byte, ulong>(slice);
+            foreach (var l in s8)
+            {
+                hashCode = HashCode.Combine(hashCode, l);
+            }
+            
+            slice = slice.Slice(s8.Length*8);
+        }
+        
+        // Process remainder of slice
+        if (slice.Length >= 4)
+        {
+            var s4 = MemoryMarshal.Cast<byte, uint>(slice);
+            hashCode = HashCode.Combine(hashCode, s4[0]);
+            slice = slice.Slice(s4.Length*4);
+        }
+
+        if (slice.Length >= 2)
+        {
+            var s2 = MemoryMarshal.Cast<byte, ushort>(slice);
+            hashCode = HashCode.Combine(hashCode, s2[0]);
+            slice = slice.Slice(s2.Length*2);
+        }
+
+        if (slice.Length > 0)
+        {
+            hashCode = HashCode.Combine(hashCode, slice[0]);
+        }
+    }
 
     /// <summary>
     /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items.
@@ -10364,18 +10390,15 @@ public unsafe sealed class ManagedChain<TChain> : ManagedChain, IEquatable<Manag
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -10384,8 +10407,6 @@ public unsafe sealed class ManagedChain<TChain> : ManagedChain, IEquatable<Manag
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain> other)
@@ -10598,18 +10619,15 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -10619,15 +10637,13 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1> other)
@@ -10893,18 +10909,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2> : ManagedChain, IEquatab
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -10914,7 +10927,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2> : ManagedChain, IEquatab
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -10922,15 +10935,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2> : ManagedChain, IEquatab
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2> other)
@@ -11249,18 +11260,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3> : ManagedChain, IEqu
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -11270,7 +11278,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3> : ManagedChain, IEqu
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -11278,7 +11286,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3> : ManagedChain, IEqu
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -11286,15 +11294,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3> : ManagedChain, IEqu
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3> other)
@@ -11666,18 +11672,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -11687,7 +11690,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -11695,7 +11698,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -11703,7 +11706,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -11711,15 +11714,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4> : ManagedChain, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4> other)
@@ -12144,18 +12145,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -12165,7 +12163,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12173,7 +12171,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12181,7 +12179,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12189,7 +12187,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12197,15 +12195,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5> : ManagedCha
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5> other)
@@ -12683,18 +12679,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -12704,7 +12697,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12712,7 +12705,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12720,7 +12713,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12728,7 +12721,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12736,7 +12729,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -12744,15 +12737,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6> : Manage
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6> other)
@@ -13283,18 +13274,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -13304,7 +13292,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13312,7 +13300,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13320,7 +13308,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13328,7 +13316,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13336,7 +13324,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13344,7 +13332,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13352,15 +13340,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> : Ma
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7> other)
@@ -13944,18 +13930,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -13965,7 +13948,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13973,7 +13956,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13981,7 +13964,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13989,7 +13972,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -13997,7 +13980,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14005,7 +13988,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14013,7 +13996,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14021,15 +14004,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> other)
@@ -14666,18 +14647,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -14687,7 +14665,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14695,7 +14673,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14703,7 +14681,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14711,7 +14689,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14719,7 +14697,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14727,7 +14705,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14735,7 +14713,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14743,7 +14721,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -14751,15 +14729,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
@@ -15449,18 +15425,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -15470,7 +15443,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15478,7 +15451,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15486,7 +15459,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15494,7 +15467,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15502,7 +15475,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15510,7 +15483,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15518,7 +15491,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15526,7 +15499,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15534,7 +15507,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -15542,15 +15515,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other)
@@ -16293,18 +16264,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -16314,7 +16282,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16322,7 +16290,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16330,7 +16298,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16338,7 +16306,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16346,7 +16314,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16354,7 +16322,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16362,7 +16330,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16370,7 +16338,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16378,7 +16346,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16386,7 +16354,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -16394,15 +16362,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item11Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
@@ -17198,18 +17164,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -17219,7 +17182,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17227,7 +17190,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17235,7 +17198,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17243,7 +17206,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17251,7 +17214,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17259,7 +17222,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17267,7 +17230,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17275,7 +17238,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17283,7 +17246,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17291,7 +17254,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17299,7 +17262,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item11Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -17307,15 +17270,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item12Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
@@ -18164,18 +18125,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -18185,7 +18143,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18193,7 +18151,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18201,7 +18159,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18209,7 +18167,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18217,7 +18175,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18225,7 +18183,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18233,7 +18191,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18241,7 +18199,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18249,7 +18207,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18257,7 +18215,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18265,7 +18223,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item11Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18273,7 +18231,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item12Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -18281,15 +18239,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item13Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other)
@@ -19191,18 +19147,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -19212,7 +19165,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19220,7 +19173,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19228,7 +19181,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19236,7 +19189,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19244,7 +19197,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19252,7 +19205,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19260,7 +19213,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19268,7 +19221,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19276,7 +19229,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19284,7 +19237,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19292,7 +19245,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item11Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19300,7 +19253,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item12Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19308,7 +19261,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item13Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -19316,15 +19269,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item14Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other)
@@ -20279,18 +20230,15 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -20300,7 +20248,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20308,7 +20256,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item2Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20316,7 +20264,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item3Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20324,7 +20272,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item4Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20332,7 +20280,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item5Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20340,7 +20288,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item6Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20348,7 +20296,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item7Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20356,7 +20304,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item8Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20364,7 +20312,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item9Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20372,7 +20320,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item10Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20380,7 +20328,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item11Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20388,7 +20336,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item12Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20396,7 +20344,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item13Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20404,7 +20352,7 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item14Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
@@ -20412,15 +20360,13 @@ public unsafe sealed class ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, 
         start += length;
         length = Item15Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
 
-
- 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public bool Equals(ManagedChain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other)
