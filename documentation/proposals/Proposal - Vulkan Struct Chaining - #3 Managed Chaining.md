@@ -49,7 +49,7 @@ errors. Structures can be replaced at any time, and will be inserted efficiently
   safety.
 - The managed chains implement `IEquatable<T>`, allowing two chains with identical content to be efficiently compared (
   ignoring the `PNext` pointers, but already being confident the `SType` and ordering is correct). They also implement
-  the equality operator overloads, and `GetHashCode`. 
+  the equality operator overloads, and `GetHashCode`.
 
 Open questions:
 
@@ -66,9 +66,8 @@ Open questions:
   found in the unmanaged chain, no matter at what position they are found. This is not entirely unreasonable as the
   order of chains (after the start) is not fixed in Vulkan, and it will allow importing existing chains where the order
   doesn't matter.
-- `GetHasCode` only includes the `SType` and, at most, the first 8 bytes of the payload, for speed. This is because a
-  HashCode only needs to generate reasonable separation, but does not need to be unique. It is possible, to hash the
-  entire memory block if desired, though at slightly worse performance.
+- `GetHasCode` current hashes the entire struct's data, except the `PNext` fields. However, a hashcode only needs to
+  create reasonable separation so a 'sampling' method could be used for increased performance.
 - Similar to `Append` and `Truncate` we could also add `Insert` and `Remove` methods, though slightly more complex, as
   we'd have to generate multiples of each, it is not difficult to do, for example:
 
@@ -339,7 +338,7 @@ Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
 ### Equality (IEquatable&lt;T&gt;)
 
 ll the fully generic `ManageChain<TChain...>` types implement the corresponding `IEquatable<ManagedChain<TChain...>>`
-interface, and equality operators.  As well as `GetHashCode`.
+interface, and equality operators. As well as `GetHashCode`.
 
 ### Deconstruction
 
@@ -731,18 +730,15 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
     }
 
     /// <inheritdoc />
-    /// <remarks>HashCodes do not need to be unique, so ww only sample the structure type and the start of each 
-    /// structure's 'payload'.
     public override int GetHashCode()
     {
-        var ptr = HeadPtr;
-        var span = new ReadOnlySpan<byte>((void*) ptr, MemorySize);
+        var span = new ReadOnlySpan<byte>((void*)_headPtr, MemorySize);
         var start = 0;
         var length = HeadSize;
         var sliceLength = length - HeaderSize;
         var hashCode = 0;
         // Hash the structure type
-        var sTYpe = (ptr + start)->SType;
+        var sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
 
         // Hash any payload
@@ -752,14 +748,12 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
         start += length;
         length = Item1Size;
         sliceLength = length - HeaderSize;
-        sTYpe = (ptr + start)->SType;
+        sTYpe = ((BaseInStructure*) (_headPtr + start))->SType;
         hashCode = HashCode.Combine(hashCode, sTYpe);
         if (sliceLength >= 0)
             CombineHash(ref hashCode, span.Slice(start + HeaderSize, sliceLength));
         return hashCode;
     }
-
-
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
@@ -823,6 +817,7 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
 ## Extension methods
 
 A static class is generated to hold the extension methods (showing one example set):
+
 ```csharp
 
 /// <summary>
