@@ -22,7 +22,7 @@ jobs:
       run: |
         git fetch --all
         git checkout ci/github-pages
-        git merge -X theirs main
+        git merge --allow-unrelated-histories -X theirs main
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
