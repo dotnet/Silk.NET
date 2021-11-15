@@ -22,13 +22,13 @@ jobs:
       run: |
         git fetch --all
         git checkout ci/github-pages
+        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+        git config --local user.name "The Silk.NET Automaton"
         git merge --allow-unrelated-histories -X theirs main
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
       run: |
-        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
-        git config --local user.name "The Silk.NET Automaton"
         git add -f docs/
         git commit -am "Push latest built GitHub Pages site"
         git push
