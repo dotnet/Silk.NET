@@ -45,14 +45,12 @@ namespace Silk.NET.Maths.CodegenTests
     "And",
     "Xor",
     "Or" }) { #>
-<# if (type is "float" or "double" || method is not "Divide") { #>
         [Fact]
         public void Simd<#= bitness #><#= method #>_<#= type #>()
         {
             AssertCodegen.NoBranches(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default, default));
             AssertCodegen.NoCalls(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default, default));
         }
-<# } #>
 <# } #>
 
 #endregion
@@ -70,14 +68,12 @@ namespace Silk.NET.Maths.CodegenTests
    "IsNormal",
    "IsPositiveInfinity", 
    "Sign" }) { #>
-<# if (type is "float" or "double" || method is not "Abs") { #>
         [Fact]
         public void Simd<#= bitness #><#= method #>_<#= type #>()
         {
             AssertCodegen.NoBranches(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default));
             AssertCodegen.NoCalls(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default));
         }
-<# } #> 
 <# } #>
 
 #endregion
