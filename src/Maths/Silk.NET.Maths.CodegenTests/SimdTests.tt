@@ -1,0 +1,82 @@
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+#if NET5_0_OR_GREATER
+
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using CodegenAssertions;
+using Xunit;
+
+namespace Silk.NET.Maths.CodegenTests
+{
+    public class SimdCodegenTests
+    {
+<# foreach (var type in new [] { 
+    "byte", 
+    "sbyte", 
+    "ushort", 
+    "short", 
+    "uint", 
+    "int", 
+    "ulong", 
+    "long", 
+    "float", 
+    "double" }) {#>
+<# foreach (var bitness in new [] { 64, 128, 256 }) { #>
+
+#region Vector x Vector -> Vector <#= bitness #>-bit <#= type #>
+
+<# foreach (var method in new [] { 
+    "GreaterThan", 
+    "LessThan", 
+    "GreaterThanOrEqual", 
+    "LessThanOrEqual", 
+    "Add", 
+    "Subtract", 
+    "Multiply", 
+    "Divide", 
+    "Min", 
+    "Max", 
+    "Equal", 
+    "NotEqual",
+    "And",
+    "Xor",
+    "Or" }) { #>
+        [Fact]
+        public void Simd<#= bitness #><#= method #>_<#= type #>()
+        {
+            AssertCodegen.NoBranches(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default, default));
+        }
+<# } #>
+
+#endregion
+
+#region Vector -> Vector <#= bitness #>-bit <#= type #>
+
+<# foreach (var method in new [] { 
+   "Not", 
+   "Abs", 
+   "IsFinite", 
+   "IsInfinity", 
+   "IsNaN", 
+   "IsNegative", 
+   "IsNegativeInfinity", 
+   "IsNormal",
+   "IsPositiveInfinity", 
+   "Sign" }) { #>
+        [Fact]
+        public void Simd<#= bitness #><#= method #>_<#= type #>()
+        {
+            AssertCodegen.NoBranches(CompilationTier.Tier1, () => Simd<#= bitness #>.<#= method #><<#= type #>>(default)); 
+        }
+<# } #>
+
+#endregion
+
+<# } #>
+<# } #>
+    }
+}
+#endif
