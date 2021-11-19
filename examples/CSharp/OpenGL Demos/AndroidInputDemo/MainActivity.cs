@@ -48,7 +48,7 @@ namespace AndroidInputDemo
             // Version 3.0 is supported by >90% of devices currently in use.
             // https://developer.android.com/about/dashboards#OpenGL
             options.API = new GraphicsAPI(ContextAPI.OpenGLES, ContextProfile.Compatability, ContextFlags.Default, new APIVersion(3, 0));
-            view = Window.GetView(options);
+            view = Silk.NET.Windowing.Window.GetView(options);
 
             view.Load += OnLoad;
             view.Render += OnRender;
