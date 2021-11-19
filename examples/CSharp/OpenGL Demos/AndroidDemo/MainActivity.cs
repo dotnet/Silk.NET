@@ -58,7 +58,7 @@ namespace AndroidDemo
             // Version 3.0 is supported by >90% of devices currently in use.
             // https://developer.android.com/about/dashboards#OpenGL
             options.API = new GraphicsAPI(ContextAPI.OpenGLES, ContextProfile.Compatability, ContextFlags.Default, new APIVersion(3, 0));
-            view = Silk.NET.Windowing.Window.GetView(options);
+            view = Window.GetView(options); // note also GetView, instead of Window.Create.
             
             view.Load += OnLoad;
             view.Render += OnRender;

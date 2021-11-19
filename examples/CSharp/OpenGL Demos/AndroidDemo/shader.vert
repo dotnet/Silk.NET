@@ -1,4 +1,7 @@
 #version 300 es
+// OpenGLES shaders are almost identical to regular OpenGL ones.
+// Main difference is of course the #version line, and now we also need to specify
+// precision used for floating point operations. See: https://forum.defold.com/t/opengl-es-shader-precision-modifiers-lowp-mediump-highp/52368
 
 precision mediump float;
 

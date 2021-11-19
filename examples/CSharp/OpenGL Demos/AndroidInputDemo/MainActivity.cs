@@ -14,8 +14,7 @@ using Silk.NET.Windowing.Sdl.Android;
 namespace AndroidInputDemo
 {
     /// <summary>
-    /// Simple demo on how to use Silk on Android.
-    /// The code used is mostly identical to the one on OpenGL Tutorial 1.4 - Textures.
+    /// Simple demo on how to use handle user input with Silk.
     /// </summary>
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : SilkActivity
@@ -34,6 +33,8 @@ namespace AndroidInputDemo
         private static Matrix4x4 projection;
         private static int counter = 0;
 
+        private static IInputContext input;
+
         /// <summary>
         /// This is where the application starts.
         /// Note that when using net6-android, you do not need to have a main method.
@@ -47,15 +48,13 @@ namespace AndroidInputDemo
             // Version 3.0 is supported by >90% of devices currently in use.
             // https://developer.android.com/about/dashboards#OpenGL
             options.API = new GraphicsAPI(ContextAPI.OpenGLES, ContextProfile.Compatability, ContextFlags.Default, new APIVersion(3, 0));
-            view = Silk.NET.Windowing.Window.GetView(options);
+            view = Window.GetView(options);
 
             view.Load += OnLoad;
             view.Render += OnRender;
             view.Closing += OnClose;
             view.Run();
         }
-
-        private static IInputContext input;
 
         private unsafe static void OnLoad()
         {
@@ -94,7 +93,7 @@ namespace AndroidInputDemo
             // If touched upper 1/3 of the screen
             if(arg1.Position.Y < view.Size.Y / 3)
             {
-                // This has to be called, even though keyboard can be opened via other means.
+                // This has to be called to register input, even though keyboard can be opened via other means.
                 input.Keyboards[0].BeginInput();
             }
         }
