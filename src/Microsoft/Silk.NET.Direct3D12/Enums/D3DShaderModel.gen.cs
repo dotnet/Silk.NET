@@ -28,5 +28,7 @@ namespace Silk.NET.Direct3D12
         D3DShaderModel65 = 0x65,
         [NativeName("Name", "D3D_SHADER_MODEL_6_6")]
         D3DShaderModel66 = 0x66,
+        [NativeName("Name", "D3D_SHADER_MODEL_6_7")]
+        D3DShaderModel67 = 0x67,
     }
 }

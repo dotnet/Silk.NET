@@ -202,6 +202,7 @@ namespace Silk.NET.Windowing.Internals
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
         public int? PreferredStencilBufferBits => _optionsCache.PreferredStencilBufferBits;
         public Vector4D<int>? PreferredBitDepth => _optionsCache.PreferredBitDepth;
+        public int? Samples => _optionsCache.Samples;
 
         public bool VSync
         {

@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
@@ -205,6 +205,7 @@ namespace Silk.NET.BuildTools
                 }
                 else if (task.Mode == ConverterMode.Clang)
                 {
+                    ClangConfig.SubstituteWindowsSdkPath(ref task);
                     foreach (var src in task.Sources)
                     {
                         profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
@@ -212,7 +213,7 @@ namespace Silk.NET.BuildTools
                 }
 
                 profile = ProfileBakery.Bake
-                    (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
+                    (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList(), in task);
                 
                 PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 

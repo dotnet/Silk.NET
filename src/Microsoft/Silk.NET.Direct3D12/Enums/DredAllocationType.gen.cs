@@ -64,6 +64,10 @@ namespace Silk.NET.Direct3D12
         DredAllocationTypeVideoMotionVectorHeap = 0x2E,
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND")]
         DredAllocationTypeVideoExtensionCommand = 0x2F,
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER")]
+        DredAllocationTypeVideoEncoder = 0x30,
+        [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER_HEAP")]
+        DredAllocationTypeVideoEncoderHeap = 0x31,
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_INVALID")]
         DredAllocationTypeInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }

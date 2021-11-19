@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
@@ -59,15 +60,13 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Textinput:
                 {
-                    for (int i = 0; i < 32; i++)
+                    var chars = stackalloc char[32];
+                    Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
+                    int i = 0;
+                    // run the KeyChar event until we get a null terminator
+                    while (chars[i] != default)
                     {
-                        var @char = @event.Text.Text[i];
-                        if (@char == 0)
-                        {
-                            break;
-                        }
-
-                        KeyChar?.Invoke(this, (char) @char);
+                        KeyChar?.Invoke(this, chars[i++]);
                     }
 
                     break;

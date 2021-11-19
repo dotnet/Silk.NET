@@ -1792,7 +1792,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             thisApi.GetPerfQueryIdByName(out queryName.GetPinnableReference(), out queryId.GetPinnableReference());
         }
 
-        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> queryId)
+        public static unsafe void GetPerfQueryIdByName(this IntelPerformanceQuery thisApi, [Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string queryName, [Flow(FlowDirection.Out)] Span<uint> queryId)
         {
             // SpanOverloader
             thisApi.GetPerfQueryIdByName(queryName, out queryId.GetPinnableReference());

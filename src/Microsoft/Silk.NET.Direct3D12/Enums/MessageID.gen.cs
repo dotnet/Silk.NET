@@ -1698,7 +1698,103 @@ namespace Silk.NET.Direct3D12
         MessageIDCreateamplificationshaderInvalidshaderbytecode = 0x4FE,
         [NativeName("Name", "D3D12_MESSAGE_ID_CREATEAMPLIFICATIONSHADER_OUTOFMEMORY")]
         MessageIDCreateamplificationshaderOutofmemory = 0x4FF,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_SHADERCACHESESSION")]
+        MessageIDCreateShadercachesession = 0x500,
+        [NativeName("Name", "D3D12_MESSAGE_ID_LIVE_SHADERCACHESESSION")]
+        MessageIDLiveShadercachesession = 0x501,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESTROY_SHADERCACHESESSION")]
+        MessageIDDestroyShadercachesession = 0x502,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATESHADERCACHESESSION_INVALIDARGS")]
+        MessageIDCreateshadercachesessionInvalidargs = 0x503,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATESHADERCACHESESSION_DISABLED")]
+        MessageIDCreateshadercachesessionDisabled = 0x504,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATESHADERCACHESESSION_ALREADYOPEN")]
+        MessageIDCreateshadercachesessionAlreadyopen = 0x505,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_DEVELOPERMODE")]
+        MessageIDShadercachecontrolDevelopermode = 0x506,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_INVALIDFLAGS")]
+        MessageIDShadercachecontrolInvalidflags = 0x507,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_STATEALREADYSET")]
+        MessageIDShadercachecontrolStatealreadyset = 0x508,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_IGNOREDFLAG")]
+        MessageIDShadercachecontrolIgnoredflag = 0x509,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_STOREVALUE_ALREADYPRESENT")]
+        MessageIDShadercachesessionStorevalueAlreadypresent = 0x50A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_STOREVALUE_HASHCOLLISION")]
+        MessageIDShadercachesessionStorevalueHashcollision = 0x50B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_STOREVALUE_CACHEFULL")]
+        MessageIDShadercachesessionStorevalueCachefull = 0x50C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_FINDVALUE_NOTFOUND")]
+        MessageIDShadercachesessionFindvalueNotfound = 0x50D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_CORRUPT")]
+        MessageIDShadercachesessionCorrupt = 0x50E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_DISABLED")]
+        MessageIDShadercachesessionDisabled = 0x50F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_OVERSIZED_DISPATCH")]
+        MessageIDOversizedDispatch = 0x510,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEOENCODER")]
+        MessageIDCreateVideoencoder = 0x511,
+        [NativeName("Name", "D3D12_MESSAGE_ID_LIVE_VIDEOENCODER")]
+        MessageIDLiveVideoencoder = 0x512,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESTROY_VIDEOENCODER")]
+        MessageIDDestroyVideoencoder = 0x513,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEOENCODERHEAP")]
+        MessageIDCreateVideoencoderheap = 0x514,
+        [NativeName("Name", "D3D12_MESSAGE_ID_LIVE_VIDEOENCODERHEAP")]
+        MessageIDLiveVideoencoderheap = 0x515,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESTROY_VIDEOENCODERHEAP")]
+        MessageIDDestroyVideoencoderheap = 0x516,
+        [NativeName("Name", "D3D12_MESSAGE_ID_COPYTEXTUREREGION_MISMATCH_ENCODE_REFERENCE_ONLY_FLAG")]
+        MessageIDCopytextureregionMismatchEncodeReferenceOnlyFlag = 0x517,
+        [NativeName("Name", "D3D12_MESSAGE_ID_COPYRESOURCE_MISMATCH_ENCODE_REFERENCE_ONLY_FLAG")]
+        MessageIDCopyresourceMismatchEncodeReferenceOnlyFlag = 0x518,
+        [NativeName("Name", "D3D12_MESSAGE_ID_ENCODE_FRAME_INVALID_PARAMETERS")]
+        MessageIDEncodeFrameInvalidParameters = 0x519,
+        [NativeName("Name", "D3D12_MESSAGE_ID_ENCODE_FRAME_UNSUPPORTED_PARAMETERS")]
+        MessageIDEncodeFrameUnsupportedParameters = 0x51A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RESOLVE_ENCODER_OUTPUT_METADATA_INVALID_PARAMETERS")]
+        MessageIDResolveEncoderOutputMetadataInvalidParameters = 0x51B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RESOLVE_ENCODER_OUTPUT_METADATA_UNSUPPORTED_PARAMETERS")]
+        MessageIDResolveEncoderOutputMetadataUnsupportedParameters = 0x51C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEO_ENCODER_INVALID_PARAMETERS")]
+        MessageIDCreateVideoEncoderInvalidParameters = 0x51D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEO_ENCODER_UNSUPPORTED_PARAMETERS")]
+        MessageIDCreateVideoEncoderUnsupportedParameters = 0x51E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEO_ENCODER_HEAP_INVALID_PARAMETERS")]
+        MessageIDCreateVideoEncoderHeapInvalidParameters = 0x51F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_VIDEO_ENCODER_HEAP_UNSUPPORTED_PARAMETERS")]
+        MessageIDCreateVideoEncoderHeapUnsupportedParameters = 0x520,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATECOMMANDLIST_NULL_COMMANDALLOCATOR")]
+        MessageIDCreatecommandlistNullCommandallocator = 0x521,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CLEAR_UNORDERED_ACCESS_VIEW_INVALID_DESCRIPTOR_HANDLE")]
+        MessageIDClearUnorderedAccessViewInvalidDescriptorHandle = 0x522,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESCRIPTOR_HEAP_NOT_SHADER_VISIBLE")]
+        MessageIDDescriptorHeapNotShaderVisible = 0x523,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEBLENDSTATE_BLENDOP_WARNING")]
+        MessageIDCreateblendstateBlendopWarning = 0x524,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEBLENDSTATE_BLENDOPALPHA_WARNING")]
+        MessageIDCreateblendstateBlendopalphaWarning = 0x525,
+        [NativeName("Name", "D3D12_MESSAGE_ID_WRITE_COMBINE_PERFORMANCE_WARNING")]
+        MessageIDWriteCombinePerformanceWarning = 0x526,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RESOLVE_QUERY_INVALID_QUERY_STATE")]
+        MessageIDResolveQueryInvalidQueryState = 0x527,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SETPRIVATEDATA_NO_ACCESS")]
+        MessageIDSetprivatedataNoAccess = 0x528,
+        [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_STATIC_DESCRIPTOR_SAMPLER_MODE_MISMATCH")]
+        MessageIDCommandListStaticDescriptorSamplerModeMismatch = 0x529,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GETCOPYABLEFOOTPRINTS_UNSUPPORTED_BUFFER_WIDTH")]
+        MessageIDGetcopyablefootprintsUnsupportedBufferWidth = 0x52A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEMESHSHADER_TOPOLOGY_MISMATCH")]
+        MessageIDCreatemeshshaderTopologyMismatch = 0x52B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_VRS_SUM_COMBINER_REQUIRES_CAPABILITY")]
+        MessageIDVrsSumCombinerRequiresCapability = 0x52C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SETTING_SHADING_RATE_FROM_MS_REQUIRES_CAPABILITY")]
+        MessageIDSettingShadingRateFromMSRequiresCapability = 0x52D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHESESSION_SHADERCACHEDELETE_NOTSUPPORTED")]
+        MessageIDShadercachesessionShadercachedeleteNotsupported = 0x52E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_SHADERCACHECONTROL_SHADERCACHECLEAR_NOTSUPPORTED")]
+        MessageIDShadercachecontrolShadercacheclearNotsupported = 0x52F,
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        MessageIDD3D12MessagesEnd = 0x500,
+        MessageIDD3D12MessagesEnd = 0x530,
     }
 }

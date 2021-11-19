@@ -40,6 +40,7 @@ namespace Silk.NET.Windowing
             SharedContext = null;
             PreferredStencilBufferBits = opts.PreferredStencilBufferBits;
             PreferredBitDepth = opts.PreferredBitDepth;
+            Samples = opts.Samples;
         }
 
         /// <inheritdoc />
@@ -62,6 +63,9 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public Vector4D<int>? PreferredBitDepth { get; set; }
+
+        /// <inheritdoc />
+        public int? Samples { get; set; }
 
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
@@ -118,7 +122,8 @@ namespace Silk.NET.Windowing
             Vector4D<int>? preferredBitDepth = null,
             bool transparentFramebuffer = false,
             bool isEventDriven = false,
-            IGLContext? sharedContext = null
+            IGLContext? sharedContext = null,
+            int? samples = null
         )
         {
             IsVisible = isVisible;
@@ -140,6 +145,7 @@ namespace Silk.NET.Windowing
             PreferredDepthBufferBits = preferredDepthBufferBits;
             PreferredStencilBufferBits = preferredStencilBufferBits;
             PreferredBitDepth = preferredBitDepth;
+            Samples = samples;
         }
 
         static WindowOptions()
@@ -152,7 +158,7 @@ namespace Silk.NET.Windowing
                     name = asmName;
             }
             catch { /* cannot use reflection */ }
-            
+
             Default = new WindowOptions
             (
                 true, new Vector2D<int>(50, 50), new Vector2D<int>(1280, 720), 0.0, 0.0, GraphicsAPI.Default,

@@ -24,7 +24,7 @@ namespace Silk.NET.BuildTools.Baking
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
         /// </summary>
-        public static Profile Bake(string name, IReadOnlyList<Profile> impl)
+        public static Profile Bake(string name, IReadOnlyList<Profile> impl, in BindTask task)
         {
             // create the profile
             var profile = new Profile
@@ -56,7 +56,7 @@ namespace Silk.NET.BuildTools.Baking
             Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             Console.WriteLine("Profile Bakery: Adding a bit of flavouring...");
-            Vary(profile);
+            Vary(profile, task.OverloaderExclusions);
             Console.WriteLine("Profile Bakery: Putting it in the oven until it turns a nice golden colour...");
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
@@ -86,7 +86,7 @@ namespace Silk.NET.BuildTools.Baking
             return ret;
         }
 
-        private static void Vary(Profile profile)
+        private static void Vary(Profile profile, Dictionary<string,string[]>? overloaderExclusions)
         {
             foreach (var project in profile.Projects.Values)
             {
@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools.Baking
                     foreach (var @interface in @class.NativeApis.Values)
                     {
                         @interface.Functions = Overloader.GetWithVariants
-                                (@interface.Functions, profile.Projects["Core"])
+                                (@interface.Functions, profile.Projects["Core"], overloaderExclusions)
                             .ToList();
                     }
                 }

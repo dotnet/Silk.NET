@@ -87,14 +87,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DebugReportMessage(this ExtDebugReport thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pLayerPrefix, [Flow(FlowDirection.In)] string pMessage)
+        public static unsafe void DebugReportMessage(this ExtDebugReport thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pLayerPrefix, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pMessage)
         {
             // SpanOverloader
             thisApi.DebugReportMessage(instance, flags, objectType, @object, location, messageCode, in pLayerPrefix.GetPinnableReference(), pMessage);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DebugReportMessage(this ExtDebugReport thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(FlowDirection.In)] string pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pMessage)
+        public static unsafe void DebugReportMessage(this ExtDebugReport thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugReportFlagsEXT flags, [Count(Count = 0)] DebugReportObjectTypeEXT objectType, [Count(Count = 0)] ulong @object, [Count(Count = 0)] nuint location, [Count(Count = 0)] int messageCode, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerPrefix, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pMessage)
         {
             // SpanOverloader
             thisApi.DebugReportMessage(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, in pMessage.GetPinnableReference());

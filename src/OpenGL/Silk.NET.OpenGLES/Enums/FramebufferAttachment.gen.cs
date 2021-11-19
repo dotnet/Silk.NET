@@ -12,6 +12,8 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "FramebufferAttachment")]
     public enum FramebufferAttachment : int
     {
+        [NativeName("Name", "GL_DEPTH_STENCIL_ATTACHMENT")]
+        DepthStencilAttachment = 0x821A,
         [NativeName("Name", "GL_COLOR_ATTACHMENT0")]
         ColorAttachment0 = 0x8CE0,
         [NativeName("Name", "GL_COLOR_ATTACHMENT1")]

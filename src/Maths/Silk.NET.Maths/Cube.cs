@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -25,7 +28,7 @@ namespace Silk.NET.Maths
         public Vector3D<T> Size;
 
         /// <summary>
-        /// Constructs a Cube from an origin and it's size
+        /// Constructs a Cube from an origin and a size
         /// </summary>
         /// <param name="origin">The origin of the cube.</param>
         /// <param name="size">The size of the cube.</param>
@@ -33,6 +36,44 @@ namespace Silk.NET.Maths
         {
             Origin = origin;
             Size = size;
+        }
+
+        /// <summary>
+        /// Constructs a Cube from an origin and components of a size
+        /// </summary>
+        /// <param name="origin">The origin of the cube.</param>
+        /// <param name="sizeX">The X component of the size of the cube.</param>
+        /// <param name="sizeY">The Y component of the size of the cube.</param>
+        /// <param name="sizeZ">The Z component of the size of the cube.</param>
+        public Cube(Vector3D<T> origin, T sizeX, T sizeY, T sizeZ)
+            : this(origin, new Vector3D<T>(sizeX, sizeY, sizeZ))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Cube from components of an origin and a size
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the cube.</param>
+        /// <param name="originY">The Y component of the origin of the cube.</param>
+        /// <param name="originZ">The Z component of the origin of the cube.</param>
+        /// <param name="size">The size of the cube.</param>
+        public Cube(T originX, T originY, T originZ, Vector3D<T> size)
+            : this(new Vector3D<T>(originX, originY, originZ), size)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Cube from components of an origin and components of a size
+        /// </summary>
+        /// <param name="originX">The X component of the origin of the cube.</param>
+        /// <param name="originY">The Y component of the origin of the cube.</param>
+        /// <param name="originZ">The Z component of the origin of the cube.</param>
+        /// <param name="sizeX">The X component of the size of the cube.</param>
+        /// <param name="sizeY">The Y component of the size of the cube.</param>
+        /// <param name="sizeZ">The Z component of the size of the cube.</param>
+        public Cube(T originX, T originY, T originZ, T sizeX, T sizeY, T sizeZ)
+            : this(new Vector3D<T>(originX, originY, originZ), new Vector3D<T>(sizeX, sizeY, sizeZ))
+        {
         }
 
         /// <summary>

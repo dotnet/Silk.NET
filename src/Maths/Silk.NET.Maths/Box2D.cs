@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -27,12 +30,46 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Constructs a Box2D from a min and a max
         /// </summary>
-        /// <param name="min">The min of the rect.</param>
-        /// <param name="max">The max of the rect.</param>
+        /// <param name="min">The min of the box.</param>
+        /// <param name="max">The max of the box.</param>
         public Box2D(Vector2D<T> min, Vector2D<T> max)
         {
             Min = min;
             Max = max;
+        }
+
+        /// <summary>
+        /// Constructs a Box2D from a min and components of a max
+        /// </summary>
+        /// <param name="min">The min of the box.</param>
+        /// <param name="maxX">The max X component of the box.</param>
+        /// <param name="maxY">The max Y component of the box.</param>
+        public Box2D(Vector2D<T> min, T maxX, T maxY)
+            : this(min, new Vector2D<T>(maxX, maxY))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Box2D from components of a min and a max
+        /// </summary>
+        /// <param name="minX">The min X component of the box.</param>
+        /// <param name="minY">The min Y component of the box.</param>
+        /// <param name="max">The max of the box.</param>
+        public Box2D(T minX, T minY, Vector2D<T> max)
+            : this(new Vector2D<T>(minX, minY), max)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Box2D from components of a min and components of a max
+        /// </summary>
+        /// <param name="minX">The min X component of the box.</param>
+        /// <param name="minY">The min Y component of the box.</param>
+        /// <param name="maxX">The max X component of the box.</param>
+        /// <param name="maxY">The max Y component of the box.</param>
+        public Box2D(T minX, T minY, T maxX, T maxY)
+            : this(new Vector2D<T>(minX, minY), new Vector2D<T>(maxX, maxY))
+        {
         }
 
         /// <summary>
@@ -43,7 +80,7 @@ namespace Silk.NET.Maths
 
         /// <summary>
         /// The size of this box.
-        /// When setting the box is scaled about it's center.
+        /// When setting the box is scaled about its center.
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Size => Max - Min;

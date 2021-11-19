@@ -12,6 +12,7 @@ using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
 using Humanizer;
+
 using Microsoft.Extensions.FileSystemGlobbing;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -524,32 +525,58 @@ namespace Silk.NET.BuildTools.Cpp
                     return;
                 }
 
+                static void RenameAnonymousSuchThatItHasAnActuallySaneName
+                (
+                    in BindTask task,
+                    IProfileConstituent constituent,
+                    string original,
+                    string suggested,
+                    string declName
+                )
+                {
+                    var renamed = false;
+                    if (task.RenamedNativeNames.TryGetValue(suggested, out var renamedName) ||
+                        task.RenamedNativeNames.TryGetValue(declName, out renamedName))
+                    {
+                        task.RenamedNativeNames[original] = suggested = renamedName;
+                        renamed = true;
+                    }
+                    else if (task.RenamedNativeNames.TryAdd(original, suggested))
+                    {
+                        renamed = true;
+                    }
+                    
+                    if (renamed)
+                    {
+                        constituent.Attributes.Add
+                        (
+                            new Attribute
+                            {
+                                Arguments = new List<string> { "\"AnonymousName\"", $"\"{original}\"" },
+                                Name = "NativeName"
+                            }
+                        );
+                        constituent.Name = suggested;
+                        constituent.NativeName = declName;
+                    }
+                }
+
                 if (decl is EnumDecl)
                 {
                     var enumSpec = enums.FirstOrDefault(x => x.NativeName == anonName);
                     var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
-                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(enumSpec is null))
+                    if (enumSpec is not null)
                     {
-                        enumSpec.Attributes.Add
-                        (
-                            new Attribute
-                            {
-                                Arguments = new List<string> {"\"AnonymousName\"", $"\"{anonName}\""},
-                                Name = "NativeName"
-                            }
-                        );
-                        enumSpec.Name = name;
-                        enumSpec.NativeName = tdDecl.Name;
+                        RenameAnonymousSuchThatItHasAnActuallySaneName(in task, enumSpec, anonName, name, tdDecl.Name);
                     }
                 }
                 else if (decl is RecordDecl)
                 {
                     var structSpec = structs.FirstOrDefault(x => x.NativeName == anonName);
                     var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
-                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(structSpec is null))
+                    if (structSpec is not null)
                     {
-                        structSpec.Name = name;
-                        structSpec.NativeName = tdDecl.Name;
+                        RenameAnonymousSuchThatItHasAnActuallySaneName(in task, structSpec, anonName, name, tdDecl.Name);
                     }
                 }
             }
@@ -976,6 +1003,7 @@ namespace Silk.NET.BuildTools.Cpp
                             var renameNestedName = !task.RenamedNativeNames.ContainsKey(nestedName);
                             if (renameNestedName)
                             {
+                                // no user-defined name, make our own guess.
                                 if (firstNestedRecordField is null)
                                 {
                                     firstNestedRecordField = ret;

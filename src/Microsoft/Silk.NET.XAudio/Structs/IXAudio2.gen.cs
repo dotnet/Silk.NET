@@ -830,27 +830,27 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
+            var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
+            SilkMarshal.Free((nint)szDeviceIdPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
+            var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
             }
-            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
+            SilkMarshal.Free((nint)szDeviceIdPtr);
             return ret;
         }
 
@@ -915,32 +915,32 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
             {
-            var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
+            var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
+            SilkMarshal.Free((nint)szDeviceIdPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
             {
-            var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
+            var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
                 fixed (EffectChain* pEffectChainPtr = &pEffectChain)
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
                 }
-            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
+            SilkMarshal.Free((nint)szDeviceIdPtr);
             }
             return ret;
         }
@@ -998,9 +998,9 @@ namespace Silk.NET.XAudio
         public readonly unsafe void SetDebugConfiguration<T0>(DebugConfiguration* pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pReservedPtr = &pReserved)
+            fixed (void* pReservedPtr = &pReserved)
             {
-                ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, T0*, void>)LpVtbl[12])(@this, pDebugConfiguration, pReservedPtr);
+                ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, void*, void>)LpVtbl[12])(@this, pDebugConfiguration, pReservedPtr);
             }
         }
 
@@ -1020,9 +1020,9 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
             {
-                fixed (T0* pReservedPtr = &pReserved)
+                fixed (void* pReservedPtr = &pReserved)
                 {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, T0*, void>)LpVtbl[12])(@this, pDebugConfigurationPtr, pReservedPtr);
+                    ((delegate* unmanaged[Cdecl]<IXAudio2*, DebugConfiguration*, void*, void>)LpVtbl[12])(@this, pDebugConfigurationPtr, pReservedPtr);
                 }
             }
         }

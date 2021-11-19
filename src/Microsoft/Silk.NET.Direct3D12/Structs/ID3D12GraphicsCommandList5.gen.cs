@@ -145,9 +145,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -171,9 +171,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -198,9 +198,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -230,9 +230,9 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    fixed (T0* pDataPtr = &pData)
+                    fixed (void* pDataPtr = &pData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -253,9 +253,9 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -279,9 +279,9 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-                fixed (T0* pDataPtr = &pData)
+                fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -357,13 +357,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName(string Name)
+        public readonly int SetName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
+            var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            Marshal.FreeHGlobal((nint)NamePtr);
+            SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
 
@@ -1145,9 +1145,9 @@ namespace Silk.NET.Direct3D12
         public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pSrcDataPtr = &pSrcData)
+            fixed (void* pSrcDataPtr = &pSrcData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, uint, T0*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
@@ -1162,9 +1162,9 @@ namespace Silk.NET.Direct3D12
         public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pSrcDataPtr = &pSrcData)
+            fixed (void* pSrcDataPtr = &pSrcData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, uint, T0*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
@@ -1684,9 +1684,9 @@ namespace Silk.NET.Direct3D12
         public readonly void SetMarker<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, T0*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -1701,9 +1701,9 @@ namespace Silk.NET.Direct3D12
         public readonly void BeginEvent<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pDataPtr = &pData)
+            fixed (void* pDataPtr = &pData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, T0*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -2460,9 +2460,9 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void InitializeMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, ref T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pInitializationParametersDataPtr = &pInitializationParametersData)
+            fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[70])(@this, pMetaCommand, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[70])(@this, pMetaCommand, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
             }
         }
 
@@ -2482,9 +2482,9 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
             {
-                fixed (T0* pInitializationParametersDataPtr = &pInitializationParametersData)
+                fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[70])(@this, pMetaCommandPtr, pInitializationParametersDataPtr, InitializationParametersDataSizeInBytes);
                 }
             }
         }
@@ -2500,9 +2500,9 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ExecuteMetaCommand<T0>(ID3D12MetaCommand* pMetaCommand, ref T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (T0* pExecutionParametersDataPtr = &pExecutionParametersData)
+            fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[71])(@this, pMetaCommand, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[71])(@this, pMetaCommand, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
             }
         }
 
@@ -2522,9 +2522,9 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
             {
-                fixed (T0* pExecutionParametersDataPtr = &pExecutionParametersData)
+                fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, T0*, nuint, void>)LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
+                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void>)LpVtbl[71])(@this, pMetaCommandPtr, pExecutionParametersDataPtr, ExecutionParametersDataSizeInBytes);
                 }
             }
         }

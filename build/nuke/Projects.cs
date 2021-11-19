@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using JetBrains.Annotations;
+
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
@@ -65,7 +65,11 @@ public static class Projects
             }
             
             var sln = ParseSolution(originalSolutionPath);
-            featureSetSpecificSolutions[featureSet.Name] = (sln, featureSet.RequiresDesktopMsBuild);
+            if (featureSetUsed)
+            {
+                featureSetSpecificSolutions[featureSet.Name] = (sln, featureSet.RequiresDesktopMsBuild);
+            }
+
             foreach (var removal in rm)
             {
                 sln.RemoveProject(sln.GetProject(removal));

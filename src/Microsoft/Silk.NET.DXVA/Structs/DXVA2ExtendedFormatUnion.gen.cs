@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DXVA
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_dxva2api_L197_C5")]
+    [NativeName("Name", "__AnonymousRecord_dxva2api_L205_C5")]
     public unsafe partial struct DXVA2ExtendedFormatUnion
     {
         public DXVA2ExtendedFormatUnion
@@ -82,7 +82,7 @@ namespace Silk.NET.DXVA
 
         [FieldOffset(0)]
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_dxva2api_L199_C9")]
+        [NativeName("Type.Name", "__AnonymousRecord_dxva2api_L207_C9")]
         [NativeName("Name", "anonymous1")]
         public DXVA2ExtendedFormatUnionUnion Anonymous;
 

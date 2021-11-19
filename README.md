@@ -1,5 +1,6 @@
+<!-- Begin exclude from NuGet readme. -->
 <h1 align="center">
-    <a href="#"><img align="center" src="documentation/readme/wordmark480.png" height="96"></a>
+    <a href="#"><img align="center" src="documentation/readme/silkdotnet_v3_horizontal_96.svg"></a>
     <br />
 </h1>
 <div align="center">
@@ -12,6 +13,10 @@
 </div>
 
 <div> 
+<!-- End exclude from NuGet readme. -->
+<!-- Begin include in NuGet readme.
+![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
+End include in NuGet readme. -->
 
 Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
 
@@ -22,12 +27,20 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 5.0, 
 </div>
 <br />
 <div>
-    <a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
-    <a><br/>
-        Proud to be an official project under the benevolent <a href="https://dotnetfoundation.org">.NET Foundation</a> umbrella. </a>
+<!-- Begin exclude from NuGet readme. -->
+<a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
+<!-- End exclude from NuGet readme. -->
+<!-- Begin include in NuGet readme.
+![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)
+End include in NuGet readme. -->
+</a>
+<br />
+
+Proud to be an official project under the benevolent [.NET Foundation](https://dotnetfoundation.org) umbrella.
+
 </div>
 
-<br />
+<!-- Package description inserted here automatically. -->
 
 <h1 align="center">Features</h1>
 
@@ -42,6 +55,8 @@ In addition to providing high-speed, direct, and transparent bindings, we provid
 
 ### Good-to-go
 Silk.NET caters for anything you could need in swift development of multimedia, graphics, compute applications. Silk.NET is an all-in-one solution, complete with Graphics, Compute, Audio, Input, and Windowing.
+
+<!-- Begin exclude from NuGet readme. -->
 
 <h1 align="center">The team</h1>
 
@@ -79,7 +94,9 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
-    
+
+<!-- End exclude from NuGet readme. -->
+
 <h2 align="center">Funding</h2>
 Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
 
@@ -96,11 +113,16 @@ Silk.NET is distributed under the very permissive MIT/X11 license and all depend
 
 Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) project, and has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) to clarify expected behavior in our community. For more information, see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
+<!-- Begin exclude from NuGet readme. -->
+
 ---
 
 <div>
-    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
+    <a href="https://www.jetbrains.com/?from=Silk.NET" align="right"><img src="https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/jetbrains.svg" alt="JetBrains" class="logo-footer" width="72" align="left">
     <a><br/>
         
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
+
+<!-- End exclude from NuGet readme. -->
+

@@ -52,5 +52,7 @@ namespace Silk.NET.Direct3D11
         FeatureShaderCache = 0x12,
         [NativeName("Name", "D3D11_FEATURE_D3D11_OPTIONS5")]
         FeatureD3D11Options5 = 0x13,
+        [NativeName("Name", "D3D11_FEATURE_DISPLAYABLE")]
+        FeatureDisplayable = 0x14,
     }
 }

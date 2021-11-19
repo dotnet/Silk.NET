@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using JetBrains.Annotations;
+
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common.Functions;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
@@ -191,7 +191,7 @@ namespace Silk.NET.BuildTools.Common
                 .Concat(project.Enums.ToDictionary(x => x.NativeName, x => x.Name))
                 .ToDictionary();
 
-        private static Type ParseTypeSignature([NotNull] string type, string original = null, string group = null)
+        private static Type ParseTypeSignature(string type, string original = null, string group = null)
         {
             if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))
             {

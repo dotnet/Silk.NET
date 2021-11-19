@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXVA
 {
-    [NativeName("Name", "__AnonymousRecord_dxvahd_L349_C9")]
+    [NativeName("Name", "__AnonymousRecord_dxvahd_L357_C9")]
     public unsafe partial struct HDBltStateOutputColorSpaceDataUnionUnion
     {
         public HDBltStateOutputColorSpaceDataUnionUnion

@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -27,12 +30,50 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Constructs a Box3D from a min and a max
         /// </summary>
-        /// <param name="min">The min of the rect.</param>
-        /// <param name="max">The max of the rect.</param>
+        /// <param name="min">The min of the box.</param>
+        /// <param name="max">The max of the box.</param>
         public Box3D(Vector3D<T> min, Vector3D<T> max)
         {
             Min = min;
             Max = max;
+        }
+
+        /// <summary>
+        /// Constructs a Box3D from a min and components of a max
+        /// </summary>
+        /// <param name="min">The min of the box.</param>
+        /// <param name="maxX">The max X component of the box.</param>
+        /// <param name="maxY">The max Y component of the box.</param>
+        /// <param name="maxZ">The max Z component of the box.</param>
+        public Box3D(Vector3D<T> min, T maxX, T maxY, T maxZ)
+            : this(min, new Vector3D<T>(maxX, maxY, maxZ))
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Box3D from components of a min and a max
+        /// </summary>
+        /// <param name="minX">The min X component of the box.</param>
+        /// <param name="minY">The min Y component of the box.</param>
+        /// <param name="minZ">The min Z component of the box.</param>
+        /// <param name="max">The max of the box.</param>
+        public Box3D(T minX, T minY, T minZ, Vector3D<T> max)
+            : this(new Vector3D<T>(minX, minY, minZ), max)
+        {
+        }
+
+        /// <summary>
+        /// Constructs a Box3D from components of a min and a max
+        /// </summary>
+        /// <param name="minX">The min X component of the box.</param>
+        /// <param name="minY">The min Y component of the box.</param>
+        /// <param name="minZ">The min Z component of the box.</param>
+        /// <param name="maxX">The max X component of the box.</param>
+        /// <param name="maxY">The max Y component of the box.</param>
+        /// <param name="maxZ">The max Z component of the box.</param>
+        public Box3D(T minX, T minY, T minZ, T maxX, T maxY, T maxZ)
+            : this(new Vector3D<T>(minX, minY, minZ), new Vector3D<T>(maxX, maxY, maxZ))
+        {
         }
 
         /// <summary>
@@ -43,7 +84,7 @@ namespace Silk.NET.Maths
 
         /// <summary>
         /// The size of this box.
-        /// When setting the box is scaled about it's center.
+        /// When setting the box is scaled about its center.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Size => Max - Min;

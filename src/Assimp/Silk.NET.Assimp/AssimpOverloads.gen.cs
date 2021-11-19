@@ -74,7 +74,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, string pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(pScene, ref pFormatId.GetPinnableReference(), pFileName, pPreprocessing);
@@ -82,7 +82,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, string pFormatId, Span<byte> pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(pScene, pFormatId, ref pFileName.GetPinnableReference(), pPreprocessing);
@@ -106,7 +106,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, string pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(in pScene.GetPinnableReference(), pFormatId, pFileName, pPreprocessing);
@@ -130,7 +130,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, string pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(in pScene.GetPinnableReference(), ref pFormatId.GetPinnableReference(), pFileName, pPreprocessing);
@@ -138,7 +138,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, byte* pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(in pScene.GetPinnableReference(), pFormatId, pFileName, pPreprocessing);
@@ -146,7 +146,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, Span<byte> pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(in pScene.GetPinnableReference(), pFormatId, ref pFileName.GetPinnableReference(), pPreprocessing);
@@ -154,7 +154,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, string pFileName, uint pPreprocessing)
+        public static unsafe Return ExportScene(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportScene(in pScene.GetPinnableReference(), pFormatId, pFileName, pPreprocessing);
@@ -186,7 +186,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -226,7 +226,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, ref pFormatId.GetPinnableReference(), pFileName, pIO, pPreprocessing);
@@ -234,7 +234,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, ref pFormatId.GetPinnableReference(), pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -242,7 +242,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, string pFormatId, byte* pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -250,7 +250,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, string pFormatId, Span<byte> pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, pFormatId, ref pFileName.GetPinnableReference(), pIO, pPreprocessing);
@@ -258,7 +258,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, string pFormatId, Span<byte> pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, pFormatId, ref pFileName.GetPinnableReference(), ref pIO.GetPinnableReference(), pPreprocessing);
@@ -266,7 +266,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, string pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(pScene, pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -306,7 +306,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, pIO, pPreprocessing);
@@ -314,7 +314,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -354,7 +354,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), ref pFormatId.GetPinnableReference(), pFileName, pIO, pPreprocessing);
@@ -362,7 +362,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, Span<byte> pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), ref pFormatId.GetPinnableReference(), pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -370,7 +370,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, pIO, pPreprocessing);
@@ -378,7 +378,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, byte* pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -386,7 +386,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, Span<byte> pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, ref pFileName.GetPinnableReference(), pIO, pPreprocessing);
@@ -394,7 +394,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, Span<byte> pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, Span<byte> pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, ref pFileName.GetPinnableReference(), ref pIO.GetPinnableReference(), pPreprocessing);
@@ -402,7 +402,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, pIO, pPreprocessing);
@@ -410,7 +410,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 21 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, string pFileName, Span<FileIO> pIO, uint pPreprocessing)
+        public static unsafe Return ExportSceneEx(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, Span<FileIO> pIO, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneEx(in pScene.GetPinnableReference(), pFormatId, pFileName, ref pIO.GetPinnableReference(), pPreprocessing);
@@ -442,7 +442,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 246, Column 45 in src/Assimp/Include\\assimp/cexport.h")]
-        public static unsafe ExportDataBlob* ExportSceneToBlob(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, string pFormatId, uint pPreprocessing)
+        public static unsafe ExportDataBlob* ExportSceneToBlob(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Scene> pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing)
         {
             // SpanOverloader
             return thisApi.ExportSceneToBlob(in pScene.GetPinnableReference(), pFormatId, pPreprocessing);
@@ -498,7 +498,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 139, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileEx(this Assimp thisApi, string pFile, uint pFlags, Span<FileIO> pFS)
+        public static unsafe Scene* ImportFileEx(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS)
         {
             // SpanOverloader
             return thisApi.ImportFileEx(pFile, pFlags, ref pFS.GetPinnableReference());
@@ -562,7 +562,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileExWithProperties(pFile, pFlags, pFS, in pProps.GetPinnableReference());
@@ -570,7 +570,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, string pFile, uint pFlags, Span<FileIO> pFS, [Flow(FlowDirection.In)] PropertyStore* pProps)
+        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS, [Flow(FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileExWithProperties(pFile, pFlags, ref pFS.GetPinnableReference(), pProps);
@@ -578,7 +578,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, string pFile, uint pFlags, Span<FileIO> pFS, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileExWithProperties(pFile, pFlags, ref pFS.GetPinnableReference(), in pProps.GetPinnableReference());
@@ -610,7 +610,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, string pHint)
+        public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemory(ref pBuffer.GetPinnableReference(), pLength, pFlags, pHint);
@@ -618,7 +618,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, string pBuffer, uint pLength, uint pFlags, Span<byte> pHint)
+        public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, Span<byte> pHint)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemory(pBuffer, pLength, pFlags, ref pHint.GetPinnableReference());
@@ -650,7 +650,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, byte* pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(pBuffer, pLength, pFlags, pHint, in pProps.GetPinnableReference());
@@ -690,7 +690,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(ref pBuffer.GetPinnableReference(), pLength, pFlags, pHint, pProps);
@@ -698,7 +698,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, Span<byte> pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(ref pBuffer.GetPinnableReference(), pLength, pFlags, pHint, in pProps.GetPinnableReference());
@@ -706,7 +706,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(pBuffer, pLength, pFlags, pHint, in pProps.GetPinnableReference());
@@ -714,7 +714,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, string pBuffer, uint pLength, uint pFlags, Span<byte> pHint, [Flow(FlowDirection.In)] PropertyStore* pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, Span<byte> pHint, [Flow(FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(pBuffer, pLength, pFlags, ref pHint.GetPinnableReference(), pProps);
@@ -722,7 +722,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, string pBuffer, uint pLength, uint pFlags, Span<byte> pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, Span<byte> pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(pBuffer, pLength, pFlags, ref pHint.GetPinnableReference(), in pProps.GetPinnableReference());
@@ -730,7 +730,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 36 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, string pBuffer, uint pLength, uint pFlags, string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
+        public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
             return thisApi.ImportFileFromMemoryWithProperties(pBuffer, pLength, pFlags, pHint, in pProps.GetPinnableReference());
@@ -850,7 +850,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyInteger(this Assimp thisApi, Span<PropertyStore> store, string szName, int value)
+        public static unsafe void SetImportPropertyInteger(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value)
         {
             // SpanOverloader
             thisApi.SetImportPropertyInteger(ref store.GetPinnableReference(), szName, value);
@@ -882,7 +882,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 418, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyFloat(this Assimp thisApi, Span<PropertyStore> store, string szName, float value)
+        public static unsafe void SetImportPropertyFloat(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value)
         {
             // SpanOverloader
             thisApi.SetImportPropertyFloat(ref store.GetPinnableReference(), szName, value);
@@ -914,7 +914,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, string szName, [Flow(FlowDirection.In)] ReadOnlySpan<AssimpString> st)
+        public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
             thisApi.SetImportPropertyString(store, szName, in st.GetPinnableReference());
@@ -954,7 +954,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, string szName, [Flow(FlowDirection.In)] AssimpString* st)
+        public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st)
         {
             // SpanOverloader
             thisApi.SetImportPropertyString(ref store.GetPinnableReference(), szName, st);
@@ -962,7 +962,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 435, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, string szName, [Flow(FlowDirection.In)] ReadOnlySpan<AssimpString> st)
+        public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
             thisApi.SetImportPropertyString(ref store.GetPinnableReference(), szName, in st.GetPinnableReference());
@@ -994,7 +994,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, string szName, Span<System.Numerics.Matrix4x4> mat)
+        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, Span<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
             thisApi.SetImportPropertyMatrix(store, szName, ref mat.GetPinnableReference());
@@ -1034,7 +1034,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, string szName, System.Numerics.Matrix4x4* mat)
+        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
             thisApi.SetImportPropertyMatrix(ref store.GetPinnableReference(), szName, mat);
@@ -1042,7 +1042,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, string szName, Span<System.Numerics.Matrix4x4> mat)
+        public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, Span<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
             thisApi.SetImportPropertyMatrix(ref store.GetPinnableReference(), szName, ref mat.GetPinnableReference());
@@ -1370,7 +1370,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, pPropOut);
@@ -1378,7 +1378,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut)
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, in pPropOut);
@@ -1442,7 +1442,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(pMat, pKey, type, index, pOut, ref pMax.GetPinnableReference());
@@ -1450,7 +1450,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(pMat, pKey, type, index, ref pOut.GetPinnableReference(), pMax);
@@ -1458,7 +1458,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(pMat, pKey, type, index, ref pOut.GetPinnableReference(), ref pMax.GetPinnableReference());
@@ -1530,7 +1530,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, float* pOut, uint* pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(in pMat.GetPinnableReference(), pKey, type, index, pOut, pMax);
@@ -1538,7 +1538,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(in pMat.GetPinnableReference(), pKey, type, index, pOut, ref pMax.GetPinnableReference());
@@ -1546,7 +1546,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference(), pMax);
@@ -1554,7 +1554,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1401, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialFloatArray(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference(), ref pMax.GetPinnableReference());
@@ -1618,7 +1618,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(pMat, pKey, type, index, pOut, ref pMax.GetPinnableReference());
@@ -1626,7 +1626,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(pMat, pKey, type, index, ref pOut.GetPinnableReference(), pMax);
@@ -1634,7 +1634,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(pMat, pKey, type, index, ref pOut.GetPinnableReference(), ref pMax.GetPinnableReference());
@@ -1706,7 +1706,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, int* pOut, uint* pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(in pMat.GetPinnableReference(), pKey, type, index, pOut, pMax);
@@ -1714,7 +1714,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(in pMat.GetPinnableReference(), pKey, type, index, pOut, ref pMax.GetPinnableReference());
@@ -1722,7 +1722,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference(), pMax);
@@ -1730,7 +1730,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1454, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
+        public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
             return thisApi.GetMaterialIntegerArray(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference(), ref pMax.GetPinnableReference());
@@ -1762,7 +1762,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
+        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialColor(pMat, pKey, type, index, ref pOut.GetPinnableReference());
@@ -1802,7 +1802,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, System.Numerics.Vector4* pOut)
+        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialColor(in pMat.GetPinnableReference(), pKey, type, index, pOut);
@@ -1810,7 +1810,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1491, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
+        public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialColor(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference());
@@ -1842,7 +1842,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<UVTransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(pMat, pKey, type, index, ref pOut.GetPinnableReference());
@@ -1882,7 +1882,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, UVTransform* pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, pOut);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<UVTransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference());
@@ -1922,7 +1922,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<AssimpString> pOut)
+        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialString(pMat, pKey, type, index, ref pOut.GetPinnableReference());
@@ -1962,7 +1962,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, AssimpString* pOut)
+        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialString(in pMat.GetPinnableReference(), pKey, type, index, pOut);
@@ -1970,7 +1970,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<AssimpString> pOut)
+        public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialString(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference());

@@ -727,9 +727,9 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pvPVPDataPtr = &pvPVPData)
+            fixed (void* pvPVPDataPtr = &pvPVPData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, T0*, int>)LpVtbl[7])(@this, pRenderTarget, pvPVPDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, void*, int>)LpVtbl[7])(@this, pRenderTarget, pvPVPDataPtr);
             }
             return ret;
         }
@@ -753,9 +753,9 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTargetPtr = &pRenderTarget)
             {
-                fixed (T0* pvPVPDataPtr = &pvPVPData)
+                fixed (void* pvPVPDataPtr = &pvPVPData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, T0*, int>)LpVtbl[7])(@this, pRenderTargetPtr, pvPVPDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoder*, Silk.NET.Direct3D9.IDirect3DSurface9*, void*, int>)LpVtbl[7])(@this, pRenderTargetPtr, pvPVPDataPtr);
                 }
             }
             return ret;

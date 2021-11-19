@@ -121,9 +121,9 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (T0* pInitializeFunctionPtr = &pInitializeFunction)
+            fixed (void* pInitializeFunctionPtr = &pInitializeFunction)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, T0*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
             }
             return ret;
         }

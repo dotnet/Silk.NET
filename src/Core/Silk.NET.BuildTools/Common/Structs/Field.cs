@@ -13,7 +13,7 @@ namespace Silk.NET.BuildTools.Common.Structs
     /// <summary>
     /// Represents a field on a native struct.
     /// </summary>
-    public class Field
+    public class Field : IProfileConstituent
     {
         /// <summary>
         /// A list of types that can be marked as fixed.
