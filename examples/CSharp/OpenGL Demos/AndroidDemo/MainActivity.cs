@@ -31,10 +31,10 @@ namespace AndroidDemo
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
-             0.5f,  0.5f, 0.0f, 1f, 1f,
-             0.5f, -0.5f, 0.0f, 1f, 0f,
-            -0.5f, -0.5f, 0.0f, 0f, 0f,
-            -0.5f,  0.5f, 0.5f, 0f, 1f
+             0.5f,  0.5f, 0.0f, 1f, 0f,
+             0.5f, -0.5f, 0.0f, 1f, 1f,
+            -0.5f, -0.5f, 0.0f, 0f, 1f,
+            -0.5f,  0.5f, 0.5f, 0f, 0f
         };
 
         private static readonly uint[] Indices =
@@ -82,6 +82,7 @@ namespace AndroidDemo
 
             //Loading a texture.
             Texture = new Texture(Gl, "silk.png");
+            Gl.ClearColor(1, 1, 1, 1);
         }
 
         private static unsafe void OnRender(double obj)
