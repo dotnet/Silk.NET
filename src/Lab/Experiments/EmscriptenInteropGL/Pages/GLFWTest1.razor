@@ -2,7 +2,6 @@
 @using System.Runtime.InteropServices
 @using Silk.NET.Core.Native
 @using Silk.NET.GLFW
-@using System.Runtime.CompilerServices
 <h3>OpenGLTest1</h3>
 
 @code {
@@ -13,8 +12,8 @@
     protected override unsafe void OnInitialized()
     {
         var glfw = Glfw.GetApi();
-        Console.WriteLine("Setting error callback");
-        glfw.SetErrorCallback((delegate* unmanaged[Cdecl]<int, void*, void>)&ErrorCallback);
+        // Console.WriteLine("Setting error callback");
+        // glfw.SetErrorCallback((delegate* unmanaged<int, void*, void>)&ErrorCallback);
         Console.WriteLine("Initializing");
         if (!glfw.Init())
             return;
@@ -23,10 +22,10 @@
         
         Console.WriteLine("Starting Loop");
         var selfHandle = GCHandle.Alloc(this, GCHandleType.Normal);
-        EmscriptenSetMainLoop((delegate* unmanaged<void*, void>)&Loop, (void*)GCHandle.ToIntPtr(selfHandle), 0, 1);
+        EmscriptenSetMainLoop((delegate* unmanaged<void*, void>)&Loop, (void*)GCHandle.ToIntPtr(selfHandle), 0, 0);
     }
 
-    [UnmanagedCallersOnly(CallConvs = new []{typeof(CallConvCdecl)})]
+    [UnmanagedCallersOnly]
     private static unsafe void ErrorCallback(int error, void* description)
     {
         Console.WriteLine($"GLFW Error: {Enum.GetName((ErrorCode)error)} {SilkMarshal.PtrToString((nint) description)}");
