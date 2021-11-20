@@ -60,14 +60,16 @@ namespace Silk.NET.Input.Sdl
                 }
                 case EventType.Textinput:
                 {
-                    if (KeyChar != null)
+                    if (KeyChar is not null)
                     {
                         var chars = stackalloc char[32];
                         Encoding.UTF8.GetChars(&@event.Text.Text[0], 32, chars, 32);
                             
                         // run the KeyChar event until we get a null terminator or run out of buffer
                         for (int i = 0; i < 32 && chars[i] != '\0'; i++)
+                        {
                             KeyChar.Invoke(this, chars[i]);
+                        }
                     }
 
                     break;

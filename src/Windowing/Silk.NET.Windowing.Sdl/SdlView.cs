@@ -93,7 +93,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public event System.Action ProcessingEvents;
+        public event System.Action? ProcessingEvents;
 
         // Methods
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
