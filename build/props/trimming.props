@@ -1,0 +1,8 @@
+<Project>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+    <_Parameter1>IsTrimmable</_Parameter1>
+    <_Parameter2>True</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

@@ -1,14 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-      <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+      <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
       <RootNamespace>Silk.NET.GLFW</RootNamespace>
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     
     <ItemGroup>
-      <NativeFileReference Include="native/glfw3.c" />
-      <PackageReference Include="Ultz.Native.GLFW" Version="3.3.2.1" />
+        <None Include="native/glfw3.wasm" Pack="true" PackagePath="runtimes/browser-wasm/native" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ultz.Native.GLFW" Version="3.3.2.1" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\bindings.props" />

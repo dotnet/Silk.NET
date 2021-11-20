@@ -17,7 +17,6 @@ namespace Silk.NET.GLFW
     /// </summary>
     //public partial class Glfw : NativeAPI, IGlfw
     [NativeApi(Prefix = "glfw")]
-    [PInvokeOverride(0, "glfw3")] // browser override
     public partial class Glfw : NativeAPI
     {
         /// <summary>
@@ -2779,8 +2778,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        public unsafe partial delegate* unmanaged<int, void*, void> SetErrorCallback
-            (delegate* unmanaged<int, void*, void> errorCallback);
+        public unsafe partial delegate* unmanaged[Cdecl]<int, void*, void> SetErrorCallback
+            (delegate* unmanaged[Cdecl]<int, void*, void> errorCallback);
 
         /// <summary>
         /// <para>

@@ -13,13 +13,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.1.21452.15" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.1.21452.15" PrivateAssets="all" />
   </ItemGroup>
-
-  <ItemGroup>   
-    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-    <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
-  </ItemGroup>
-
+    
   <ItemGroup>
     <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj" />
   </ItemGroup>
