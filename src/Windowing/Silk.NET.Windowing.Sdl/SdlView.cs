@@ -93,6 +93,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
+        public event System.Action? ProcessingEvents;
 
         // Methods
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
@@ -325,6 +326,7 @@ namespace Silk.NET.Windowing.Sdl
         [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
         public virtual void ProcessEvents()
         {
+            ProcessingEvents?.Invoke();
             var taken = false;
             BeginEventProcessing(ref taken);
             var count = Events.Count;

@@ -11,15 +11,15 @@
 /src/Core/Silk.NET.Core             @Perksey
 /src/Core/Silk.NET.Core.Win32Extras @Perksey
 
+# Input
+/src/Input/**/*.cs                  @ThomasMiz
+
+# Vulkan
+/src/Vulkan/**/*.cs                 @HurricanKai
+
+# OpenGL
+/src/OpenGL/**/*.cs                 @ThomasMiz
+
 # BuildTools
 /src/Core/Silk.NET.BuildTools       @Perksey
 /**/*.gen.cs                        @Perksey
-
-# Vulkan
-/src/Vulkan/**/!*.gen.cs            @HurricanKai
-
-# OpenGL
-/src/OpenGL/**/!*.gen.cs            @ThomasMiz
-
-# Input
-/src/Input/**/!*.gen.cs             @ThomasMiz
