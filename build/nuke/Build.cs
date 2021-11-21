@@ -379,7 +379,7 @@ class Build : NukeBuild
                 }
 
                 var sdl = RootDirectory / "build" / "submodules" / "SDL";
-                var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
+                var silkDroid = SourceDirectory / "Windowing" / "SilkDroid";
                 var xcopy = new (string, string)[]
                 {
                     (sdl / "android-project" / "app" / "src" / "main" / "java",
@@ -405,8 +405,7 @@ class Build : NukeBuild
                 CopyFile
                 (
                     silkDroid / "app" / "build" / "outputs" / "aar" / "app-release.aar",
-                    SourceDirectory / "Windowing" / "Android" / "Silk.NET.Windowing.Sdl.Android" / "Jars" /
-                    "app-release.aar",
+                    SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Android" /  "app-release.aar",
                     FileExistsPolicy.Overwrite
                 );
                 return ret;
