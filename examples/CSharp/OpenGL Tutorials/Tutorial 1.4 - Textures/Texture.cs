@@ -16,10 +16,8 @@ namespace Tutorial
         {
             //Loading an image using imagesharp.
             Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
-            //We need to flip our image as image sharps coordinates has origin (0, 0) in the top-left corner,
-            //whereas openGL has origin in the bottom-left corner.
-            img.Mutate(x => x.Flip(FlipMode.Vertical));
 
+            // OpenGL has image origin in the bottom-left corner.
             fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 //Loading the actual image.
