@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -19,7 +19,7 @@ namespace Silk.NET.Input.Sdl
         public SdlInputContext(SdlView view)
         {
             _view = _sdlView = view;
-            _view.Update += Update;
+            _sdlView.ProcessingEvents += ProcessEvents;
             SdlGamepads = new Dictionary<int, SdlGamepad>();
             SdlJoysticks = new Dictionary<int, SdlJoystick>();
             Gamepads = new IsConnectedWrapper<IGamepad>
@@ -51,7 +51,7 @@ namespace Silk.NET.Input.Sdl
         public nint Handle => _view.Handle;
         public event Action<IInputDevice, bool>? ConnectionChanged;
 
-        private void Update(double obj)
+        private void ProcessEvents()
         {
             if (_view.Handle == 0)
             {
@@ -306,6 +306,8 @@ namespace Silk.NET.Input.Sdl
 
         public void Dispose()
         {
+            _sdlView.ProcessingEvents -= ProcessEvents;
+
             foreach (var gp in SdlGamepads.Values)
             {
                 gp.Dispose();
