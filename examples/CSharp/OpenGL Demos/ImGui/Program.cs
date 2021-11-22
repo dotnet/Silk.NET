@@ -40,7 +40,7 @@ namespace ImGui
                 gl.Viewport(s);
             };
 
-            // The render funciton
+            // The render function
             window.Render += delta =>
             {
                 // Make sure ImGui is up-to-date
