@@ -54,6 +54,8 @@ static readonly Silk.NET.Maths.Simd64<T>.IsUnsignedInteger -> bool
 static readonly Silk.NET.Maths.Simd64<T>.IsSignedInteger -> bool
 ```
 
+**Also apply that to Scalar.**
+
 # Behavioural changes
 
 ### IEEE754 standard
@@ -62,14 +64,14 @@ I propose we do *not* guarantee following it for the sake of performance. For ex
 
 ### Reciprocal of an integer
 
-**[To discuss]**
+**OPEN QUESTION:** what should be a reciprocal of an integer? Just 0? What is its behaviour for integer 0?
 
 ### IsHardwareAccelerated
 
 Currently, in the `feature/math-simd` branch it does not depend on the type. I suggest making it dependent on the type (e. g. by doing `&& IsSupported`).
 
-It also does not depend on the method, which may lead to worse performance than just scalar operations (for methods which use other simd methods *which* in turn use scalar operations). This thing **[To discuss]**
+It also does not depend on the method, which may lead to worse performance than just scalar operations (for methods which use other simd methods *which* in turn use scalar operations). **OPEN QUESTION:** how can we check that a method is hw-accelerated?
 
 ### How else can we guarantee the fastest code?
 
-How can we let the user know if a `method` x `type` x `bitness` x `target machine` indeed makes a use of HW-acceleration? Or is the fallback with loop over vector good enough?
+**OPEN QUESTION:** How can we let the user know if a `method` x `type` x `bitness` x `target machine` indeed makes a use of HW-acceleration? Or is the fallback with loop over vector good enough?
