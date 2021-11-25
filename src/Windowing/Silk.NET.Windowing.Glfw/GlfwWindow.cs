@@ -294,6 +294,8 @@ namespace Silk.NET.Windowing.Glfw
             _windowClass = opts.WindowClass;
             if (_windowClass is not null)
                 _glfw.WindowHintString((int)WindowHintString.X11ClassName, _windowClass);
+            else
+                _windowClass = _localTitleCache;
 
             // Set window API.
             switch (opts.API.API)
@@ -424,7 +426,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
         public override IGLContext? SharedContext { get; }
-        public override string? WindowClass => _windowClass ?? CoreTitle;
+        public override string? WindowClass => _windowClass;
 
 
         public override IMonitor? Monitor
