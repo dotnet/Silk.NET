@@ -415,6 +415,9 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override void CoreInitialize(ViewOptions opts)
         {
+            if (_extendedOptionsCache.WindowClass is not null)
+                Sdl.Setenv("SDL_VIDEO_X11_WMCLASS", _extendedOptionsCache.WindowClass, 1);
+
             WindowFlags flags = 0;
             flags |= IsVisible ? WindowFlags.WindowShown : WindowFlags.WindowHidden;
             flags |= WindowBorder switch

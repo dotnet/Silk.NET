@@ -31,7 +31,6 @@ namespace Silk.NET.Windowing.Internals
         protected abstract string CoreTitle { get; set; }
         protected abstract WindowState CoreWindowState { get; set; }
         protected abstract WindowBorder CoreWindowBorder { get; set; }
-        protected abstract string? CoreWindowClass { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Vector2D<int> SizeSettable { set; }
         protected abstract Rectangle<int> CoreBorderSize { get; }
@@ -49,6 +48,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract IWindowHost? Parent { get; }
         public abstract IGLContext? SharedContext { get; }
         public abstract IMonitor? Monitor { get; set; }
+        public abstract string? WindowClass { get; }
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 
         // Cache updates for dervied classes
@@ -173,20 +173,6 @@ namespace Silk.NET.Windowing.Internals
                 }
 
                 ExtendedOptionsCache.WindowBorder = value;
-            }
-        }
-
-        public string? WindowClass
-        {
-            get => IsInitialized ? ExtendedOptionsCache.WindowClass = CoreWindowClass : ExtendedOptionsCache.WindowClass;
-            set
-            {
-                if (IsInitialized)
-                {
-                    CoreWindowClass = value;
-                }
-
-                ExtendedOptionsCache.WindowClass = value;
             }
         }
 
