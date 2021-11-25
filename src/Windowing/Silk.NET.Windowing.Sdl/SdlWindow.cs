@@ -24,6 +24,7 @@ namespace Silk.NET.Windowing.Sdl
             : base(new ViewOptions(opts), parent, monitor, platform)
         {
             _extendedOptionsCache = opts;
+            WindowClass = opts.WindowClass ?? "SDL_App";
         }
 
         public SdlWindow(void* nativeHandle, IGLContext? ctx, SdlPlatform platform) : base(nativeHandle, ctx, platform)
@@ -195,6 +196,8 @@ namespace Silk.NET.Windowing.Sdl
                 }
             }
         }
+
+        public string? WindowClass { get; }
 
         public unsafe Rectangle<int> BorderSize
         {
