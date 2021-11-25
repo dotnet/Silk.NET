@@ -62,5 +62,15 @@ namespace Silk.NET.Windowing
         /// The context with which this window's context's resources are shared.
         /// </summary>
         IGLContext? SharedContext { get; }
+
+        /// <summary>
+        /// Window class name used in systems like X11.
+        /// Also known as WM_CLASS.
+        /// 
+        /// If omitted the following default values are used:
+        /// - GLFW: Title of the window
+        /// - SDL:  The string "SDL_App"
+        /// </summary>
+        string? WindowClass { get; }
     }
 }
