@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -31,6 +31,7 @@ namespace Silk.NET.Windowing.Internals
         protected abstract string CoreTitle { get; set; }
         protected abstract WindowState CoreWindowState { get; set; }
         protected abstract WindowBorder CoreWindowBorder { get; set; }
+        protected abstract string? CoreWindowClass { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Vector2D<int> SizeSettable { set; }
         protected abstract Rectangle<int> CoreBorderSize { get; }
@@ -172,6 +173,20 @@ namespace Silk.NET.Windowing.Internals
                 }
 
                 ExtendedOptionsCache.WindowBorder = value;
+            }
+        }
+
+        public string? WindowClass
+        {
+            get => IsInitialized ? ExtendedOptionsCache.WindowClass = CoreWindowClass : ExtendedOptionsCache.WindowClass;
+            set
+            {
+                if (IsInitialized)
+                {
+                    CoreWindowClass = value;
+                }
+
+                ExtendedOptionsCache.WindowClass = value;
             }
         }
 

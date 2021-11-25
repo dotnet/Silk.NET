@@ -102,7 +102,7 @@ namespace Silk.NET.Windowing
         public IGLContext? SharedContext { get; }
 
         /// <inheritdoc />
-        public string? WindowClass { get; }
+        public string? WindowClass { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.
