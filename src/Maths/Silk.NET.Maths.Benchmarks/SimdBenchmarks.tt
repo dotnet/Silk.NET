@@ -10,18 +10,32 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
 using System.Runtime.Intrinsics;
+using CodegenAnalysis.Benchmarks;
 
 
 namespace Silk.NET.Maths.Benchmark
 {
     [SimpleJob(RuntimeMoniker.Net50, launchCount: 1, warmupCount: 3, targetCount: 3)]
     [DisassemblyDiagnoser(exportHtml: true)]
+    [CAColumn(CAColumn.Branches),
+     CAColumn(CAColumn.Calls), 
+     CAColumn(CAColumn.StaticStackAllocations),
+     CAColumn(CAColumn.CodegenSize),
+     CAColumn(CAColumn.ILSize)]
+
+    [CAExport(Export.Html),
+     CAExport(Export.Md)]
     public unsafe class SimdBenchmarks
     {
         const int IterCount = 30;
         void* a;
         void* b;
         void* c;
+
+        public SimdBenchmarks()
+        {
+            Setup();
+        }
         
         [GlobalSetup]
         public void Setup()
@@ -62,7 +76,7 @@ namespace Silk.NET.Maths.Benchmark
     "Add", 
     "Subtract", 
     "Multiply", 
-    "Divide", 
+    // "Divide", 
     "Min", 
     "Max", 
     "Equal", 
@@ -71,6 +85,7 @@ namespace Silk.NET.Maths.Benchmark
     "Xor",
     "Or" }) { #>
         [Benchmark]
+        [CAAnalyze]
         public void Simd<#= bitness #><#= method #>_<#= type #>()
         {
             for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)
@@ -94,6 +109,7 @@ namespace Silk.NET.Maths.Benchmark
    "IsPositiveInfinity", 
    "Sign" }) { #>
         [Benchmark]
+        [CAAnalyze]
         public void Simd<#= bitness #><#= method #>_<#= type #>()
         {
             for (int i = 0; i < IterCount * (<#= 256 / bitness #>); i++)

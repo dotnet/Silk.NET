@@ -3,6 +3,7 @@
 
 using System.Reflection;
 using BenchmarkDotNet.Running;
+using CodegenAnalysis.Benchmarks;
 
 namespace Silk.NET.Maths.Benchmark
 {
@@ -10,6 +11,9 @@ namespace Silk.NET.Maths.Benchmark
     {
         public static void Main(string[] args)
         {
+            // uncomment to run static codegen tests
+            // (find the results in CodegenAnalysis.Artifacts) 
+            // CodegenBenchmarkRunner.Run<SimdBenchmarks>();
             BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()).Run(args);
         }
     }
