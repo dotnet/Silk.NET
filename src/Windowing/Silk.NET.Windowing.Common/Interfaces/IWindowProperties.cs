@@ -66,11 +66,12 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Window class name used in systems like X11.
         /// Also known as WM_CLASS.
-        /// 
+        /// </summary>
+        /// <remarks>
         /// If omitted the following default values are used:
         /// - The name of the main assembly without extension
         /// - "SilkNET_App" if the name of the main assembly could not be determined
-        /// </summary>
+        /// </remarks>
         string? WindowClass { get; }
     }
 }
