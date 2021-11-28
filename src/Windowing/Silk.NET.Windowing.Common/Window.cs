@@ -30,12 +30,14 @@ namespace Silk.NET.Windowing
 
         static Window()
         {
-            string? defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
-
-            if (defaultWindowClassName != null)
+            var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
+            if (defaultWindowClassName is not null)
+            {
                 DefaultWindowClass = Path.GetFileNameWithoutExtension(defaultWindowClassName);
-            else
-                DefaultWindowClass = Assembly.GetEntryAssembly()?.GetName()?.Name ?? FallbackWindowClass;
+                return;
+            }
+
+            DefaultWindowClass = Assembly.GetEntryAssembly()?.GetName()?.Name ?? FallbackWindowClass;
         }
 
         public static IReadOnlyCollection<IWindowPlatform> Platforms
