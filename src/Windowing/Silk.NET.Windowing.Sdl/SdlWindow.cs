@@ -24,7 +24,7 @@ namespace Silk.NET.Windowing.Sdl
             : base(new ViewOptions(opts), parent, monitor, platform)
         {
             _extendedOptionsCache = opts;
-            WindowClass = opts.WindowClass ?? "SDL_App";
+            WindowClass = opts.WindowClass ?? Window.DefaultWindowClass;
         }
 
         public SdlWindow(void* nativeHandle, IGLContext? ctx, SdlPlatform platform) : base(nativeHandle, ctx, platform)
@@ -418,8 +418,7 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override void CoreInitialize(ViewOptions opts)
         {
-            if (_extendedOptionsCache.WindowClass is not null)
-                Sdl.Setenv("SDL_VIDEO_X11_WMCLASS", _extendedOptionsCache.WindowClass, 1);
+            Sdl.Setenv("SDL_VIDEO_X11_WMCLASS", WindowClass, 1);
 
             WindowFlags flags = 0;
             flags |= IsVisible ? WindowFlags.WindowShown : WindowFlags.WindowHidden;

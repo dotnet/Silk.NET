@@ -68,8 +68,8 @@ namespace Silk.NET.Windowing
         /// Also known as WM_CLASS.
         /// 
         /// If omitted the following default values are used:
-        /// - GLFW: Title of the window
-        /// - SDL:  The string "SDL_App"
+        /// - The name of the main assembly without extension
+        /// - "SilkNET_App" if the name of the main assembly could not be determined
         /// </summary>
         string? WindowClass { get; }
     }
