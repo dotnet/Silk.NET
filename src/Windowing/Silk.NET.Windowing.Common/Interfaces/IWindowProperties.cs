@@ -70,7 +70,7 @@ namespace Silk.NET.Windowing
         /// <remarks>
         /// If omitted the following default values are used:
         /// - The name of the main assembly without extension
-        /// - "SilkNET_App" if the name of the main assembly could not be determined
+        /// - "Silk.NET" if the name of the main assembly could not be determined
         /// </remarks>
         string? WindowClass { get; }
     }
