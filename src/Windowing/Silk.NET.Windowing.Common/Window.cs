@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
-        private const string FallbackWindowClass = "SilkNET_App";
+        private const string FallbackWindowClass = "Silk.NET";
 
         private static List<Type> _platformsKeys = new List<Type>();
         private static List<IWindowPlatform> _platformsValues = new List<IWindowPlatform>();
