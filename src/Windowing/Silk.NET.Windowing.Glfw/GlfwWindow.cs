@@ -36,6 +36,7 @@ namespace Silk.NET.Windowing.Glfw
         private Vector2D<int> _nonFullscreenSize;
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private GlfwContext? _glContext;
+        private string _windowClass;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -289,6 +290,10 @@ namespace Silk.NET.Windowing.Glfw
                     break;
             }
 
+            // Set window class.
+            _windowClass = opts.WindowClass ?? Window.DefaultWindowClass;
+            _glfw.WindowHintString((int)WindowHintString.X11ClassName, _windowClass);
+
             // Set window API.
             switch (opts.API.API)
             {
@@ -418,6 +423,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
         public override IGLContext? SharedContext { get; }
+        public override string? WindowClass => _windowClass;
 
 
         public override IMonitor? Monitor
