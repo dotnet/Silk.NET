@@ -14,87 +14,12 @@ namespace Silk.NET.Vulkan;
 /// <summary>
 /// Base class for all <see cref="Chain{T}">Managed Chains</see>.
 /// </summary>
-public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
+public abstract unsafe partial class Chain
 {
     /// <summary>
-    /// Gets a pointer to the current head.
+    /// Gets the maximum supported chain <see cref="Count"/>.
     /// </summary>
-    public abstract BaseInStructure* HeadPtr { get; }
-
-    /// <summary>
-    /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
-    /// </summary>
-    public abstract int Size { get; }
-
-    /// <inheritdoc />
-    public abstract IEnumerator<IChainable> GetEnumerator();
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-    /// <inheritdoc />
-    public abstract int Count { get; }
-    
-    /// <inheritdoc />
-    public abstract IChainable this[int index] { get; }
-
-    /// <inheritdoc />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public override bool Equals(object obj)
-    {
-        return !ReferenceEquals(null, obj) && 
-               (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
-    }
-
-    /// <summary>
-    /// Compares the supplied memory block with this one.
-    /// </summary>  
-    protected abstract bool MemoryEquals(Chain other);
-
-    /// <inheritdoc />
-    public abstract void Dispose();
-
-    /// <summary>
-    /// Combines a hashcode with the contents of a slice.
-    /// </summary>
-    /// <param name="hashCode"></param>
-    /// <param name="slice"></param>
-    /// <returns></returns>
-    protected static void CombineHash(ref int hashCode, ReadOnlySpan<byte> slice)
-    {
-        if (slice.Length >= 8)
-        {
-            // Process slice in 8 byte chunks
-            var s8 = MemoryMarshal.Cast<byte, ulong>(slice);
-            foreach (var l in s8)
-            {
-                hashCode = HashCode.Combine(hashCode, l);
-            }
-            
-            slice = slice.Slice(s8.Length*8);
-        }
-        
-        // Process remainder of slice
-        if (slice.Length >= 4)
-        {
-            var s4 = MemoryMarshal.Cast<byte, uint>(slice);
-            hashCode = HashCode.Combine(hashCode, s4[0]);
-            slice = slice.Slice(s4.Length*4);
-        }
-
-        if (slice.Length >= 2)
-        {
-            var s2 = MemoryMarshal.Cast<byte, ushort>(slice);
-            hashCode = HashCode.Combine(hashCode, s2[0]);
-            slice = slice.Slice(s2.Length*2);
-        }
-
-        if (slice.Length > 0)
-        {
-            hashCode = HashCode.Combine(hashCode, slice[0]);
-        }
-    }
+    public static readonly int MaximumCount = 16;
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain}"/> with 1 items.
@@ -5506,7 +5431,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
 public static unsafe partial class ChainExtensions
 {
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5517,10 +5442,10 @@ public static unsafe partial class ChainExtensions
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Duplicate<TChain>(this Chain<TChain> chain)
         where TChain : unmanaged,  IChainStart
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5560,7 +5485,7 @@ public static unsafe partial class ChainExtensions
     public static Chain<TChain, T1> Add<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item1);
+        => ChainExtensions.AddAny(chain, item1);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
@@ -5599,7 +5524,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5612,10 +5537,10 @@ public static unsafe partial class ChainExtensions
     public static Chain<TChain, T1> Duplicate<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5658,7 +5583,7 @@ public static unsafe partial class ChainExtensions
     public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
@@ -5680,7 +5605,7 @@ public static unsafe partial class ChainExtensions
     public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : unmanaged, IChainable
         where T1 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 1 items, by removing 
@@ -5700,7 +5625,7 @@ public static unsafe partial class ChainExtensions
     public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item1);
+        => ChainExtensions.TruncateAny(chain, out item1);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing 
@@ -5755,7 +5680,7 @@ public static unsafe partial class ChainExtensions
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item2);
+        => ChainExtensions.AddAny(chain, item2);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
@@ -5797,7 +5722,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5812,10 +5737,10 @@ public static unsafe partial class ChainExtensions
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -5863,7 +5788,7 @@ public static unsafe partial class ChainExtensions
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing the last item
@@ -5887,7 +5812,7 @@ public static unsafe partial class ChainExtensions
         where TChain : unmanaged, IChainable
         where T1 : unmanaged,  IChainable
         where T2 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 2 items, by removing 
@@ -5909,7 +5834,7 @@ public static unsafe partial class ChainExtensions
         where TChain : unmanaged,  IChainStart
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item2);
+        => ChainExtensions.TruncateAny(chain, out item2);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing 
@@ -5969,7 +5894,7 @@ public static unsafe partial class ChainExtensions
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item3);
+        => ChainExtensions.AddAny(chain, item3);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
@@ -6014,7 +5939,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6031,10 +5956,10 @@ public static unsafe partial class ChainExtensions
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6087,7 +6012,7 @@ public static unsafe partial class ChainExtensions
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing the last item
@@ -6113,7 +6038,7 @@ public static unsafe partial class ChainExtensions
         where T1 : unmanaged,  IChainable
         where T2 : unmanaged,  IChainable
         where T3 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 3 items, by removing 
@@ -6137,7 +6062,7 @@ public static unsafe partial class ChainExtensions
         where T1 : unmanaged, IExtendsChain<TChain>
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item3);
+        => ChainExtensions.TruncateAny(chain, out item3);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing 
@@ -6202,7 +6127,7 @@ public static unsafe partial class ChainExtensions
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item4);
+        => ChainExtensions.AddAny(chain, item4);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
@@ -6250,7 +6175,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6269,10 +6194,10 @@ public static unsafe partial class ChainExtensions
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6330,7 +6255,7 @@ public static unsafe partial class ChainExtensions
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
@@ -6358,7 +6283,7 @@ public static unsafe partial class ChainExtensions
         where T2 : unmanaged,  IChainable
         where T3 : unmanaged,  IChainable
         where T4 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 4 items, by removing 
@@ -6384,7 +6309,7 @@ public static unsafe partial class ChainExtensions
         where T2 : unmanaged, IExtendsChain<TChain>
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item4);
+        => ChainExtensions.TruncateAny(chain, out item4);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing 
@@ -6454,7 +6379,7 @@ public static unsafe partial class ChainExtensions
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item5);
+        => ChainExtensions.AddAny(chain, item5);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
@@ -6505,7 +6430,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6526,10 +6451,10 @@ public static unsafe partial class ChainExtensions
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6592,7 +6517,7 @@ public static unsafe partial class ChainExtensions
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
@@ -6622,7 +6547,7 @@ public static unsafe partial class ChainExtensions
         where T3 : unmanaged,  IChainable
         where T4 : unmanaged,  IChainable
         where T5 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 5 items, by removing 
@@ -6650,7 +6575,7 @@ public static unsafe partial class ChainExtensions
         where T3 : unmanaged, IExtendsChain<TChain>
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item5);
+        => ChainExtensions.TruncateAny(chain, out item5);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing 
@@ -6725,7 +6650,7 @@ public static unsafe partial class ChainExtensions
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item6);
+        => ChainExtensions.AddAny(chain, item6);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
@@ -6779,7 +6704,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6802,10 +6727,10 @@ public static unsafe partial class ChainExtensions
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -6873,7 +6798,7 @@ public static unsafe partial class ChainExtensions
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
@@ -6905,7 +6830,7 @@ public static unsafe partial class ChainExtensions
         where T4 : unmanaged,  IChainable
         where T5 : unmanaged,  IChainable
         where T6 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 6 items, by removing 
@@ -6935,7 +6860,7 @@ public static unsafe partial class ChainExtensions
         where T4 : unmanaged, IExtendsChain<TChain>
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item6);
+        => ChainExtensions.TruncateAny(chain, out item6);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing 
@@ -7015,7 +6940,7 @@ public static unsafe partial class ChainExtensions
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item7);
+        => ChainExtensions.AddAny(chain, item7);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
@@ -7072,7 +6997,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7097,10 +7022,10 @@ public static unsafe partial class ChainExtensions
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7173,7 +7098,7 @@ public static unsafe partial class ChainExtensions
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
@@ -7207,7 +7132,7 @@ public static unsafe partial class ChainExtensions
         where T5 : unmanaged,  IChainable
         where T6 : unmanaged,  IChainable
         where T7 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 7 items, by removing 
@@ -7239,7 +7164,7 @@ public static unsafe partial class ChainExtensions
         where T5 : unmanaged, IExtendsChain<TChain>
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item7);
+        => ChainExtensions.TruncateAny(chain, out item7);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing 
@@ -7324,7 +7249,7 @@ public static unsafe partial class ChainExtensions
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item8);
+        => ChainExtensions.AddAny(chain, item8);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
@@ -7384,7 +7309,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7411,10 +7336,10 @@ public static unsafe partial class ChainExtensions
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7492,7 +7417,7 @@ public static unsafe partial class ChainExtensions
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
@@ -7528,7 +7453,7 @@ public static unsafe partial class ChainExtensions
         where T6 : unmanaged,  IChainable
         where T7 : unmanaged,  IChainable
         where T8 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 8 items, by removing 
@@ -7562,7 +7487,7 @@ public static unsafe partial class ChainExtensions
         where T6 : unmanaged, IExtendsChain<TChain>
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item8);
+        => ChainExtensions.TruncateAny(chain, out item8);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing 
@@ -7652,7 +7577,7 @@ public static unsafe partial class ChainExtensions
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item9);
+        => ChainExtensions.AddAny(chain, item9);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
@@ -7715,7 +7640,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7744,10 +7669,10 @@ public static unsafe partial class ChainExtensions
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -7830,7 +7755,7 @@ public static unsafe partial class ChainExtensions
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
@@ -7868,7 +7793,7 @@ public static unsafe partial class ChainExtensions
         where T7 : unmanaged,  IChainable
         where T8 : unmanaged,  IChainable
         where T9 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 9 items, by removing 
@@ -7904,7 +7829,7 @@ public static unsafe partial class ChainExtensions
         where T7 : unmanaged, IExtendsChain<TChain>
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item9);
+        => ChainExtensions.TruncateAny(chain, out item9);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing 
@@ -7999,7 +7924,7 @@ public static unsafe partial class ChainExtensions
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item10);
+        => ChainExtensions.AddAny(chain, item10);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
@@ -8065,7 +7990,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8096,10 +8021,10 @@ public static unsafe partial class ChainExtensions
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8187,7 +8112,7 @@ public static unsafe partial class ChainExtensions
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
@@ -8227,7 +8152,7 @@ public static unsafe partial class ChainExtensions
         where T8 : unmanaged,  IChainable
         where T9 : unmanaged,  IChainable
         where T10 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 10 items, by removing 
@@ -8265,7 +8190,7 @@ public static unsafe partial class ChainExtensions
         where T8 : unmanaged, IExtendsChain<TChain>
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item10);
+        => ChainExtensions.TruncateAny(chain, out item10);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing 
@@ -8365,7 +8290,7 @@ public static unsafe partial class ChainExtensions
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item11);
+        => ChainExtensions.AddAny(chain, item11);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
@@ -8434,7 +8359,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8467,10 +8392,10 @@ public static unsafe partial class ChainExtensions
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8563,7 +8488,7 @@ public static unsafe partial class ChainExtensions
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
@@ -8605,7 +8530,7 @@ public static unsafe partial class ChainExtensions
         where T9 : unmanaged,  IChainable
         where T10 : unmanaged,  IChainable
         where T11 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 11 items, by removing 
@@ -8645,7 +8570,7 @@ public static unsafe partial class ChainExtensions
         where T9 : unmanaged, IExtendsChain<TChain>
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item11);
+        => ChainExtensions.TruncateAny(chain, out item11);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing 
@@ -8750,7 +8675,7 @@ public static unsafe partial class ChainExtensions
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item12);
+        => ChainExtensions.AddAny(chain, item12);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
@@ -8822,7 +8747,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8857,10 +8782,10 @@ public static unsafe partial class ChainExtensions
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -8958,7 +8883,7 @@ public static unsafe partial class ChainExtensions
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
@@ -9002,7 +8927,7 @@ public static unsafe partial class ChainExtensions
         where T10 : unmanaged,  IChainable
         where T11 : unmanaged,  IChainable
         where T12 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 12 items, by removing 
@@ -9044,7 +8969,7 @@ public static unsafe partial class ChainExtensions
         where T10 : unmanaged, IExtendsChain<TChain>
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item12);
+        => ChainExtensions.TruncateAny(chain, out item12);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing 
@@ -9154,7 +9079,7 @@ public static unsafe partial class ChainExtensions
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item13);
+        => ChainExtensions.AddAny(chain, item13);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
@@ -9229,7 +9154,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -9266,10 +9191,10 @@ public static unsafe partial class ChainExtensions
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -9372,7 +9297,7 @@ public static unsafe partial class ChainExtensions
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
@@ -9418,7 +9343,7 @@ public static unsafe partial class ChainExtensions
         where T11 : unmanaged,  IChainable
         where T12 : unmanaged,  IChainable
         where T13 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 13 items, by removing 
@@ -9462,7 +9387,7 @@ public static unsafe partial class ChainExtensions
         where T11 : unmanaged, IExtendsChain<TChain>
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item13);
+        => ChainExtensions.TruncateAny(chain, out item13);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing 
@@ -9577,7 +9502,7 @@ public static unsafe partial class ChainExtensions
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item14);
+        => ChainExtensions.AddAny(chain, item14);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
@@ -9655,7 +9580,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -9694,10 +9619,10 @@ public static unsafe partial class ChainExtensions
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -9805,7 +9730,7 @@ public static unsafe partial class ChainExtensions
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
@@ -9853,7 +9778,7 @@ public static unsafe partial class ChainExtensions
         where T12 : unmanaged,  IChainable
         where T13 : unmanaged,  IChainable
         where T14 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 14 items, by removing 
@@ -9899,7 +9824,7 @@ public static unsafe partial class ChainExtensions
         where T12 : unmanaged, IExtendsChain<TChain>
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item14);
+        => ChainExtensions.TruncateAny(chain, out item14);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing 
@@ -10019,7 +9944,7 @@ public static unsafe partial class ChainExtensions
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
         where T15 : unmanaged, IExtendsChain<TChain>
-        => chain.AddAny(item15);
+        => ChainExtensions.AddAny(chain, item15);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
@@ -10100,7 +10025,7 @@ public static unsafe partial class ChainExtensions
     }
 
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -10141,10 +10066,10 @@ public static unsafe partial class ChainExtensions
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
         where T15 : unmanaged, IExtendsChain<TChain>
-        => chain.DuplicateAny();
+        => ChainExtensions.DuplicateAny(chain);
  
     /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -10257,7 +10182,7 @@ public static unsafe partial class ChainExtensions
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
         where T15 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
@@ -10307,7 +10232,7 @@ public static unsafe partial class ChainExtensions
         where T13 : unmanaged,  IChainable
         where T14 : unmanaged,  IChainable
         where T15 : unmanaged,  IChainable
-        => chain.TruncateAny(out var _);
+        => ChainExtensions.TruncateAny(chain, out var _);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 15 items, by removing 
@@ -10355,7 +10280,7 @@ public static unsafe partial class ChainExtensions
         where T13 : unmanaged, IExtendsChain<TChain>
         where T14 : unmanaged, IExtendsChain<TChain>
         where T15 : unmanaged, IExtendsChain<TChain>
-        => chain.TruncateAny(out item15);
+        => ChainExtensions.TruncateAny(chain, out item15);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing 
@@ -10505,6 +10430,26 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
         System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         HeadPtr->PNext = null;
     }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => throw new InvalidOperationException("Cannot truncate chain of length 1.");
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+        => throw new InvalidOperationException("Cannot truncate chain of length 1.");
 
     /// <inheritdoc />
     public override IEnumerator<IChainable> GetEnumerator()
@@ -10724,6 +10669,30 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
         System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         Item1Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -11006,6 +10975,30 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
         System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         Item2Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -11350,6 +11343,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
         System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         Item3Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -11756,6 +11773,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
         System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         Item4Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -12224,6 +12265,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
         System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         Item5Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -12754,6 +12819,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
         System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         Item6Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -13346,6 +13435,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
         System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         Item7Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -14000,6 +14113,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
         System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         Item8Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -14716,6 +14853,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
         System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         Item9Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -15494,6 +15655,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         Item10Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -16334,6 +16519,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         Item11Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -17236,6 +17445,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
         Item11Ptr->PNext = itemPtr;
         Item12Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -18200,6 +18433,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
         Item12Ptr->PNext = itemPtr;
         Item13Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T>(this, item);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -19226,6 +19483,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item14, (void*)itemPtr, size, size);
         Item13Ptr->PNext = itemPtr;
         Item14Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => throw new InvalidOperationException("Cannot add to chain of length 15.");
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
@@ -20314,6 +20595,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         System.Buffer.MemoryCopy((void*) &item15, (void*)itemPtr, size, size);
         Item14Ptr->PNext = itemPtr;
         Item15Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoDuplicateAny()
+        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoAddAny<T>(T item = default)
+        => throw new InvalidOperationException("Cannot add to chain of length 16.");
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny()
+        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this, out var _);
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    protected override Chain DoTruncateAny(out IChainable tail)
+    {
+        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this, out var t);
+        tail = (IChainable) t;
+        return chain;
     }
 
     /// <inheritdoc />
