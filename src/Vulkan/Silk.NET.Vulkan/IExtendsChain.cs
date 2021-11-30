@@ -6,6 +6,6 @@ namespace Silk.NET.Vulkan;
 /// </summary>
 /// <typeparam name="TChain">A chain start structure.</typeparam>
 public interface IExtendsChain<out TChain> : IChainable
-    where TChain : IChainable
+    where TChain : IChainStart
 {
 }
