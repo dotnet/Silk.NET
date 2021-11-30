@@ -109,8 +109,8 @@ detailed below.
 # Current Status
 
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [x] Implemented
 
 # Design Decisions

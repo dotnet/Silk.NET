@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Silk.NET.Vulkan;
 using Xunit;
 
@@ -6,178 +8,446 @@ namespace PrototypeStructChaining.Test;
 public class TestChains
 {
     [Fact]
-    public unsafe void TestAddNext()
+    public unsafe void TestChain()
     {
+        using var chain = Chain.Create
+        (
+            default(PhysicalDeviceFeatures2),
+            default(PhysicalDeviceDescriptorIndexingFeatures),
+            default(PhysicalDeviceAccelerationStructureFeaturesKHR)
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
+    }
+
+    [Fact]
+    public unsafe void TestChainReplaceHead()
+    {
+        using var chain =
+            Chain.Create
+            (
+                default(DeviceCreateInfo),
+                default(PhysicalDeviceFeatures2),
+                default(PhysicalDeviceDescriptorIndexingFeatures)
+            );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.DeviceCreateInfo, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
+
+        Assert.Equal(0U, chain.Head.Flags);
+
+        var headPtr = chain.HeadPtr;
+
+        // Get the current head
+        var head = chain.Head;
+        // Update the flags
+        head.Flags = 1U;
+        // Update the chain
+        chain.Head = head;
+
+        Assert.Equal(1U, chain.Head.Flags);
+
+        // The head ptr should not change, we overwrite it with the new value
+        Assert.Equal((nint) headPtr, (nint) chain.HeadPtr);
+        // But the next pointer should not change
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+    }
+
+    [Fact]
+    public unsafe void TestChainReplaceMiddle()
+    {
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>
+        (
+            item1: new PhysicalDeviceDescriptorIndexingFeatures
+            {
+                // We can set any non-default values, note we do not need to set SType or PNext
+                // indeed they will be overwritten.
+                ShaderInputAttachmentArrayDynamicIndexing = true
+            }
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
+
+        // Check our value was set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        var item1Ptr = chain.Item1Ptr;
+
+        // Overwrite Item1
+        chain.Item1 = new PhysicalDeviceDescriptorIndexingFeatures
+        {
+            // Again we do not need to set SType or PNext, which will be set to the correct values
+            ShaderInputAttachmentArrayDynamicIndexing = false
+        };
+
+        // Check our value was cleared
+        Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        // Note all the pointers are still correct (and have not changed)
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
+
+        // As is the SType
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+        chain.Dispose();
+    }
+
+    [Fact]
+    public unsafe void TestChainDuplicate()
+    {
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        (
+            item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        using var newChain = chain.Duplicate();
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+        
+        // Test equality
+        Assert.Equal(chain, newChain);
+        Assert.True(chain == newChain);
+        
+        // Modify second chain
+        newChain.Item1 = default;
+        
+        // Test equality
+        Assert.NotEqual(chain, newChain);
+        Assert.False(chain == newChain);
+    }
+
+    [Fact]
+    public unsafe void TestChainAdd()
+    {
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        (
+            item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        using var newChain = chain.Add(default(PhysicalDeviceAccelerationStructureFeaturesKHR));
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, newChain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, newChain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) newChain.Item1Ptr, (nint) newChain.Head.PNext);
+        Assert.Equal((nint) newChain.Item2Ptr, (nint) newChain.Item1.PNext);
+        Assert.Equal(0, (nint) newChain.Item2.PNext);
+
+        // Check flag still set
+        Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+    }
+
+    [Fact]
+    public unsafe void TestChainTruncate()
+    {
+        using var chain =
+            Chain.Create<
+                PhysicalDeviceFeatures2,
+                PhysicalDeviceDescriptorIndexingFeatures,
+                PhysicalDeviceAccelerationStructureFeaturesKHR>
+            (
+                item2: new PhysicalDeviceAccelerationStructureFeaturesKHR
+                    {AccelerationStructure = true}
+            );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain.Item2.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal((nint) chain.Item2Ptr, (nint) chain.Item1.PNext);
+        Assert.Equal(0, (nint) chain.Item2.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item2.AccelerationStructure);
+
+        using var newChain = chain.Truncate(out var accelerationStructure);
+        
+        Assert.Equal(2, newChain.Count);
+        
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, newChain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) newChain.Item1Ptr, (nint) newChain.Head.PNext);
+        Assert.Equal(0, (nint) newChain.Item1.PNext);
+
+        // Check removed type flag
+        Assert.True(accelerationStructure.AccelerationStructure);
+
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+    }
+
+    [Fact]
+    public unsafe void TestChainLoad()
+    {
+        // Load an unmanaged chain
+        var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
+        {
+            ShaderInputAttachmentArrayDynamicIndexing = true
+        };
         PhysicalDeviceFeatures2
-            // The BaseInStructure method, is a convenient static, to provide a consistent syntax.
-            .Chain(out var features2)
-            // AddNext will create an empty struct, with the correct SType (as well as ensuring the
-            // chain's SType is coerced correctly.
-            .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures)
+            .Chain(out var unmanagedChain)
+            .SetNext(ref indexingFeatures)
             .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
-        // Ensure all pointers set correctly
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
-        Assert.Equal(0, (nint) accelerationStructureFeaturesKhr.PNext);
+        // Loads a new managed chain from an unmanaged chain
+        using var managedChain =
+            Chain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+                PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
+
+        // Check we had no loading errors
+        Assert.Equal("", errors);
+
+        // Check the flag still set
+        Assert.True(managedChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
 
         // Ensure all STypes set correctly
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
-        Assert.Equal
-        (
-            StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
-            accelerationStructureFeaturesKhr.SType
-        );
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, managedChain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, managedChain.Item1.SType);
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, managedChain.Item2.SType);
 
-        // Check indices
-        Assert.Equal(1, features2.IndexOf(ref indexingFeatures));
-        Assert.Equal(2, features2.IndexOf(ref accelerationStructureFeaturesKhr));
+        // Ensure pointers set correctly
+        Assert.Equal((nint) managedChain.Item1Ptr, (nint) managedChain.Head.PNext);
+        Assert.Equal((nint) managedChain.Item2Ptr, (nint) managedChain.Item1.PNext);
+        Assert.Equal(0, (nint) managedChain.Item2.PNext);
     }
 
     [Fact]
-    public unsafe void TestTryAddNext()
-    {
-        PhysicalDeviceFeatures2
-            // The BaseInStructure method, is a convenient static, to provide a consistent syntax.
-            .Chain(out var features2)
-            // AddNext will create an empty struct, with the correct SType (as well as ensuring the
-            // chain's SType is coerced correctly.
-            .AddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures);
-
-        // Ensure all pointers set correctly
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-
-        // Ensure all STypes set correctly
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
-
-        features2.TryAddNext(out PhysicalDeviceDescriptorIndexingFeatures indexingFeatures2, out var added);
-        Assert.False(added);
-    }
-
-    [Fact]
-    public unsafe void TestSetNext()
+    public void TestChainLoadWithError()
     {
         var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
         {
             ShaderInputAttachmentArrayDynamicIndexing = true
         };
-        var accelerationStructureFeaturesKhr = new PhysicalDeviceAccelerationStructureFeaturesKHR
-        {
-            AccelerationStructure = true
-        };
-
-        PhysicalDeviceFeatures2
-            .Chain(out var features2)
-            // SetNext accepts an existing struct, note, it will coerce the SType and blank the PNext
+        // Load an unmanaged chain
+        DeviceCreateInfo
+            .Chain(out var unmanagedChain)
+            .AddNext(out PhysicalDeviceFeatures2 features2)
             .SetNext(ref indexingFeatures)
-            .SetNext(ref accelerationStructureFeaturesKhr);
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal((nint) (&accelerationStructureFeaturesKhr), (nint) indexingFeatures.PNext);
-        Assert.Equal(0, (nint) accelerationStructureFeaturesKhr.PNext);
+        // Loads a new managed chain from an unmanaged chain
+        using var managedChain =
+            Chain.Load<
+                DeviceCreateInfo,
+                // Note we are supplied a PhysicalDeviceFeatures2 here from the unmanaged chain
+                PhysicalDeviceAccelerationStructureFeaturesKHR,
+                PhysicalDeviceDescriptorIndexingFeatures,
+                PhysicalDeviceAccelerationStructureFeaturesKHR,
+                // Note that the unmanaged chain did not supply a 5th entry
+                PhysicalDeviceFeatures2>(out var errors, unmanagedChain);
 
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
+        // Check for errors
+        var errorsArray = errors.Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+        Assert.Equal(2, errorsArray.Length);
         Assert.Equal
         (
-            StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
-            accelerationStructureFeaturesKhr.SType
+            "The unmanaged chain has a structure type PhysicalDeviceFeatures2Khr at position 2; expected PhysicalDeviceAccelerationStructureFeaturesKhr",
+            errorsArray[0]
+        );
+        Assert.Equal
+        (
+            "The unmanaged chain was length 4, expected length 5", errorsArray[1]
         );
 
-        Assert.True(indexingFeatures.ShaderInputAttachmentArrayDynamicIndexing);
-        Assert.True(accelerationStructureFeaturesKhr.AccelerationStructure);
+        // Despite the errors indexing features was at the right location so was loaded
+        Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
     }
 
     [Fact]
-    public unsafe void TestSetNextUpdates()
+    public void TestChainLoadWithErrorTooLong()
     {
         var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
         {
             ShaderInputAttachmentArrayDynamicIndexing = true
         };
+        // Load an unmanaged chain
+        DeviceCreateInfo
+            .Chain(out var unmanagedChain)
+            .AddNext(out PhysicalDeviceFeatures2 features2)
+            .SetNext(ref indexingFeatures)
+            .AddNext(out PhysicalDeviceAccelerationStructureFeaturesKHR accelerationStructureFeaturesKhr);
 
-        PhysicalDeviceFeatures2
-            .Chain(out var features2)
-            // SetNext accepts an existing struct, note, it will coerce the SType and blank the PNext
-            .SetNext(ref indexingFeatures);
+        // Try loading a shorter managed chain
+        using var managedChain =
+            Chain.Load<
+                DeviceCreateInfo,
+                PhysicalDeviceFeatures2,
+                PhysicalDeviceDescriptorIndexingFeatures>(out var errors, unmanagedChain);
 
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal(0, (nint) indexingFeatures.PNext);
+        // Check for errors
+        Assert.Equal(@"The unmanaged chain was longer than the expected length 3", errors);
 
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
-
-        // Update indexing features
-        var indexingFeatures2 = new PhysicalDeviceDescriptorIndexingFeatures
-        {
-            ShaderInputAttachmentArrayDynamicIndexing = false
-        };
-        features2.SetNext(ref indexingFeatures2);
-
-        Assert.Equal((nint) (&indexingFeatures2), (nint) features2.PNext);
-        Assert.Equal(0, (nint) indexingFeatures2.PNext);
-
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures2.SType);
-
-        Assert.Equal(1, features2.IndexOf(ref indexingFeatures2));
-        Assert.True(features2.IndexOf(ref indexingFeatures) < 0);
+        // Despite the errors indexing features was at the right location so was loaded
+        Assert.True(managedChain.Item2.ShaderInputAttachmentArrayDynamicIndexing);
     }
 
     [Fact]
-    public unsafe void TestSetNextAlwaysAdd()
+    public void TestReadOnlyList()
     {
-        var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
-        {
-            ShaderInputAttachmentArrayDynamicIndexing = true
-        };
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
-        PhysicalDeviceFeatures2
-            .Chain(out var features2)
-            // SetNext accepts an existing struct, note, it will coerce the SType and blank the PNext
-            .SetNext(ref indexingFeatures);
+        Assert.Equal(3, chain.Count);
 
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal(0, (nint) indexingFeatures.PNext);
+        // Ensure all STypes set correctly using indexer
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain[0].StructureType());
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain[1].StructureType());
+        Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, chain[2].StructureType());
 
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
+        Assert.Throws<IndexOutOfRangeException>(() => chain[3]);
 
-        // Update indexing features
-        var indexingFeatures2 = new PhysicalDeviceDescriptorIndexingFeatures
-        {
-            ShaderInputAttachmentArrayDynamicIndexing = false
-        };
-        features2.SetNext(ref indexingFeatures2, true);
+        // Get array using IEnumerable implementation
+        var structures = chain.ToArray();
 
-        Assert.Equal((nint) (&indexingFeatures), (nint) features2.PNext);
-        Assert.Equal((nint) (&indexingFeatures2), (nint) indexingFeatures.PNext);
-        Assert.Equal(0, (nint) indexingFeatures2.PNext);
-
-        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures2.SType);
-
-        Assert.Equal(1, features2.IndexOf(ref indexingFeatures));
-        Assert.Equal(2, features2.IndexOf(ref indexingFeatures2));
+        // Check concrete types
+        Assert.IsType<PhysicalDeviceFeatures2>(structures[0]);
+        Assert.IsType<PhysicalDeviceDescriptorIndexingFeatures>(structures[1]);
+        Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
     }
 
     [Fact]
-    public unsafe void TestWithoutChain()
+    public void TestDeconstructor()
     {
-        // We don't have to use the BaseInStructure() pattern, as we can start with an existing struct
-        var createInfo = new DeviceCreateInfo
-        {
-            Flags = 1U
-        };
-        // However, note that AddNext will still coerce the SType of createInfo.
-        createInfo.AddNext(out PhysicalDeviceFeatures2 features2);
-        Assert.Equal((nint) (&features2), (nint) createInfo.PNext);
-        Assert.Equal(0, (nint) features2.PNext);
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
-        // Note, even though we didn't use chain, we have still coerced the SType
-        Assert.Equal(StructureType.DeviceCreateInfo, createInfo.SType);
-        Assert.Equal(StructureType.PhysicalDeviceFeatures2, features2.SType);
+        var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;
 
-        Assert.Equal(1U, createInfo.Flags);
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, physicalDeviceFeatures2.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, indexingFeatures.SType);
+        Assert.Equal
+            (StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, accelerationStructureFeaturesKhr.SType);
+    }
+
+    [Fact]
+    public unsafe void TestChainGetHashCode()
+    {
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>
+        (
+            item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true}
+        );
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        using var newChain = chain.Duplicate();
+
+        // Ensure all STypes set correctly
+        Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
+
+        Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1Ptr->SType);
+        
+        // Ensure pointers set correctly
+        Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
+        Assert.Equal(0, (nint) chain.Item1.PNext);
+
+        // Check flag set
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+
+        // Check we have new copies
+        Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
+        Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
+        
+        // Test equality
+        Assert.Equal(chain, newChain);
+        Assert.True(chain == newChain);
+        var hashCode = chain.GetHashCode();
+        var newHashCode = newChain.GetHashCode();
+        Assert.Equal(hashCode, newHashCode);
+        
+        // Modify second chain
+        newChain.Item1 = default;
+        
+        // Test equality
+        Assert.NotEqual(chain, newChain);
+        Assert.False(chain == newChain);
+        Assert.Equal(hashCode, chain.GetHashCode());
+        var newHashCode2 = newChain.GetHashCode();
+        Assert.NotEqual(hashCode, newHashCode2);
+        Assert.NotEqual(newHashCode, newHashCode2);
     }
 }

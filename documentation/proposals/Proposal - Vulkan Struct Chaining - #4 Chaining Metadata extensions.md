@@ -19,7 +19,7 @@ for a given chain, at runtime. To facilitate the most common scenario 4 extensio
 # Current Status
 
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
+- [x] Discussed with API Review Board (ARB)
 - [ ] Approved
 - [ ] Implemented
 

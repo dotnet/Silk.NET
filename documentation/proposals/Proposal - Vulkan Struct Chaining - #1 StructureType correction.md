@@ -17,8 +17,8 @@ A full implementation can be found [in Pull Request 680](https://github.com/dotn
 # Current Status
 
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [x] Implemented
 
 # Design Decisions

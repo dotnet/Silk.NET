@@ -5,7 +5,7 @@ namespace Silk.NET.Vulkan;
 /// <summary>
 /// Extension methods and utilities for building unmanaged structure chains.
 /// </summary>
-public static class Chain
+public static partial class ChainExtensions
 {
     /// <summary>
     /// Replaces a structure in the chain (if present, and <paramref name="alwaysAdd"/> is false), or adds it to the end.

@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-public static class Chain
+public static class ChainExtensionsMetadata
 {
     /// <summary>
     /// Provides a set of all the <see cref="StructureType"/>s that can be extended by a <see cref="StructureType"/>.

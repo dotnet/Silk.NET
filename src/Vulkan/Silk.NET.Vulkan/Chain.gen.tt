@@ -123,9 +123,9 @@ using System.Threading;
 namespace Silk.NET.Vulkan;
 
 /// <summary>
-/// Base class for all <see cref="ManagedChain{T}">Managed Chains</see>.
+/// Base class for all <see cref="Chain{T}">Managed Chains</see>.
 /// </summary>
-public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposable
+public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
 {
     /// <summary>
     /// Gets a pointer to the current head.
@@ -155,13 +155,13 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
     public override bool Equals(object obj)
     {
         return !ReferenceEquals(null, obj) && 
-               (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((ManagedChain) obj));
+               (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
     }
 
     /// <summary>
     /// Compares the supplied memory block with this one.
     /// </summary>  
-    protected abstract bool MemoryEquals(ManagedChain other);
+    protected abstract bool MemoryEquals(Chain other);
 
     /// <inheritdoc />
     public abstract void Dispose();
@@ -217,86 +217,86 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
         var constraintsLoose = ConstraintListLoose(i, "        ");
 #>
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
 <#= pDocs #>
 <#= pTypeDocs #>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <seealso cref="CreateAny{<#= tList #>}(<#= tList #>)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> Create<<#= tList #>>(<#= ParamList(i) #>)
+    public static Chain<<#= tList #>> Create<<#= tList #>>(<#= ParamList(i) #>)
 <#= constraints #>
         => new(<#= ArgList(i) #>);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
 <#= pDocs #>
 <#= pTypeDocs #>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Create{<#= tList #>}(<#= tList #>)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> CreateAny<<#= tList #>>(<#= ParamList(i) #>)
+    public static Chain<<#= tList #>> CreateAny<<#= tList #>>(<#= ParamList(i) #>)
 <#= constraintsLoose #>
         => new(<#= ArgList(i) #>);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
+    /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
     /// ignoring any errors.
     /// </summary>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <seealso cref="LoadAny{<#= tList #>}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> Load<<#= tList #>>(TChain chain)
+    public static Chain<<#= tList #>> Load<<#= tList #>>(TChain chain)
 <#= constraints #>
         => LoadAny<<#= tList #>>(out var _, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
+    /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain,
     /// ignoring any errors.
     /// </summary>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Load{<#= tList #>}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> LoadAny<<#= tList #>>(TChain chain)
+    public static Chain<<#= tList #>> LoadAny<<#= tList #>>(TChain chain)
 <#= constraintsLoose #>
         => LoadAny<<#= tList #>>(out var _, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
+    /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
     /// </summary>
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <seealso cref="LoadAny{<#= tList #>}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> Load<<#= tList #>>(out string errors, TChain chain)
+    public static Chain<<#= tList #>> Load<<#= tList #>>(out string errors, TChain chain)
 <#= constraints #>
         => LoadAny<<#= tList #>>(out errors, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
+    /// Loads a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing unmanaged chain.
     /// </summary>
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.</returns>
+    /// <returns>A new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Load{<#= tList #>}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> LoadAny<<#= tList #>>(out string errors, TChain chain)
+    public static Chain<<#= tList #>> LoadAny<<#= tList #>>(out string errors, TChain chain)
 <#= constraintsLoose #>
     {
-        var size = ManagedChain<<#= tList #>>.MemorySize;
+        var size = Chain<<#= tList #>>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(size);
         chain.StructureType();
         Marshal.StructureToPtr(chain, newHeadPtr, false);
@@ -319,7 +319,7 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
 #>
 
         existingPtr = existingPtr->PNext;
-        newPtr->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= tList #>>.Item<#= j #>Offset);
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item<#= j #>Offset);
         newPtr = newPtr->PNext;
 
         T<#= j #> item<#= j #> = default;
@@ -358,7 +358,7 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
 <#
         } // if (i == 1) {} else {...
 #>
-        return new ManagedChain<<#= tList #>>(newHeadPtr);
+        return new Chain<<#= tList #>>(newHeadPtr);
     }
 
 <#
@@ -367,12 +367,12 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
 }
 
 /// <summary>
-///  Static class providing extension methods for manipulating <see cref="ManagedChain">managed chains</see>.
+///  Static class providing extension methods for manipulating <see cref="Chain">managed chains</see>.
 /// </summary>
 /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
 /// useful for situations where the specification does not indicate required chain constraints. You should generally
 /// try to use the none `Any` version in preference.</para></remarks>
-public static unsafe class ManagedChainExtensions
+public static unsafe partial class ChainExtensions
 {
 <#
     for (var i = 1; i <= maximumItems; i++)
@@ -383,21 +383,21 @@ public static unsafe class ManagedChainExtensions
         var constraintsLoose = ConstraintListLoose(i, "        ");
 #>
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
 <#= pTypeDocs #>
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="DuplicateAny{<#= tList #>}(ManagedChain{<#= tList #>})" />
+    /// <seealso cref="DuplicateAny{<#= tList #>}(Chain{<#= tList #>})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> Duplicate<<#= tList #>>(this ManagedChain<<#= tList #>> chain)
+    public static Chain<<#= tList #>> Duplicate<<#= tList #>>(this Chain<<#= tList #>> chain)
 <#= constraints #>
         => chain.DuplicateAny();
  
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
 <#= pTypeDocs #>
@@ -407,12 +407,12 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Duplicate{<#= tList #>}(ManagedChain{<#= tList #>})" />
+    /// <seealso cref="Duplicate{<#= tList #>}(Chain{<#= tList #>})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= tList #>> DuplicateAny<<#= tList #>>(this ManagedChain<<#= tList #>> chain)
+    public static Chain<<#= tList #>> DuplicateAny<<#= tList #>>(this Chain<<#= tList #>> chain)
 <#= constraintsLoose #>
     {
-        var size = ManagedChain<<#= tList #>>.MemorySize;
+        var size = Chain<<#= tList #>>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
@@ -421,7 +421,7 @@ public static unsafe class ManagedChainExtensions
         {
 #>
         // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= tList #>>.Item1Offset); 
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item1Offset); 
 <#
         } // if (i > 1)
 #>
@@ -429,11 +429,11 @@ public static unsafe class ManagedChainExtensions
         for (var j = 2; j < i; j++)
         {
 #>
-        ((BaseInStructure*)(newHeadPtr + ManagedChain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= tList #>>.Item<#= j #>Offset); 
+        ((BaseInStructure*)(newHeadPtr + Chain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item<#= j #>Offset); 
 <#
         } // for (int j = 1; j < i; j++) {
 #>
-        return new ManagedChain<<#= tList #>>(newHeadPtr);
+        return new Chain<<#= tList #>>(newHeadPtr);
     }
 
 <#
@@ -442,7 +442,7 @@ public static unsafe class ManagedChainExtensions
             var shortTList = TypeList(i - 1);
 #>
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
     /// from the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -450,16 +450,16 @@ public static unsafe class ManagedChainExtensions
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= shortTList #>> Truncate<<#= tList #>>(this ManagedChain<<#= tList #>> chain)
+    public static Chain<<#= shortTList #>> Truncate<<#= tList #>>(this Chain<<#= tList #>> chain)
 <#= constraints #>
         => chain.TruncateAny(out var _);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
     /// from the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -470,16 +470,16 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= shortTList #>> TruncateAny<<#= tList #>>(this ManagedChain<<#= tList #>> chain)
+    public static Chain<<#= shortTList #>> TruncateAny<<#= tList #>>(this Chain<<#= tList #>> chain)
 <#= constraintsLoose #>
         => chain.TruncateAny(out var _);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i - 1 #> items, by removing 
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i - 1 #> items, by removing 
     /// <paramref name="item<#= i - 1 #>"/> from the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -488,16 +488,16 @@ public static unsafe class ManagedChainExtensions
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<<#= shortTList #>> Truncate<<#= tList #>>(this ManagedChain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
+    public static Chain<<#= shortTList #>> Truncate<<#= tList #>>(this Chain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
 <#= constraints #>
         => chain.TruncateAny(out item<#= i - 1 #>);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing 
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing 
     /// <paramref name="item<#= i - 1 #>"/> from the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -509,16 +509,16 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(ManagedChain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(ManagedChain{<#= tList #>}, out T<#= i - 1 #>)" />
-    public static ManagedChain<<#= shortTList #>> TruncateAny<<#= tList #>>(this ManagedChain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
+    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
+    public static Chain<<#= shortTList #>> TruncateAny<<#= tList #>>(this Chain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
 <#= constraintsLoose #>
     {
         // Retrieve last item.
         item<#= i - 1 #> = chain.Item<#= i - 1 #>;
 
-        var newSize = ManagedChain<<#= tList #>>.MemorySize - ManagedChain<<#= tList #>>.Item<#= i - 1 #>Size;
+        var newSize = Chain<<#= tList #>>.MemorySize - Chain<<#= tList #>>.Item<#= i - 1 #>Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
@@ -527,15 +527,15 @@ public static unsafe class ManagedChainExtensions
             if (i > 2)
             {
 #>
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= tList #>>.Item1Offset);
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item1Offset);
 <#
                 for (var j = 2; j < i; j++)
                 {
 #>
-        ((BaseInStructure*)(newHeadPtr + ManagedChain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = <#=
+        ((BaseInStructure*)(newHeadPtr + Chain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = <#=
                                     j == i - 1
                                         ? "null"
-                                        : $"(BaseInStructure*) (newHeadPtr + ManagedChain<{tList}>.Item{j}Offset)" #>; 
+                                        : $"(BaseInStructure*) (newHeadPtr + Chain<{tList}>.Item{j}Offset)" #>; 
 <#
                 } // for (int j = 1; j < i - 1; j++)
             }
@@ -546,7 +546,7 @@ public static unsafe class ManagedChainExtensions
 <#
             }
 #>
-        return new ManagedChain<<#= shortTList #>>(newHeadPtr);
+        return new Chain<<#= shortTList #>>(newHeadPtr);
     }
 
 <#
@@ -560,7 +560,7 @@ public static unsafe class ManagedChainExtensions
             var bigConstraintsLoose = ConstraintListLoose(i + 1, "        ");
 #>
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
+    /// Creates a new <see cref="Chain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
     /// the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -572,13 +572,13 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="AddAny{<#= bigTList #>}(ManagedChain{<#= tList #>}, T<#= i #>)" />
-    public static ManagedChain<<#= bigTList #>> Add<<#= bigTList #>>(this ManagedChain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
+    /// <seealso cref="AddAny{<#= bigTList #>}(Chain{<#= tList #>}, T<#= i #>)" />
+    public static Chain<<#= bigTList #>> Add<<#= bigTList #>>(this Chain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
 <#= bigConstraints #>
         => chain.AddAny(item<#= i #>);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
+    /// Creates a new <see cref="Chain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
     /// the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -590,32 +590,32 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Add{<#= bigTList #>}(ManagedChain{<#= tList #>}, T<#= i #>)" />
-    public static ManagedChain<<#= bigTList #>> AddAny<<#= bigTList #>>(this ManagedChain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
+    /// <seealso cref="Add{<#= bigTList #>}(Chain{<#= tList #>}, T<#= i #>)" />
+    public static Chain<<#= bigTList #>> AddAny<<#= bigTList #>>(this Chain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
 <#= bigConstraintsLoose #>
     {
-        var previousSize = ManagedChain<<#= tList #>>.MemorySize;
-        var newSize = ManagedChain<<#= bigTList #>>.MemorySize;
+        var previousSize = Chain<<#= tList #>>.MemorySize;
+        var newSize = Chain<<#= bigTList #>>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
-        // Append item <#= i - 1 #>
+        // Add item <#= i - 1 #>
         item<#= i #>.StructureType();        
         Marshal.StructureToPtr(item<#= i #>, newHeadPtr + previousSize, false);
 
         // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= bigTList #>>.Item1Offset);
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= bigTList #>>.Item1Offset);
 <#
             for (var j = 1; j < i; j++)
             {
 #>
-        ((BaseInStructure*)(newHeadPtr + ManagedChain<<#= bigTList #>>.Item<#= j #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<<#= bigTList #>>.Item<#= j + 1 #>Offset); 
+        ((BaseInStructure*)(newHeadPtr + Chain<<#= bigTList #>>.Item<#= j #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= bigTList #>>.Item<#= j + 1 #>Offset); 
 <#
             } // for (int j = 1; j < i; j++) {
 #>
         ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new ManagedChain<<#= bigTList #>>(newHeadPtr);
+        return new Chain<<#= bigTList #>>(newHeadPtr);
     }
 
 <#
@@ -631,10 +631,10 @@ public static unsafe class ManagedChainExtensions
 #>
 
 /// <summary>
-/// A <see cref="ManagedChain{<#= tList #>}"/> safely manages the pointers of a managed structure chain.
+/// A <see cref="Chain{<#= tList #>}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 <#= ParameterTypeDocs(i, "/// ") #>
-public unsafe sealed class ManagedChain<<#= tList #>> : ManagedChain, IEquatable<ManagedChain<<#= tList #>>>
+public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tList #>>>
 <#= ConstraintListLoose(i, "    ") #>
 {
     /// <summary>
@@ -722,22 +722,22 @@ public unsafe sealed class ManagedChain<<#= tList #>> : ManagedChain, IEquatable
 #>
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items from an existing memory block.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items from an existing memory block.
     /// </summary>
     /// <param name="headPtr">The pointer to the head of the chain.</param>
     /// <remarks>
     /// Callers are responsible for ensuring the size of the memory is correct.
     /// </remarks>
-    internal ManagedChain(nint headPtr)
+    internal Chain(nint headPtr)
     {
         _headPtr = headPtr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{<#= tList #>}"/> with <#= i #> items.
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
 <#= pDocs #>
-    internal ManagedChain(<#= ParamList(i) #>)
+    internal Chain(<#= ParamList(i) #>)
         : this(Marshal.AllocHGlobal(MemorySize))
     {
         head.StructureType();
@@ -793,7 +793,7 @@ public unsafe sealed class ManagedChain<<#= tList #>> : ManagedChain, IEquatable
     /// Compares the supplied memory block with this one, ignoring the structure headers.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    protected override bool MemoryEquals(ManagedChain other)
+    protected override bool MemoryEquals(Chain other)
     {
         var ptr = HeadPtr;
         var otherPtr = other.HeadPtr;
@@ -862,19 +862,19 @@ public unsafe sealed class ManagedChain<<#= tList #>> : ManagedChain, IEquatable
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public bool Equals(ManagedChain<<#=tList#>> other)
+    public bool Equals(Chain<<#=tList#>> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public static bool operator ==(ManagedChain<<#=tList#>> left, ManagedChain<<#=tList#>> right) => 
+    public static bool operator ==(Chain<<#=tList#>> left, Chain<<#=tList#>> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public static bool operator !=(ManagedChain<<#=tList#>> left, ManagedChain<<#=tList#>> right) => 
+    public static bool operator !=(Chain<<#=tList#>> left, Chain<<#=tList#>> right) => 
         ReferenceEquals(null, left)
         ? !ReferenceEquals(null, right)
         : ReferenceEquals(null, right) || (!ReferenceEquals(left, right) && !left.MemoryEquals(right));

@@ -10,17 +10,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ManagedChain.gen.tt">
+    <None Update="Chain.gen.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ManagedChain.gen.cs</LastGenOutput>
+      <LastGenOutput>Chain.gen.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ManagedChain.gen.cs">
+    <Compile Update="Chain.gen.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ManagedChain.gen.tt</DependentUpon>
+      <DependentUpon>Chain.gen.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

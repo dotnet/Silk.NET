@@ -16,11 +16,11 @@ run time validation of `SType` and `PNext`) and making more readable and compact
 performance.
 
 However, many consumers are uncomfortable with pointers, and are especially prone to introducing bugs when placing
-structs onto the heap. This proposal provides a convenient `ManagedChain` class, and multiple
-descendent `ManagedChain<TChain...>` (similar to the `System.Tuple<T1..>` classes) classes to safely fix the structures
+structs onto the heap. This proposal provides a convenient `Chain` class, and multiple
+descendent `Chain<TChain...>` (similar to the `System.Tuple<T1..>` classes) classes to safely fix the structures
 in memory and prevent pointer bugs.
 
-Whenever a structure is loaded into the `ManagedChain` its `SType` and `PNext` are forced to be correct, preventing
+Whenever a structure is loaded into the `Chain` its `SType` and `PNext` are forced to be correct, preventing
 errors. Structures can be replaced at any time, and will be inserted efficiently into the chain as an O(1) operation.
 
 # Contributors
@@ -30,16 +30,16 @@ errors. Structures can be replaced at any time, and will be inserted efficiently
 # Current Status
 
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
-- [ ] Implemented
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
+- [x] Implemented
 
 # Design Decisions
 
 - There are no requirements to extend `BuildTools`, or add any additional information to the `IChainable` structures.
-- Although the `ManagedChain<TChain...>` generic classes are auto-generated (for convenience) this is done using T4
+- Although the `Chain<TChain...>` generic classes are auto-generated (for convenience) this is done using T4
   templating, an implementation of which is
-  provided [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/ManagedChain.gen.tt).
+  provided [in the labs](../../src/Lab/Experiments/PrototypeStructChaining/PrototypeStructChaining/Chain.gen.tt).
 - For improved performance, the chain's structures are held in a single block of contiguous unmanaged memory, as the
   memory is unmanaged, the position of the structures remains fixed, even though the containing object can be safely
   moved around by the GC in the heap. Indeed a pointer to this block is the only data stored by an instance of any
@@ -53,9 +53,9 @@ errors. Structures can be replaced at any time, and will be inserted efficiently
 
 Open questions:
 
-- Should we expose 8, 16 or 32 `ManagedChain<TChain...>` classes?
+- Should we expose 8, 16 or 32 `Chain<TChain...>` classes?
 - Do we want to stick with `TChain chain, T1 item1`, or use `T1 item1, T2 item2` ala `Tuple`?
-- Although the constructors used by `ManagedChain.Create` and `ManagedChain.Load` could be made `internal`, I don't
+- Although the constructors used by `Chain.Create` and `Chain.Load` could be made `internal`, I don't
   propose we do so. Primarily, the main benefit of the static methods is type inference, but, as chain building is
   frequently done with defaults then direct constructor access does not have a disadvantage, and can take advantage of
   implicit typing when assigning to an already typed field/property. Having both forms available is therefore
@@ -68,24 +68,24 @@ Open questions:
   doesn't matter.
 - `GetHasCode` current hashes the entire struct's data, except the `PNext` fields. However, a hashcode only needs to
   create reasonable separation so a 'sampling' method could be used for increased performance.
-- Similar to `Append` and `Truncate` we could also add `Insert` and `Remove` methods, though slightly more complex, as
+- Similar to `Add` and `Truncate` we could also add `Insert` and `Remove` methods, though slightly more complex, as
   we'd have to generate multiples of each, it is not difficult to do, for example:
 
 ```csharp
-pubilc class ManagedCache<TChain, T1, T2> ... {
+pubilc class Chain<TChain, T1, T2> ... {
     ...
     
     // There would be <length> of these methods (not too bad to be fair, the worst case would be maxsize -1 as we
-    // wouldn't add these methods to the largest possible ManagedCache)
-    public ManagedCache<TNew, TChain, T1, T2> InsertBeforeHead<TNew>(TChain newHead) {...}
-    public ManagedCache<TChain, TNew, T1, T2> InsertBeforeItem1<TNew>(TNew newValue) {...}
-    public ManagedCache<TChain, T1, TNew, T2> InsertBeforeItem2<TNew>(TNew newValue) {...}
+    // wouldn't add these methods to the largest possible Chain)
+    public Chain<TNew, TChain, T1, T2> InsertBeforeHead<TNew>(TChain newHead) {...}
+    public Chain<TChain, TNew, T1, T2> InsertBeforeItem1<TNew>(TNew newValue) {...}
+    public Chain<TChain, T1, TNew, T2> InsertBeforeItem2<TNew>(TNew newValue) {...}
     
-    // There would be size-2 of these methods (so wouldn't exist on `ManagedCache<TChain, T1>`)
-    public ManagedCache<TChain, T2> RemoveItem1(out T1 removedValue) {...}
+    // There would be size-2 of these methods (so wouldn't exist on `Chain<TChain, T1>`)
+    public Chain<TChain, T2> RemoveItem1(out T1 removedValue) {...}
     
-    // This is pretty trivial to add (also wouldn't exist on `ManagedCache<TChain>`)
-    public ManagedCache<TChain, T1> Truncate(out T2 removedValue) {...}
+    // This is pretty trivial to add (also wouldn't exist on `Chain<TChain>`)
+    public Chain<TChain, T1> Truncate(out T2 removedValue) {...}
 } 
 ```
 
@@ -94,7 +94,7 @@ pubilc class ManagedCache<TChain, T1, T2> ... {
 ## The Any versions
 
 As with unmanaged chains, the managed chains system includes `Any` versions of all methods. In fact,
-the `ManagedChain<THead...>` constraints are 'loose', that is they only require types to be `IChainable` rather than
+the `Chain<THead...>` constraints are 'loose', that is they only require types to be `IChainable` rather than
 requiring the stricter constraints that prevent unrelated chain elements being added, or used as the start of a chain.
 
 With the exception of the setters on chain items, you cannot manipulate a chain save through the static methods, and the
@@ -109,7 +109,7 @@ to `PhysicalDeviceDescriptorIndexingFeatures` and finishing with a `PhysicalDevi
 structure:
 
 ```csharp
-using var chain = ManagedChain.Create
+using var chain = Chain.Create
         (
             default(PhysicalDeviceFeatures2),
             default(PhysicalDeviceDescriptorIndexingFeatures),
@@ -132,7 +132,7 @@ The structures are held in unmanaged memory, preventing movement by the GC, and 
 You can also use specify the generic types directly, e.g.:
 
 ```csharp
-using var chain = ManagedChain.Create<
+using var chain = Chain.Create<
     DeviceCreateInfo, 
     PhysicalDeviceFeatures2, 
     PhysicalDeviceDescriptorIndexingFeatures>();
@@ -140,11 +140,11 @@ using var chain = ManagedChain.Create<
 
 ### Modifying values (Head/Item# properties)
 
-We can easily modify any value in the `ManagedChain`, and it will maintain the pointers automatically. You do this using
+We can easily modify any value in the `Chain`, and it will maintain the pointers automatically. You do this using
 the `Head` property, or one of the `Item#` properties (e.g. `Item1`), for example:
 
 ```csharp
-using var chain = ManagedChain.Create<
+using var chain = Chain.Create<
     DeviceCreateInfo, 
     PhysicalDeviceFeatures2, 
     PhysicalDeviceDescriptorIndexingFeatures>();
@@ -183,25 +183,25 @@ ensures the `PNext` value pointing to it is maintained.
 
 ## Extension Methods
 
-### Appending to a chain (Append/AppendAny)
+### Adding to a chain (Add/AddAny)
 
-You can call `Append` on a `ManagedChain` (of length < 16) to efficiently create a new, larger, `ManagedChain` with a
+You can call `Add` on a `Chain` (of length < 16) to efficiently create a new, larger, `Chain` with a
 new item appended to the end, e.g:
 
 ```csharp
-using var chain = ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>(
+using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures>(
     item1: new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true});
 
 // The new chain, will efficiently copy the old chain and append a new structure to the end
-using var newChain = chain.Append<PhysicalDeviceAccelerationStructureFeaturesKHR>();
+using var newChain = chain.Add<PhysicalDeviceAccelerationStructureFeaturesKHR>();
 // You will usualy wish to dispose the old chain here, the two chains are now independent of each other.
 
 // Check the flag from the first chain is still set in the new chain.
 Assert.True(newChain.Item1.ShaderInputAttachmentArrayDynamicIndexing);        
 ```
 
-**Note** As a `ManagedChain` holds a block of unmanaged memory, it must be [disposed manually](#disposal) when it is
-finished with, when using the `Append` method you will produce a new `ManagedChain` and should not forget to dispose the
+**Note** As a `Chain` holds a block of unmanaged memory, it must be [disposed manually](#disposal) when it is
+finished with, when using the `Add` method you will produce a new `Chain` and should not forget to dispose the
 original if it is no longer needed.
 
 ### Truncating (Truncate/TruncateAny)
@@ -209,8 +209,8 @@ original if it is no longer needed.
 Similarly, you can `Truncate` a chain (of length > 1) to get an instance of a smaller chain:
 
 ```csharp
-using var chain = ManagedChain.Create<PhysicalDeviceFeatures2>();
-using var chain2 = chain.Append<PhysicalDeviceDescriptorIndexingFeatures>();
+using var chain = Chain.Create<PhysicalDeviceFeatures2>();
+using var chain2 = chain.Add<PhysicalDeviceDescriptorIndexingFeatures>();
 // Remove the indexing features we just added (note the out parameter is optional)
 using var chain3 = chain2.Truncate(out var indexingFeatures);
 
@@ -224,7 +224,7 @@ Assert.Equal(1, chain3.Count);
 You can efficiently duplicate a managed chain by calling Duplicate on it:
 
 ```csharp
-using var chain = new ManagedChain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+using var chain = new Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
     PhysicalDeviceAccelerationStructureFeaturesKHR>();
 using var copy = chain.Duplicate();
 
@@ -237,8 +237,8 @@ Assert.True(chain == copy);
 
 ### Loading from an unmanaged chain (Load/LoadAny)
 
-If you have created an unmanaged chain and would like to load that into a `ManagedChain` you can use one of the
-`ManagedChain.Load<TChain...>` methods:
+If you have created an unmanaged chain and would like to load that into a `Chain` you can use one of the
+`Chain.Load<TChain...>` methods:
 
 ```csharp
 // Load an unmanaged chain
@@ -253,7 +253,7 @@ PhysicalDeviceFeatures2
 
 // Loads a new managed chain from an unmanaged chain
 using var managedChain =
-    ManagedChain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+    Chain.Load<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
         PhysicalDeviceAccelerationStructureFeaturesKHR>(out var errors, unmanagedChain);
 
 // Check we had no loading errors
@@ -268,7 +268,7 @@ parameter will be `string.Empty` if there are no errors, otherwise each line wil
 issue found during loading. There is also an overload that accepts a single argument `chain` for when you don't care if
 there are any errors. Either method always succeeds, even if the unmanaged chain doesn't match exactly - for example it
 is shorter or longer than the chain being loaded, or if the managed chain has different structure types in any of the
-positions. Any structure type in the expected position will always be loaded into the new `ManagedChain`.
+positions. Any structure type in the expected position will always be loaded into the new `Chain`.
 
 ```csharp
 var indexingFeatures = new PhysicalDeviceDescriptorIndexingFeatures
@@ -284,7 +284,7 @@ DeviceCreateInfo
 
 // Loads a new managed chain from an unmanaged chain
 using var managedChain =
-    new ManagedChain<
+    new Chain<
         DeviceCreateInfo,
         // Note we are supplied a PhysicalDeviceFeatures2 here from the unmanaged chain
         PhysicalDeviceAccelerationStructureFeaturesKHR,
@@ -310,11 +310,11 @@ equivalent constructor to `Load(TChain)` as that would be ambiguous.
 
 ### IReadOnlyList
 
-All the fully generic `ManageChain<TChain...>` types extend `ManagedChain` which implements `IDisposable`
-and `IReadOnlyList<IChainable>`. The latter allowing for easy consumption of any `ManagedChain`, e.g.:
+All the fully generic `ManageChain<TChain...>` types extend `Chain` which implements `IDisposable`
+and `IReadOnlyList<IChainable>`. The latter allowing for easy consumption of any `Chain`, e.g.:
 
 ```csharp        
-using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+using var chain = new Chain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
     PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
 Assert.Equal(3, chain.Count);
@@ -337,7 +337,7 @@ Assert.IsType<PhysicalDeviceAccelerationStructureFeaturesKHR>(structures[2]);
 
 ### Equality (IEquatable&lt;T&gt;)
 
-ll the fully generic `ManageChain<TChain...>` types implement the corresponding `IEquatable<ManagedChain<TChain...>>`
+ll the fully generic `ManageChain<TChain...>` types implement the corresponding `IEquatable<Chain<TChain...>>`
 interface, and equality operators. As well as `GetHashCode`.
 
 ### Deconstruction
@@ -345,7 +345,7 @@ interface, and equality operators. As well as `GetHashCode`.
 Each `ManageChain<TChain...>` has a corresponding deconstructor for convenience, e.g.:
 
 ```csharp
-using var chain = new ManagedChain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+using var chain = new Chain<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
     PhysicalDeviceAccelerationStructureFeaturesKHR>();
 
 var (physicalDeviceFeatures2, indexingFeatures, accelerationStructureFeaturesKhr) = chain;
@@ -358,7 +358,7 @@ Assert.Equal(StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr, accel
 
 ### Disposal (IDisposable)
 
-As each `ManagedChain` holds the underlying structures in unmanaged memory (to prevent them being moved and their
+As each `Chain` holds the underlying structures in unmanaged memory (to prevent them being moved and their
 pointers being invalidated), then it is critical you dispose them; either by calling `Dispose()` or by using a `using`
 statement.
 
@@ -366,15 +366,15 @@ statement.
 
 ## Abstract base class
 
-The `ManagedChain`, non-generic abstract base class provides an abstract implementation of `IReadOnlyList<IChainable>`,
+The `Chain`, non-generic abstract base class provides an abstract implementation of `IReadOnlyList<IChainable>`,
 and defines static `Create` and `Load` methods for each size of chain.
 
 ```csharp
 
 /// <summary>
-/// Base class for all <see cref="ManagedChain{T}">Managed Chains</see>.
+/// Base class for all <see cref="Chain{T}">Managed Chains</see>.
 /// </summary>
-public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposable
+public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
 {
     /// <summary>
     /// Gets a pointer to the current head.
@@ -404,13 +404,13 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
     public override bool Equals(object obj)
     {
         return !ReferenceEquals(null, obj) && 
-               (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((ManagedChain) obj));
+               (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
     }
 
     /// <summary>
     /// Compares the supplied memory block with this one.
     /// </summary>  
-    protected abstract bool MemoryEquals(ManagedChain other);
+    protected abstract bool MemoryEquals(Chain other);
 
     /// <inheritdoc />
     public abstract void Dispose();
@@ -430,100 +430,100 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
             _ => HashCode.Combine(hashCode, MemoryMarshal.Cast<byte, ulong>(slice)[0])
         };
 
-    // Skipping methods for `ManagedChain{TChain}` to show more completed example
+    // Skipping methods for `Chain{TChain}` to show more completed example
     ...
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
     /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <seealso cref="CreateAny{TChain, T1}(TChain, T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> Create<TChain, T1>(TChain head = default, T1 item1 = default)
+    public static Chain<TChain, T1> Create<TChain, T1>(TChain head = default, T1 item1 = default)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => new(head, item1);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
     /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Create{TChain, T1}(TChain, T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> CreateAny<TChain, T1>(TChain head = default, T1 item1 = default)
+    public static Chain<TChain, T1> CreateAny<TChain, T1>(TChain head = default, T1 item1 = default)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
         => new(head, item1);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
+    /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
     /// ignoring any errors.
     /// </summary>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <seealso cref="LoadAny{TChain, T1}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> Load<TChain, T1>(TChain chain)
+    public static Chain<TChain, T1> Load<TChain, T1>(TChain chain)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => LoadAny<TChain, T1>(out var _, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
+    /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain,
     /// ignoring any errors.
     /// </summary>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Load{TChain, T1}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> LoadAny<TChain, T1>(TChain chain)
+    public static Chain<TChain, T1> LoadAny<TChain, T1>(TChain chain)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
         => LoadAny<TChain, T1>(out var _, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
+    /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
     /// </summary>
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <seealso cref="LoadAny{TChain, T1}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> Load<TChain, T1>(out string errors, TChain chain)
+    public static Chain<TChain, T1> Load<TChain, T1>(out string errors, TChain chain)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => LoadAny<TChain, T1>(out errors, chain);
 
     /// <summary>
-    /// Loads a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
+    /// Loads a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing unmanaged chain.
     /// </summary>
     /// <param name="errors">Any errors loading the chain.</param>
     /// <param name="chain">The unmanaged chain to use as the basis of this chain.</param>
-    /// <returns>A new <see cref="ManagedChain{TChain, T1}"/> with 2 items.</returns>
+    /// <returns>A new <see cref="Chain{TChain, T1}"/> with 2 items.</returns>
     /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para></remarks>
     /// <seealso cref="Load{TChain, T1}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> LoadAny<TChain, T1>(out string errors, TChain chain)
+    public static Chain<TChain, T1> LoadAny<TChain, T1>(out string errors, TChain chain)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
     {
-        var size = ManagedChain<TChain, T1>.MemorySize;
+        var size = Chain<TChain, T1>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(size);
         chain.StructureType();
         Marshal.StructureToPtr(chain, newHeadPtr, false);
@@ -532,7 +532,7 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
         var newPtr = (BaseInStructure*) newHeadPtr;
 
         existingPtr = existingPtr->PNext;
-        newPtr->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<TChain, T1>.Item1Offset);
+        newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
         newPtr = newPtr->PNext;
 
         T1 item1 = default;
@@ -558,7 +558,7 @@ public abstract unsafe class ManagedChain : IReadOnlyList<IChainable>, IDisposab
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
-        return new ManagedChain<TChain, T1>(newHeadPtr);
+        return new Chain<TChain, T1>(newHeadPtr);
     }
     
     // Only showing one example of Create/Load methods
@@ -572,11 +572,11 @@ A class is generated for each valid size of a chain, here is one example:
 
 ```csharp
 /// <summary>
-/// A <see cref="ManagedChain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
+/// A <see cref="Chain{TChain, T1}"/> safely manages the pointers of a managed structure chain.
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
 /// <typeparam name="T1">Type of Item 1.</typeparam>
-public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<ManagedChain<TChain, T1>>
+public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T1>>
     where TChain : struct, IChainable
     where T1 : struct, IChainable
 {
@@ -651,23 +651,23 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items from an existing memory block.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items from an existing memory block.
     /// </summary>
     /// <param name="headPtr">The pointer to the head of the chain.</param>
     /// <remarks>
     /// Callers are responsible for ensuring the size of the memory is correct.
     /// </remarks>
-    internal ManagedChain(nint headPtr)
+    internal Chain(nint headPtr)
     {
         _headPtr = headPtr;
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
-    internal ManagedChain(TChain head = default, T1 item1 = default)
+    internal Chain(TChain head = default, T1 item1 = default)
         : this(Marshal.AllocHGlobal(MemorySize))
     {
         head.StructureType();
@@ -702,7 +702,7 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
     /// Compares the supplied memory block with this one, ignoring the structure headers.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    protected override bool MemoryEquals(ManagedChain other)
+    protected override bool MemoryEquals(Chain other)
     {
         var ptr = HeadPtr;
         var otherPtr = other.HeadPtr;
@@ -757,19 +757,19 @@ public unsafe sealed class ManagedChain<TChain, T1> : ManagedChain, IEquatable<M
  
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public bool Equals(ManagedChain<TChain, T1> other)
+    public bool Equals(Chain<TChain, T1> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public static bool operator ==(ManagedChain<TChain, T1> left, ManagedChain<TChain, T1> right) => 
+    public static bool operator ==(Chain<TChain, T1> left, Chain<TChain, T1> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
-    public static bool operator !=(ManagedChain<TChain, T1> left, ManagedChain<TChain, T1> right) => 
+    public static bool operator !=(Chain<TChain, T1> left, Chain<TChain, T1> right) => 
         ReferenceEquals(null, left)
         ? !ReferenceEquals(null, right)
         : ReferenceEquals(null, right) || (!ReferenceEquals(left, right) && !left.MemoryEquals(right));
@@ -821,17 +821,17 @@ A static class is generated to hold the extension methods (showing one example s
 ```csharp
 
 /// <summary>
-///  Static class providing extension methods for manipulating <see cref="ManagedChain">managed chains</see>.
+///  Static class providing extension methods for manipulating <see cref="Chain">managed chains</see>.
 /// </summary>
 /// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
 /// useful for situations where the specification does not indicate required chain constraints. You should generally
 /// try to use the none `Any` version in preference.</para></remarks>
-public static unsafe class ManagedChainExtensions
+public static unsafe class ChainExtensions
 {
     ...
     
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
     /// the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -844,14 +844,14 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1}(ManagedChain{TChain}, T1)" />
-    public static ManagedChain<TChain, T1> Add<TChain, T1>(this ManagedChain<TChain> chain, T1 item1 = default)
+    /// <seealso cref="AddAny{TChain, T1}(Chain{TChain}, T1)" />
+    public static Chain<TChain, T1> Add<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => chain.AddAny(item1);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
     /// the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -864,29 +864,29 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Add{TChain, T1}(ManagedChain{TChain}, T1)" />
-    public static ManagedChain<TChain, T1> AddAny<TChain, T1>(this ManagedChain<TChain> chain, T1 item1 = default)
+    /// <seealso cref="Add{TChain, T1}(Chain{TChain}, T1)" />
+    public static Chain<TChain, T1> AddAny<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
     {
-        var previousSize = ManagedChain<TChain>.MemorySize;
-        var newSize = ManagedChain<TChain, T1>.MemorySize;
+        var previousSize = Chain<TChain>.MemorySize;
+        var newSize = Chain<TChain, T1>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
-        // Append item 0
+        // Add item 0
         item1.StructureType();        
         Marshal.StructureToPtr(item1, newHeadPtr + previousSize, false);
 
         // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<TChain, T1>.Item1Offset);
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
         ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new ManagedChain<TChain, T1>(newHeadPtr);
+        return new Chain<TChain, T1>(newHeadPtr);
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -894,15 +894,15 @@ public static unsafe class ManagedChainExtensions
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1}(ManagedChain{TChain, T1})" />
+    /// <seealso cref="DuplicateAny{TChain, T1}(Chain{TChain, T1})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> Duplicate<TChain, T1>(this ManagedChain<TChain, T1> chain)
+    public static Chain<TChain, T1> Duplicate<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 by copying the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
     /// <typeparam name="TChain">The chain type</typeparam>
@@ -913,23 +913,23 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1}(ManagedChain{TChain, T1})" />
+    /// <seealso cref="Duplicate{TChain, T1}(Chain{TChain, T1})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain, T1> DuplicateAny<TChain, T1>(this ManagedChain<TChain, T1> chain)
+    public static Chain<TChain, T1> DuplicateAny<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
     {
-        var size = ManagedChain<TChain, T1>.MemorySize;
+        var size = Chain<TChain, T1>.MemorySize;
         var newHeadPtr = Marshal.AllocHGlobal(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + ManagedChain<TChain, T1>.Item1Offset); 
-        return new ManagedChain<TChain, T1>(newHeadPtr);
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset); 
+        return new Chain<TChain, T1>(newHeadPtr);
     }
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items, by removing the last item
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
     /// from the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -938,17 +938,17 @@ public static unsafe class ManagedChainExtensions
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain> Truncate<TChain, T1>(this ManagedChain<TChain, T1> chain)
+    public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items, by removing the last item
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
     /// from the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -960,17 +960,17 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain> TruncateAny<TChain, T1>(this ManagedChain<TChain, T1> chain)
+    public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain, T1}"/> with 1 items, by removing 
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 1 items, by removing 
     /// <paramref name="item1"/> from the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -980,17 +980,17 @@ public static unsafe class ManagedChainExtensions
     /// <remarks>
     /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ManagedChain<TChain> Truncate<TChain, T1>(this ManagedChain<TChain, T1> chain, out T1 item1)
+    public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
         where TChain : struct, IChainStart
         where T1 : struct, IExtendsChain<TChain>
         => chain.TruncateAny(out item1);
 
     /// <summary>
-    /// Creates a new <see cref="ManagedChain{TChain}"/> with 1 items, by removing 
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing 
     /// <paramref name="item1"/> from the end of the <paramref name="chain"/>.
     /// </summary>
     /// <param name="chain">The chain.</param>
@@ -1003,23 +1003,23 @@ public static unsafe class ManagedChainExtensions
     /// useful for situations where the specification does not indicate required chain constraints. You should generally
     /// try to use the none `Any` version in preference.</para>
     /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(ManagedChain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(ManagedChain{TChain, T1}, out T1)" />
-    public static ManagedChain<TChain> TruncateAny<TChain, T1>(this ManagedChain<TChain, T1> chain, out T1 item1)
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
+    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
+    public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
         where TChain : struct, IChainable
         where T1 : struct, IChainable
     {
         // Retrieve last item.
         item1 = chain.Item1;
 
-        var newSize = ManagedChain<TChain, T1>.MemorySize - ManagedChain<TChain, T1>.Item1Size;
+        var newSize = Chain<TChain, T1>.MemorySize - Chain<TChain, T1>.Item1Size;
         var newHeadPtr = Marshal.AllocHGlobal(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = null;
-        return new ManagedChain<TChain>(newHeadPtr);
+        return new Chain<TChain>(newHeadPtr);
     }
     
     ...   
