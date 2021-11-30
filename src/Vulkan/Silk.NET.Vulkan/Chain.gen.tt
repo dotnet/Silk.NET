@@ -225,8 +225,7 @@ public abstract unsafe partial class Chain
         var size = Chain<<#= tList #>>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<<#= tList #>>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
 <#
         if (i == 1)
         {
@@ -275,8 +274,7 @@ public abstract unsafe partial class Chain
                 item<#= j #> = Unsafe.AsRef<T<#= j #>>(existingPtr);
             }
         }
-        size = Chain<<#= tList #>>.Item<#= j #>Size;
-        System.Buffer.MemoryCopy((void*) &item<#= j #>, (void*)newPtr, size, size);
+        *((T<#= j #>*)newPtr) = item<#= j #>;
 <#
             } // for (int j = 1; j < i; j++) {
 #>
@@ -293,270 +291,14 @@ public abstract unsafe partial class Chain
     } // for (var i = 1; i <= maximumItems; i++)
 #>
 }
-
-/// <summary>
-///  Static class providing extension methods for manipulating <see cref="Chain">managed chains</see>.
-/// </summary>
-/// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-/// useful for situations where the specification does not indicate required chain constraints. You should generally
-/// try to use the none `Any` version in preference.</para></remarks>
-public static unsafe partial class ChainExtensions
-{
-<#
-    for (var i = 1; i <= maximumItems; i++)
-    {
-        var tList = TypeList(i);
-        var pTypeDocs = ParameterTypeDocs(i, "    /// ");
-        var constraints = ConstraintList(i, "        ");
-        var constraintsLoose = ConstraintListLoose(i, "        ");
-#>
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{<#= tList #>}(Chain{<#= tList #>})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<<#= tList #>> Duplicate<<#= tList #>>(this Chain<<#= tList #>> chain)
-<#= constraints #>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{<#= tList #>}(Chain{<#= tList #>})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<<#= tList #>> DuplicateAny<<#= tList #>>(this Chain<<#= tList #>> chain)
-<#= constraintsLoose #>
-    {
-        var size = Chain<<#= tList #>>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-<#
-        if (i > 1)
-        {
-#>
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item1Offset); 
-<#
-        } // if (i > 1)
-#>
-<#
-        for (var j = 2; j < i; j++)
-        {
-#>
-        ((BaseInStructure*)(newHeadPtr + Chain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item<#= j #>Offset); 
-<#
-        } // for (int j = 1; j < i; j++) {
-#>
-        return new Chain<<#= tList #>>(newHeadPtr);
-    }
-
-<#
-        if (i > 1)
-        {
-            var shortTList = TypeList(i - 1);
-#>
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<<#= shortTList #>> Truncate<<#= tList #>>(this Chain<<#= tList #>> chain)
-<#= constraints #>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<<#= shortTList #>> TruncateAny<<#= tList #>>(this Chain<<#= tList #>> chain)
-<#= constraintsLoose #>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i - 1 #> items, by removing 
-    /// <paramref name="item<#= i - 1 #>"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item<#= i - 1 #>">The item removed from the <paramref name="chain"/>.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<<#= shortTList #>> Truncate<<#= tList #>>(this Chain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
-<#= constraints #>
-        => ChainExtensions.TruncateAny(chain, out item<#= i - 1 #>);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing 
-    /// <paramref name="item<#= i - 1 #>"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item<#= i - 1 #>">The item removed from the <paramref name="chain"/>.</param>
-<#= pTypeDocs #>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="TruncateAny{<#= tList #>}(Chain{<#= tList #>})" />
-    /// <seealso cref="Truncate{<#= tList #>}(Chain{<#= tList #>}, out T<#= i - 1 #>)" />
-    public static Chain<<#= shortTList #>> TruncateAny<<#= tList #>>(this Chain<<#= tList #>> chain, out T<#= i - 1 #> item<#= i - 1 #>)
-<#= constraintsLoose #>
-    {
-        // Retrieve last item.
-        item<#= i - 1 #> = chain.Item<#= i - 1 #>;
-
-        var newSize = Chain<<#= tList #>>.MemorySize - Chain<<#= tList #>>.Item<#= i - 1 #>Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-<#
-            if (i > 2)
-            {
-#>
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= tList #>>.Item1Offset);
-<#
-                for (var j = 2; j < i; j++)
-                {
-#>
-        ((BaseInStructure*)(newHeadPtr + Chain<<#= tList #>>.Item<#= j - 1 #>Offset))->PNext = <#=
-                                    j == i - 1
-                                        ? "null"
-                                        : $"(BaseInStructure*) (newHeadPtr + Chain<{tList}>.Item{j}Offset)" #>; 
-<#
-                } // for (int j = 1; j < i - 1; j++)
-            }
-            else // if (i > 1)
-            {
-#>
-        ((BaseInStructure*)newHeadPtr)->PNext = null;
-<#
-            }
-#>
-        return new Chain<<#= shortTList #>>(newHeadPtr);
-    }
-
-<#
-        } // (i > 1)
-
-        if (i < maximumItems)
-        {
-            var bigTList = TypeList(i + 1);
-            var bigPTypeDocs = ParameterTypeDocs(i + 1, "    /// ");
-            var bigConstraints = ConstraintList(i + 1, "        ");
-            var bigConstraintsLoose = ConstraintListLoose(i + 1, "        ");
-#>
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item<#= i #>">The item to append.</param>
-<#= bigPTypeDocs #>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{<#= bigTList #>}(Chain{<#= tList #>}, T<#= i #>)" />
-    public static Chain<<#= bigTList #>> Add<<#= bigTList #>>(this Chain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
-<#= bigConstraints #>
-        => ChainExtensions.AddAny(chain, item<#= i #>);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{<#= tList #>, T<#= i #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item<#= i #>">The item to append.</param>
-<#= bigPTypeDocs #>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{<#= bigTList #>}(Chain{<#= tList #>}, T<#= i #>)" />
-    public static Chain<<#= bigTList #>> AddAny<<#= bigTList #>>(this Chain<<#= tList #>> chain, T<#= i #> item<#= i #> = default)
-<#= bigConstraintsLoose #>
-    {
-        var previousSize = Chain<<#= tList #>>.MemorySize;
-        var newSize = Chain<<#= bigTList #>>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item <#= i - 1 #>
-        item<#= i #>.StructureType();
-        var size = Chain<<#= bigTList #>>.Item<#= i #>Size;
-        System.Buffer.MemoryCopy((void*) &item<#= i #>, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= bigTList #>>.Item1Offset);
-<#
-            for (var j = 1; j < i; j++)
-            {
-#>
-        ((BaseInStructure*)(newHeadPtr + Chain<<#= bigTList #>>.Item<#= j #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= bigTList #>>.Item<#= j + 1 #>Offset); 
-<#
-            } // for (int j = 1; j < i; j++) {
-#>
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<<#= bigTList #>>(newHeadPtr);
-    }
-
-<#
-        } // if (i < maximumItems)
-    } // for (var i = 1; i <= maximumItems; i++)
-#>
-}
 <#
     for (var i = 1; i <= maximumItems; i++)
     {
         var tList = TypeList(i);
         var pDocs = ParameterDocs(i, "    /// ");
+        var pTypeDocs = ParameterTypeDocs(i, "    /// ");
+        var constraints = ConstraintList(i, "        ");
+        var constraintsLoose = ConstraintListLoose(i, "        ");
 #>
 
 /// <summary>
@@ -617,8 +359,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -643,8 +384,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             value.StructureType();
             var ptr = Item<#= j #>Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item<#= j #>Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T<#= j #>*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -672,16 +412,14 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<<#= tList #>>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
 <#
         for (var j = 1; j < i; j++)
         {
 #>
         <#= j == 1 ? "var " : "" #>itemPtr = Item<#= j #>Ptr;
         item<#= j #>.StructureType();
-        size = Chain<<#= tList #>>.Item<#= j #>Size;
-        System.Buffer.MemoryCopy((void*) &item<#= j #>, (void*)itemPtr, size, size);
+        *((T<#= j #>*)itemPtr) = item<#= j #>;
         <#= j == 1 ? "HeadPtr" : $"Item{j - 1}Ptr" #>->PNext = itemPtr;
 <#
         } // for (int j = 1; j < i; j++) {
@@ -691,8 +429,40 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<<#= tList #>>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<<#= tList #>> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+<#
+        if (i > 1)
+        {
+#>
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+<#
+        } // if (i > 1)
+#>
+<#
+        for (var j = 2; j < i; j++)
+        {
+#>
+        ((BaseInStructure*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item<#= j #>Offset); 
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+        return new Chain<<#= tList #>>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -701,7 +471,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         if (i < maximumItems - 1)
         {
 #>
-        => ChainExtensions.AddAny<<#= tList #>, T>(this, item);
+        => AddAny<T>(item);
 <#
         }
         else
@@ -712,6 +482,72 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         }
 #>
 
+<#
+        if (i < maximumItems)
+        {
+            var bigTList = TypeList(i + 1);
+#>
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= bigTList #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item<#= i #>">The item to append.</param>    
+    /// <typeparam name="T<#= i #>">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T<#= i #>}(T<#= i #>)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<<#= bigTList #>> Add<T<#= i #>>(T<#= i #> item<#= i #> = default)
+        where T<#= i #> : unmanaged, IExtendsChain<TChain>
+        => AddAny(item<#= i #>);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= bigTList #>}"/> with <#= i + 1 #> items, by appending <paramref name="item<#= i #>"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item<#= i #>">The item to append.</param>
+    /// <typeparam name="T<#= i #>">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T<#= i #>}(T<#= i #>)" />
+    public new Chain<<#= bigTList #>> AddAny<T<#= i #>>(T<#= i #> item<#= i #> = default)
+        where T<#= i #> : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<<#= bigTList #>>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item <#= i - 1 #>
+        item<#= i #>.StructureType();
+        *((T<#= i #>*)(newHeadPtr + previousSize)) = item<#= i #>;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + <#= (i == 1 ? $"Chain<{bigTList}>." : "") #>Item1Offset);
+<#
+            for (var j = 1; j < i; j++)
+            {
+#>
+        ((BaseInStructure*)(newHeadPtr + Item<#= j #>Offset))->PNext = (BaseInStructure*) (newHeadPtr + <#= (j == i - 1 ? $"Chain<{bigTList}>." : "") #>Item<#= j + 1 #>Offset); 
+<#
+            } // for (int j = 1; j < i; j++) {
+#>
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<<#= bigTList #>>(newHeadPtr);
+    }
+
+<#
+        } // if (i < maximumItems)
+#>
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
@@ -719,7 +555,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         if (i > 1)
         {
 #>
-        => ChainExtensions.TruncateAny<<#= tList #>>(this, out var _);
+        => TruncateAny(out var _);
 <#
         }
         else
@@ -738,7 +574,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         {
 #>
     {
-        var chain = ChainExtensions.TruncateAny<<#= tList #>>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
     }
@@ -752,6 +588,110 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         }
 #>
 
+<#
+        if (i > 1)
+        {
+            var shortTList = TypeList(i - 1);
+#>
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T<#= i - 1 #>)" />
+    /// <seealso cref="TruncateAny(out T<#= i - 1 #>)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<<#= shortTList #>> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T<#= i - 1 #>)" />
+    /// <seealso cref="TruncateAny(out T<#= i - 1 #>)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<<#= shortTList #>> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i - 1 #> items, by removing 
+    /// <paramref name="item<#= i - 1 #>"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item<#= i - 1 #>">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T<#= i - 1 #>)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<<#= shortTList #>> Truncate(out T<#= i - 1 #> item<#= i - 1 #>)
+        => TruncateAny(out item<#= i - 1 #>);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{<#= shortTList #>}"/> with <#= i - 1 #> items, by removing 
+    /// <paramref name="item<#= i - 1 #>"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item<#= i - 1 #>">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T<#= i - 1 #>)" />
+    public Chain<<#= shortTList #>> TruncateAny(out T<#= i - 1 #> item<#= i - 1 #>)
+    {
+        // Retrieve last item.
+        item<#= i - 1 #> = Item<#= i - 1 #>;
+
+        var newSize = MemorySize - Item<#= i - 1 #>Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+<#
+            if (i > 2)
+            {
+#>
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+<#
+                for (var j = 2; j < i; j++)
+                {
+#>
+        ((BaseInStructure*)(newHeadPtr + Item<#= j - 1 #>Offset))->PNext = <#=
+                                    j == i - 1
+                                        ? "null"
+                                        : $"(BaseInStructure*) (newHeadPtr + Item{j}Offset)" #>; 
+<#
+                } // for (int j = 1; j < i - 1; j++)
+            }
+            else // if (i > 1)
+            {
+#>
+        ((BaseInStructure*)newHeadPtr)->PNext = null;
+<#
+            }
+#>
+        return new Chain<<#= shortTList #>>(newHeadPtr);
+    }
+
+<#
+        } // (i > 1)
+#>
     /// <inheritdoc />
     public override IEnumerator<IChainable> GetEnumerator()
     {

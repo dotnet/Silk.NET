@@ -30,23 +30,19 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     /// </summary>
     /// <remarks>
     /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
+    /// </para>
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public Chain DuplicateAny() => DoDuplicateAny();
+    public Chain Duplicate() => DoDuplicate();
 
     /// <summary>
     /// Creates a new <see cref="Chain"/> by copying this instance.
     /// </summary>
     /// <remarks>
     /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
+    /// </para>
     /// </remarks>
-    protected abstract Chain DoDuplicateAny();
+    protected abstract Chain DoDuplicate();
 
     /// <summary>
     /// Creates a new <see cref="Chain"/> with 2 items, by appending <paramref name="item"/> to
@@ -107,7 +103,6 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     /// Creates a new <see cref="Chain"/>by removing the last item from this instance.
     /// </summary>
     /// <param name="tail">The item removed from this instance.</param>
-    /// <typeparam name="TTail">Type of the tail.</typeparam>
     /// <remarks>
     /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
@@ -122,7 +117,6 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     /// Creates a new <see cref="Chain"/>by removing the last item from this instance.
     /// </summary>
     /// <param name="tail">The item removed from this instance.</param>
-    /// <typeparam name="TTail">Type of the tail.</typeparam>
     /// <remarks>
     /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is

@@ -47,7 +47,7 @@ public class TestChainsAny
         // Check flag set
         Assert.Equal(1U, chain.Item1.Flags);
 
-        using var newChain = chain.DuplicateAny();
+        using var newChain = chain.Duplicate();
 
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, chain.Head.SType);

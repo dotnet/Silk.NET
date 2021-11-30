@@ -104,8 +104,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         errors = string.Empty;
         return new Chain<TChain>(newHeadPtr);
     }
@@ -203,8 +202,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -232,8 +230,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -343,8 +340,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -368,8 +364,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset);
@@ -394,8 +389,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -515,8 +509,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -540,8 +533,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset);
@@ -562,8 +554,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset);
@@ -588,8 +579,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -719,8 +709,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -744,8 +733,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset);
@@ -766,8 +754,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset);
@@ -788,8 +775,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset);
@@ -814,8 +800,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -955,8 +940,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -980,8 +964,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset);
@@ -1002,8 +985,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset);
@@ -1024,8 +1006,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset);
@@ -1046,8 +1027,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset);
@@ -1072,8 +1052,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1223,8 +1202,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1248,8 +1226,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset);
@@ -1270,8 +1247,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset);
@@ -1292,8 +1268,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset);
@@ -1314,8 +1289,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset);
@@ -1336,8 +1310,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset);
@@ -1362,8 +1335,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1523,8 +1495,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1548,8 +1519,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset);
@@ -1570,8 +1540,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset);
@@ -1592,8 +1561,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset);
@@ -1614,8 +1582,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset);
@@ -1636,8 +1603,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset);
@@ -1658,8 +1624,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset);
@@ -1684,8 +1649,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1855,8 +1819,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1880,8 +1843,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset);
@@ -1902,8 +1864,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset);
@@ -1924,8 +1885,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset);
@@ -1946,8 +1906,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset);
@@ -1968,8 +1927,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset);
@@ -1990,8 +1948,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset);
@@ -2012,8 +1969,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset);
@@ -2038,8 +1994,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -2219,8 +2174,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -2244,8 +2198,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset);
@@ -2266,8 +2219,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset);
@@ -2288,8 +2240,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset);
@@ -2310,8 +2261,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset);
@@ -2332,8 +2282,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset);
@@ -2354,8 +2303,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset);
@@ -2376,8 +2324,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset);
@@ -2398,8 +2345,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset);
@@ -2424,8 +2370,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -2615,8 +2560,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -2640,8 +2584,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset);
@@ -2662,8 +2605,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset);
@@ -2684,8 +2626,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset);
@@ -2706,8 +2647,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset);
@@ -2728,8 +2668,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset);
@@ -2750,8 +2689,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset);
@@ -2772,8 +2710,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset);
@@ -2794,8 +2731,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset);
@@ -2816,8 +2752,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset);
@@ -2842,8 +2777,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -3043,8 +2977,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -3068,8 +3001,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset);
@@ -3090,8 +3022,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset);
@@ -3112,8 +3043,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset);
@@ -3134,8 +3064,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset);
@@ -3156,8 +3085,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset);
@@ -3178,8 +3106,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset);
@@ -3200,8 +3127,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset);
@@ -3222,8 +3148,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset);
@@ -3244,8 +3169,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset);
@@ -3266,8 +3190,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset);
@@ -3292,8 +3215,7 @@ public abstract unsafe partial class Chain
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
+        *((T11*)newPtr) = item11;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -3503,8 +3425,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -3528,8 +3449,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset);
@@ -3550,8 +3470,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset);
@@ -3572,8 +3491,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset);
@@ -3594,8 +3512,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset);
@@ -3616,8 +3533,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset);
@@ -3638,8 +3554,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset);
@@ -3660,8 +3575,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset);
@@ -3682,8 +3596,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset);
@@ -3704,8 +3617,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset);
@@ -3726,8 +3638,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset);
@@ -3748,8 +3659,7 @@ public abstract unsafe partial class Chain
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
+        *((T11*)newPtr) = item11;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset);
@@ -3774,8 +3684,7 @@ public abstract unsafe partial class Chain
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
+        *((T12*)newPtr) = item12;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -3995,8 +3904,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -4020,8 +3928,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset);
@@ -4042,8 +3949,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset);
@@ -4064,8 +3970,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset);
@@ -4086,8 +3991,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset);
@@ -4108,8 +4012,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset);
@@ -4130,8 +4033,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset);
@@ -4152,8 +4054,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset);
@@ -4174,8 +4075,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset);
@@ -4196,8 +4096,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset);
@@ -4218,8 +4117,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset);
@@ -4240,8 +4138,7 @@ public abstract unsafe partial class Chain
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
+        *((T11*)newPtr) = item11;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset);
@@ -4262,8 +4159,7 @@ public abstract unsafe partial class Chain
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
+        *((T12*)newPtr) = item12;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset);
@@ -4288,8 +4184,7 @@ public abstract unsafe partial class Chain
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
+        *((T13*)newPtr) = item13;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -4519,8 +4414,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -4544,8 +4438,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset);
@@ -4566,8 +4459,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset);
@@ -4588,8 +4480,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset);
@@ -4610,8 +4501,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset);
@@ -4632,8 +4522,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset);
@@ -4654,8 +4543,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset);
@@ -4676,8 +4564,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset);
@@ -4698,8 +4585,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset);
@@ -4720,8 +4606,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset);
@@ -4742,8 +4627,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset);
@@ -4764,8 +4648,7 @@ public abstract unsafe partial class Chain
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
+        *((T11*)newPtr) = item11;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset);
@@ -4786,8 +4669,7 @@ public abstract unsafe partial class Chain
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
+        *((T12*)newPtr) = item12;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset);
@@ -4808,8 +4690,7 @@ public abstract unsafe partial class Chain
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
+        *((T13*)newPtr) = item13;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset);
@@ -4834,8 +4715,7 @@ public abstract unsafe partial class Chain
                 item14 = Unsafe.AsRef<T14>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
-        System.Buffer.MemoryCopy((void*) &item14, (void*)newPtr, size, size);
+        *((T14*)newPtr) = item14;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -5075,8 +4955,7 @@ public abstract unsafe partial class Chain
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
         var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
+        *((TChain*)newHeadPtr) = chain;
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -5100,8 +4979,7 @@ public abstract unsafe partial class Chain
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
+        *((T1*)newPtr) = item1;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset);
@@ -5122,8 +5000,7 @@ public abstract unsafe partial class Chain
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
+        *((T2*)newPtr) = item2;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset);
@@ -5144,8 +5021,7 @@ public abstract unsafe partial class Chain
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
+        *((T3*)newPtr) = item3;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset);
@@ -5166,8 +5042,7 @@ public abstract unsafe partial class Chain
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
+        *((T4*)newPtr) = item4;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset);
@@ -5188,8 +5063,7 @@ public abstract unsafe partial class Chain
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
+        *((T5*)newPtr) = item5;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset);
@@ -5210,8 +5084,7 @@ public abstract unsafe partial class Chain
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
+        *((T6*)newPtr) = item6;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset);
@@ -5232,8 +5105,7 @@ public abstract unsafe partial class Chain
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
+        *((T7*)newPtr) = item7;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset);
@@ -5254,8 +5126,7 @@ public abstract unsafe partial class Chain
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
+        *((T8*)newPtr) = item8;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset);
@@ -5276,8 +5147,7 @@ public abstract unsafe partial class Chain
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
+        *((T9*)newPtr) = item9;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset);
@@ -5298,8 +5168,7 @@ public abstract unsafe partial class Chain
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
+        *((T10*)newPtr) = item10;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset);
@@ -5320,8 +5189,7 @@ public abstract unsafe partial class Chain
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
+        *((T11*)newPtr) = item11;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset);
@@ -5342,8 +5210,7 @@ public abstract unsafe partial class Chain
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
+        *((T12*)newPtr) = item12;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset);
@@ -5364,8 +5231,7 @@ public abstract unsafe partial class Chain
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
+        *((T13*)newPtr) = item13;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset);
@@ -5386,8 +5252,7 @@ public abstract unsafe partial class Chain
                 item14 = Unsafe.AsRef<T14>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Size;
-        System.Buffer.MemoryCopy((void*) &item14, (void*)newPtr, size, size);
+        *((T14*)newPtr) = item14;
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset);
@@ -5412,4949 +5277,11 @@ public abstract unsafe partial class Chain
                 item15 = Unsafe.AsRef<T15>(existingPtr);
             }
         }
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
-        System.Buffer.MemoryCopy((void*) &item15, (void*)newPtr, size, size);
+        *((T15*)newPtr) = item15;
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
         return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
-    }
-
-}
-
-/// <summary>
-///  Static class providing extension methods for manipulating <see cref="Chain">managed chains</see>.
-/// </summary>
-/// <remarks><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-/// useful for situations where the specification does not indicate required chain constraints. You should generally
-/// try to use the none `Any` version in preference.</para></remarks>
-public static unsafe partial class ChainExtensions
-{
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain}(Chain{TChain})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain> Duplicate<TChain>(this Chain<TChain> chain)
-        where TChain : unmanaged,  IChainStart
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain}(Chain{TChain})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain> DuplicateAny<TChain>(this Chain<TChain> chain)
-        where TChain : unmanaged, IChainable
-    {
-        var size = Chain<TChain>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        return new Chain<TChain>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item1">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1}(Chain{TChain}, T1)" />
-    public static Chain<TChain, T1> Add<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item1);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item1">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1}(Chain{TChain}, T1)" />
-    public static Chain<TChain, T1> AddAny<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain>.MemorySize;
-        var newSize = Chain<TChain, T1>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 0
-        item1.StructureType();
-        var size = Chain<TChain, T1>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1}(Chain{TChain, T1})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1> Duplicate<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1}(Chain{TChain, T1})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1> DuplicateAny<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset); 
-        return new Chain<TChain, T1>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 1 items, by removing 
-    /// <paramref name="item1"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item1">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item1);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing 
-    /// <paramref name="item1"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item1">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
-    /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
-    public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item1 = chain.Item1;
-
-        var newSize = Chain<TChain, T1>.MemorySize - Chain<TChain, T1>.Item1Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = null;
-        return new Chain<TChain>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item2">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2}(Chain{TChain, T1}, T2)" />
-    public static Chain<TChain, T1, T2> Add<TChain, T1, T2>(this Chain<TChain, T1> chain, T2 item2 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item2);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item2">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2}(Chain{TChain, T1}, T2)" />
-    public static Chain<TChain, T1, T2> AddAny<TChain, T1, T2>(this Chain<TChain, T1> chain, T2 item2 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1>.MemorySize;
-        var newSize = Chain<TChain, T1, T2>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 1
-        item2.StructureType();
-        var size = Chain<TChain, T1, T2>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2> Duplicate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2> DuplicateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset); 
-        return new Chain<TChain, T1, T2>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1> Truncate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1> TruncateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 2 items, by removing 
-    /// <paramref name="item2"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item2">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1> Truncate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain, out T2 item2)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item2);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing 
-    /// <paramref name="item2"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item2">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
-    /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
-    public static Chain<TChain, T1> TruncateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain, out T2 item2)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item2 = chain.Item2;
-
-        var newSize = Chain<TChain, T1, T2>.MemorySize - Chain<TChain, T1, T2>.Item2Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2>.Item1Offset))->PNext = null; 
-        return new Chain<TChain, T1>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item3">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2}, T3)" />
-    public static Chain<TChain, T1, T2, T3> Add<TChain, T1, T2, T3>(this Chain<TChain, T1, T2> chain, T3 item3 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item3);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item3">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3}(Chain{TChain, T1, T2}, T3)" />
-    public static Chain<TChain, T1, T2, T3> AddAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2> chain, T3 item3 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 2
-        item3.StructureType();
-        var size = Chain<TChain, T1, T2, T3>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3> Duplicate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3> DuplicateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset); 
-        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2> Truncate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2> TruncateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 3 items, by removing 
-    /// <paramref name="item3"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item3">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2> Truncate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain, out T3 item3)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item3);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing 
-    /// <paramref name="item3"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item3">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
-    public static Chain<TChain, T1, T2> TruncateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain, out T3 item3)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item3 = chain.Item3;
-
-        var newSize = Chain<TChain, T1, T2, T3>.MemorySize - Chain<TChain, T1, T2, T3>.Item3Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item4">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3}, T4)" />
-    public static Chain<TChain, T1, T2, T3, T4> Add<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3> chain, T4 item4 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item4);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item4">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3}, T4)" />
-    public static Chain<TChain, T1, T2, T3, T4> AddAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3> chain, T4 item4 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 3
-        item4.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4> Duplicate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4> DuplicateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset); 
-        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3> Truncate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3> TruncateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 4 items, by removing 
-    /// <paramref name="item4"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item4">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3> Truncate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain, out T4 item4)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item4);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing 
-    /// <paramref name="item4"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item4">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
-    public static Chain<TChain, T1, T2, T3> TruncateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain, out T4 item4)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item4 = chain.Item4;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4>.MemorySize - Chain<TChain, T1, T2, T3, T4>.Item4Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item5">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4}, T5)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5> Add<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4> chain, T5 item5 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item5);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item5">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4}, T5)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5> AddAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4> chain, T5 item5 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 4
-        item5.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5> Duplicate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5> DuplicateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4> Truncate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4> TruncateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 5 items, by removing 
-    /// <paramref name="item5"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item5">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4> Truncate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain, out T5 item5)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item5);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing 
-    /// <paramref name="item5"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item5">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
-    public static Chain<TChain, T1, T2, T3, T4> TruncateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain, out T5 item5)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item5 = chain.Item5;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item6">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5}, T6)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> Add<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5> chain, T6 item6 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item6);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item6">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5}, T6)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> AddAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5> chain, T6 item6 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 5
-        item6.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> Duplicate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5> Truncate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5> TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 6 items, by removing 
-    /// <paramref name="item6"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item6">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5> Truncate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, out T6 item6)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item6);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing 
-    /// <paramref name="item6"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item6">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5> TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, out T6 item6)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item6 = chain.Item6;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item7">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6}, T7)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Add<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, T7 item7 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item7);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item7">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6}, T7)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, T7 item7 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 6
-        item7.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 7 items, by removing 
-    /// <paramref name="item7"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item7">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, out T7 item7)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item7);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing 
-    /// <paramref name="item7"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item7">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, out T7 item7)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item7 = chain.Item7;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item8">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, T8)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, T8 item8 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item8);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item8">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, T8)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, T8 item8 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 7
-        item8.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 8 items, by removing 
-    /// <paramref name="item8"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item8">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, out T8 item8)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item8);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing 
-    /// <paramref name="item8"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item8">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, out T8 item8)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item8 = chain.Item8;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item9">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, T9)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, T9 item9 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item9);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item9">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, T9)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, T9 item9 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 8
-        item9.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 9 items, by removing 
-    /// <paramref name="item9"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item9">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, out T9 item9)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item9);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing 
-    /// <paramref name="item9"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item9">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, out T9 item9)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item9 = chain.Item9;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item10">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, T10)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, T10 item10 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item10);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item10">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, T10)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, T10 item10 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 9
-        item10.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 10 items, by removing 
-    /// <paramref name="item10"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item10">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, out T10 item10)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item10);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing 
-    /// <paramref name="item10"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item10">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, out T10 item10)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item10 = chain.Item10;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item11">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, T11)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, T11 item11 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item11);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item11">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, T11)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, T11 item11 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 10
-        item11.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 11 items, by removing 
-    /// <paramref name="item11"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item11">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, out T11 item11)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item11);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing 
-    /// <paramref name="item11"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item11">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, out T11 item11)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item11 = chain.Item11;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item12">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, T12)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, T12 item12 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item12);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item12">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, T12)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, T12 item12 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 11
-        item12.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 12 items, by removing 
-    /// <paramref name="item12"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item12">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, out T12 item12)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item12);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing 
-    /// <paramref name="item12"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item12">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, out T12 item12)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item12 = chain.Item12;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item13">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, T13)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, T13 item13 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item13);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item13">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, T13)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, T13 item13 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 12
-        item13.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 13 items, by removing 
-    /// <paramref name="item13"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item13">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, out T13 item13)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item13);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing 
-    /// <paramref name="item13"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item13">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, out T13 item13)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item13 = chain.Item13;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item14">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, T14)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, T14 item14 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item14);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item14">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, T14)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, T14 item14 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 13
-        item14.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
-        System.Buffer.MemoryCopy((void*) &item14, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 14 items, by removing 
-    /// <paramref name="item14"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item14">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, out T14 item14)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item14);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing 
-    /// <paramref name="item14"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item14">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, out T14 item14)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item14 = chain.Item14;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item15">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, T15)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, T15 item15 = default)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        where T15 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.AddAny(chain, item15);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
-    /// the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item15">The item to append.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, T15)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, T15 item15 = default)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-        where T15 : unmanaged,  IChainable
-    {
-        var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
-        
-        // Add item 14
-        item15.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
-        System.Buffer.MemoryCopy((void*) &item15, (void*)(newHeadPtr + previousSize), size, size);
-
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset); 
-        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        where T15 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.DuplicateAny(chain);
- 
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by copying the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-        where T15 : unmanaged,  IChainable
-    {
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
-        var newHeadPtr = SilkMarshal.Allocate(size);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset); 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        where T15 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
-    /// from the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-        where T15 : unmanaged,  IChainable
-        => ChainExtensions.TruncateAny(chain, out var _);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 15 items, by removing 
-    /// <paramref name="item15"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item15">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain, out T15 item15)
-        where TChain : unmanaged,  IChainStart
-        where T1 : unmanaged, IExtendsChain<TChain>
-        where T2 : unmanaged, IExtendsChain<TChain>
-        where T3 : unmanaged, IExtendsChain<TChain>
-        where T4 : unmanaged, IExtendsChain<TChain>
-        where T5 : unmanaged, IExtendsChain<TChain>
-        where T6 : unmanaged, IExtendsChain<TChain>
-        where T7 : unmanaged, IExtendsChain<TChain>
-        where T8 : unmanaged, IExtendsChain<TChain>
-        where T9 : unmanaged, IExtendsChain<TChain>
-        where T10 : unmanaged, IExtendsChain<TChain>
-        where T11 : unmanaged, IExtendsChain<TChain>
-        where T12 : unmanaged, IExtendsChain<TChain>
-        where T13 : unmanaged, IExtendsChain<TChain>
-        where T14 : unmanaged, IExtendsChain<TChain>
-        where T15 : unmanaged, IExtendsChain<TChain>
-        => ChainExtensions.TruncateAny(chain, out item15);
-
-    /// <summary>
-    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing 
-    /// <paramref name="item15"/> from the end of the <paramref name="chain"/>.
-    /// </summary>
-    /// <param name="chain">The chain.</param>
-    /// <param name="item15">The item removed from the <paramref name="chain"/>.</param>
-    /// <typeparam name="TChain">The chain type</typeparam>
-    /// <typeparam name="T1">Type of Item 1.</typeparam>
-    /// <typeparam name="T2">Type of Item 2.</typeparam>
-    /// <typeparam name="T3">Type of Item 3.</typeparam>
-    /// <typeparam name="T4">Type of Item 4.</typeparam>
-    /// <typeparam name="T5">Type of Item 5.</typeparam>
-    /// <typeparam name="T6">Type of Item 6.</typeparam>
-    /// <typeparam name="T7">Type of Item 7.</typeparam>
-    /// <typeparam name="T8">Type of Item 8.</typeparam>
-    /// <typeparam name="T9">Type of Item 9.</typeparam>
-    /// <typeparam name="T10">Type of Item 10.</typeparam>
-    /// <typeparam name="T11">Type of Item 11.</typeparam>
-    /// <typeparam name="T12">Type of Item 12.</typeparam>
-    /// <typeparam name="T13">Type of Item 13.</typeparam>
-    /// <typeparam name="T14">Type of Item 14.</typeparam>
-    /// <typeparam name="T15">Type of Item 15.</typeparam>
-    /// <remarks>
-    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
-    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
-    /// useful for situations where the specification does not indicate required chain constraints. You should generally
-    /// try to use the none `Any` version in preference.</para>
-    /// </remarks>
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
-    /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
-    public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain, out T15 item15)
-        where TChain : unmanaged, IChainable
-        where T1 : unmanaged,  IChainable
-        where T2 : unmanaged,  IChainable
-        where T3 : unmanaged,  IChainable
-        where T4 : unmanaged,  IChainable
-        where T5 : unmanaged,  IChainable
-        where T6 : unmanaged,  IChainable
-        where T7 : unmanaged,  IChainable
-        where T8 : unmanaged,  IChainable
-        where T9 : unmanaged,  IChainable
-        where T10 : unmanaged,  IChainable
-        where T11 : unmanaged,  IChainable
-        where T12 : unmanaged,  IChainable
-        where T13 : unmanaged,  IChainable
-        where T14 : unmanaged,  IChainable
-        where T15 : unmanaged,  IChainable
-    {
-        // Retrieve last item.
-        item15 = chain.Item15;
-
-        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
-        var newHeadPtr = SilkMarshal.Allocate(newSize);
-        // Block copy original struct data for speed
-        System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
-        // Update all pointers
-        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset);
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset); 
-        ((BaseInStructure*)(newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset))->PNext = null; 
-        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
     }
 
 }
@@ -10400,8 +5327,7 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10426,20 +5352,84 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         HeadPtr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        return new Chain<TChain>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item1">The item to append.</param>    
+    /// <typeparam name="T1">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T1}(T1)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1> Add<T1>(T1 item1 = default)
+        where T1 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item1);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by appending <paramref name="item1"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item1">The item to append.</param>
+    /// <typeparam name="T1">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T1}(T1)" />
+    public new Chain<TChain, T1> AddAny<T1>(T1 item1 = default)
+        where T1 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 0
+        item1.StructureType();
+        *((T1*)(newHeadPtr + previousSize)) = item1;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -10612,8 +5602,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10634,8 +5623,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10661,38 +5649,178 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         Item1Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        return new Chain<TChain, T1>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item2">The item to append.</param>    
+    /// <typeparam name="T2">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T2}(T2)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2> Add<T2>(T2 item2 = default)
+        where T2 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item2);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by appending <paramref name="item2"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item2">The item to append.</param>
+    /// <typeparam name="T2">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T2}(T2)" />
+    public new Chain<TChain, T1, T2> AddAny<T2>(T2 item2 = default)
+        where T2 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 1
+        item2.StructureType();
+        *((T2*)(newHeadPtr + previousSize)) = item2;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T1)" />
+    /// <seealso cref="TruncateAny(out T1)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T1)" />
+    /// <seealso cref="TruncateAny(out T1)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 1 items, by removing 
+    /// <paramref name="item1"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item1">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T1)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain> Truncate(out T1 item1)
+        => TruncateAny(out item1);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain}"/> with 1 items, by removing 
+    /// <paramref name="item1"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item1">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T1)" />
+    public Chain<TChain> TruncateAny(out T1 item1)
+    {
+        // Retrieve last item.
+        item1 = Item1;
+
+        var newSize = MemorySize - Item1Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = null;
+        return new Chain<TChain>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -10890,8 +6018,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10912,8 +6039,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10934,8 +6060,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -10962,43 +6087,185 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         Item2Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        return new Chain<TChain, T1, T2>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item3">The item to append.</param>    
+    /// <typeparam name="T3">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T3}(T3)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3> Add<T3>(T3 item3 = default)
+        where T3 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item3);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by appending <paramref name="item3"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item3">The item to append.</param>
+    /// <typeparam name="T3">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T3}(T3)" />
+    public new Chain<TChain, T1, T2, T3> AddAny<T3>(T3 item3 = default)
+        where T3 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 2
+        item3.StructureType();
+        *((T3*)(newHeadPtr + previousSize)) = item3;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T2)" />
+    /// <seealso cref="TruncateAny(out T2)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T2)" />
+    /// <seealso cref="TruncateAny(out T2)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 2 items, by removing 
+    /// <paramref name="item2"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item2">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T2)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1> Truncate(out T2 item2)
+        => TruncateAny(out item2);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items, by removing 
+    /// <paramref name="item2"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item2">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T2)" />
+    public Chain<TChain, T1> TruncateAny(out T2 item2)
+    {
+        // Retrieve last item.
+        item2 = Item2;
+
+        var newSize = MemorySize - Item2Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = null; 
+        return new Chain<TChain, T1>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -11230,8 +6497,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11252,8 +6518,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11274,8 +6539,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11296,8 +6560,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11325,48 +6588,192 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         Item3Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item4">The item to append.</param>    
+    /// <typeparam name="T4">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T4}(T4)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4> Add<T4>(T4 item4 = default)
+        where T4 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item4);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by appending <paramref name="item4"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item4">The item to append.</param>
+    /// <typeparam name="T4">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T4}(T4)" />
+    public new Chain<TChain, T1, T2, T3, T4> AddAny<T4>(T4 item4 = default)
+        where T4 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 3
+        item4.StructureType();
+        *((T4*)(newHeadPtr + previousSize)) = item4;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T3)" />
+    /// <seealso cref="TruncateAny(out T3)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T3)" />
+    /// <seealso cref="TruncateAny(out T3)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 3 items, by removing 
+    /// <paramref name="item3"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item3">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T3)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2> Truncate(out T3 item3)
+        => TruncateAny(out item3);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items, by removing 
+    /// <paramref name="item3"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item3">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T3)" />
+    public Chain<TChain, T1, T2> TruncateAny(out T3 item3)
+    {
+        // Retrieve last item.
+        item3 = Item3;
+
+        var newSize = MemorySize - Item3Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -11632,8 +7039,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11654,8 +7060,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11676,8 +7081,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11698,8 +7102,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11720,8 +7123,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -11750,53 +7152,199 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         Item4Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item5">The item to append.</param>    
+    /// <typeparam name="T5">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T5}(T5)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5> Add<T5>(T5 item5 = default)
+        where T5 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item5);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by appending <paramref name="item5"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item5">The item to append.</param>
+    /// <typeparam name="T5">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T5}(T5)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5> AddAny<T5>(T5 item5 = default)
+        where T5 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 4
+        item5.StructureType();
+        *((T5*)(newHeadPtr + previousSize)) = item5;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T4)" />
+    /// <seealso cref="TruncateAny(out T4)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T4)" />
+    /// <seealso cref="TruncateAny(out T4)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 4 items, by removing 
+    /// <paramref name="item4"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item4">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T4)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3> Truncate(out T4 item4)
+        => TruncateAny(out item4);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items, by removing 
+    /// <paramref name="item4"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item4">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T4)" />
+    public Chain<TChain, T1, T2, T3> TruncateAny(out T4 item4)
+    {
+        // Retrieve last item.
+        item4 = Item4;
+
+        var newSize = MemorySize - Item4Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -12096,8 +7644,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12118,8 +7665,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12140,8 +7686,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12162,8 +7707,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12184,8 +7728,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12206,8 +7749,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12237,58 +7779,206 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         Item5Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item6">The item to append.</param>    
+    /// <typeparam name="T6">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T6}(T6)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6> Add<T6>(T6 item6 = default)
+        where T6 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item6);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by appending <paramref name="item6"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item6">The item to append.</param>
+    /// <typeparam name="T6">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T6}(T6)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6> AddAny<T6>(T6 item6 = default)
+        where T6 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 5
+        item6.StructureType();
+        *((T6*)(newHeadPtr + previousSize)) = item6;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T5)" />
+    /// <seealso cref="TruncateAny(out T5)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T5)" />
+    /// <seealso cref="TruncateAny(out T5)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 5 items, by removing 
+    /// <paramref name="item5"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item5">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T5)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4> Truncate(out T5 item5)
+        => TruncateAny(out item5);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items, by removing 
+    /// <paramref name="item5"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item5">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T5)" />
+    public Chain<TChain, T1, T2, T3, T4> TruncateAny(out T5 item5)
+    {
+        // Retrieve last item.
+        item5 = Item5;
+
+        var newSize = MemorySize - Item5Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -12622,8 +8312,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12644,8 +8333,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12666,8 +8354,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12688,8 +8375,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12710,8 +8396,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12732,8 +8417,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12754,8 +8438,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -12786,63 +8469,213 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         Item6Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item7">The item to append.</param>    
+    /// <typeparam name="T7">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T7}(T7)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Add<T7>(T7 item7 = default)
+        where T7 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item7);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by appending <paramref name="item7"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item7">The item to append.</param>
+    /// <typeparam name="T7">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T7}(T7)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7> AddAny<T7>(T7 item7 = default)
+        where T7 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 6
+        item7.StructureType();
+        *((T7*)(newHeadPtr + previousSize)) = item7;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T6)" />
+    /// <seealso cref="TruncateAny(out T6)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T6)" />
+    /// <seealso cref="TruncateAny(out T6)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 6 items, by removing 
+    /// <paramref name="item6"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item6">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T6)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5> Truncate(out T6 item6)
+        => TruncateAny(out item6);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items, by removing 
+    /// <paramref name="item6"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item6">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T6)" />
+    public Chain<TChain, T1, T2, T3, T4, T5> TruncateAny(out T6 item6)
+    {
+        // Retrieve last item.
+        item6 = Item6;
+
+        var newSize = MemorySize - Item6Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -13210,8 +9043,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13232,8 +9064,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13254,8 +9085,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13276,8 +9106,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13298,8 +9127,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13320,8 +9148,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13342,8 +9169,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13364,8 +9190,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13397,68 +9222,220 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         Item7Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item8">The item to append.</param>    
+    /// <typeparam name="T8">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T8}(T8)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Add<T8>(T8 item8 = default)
+        where T8 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item8);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by appending <paramref name="item8"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item8">The item to append.</param>
+    /// <typeparam name="T8">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T8}(T8)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> AddAny<T8>(T8 item8 = default)
+        where T8 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 7
+        item8.StructureType();
+        *((T8*)(newHeadPtr + previousSize)) = item8;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T7)" />
+    /// <seealso cref="TruncateAny(out T7)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T7)" />
+    /// <seealso cref="TruncateAny(out T7)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 7 items, by removing 
+    /// <paramref name="item7"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item7">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T7)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate(out T7 item7)
+        => TruncateAny(out item7);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items, by removing 
+    /// <paramref name="item7"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item7">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T7)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny(out T7 item7)
+    {
+        // Retrieve last item.
+        item7 = Item7;
+
+        var newSize = MemorySize - Item7Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -13860,8 +9837,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13882,8 +9858,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13904,8 +9879,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13926,8 +9900,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13948,8 +9921,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13970,8 +9942,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -13992,8 +9963,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14014,8 +9984,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14036,8 +10005,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14070,73 +10038,227 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         Item8Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item9">The item to append.</param>    
+    /// <typeparam name="T9">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T9}(T9)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Add<T9>(T9 item9 = default)
+        where T9 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item9);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by appending <paramref name="item9"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item9">The item to append.</param>
+    /// <typeparam name="T9">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T9}(T9)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> AddAny<T9>(T9 item9 = default)
+        where T9 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 8
+        item9.StructureType();
+        *((T9*)(newHeadPtr + previousSize)) = item9;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T8)" />
+    /// <seealso cref="TruncateAny(out T8)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T8)" />
+    /// <seealso cref="TruncateAny(out T8)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 8 items, by removing 
+    /// <paramref name="item8"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item8">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T8)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate(out T8 item8)
+        => TruncateAny(out item8);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items, by removing 
+    /// <paramref name="item8"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item8">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T8)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny(out T8 item8)
+    {
+        // Retrieve last item.
+        item8 = Item8;
+
+        var newSize = MemorySize - Item8Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -14572,8 +10694,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14594,8 +10715,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14616,8 +10736,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14638,8 +10757,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14660,8 +10778,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14682,8 +10799,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14704,8 +10820,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14726,8 +10841,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14748,8 +10862,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14770,8 +10883,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -14805,78 +10917,234 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         Item9Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item10">The item to append.</param>    
+    /// <typeparam name="T10">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T10}(T10)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Add<T10>(T10 item10 = default)
+        where T10 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item10);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by appending <paramref name="item10"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item10">The item to append.</param>
+    /// <typeparam name="T10">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T10}(T10)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> AddAny<T10>(T10 item10 = default)
+        where T10 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 9
+        item10.StructureType();
+        *((T10*)(newHeadPtr + previousSize)) = item10;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T9)" />
+    /// <seealso cref="TruncateAny(out T9)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T9)" />
+    /// <seealso cref="TruncateAny(out T9)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 9 items, by removing 
+    /// <paramref name="item9"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item9">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T9)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate(out T9 item9)
+        => TruncateAny(out item9);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items, by removing 
+    /// <paramref name="item9"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item9">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T9)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny(out T9 item9)
+    {
+        // Retrieve last item.
+        item9 = Item9;
+
+        var newSize = MemorySize - Item9Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -15346,8 +11614,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15368,8 +11635,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15390,8 +11656,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15412,8 +11677,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15434,8 +11698,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15456,8 +11719,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15478,8 +11740,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15500,8 +11761,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15522,8 +11782,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15544,8 +11803,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15566,8 +11824,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -15602,83 +11859,241 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         Item10Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item11">The item to append.</param>    
+    /// <typeparam name="T11">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T11}(T11)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Add<T11>(T11 item11 = default)
+        where T11 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item11);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by appending <paramref name="item11"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item11">The item to append.</param>
+    /// <typeparam name="T11">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T11}(T11)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> AddAny<T11>(T11 item11 = default)
+        where T11 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 10
+        item11.StructureType();
+        *((T11*)(newHeadPtr + previousSize)) = item11;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T10)" />
+    /// <seealso cref="TruncateAny(out T10)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T10)" />
+    /// <seealso cref="TruncateAny(out T10)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 10 items, by removing 
+    /// <paramref name="item10"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item10">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T10)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate(out T10 item10)
+        => TruncateAny(out item10);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items, by removing 
+    /// <paramref name="item10"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item10">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T10)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny(out T10 item10)
+    {
+        // Retrieve last item.
+        item10 = Item10;
+
+        var newSize = MemorySize - Item10Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -16182,8 +12597,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16204,8 +12618,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16226,8 +12639,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16248,8 +12660,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16270,8 +12681,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16292,8 +12702,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16314,8 +12723,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16336,8 +12744,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16358,8 +12765,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16380,8 +12786,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16402,8 +12807,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16424,8 +12828,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item11Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T11*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -16461,88 +12864,248 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
+        *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         Item11Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item12">The item to append.</param>    
+    /// <typeparam name="T12">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T12}(T12)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Add<T12>(T12 item12 = default)
+        where T12 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item12);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by appending <paramref name="item12"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item12">The item to append.</param>
+    /// <typeparam name="T12">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T12}(T12)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> AddAny<T12>(T12 item12 = default)
+        where T12 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 11
+        item12.StructureType();
+        *((T12*)(newHeadPtr + previousSize)) = item12;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T11)" />
+    /// <seealso cref="TruncateAny(out T11)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T11)" />
+    /// <seealso cref="TruncateAny(out T11)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 11 items, by removing 
+    /// <paramref name="item11"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item11">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T11)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate(out T11 item11)
+        => TruncateAny(out item11);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items, by removing 
+    /// <paramref name="item11"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item11">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T11)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny(out T11 item11)
+    {
+        // Retrieve last item.
+        item11 = Item11;
+
+        var newSize = MemorySize - Item11Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -17080,8 +13643,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17102,8 +13664,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17124,8 +13685,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17146,8 +13706,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17168,8 +13727,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17190,8 +13748,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17212,8 +13769,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17234,8 +13790,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17256,8 +13811,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17278,8 +13832,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17300,8 +13853,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17322,8 +13874,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item11Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T11*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17344,8 +13895,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item12Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T12*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -17382,93 +13932,255 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
+        *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
+        *((T12*)itemPtr) = item12;
         Item11Ptr->PNext = itemPtr;
         Item12Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item13">The item to append.</param>    
+    /// <typeparam name="T13">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T13}(T13)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Add<T13>(T13 item13 = default)
+        where T13 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item13);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by appending <paramref name="item13"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item13">The item to append.</param>
+    /// <typeparam name="T13">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T13}(T13)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> AddAny<T13>(T13 item13 = default)
+        where T13 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 12
+        item13.StructureType();
+        *((T13*)(newHeadPtr + previousSize)) = item13;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T12)" />
+    /// <seealso cref="TruncateAny(out T12)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T12)" />
+    /// <seealso cref="TruncateAny(out T12)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 12 items, by removing 
+    /// <paramref name="item12"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item12">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T12)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate(out T12 item12)
+        => TruncateAny(out item12);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items, by removing 
+    /// <paramref name="item12"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item12">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T12)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny(out T12 item12)
+    {
+        // Retrieve last item.
+        item12 = Item12;
+
+        var newSize = MemorySize - Item12Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -18040,8 +14752,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18062,8 +14773,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18084,8 +14794,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18106,8 +14815,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18128,8 +14836,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18150,8 +14857,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18172,8 +14878,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18194,8 +14899,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18216,8 +14920,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18238,8 +14941,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18260,8 +14962,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18282,8 +14983,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item11Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T11*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18304,8 +15004,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item12Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T12*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18326,8 +15025,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item13Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T13*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -18365,98 +15063,262 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
+        *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
+        *((T12*)itemPtr) = item12;
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
+        *((T13*)itemPtr) = item13;
         Item12Ptr->PNext = itemPtr;
         Item13Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
-        => ChainExtensions.AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T>(this, item);
+        => AddAny<T>(item);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item14">The item to append.</param>    
+    /// <typeparam name="T14">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T14}(T14)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Add<T14>(T14 item14 = default)
+        where T14 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item14);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by appending <paramref name="item14"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item14">The item to append.</param>
+    /// <typeparam name="T14">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T14}(T14)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> AddAny<T14>(T14 item14 = default)
+        where T14 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 13
+        item14.StructureType();
+        *((T14*)(newHeadPtr + previousSize)) = item14;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T13)" />
+    /// <seealso cref="TruncateAny(out T13)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T13)" />
+    /// <seealso cref="TruncateAny(out T13)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 13 items, by removing 
+    /// <paramref name="item13"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item13">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T13)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate(out T13 item13)
+        => TruncateAny(out item13);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items, by removing 
+    /// <paramref name="item13"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item13">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T13)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny(out T13 item13)
+    {
+        // Retrieve last item.
+        item13 = Item13;
+
+        var newSize = MemorySize - Item13Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -19062,8 +15924,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19084,8 +15945,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19106,8 +15966,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19128,8 +15987,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19150,8 +16008,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19172,8 +16029,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19194,8 +16050,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19216,8 +16071,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19238,8 +16092,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19260,8 +16113,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19282,8 +16134,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19304,8 +16155,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item11Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T11*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19326,8 +16176,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item12Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T12*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19348,8 +16197,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item13Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T13*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19370,8 +16218,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item14Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item14Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T14*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -19410,103 +16257,269 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
+        *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
+        *((T12*)itemPtr) = item12;
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
+        *((T13*)itemPtr) = item13;
         Item12Ptr->PNext = itemPtr;
         itemPtr = Item14Ptr;
         item14.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
-        System.Buffer.MemoryCopy((void*) &item14, (void*)itemPtr, size, size);
+        *((T14*)itemPtr) = item14;
         Item13Ptr->PNext = itemPtr;
         Item14Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoAddAny<T>(T item = default)
         => throw new InvalidOperationException("Cannot add to chain of length 15.");
 
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item15">The item to append.</param>    
+    /// <typeparam name="T15">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="AddAny{T15}(T15)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Add<T15>(T15 item15 = default)
+        where T15 : unmanaged, IExtendsChain<TChain>
+        => AddAny(item15);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by appending <paramref name="item15"/> to
+    /// the end of this instance.
+    /// </summary>
+    /// <param name="item15">The item to append.</param>
+    /// <typeparam name="T15">Type of the item.</typeparam>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Add{T15}(T15)" />
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> AddAny<T15>(T15 item15 = default)
+        where T15 : unmanaged, IChainable
+    {
+        var previousSize = MemorySize;
+        var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, previousSize, previousSize);
+        
+        // Add item 14
+        item15.StructureType();
+        *((T15*)(newHeadPtr + previousSize)) = item15;
+
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item14Offset))->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset); 
+        ((BaseInStructure*)(newHeadPtr + previousSize))->PNext = null;
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
+    }
+
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T14)" />
+    /// <seealso cref="TruncateAny(out T14)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T14)" />
+    /// <seealso cref="TruncateAny(out T14)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 14 items, by removing 
+    /// <paramref name="item14"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item14">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T14)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate(out T14 item14)
+        => TruncateAny(out item14);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items, by removing 
+    /// <paramref name="item14"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item14">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T14)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny(out T14 item14)
+    {
+        // Retrieve last item.
+        item14 = Item14;
+
+        var newSize = MemorySize - Item14Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(newHeadPtr);
     }
 
     /// <inheritdoc />
@@ -20146,8 +17159,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            var size = HeadSize;
-            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
+            *((TChain*)_headPtr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20168,8 +17180,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item1Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T1*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20190,8 +17201,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item2Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T2*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20212,8 +17222,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item3Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T3*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20234,8 +17243,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item4Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T4*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20256,8 +17264,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item5Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T5*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20278,8 +17285,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item6Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T6*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20300,8 +17306,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item7Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T7*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20322,8 +17327,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item8Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T8*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20344,8 +17348,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item9Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T9*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20366,8 +17369,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item10Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T10*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20388,8 +17390,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item11Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T11*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20410,8 +17411,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item12Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T12*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20432,8 +17432,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item13Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T13*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20454,8 +17453,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item14Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item14Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T14*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20476,8 +17474,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item15Ptr;
             var nextPtr = ptr->PNext;
-            var size = Item15Size;
-            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
+            *((T15*)ptr) = value;
             ptr->PNext = nextPtr;
         }
     }
@@ -20517,90 +17514,105 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.HeadSize;
-        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
+        *((TChain*)_headPtr) = head;
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Size;
-        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
+        *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Size;
-        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
+        *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Size;
-        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
+        *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Size;
-        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
+        *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Size;
-        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
+        *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Size;
-        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
+        *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Size;
-        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
+        *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Size;
-        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
+        *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Size;
-        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
+        *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Size;
-        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
+        *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Size;
-        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
+        *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Size;
-        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
+        *((T12*)itemPtr) = item12;
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Size;
-        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
+        *((T13*)itemPtr) = item13;
         Item12Ptr->PNext = itemPtr;
         itemPtr = Item14Ptr;
         item14.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Size;
-        System.Buffer.MemoryCopy((void*) &item14, (void*)itemPtr, size, size);
+        *((T14*)itemPtr) = item14;
         Item13Ptr->PNext = itemPtr;
         itemPtr = Item15Ptr;
         item15.StructureType();
-        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
-        System.Buffer.MemoryCopy((void*) &item15, (void*)itemPtr, size, size);
+        *((T15*)itemPtr) = item15;
         Item14Ptr->PNext = itemPtr;
         Item15Ptr->PNext = null;
     }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected override Chain DoDuplicateAny()
-        => ChainExtensions.DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this);
+    protected override Chain DoDuplicate() => Duplicate();
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items, by copying this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Duplicate()
+    {
+        var size = MemorySize;
+        var newHeadPtr = SilkMarshal.Allocate(size);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, size, size);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item14Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item15Offset); 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(newHeadPtr);
+    }
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20610,15 +17622,103 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny()
-        => ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this, out var _);
+        => TruncateAny(out var _);
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoTruncateAny(out IChainable tail)
     {
-        var chain = ChainExtensions.TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this, out var t);
+        var chain = TruncateAny(out var t);
         tail = (IChainable) t;
         return chain;
+    }
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T15)" />
+    /// <seealso cref="TruncateAny(out T15)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing the last item
+    /// from the end of this instance.
+    /// </summary>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="Truncate(out T15)" />
+    /// <seealso cref="TruncateAny(out T15)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny()
+        => TruncateAny(out var _);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 15 items, by removing 
+    /// <paramref name="item15"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item15">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="TruncateAny(out T15)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate(out T15 item15)
+        => TruncateAny(out item15);
+
+    /// <summary>
+    /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items, by removing 
+    /// <paramref name="item15"/> from the end of this instance.
+    /// </summary>
+    /// <param name="item15">The item removed from the end of this instance.</param>
+    /// <remarks>
+    /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
+    /// </para><para>The `Any` versions of chain methods do not validate that items belong in the chain, this is
+    /// useful for situations where the specification does not indicate required chain constraints. You should generally
+    /// try to use the none `Any` version in preference.</para>
+    /// </remarks>
+    /// <seealso cref="Truncate()" />
+    /// <seealso cref="TruncateAny()" />
+    /// <seealso cref="Truncate(out T15)" />
+    public Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny(out T15 item15)
+    {
+        // Retrieve last item.
+        item15 = Item15;
+
+        var newSize = MemorySize - Item15Size;
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
+        // Block copy original struct data for speed
+        System.Buffer.MemoryCopy((void*)_headPtr, (void*)newHeadPtr, newSize, newSize);
+        // Update all pointers
+        ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Item1Offset);
+        ((BaseInStructure*)(newHeadPtr + Item1Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item2Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item2Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item3Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item3Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item4Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item4Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item5Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item5Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item6Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item6Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item7Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item7Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item8Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item8Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item9Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item9Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item10Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item10Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item11Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item11Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item12Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item12Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item13Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item13Offset))->PNext = (BaseInStructure*) (newHeadPtr + Item14Offset); 
+        ((BaseInStructure*)(newHeadPtr + Item14Offset))->PNext = null; 
+        return new Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(newHeadPtr);
     }
 
     /// <inheritdoc />
