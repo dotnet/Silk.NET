@@ -81,7 +81,7 @@
     string ConstraintList(int index, string prefix)
     {
         var builder = new StringBuilder(prefix);
-        builder.Append("where TChain : struct, IChainStart");
+        builder.Append("where TChain : unmanaged,  IChainStart");
         for (var i = 1; i < index; i++)
         {
             builder
@@ -89,7 +89,7 @@
                 .Append(prefix)
                 .Append("where T")
                 .Append(i)
-                .Append(" : struct, IExtendsChain<TChain>");
+                .Append(" : unmanaged, IExtendsChain<TChain>");
         }
         return builder.ToString();
     }
@@ -97,7 +97,7 @@
     string ConstraintListLoose(int index, string prefix)
     {
         var builder = new StringBuilder(prefix);
-        builder.Append("where TChain : struct, IChainable");
+        builder.Append("where TChain : unmanaged, IChainable");
         for (var i = 1; i < index; i++)
         {
             builder
@@ -105,13 +105,14 @@
                 .Append(prefix)
                 .Append("where T")
                 .Append(i)
-                .Append(" : struct, IChainable");
+                .Append(" : unmanaged,  IChainable");
         }
         return builder.ToString();
     }
 #>
 // ReSharper disable StaticMemberInGenericType
 #pragma warning disable CS0659, CS0660
+using Silk.NET.Core.Native;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -297,9 +298,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
 <#= constraintsLoose #>
     {
         var size = Chain<<#= tList #>>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<<#= tList #>>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
 <#
         if (i == 1)
         {
@@ -348,7 +350,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item<#= j #> = Unsafe.AsRef<T<#= j #>>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item<#= j #>, (nint) newPtr, false);
+        size = Chain<<#= tList #>>.Item<#= j #>Size;
+        System.Buffer.MemoryCopy((void*) &item<#= j #>, (void*)newPtr, size, size);
 <#
             } // for (int j = 1; j < i; j++) {
 #>
@@ -413,7 +416,7 @@ public static unsafe partial class ChainExtensions
 <#= constraintsLoose #>
     {
         var size = Chain<<#= tList #>>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
 <#
@@ -519,7 +522,7 @@ public static unsafe partial class ChainExtensions
         item<#= i - 1 #> = chain.Item<#= i - 1 #>;
 
         var newSize = Chain<<#= tList #>>.MemorySize - Chain<<#= tList #>>.Item<#= i - 1 #>Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -596,13 +599,14 @@ public static unsafe partial class ChainExtensions
     {
         var previousSize = Chain<<#= tList #>>.MemorySize;
         var newSize = Chain<<#= bigTList #>>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item <#= i - 1 #>
-        item<#= i #>.StructureType();        
-        Marshal.StructureToPtr(item<#= i #>, newHeadPtr + previousSize, false);
+        item<#= i #>.StructureType();
+        var size = Chain<<#= bigTList #>>.Item<#= i #>Size;
+        System.Buffer.MemoryCopy((void*) &item<#= i #>, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<<#= bigTList #>>.Item1Offset);
@@ -640,12 +644,12 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 <#
         for (var j = 1; j < i; j++)
         {
@@ -659,7 +663,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item<#= j #>Size = Marshal.SizeOf<T<#= j #>>();
+    public static readonly int Item<#= j #>Size = sizeof(T<#= j #>);
 <#
         } // for (int j = 1; j < i; j++) {
 #>
@@ -688,7 +692,8 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -713,7 +718,8 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             value.StructureType();
             var ptr = Item<#= j #>Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item<#= j #>Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -738,17 +744,19 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     /// </summary>
 <#= pDocs #>
     internal Chain(<#= ParamList(i) #>)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<<#= tList #>>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
 <#
         for (var j = 1; j < i; j++)
         {
 #>
         <#= j == 1 ? "var " : "" #>itemPtr = Item<#= j #>Ptr;
         item<#= j #>.StructureType();
-        Marshal.StructureToPtr(item<#= j #>, (nint)itemPtr, false);
+        size = Chain<<#= tList #>>.Item<#= j #>Size;
+        System.Buffer.MemoryCopy((void*) &item<#= j #>, (void*)itemPtr, size, size);
         <#= j == 1 ? "HeadPtr" : $"Item{j - 1}Ptr" #>->PNext = itemPtr;
 <#
         } // for (int j = 1; j < i; j++) {
@@ -927,19 +935,8 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-<#
-        for (var j = 1; j < i; j++)
-        {
-#>
-        Marshal.DestroyStructure<T<#= j #>>(headPtr + Item<#= j #>Offset);
-<#
-        } // for (int j = 1; j < i; j++) {
-#>
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 <#

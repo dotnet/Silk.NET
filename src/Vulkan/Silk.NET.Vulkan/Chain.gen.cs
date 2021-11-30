@@ -1,5 +1,6 @@
 // ReSharper disable StaticMemberInGenericType
 #pragma warning disable CS0659, CS0660
+using Silk.NET.Core.Native;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -104,7 +105,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Create<TChain>(TChain head = default)
-        where TChain : struct, IChainStart
+        where TChain : unmanaged,  IChainStart
         => new(head);
 
     /// <summary>
@@ -119,7 +120,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> CreateAny<TChain>(TChain head = default)
-        where TChain : struct, IChainable
+        where TChain : unmanaged, IChainable
         => new(head);
 
     /// <summary>
@@ -131,7 +132,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Load<TChain>(TChain chain)
-        where TChain : struct, IChainStart
+        where TChain : unmanaged,  IChainStart
         => LoadAny<TChain>(out var _, chain);
 
     /// <summary>
@@ -146,7 +147,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> LoadAny<TChain>(TChain chain)
-        where TChain : struct, IChainable
+        where TChain : unmanaged, IChainable
         => LoadAny<TChain>(out var _, chain);
 
     /// <summary>
@@ -158,7 +159,7 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Load<TChain>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
+        where TChain : unmanaged,  IChainStart
         => LoadAny<TChain>(out errors, chain);
 
     /// <summary>
@@ -173,12 +174,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> LoadAny<TChain>(out string errors, TChain chain)
-        where TChain : struct, IChainable
+        where TChain : unmanaged, IChainable
     {
         var size = Chain<TChain>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         errors = string.Empty;
         return new Chain<TChain>(newHeadPtr);
     }
@@ -194,8 +196,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1}(TChain, T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Create<TChain, T1>(TChain head = default, T1 item1 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => new(head, item1);
 
     /// <summary>
@@ -212,8 +214,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1}(TChain, T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> CreateAny<TChain, T1>(TChain head = default, T1 item1 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
         => new(head, item1);
 
     /// <summary>
@@ -225,8 +227,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Load<TChain, T1>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1>(out var _, chain);
 
     /// <summary>
@@ -241,8 +243,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> LoadAny<TChain, T1>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
         => LoadAny<TChain, T1>(out var _, chain);
 
     /// <summary>
@@ -254,8 +256,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Load<TChain, T1>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1>(out errors, chain);
 
     /// <summary>
@@ -270,13 +272,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> LoadAny<TChain, T1>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -304,7 +307,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -324,9 +328,9 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2}(TChain, T1, T2)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Create<TChain, T1, T2>(TChain head = default, T1 item1 = default, T2 item2 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2);
 
     /// <summary>
@@ -345,9 +349,9 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2}(TChain, T1, T2)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> CreateAny<TChain, T1, T2>(TChain head = default, T1 item1 = default, T2 item2 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
         => new(head, item1, item2);
 
     /// <summary>
@@ -359,9 +363,9 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Load<TChain, T1, T2>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2>(out var _, chain);
 
     /// <summary>
@@ -376,9 +380,9 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> LoadAny<TChain, T1, T2>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2>(out var _, chain);
 
     /// <summary>
@@ -390,9 +394,9 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Load<TChain, T1, T2>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2>(out errors, chain);
 
     /// <summary>
@@ -407,14 +411,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> LoadAny<TChain, T1, T2>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -438,7 +443,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item2Offset);
@@ -463,7 +469,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -485,10 +492,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3}(TChain, T1, T2, T3)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Create<TChain, T1, T2, T3>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3);
 
     /// <summary>
@@ -509,10 +516,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3}(TChain, T1, T2, T3)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> CreateAny<TChain, T1, T2, T3>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
         => new(head, item1, item2, item3);
 
     /// <summary>
@@ -524,10 +531,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Load<TChain, T1, T2, T3>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3>(out var _, chain);
 
     /// <summary>
@@ -542,10 +549,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> LoadAny<TChain, T1, T2, T3>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3>(out var _, chain);
 
     /// <summary>
@@ -557,10 +564,10 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Load<TChain, T1, T2, T3>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3>(out errors, chain);
 
     /// <summary>
@@ -575,15 +582,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> LoadAny<TChain, T1, T2, T3>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -607,7 +615,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item2Offset);
@@ -628,7 +637,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item3Offset);
@@ -653,7 +663,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -677,11 +688,11 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4}(TChain, T1, T2, T3, T4)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Create<TChain, T1, T2, T3, T4>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4);
 
     /// <summary>
@@ -704,11 +715,11 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4}(TChain, T1, T2, T3, T4)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> CreateAny<TChain, T1, T2, T3, T4>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4);
 
     /// <summary>
@@ -720,11 +731,11 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Load<TChain, T1, T2, T3, T4>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4>(out var _, chain);
 
     /// <summary>
@@ -739,11 +750,11 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> LoadAny<TChain, T1, T2, T3, T4>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4>(out var _, chain);
 
     /// <summary>
@@ -755,11 +766,11 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Load<TChain, T1, T2, T3, T4>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4>(out errors, chain);
 
     /// <summary>
@@ -774,16 +785,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> LoadAny<TChain, T1, T2, T3, T4>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -807,7 +819,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item2Offset);
@@ -828,7 +841,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item3Offset);
@@ -849,7 +863,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item4Offset);
@@ -874,7 +889,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -900,12 +916,12 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5}(TChain, T1, T2, T3, T4, T5)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Create<TChain, T1, T2, T3, T4, T5>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5);
 
     /// <summary>
@@ -930,12 +946,12 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5}(TChain, T1, T2, T3, T4, T5)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> CreateAny<TChain, T1, T2, T3, T4, T5>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5);
 
     /// <summary>
@@ -947,12 +963,12 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Load<TChain, T1, T2, T3, T4, T5>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5>(out var _, chain);
 
     /// <summary>
@@ -967,12 +983,12 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> LoadAny<TChain, T1, T2, T3, T4, T5>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5>(out var _, chain);
 
     /// <summary>
@@ -984,12 +1000,12 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Load<TChain, T1, T2, T3, T4, T5>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5>(out errors, chain);
 
     /// <summary>
@@ -1004,17 +1020,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> LoadAny<TChain, T1, T2, T3, T4, T5>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1038,7 +1055,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item2Offset);
@@ -1059,7 +1077,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item3Offset);
@@ -1080,7 +1099,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item4Offset);
@@ -1101,7 +1121,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item5Offset);
@@ -1126,7 +1147,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1154,13 +1176,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6}(TChain, T1, T2, T3, T4, T5, T6)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Create<TChain, T1, T2, T3, T4, T5, T6>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6);
 
     /// <summary>
@@ -1187,13 +1209,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6}(TChain, T1, T2, T3, T4, T5, T6)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> CreateAny<TChain, T1, T2, T3, T4, T5, T6>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6);
 
     /// <summary>
@@ -1205,13 +1227,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Load<TChain, T1, T2, T3, T4, T5, T6>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out var _, chain);
 
     /// <summary>
@@ -1226,13 +1248,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> LoadAny<TChain, T1, T2, T3, T4, T5, T6>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out var _, chain);
 
     /// <summary>
@@ -1244,13 +1266,13 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Load<TChain, T1, T2, T3, T4, T5, T6>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out errors, chain);
 
     /// <summary>
@@ -1265,18 +1287,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> LoadAny<TChain, T1, T2, T3, T4, T5, T6>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1300,7 +1323,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Offset);
@@ -1321,7 +1345,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Offset);
@@ -1342,7 +1367,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Offset);
@@ -1363,7 +1389,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Offset);
@@ -1384,7 +1411,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Offset);
@@ -1409,7 +1437,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1439,14 +1468,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(TChain, T1, T2, T3, T4, T5, T6, T7)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Create<TChain, T1, T2, T3, T4, T5, T6, T7>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7);
 
     /// <summary>
@@ -1475,14 +1504,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7}(TChain, T1, T2, T3, T4, T5, T6, T7)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7);
 
     /// <summary>
@@ -1494,14 +1523,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Load<TChain, T1, T2, T3, T4, T5, T6, T7>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out var _, chain);
 
     /// <summary>
@@ -1516,14 +1545,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out var _, chain);
 
     /// <summary>
@@ -1535,14 +1564,14 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Load<TChain, T1, T2, T3, T4, T5, T6, T7>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out errors, chain);
 
     /// <summary>
@@ -1557,19 +1586,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1593,7 +1623,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Offset);
@@ -1614,7 +1645,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Offset);
@@ -1635,7 +1667,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Offset);
@@ -1656,7 +1689,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Offset);
@@ -1677,7 +1711,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Offset);
@@ -1698,7 +1733,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Offset);
@@ -1723,7 +1759,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -1755,15 +1792,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(TChain, T1, T2, T3, T4, T5, T6, T7, T8)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8);
 
     /// <summary>
@@ -1794,15 +1831,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(TChain, T1, T2, T3, T4, T5, T6, T7, T8)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8);
 
     /// <summary>
@@ -1814,15 +1851,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out var _, chain);
 
     /// <summary>
@@ -1837,15 +1874,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out var _, chain);
 
     /// <summary>
@@ -1857,15 +1894,15 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out errors, chain);
 
     /// <summary>
@@ -1880,20 +1917,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -1917,7 +1955,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Offset);
@@ -1938,7 +1977,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Offset);
@@ -1959,7 +1999,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Offset);
@@ -1980,7 +2021,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Offset);
@@ -2001,7 +2043,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Offset);
@@ -2022,7 +2065,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Offset);
@@ -2043,7 +2087,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Offset);
@@ -2068,7 +2113,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -2102,16 +2148,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9);
 
     /// <summary>
@@ -2144,16 +2190,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9);
 
     /// <summary>
@@ -2165,16 +2211,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out var _, chain);
 
     /// <summary>
@@ -2189,16 +2235,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out var _, chain);
 
     /// <summary>
@@ -2210,16 +2256,16 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out errors, chain);
 
     /// <summary>
@@ -2234,21 +2280,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -2272,7 +2319,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Offset);
@@ -2293,7 +2341,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Offset);
@@ -2314,7 +2363,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Offset);
@@ -2335,7 +2385,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Offset);
@@ -2356,7 +2407,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Offset);
@@ -2377,7 +2429,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Offset);
@@ -2398,7 +2451,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Offset);
@@ -2419,7 +2473,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Offset);
@@ -2444,7 +2499,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -2480,17 +2536,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10);
 
     /// <summary>
@@ -2525,17 +2581,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10);
 
     /// <summary>
@@ -2547,17 +2603,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out var _, chain);
 
     /// <summary>
@@ -2572,17 +2628,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out var _, chain);
 
     /// <summary>
@@ -2594,17 +2650,17 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out errors, chain);
 
     /// <summary>
@@ -2619,22 +2675,23 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -2658,7 +2715,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Offset);
@@ -2679,7 +2737,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Offset);
@@ -2700,7 +2759,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Offset);
@@ -2721,7 +2781,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Offset);
@@ -2742,7 +2803,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Offset);
@@ -2763,7 +2825,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Offset);
@@ -2784,7 +2847,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Offset);
@@ -2805,7 +2869,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Offset);
@@ -2826,7 +2891,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Offset);
@@ -2851,7 +2917,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -2889,18 +2956,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11);
 
     /// <summary>
@@ -2937,18 +3004,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11);
 
     /// <summary>
@@ -2960,18 +3027,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out var _, chain);
 
     /// <summary>
@@ -2986,18 +3053,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out var _, chain);
 
     /// <summary>
@@ -3009,18 +3076,18 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out errors, chain);
 
     /// <summary>
@@ -3035,23 +3102,24 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -3075,7 +3143,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Offset);
@@ -3096,7 +3165,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Offset);
@@ -3117,7 +3187,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Offset);
@@ -3138,7 +3209,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Offset);
@@ -3159,7 +3231,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Offset);
@@ -3180,7 +3253,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Offset);
@@ -3201,7 +3275,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Offset);
@@ -3222,7 +3297,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Offset);
@@ -3243,7 +3319,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Offset);
@@ -3264,7 +3341,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Offset);
@@ -3289,7 +3367,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item11, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -3329,19 +3408,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12);
 
     /// <summary>
@@ -3380,19 +3459,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12);
 
     /// <summary>
@@ -3404,19 +3483,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out var _, chain);
 
     /// <summary>
@@ -3431,19 +3510,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out var _, chain);
 
     /// <summary>
@@ -3455,19 +3534,19 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out errors, chain);
 
     /// <summary>
@@ -3482,24 +3561,25 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -3523,7 +3603,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Offset);
@@ -3544,7 +3625,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Offset);
@@ -3565,7 +3647,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Offset);
@@ -3586,7 +3669,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Offset);
@@ -3607,7 +3691,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Offset);
@@ -3628,7 +3713,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Offset);
@@ -3649,7 +3735,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Offset);
@@ -3670,7 +3757,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Offset);
@@ -3691,7 +3779,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Offset);
@@ -3712,7 +3801,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Offset);
@@ -3733,7 +3823,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item11, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Offset);
@@ -3758,7 +3849,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item12, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -3800,20 +3892,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13);
 
     /// <summary>
@@ -3854,20 +3946,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13);
 
     /// <summary>
@@ -3879,20 +3971,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out var _, chain);
 
     /// <summary>
@@ -3907,20 +3999,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out var _, chain);
 
     /// <summary>
@@ -3932,20 +4024,20 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out errors, chain);
 
     /// <summary>
@@ -3960,25 +4052,26 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -4002,7 +4095,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Offset);
@@ -4023,7 +4117,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Offset);
@@ -4044,7 +4139,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Offset);
@@ -4065,7 +4161,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Offset);
@@ -4086,7 +4183,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Offset);
@@ -4107,7 +4205,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Offset);
@@ -4128,7 +4227,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Offset);
@@ -4149,7 +4249,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Offset);
@@ -4170,7 +4271,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Offset);
@@ -4191,7 +4293,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Offset);
@@ -4212,7 +4315,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item11, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Offset);
@@ -4233,7 +4337,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item12, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Offset);
@@ -4258,7 +4363,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item13, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -4302,21 +4408,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14);
 
     /// <summary>
@@ -4359,21 +4465,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14);
 
     /// <summary>
@@ -4385,21 +4491,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out var _, chain);
 
     /// <summary>
@@ -4414,21 +4520,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out var _, chain);
 
     /// <summary>
@@ -4440,21 +4546,21 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out errors, chain);
 
     /// <summary>
@@ -4469,26 +4575,27 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -4512,7 +4619,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Offset);
@@ -4533,7 +4641,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Offset);
@@ -4554,7 +4663,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Offset);
@@ -4575,7 +4685,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Offset);
@@ -4596,7 +4707,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Offset);
@@ -4617,7 +4729,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Offset);
@@ -4638,7 +4751,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Offset);
@@ -4659,7 +4773,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Offset);
@@ -4680,7 +4795,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Offset);
@@ -4701,7 +4817,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Offset);
@@ -4722,7 +4839,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item11, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Offset);
@@ -4743,7 +4861,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item12, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Offset);
@@ -4764,7 +4883,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item13, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Offset);
@@ -4789,7 +4909,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item14 = Unsafe.AsRef<T14>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item14, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
+        System.Buffer.MemoryCopy((void*) &item14, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -4835,22 +4956,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="CreateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Create<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default, T15 item15 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15);
 
     /// <summary>
@@ -4895,22 +5016,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Create{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> CreateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default, T15 item15 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
         => new(head, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15);
 
     /// <summary>
@@ -4922,22 +5043,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out var _, chain);
 
     /// <summary>
@@ -4952,22 +5073,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out var _, chain);
 
     /// <summary>
@@ -4979,22 +5100,22 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="LoadAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Load<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out string errors, TChain chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out errors, chain);
 
     /// <summary>
@@ -5009,27 +5130,28 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
     /// <seealso cref="Load{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(out string, TChain)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> LoadAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(out string errors, TChain chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         chain.StructureType();
-        Marshal.StructureToPtr(chain, newHeadPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &chain, (void*)newHeadPtr, size, size);
         var errorBuilder = new StringBuilder();
         var existingPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
         var newPtr = (BaseInStructure*) newHeadPtr;
@@ -5053,7 +5175,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item1 = Unsafe.AsRef<T1>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item1, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Offset);
@@ -5074,7 +5197,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item2 = Unsafe.AsRef<T2>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item2, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Offset);
@@ -5095,7 +5219,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item3 = Unsafe.AsRef<T3>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item3, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Offset);
@@ -5116,7 +5241,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item4 = Unsafe.AsRef<T4>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item4, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Offset);
@@ -5137,7 +5263,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item5 = Unsafe.AsRef<T5>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item5, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Offset);
@@ -5158,7 +5285,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item6 = Unsafe.AsRef<T6>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item6, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Offset);
@@ -5179,7 +5307,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item7 = Unsafe.AsRef<T7>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item7, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Offset);
@@ -5200,7 +5329,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item8 = Unsafe.AsRef<T8>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item8, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Offset);
@@ -5221,7 +5351,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item9 = Unsafe.AsRef<T9>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item9, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Offset);
@@ -5242,7 +5373,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item10 = Unsafe.AsRef<T10>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item10, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Offset);
@@ -5263,7 +5395,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item11 = Unsafe.AsRef<T11>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item11, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Offset);
@@ -5284,7 +5417,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item12 = Unsafe.AsRef<T12>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item12, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Offset);
@@ -5305,7 +5439,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item13 = Unsafe.AsRef<T13>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item13, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Offset);
@@ -5326,7 +5461,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item14 = Unsafe.AsRef<T14>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item14, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Size;
+        System.Buffer.MemoryCopy((void*) &item14, (void*)newPtr, size, size);
 
         existingPtr = existingPtr->PNext;
         newPtr->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Offset);
@@ -5351,7 +5487,8 @@ public abstract unsafe class Chain : IReadOnlyList<IChainable>, IDisposable
                 item15 = Unsafe.AsRef<T15>(existingPtr);
             }
         }
-        Marshal.StructureToPtr(item15, (nint) newPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
+        System.Buffer.MemoryCopy((void*) &item15, (void*)newPtr, size, size);
 
         // Create string of errors
         errors = errorBuilder.ToString().Trim();
@@ -5379,7 +5516,7 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain}(Chain{TChain})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Duplicate<TChain>(this Chain<TChain> chain)
-        where TChain : struct, IChainStart
+        where TChain : unmanaged,  IChainStart
         => chain.DuplicateAny();
  
     /// <summary>
@@ -5396,10 +5533,10 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain}(Chain{TChain})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> DuplicateAny<TChain>(this Chain<TChain> chain)
-        where TChain : struct, IChainable
+        where TChain : unmanaged, IChainable
     {
         var size = Chain<TChain>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         return new Chain<TChain>(newHeadPtr);
@@ -5421,8 +5558,8 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1}(Chain{TChain}, T1)" />
     public static Chain<TChain, T1> Add<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item1);
 
     /// <summary>
@@ -5441,18 +5578,19 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1}(Chain{TChain}, T1)" />
     public static Chain<TChain, T1> AddAny<TChain, T1>(this Chain<TChain> chain, T1 item1 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain>.MemorySize;
         var newSize = Chain<TChain, T1>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 0
-        item1.StructureType();        
-        Marshal.StructureToPtr(item1, newHeadPtr + previousSize, false);
+        item1.StructureType();
+        var size = Chain<TChain, T1>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1>.Item1Offset);
@@ -5472,8 +5610,8 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1}(Chain{TChain, T1})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Duplicate<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -5491,11 +5629,11 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1}(Chain{TChain, T1})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> DuplicateAny<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -5518,8 +5656,8 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5540,8 +5678,8 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5560,8 +5698,8 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1}, out T1)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain> Truncate<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item1);
 
     /// <summary>
@@ -5582,14 +5720,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1}(Chain{TChain, T1})" />
     /// <seealso cref="Truncate{TChain, T1}(Chain{TChain, T1}, out T1)" />
     public static Chain<TChain> TruncateAny<TChain, T1>(this Chain<TChain, T1> chain, out T1 item1)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item1 = chain.Item1;
 
         var newSize = Chain<TChain, T1>.MemorySize - Chain<TChain, T1>.Item1Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -5614,9 +5752,9 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2}(Chain{TChain, T1}, T2)" />
     public static Chain<TChain, T1, T2> Add<TChain, T1, T2>(this Chain<TChain, T1> chain, T2 item2 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item2);
 
     /// <summary>
@@ -5636,19 +5774,20 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2}(Chain{TChain, T1}, T2)" />
     public static Chain<TChain, T1, T2> AddAny<TChain, T1, T2>(this Chain<TChain, T1> chain, T2 item2 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1>.MemorySize;
         var newSize = Chain<TChain, T1, T2>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 1
-        item2.StructureType();        
-        Marshal.StructureToPtr(item2, newHeadPtr + previousSize, false);
+        item2.StructureType();
+        var size = Chain<TChain, T1, T2>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2>.Item1Offset);
@@ -5670,9 +5809,9 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Duplicate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -5691,12 +5830,12 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2}(Chain{TChain, T1, T2})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> DuplicateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -5721,9 +5860,9 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Truncate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5745,9 +5884,9 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> TruncateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5767,9 +5906,9 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1> Truncate<TChain, T1, T2>(this Chain<TChain, T1, T2> chain, out T2 item2)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item2);
 
     /// <summary>
@@ -5791,15 +5930,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2}(Chain{TChain, T1, T2})" />
     /// <seealso cref="Truncate{TChain, T1, T2}(Chain{TChain, T1, T2}, out T2)" />
     public static Chain<TChain, T1> TruncateAny<TChain, T1, T2>(this Chain<TChain, T1, T2> chain, out T2 item2)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item2 = chain.Item2;
 
         var newSize = Chain<TChain, T1, T2>.MemorySize - Chain<TChain, T1, T2>.Item2Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -5826,10 +5965,10 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2}, T3)" />
     public static Chain<TChain, T1, T2, T3> Add<TChain, T1, T2, T3>(this Chain<TChain, T1, T2> chain, T3 item3 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item3);
 
     /// <summary>
@@ -5850,20 +5989,21 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3}(Chain{TChain, T1, T2}, T3)" />
     public static Chain<TChain, T1, T2, T3> AddAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2> chain, T3 item3 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 2
-        item3.StructureType();        
-        Marshal.StructureToPtr(item3, newHeadPtr + previousSize, false);
+        item3.StructureType();
+        var size = Chain<TChain, T1, T2, T3>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3>.Item1Offset);
@@ -5887,10 +6027,10 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Duplicate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -5910,13 +6050,13 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> DuplicateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -5943,10 +6083,10 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Truncate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5969,10 +6109,10 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> TruncateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -5993,10 +6133,10 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2> Truncate<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain, out T3 item3)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item3);
 
     /// <summary>
@@ -6019,16 +6159,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3}(Chain{TChain, T1, T2, T3}, out T3)" />
     public static Chain<TChain, T1, T2> TruncateAny<TChain, T1, T2, T3>(this Chain<TChain, T1, T2, T3> chain, out T3 item3)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item3 = chain.Item3;
 
         var newSize = Chain<TChain, T1, T2, T3>.MemorySize - Chain<TChain, T1, T2, T3>.Item3Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -6057,11 +6197,11 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3}, T4)" />
     public static Chain<TChain, T1, T2, T3, T4> Add<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3> chain, T4 item4 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item4);
 
     /// <summary>
@@ -6083,21 +6223,22 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3}, T4)" />
     public static Chain<TChain, T1, T2, T3, T4> AddAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3> chain, T4 item4 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 3
-        item4.StructureType();        
-        Marshal.StructureToPtr(item4, newHeadPtr + previousSize, false);
+        item4.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4>.Item1Offset);
@@ -6123,11 +6264,11 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Duplicate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -6148,14 +6289,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> DuplicateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -6184,11 +6325,11 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Truncate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6212,11 +6353,11 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> TruncateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6238,11 +6379,11 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3> Truncate<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain, out T4 item4)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item4);
 
     /// <summary>
@@ -6266,17 +6407,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4}(Chain{TChain, T1, T2, T3, T4}, out T4)" />
     public static Chain<TChain, T1, T2, T3> TruncateAny<TChain, T1, T2, T3, T4>(this Chain<TChain, T1, T2, T3, T4> chain, out T4 item4)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item4 = chain.Item4;
 
         var newSize = Chain<TChain, T1, T2, T3, T4>.MemorySize - Chain<TChain, T1, T2, T3, T4>.Item4Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -6307,12 +6448,12 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4}, T5)" />
     public static Chain<TChain, T1, T2, T3, T4, T5> Add<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4> chain, T5 item5 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item5);
 
     /// <summary>
@@ -6335,22 +6476,23 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4}, T5)" />
     public static Chain<TChain, T1, T2, T3, T4, T5> AddAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4> chain, T5 item5 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 4
-        item5.StructureType();        
-        Marshal.StructureToPtr(item5, newHeadPtr + previousSize, false);
+        item5.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5>.Item1Offset);
@@ -6378,12 +6520,12 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Duplicate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -6405,15 +6547,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> DuplicateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -6444,12 +6586,12 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Truncate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6474,12 +6616,12 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> TruncateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6502,12 +6644,12 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4> Truncate<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain, out T5 item5)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item5);
 
     /// <summary>
@@ -6532,18 +6674,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5}(Chain{TChain, T1, T2, T3, T4, T5}, out T5)" />
     public static Chain<TChain, T1, T2, T3, T4> TruncateAny<TChain, T1, T2, T3, T4, T5>(this Chain<TChain, T1, T2, T3, T4, T5> chain, out T5 item5)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item5 = chain.Item5;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -6576,13 +6718,13 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5}, T6)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Add<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5> chain, T6 item6 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item6);
 
     /// <summary>
@@ -6606,23 +6748,24 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5}, T6)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> AddAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5> chain, T6 item6 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 5
-        item6.StructureType();        
-        Marshal.StructureToPtr(item6, newHeadPtr + previousSize, false);
+        item6.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Offset);
@@ -6652,13 +6795,13 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Duplicate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -6681,16 +6824,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -6723,13 +6866,13 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Truncate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6755,13 +6898,13 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -6785,13 +6928,13 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5> Truncate<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, out T6 item6)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item6);
 
     /// <summary>
@@ -6817,19 +6960,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6}(Chain{TChain, T1, T2, T3, T4, T5, T6}, out T6)" />
     public static Chain<TChain, T1, T2, T3, T4, T5> TruncateAny<TChain, T1, T2, T3, T4, T5, T6>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, out T6 item6)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item6 = chain.Item6;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -6864,14 +7007,14 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6}, T7)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Add<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, T7 item7 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item7);
 
     /// <summary>
@@ -6896,24 +7039,25 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6}, T7)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6> chain, T7 item7 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 6
-        item7.StructureType();        
-        Marshal.StructureToPtr(item7, newHeadPtr + previousSize, false);
+        item7.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Offset);
@@ -6945,14 +7089,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -6976,17 +7120,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -7021,14 +7165,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7055,14 +7199,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7087,14 +7231,14 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, out T7 item7)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item7);
 
     /// <summary>
@@ -7121,20 +7265,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, out T7)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, out T7 item7)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item7 = chain.Item7;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -7171,15 +7315,15 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, T8)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, T8 item8 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item8);
 
     /// <summary>
@@ -7205,25 +7349,26 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7}, T8)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain, T8 item8 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 7
-        item8.StructureType();        
-        Marshal.StructureToPtr(item8, newHeadPtr + previousSize, false);
+        item8.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Offset);
@@ -7257,15 +7402,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -7290,18 +7435,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -7338,15 +7483,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7374,15 +7519,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7408,15 +7553,15 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, out T8 item8)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item8);
 
     /// <summary>
@@ -7444,21 +7589,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, out T8)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, out T8 item8)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item8 = chain.Item8;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -7497,16 +7642,16 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, T9)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, T9 item9 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item9);
 
     /// <summary>
@@ -7533,26 +7678,27 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}, T9)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain, T9 item9 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 8
-        item9.StructureType();        
-        Marshal.StructureToPtr(item9, newHeadPtr + previousSize, false);
+        item9.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Offset);
@@ -7588,16 +7734,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -7623,19 +7769,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -7674,16 +7820,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7712,16 +7858,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -7748,16 +7894,16 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, out T9 item9)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item9);
 
     /// <summary>
@@ -7786,22 +7932,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, out T9)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, out T9 item9)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item9 = chain.Item9;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -7842,17 +7988,17 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, T10)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, T10 item10 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item10);
 
     /// <summary>
@@ -7880,27 +8026,28 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}, T10)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain, T10 item10 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 9
-        item10.StructureType();        
-        Marshal.StructureToPtr(item10, newHeadPtr + previousSize, false);
+        item10.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Offset);
@@ -7938,17 +8085,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -7975,20 +8122,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -8029,17 +8176,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8069,17 +8216,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8107,17 +8254,17 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, out T10 item10)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item10);
 
     /// <summary>
@@ -8147,23 +8294,23 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, out T10)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, out T10 item10)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item10 = chain.Item10;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -8206,18 +8353,18 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, T11)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, T11 item11 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item11);
 
     /// <summary>
@@ -8246,28 +8393,29 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}, T11)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain, T11 item11 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 10
-        item11.StructureType();        
-        Marshal.StructureToPtr(item11, newHeadPtr + previousSize, false);
+        item11.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Offset);
@@ -8307,18 +8455,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -8346,21 +8494,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -8403,18 +8551,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8445,18 +8593,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8485,18 +8633,18 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, out T11 item11)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item11);
 
     /// <summary>
@@ -8527,24 +8675,24 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, out T11)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, out T11 item11)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item11 = chain.Item11;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -8589,19 +8737,19 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, T12)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, T12 item12 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item12);
 
     /// <summary>
@@ -8631,29 +8779,30 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}, T12)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain, T12 item12 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 11
-        item12.StructureType();        
-        Marshal.StructureToPtr(item12, newHeadPtr + previousSize, false);
+        item12.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Offset);
@@ -8695,19 +8844,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -8736,22 +8885,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -8796,19 +8945,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8840,19 +8989,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -8882,19 +9031,19 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, out T12 item12)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item12);
 
     /// <summary>
@@ -8926,25 +9075,25 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, out T12)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, out T12 item12)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item12 = chain.Item12;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -8991,20 +9140,20 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, T13)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, T13 item13 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item13);
 
     /// <summary>
@@ -9035,30 +9184,31 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}, T13)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain, T13 item13 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 12
-        item13.StructureType();        
-        Marshal.StructureToPtr(item13, newHeadPtr + previousSize, false);
+        item13.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Offset);
@@ -9102,20 +9252,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -9145,23 +9295,23 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -9208,20 +9358,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -9254,20 +9404,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -9298,20 +9448,20 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, out T13 item13)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item13);
 
     /// <summary>
@@ -9344,26 +9494,26 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, out T13)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, out T13 item13)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item13 = chain.Item13;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -9412,21 +9562,21 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, T14)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, T14 item14 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item14);
 
     /// <summary>
@@ -9458,31 +9608,32 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}, T14)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain, T14 item14 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 13
-        item14.StructureType();        
-        Marshal.StructureToPtr(item14, newHeadPtr + previousSize, false);
+        item14.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
+        System.Buffer.MemoryCopy((void*) &item14, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Offset);
@@ -9528,21 +9679,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -9573,24 +9724,24 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -9639,21 +9790,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -9687,21 +9838,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -9733,21 +9884,21 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, out T14 item14)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item14);
 
     /// <summary>
@@ -9781,27 +9932,27 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, out T14)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, out T14 item14)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item14 = chain.Item14;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -9852,22 +10003,22 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="AddAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, T15)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Add<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, T15 item15 = default)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => chain.AddAny(item15);
 
     /// <summary>
@@ -9900,32 +10051,33 @@ public static unsafe partial class ChainExtensions
     /// </remarks>
     /// <seealso cref="Add{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}, T15)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> AddAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain, T15 item15 = default)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
     {
         var previousSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.MemorySize;
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, previousSize, previousSize);
         
         // Add item 14
-        item15.StructureType();        
-        Marshal.StructureToPtr(item15, newHeadPtr + previousSize, false);
+        item15.StructureType();
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
+        System.Buffer.MemoryCopy((void*) &item15, (void*)(newHeadPtr + previousSize), size, size);
 
         // Update all pointers
         ((BaseInStructure*)newHeadPtr)->PNext = (BaseInStructure*) (newHeadPtr + Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Offset);
@@ -9973,22 +10125,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="DuplicateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> Duplicate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => chain.DuplicateAny();
  
     /// <summary>
@@ -10020,25 +10172,25 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="Duplicate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> DuplicateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
     {
         var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize;
-        var newHeadPtr = Marshal.AllocHGlobal(size);
+        var newHeadPtr = SilkMarshal.Allocate(size);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, size, size);
         // Update all pointers
@@ -10089,22 +10241,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -10139,22 +10291,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
         => chain.TruncateAny(out var _);
 
     /// <summary>
@@ -10187,22 +10339,22 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> Truncate<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain, out T15 item15)
-        where TChain : struct, IChainStart
-        where T1 : struct, IExtendsChain<TChain>
-        where T2 : struct, IExtendsChain<TChain>
-        where T3 : struct, IExtendsChain<TChain>
-        where T4 : struct, IExtendsChain<TChain>
-        where T5 : struct, IExtendsChain<TChain>
-        where T6 : struct, IExtendsChain<TChain>
-        where T7 : struct, IExtendsChain<TChain>
-        where T8 : struct, IExtendsChain<TChain>
-        where T9 : struct, IExtendsChain<TChain>
-        where T10 : struct, IExtendsChain<TChain>
-        where T11 : struct, IExtendsChain<TChain>
-        where T12 : struct, IExtendsChain<TChain>
-        where T13 : struct, IExtendsChain<TChain>
-        where T14 : struct, IExtendsChain<TChain>
-        where T15 : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where T1 : unmanaged, IExtendsChain<TChain>
+        where T2 : unmanaged, IExtendsChain<TChain>
+        where T3 : unmanaged, IExtendsChain<TChain>
+        where T4 : unmanaged, IExtendsChain<TChain>
+        where T5 : unmanaged, IExtendsChain<TChain>
+        where T6 : unmanaged, IExtendsChain<TChain>
+        where T7 : unmanaged, IExtendsChain<TChain>
+        where T8 : unmanaged, IExtendsChain<TChain>
+        where T9 : unmanaged, IExtendsChain<TChain>
+        where T10 : unmanaged, IExtendsChain<TChain>
+        where T11 : unmanaged, IExtendsChain<TChain>
+        where T12 : unmanaged, IExtendsChain<TChain>
+        where T13 : unmanaged, IExtendsChain<TChain>
+        where T14 : unmanaged, IExtendsChain<TChain>
+        where T15 : unmanaged, IExtendsChain<TChain>
         => chain.TruncateAny(out item15);
 
     /// <summary>
@@ -10237,28 +10389,28 @@ public static unsafe partial class ChainExtensions
     /// <seealso cref="TruncateAny{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15})" />
     /// <seealso cref="Truncate{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}(Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}, out T15)" />
     public static Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> TruncateAny<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(this Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain, out T15 item15)
-        where TChain : struct, IChainable
-        where T1 : struct, IChainable
-        where T2 : struct, IChainable
-        where T3 : struct, IChainable
-        where T4 : struct, IChainable
-        where T5 : struct, IChainable
-        where T6 : struct, IChainable
-        where T7 : struct, IChainable
-        where T8 : struct, IChainable
-        where T9 : struct, IChainable
-        where T10 : struct, IChainable
-        where T11 : struct, IChainable
-        where T12 : struct, IChainable
-        where T13 : struct, IChainable
-        where T14 : struct, IChainable
-        where T15 : struct, IChainable
+        where TChain : unmanaged, IChainable
+        where T1 : unmanaged,  IChainable
+        where T2 : unmanaged,  IChainable
+        where T3 : unmanaged,  IChainable
+        where T4 : unmanaged,  IChainable
+        where T5 : unmanaged,  IChainable
+        where T6 : unmanaged,  IChainable
+        where T7 : unmanaged,  IChainable
+        where T8 : unmanaged,  IChainable
+        where T9 : unmanaged,  IChainable
+        where T10 : unmanaged,  IChainable
+        where T11 : unmanaged,  IChainable
+        where T12 : unmanaged,  IChainable
+        where T13 : unmanaged,  IChainable
+        where T14 : unmanaged,  IChainable
+        where T15 : unmanaged,  IChainable
     {
         // Retrieve last item.
         item15 = chain.Item15;
 
         var newSize = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.MemorySize - Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
-        var newHeadPtr = Marshal.AllocHGlobal(newSize);
+        var newHeadPtr = SilkMarshal.Allocate(newSize);
         // Block copy original struct data for speed
         System.Buffer.MemoryCopy(chain.HeadPtr, (void*)newHeadPtr, newSize, newSize);
         // Update all pointers
@@ -10287,17 +10439,17 @@ public static unsafe partial class ChainExtensions
 /// </summary>
 /// <typeparam name="TChain">The chain type</typeparam>
 public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
-    where TChain : struct, IChainable
+    where TChain : unmanaged, IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -10323,7 +10475,8 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10345,10 +10498,11 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
     /// </summary>
     /// <param name="head">The head of the chain.</param>
     internal Chain(TChain head = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         HeadPtr->PNext = null;
     }
 
@@ -10455,11 +10609,8 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -10469,18 +10620,18 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
 /// <typeparam name="TChain">The chain type</typeparam>
 /// <typeparam name="T1">Type of Item 1.</typeparam>
 public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T1>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -10490,7 +10641,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -10516,7 +10667,8 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10537,7 +10689,8 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10560,13 +10713,15 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     /// <param name="head">The head of the chain.</param>
     /// <param name="item1">Item 1.</param>
     internal Chain(TChain head = default, T1 item1 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         Item1Ptr->PNext = null;
     }
@@ -10696,12 +10851,8 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -10712,19 +10863,19 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
 /// <typeparam name="T1">Type of Item 1.</typeparam>
 /// <typeparam name="T2">Type of Item 2.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChain, T1, T2>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -10734,7 +10885,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -10744,7 +10895,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -10770,7 +10921,8 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10791,7 +10943,8 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10812,7 +10965,8 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -10836,17 +10990,20 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     /// <param name="item1">Item 1.</param>
     /// <param name="item2">Item 2.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         Item2Ptr->PNext = null;
     }
@@ -10998,13 +11155,8 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -11016,20 +11168,20 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
 /// <typeparam name="T2">Type of Item 2.</typeparam>
 /// <typeparam name="T3">Type of Item 3.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<TChain, T1, T2, T3>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11039,7 +11191,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11049,7 +11201,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11059,7 +11211,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -11085,7 +11237,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11106,7 +11259,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11127,7 +11281,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11148,7 +11303,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11173,21 +11329,25 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     /// <param name="item2">Item 2.</param>
     /// <param name="item3">Item 3.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         Item3Ptr->PNext = null;
     }
@@ -11361,14 +11521,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -11381,21 +11535,21 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
 /// <typeparam name="T3">Type of Item 3.</typeparam>
 /// <typeparam name="T4">Type of Item 4.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11405,7 +11559,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11415,7 +11569,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11425,7 +11579,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11435,7 +11589,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -11461,7 +11615,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11482,7 +11637,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11503,7 +11659,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11524,7 +11681,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11545,7 +11703,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11571,25 +11730,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     /// <param name="item3">Item 3.</param>
     /// <param name="item4">Item 4.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         Item4Ptr->PNext = null;
     }
@@ -11785,15 +11949,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -11807,22 +11964,22 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
 /// <typeparam name="T4">Type of Item 4.</typeparam>
 /// <typeparam name="T5">Type of Item 5.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11832,7 +11989,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11842,7 +11999,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11852,7 +12009,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11862,7 +12019,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -11872,7 +12029,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -11898,7 +12055,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11919,7 +12077,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11940,7 +12099,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11961,7 +12121,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -11982,7 +12143,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12003,7 +12165,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12030,29 +12193,35 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     /// <param name="item4">Item 4.</param>
     /// <param name="item5">Item 5.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         Item5Ptr->PNext = null;
     }
@@ -12270,16 +12439,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -12294,23 +12455,23 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
 /// <typeparam name="T5">Type of Item 5.</typeparam>
 /// <typeparam name="T6">Type of Item 6.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12320,7 +12481,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12330,7 +12491,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12340,7 +12501,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12350,7 +12511,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12360,7 +12521,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12370,7 +12531,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -12396,7 +12557,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12417,7 +12579,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12438,7 +12601,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12459,7 +12623,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12480,7 +12645,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12501,7 +12667,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12522,7 +12689,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12550,33 +12718,40 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     /// <param name="item5">Item 5.</param>
     /// <param name="item6">Item 6.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         Item6Ptr->PNext = null;
     }
@@ -12816,17 +12991,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -12842,24 +13008,24 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
 /// <typeparam name="T6">Type of Item 6.</typeparam>
 /// <typeparam name="T7">Type of Item 7.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12869,7 +13035,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12879,7 +13045,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12889,7 +13055,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12899,7 +13065,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12909,7 +13075,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12919,7 +13085,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -12929,7 +13095,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -12955,7 +13121,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12976,7 +13143,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -12997,7 +13165,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13018,7 +13187,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13039,7 +13209,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13060,7 +13231,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13081,7 +13253,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13102,7 +13275,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13131,37 +13305,45 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     /// <param name="item6">Item 6.</param>
     /// <param name="item7">Item 7.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         Item7Ptr->PNext = null;
     }
@@ -13423,18 +13605,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -13451,25 +13623,25 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
 /// <typeparam name="T7">Type of Item 7.</typeparam>
 /// <typeparam name="T8">Type of Item 8.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13479,7 +13651,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13489,7 +13661,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13499,7 +13671,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13509,7 +13681,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13519,7 +13691,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13529,7 +13701,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13539,7 +13711,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -13549,7 +13721,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -13575,7 +13747,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13596,7 +13769,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13617,7 +13791,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13638,7 +13813,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13659,7 +13835,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13680,7 +13857,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13701,7 +13879,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13722,7 +13901,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13743,7 +13923,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -13773,41 +13954,50 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     /// <param name="item7">Item 7.</param>
     /// <param name="item8">Item 8.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         Item8Ptr->PNext = null;
     }
@@ -14091,19 +14281,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -14121,26 +14300,26 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
 /// <typeparam name="T8">Type of Item 8.</typeparam>
 /// <typeparam name="T9">Type of Item 9.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14150,7 +14329,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14160,7 +14339,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14170,7 +14349,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14180,7 +14359,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14190,7 +14369,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14200,7 +14379,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14210,7 +14389,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14220,7 +14399,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14230,7 +14409,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -14256,7 +14435,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14277,7 +14457,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14298,7 +14479,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14319,7 +14501,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14340,7 +14523,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14361,7 +14545,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14382,7 +14567,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14403,7 +14589,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14424,7 +14611,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14445,7 +14633,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -14476,45 +14665,55 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     /// <param name="item8">Item 8.</param>
     /// <param name="item9">Item 9.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         Item9Ptr->PNext = null;
     }
@@ -14820,20 +15019,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -14852,27 +15039,27 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
 /// <typeparam name="T9">Type of Item 9.</typeparam>
 /// <typeparam name="T10">Type of Item 10.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14882,7 +15069,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14892,7 +15079,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14902,7 +15089,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14912,7 +15099,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14922,7 +15109,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14932,7 +15119,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14942,7 +15129,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14952,7 +15139,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14962,7 +15149,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -14972,7 +15159,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -14998,7 +15185,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15019,7 +15207,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15040,7 +15229,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15061,7 +15251,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15082,7 +15273,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15103,7 +15295,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15124,7 +15317,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15145,7 +15339,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15166,7 +15361,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15187,7 +15383,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15208,7 +15405,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15240,49 +15438,60 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item9">Item 9.</param>
     /// <param name="item10">Item 10.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         Item10Ptr->PNext = null;
     }
@@ -15610,21 +15819,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -15644,28 +15840,28 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T10">Type of Item 10.</typeparam>
 /// <typeparam name="T11">Type of Item 11.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
-    where T11 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
+    where T11 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15675,7 +15871,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15685,7 +15881,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15695,7 +15891,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15705,7 +15901,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15715,7 +15911,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15725,7 +15921,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15735,7 +15931,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15745,7 +15941,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15755,7 +15951,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15765,7 +15961,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -15775,7 +15971,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+    public static readonly int Item11Size = sizeof(T11);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -15801,7 +15997,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15822,7 +16019,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15843,7 +16041,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15864,7 +16063,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15885,7 +16085,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15906,7 +16107,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15927,7 +16129,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15948,7 +16151,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15969,7 +16173,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -15990,7 +16195,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16011,7 +16217,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16032,7 +16239,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item11Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16065,53 +16273,65 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item10">Item 10.</param>
     /// <param name="item11">Item 11.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         Item11Ptr->PNext = null;
     }
@@ -16461,22 +16681,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -16497,29 +16703,29 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T11">Type of Item 11.</typeparam>
 /// <typeparam name="T12">Type of Item 12.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
-    where T11 : struct, IChainable
-    where T12 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
+    where T11 : unmanaged,  IChainable
+    where T12 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16529,7 +16735,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16539,7 +16745,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16549,7 +16755,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16559,7 +16765,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16569,7 +16775,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16579,7 +16785,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16589,7 +16795,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16599,7 +16805,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16609,7 +16815,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16619,7 +16825,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16629,7 +16835,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+    public static readonly int Item11Size = sizeof(T11);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -16639,7 +16845,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+    public static readonly int Item12Size = sizeof(T12);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -16665,7 +16871,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16686,7 +16893,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16707,7 +16915,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16728,7 +16937,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16749,7 +16959,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16770,7 +16981,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16791,7 +17003,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16812,7 +17025,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16833,7 +17047,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16854,7 +17069,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16875,7 +17091,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16896,7 +17113,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item11Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16917,7 +17135,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item12Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -16951,57 +17170,70 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item11">Item 11.</param>
     /// <param name="item12">Item 12.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
         Item11Ptr->PNext = itemPtr;
         Item12Ptr->PNext = null;
     }
@@ -17373,23 +17605,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
-        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -17411,30 +17628,30 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T12">Type of Item 12.</typeparam>
 /// <typeparam name="T13">Type of Item 13.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
-    where T11 : struct, IChainable
-    where T12 : struct, IChainable
-    where T13 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
+    where T11 : unmanaged,  IChainable
+    where T12 : unmanaged,  IChainable
+    where T13 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17444,7 +17661,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17454,7 +17671,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17464,7 +17681,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17474,7 +17691,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17484,7 +17701,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17494,7 +17711,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17504,7 +17721,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17514,7 +17731,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17524,7 +17741,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17534,7 +17751,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17544,7 +17761,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+    public static readonly int Item11Size = sizeof(T11);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17554,7 +17771,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+    public static readonly int Item12Size = sizeof(T12);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -17564,7 +17781,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+    public static readonly int Item13Size = sizeof(T13);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -17590,7 +17807,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17611,7 +17829,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17632,7 +17851,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17653,7 +17873,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17674,7 +17895,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17695,7 +17917,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17716,7 +17939,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17737,7 +17961,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17758,7 +17983,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17779,7 +18005,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17800,7 +18027,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17821,7 +18049,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item11Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17842,7 +18071,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item12Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17863,7 +18093,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item13Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -17898,61 +18129,75 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item12">Item 12.</param>
     /// <param name="item13">Item 13.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
         Item12Ptr->PNext = itemPtr;
         Item13Ptr->PNext = null;
     }
@@ -18346,24 +18591,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
-        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
-        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -18386,31 +18615,31 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T13">Type of Item 13.</typeparam>
 /// <typeparam name="T14">Type of Item 14.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
-    where T11 : struct, IChainable
-    where T12 : struct, IChainable
-    where T13 : struct, IChainable
-    where T14 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
+    where T11 : unmanaged,  IChainable
+    where T12 : unmanaged,  IChainable
+    where T13 : unmanaged,  IChainable
+    where T14 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18420,7 +18649,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18430,7 +18659,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18440,7 +18669,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18450,7 +18679,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18460,7 +18689,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18470,7 +18699,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18480,7 +18709,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18490,7 +18719,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18500,7 +18729,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18510,7 +18739,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18520,7 +18749,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+    public static readonly int Item11Size = sizeof(T11);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18530,7 +18759,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+    public static readonly int Item12Size = sizeof(T12);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18540,7 +18769,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+    public static readonly int Item13Size = sizeof(T13);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -18550,7 +18779,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item14Size = Marshal.SizeOf<T14>();
+    public static readonly int Item14Size = sizeof(T14);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -18576,7 +18805,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18597,7 +18827,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18618,7 +18849,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18639,7 +18871,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18660,7 +18893,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18681,7 +18915,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18702,7 +18937,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18723,7 +18959,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18744,7 +18981,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18765,7 +19003,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18786,7 +19025,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18807,7 +19047,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item11Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18828,7 +19069,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item12Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18849,7 +19091,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item13Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18870,7 +19113,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item14Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item14Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -18906,65 +19150,80 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item13">Item 13.</param>
     /// <param name="item14">Item 14.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
         Item12Ptr->PNext = itemPtr;
         itemPtr = Item14Ptr;
         item14.StructureType();
-        Marshal.StructureToPtr(item14, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>.Item14Size;
+        System.Buffer.MemoryCopy((void*) &item14, (void*)itemPtr, size, size);
         Item13Ptr->PNext = itemPtr;
         Item14Ptr->PNext = null;
     }
@@ -19380,25 +19639,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
-        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
-        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
-        Marshal.DestroyStructure<T14>(headPtr + Item14Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }
 
@@ -19422,32 +19664,32 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 /// <typeparam name="T14">Type of Item 14.</typeparam>
 /// <typeparam name="T15">Type of Item 15.</typeparam>
 public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> : Chain, IEquatable<Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>>
-    where TChain : struct, IChainable
-    where T1 : struct, IChainable
-    where T2 : struct, IChainable
-    where T3 : struct, IChainable
-    where T4 : struct, IChainable
-    where T5 : struct, IChainable
-    where T6 : struct, IChainable
-    where T7 : struct, IChainable
-    where T8 : struct, IChainable
-    where T9 : struct, IChainable
-    where T10 : struct, IChainable
-    where T11 : struct, IChainable
-    where T12 : struct, IChainable
-    where T13 : struct, IChainable
-    where T14 : struct, IChainable
-    where T15 : struct, IChainable
+    where TChain : unmanaged, IChainable
+    where T1 : unmanaged,  IChainable
+    where T2 : unmanaged,  IChainable
+    where T3 : unmanaged,  IChainable
+    where T4 : unmanaged,  IChainable
+    where T5 : unmanaged,  IChainable
+    where T6 : unmanaged,  IChainable
+    where T7 : unmanaged,  IChainable
+    where T8 : unmanaged,  IChainable
+    where T9 : unmanaged,  IChainable
+    where T10 : unmanaged,  IChainable
+    where T11 : unmanaged,  IChainable
+    where T12 : unmanaged,  IChainable
+    where T13 : unmanaged,  IChainable
+    where T14 : unmanaged,  IChainable
+    where T15 : unmanaged,  IChainable
 {
     /// <summary>
     /// Gets the size (in bytes) of the default structure header.
     /// </summary>
-    public static readonly int HeaderSize = Marshal.SizeOf<BaseInStructure>();
+    public static readonly int HeaderSize = sizeof(BaseInStructure);
 
     /// <summary>
     /// Gets the size (in bytes) of the head structure.
     /// </summary>
-    public static readonly int HeadSize = Marshal.SizeOf<TChain>();
+    public static readonly int HeadSize = sizeof(TChain);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19457,7 +19699,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item1Size = Marshal.SizeOf<T1>();
+    public static readonly int Item1Size = sizeof(T1);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19467,7 +19709,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item2Size = Marshal.SizeOf<T2>();
+    public static readonly int Item2Size = sizeof(T2);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19477,7 +19719,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item3Size = Marshal.SizeOf<T3>();
+    public static readonly int Item3Size = sizeof(T3);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19487,7 +19729,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item4Size = Marshal.SizeOf<T4>();
+    public static readonly int Item4Size = sizeof(T4);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19497,7 +19739,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item5Size = Marshal.SizeOf<T5>();
+    public static readonly int Item5Size = sizeof(T5);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19507,7 +19749,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item6Size = Marshal.SizeOf<T6>();
+    public static readonly int Item6Size = sizeof(T6);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19517,7 +19759,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item7Size = Marshal.SizeOf<T7>();
+    public static readonly int Item7Size = sizeof(T7);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19527,7 +19769,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item8Size = Marshal.SizeOf<T8>();
+    public static readonly int Item8Size = sizeof(T8);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19537,7 +19779,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item9Size = Marshal.SizeOf<T9>();
+    public static readonly int Item9Size = sizeof(T9);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19547,7 +19789,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item10Size = Marshal.SizeOf<T10>();
+    public static readonly int Item10Size = sizeof(T10);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19557,7 +19799,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item11Size = Marshal.SizeOf<T11>();
+    public static readonly int Item11Size = sizeof(T11);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19567,7 +19809,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item12Size = Marshal.SizeOf<T12>();
+    public static readonly int Item12Size = sizeof(T12);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19577,7 +19819,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item13Size = Marshal.SizeOf<T13>();
+    public static readonly int Item13Size = sizeof(T13);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19587,7 +19829,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item14Size = Marshal.SizeOf<T14>();
+    public static readonly int Item14Size = sizeof(T14);
 
     /// <summary>
     /// Gets the offset to the start of <see cref="Item1"/>.
@@ -19597,7 +19839,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <summary>
     /// Gets the size (in bytes) of the Item 1.
     /// </summary>
-    public static readonly int Item15Size = Marshal.SizeOf<T15>();
+    public static readonly int Item15Size = sizeof(T15);
 
     /// <summary>
     /// Gets the total size (in bytes) of the unmanaged memory, managed by this chain.
@@ -19623,7 +19865,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = (BaseInStructure*) _headPtr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, _headPtr, true);
+            var size = HeadSize;
+            System.Buffer.MemoryCopy((void*) &value, (void*)_headPtr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19644,7 +19887,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item1Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item1Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19665,7 +19909,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item2Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item2Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19686,7 +19931,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item3Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item3Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19707,7 +19953,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item4Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item4Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19728,7 +19975,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item5Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item5Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19749,7 +19997,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item6Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item6Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19770,7 +20019,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item7Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item7Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19791,7 +20041,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item8Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item8Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19812,7 +20063,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item9Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item9Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19833,7 +20085,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item10Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item10Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19854,7 +20107,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item11Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item11Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19875,7 +20129,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item12Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item12Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19896,7 +20151,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item13Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item13Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19917,7 +20173,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item14Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item14Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19938,7 +20195,8 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             value.StructureType();
             var ptr = Item15Ptr;
             var nextPtr = ptr->PNext;
-            Marshal.StructureToPtr(value, (nint)ptr, true);
+            var size = Item15Size;
+            System.Buffer.MemoryCopy((void*) &value, (void*)ptr, size, size);
             ptr->PNext = nextPtr;
         }
     }
@@ -19975,69 +20233,85 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     /// <param name="item14">Item 14.</param>
     /// <param name="item15">Item 15.</param>
     internal Chain(TChain head = default, T1 item1 = default, T2 item2 = default, T3 item3 = default, T4 item4 = default, T5 item5 = default, T6 item6 = default, T7 item7 = default, T8 item8 = default, T9 item9 = default, T10 item10 = default, T11 item11 = default, T12 item12 = default, T13 item13 = default, T14 item14 = default, T15 item15 = default)
-        : this(Marshal.AllocHGlobal(MemorySize))
+        : this(SilkMarshal.Allocate(MemorySize))
     {
         head.StructureType();
-        Marshal.StructureToPtr(head, _headPtr, false);
+        var size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.HeadSize;
+        System.Buffer.MemoryCopy((void*) &head, (void*)_headPtr, size, size);
         var itemPtr = Item1Ptr;
         item1.StructureType();
-        Marshal.StructureToPtr(item1, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item1Size;
+        System.Buffer.MemoryCopy((void*) &item1, (void*)itemPtr, size, size);
         HeadPtr->PNext = itemPtr;
         itemPtr = Item2Ptr;
         item2.StructureType();
-        Marshal.StructureToPtr(item2, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item2Size;
+        System.Buffer.MemoryCopy((void*) &item2, (void*)itemPtr, size, size);
         Item1Ptr->PNext = itemPtr;
         itemPtr = Item3Ptr;
         item3.StructureType();
-        Marshal.StructureToPtr(item3, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item3Size;
+        System.Buffer.MemoryCopy((void*) &item3, (void*)itemPtr, size, size);
         Item2Ptr->PNext = itemPtr;
         itemPtr = Item4Ptr;
         item4.StructureType();
-        Marshal.StructureToPtr(item4, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item4Size;
+        System.Buffer.MemoryCopy((void*) &item4, (void*)itemPtr, size, size);
         Item3Ptr->PNext = itemPtr;
         itemPtr = Item5Ptr;
         item5.StructureType();
-        Marshal.StructureToPtr(item5, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item5Size;
+        System.Buffer.MemoryCopy((void*) &item5, (void*)itemPtr, size, size);
         Item4Ptr->PNext = itemPtr;
         itemPtr = Item6Ptr;
         item6.StructureType();
-        Marshal.StructureToPtr(item6, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item6Size;
+        System.Buffer.MemoryCopy((void*) &item6, (void*)itemPtr, size, size);
         Item5Ptr->PNext = itemPtr;
         itemPtr = Item7Ptr;
         item7.StructureType();
-        Marshal.StructureToPtr(item7, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item7Size;
+        System.Buffer.MemoryCopy((void*) &item7, (void*)itemPtr, size, size);
         Item6Ptr->PNext = itemPtr;
         itemPtr = Item8Ptr;
         item8.StructureType();
-        Marshal.StructureToPtr(item8, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item8Size;
+        System.Buffer.MemoryCopy((void*) &item8, (void*)itemPtr, size, size);
         Item7Ptr->PNext = itemPtr;
         itemPtr = Item9Ptr;
         item9.StructureType();
-        Marshal.StructureToPtr(item9, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item9Size;
+        System.Buffer.MemoryCopy((void*) &item9, (void*)itemPtr, size, size);
         Item8Ptr->PNext = itemPtr;
         itemPtr = Item10Ptr;
         item10.StructureType();
-        Marshal.StructureToPtr(item10, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item10Size;
+        System.Buffer.MemoryCopy((void*) &item10, (void*)itemPtr, size, size);
         Item9Ptr->PNext = itemPtr;
         itemPtr = Item11Ptr;
         item11.StructureType();
-        Marshal.StructureToPtr(item11, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item11Size;
+        System.Buffer.MemoryCopy((void*) &item11, (void*)itemPtr, size, size);
         Item10Ptr->PNext = itemPtr;
         itemPtr = Item12Ptr;
         item12.StructureType();
-        Marshal.StructureToPtr(item12, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item12Size;
+        System.Buffer.MemoryCopy((void*) &item12, (void*)itemPtr, size, size);
         Item11Ptr->PNext = itemPtr;
         itemPtr = Item13Ptr;
         item13.StructureType();
-        Marshal.StructureToPtr(item13, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item13Size;
+        System.Buffer.MemoryCopy((void*) &item13, (void*)itemPtr, size, size);
         Item12Ptr->PNext = itemPtr;
         itemPtr = Item14Ptr;
         item14.StructureType();
-        Marshal.StructureToPtr(item14, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item14Size;
+        System.Buffer.MemoryCopy((void*) &item14, (void*)itemPtr, size, size);
         Item13Ptr->PNext = itemPtr;
         itemPtr = Item15Ptr;
         item15.StructureType();
-        Marshal.StructureToPtr(item15, (nint)itemPtr, false);
+        size = Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>.Item15Size;
+        System.Buffer.MemoryCopy((void*) &item15, (void*)itemPtr, size, size);
         Item14Ptr->PNext = itemPtr;
         Item15Ptr->PNext = null;
     }
@@ -20475,25 +20749,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
             return;
         }
 
-        // Destroy all structures
-        Marshal.DestroyStructure<TChain>(headPtr);
-        Marshal.DestroyStructure<T1>(headPtr + Item1Offset);
-        Marshal.DestroyStructure<T2>(headPtr + Item2Offset);
-        Marshal.DestroyStructure<T3>(headPtr + Item3Offset);
-        Marshal.DestroyStructure<T4>(headPtr + Item4Offset);
-        Marshal.DestroyStructure<T5>(headPtr + Item5Offset);
-        Marshal.DestroyStructure<T6>(headPtr + Item6Offset);
-        Marshal.DestroyStructure<T7>(headPtr + Item7Offset);
-        Marshal.DestroyStructure<T8>(headPtr + Item8Offset);
-        Marshal.DestroyStructure<T9>(headPtr + Item9Offset);
-        Marshal.DestroyStructure<T10>(headPtr + Item10Offset);
-        Marshal.DestroyStructure<T11>(headPtr + Item11Offset);
-        Marshal.DestroyStructure<T12>(headPtr + Item12Offset);
-        Marshal.DestroyStructure<T13>(headPtr + Item13Offset);
-        Marshal.DestroyStructure<T14>(headPtr + Item14Offset);
-        Marshal.DestroyStructure<T15>(headPtr + Item15Offset);
-
         // Free memory block
-        Marshal.FreeHGlobal(headPtr);
+        SilkMarshal.Free(headPtr);
     }
 }

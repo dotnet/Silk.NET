@@ -50,8 +50,8 @@ public static partial class ChainExtensions
         ref TNext value,
         bool alwaysAdd = false
     )
-        where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where TNext : unmanaged,  IExtendsChain<TChain>
         => ref SetNextAny(ref chain, ref value, alwaysAdd);
 
     /// <summary>
@@ -97,13 +97,13 @@ public static partial class ChainExtensions
         ref TNext value,
         bool alwaysAdd = false
     )
-        where TChain : struct, IChainable
-        where TNext : struct, IChainable
+        where TChain : unmanaged,  IChainable
+        where TNext : unmanaged,  IChainable
     {
         // Ensure structure type of chain and value are set.
         chain.StructureType();
         var structureType = value.StructureType();
-
+        
         // Find end of chain
         var previousPtr = (BaseInStructure*) null;
         var currentPtr = (BaseInStructure*) Unsafe.AsPointer(ref chain);
@@ -164,8 +164,8 @@ public static partial class ChainExtensions
     /// <seealso cref="IndexOfAny{TChain,TNext}"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ref TChain AddNext<TChain, TNext>(this ref TChain chain, out TNext next)
-        where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where TNext : unmanaged,  IExtendsChain<TChain>
         => ref AddNextAny(ref chain, out next);
 
     /// <summary>
@@ -199,8 +199,8 @@ public static partial class ChainExtensions
     /// <seealso cref="IndexOf{TChain,TNext}"/>
     /// <seealso cref="IndexOfAny{TChain,TNext}"/>
     public static unsafe ref TChain AddNextAny<TChain, TNext>(this ref TChain chain, out TNext next)
-        where TChain : struct, IChainable
-        where TNext : struct, IChainable
+        where TChain : unmanaged,  IChainable
+        where TNext : unmanaged,  IChainable
     {
         // Ensure structure type of chain is set.
         chain.StructureType();
@@ -246,8 +246,8 @@ public static partial class ChainExtensions
     /// <seealso cref="IndexOfAny{TChain,TNext}"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ref TChain TryAddNext<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
-        where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where TNext : unmanaged,  IExtendsChain<TChain>
         => ref TryAddNextAny(ref chain, out next, out added);
 
     /// <summary>
@@ -279,8 +279,8 @@ public static partial class ChainExtensions
     /// <seealso cref="IndexOf{TChain,TNext}"/>
     /// <seealso cref="IndexOfAny{TChain,TNext}"/>
     public static unsafe ref TChain TryAddNextAny<TChain, TNext>(this ref TChain chain, out TNext next, out bool added)
-        where TChain : struct, IChainable
-        where TNext : struct, IChainable
+        where TChain : unmanaged,  IChainable
+        where TNext : unmanaged,  IChainable
     {
         // Ensure structure type of chain is set.
         chain.StructureType();
@@ -330,8 +330,8 @@ public static partial class ChainExtensions
     /// <seealso cref="IndexOfAny{TChain,TNext}"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int IndexOf<TChain, TNext>(this ref TChain chain, ref TNext value)
-        where TChain : struct, IChainStart
-        where TNext : struct, IExtendsChain<TChain>
+        where TChain : unmanaged,  IChainStart
+        where TNext : unmanaged,  IExtendsChain<TChain>
         => IndexOfAny(ref chain, ref value);
 
     /// <summary>
@@ -354,8 +354,8 @@ public static partial class ChainExtensions
     /// <seealso cref="TryAddNextAny{TChain,TNext}"/>
     /// <seealso cref="IndexOf{TChain,TNext}"/>
     public static unsafe int IndexOfAny<TChain, TNext>(this ref TChain chain, ref TNext value)
-        where TChain : struct, IChainable
-        where TNext : struct, IChainable
+        where TChain : unmanaged,  IChainable
+        where TNext : unmanaged,  IChainable
     {
         // Ensure structure type of chain is set.
         chain.StructureType();
