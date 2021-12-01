@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 /// <summary>
 /// Base class for all <see cref="Chain{T}">Managed Chains</see>.
 /// </summary>
-public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposable
+public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IEquatable<Chain>, IDisposable
 {
     /// <summary>
     /// Gets a pointer to the current head.
@@ -156,10 +156,30 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
 
     /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool Equals(Chain other)
+    {
+        return !ReferenceEquals(null, other) &&
+               (ReferenceEquals(this, other) || other.GetType() == this.GetType() && MemoryEquals(other));
+    }
+
+    /// <inheritdoc />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override bool Equals(object obj)
     {
         return !ReferenceEquals(null, obj) &&
                (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool operator ==(Chain left, Chain right)
+    {
+        return left?.Equals(right) ?? ReferenceEquals(null, right);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool operator !=(Chain left, Chain right)
+    {
+        return !(left?.Equals(right) ?? ReferenceEquals(null, right));
     }
 
     /// <summary>
@@ -216,7 +236,7 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     /// </summary>
     /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
     /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
-    public static implicit operator nint(Chain chain) => (nint)chain.HeadPtr;
+    public static implicit operator nint(Chain chain) => (nint) chain.HeadPtr;
 
     /// <summary>
     ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
