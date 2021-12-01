@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Xunit;
 
-namespace Silk.NET.Vulkan.Test;
+namespace Silk.NET.Vulkan.Tests;
 
 public class TestCompilation
 {

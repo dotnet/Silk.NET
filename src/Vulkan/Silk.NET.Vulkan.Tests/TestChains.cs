@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Xunit;
 
-namespace Silk.NET.Vulkan.Test;
+namespace Silk.NET.Vulkan.Tests;
 
 public class TestChains
 {

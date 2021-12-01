@@ -480,7 +480,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeStructChaining", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeStructChaining.Test", "src\Lab\Experiments\PrototypeStructChaining\PrototypeStructChaining.Test\PrototypeStructChaining.Test.csproj", "{BD19250B-E143-4F4E-9E1D-18829CCB3642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Test", "src\Vulkan\Silk.NET.Vulkan.Test\Silk.NET.Vulkan.Test.csproj", "{225BA79C-36FE-421A-85E4-D15F8B61869B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Tests", "src\Vulkan\Silk.NET.Vulkan.Tests\Silk.NET.Vulkan.Tests.csproj", "{225BA79C-36FE-421A-85E4-D15F8B61869B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
