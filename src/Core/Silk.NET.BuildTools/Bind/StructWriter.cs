@@ -69,29 +69,43 @@ namespace Silk.NET.BuildTools.Bind
                         switch (attr.Arguments[0])
                         {
                             case "$VKSTRUCTUREDTYPE":
+                            {
                                 structuredType = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
                                 break;
+                            }
                             case "$VKCHAINABLE":
+                            {
                                 isChainable = true;
                                 break;
+                            }
                             case "$VKEXTENDSCHAIN":
+                            {
                                 chainExtensions = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
                                 break;
+                            }
                             case "$VKCHAINSTART":
+                            {
                                 chainExtenderss = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
                                 break;
+                            }
                             case "$VKALIASOF":
+                            {
                                 aliasOf = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
                                 break;
+                            }
                             case "$VKALIASES":
+                            {
                                 aliases = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
                                 break;
+                            }
                             default:
+                            {
                                 Console.WriteLine
                                 (
                                     $"Unexpected build intrinsic attribute '{attr.Arguments[0]}' on '{@struct.Name}' struct!"
                                 );
                                 break;
+                            }
                         }
                     }
 
