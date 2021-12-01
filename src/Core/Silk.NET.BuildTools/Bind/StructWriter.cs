@@ -136,7 +136,7 @@ namespace Silk.NET.BuildTools.Bind
             interfaces.AddRange
             (
                 chainExtensions?.Select(e => $"IExtendsChain<{e}>") ??
-                Array.Empty<string>()
+                Enumerable.Empty<string>()
             );
             if (!interfaces.Any())
             {
