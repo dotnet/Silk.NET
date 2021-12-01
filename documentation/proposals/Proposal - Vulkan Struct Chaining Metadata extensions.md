@@ -1,9 +1,5 @@
 # Summary
 
-**_This proposal is dependent
-on [Proposal - Vulkan Struct Chaining - #2 Unmanaged Chaining](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
-._**
-
 Having extended `BuildTools` to make use of the `structextends` attribute, as part of
 the [unmanaged chaining proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
 it is possible to supply that metadata in a ready form for use by consumers of the library, without them needing to
@@ -27,9 +23,7 @@ for a given chain, at runtime. To facilitate the most common scenario 4 extensio
 
 - It is possible to get the same information presented statically by this proposal by creative use of reflection,
   however, it is non-trivial and costly to do so.
-- When combined with the
-  [Proposal - Vulkan Struct Chaining - #3 Managed Chaining](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%233%20Managed%20Chaining.md)
-  the above functionality makes handling of non-generic chains at runtime significantly easier, which is great for
+- The above functionality makes handling of non-generic chains at runtime significantly easier, which is great for
   library writers.
 - Though 4 collections are proposed, they are grouped in pairs, providing two-way mapping. It is possible to only
   provide one of each pair, and leave the reversal to the consumer, though that would make the extension methods
@@ -40,13 +34,12 @@ for a given chain, at runtime. To facilitate the most common scenario 4 extensio
 
 ## Auto-generated Metadata Structures
 
-The `Extensions` dictionary is added to the `Chain` extensions class from
-the [unmanaged chaining proposal](Proposal%20-%20Vulkan%20Struct%20Chaining%20-%20%232%20Unmanaged%20Chaining.md)
-for discoverability. It is a direct mapping of the `structextends` attribute, and is therefore trivial to generate.
-Below is a cut down example to illustrate what will be generated:
+The `Extensions` dictionary is added to the [`ChainExtensions`](../../src/Vulkan/Silk.NET.Vulkan/ChainExtensions.cs)
+extensions class for discoverability. It is a direct mapping of the `structextends` attribute, and is therefore trivial
+to generate. Below is a cut down example to illustrate what will be generated:
 
 ```csharp
-public static class Chain : IChainable
+public static class ChainExtensions : IChainable
 {
     ...
     /// <summary>

@@ -1,6 +1,9 @@
 ﻿# Raw Chaining
 
 [Table of Contents](overview.md#table-of-contents)
+- [Overview](raw_chaining.md#overview)
+- [Best Practices](raw_chaining.md#best-practices)
+- [Performance](#performance)
 
 ## Overview
 

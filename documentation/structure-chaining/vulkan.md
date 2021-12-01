@@ -1,6 +1,13 @@
 ﻿# Vulkan Chaining
 
 [Table of Contents](overview.md#table-of-contents)
+- [BaseInStructure](vulkan.md#baseinstructure)
+- [IChainable](vulkan.md#ichainable)
+- [IStructureType](vulkan.md#istructuredtype)
+- [IExtendsChain&lt;TChain&gt;](vulkan.md#iextendschainlttchaingt)
+- [IChainStart](vulkan.md#ichainstart)
+- ['Any' Overloads](vulkan.md#any-overloads)
+- [Class Diagram](vulkan.md#class-diagram)
 
 ## BaseInStructure
 
@@ -203,4 +210,10 @@ This allows us to specify which structures can be used as the start of a chain.
 However, not all possible chains are defined explicitly, so throughout Silk.NET's chaining system we support `*Any`
 overloads, which relax the generic constraints. That is, instead of requiring `IChainStart` types at the head/start of a
 chain, and the corresponding `IExtendsChain<TChain>` types throughout the chain), `*Any` methods only
-require `IChainable` structures throughout. 
+require `IChainable` structures throughout.
+
+## Class Diagram
+
+The above structures can be visualized below:
+
+![Class Diagram](chaining.svg)

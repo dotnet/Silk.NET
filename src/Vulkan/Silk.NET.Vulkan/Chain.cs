@@ -170,12 +170,36 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IEquatab
                (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
     }
 
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool operator ==(Chain left, Chain right)
     {
         return left?.Equals(right) ?? ReferenceEquals(null, right);
     }
 
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool operator !=(Chain left, Chain right)
     {

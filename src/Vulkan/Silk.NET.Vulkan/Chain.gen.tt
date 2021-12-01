@@ -822,14 +822,36 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     public bool Equals(Chain<<#=tList#>> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<<#=tList#>> left, Chain<<#=tList#>> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<<#=tList#>> left, Chain<<#=tList#>> right) => 
         ReferenceEquals(null, left)

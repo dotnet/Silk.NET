@@ -5517,14 +5517,36 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
     public bool Equals(Chain<TChain> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain> left, Chain<TChain> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain> left, Chain<TChain> right) => 
         ReferenceEquals(null, left)
@@ -5962,14 +5984,36 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     public bool Equals(Chain<TChain, T1> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1> left, Chain<TChain, T1> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1> left, Chain<TChain, T1> right) => 
         ReferenceEquals(null, left)
@@ -6474,14 +6518,36 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     public bool Equals(Chain<TChain, T1, T2> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2> left, Chain<TChain, T1, T2> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2> left, Chain<TChain, T1, T2> right) => 
         ReferenceEquals(null, left)
@@ -7053,14 +7119,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     public bool Equals(Chain<TChain, T1, T2, T3> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3> left, Chain<TChain, T1, T2, T3> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3> left, Chain<TChain, T1, T2, T3> right) => 
         ReferenceEquals(null, left)
@@ -7699,14 +7787,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     public bool Equals(Chain<TChain, T1, T2, T3, T4> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4> left, Chain<TChain, T1, T2, T3, T4> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4> left, Chain<TChain, T1, T2, T3, T4> right) => 
         ReferenceEquals(null, left)
@@ -8412,14 +8522,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5> left, Chain<TChain, T1, T2, T3, T4, T5> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5> left, Chain<TChain, T1, T2, T3, T4, T5> right) => 
         ReferenceEquals(null, left)
@@ -9192,14 +9324,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6> left, Chain<TChain, T1, T2, T3, T4, T5, T6> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6> left, Chain<TChain, T1, T2, T3, T4, T5, T6> right) => 
         ReferenceEquals(null, left)
@@ -10039,14 +10193,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7> right) => 
         ReferenceEquals(null, left)
@@ -10953,14 +11129,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> right) => 
         ReferenceEquals(null, left)
@@ -11934,14 +12132,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> right) => 
         ReferenceEquals(null, left)
@@ -12982,14 +13202,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> right) => 
         ReferenceEquals(null, left)
@@ -14097,14 +14339,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> right) => 
         ReferenceEquals(null, left)
@@ -15279,14 +15543,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> right) => 
         ReferenceEquals(null, left)
@@ -16528,14 +16814,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> right) => 
         ReferenceEquals(null, left)
@@ -17844,14 +18152,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> right) => 
         ReferenceEquals(null, left)
@@ -19162,14 +19492,36 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     public bool Equals(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> other)
         => !ReferenceEquals(null, other) && (ReferenceEquals(this, other) || MemoryEquals(other));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Equality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are equal, otherwise <c> false </c> .
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator ==(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> right) => 
         ReferenceEquals(null, left)
         ? ReferenceEquals(null, right)
         : !ReferenceEquals(null, right) && (ReferenceEquals(left, right) || left.MemoryEquals(right));
 
-    /// <inheritdoc />
+    /// <summary>
+    ///    Inequality operator overload.
+    /// </summary>
+    /// <param name="left">
+    ///    The left value.
+    /// </param>
+    /// <param name="right">
+    ///    The right value.
+    /// </param>
+    /// <returns>
+    ///    <c> true </c> when the instances are not equal, otherwise <c> false </c>.
+    /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]  
     public static bool operator !=(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> left, Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> right) => 
         ReferenceEquals(null, left)
