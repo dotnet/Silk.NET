@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Emit;
-using Silk.NET.Vulkan;
 using Xunit;
 
-namespace PrototypeStructChaining.Test;
+namespace Silk.NET.Vulkan.Test;
 
 public class TestCompilation
 {

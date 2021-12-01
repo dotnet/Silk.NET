@@ -1,9 +1,8 @@
 using System;
 using System.Linq;
-using Silk.NET.Vulkan;
 using Xunit;
 
-namespace PrototypeStructChaining.Test;
+namespace Silk.NET.Vulkan.Test;
 
 public class TestChains
 {
@@ -152,14 +151,14 @@ public class TestChains
         // Check we have new copies
         Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
         Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
-        
+
         // Test equality
         Assert.Equal(chain, newChain);
         Assert.True(chain == newChain);
-        
+
         // Modify second chain
         newChain.Item1 = default;
-        
+
         // Test equality
         Assert.NotEqual(chain, newChain);
         Assert.False(chain == newChain);
@@ -231,9 +230,9 @@ public class TestChains
         Assert.True(chain.Item2.AccelerationStructure);
 
         using var newChain = chain.Truncate(out var accelerationStructure);
-        
+
         Assert.Equal(2, newChain.Count);
-        
+
         // Ensure all STypes set correctly
         Assert.Equal(StructureType.PhysicalDeviceFeatures2, newChain.Head.SType);
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, newChain.Item1.SType);
@@ -420,7 +419,7 @@ public class TestChains
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1.SType);
 
         Assert.Equal(StructureType.PhysicalDeviceDescriptorIndexingFeatures, chain.Item1Ptr->SType);
-        
+
         // Ensure pointers set correctly
         Assert.Equal((nint) chain.Item1Ptr, (nint) chain.Head.PNext);
         Assert.Equal(0, (nint) chain.Item1.PNext);
@@ -431,17 +430,17 @@ public class TestChains
         // Check we have new copies
         Assert.NotEqual((nint) chain.HeadPtr, (nint) newChain.HeadPtr);
         Assert.NotEqual((nint) chain.Item1Ptr, (nint) newChain.Item1Ptr);
-        
+
         // Test equality
         Assert.Equal(chain, newChain);
         Assert.True(chain == newChain);
         var hashCode = chain.GetHashCode();
         var newHashCode = newChain.GetHashCode();
         Assert.Equal(hashCode, newHashCode);
-        
+
         // Modify second chain
         newChain.Item1 = default;
-        
+
         // Test equality
         Assert.NotEqual(chain, newChain);
         Assert.False(chain == newChain);
@@ -449,5 +448,53 @@ public class TestChains
         var newHashCode2 = newChain.GetHashCode();
         Assert.NotEqual(hashCode, newHashCode2);
         Assert.NotEqual(newHashCode, newHashCode2);
+    }
+
+    [Fact]
+    public void TestClear()
+    {
+        using var chain = Chain.Create
+        (
+            new PhysicalDeviceFeatures2 {Features = new PhysicalDeviceFeatures {AlphaToOne = true}},
+            new PhysicalDeviceDescriptorIndexingFeatures {ShaderInputAttachmentArrayDynamicIndexing = true},
+            new PhysicalDeviceAccelerationStructureFeaturesKHR {AccelerationStructure = true}
+        );
+
+        Assert.True(chain.Head.Features.AlphaToOne);
+        Assert.True(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+        Assert.True(chain.Item2.AccelerationStructure);
+
+        // Don't clear the head
+        chain.Clear(false);
+
+        Assert.True(chain.Head.Features.AlphaToOne);
+        Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+        Assert.False(chain.Item2.AccelerationStructure);
+
+        // Clear the head
+        chain.Clear();
+
+        Assert.False(chain.Head.Features.AlphaToOne);
+        Assert.False(chain.Item1.ShaderInputAttachmentArrayDynamicIndexing);
+        Assert.False(chain.Item2.AccelerationStructure);
+    }
+
+    [Fact]
+    public unsafe void TestImplicitCastsToPointers()
+    {
+        using var chain = Chain.Create<PhysicalDeviceFeatures2, PhysicalDeviceDescriptorIndexingFeatures,
+            PhysicalDeviceAccelerationStructureFeaturesKHR>();
+
+        PhysicalDeviceFeatures2* p = chain;
+        Assert.Equal((nint)p, (nint)chain.HeadPtr);
+        
+        BaseInStructure* b = chain;
+        Assert.Equal((nint)b, (nint)chain.HeadPtr);
+        
+        void* v = chain;
+        Assert.Equal((nint)v, (nint)chain.HeadPtr);
+
+        nint n = chain;
+        Assert.Equal(n, (nint)chain.HeadPtr);
     }
 }

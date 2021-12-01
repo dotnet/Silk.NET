@@ -1,7 +1,6 @@
-﻿using Silk.NET.Vulkan;
-using Xunit;
+﻿using Xunit;
 
-namespace PrototypeStructChaining.Test;
+namespace Silk.NET.Vulkan.Test;
 
 public class TestChainExtensionsAny
 {
