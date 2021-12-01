@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Chain.gen.tt">
+    <None Update="Chain.g.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Chain.gen.cs</LastGenOutput>
+      <LastGenOutput>Chain.g.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Chain.gen.cs">
+    <Compile Update="Chain.g.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Chain.gen.tt</DependentUpon>
+      <DependentUpon>Chain.g.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
