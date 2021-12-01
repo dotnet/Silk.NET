@@ -307,7 +307,9 @@ namespace Silk.NET.BuildTools.Bind
                 else if (structField.NumBits is not null)
                 {
                     WriteBitfield
-                        (structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
+                    (
+                        structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile
+                    );
                 }
                 else if (!(structField.Count is null))
                 {
