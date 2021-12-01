@@ -2,24 +2,24 @@
 
 [Table of Contents](overview.md#table-of-contents)
 
-- [Introduction](#introduction)
-    - [Type Constraints](#type-constraints)
-    - [Disposal](#disposal)
-    - ['Any' Overloads](#any-overloads)
-    - [Equality](#equality)
-    - [Casting to pointers](#casting-to-pointers)
-- [Usage](#usage)
-    - [Creation (Create/CreateAny)](#creation-createcreateany)
-    - [Modifying values](#modifying-values)
-    - [Duplication (Duplicate)](#duplication-duplicate)
-    - [Loading from an unmanaged chain (Load/LoadAny)](#loading-from-an-unmanaged-chain-loadloadany)
-    - [Adding to a chain (Add/AddAny)](#adding-to-a-chain-addaddany)
-    - [Truncating (Truncate/TruncateAny)](#truncating-truncatetruncateany)
-    - [Deconstruction](#deconstruction)
-- [Chain Base Class](#chain-base-class)
-    - [IReadOnlyList](#ireadonlylist)
-    - [Clearing (Clear)](#clearing-clear)
-- [Performance](#performance) 
+- [Introduction](managed-chaining.md#introduction)
+    - [Type Constraints](managed-chaining.md#type-constraints)
+    - [Disposal](managed-chaining.md#disposal)
+    - ['Any' Overloads](managed-chaining.md#any-overloads)
+    - [Equality](managed-chaining.md#equality)
+    - [Casting to pointers](managed-chaining.md#casting-to-pointers)
+- [Usage](managed-chaining.md#usage)
+    - [Creation (Create/CreateAny)](managed-chaining.md#creation-createcreateany)
+    - [Modifying values](managed-chaining.md#modifying-values)
+    - [Duplication (Duplicate)](managed-chaining.md#duplication-duplicate)
+    - [Loading from an unmanaged chain (Load/LoadAny)](managed-chaining.md#loading-from-an-unmanaged-chain-loadloadany)
+    - [Adding to a chain (Add/AddAny)](managed-chaining.md#adding-to-a-chain-addaddany)
+    - [Truncating (Truncate/TruncateAny)](managed-chaining.md#truncating-truncatetruncateany)
+    - [Deconstruction](managed-chaining.md#deconstruction)
+- [Chain Base Class](managed-chaining.md#chain-base-class)
+    - [IReadOnlyList](managed-chaining.md#ireadonlylist)
+    - [Clearing (Clear)](managed-chaining.md#clearing-clear)
+- [Performance](managed-chaining.md#performance)
 
 ## Introduction
 
@@ -123,7 +123,7 @@ The `Chain` classes include `*Any` versions of many methods. In fact, the `Chain
 themselves 'loose', that is they only require types to be `IChainable` rather than requiring the stricter constraints
 that prevent unrelated chain elements being added, or used as the start of a chain.
 
-You cannot create or change the lenght of a chain save through static methods, and the preferred versions do include the
+You cannot create or change the length of a chain save through static methods, and the preferred versions do include the
 tighter constraints. For conciseness we do only show the default methods below, but we indicate where an `*Any` overload
 is available in the titles.
 
