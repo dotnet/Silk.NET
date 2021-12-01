@@ -5348,6 +5348,11 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
     }
 
     /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
+
+    /// <summary>
     /// Creates a new <see cref="Chain{TChain}"/> with 1 items.
     /// </summary>
     /// <param name="head">The head of the chain.</param>
@@ -5575,7 +5580,7 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -5705,6 +5710,11 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1}"/> with 2 items.
@@ -6046,7 +6056,7 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -6209,6 +6219,11 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2}"/> with 3 items.
@@ -6584,7 +6599,7 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -6780,6 +6795,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3}"/> with 4 items.
@@ -7189,7 +7209,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -7418,6 +7438,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4}"/> with 5 items.
@@ -7861,7 +7886,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -8123,6 +8148,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5}"/> with 6 items.
@@ -8600,7 +8630,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -8895,6 +8925,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6}"/> with 7 items.
@@ -9406,7 +9441,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -9734,6 +9769,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7}"/> with 8 items.
@@ -10279,7 +10319,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -10640,6 +10680,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8}"/> with 9 items.
@@ -11219,7 +11264,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -11613,6 +11658,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9}"/> with 10 items.
@@ -12226,7 +12276,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -12653,6 +12703,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10}"/> with 11 items.
@@ -13300,7 +13355,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -13760,6 +13815,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11}"/> with 12 items.
@@ -14441,7 +14501,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -14934,6 +14994,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12}"/> with 13 items.
@@ -15649,7 +15714,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -16175,6 +16240,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13}"/> with 14 items.
@@ -16924,7 +16994,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -17483,6 +17553,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14}"/> with 15 items.
@@ -18266,7 +18341,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
@@ -18858,6 +18933,11 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     {
         _headPtr = headPtr;
     }
+
+    /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
 
     /// <summary>
     /// Creates a new <see cref="Chain{TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15}"/> with 16 items.
@@ -19610,7 +19690,7 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 

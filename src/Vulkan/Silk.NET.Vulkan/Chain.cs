@@ -212,7 +212,19 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IEquatab
     protected abstract bool MemoryEquals(Chain other);
 
     /// <inheritdoc />
-    public abstract void Dispose();
+    public void Dispose()
+    {
+        // Dispose of unmanaged resources.
+        Dispose(true);
+        // Suppress finalization.
+        GC.SuppressFinalize(this);
+    }
+
+    /// <summary>
+    /// Protected implementation of the dispose pattern
+    /// </summary>
+    /// <param name="disposing"></param>
+    protected abstract void Dispose(bool disposing);
 
     /// <summary>
     /// Combines a hashcode with the contents of a slice.

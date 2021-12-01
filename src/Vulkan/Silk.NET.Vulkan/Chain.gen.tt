@@ -405,6 +405,11 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     }
 
     /// <summary>
+    /// Finalizer ensures we always release the memory.
+    /// </summary>
+    ~Chain() => Dispose(false);
+
+    /// <summary>
     /// Creates a new <see cref="Chain{<#= tList #>}"/> with <#= i #> items.
     /// </summary>
 <#= pDocs #>
@@ -902,7 +907,7 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     }  
 
     /// <inheritdoc />
-    public override void Dispose()
+    protected override void Dispose(bool disposing)
     {
         var headPtr = Interlocked.Exchange(ref _headPtr, (nint)0);
         if (headPtr == (nint)0) { 
