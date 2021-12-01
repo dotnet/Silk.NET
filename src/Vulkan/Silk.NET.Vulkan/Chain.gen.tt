@@ -296,9 +296,6 @@ public abstract unsafe partial class Chain
     {
         var tList = TypeList(i);
         var pDocs = ParameterDocs(i, "    /// ");
-        var pTypeDocs = ParameterTypeDocs(i, "    /// ");
-        var constraints = ConstraintList(i, "        ");
-        var constraintsLoose = ConstraintListLoose(i, "        ");
 #>
 
 /// <summary>
@@ -890,6 +887,34 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<<#= tList #>> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<<#= tList #>> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<<#= tList #>> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<<#= tList #>> chain) => (TChain*)chain._headPtr;
 }
 <#
     } // for (var i = 1; i <= maximumItems; i++)

@@ -74,7 +74,7 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     public Chain AddAny<T>(T item = default)
         where T : unmanaged, IChainable
         => DoAddAny(item);
-    
+
     /// <summary>
     /// Creates a new <see cref="Chain"/> with 2 items, by appending <paramref name="item"/> to
     /// the end of this instance.
@@ -101,7 +101,7 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     /// </remarks>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public Chain TruncateAny() => DoTruncateAny();
-    
+
     /// <summary>
     /// Creates a new <see cref="Chain"/>by removing the last item from this instance.
     /// </summary>
@@ -141,7 +141,7 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
 
     /// <inheritdoc />
     public abstract IEnumerator<IChainable> GetEnumerator();
-    
+
     /// <inheritdoc />
     IEnumerator IEnumerable.GetEnumerator()
     {
@@ -150,15 +150,15 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
 
     /// <inheritdoc />
     public abstract int Count { get; }
-    
+
     /// <inheritdoc />
     public abstract IChainable this[int index] { get; }
 
     /// <inheritdoc />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]  
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public override bool Equals(object obj)
     {
-        return !ReferenceEquals(null, obj) && 
+        return !ReferenceEquals(null, obj) &&
                (ReferenceEquals(this, obj) || obj.GetType() == this.GetType() && MemoryEquals((Chain) obj));
     }
 
@@ -186,23 +186,23 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
             {
                 hashCode = HashCode.Combine(hashCode, l);
             }
-            
-            slice = slice.Slice(s8.Length*8);
+
+            slice = slice.Slice(s8.Length * 8);
         }
-        
+
         // Process remainder of slice
         if (slice.Length >= 4)
         {
             var s4 = MemoryMarshal.Cast<byte, uint>(slice);
             hashCode = HashCode.Combine(hashCode, s4[0]);
-            slice = slice.Slice(s4.Length*4);
+            slice = slice.Slice(s4.Length * 4);
         }
 
         if (slice.Length >= 2)
         {
             var s2 = MemoryMarshal.Cast<byte, ushort>(slice);
             hashCode = HashCode.Combine(hashCode, s2[0]);
-            slice = slice.Slice(s2.Length*2);
+            slice = slice.Slice(s2.Length * 2);
         }
 
         if (slice.Length > 0)
@@ -210,4 +210,25 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
             hashCode = HashCode.Combine(hashCode, slice[0]);
         }
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain chain) => chain.HeadPtr;
 }

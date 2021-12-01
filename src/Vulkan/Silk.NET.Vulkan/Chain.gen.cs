@@ -5560,6 +5560,34 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -5981,6 +6009,34 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -6469,6 +6525,34 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -7024,6 +7108,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -7646,6 +7758,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -8335,6 +8475,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -9091,6 +9259,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -9914,6 +10110,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -10804,6 +11028,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -11761,6 +12013,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -12785,6 +13065,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -13876,6 +14184,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -15034,6 +15370,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -16259,6 +16623,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -17551,6 +17943,34 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> chain) => (TChain*)chain._headPtr;
 }
 
 /// <summary>
@@ -18845,4 +19265,32 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         // Free memory block
         SilkMarshal.Free(headPtr);
     }
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>nint</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator nint(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain) => (nint)chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <c>void*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator void*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain) => (void*) chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <see cref="BaseInStructure"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator BaseInStructure*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain) => chain.HeadPtr;
+
+    /// <summary>
+    ///   Defines an implicit conversion of a given <see cref="Chain"/> to a pointer to the <see cref="HeadPtr">head</see>.
+    /// </summary>
+    /// <param name="chain">A <see cref="Chain"/> to implicitly convert.</param>
+    /// <returns>A <typeparam ref="TChain"/><c>*</c> pointer to the head of the <paramref name="chain"/>.</returns>
+    public static implicit operator TChain*(Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> chain) => (TChain*)chain._headPtr;
 }
