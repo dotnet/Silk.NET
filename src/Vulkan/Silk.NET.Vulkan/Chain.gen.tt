@@ -428,6 +428,30 @@ public unsafe sealed class Chain<<#= tList #>> : Chain, IEquatable<Chain<<#= tLi
     }
 
     /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = <#= i == 1 ? "null" : "Item1Ptr" #>;
+        }
+<#
+        for (var j = 1; j < i; j++)
+        {
+#>
+        var item<#= j #> = default(T<#= j #>);
+        item<#= j #>.StructureType();
+        *((T<#= j #>*)Item<#= j #>Ptr) = item<#= j #>;
+        Item<#= j #>Ptr->PNext = <#= j < i - 1 ? $"Item{j+1}Ptr":"null" #>;
+<#
+        } // for (int j = 1; j < i; j++) {
+#>
+        return this;
+    }
+
+    /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoDuplicate() => Duplicate();
 

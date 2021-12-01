@@ -5357,6 +5357,19 @@ public unsafe sealed class Chain<TChain> : Chain, IEquatable<Chain<TChain>>
     }
 
     /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = null;
+        }
+        return this;
+    }
+
+    /// <inheritdoc />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected override Chain DoDuplicate() => Duplicate();
 
@@ -5655,6 +5668,23 @@ public unsafe sealed class Chain<TChain, T1> : Chain, IEquatable<Chain<TChain, T
         *((T1*)itemPtr) = item1;
         HeadPtr->PNext = itemPtr;
         Item1Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -6097,6 +6127,27 @@ public unsafe sealed class Chain<TChain, T1, T2> : Chain, IEquatable<Chain<TChai
         *((T2*)itemPtr) = item2;
         Item1Ptr->PNext = itemPtr;
         Item2Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -6602,6 +6653,31 @@ public unsafe sealed class Chain<TChain, T1, T2, T3> : Chain, IEquatable<Chain<T
         *((T3*)itemPtr) = item3;
         Item2Ptr->PNext = itemPtr;
         Item3Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -7170,6 +7246,35 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4> : Chain, IEquatable<Cha
         *((T4*)itemPtr) = item4;
         Item3Ptr->PNext = itemPtr;
         Item4Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -7801,6 +7906,39 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5> : Chain, IEquatable
         *((T5*)itemPtr) = item5;
         Item4Ptr->PNext = itemPtr;
         Item5Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -8495,6 +8633,43 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6> : Chain, IEquat
         *((T6*)itemPtr) = item6;
         Item5Ptr->PNext = itemPtr;
         Item6Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -9252,6 +9427,47 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7> : Chain, IE
         *((T7*)itemPtr) = item7;
         Item6Ptr->PNext = itemPtr;
         Item7Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -10072,6 +10288,51 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8> : Chain
         *((T8*)itemPtr) = item8;
         Item7Ptr->PNext = itemPtr;
         Item8Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -10955,6 +11216,55 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9> : C
         *((T9*)itemPtr) = item9;
         Item8Ptr->PNext = itemPtr;
         Item9Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -11901,6 +12211,59 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T10*)itemPtr) = item10;
         Item9Ptr->PNext = itemPtr;
         Item10Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -12910,6 +13273,63 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T11*)itemPtr) = item11;
         Item10Ptr->PNext = itemPtr;
         Item11Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = Item11Ptr;
+        var item11 = default(T11);
+        item11.StructureType();
+        *((T11*)Item11Ptr) = item11;
+        Item11Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -13982,6 +14402,67 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T12*)itemPtr) = item12;
         Item11Ptr->PNext = itemPtr;
         Item12Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = Item11Ptr;
+        var item11 = default(T11);
+        item11.StructureType();
+        *((T11*)Item11Ptr) = item11;
+        Item11Ptr->PNext = Item12Ptr;
+        var item12 = default(T12);
+        item12.StructureType();
+        *((T12*)Item12Ptr) = item12;
+        Item12Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -15117,6 +15598,71 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T13*)itemPtr) = item13;
         Item12Ptr->PNext = itemPtr;
         Item13Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = Item11Ptr;
+        var item11 = default(T11);
+        item11.StructureType();
+        *((T11*)Item11Ptr) = item11;
+        Item11Ptr->PNext = Item12Ptr;
+        var item12 = default(T12);
+        item12.StructureType();
+        *((T12*)Item12Ptr) = item12;
+        Item12Ptr->PNext = Item13Ptr;
+        var item13 = default(T13);
+        item13.StructureType();
+        *((T13*)Item13Ptr) = item13;
+        Item13Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -16315,6 +16861,75 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T14*)itemPtr) = item14;
         Item13Ptr->PNext = itemPtr;
         Item14Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = Item11Ptr;
+        var item11 = default(T11);
+        item11.StructureType();
+        *((T11*)Item11Ptr) = item11;
+        Item11Ptr->PNext = Item12Ptr;
+        var item12 = default(T12);
+        item12.StructureType();
+        *((T12*)Item12Ptr) = item12;
+        Item12Ptr->PNext = Item13Ptr;
+        var item13 = default(T13);
+        item13.StructureType();
+        *((T13*)Item13Ptr) = item13;
+        Item13Ptr->PNext = Item14Ptr;
+        var item14 = default(T14);
+        item14.StructureType();
+        *((T14*)Item14Ptr) = item14;
+        Item14Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />
@@ -17576,6 +18191,79 @@ public unsafe sealed class Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
         *((T15*)itemPtr) = item15;
         Item14Ptr->PNext = itemPtr;
         Item15Ptr->PNext = null;
+    }
+
+    /// <inheritdoc />
+    public override Chain Clear(bool includeHead = true)
+    {
+        if (includeHead)
+        {
+            var head = default(TChain);
+            head.StructureType();
+            *((TChain*)_headPtr) = head;
+            HeadPtr->PNext = Item1Ptr;
+        }
+        var item1 = default(T1);
+        item1.StructureType();
+        *((T1*)Item1Ptr) = item1;
+        Item1Ptr->PNext = Item2Ptr;
+        var item2 = default(T2);
+        item2.StructureType();
+        *((T2*)Item2Ptr) = item2;
+        Item2Ptr->PNext = Item3Ptr;
+        var item3 = default(T3);
+        item3.StructureType();
+        *((T3*)Item3Ptr) = item3;
+        Item3Ptr->PNext = Item4Ptr;
+        var item4 = default(T4);
+        item4.StructureType();
+        *((T4*)Item4Ptr) = item4;
+        Item4Ptr->PNext = Item5Ptr;
+        var item5 = default(T5);
+        item5.StructureType();
+        *((T5*)Item5Ptr) = item5;
+        Item5Ptr->PNext = Item6Ptr;
+        var item6 = default(T6);
+        item6.StructureType();
+        *((T6*)Item6Ptr) = item6;
+        Item6Ptr->PNext = Item7Ptr;
+        var item7 = default(T7);
+        item7.StructureType();
+        *((T7*)Item7Ptr) = item7;
+        Item7Ptr->PNext = Item8Ptr;
+        var item8 = default(T8);
+        item8.StructureType();
+        *((T8*)Item8Ptr) = item8;
+        Item8Ptr->PNext = Item9Ptr;
+        var item9 = default(T9);
+        item9.StructureType();
+        *((T9*)Item9Ptr) = item9;
+        Item9Ptr->PNext = Item10Ptr;
+        var item10 = default(T10);
+        item10.StructureType();
+        *((T10*)Item10Ptr) = item10;
+        Item10Ptr->PNext = Item11Ptr;
+        var item11 = default(T11);
+        item11.StructureType();
+        *((T11*)Item11Ptr) = item11;
+        Item11Ptr->PNext = Item12Ptr;
+        var item12 = default(T12);
+        item12.StructureType();
+        *((T12*)Item12Ptr) = item12;
+        Item12Ptr->PNext = Item13Ptr;
+        var item13 = default(T13);
+        item13.StructureType();
+        *((T13*)Item13Ptr) = item13;
+        Item13Ptr->PNext = Item14Ptr;
+        var item14 = default(T14);
+        item14.StructureType();
+        *((T14*)Item14Ptr) = item14;
+        Item14Ptr->PNext = Item15Ptr;
+        var item15 = default(T15);
+        item15.StructureType();
+        *((T15*)Item15Ptr) = item15;
+        Item15Ptr->PNext = null;
+        return this;
     }
 
     /// <inheritdoc />

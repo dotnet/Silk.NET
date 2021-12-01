@@ -26,8 +26,22 @@ public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IDisposa
     public abstract int Size { get; }
 
     /// <summary>
+    /// Clears this instance by setting each element of the chain to <c>default</c>, whilst maintaining the
+    /// <see cref="BaseInStructure.SType"/> and <see cref="BaseInStructure.PNext"/>. 
+    /// </summary>
+    /// <param name="includeHead">If <c>true</c> will also clear the head of the chain; otherwise, will not touch the
+    /// head if <c>false</c></param>
+    /// <returns>This instance.</returns>
+    /// <remarks>
+    /// <para>Note, unlike many of the other length modifying methods, this does not return a new instance, if you wish
+    /// to create a cleared instance with the same types, first use <see cref="Duplicate"/>.</para>
+    /// </remarks>
+    public abstract Chain Clear(bool includeHead = true);
+
+    /// <summary>
     /// Creates a new <see cref="Chain"/> by copying this instance.
     /// </summary>
+    /// <returns>A duplicate of this instance.</returns>
     /// <remarks>
     /// <para>Do not forget to <see cref="IDisposable">dispose</see> this chain if you are no longer using it.
     /// </para>
